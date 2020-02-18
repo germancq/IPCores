@@ -1,0 +1,22 @@
+CAPI=1
+[main]
+description = "present cipher"
+
+[verilog]
+src_files =
+  block_ciphers/present_cipher/hdl_code/present.sv
+  block_ciphers/present_cipher/hdl_code/present_misc.sv
+  block_ciphers/present_cipher/hdl_code/memory_module.sv
+  block_ciphers/present_cipher/hdl_code/counter.sv
+  block_ciphers/present_cipher/hdl_code/register.sv
+
+
+[provider] 
+name = github
+user = germancq
+repo = IPCores
+version = 720abce18428b4cc69d2539c50a3cde77e00344e
+
+
+
+ 
