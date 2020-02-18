@@ -6,7 +6,11 @@
  * @Last modified by:   germancq
  * @Last modified time: 2019-03-05T13:36:26+01:00
  */
-module autotest_module(
+
+import configuration::*;
+
+module autotest_module
+(
     input clk,
     input rst,
 
@@ -25,34 +29,38 @@ module autotest_module(
     input  output_ctrl_from_UUT_1,
     input [7:0] output_from_UUT_2,
     input  output_ctrl_from_UUT_2,
+
+
     output [31:0] debug
   );
 
-  wire spi_busy;
-  wire [31:0] spi_block_addr;
-  wire [7:0] spi_data_out;
-  wire spi_r_block;
-  wire spi_r_multi_block;
-  wire spi_r_byte;
-  wire spi_err;
-  wire spi_rst;
-  wire [7:0] spi_data_in;
-  wire spi_w_block;
-  wire spi_w_byte;
-  wire spi_crc_err;
+  logic spi_busy;
+  logic [31:0] spi_block_addr;
+  logic [7:0] spi_data_out;
+  logic spi_r_block;
+  logic spi_r_multi_block;
+  logic spi_r_byte;
+  logic spi_err;
+  logic spi_rst;
+  logic [7:0] spi_data_in;
+  logic spi_w_block;
+  logic spi_w_byte;
+  logic spi_crc_err;
 
 
-  wire [31:0] contador_o;
-  contador_up div_clk_counter(
+  logic [CLK_INTERNAL_DIVIDER:0] counter_o;
+  counter #(.DATA_WIDTH(CLK_INTERNAL_DIVIDER+1)) div_clk_counter(
      .clk(clk),
      .rst(rst),
      .up(1'b1),
-     .q(contador_o)
+     .down(1'b0),
+     .din({ CLK_INTERNAL_DIVIDER+1 {1'b0} }),
+     .dout(counter_o)
   );
 
   fsm_autotest fsm_isnt(
     .clk(clk),
-    .clk_counter(contador_o[17]),
+    .clk_counter(contador_o[CLK_INTERNAL_DIVIDER]),
     .rst(rst),
     //sdspihost signals
     .spi_busy(spi_busy),
@@ -83,7 +91,6 @@ module autotest_module(
 
   sdspihost sdspi_inst(
     .clk(clk),
-    .clk_spi(clk),
     .reset(spi_rst),
     .busy(spi_busy),
     .err(spi_err),
@@ -106,11 +113,8 @@ module autotest_module(
     .ss(cs),
     ////
     .sclk_speed(4'h7),
-
-    .SD_RESET(SD_RESET),
-    .SD_DAT_1(SD_DAT_1),
-    .SD_DAT_2(SD_DAT_2),
+    
     .debug()
   );
 
-endmodule
+endmodule : autotest_module

@@ -7,7 +7,10 @@
  * @Last modified time: 2019-04-05T13:26:09+02:00
  */
 
- module fsm_autotest(
+ import configuration::*;
+
+ module fsm_autotest
+ (
      input clk,
      input clk_counter,
      input rst,
@@ -15,23 +18,23 @@
      input spi_busy,
      output [31:0] spi_block_addr,
      input [7:0] spi_data_out,
-     output reg spi_r_block,
-     output reg spi_r_byte,
-     output reg spi_r_multi_block,
-     output reg spi_rst,
+     output logic spi_r_block,
+     output logic spi_r_byte,
+     output logic spi_r_multi_block,
+     output logic spi_rst,
      input spi_err,
      output [7:0] spi_data_in,
-     output reg spi_w_block,
-     output reg spi_w_byte,
+     output logic spi_w_block,
+     output logic spi_w_byte,
      input spi_crc_err,
      //uut ctrl signals
-     output reg uut_ctrl_signal_1,
+     output logic uut_ctrl_signal_1,
      //uut paramters signals
-     output [31:0] input_to_UUT_1,
+     output [SIZE_INPUT_UUT_1-1:0] input_to_UUT_1,
      //uut results signals
-     input [7:0] output_from_UUT_1,
+     input [SIZE_OUTPUT_UUT_1-1:0] output_from_UUT_1,
      input  output_ctrl_from_UUT_1,
-     input [7:0] output_from_UUT_2,
+     input [SIZE_OUTPUT_UUT_2-1:0] output_from_UUT_2,
      input  output_ctrl_from_UUT_2,
      //debug
      output [31:0] debug_signal
@@ -55,12 +58,12 @@ genvar i;
 
  //////////signature registers///////////////////////
  
- wire [31:0] signature;
- reg [0:0] reg_signature_cl[3:0];
- reg [0:0] reg_signature_w[3:0];
+ logic [31:0] signature;
+ logic [0:0] reg_signature_cl[3:0];
+ logic [0:0] reg_signature_w[3:0];
  generate
     for (i=0;i<4;i=i+1) begin
-        registro reg_signature_i(
+        register #(.DATA_WIDTH(8)) reg_signature_i(
             .clk(clk),
             .cl(reg_signature_cl[i]),
             .w(reg_signature_w[i]),
@@ -69,52 +72,12 @@ genvar i;
         );
     end
  endgenerate
- /*
- wire [31:0] signature;
- wire [7:0] signature_data_0,signature_data_1,signature_data_2,signature_data_3;
- assign signature = {signature_data_0,signature_data_1,signature_data_2,signature_data_3};
- reg reg_signature_data_0_cl;
- reg reg_signature_data_0_w;
- registro reg_signature_0(
- 	.clk(clk),
- 	.cl(reg_signature_data_0_cl),
- 	.w(reg_signature_data_0_w),
- 	.din(spi_data_out),
- 	.dout(signature_data_0)
- );
- reg reg_signature_data_1_cl;
- reg reg_signature_data_1_w;
- registro reg_signature_1(
- 	.clk(clk),
- 	.cl(reg_signature_data_1_cl),
- 	.w(reg_signature_data_1_w),
- 	.din(spi_data_out),
- 	.dout(signature_data_1)
- );
- reg reg_signature_data_2_cl;
- reg reg_signature_data_2_w;
- registro reg_signature_2(
- 	.clk(clk),
- 	.cl(reg_signature_data_2_cl),
- 	.w(reg_signature_data_2_w),
- 	.din(spi_data_out),
- 	.dout(signature_data_2)
- );
- reg reg_signature_data_3_cl;
- reg reg_signature_data_3_w;
- registro reg_signature_3(
- 	.clk(clk),
- 	.cl(reg_signature_data_3_cl),
- 	.w(reg_signature_data_3_w),
- 	.din(spi_data_out),
- 	.dout(signature_data_3)
- );
- */
+
  //////////iteration register///////////////////////
- reg reg_iteration_cl;
- reg reg_iteration_w;
- wire [7:0] reg_iteration_o;
- registro reg_iteration(
+ logic reg_iteration_cl;
+ logic reg_iteration_w;
+ logic [7:0] reg_iteration_o;
+ register #(.DATA_WIDTH(8)) reg_iteration(
  	.clk(clk),
  	.cl(reg_iteration_cl),
  	.w(reg_iteration_w),
@@ -128,11 +91,11 @@ genvar i;
 //////////uut specific registers///////////////////////
   /////////////input_to_UUT_1////////////////
  
- reg [0:0] reg_din_0_cl[3:0];
- reg [0:0] reg_din_0_w[3:0];
+ logic [0:0] reg_din_0_cl[(SIZE_INPUT_UUT_1>>3)-1:0];
+ logic [0:0] reg_din_0_w[(SIZE_INPUT_UUT_1>>3)-1:0];
  generate
-    for (i=0;i<4;i=i+1) begin
-        registro reg_signature_i(
+    for (i=0;i<(SIZE_INPUT_UUT_1>>3);i=i+1) begin
+        register #(.DATA_WIDTH(8)) reg_input_to_UUT_i(
             .clk(clk),
             .cl(reg_din_0_cl[i]),
             .w(reg_din_0_w[i]),
@@ -141,50 +104,11 @@ genvar i;
         );
     end
  endgenerate
-  /*
-  wire [7:0] din_0,din_1,din_2,din_3;
-  assign input_to_UUT_1 = {din_0,din_1,din_2,din_3};
-  reg reg_din_0_cl;
-  reg reg_din_0_w;
-  registro reg_din_0(
-  	.clk(clk),
-  	.cl(reg_din_0_cl),
-  	.w(reg_din_0_w),
-  	.din(spi_data_out),
-  	.dout(din_0)
-  );
-  reg reg_din_1_cl;
-  reg reg_din_1_w;
-  registro reg_din_1(
-  	.clk(clk),
-  	.cl(reg_din_1_cl),
-  	.w(reg_din_1_w),
-  	.din(spi_data_out),
-  	.dout(din_1)
-  );
-  reg reg_din_2_cl;
-  reg reg_din_2_w;
-  registro reg_din_2(
-  	.clk(clk),
-  	.cl(reg_din_2_cl),
-  	.w(reg_din_2_w),
-  	.din(spi_data_out),
-  	.dout(din_2)
-  );
-  reg reg_din_3_cl;
-  reg reg_din_3_w;
-  registro reg_din_3(
-  	.clk(clk),
-  	.cl(reg_din_3_cl),
-  	.w(reg_din_3_w),
-  	.din(spi_data_out),
-  	.dout(din_3)
-  );
-  */
+ 
   //////////////output_from_UUT_1////////////
-  wire[7:0] output_from_UUT_1_o;
-  reg reg_output_from_UUT_1_o_cl;
-  registro reg_output_from_UUT_1_o_0(
+  logic [SIZE_OUTPUT_UUT_1-1:0] output_from_UUT_1_o;
+  logic reg_output_from_UUT_1_o_cl;
+  register #(.DATA_WIDTH(SIZE_OUTPUT_UUT_1)) reg_output_from_UUT_1_o_0(
   	.clk(clk),
   	.cl(reg_output_from_UUT_1_o_cl),
   	.w(output_ctrl_from_UUT_1),
@@ -192,9 +116,9 @@ genvar i;
   	.dout(output_from_UUT_1_o)
   );
   //////////////output_from_UUT_2////////////
-  wire[7:0] output_from_UUT_2_o;
-  reg reg_output_from_UUT_2_o_cl;
-  registro reg_output_from_UUT_2_o_0(
+  logic [SIZE_OUTPUT_UUT_2-1:0] output_from_UUT_2_o;
+  logic reg_output_from_UUT_2_o_cl;
+  register #(.DATA_WIDTH(SIZE_OUTPUT_UUT_2)) reg_output_from_UUT_2_o_0(
   	.clk(clk),
   	.cl(reg_output_from_UUT_2_o_cl),
   	.w(output_ctrl_from_UUT_2),
@@ -204,96 +128,103 @@ genvar i;
   
 
 ///////////////timer//////////////////////
- reg up_timer_counter;
- wire [31:0] counter_timer_o;
- reg rst_timer_counter;
- contador_up counter_timer(
+ logic up_timer_counter;
+ logic [31:0] counter_timer_o;
+ logic rst_timer_counter;
+ counter #(.DATA_WIDTH(32)) counter_timer(
     .clk(clk_counter),
     .rst(rst_timer_counter),
     .up(up_timer_counter),
-    .q(counter_timer_o)
+    .down(1'b0),
+    .din(32'b0),
+    .dout(counter_timer_o)
  );
 
  ///////////////block_counter////////////////
- reg up_block_counter;
- wire [31:0] counter_block_o;
- reg rst_block_counter;
- assign spi_block_addr = counter_block_o + 32'h0x00100000;
- contador_up counter_block(
+ logic up_block_counter;
+ logic [31:0] counter_block_o;
+ logic rst_block_counter;
+ assign spi_block_addr = counter_block_o + START_BLOCK;
+ counter #(.DATA_WIDTH(32)) counter_block(
     .clk(clk),
     .rst(rst_block_counter),
     .up(up_block_counter),
-    .q(counter_block_o)
+    .down(1'b0),
+    .din(32'b0),
+    .dout(counter_block_o)
  );
 
 
  ///////////////iter_counter////////////////
- reg up_iter_counter;
- wire [31:0] counter_iter_o;
- reg rst_iter_counter;
- wire [31:0] base_iter;
+ logic up_iter_counter;
+ logic [31:0] counter_iter_o;
+ logic rst_iter_counter;
+ logic [31:0] base_iter;
  assign base_iter = ((counter_iter_o + 2) << 3);
- contador_up counter_iter_block(
+ counter #(.DATA_WIDTH(32)) counter_iter_block(
     .clk(clk),
     .rst(rst_iter_counter),
     .up(up_iter_counter),
-    .q(counter_iter_o)
+    .down(1'b0),
+    .din(32'b0),
+    .dout(counter_iter_o)
+ );
+
+  ////////////bytes counter ////////////////////
+
+ logic up_bytes_counter;
+ logic [15:0] counter_bytes_o;
+ logic rst_bytes_counter;
+ counter #(.DATA_WIDTH(16)) counter_bytes(
+    .clk(clk),
+    .rst(rst_bytes_counter),
+    .up(up_bytes_counter),
+    .down(1'b0),
+    .din(16'b0),
+    .dout(counter_bytes_o)
+ );
+
+ //////////////index_counter////////////////////
+ 
+ logic up_index;
+ logic [7:0] index_o;
+ logic rst_index;
+ counter #(.DATA_WIDTH(8)) counter_index(
+    .clk(clk),
+    .rst(rst_index),
+    .up(up_index),
+    .down(1'b0),
+    .din(8'h0),
+    .dout(index_o)
  );
 
 
  ///////////////memory////////////////
- reg memory_inst_write;
- wire [7:0] memory_inst_o;
+ logic memory_inst_write;
+ logic [7:0] memory_inst_o;
 
- memory_bank memory_inst(
+ memory_module #(.ADDR(16),
+                 .DATA_WIDTH(8))
+ memory_inst(
     .clk(clk),
     .addr(counter_bytes_o),
-    .write(memory_inst_write),
-    .data_in(spi_data_out),
-    .data_out(memory_inst_o)
+    .r_w(memory_inst_write),
+    .din(spi_data_out),
+    .dout(memory_inst_o)
  );
 
 
- ////////////bytes counter ////////////////////
 
- reg up_bytes_counter;
- wire [31:0] counter_bytes_o;
- reg rst_bytes_counter;
- contador_up counter_bytes(
-    .clk(clk),
-    .rst(rst_bytes_counter),
-    .up(up_bytes_counter),
-    .q(counter_bytes_o)
- );
 
 
 
  ///////////////states/////////////////////
- reg [4:0] current_state;
- reg [4:0] next_state;
+  logic [31:0] j;
 
- parameter IDLE = 5'h0;
- parameter BEGIN_READ_FROM_SD = 5'h1;
- parameter WAIT_RST_SPI = 5'h2;
- parameter SEL_SD_BLOCK = 5'h3;
- parameter WAIT_BLOCK = 5'h4;
- parameter READ_DATA = 5'h5;
- parameter WAIT_BYTE = 5'h6;
- parameter READ_BYTE = 5'h7;
- parameter CHECK_SIGNATURE = 5'h8;
- parameter START_TEST = 5'h9;
- parameter WAIT_UNTIL_END_TEST_OR_TIMEOUT = 5'hA;
- parameter END_TEST = 5'hB;
- parameter SEL_WRITE_SD_BLOCK = 5'hC;
- parameter WAIT_W_BLOCK = 5'hD;
- parameter WRITE_DATA = 5'hE;
- parameter WAIT_W_BYTE = 5'hF;
- parameter UPDATE_BLOCK_COUNTER = 5'h10;
- parameter END_FSM = 5'h11;
+ typedef enum logic[4:0] { IDLE,BEGIN_READ_FROM_SD,WAIT_RST_SPI,SEL_SD_BLOCK,WAIT_BLOCK,READ_DATA,WAIT_BYTE,READ_BYTE,CHECK_SIGNATURE,START_TEST,WAIT_UNTIL_END_TEST_OR_TIMEOUT,END_TEST,SEL_WRITE_SD_BLOCK,WAIT_W_BLOCK,WRITE_DATA,WAIT_SPI_WRITE_DATA,WAIT_W_BYTE,UPDATE_BLOCK_COUNTER,END_FSM } state_t;
+ state_t current_state,next_state;
 
-
- always @(*)
- begin
+ always_comb begin
      next_state = current_state;
 
      up_block_counter = 0;
@@ -308,6 +239,9 @@ genvar i;
      up_iter_counter = 0;
      rst_iter_counter = 0;
 
+     rst_index = 0;
+     up_index = 0;
+
 
      spi_r_block = 0;
      spi_r_byte = 0;
@@ -316,40 +250,31 @@ genvar i;
      spi_w_block = 0;
      spi_w_byte = 0;
 
+     reg_spi_data_cl = 0;
+     reg_spi_data_w = 0;
+     reg_spi_data_in = 8'hff;
+
      memory_inst_write = 0;
 
 
      uut_ctrl_signal_1 = 0;
 
-     reg_signature_cl[0] = 0;
-     reg_signature_w[0] = 0;
-     reg_signature_cl[1] = 0;
-     reg_signature_w[1] = 0;
-     reg_signature_cl[2] = 0;
-     reg_signature_w[2] = 0;
-     reg_signature_cl[3] = 0;
-     reg_signature_w[3] = 0;
+     for (j=0;j<4;j=j+1) begin
+         reg_signature_cl[j] = 0;
+         reg_signature_w[j] = 0;
+     end
 
      reg_iteration_cl = 0;
      reg_iteration_w = 0;
 
-     reg_din_0_cl[0] = 0;
-     reg_din_0_w[0] = 0;
-     reg_din_0_cl[1] = 0;
-     reg_din_0_w[1] = 0;
-     reg_din_0_cl[2] = 0;
-     reg_din_0_w[2] = 0;
-     reg_din_0_cl[3] = 0;
-     reg_din_0_w[3] = 0;
+     for (j=0;j<(SIZE_INPUT_UUT_1>>3);j=j+1) begin
+         reg_din_0_cl[j] = 0;
+         reg_din_0_w[j] = 0;
+     end
 
      reg_output_from_UUT_1_o_cl = 0;
      reg_output_from_UUT_2_o_cl = 0;
-     
-
-
-     reg_spi_data_cl = 0;
-     reg_spi_data_w = 0;
-     reg_spi_data_in = 8'hff;
+        
 
      case(current_state)
          IDLE:
@@ -358,20 +283,21 @@ genvar i;
                  rst_timer_counter = 1;
                  rst_iter_counter = 1;
                  rst_bytes_counter = 1;
+                 rst_index = 1;
 
                  uut_ctrl_signal_1 = 1;
 
-                 reg_signature_cl[0] = 1;
-                 reg_signature_cl[1] = 1;
-                 reg_signature_cl[2] = 1;
-                 reg_signature_cl[3] = 1;
+                 for (j=0;j<4;j=j+1) begin
+                    reg_signature_cl[j] = 1;
+                 end
+                 
 
                  reg_iteration_cl = 1;
 
-                 reg_din_0_cl[0] = 1;
-                 reg_din_0_cl[1] = 1;
-                 reg_din_0_cl[2] = 1;
-                 reg_din_0_cl[3] = 1;
+                 for (j=0;j<(SIZE_INPUT_UUT_1>>3);j=j+1) begin
+                    reg_din_0_cl[j] = 1;
+                 end
+                 
 
                  reg_output_from_UUT_1_o_cl = 1;
                  reg_output_from_UUT_2_o_cl = 1;
@@ -405,26 +331,31 @@ genvar i;
          WAIT_BLOCK:
              begin
                  uut_ctrl_signal_1 = 1;
-     		         spi_r_block = 1;
-     		         if(spi_busy == 1'b0)
-                         next_state = READ_DATA;
+                 spi_r_block = 1;
+                 if(spi_busy == 1'b0)
+                     next_state = READ_DATA;
              end
          READ_DATA:
              begin
                  uut_ctrl_signal_1 = 1;
- 		             spi_r_block = 1;
+ 		         spi_r_block = 1;
 
                  next_state = READ_BYTE;
  		              case(counter_bytes_o)
- 		                32'h0:reg_signature_data_w[0] = 1;
-                        32'h1:reg_signature_data_w[1] = 1;
-                        32'h2:reg_signature_data_w[2] = 1;
-                        32'h3:reg_signature_data_w[3] = 1;
+ 		                32'h0:reg_signature_data_w[3] = 1;
+                        32'h1:reg_signature_data_w[2] = 1;
+                        32'h2:reg_signature_data_w[1] = 1;
+                        32'h3:reg_signature_data_w[0] = 1;
                         32'h4:reg_iteration_w = 1;
-                        32'h5:reg_din_0_w[0] = 1;
-                        32'h6:reg_din_0_w[1] = 1;
-                        32'h7:reg_din_0_w[2] = 1;
-                        32'h8:reg_din_0_w[3] = 1;
+                        32'h5 + index_o : begin
+                            reg_din_0_w[index_o] = 1'b1;
+                            if(index_o < (SIZE_INPUT_UUT_1>>3)) begin
+                                up_index = 1'b1;
+                            end
+                            else begin
+                                rst_index = 1'b1;
+                            end
+                        end
                         32'h200: next_state = CHECK_SIGNATURE;
                    default:
                      begin
@@ -479,7 +410,7 @@ genvar i;
              end
           END_TEST:
              begin
-
+               rst_index = 1'b1;
                rst_bytes_counter = 1;
                if(spi_busy == 1'b0)
                    next_state = SEL_WRITE_SD_BLOCK;
@@ -502,8 +433,10 @@ genvar i;
                  spi_w_block = 1;
                  spi_w_byte = 1;
                  reg_spi_data_w = 1;
-                 if(spi_busy == 1'b1)
-                     next_state = WAIT_W_BYTE;
+
+                 
+                 next_state = WAIT_SPI_WRITE_DATA;
+                 
 
                  case(counter_bytes_o)
                    32'h0: reg_spi_data_in = signature[31:24];
@@ -511,12 +444,42 @@ genvar i;
                    32'h2: reg_spi_data_in = signature[15:8];
                    32'h3: reg_spi_data_in = signature[7:0];
                    32'h4: reg_spi_data_in = reg_iteration_o;
-                   32'h5: reg_spi_data_in = input_to_UUT_1[31:24];
-                   32'h6: reg_spi_data_in = input_to_UUT_1[23:16];
-                   32'h7: reg_spi_data_in = input_to_UUT_1[15:8];
-                   32'h8: reg_spi_data_in = input_to_UUT_1[7:0];
-                   base_iter : reg_spi_data_in = output_from_UUT_1_o_0;
-                   base_iter + 1 : reg_spi_data_in = output_from_UUT_2_o_0;
+                   32'h5 + index_o : begin
+                          reg_spi_data_in = input_to_UUT_1 >> (index_o * 8);
+                            if(index_o < (SIZE_INPUT_UUT_1>>3)) begin
+                                up_index = 1'b1;
+                            end
+                            else begin
+                                rst_index = 1'b1;
+                            end
+                   end
+                   32'h5 + (SIZE_INPUT_UUT_1>>3) + base_iter + index_o : begin
+                          reg_spi_data_in = output_from_UUT_1_o >> (index_o * 8);     
+                            if(index_o < (SIZE_OUTPUT_UUT_1>>3)) begin
+                                up_index = 1'b1;
+                            end
+                            else begin
+                                rst_index = 1'b1;
+                            end
+                   end
+                   32'h5 + (SIZE_INPUT_UUT_1>>3) + base_iter + (SIZE_OUTPUT_UUT_1>>3) + index_o : begin
+                          reg_spi_data_in = output_from_UUT_2_o >> (index_o * 8);     
+                            if(index_o < (SIZE_OUTPUT_UUT_2>>3)) begin
+                                up_index = 1'b1;
+                            end
+                            else begin
+                                rst_index = 1'b1;
+                            end
+                   end
+                   32'h5 + (SIZE_INPUT_UUT_1>>3) + base_iter + (SIZE_OUTPUT_UUT_1>>3) + (SIZE_OUTPUT_UUT_2>>3) + index_o : begin
+                          reg_spi_data_in = counter_timer_o >> (index_o * 8);    
+                            if(index_o < 4) begin
+                                up_index = 1'b1;
+                            end
+                            else begin
+                                rst_index = 1'b1;
+                            end 
+                   end
                    32'h200:;
                    32'h201:;
                    32'h202:;
@@ -526,9 +489,17 @@ genvar i;
                          rst_bytes_counter = 1;
                          up_iter_counter = 1;
                      end
-                   default: reg_spi_data_in = memory_inst_o;
+                   default: begin
+                            rst_index = 1'b1;
+                            reg_spi_data_in = memory_inst_o;
+                        end
                  endcase
              end
+          WAIT_SPI_WRITE_DATA: begin
+                if(spi_busy == 1'b1) begin
+                     next_state = WAIT_W_BYTE;
+                 end    
+          end   
           WAIT_W_BYTE:
              begin
                  spi_w_block = 1;
@@ -540,12 +511,12 @@ genvar i;
              end
           UPDATE_BLOCK_COUNTER:
              begin
-
+                 rst_index = 1'b1;
                  uut_ctrl_signal_1 = 1;
                  rst_timer_counter = 1;
                  up_bytes_counter = 1;
 
-                 if(counter_timer_o == 32'h0 && counter_bytes_o > 32'hF0000)
+                 if(counter_timer_o == 32'h0 && counter_bytes_o > 16'hF000)
                  begin
                     if(reg_iteration_o > counter_iter_o)
                       begin
@@ -566,7 +537,7 @@ genvar i;
      endcase
  end
 
- always @(posedge clk)
+ always_ff @(posedge clk)
  begin
      if(rst == 1)
          current_state <= IDLE;
@@ -576,4 +547,4 @@ genvar i;
 
 
 
- endmodule
+ endmodule : fsm_autotest
