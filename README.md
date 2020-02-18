@@ -6,7 +6,7 @@ Follow README inside coctb_files
 
 FUSESOC
 
-build project with fusesoc : fusesoc --cores-root ~/gitProjects/IPCores/block_ciphers/present_cipher/Hardware_verification_files/fusesoc_files/ build --target=synth present_system
+build project with fusesoc : fusesoc --cores-root ~/gitProjects/IPCores/ build --target=synth present_system
 se creara una carpeta build desde donde se lanzo el comando.
 
 SI apareciese el error : INFO: Preparing ::present_cipher:0

@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:13:14 by germancq          #+#    #+#              #
-#    Updated: 2019/10/14 13:39:56 by germancq         ###   ########.fr        #
+#    Updated: 2020/02/18 12:37:37 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ from cocotb.clock import Clock
 
 import importlib
 import sys
-sys.path.append('/home/germancq/gitProjects/examples_cryptography/python')
+sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/python_code/python')
 import present
 
 CLK_PERIOD = 20 # 50 MHz

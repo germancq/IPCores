@@ -6,9 +6,9 @@ description = "present cipher"
 src_files =
   block_ciphers/present_cipher/hdl_code/present.sv
   block_ciphers/present_cipher/hdl_code/present_misc.sv
-  block_ciphers/present_cipher/hdl_code/memory_module.sv
-  block_ciphers/present_cipher/hdl_code/counter.sv
-  block_ciphers/present_cipher/hdl_code/register.sv
+  misc/memory_module/hdl_code/memory_module.sv
+  misc/counters/hdl_code/counter.sv
+  misc/registers/hdl_code/register.sv
 
 
 [provider] 

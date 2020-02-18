@@ -4,16 +4,18 @@
  * @Last Modified by: German Cano Quiveu, germancq@gmail.com
  * @Last Modified time: 2019-09-22 22:37:28
  */
-module counter(
-    input clk,
-    input rst,
-    input up,
-    input down,
-    input [DATA_WIDTH-1 : 0] din,
-    output logic [DATA_WIDTH -1 : 0] dout
-);
+module counter
+    #(parameter DATA_WIDTH = 8)
+    (
+        input clk,
+        input rst,
+        input up,
+        input down,
+        input [DATA_WIDTH-1 : 0] din,
+        output logic [DATA_WIDTH -1 : 0] dout
+    );
 
-parameter DATA_WIDTH = 8;
+
 
 always_ff @(posedge clk) 
 begin

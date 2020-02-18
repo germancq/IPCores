@@ -1,23 +1,23 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/07 13:59:49 by germancq          #+#    #+#              #
-#    Updated: 2020/02/18 13:08:54 by germancq         ###   ########.fr        #
+#    Created: 2019/11/05 12:19:02 by germancq          #+#    #+#              #
+#    Updated: 2020/02/18 13:18:48 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-VERILOG_SOURCES = ../hdl_core/present.sv \
-				  ../hdl_core/present_misc.sv \
-				  ../../misc/registers/hdl_core/register.sv \
-				  ../../misc/memory_module/hdl_core/memory_module.sv \
-				  ../../misc/counters/hdl_core/counter.sv	
+VERILOG_SOURCES = ../hdl_code/twofish.sv \
+				  ../../misc/galois_arithmetic/hdl_code/galois_arithmetic.sv \
+				  ../../misc/adder/hdl_code/adder.sv \
+				  ../../misc/registers/hdl_code/register.sv \
+				  ../../misc/counters/hdl_code/counter.sv
 
-TOPLEVEL=present
-MODULE=present_test
+TOPLEVEL= twofish
+MODULE=twofish_test
 include $(COCOTB)/makefiles/Makefile.inc
 include $(COCOTB)/makefiles/Makefile.sim
 
