@@ -16,7 +16,7 @@ src_files =
 name = github
 user = germancq
 repo = IPCores
-version = 720abce18428b4cc69d2539c50a3cde77e00344e
+version = master
 
 
 

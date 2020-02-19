@@ -18,9 +18,6 @@ module autotest_module
     output sclk,
     output mosi,
     input miso,
-    output SD_RESET,
-    output SD_DAT_1,
-    output SD_DAT_2,
 
     /*UUT signals*/
     output uut_ctrl_signal_1,

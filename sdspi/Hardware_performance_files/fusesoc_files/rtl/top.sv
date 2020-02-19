@@ -6,6 +6,10 @@
  * @Last modified by:   germancq
  * @Last modified time: 2019-03-30T19:54:22+01:00
  */
+
+import configuration::*;
+
+
 module top(
   input sys_clk_pad_i,
   input center_button,
@@ -28,11 +32,10 @@ module top(
 
 
 
-  wire [31:0] debug_data;
-  display display_inst(
+  logic [31:0] debug_data;
+  display #(.N(32),.CLK_HZ(100000000)) display_inst(
     .clk(sys_clk_pad_i),
     .rst(center_button),
-    .div_value(32'd18),
     .din(debug_data),
     .an(AN),
     .seg(seg)
@@ -44,20 +47,20 @@ module top(
   assign SD_DAT_2 = 1'b1;
 
 
-  wire cs_autotest;
-  wire sclk_autotest;
-  wire mosi_autotest;
-  wire SD_RESET_autotest;
-  wire SD_DAT_1_autotest;
-  wire SD_DAT_2_autotest;
+  logic cs_autotest;
+  logic sclk_autotest;
+  logic mosi_autotest;
+  logic SD_RESET_autotest;
+  logic SD_DAT_1_autotest;
+  logic SD_DAT_2_autotest;
 
-  wire sdspi_ctrl_mux;
-  wire sdspi_rst;
-  wire sdspi_start;
-  wire [31:0] sdspi_n_blocks;
-  wire [4:0] sdspi_sclk_speed;
-  wire sdspi_cmd18;
-  wire sdspi_finish;
+  logic uut_ctrl_mux;
+  logic uut_rst;
+  logic uut_start;
+  logic [N_BLOCK_SIZE-1:0] uut_n_blocks;
+  logic [SCLK_SPEED_SIZE-1:0] uut_sclk_speed;
+  logic [CMD18_SIZE-1:0] uut_cmd18;
+  logic uut_finish;
 
   autotest_module autotest_inst(
     .clk(sys_clk_pad_i),
@@ -68,38 +71,38 @@ module top(
     .mosi(mosi_autotest),
     .miso(miso),
 
-    .sdspi_ctrl_mux(sdspi_ctrl_mux),
-    .sdspi_rst(sdspi_rst),
-    .sdspi_start(sdspi_start),
+    .uut_ctrl_mux(uut_ctrl_mux),
+    .uut_rst(uut_rst),
+    .uut_start(uut_start),
     //uut paramters signals
-    .sdspi_n_blocks(sdspi_n_blocks),
-    .sdspi_sclk_speed(sdspi_sclk_speed),
-    .sdspi_cmd18(sdspi_cmd18),
+    .uut_n_blocks(uut_n_blocks),
+    .uut_sclk_speed(uut_sclk_speed),
+    .uut_cmd18(uut_cmd18),
     //uut results signals
-    .sdspi_finish(sdspi_finish),
+    .uut_finish(uut_finish),
 
     .debug(debug_data)
 
   );
 
-  wire cs_uut;
-  wire sclk_uut;
-  wire mosi_uut;
-  wire SD_RESET_uut;
-  wire SD_DAT_1_uut;
-  wire SD_DAT_2_uut;
+  logic cs_uut;
+  logic sclk_uut;
+  logic mosi_uut;
+  logic SD_RESET_uut;
+  logic SD_DAT_1_uut;
+  logic SD_DAT_2_uut;
 
-  sdspi_system sdspi_sys_inst(
+  sdspi_system uut(
     .clk(sys_clk_pad_i),
-    .rst(sdspi_rst),
+    .rst(uut_rst),
 
-    .start(sdspi_start),
-    .finish(sdspi_finish),
+    .start(uut_start),
+    .finish(uut_finish),
 
 
-    .n_blocks(sdspi_n_blocks),
-    .cmd18(sdspi_cmd18),
-    .sclk_speed(sdspi_sclk_speed),
+    .n_blocks(uut_n_blocks),
+    .cmd18(uut_cmd18),
+    .sclk_speed(uut_sclk_speed),
 
     .sclk(sclk_uut),
     .cs(cs_uut),
@@ -108,23 +111,23 @@ module top(
   );
 
 
-  generic_mux #(.DATA_WIDTH(1)) mux_sclk(
+  mux #(.DATA_WIDTH(1)) mux_sclk(
     .a(sclk_autotest),
    	.b(sclk_uut),
    	.c(sclk),
-   	.ctl(sdspi_ctrl_mux)
+   	.sel(uut_ctrl_mux)
   );
-  generic_mux #(.DATA_WIDTH(1)) mux_mosi(
+  mux #(.DATA_WIDTH(1)) mux_mosi(
     .a(mosi_autotest),
    	.b(mosi_uut),
    	.c(mosi),
-   	.ctl(sdspi_ctrl_mux)
+   	.sel(uut_ctrl_mux)
   );
-  generic_mux #(.DATA_WIDTH(1)) mux_cs(
+  mux #(.DATA_WIDTH(1)) mux_cs(
     .a(cs_autotest),
    	.b(cs_uut),
    	.c(cs),
-   	.ctl(sdspi_ctrl_mux)
+   	.sel(uut_ctrl_mux)
   );
 
 endmodule

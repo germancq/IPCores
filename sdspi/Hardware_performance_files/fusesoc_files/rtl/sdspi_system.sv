@@ -11,7 +11,7 @@ module sdspi_system(
   input rst,
 
   input start,
-  output reg finish,
+  output logic finish,
 
 
   input [31:0] n_blocks,
@@ -25,12 +25,12 @@ module sdspi_system(
 
   );
 
-  reg spi_rst;
-  wire spi_busy;
-  reg spi_r_byte;
-  reg spi_r_multi_block;
-  reg spi_r_block;
-  wire [31:0] spi_block_addr;
+  logic spi_rst;
+  logic spi_busy;
+  logic spi_r_byte;
+  logic spi_r_multi_block;
+  logic spi_r_block;
+  logic [31:0] spi_block_addr;
 
   sdspihost sdspi_inst(
     .clk(clk),
@@ -73,45 +73,48 @@ module sdspi_system(
   **/
 
 
-wire [31:0] counter_addr_o;
-reg counter_addr_rst;
-reg counter_addr_up;
+logic [31:0] counter_addr_o;
+logic counter_addr_rst;
+logic counter_addr_up;
 assign spi_block_addr = counter_addr_o;
-contador_up counter_addr(
+counter #(.DATA_WIDTH(32)) counter_addr(
   .clk(clk),
   .rst(counter_addr_rst),
   .up(counter_addr_up),
-  .q(counter_addr_o)
+  .down(1'b0),
+  .din(32'h0),
+  .dout(counter_addr_o)
   );
 
 
-reg counter_bytes_up;
-wire [31:0] counter_bytes_o;
-reg counter_bytes_rst;
-contador_up counter_bytes(
+logic counter_bytes_up;
+logic [31:0] counter_bytes_o;
+logic counter_bytes_rst;
+counter #(.DATA_WIDTH(32)) counter_bytes(
    .clk(clk),
    .rst(counter_bytes_rst),
    .up(counter_bytes_up),
-   .q(counter_bytes_o)
+   .down(1'b0),
+   .din(32'h0),
+   .dout(counter_bytes_o)
 );
 
-reg [3:0] current_state;
-reg [3:0] next_state;
+logic [3:0] current_state;
+logic [3:0] next_state;
 
-parameter IDLE = 4'h0;
-parameter WAIT_RST_SPI = 4'h1;
-parameter WAIT_FOR_SDSPI = 4'h2;
-parameter SEL_SD_BLOCK = 4'h3;
-parameter WAIT_BLOCK = 4'h4;
-parameter READ_DATA = 4'h5;
-parameter READ_BYTE = 4'h6;
-parameter WAIT_BYTE = 4'h7;
-parameter CHANGE_BLOCK = 4'h8;
-parameter END_FSM = 4'h9;
+localparam IDLE = 4'h0;
+localparam WAIT_RST_SPI = 4'h1;
+localparam WAIT_FOR_SDSPI = 4'h2;
+localparam SEL_SD_BLOCK = 4'h3;
+localparam WAIT_BLOCK = 4'h4;
+localparam READ_DATA = 4'h5;
+localparam READ_BYTE = 4'h6;
+localparam WAIT_BYTE = 4'h7;
+localparam CHANGE_BLOCK = 4'h8;
+localparam END_FSM = 4'h9;
 
 
-always @ ( * )
-begin
+always_comb begin
 
   next_state = current_state;
 
@@ -223,7 +226,7 @@ begin
 
 end
 
-always @ (posedge clk)
+always_ff @ (posedge clk)
 begin
   if(rst)
     current_state <= IDLE;
