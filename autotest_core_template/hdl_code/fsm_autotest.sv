@@ -342,10 +342,10 @@ genvar i;
 
                  next_state = READ_BYTE;
  		              case(counter_bytes_o)
- 		                32'h0:reg_signature_data_w[3] = 1;
-                        32'h1:reg_signature_data_w[2] = 1;
-                        32'h2:reg_signature_data_w[1] = 1;
-                        32'h3:reg_signature_data_w[0] = 1;
+ 		                32'h0:reg_signature_w[3] = 1;
+                        32'h1:reg_signature_w[2] = 1;
+                        32'h2:reg_signature_w[1] = 1;
+                        32'h3:reg_signature_w[0] = 1;
                         32'h4:reg_iteration_w = 1;
                         32'h5 + index_o : begin
                             reg_din_0_w[index_o] = 1'b1;

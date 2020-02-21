@@ -14,4 +14,4 @@ SI apareciese el error : INFO: Preparing ::present_cipher:0
 	                     /home/germancq/.cache/fusesoc/present_cipher_0
 
                          Borrar la cache para que se la descargue de nuevo de github:
-                         rm -r /home/germancq/.cache/fusesoc/present_cipher_0
+                         rm -r /home/germancq/.cache/fusesoc/*
