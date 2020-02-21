@@ -13,7 +13,7 @@ import math
 
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
-NUMBER_ITER = 3
+NUMBER_ITER = 100
 SIGNATURE = 0xAABBCCDD
 
 
@@ -21,7 +21,7 @@ SIGNATURE = 0xAABBCCDD
 '''
 
     - n_blocks = {1,2,3,4} = 10**n
-    - sclk_speed = {1,2,3}
+    - sclk_speed = {1,2,3,4}
     - cmd18 = {0,1}
 
 '''
@@ -29,7 +29,7 @@ SIGNATURE = 0xAABBCCDD
 def gen_all_posibilities(micro_sd):
     parameters = [
         range(0,1+1),
-        range(1,3+1),#sclk_speed
+        range(1,4+1),#sclk_speed
         range(1,4+1)#n_blocks
     ]
     total_posibilities = 1
@@ -49,9 +49,9 @@ def gen_all_posibilities(micro_sd):
         micro_sd.write(SIGNATURE.to_bytes(4, byteorder='big'))
         micro_sd.write(NUMBER_ITER.to_bytes(1, byteorder='big'))
         #for k in range(0,2+1):
-        micro_sd.write(n_blocks.to_bytes(4, byteorder='big'))
-        micro_sd.write(pairs[1].to_bytes(1, byteorder='big'))
-        micro_sd.write(pairs[0].to_bytes(1, byteorder='big'))
+        micro_sd.write(n_blocks.to_bytes(4, byteorder='little'))
+        micro_sd.write(pairs[1].to_bytes(1, byteorder='little'))
+        micro_sd.write(pairs[0].to_bytes(1, byteorder='little'))
         micro_sd.write(zero.to_bytes(4, byteorder='big'))
 
     #last block with no signature

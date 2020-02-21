@@ -23,15 +23,16 @@ def create_fields(sheet1):
     sheet1.write(0,5,'best time ms')
     sheet1.write(0,6,'worst time ms')
     sheet1.write(0,7,'total time minutes')
-    sheet1.write(0,8,'iterations')
+    sheet1.write(0,8, 'avg bytes/second')
+    sheet1.write(0,9,'iterations')
 
 def read_params_from_sd(sheet,block_n,micro_sd):
     micro_sd.seek(BLOCK_SIZE*block_n)
     signature = int.from_bytes(micro_sd.read(4),byteorder='big')
     n_iter = int.from_bytes(micro_sd.read(1),byteorder='big')
-    n_blocks = int.from_bytes(micro_sd.read(4),byteorder='big')
-    sclk_speed = int.from_bytes(micro_sd.read(1),byteorder='big')
-    cmd18 = int.from_bytes(micro_sd.read(1),byteorder='big')
+    n_blocks = int.from_bytes(micro_sd.read(4),byteorder='little')
+    sclk_speed = int.from_bytes(micro_sd.read(1),byteorder='little')
+    cmd18 = int.from_bytes(micro_sd.read(1),byteorder='little')
     micro_sd.seek((BLOCK_SIZE*block_n) + RESULTS_OFFSET)
     if n_iter == 0 :
         n_iter = 1
@@ -39,8 +40,9 @@ def read_params_from_sd(sheet,block_n,micro_sd):
     best_time = 0xFFFFFFFF
     worst_time = 0
     total_time = 0
+    total_bytes = BLOCK_SIZE * n_blocks
     for i in range(0,n_iter):
-        time = int.from_bytes(micro_sd.read(4),byteorder='big')
+        time = int.from_bytes(micro_sd.read(4),byteorder='little')
         time_ms = calculated_time_in_ms(time)
         #print ('iter is = %i' % i)
         #print ('time is = %i' % time)
@@ -52,6 +54,7 @@ def read_params_from_sd(sheet,block_n,micro_sd):
 
     total_time = (avg_time / (1000.0 * 60))
     avg_time = (avg_time / n_iter)
+    avg_speed = total_bytes/(avg_time*1000)
     return (signature,
             n_blocks,
             sclk_speed,
@@ -60,6 +63,7 @@ def read_params_from_sd(sheet,block_n,micro_sd):
             best_time,
             worst_time,
             total_time,
+            avg_speed,
             n_iter)
 
 def get_clk_speed_from_factor(n, base_clk=100):
@@ -103,7 +107,7 @@ def gen_calc(micro_sd):
         i = write_params(sheet1,params,i)
 
 
-    wb.save('test_iter_0_sdspi_system.xls')
+    wb.save('results.xls')
 
 def main():
     with open(sys.argv[1],"rb") as micro_sd:

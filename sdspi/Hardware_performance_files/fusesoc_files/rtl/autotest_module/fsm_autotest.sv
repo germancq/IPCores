@@ -159,13 +159,13 @@ genvar i;
  logic up_block_counter;
  logic [31:0] counter_block_o;
  logic rst_block_counter;
- assign spi_block_addr = counter_block_o + START_BLOCK;
+ assign spi_block_addr = counter_block_o;
  counter #(.DATA_WIDTH(32)) counter_block(
     .clk(clk),
     .rst(rst_block_counter),
     .up(up_block_counter),
     .down(1'b0),
-    .din(32'b0),
+    .din(START_BLOCK),
     .dout(counter_block_o)
  );
 
@@ -236,7 +236,7 @@ genvar i;
  ///////////////states/////////////////////
   logic [31:0] j;
 
- typedef enum logic[4:0] { IDLE,BEGIN_READ_FROM_SD,WAIT_RST_SPI,SEL_SD_BLOCK,WAIT_BLOCK,READ_DATA,WAIT_BYTE,READ_BYTE,CHECK_SIGNATURE,START_TEST,WAIT_UNTIL_END_TEST_OR_TIMEOUT,END_TEST,SEL_WRITE_SD_BLOCK,WAIT_W_BLOCK,WRITE_DATA,WAIT_SPI_WRITE_DATA,WAIT_W_BYTE,UPDATE_BLOCK_COUNTER,END_FSM } state_t;
+ typedef enum logic[4:0] { INITIAL_CONDITION,IDLE,BEGIN_READ_FROM_SD,WAIT_RST_SPI,SEL_SD_BLOCK,WAIT_BLOCK,READ_DATA,WAIT_BYTE,READ_BYTE,CHECK_SIGNATURE,START_TEST,WAIT_UNTIL_END_TEST_OR_TIMEOUT,END_TEST,SEL_WRITE_SD_BLOCK,WAIT_W_BLOCK,WRITE_DATA,WAIT_SPI_WRITE_DATA,WAIT_W_BYTE,UPDATE_BLOCK_COUNTER,END_FSM } state_t;
  state_t current_state,next_state;
 
  always_comb begin
@@ -297,12 +297,18 @@ genvar i;
         
 
      case(current_state)
+         INITIAL_CONDITION :
+            begin
+                rst_block_counter = 1;
+                next_state = IDLE;
+            end
          IDLE:
              begin
 
                  rst_timer_counter = 1;
                  rst_iter_counter = 1;
                  rst_bytes_counter = 1;
+                 
                  rst_index = 1;
 
                  uut_rst = 1;
@@ -369,10 +375,8 @@ genvar i;
                         32'h4:reg_iteration_w = 1;
                         32'h5 + index_o : begin
                             reg_din_n_blocks_w[index_o] = 1'b1;
-                            if(index_o < (N_BLOCK_SIZE>>3)) begin
-                                up_index = 1'b1;
-                            end
-                            else begin
+                            up_index = 1'b1;
+                            if(index_o == (N_BLOCK_SIZE>>3)-1) begin
                                 rst_index = 1'b1;
                             end
                         end
@@ -477,11 +481,9 @@ genvar i;
                    32'h3: reg_spi_data_in = signature[7:0];
                    32'h4: reg_spi_data_in = reg_iteration_o;
                    32'h5 + index_o : begin
-                          reg_spi_data_in = uut_n_blocks >> (index_o * 8);
-                            if(index_o < (N_BLOCK_SIZE>>3)) begin
-                                up_index = 1'b1;
-                            end
-                            else begin
+                            reg_spi_data_in = uut_n_blocks >> (index_o * 8);
+                            up_index = 1'b1;
+                            if(index_o == (N_BLOCK_SIZE>>3)-1) begin
                                 rst_index = 1'b1;
                             end
                    end
@@ -493,12 +495,11 @@ genvar i;
                    end
                    32'h5 + (N_BLOCK_SIZE>>3) + 2 + base_iter + index_o : begin
                           reg_spi_data_in = counter_timer_o >> (index_o * 8);    
-                            if(index_o < 4) begin
-                                up_index = 1'b1;
-                            end
-                            else begin
+                            up_index = 1'b1;
+                            if(index_o == 3) begin
                                 rst_index = 1'b1;
-                            end 
+                            end
+                            
                    end
                    32'h200:;
                    32'h201:;
@@ -560,7 +561,7 @@ genvar i;
  always_ff @(posedge clk)
  begin
      if(rst == 1)
-         current_state <= IDLE;
+         current_state <= INITIAL_CONDITION;
      else
          current_state <= next_state;
  end
