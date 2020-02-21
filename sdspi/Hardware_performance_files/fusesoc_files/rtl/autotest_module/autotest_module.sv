@@ -31,10 +31,7 @@ module autotest_module
     output [31:0] debug
   );
   
-  localparam CLK_INTERNAL_DIVIDER = 17;
-  localparam N_BLOCK_SIZE = 32;
-  localparam SCLK_SPEED_SIZE = 5;
-  localparam CMD18_SIZE = 1;
+  
 
   logic spi_busy;
   logic [31:0] spi_block_addr;

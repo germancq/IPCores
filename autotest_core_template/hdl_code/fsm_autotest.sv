@@ -40,7 +40,7 @@
      output [31:0] debug_signal
      );
 
-assign debug_signal = {counter_block_o[7:0],base_iter[7:0],counter_iter_o[7:0],3'h0,current_state};
+
 
 genvar i;
 
@@ -48,7 +48,7 @@ genvar i;
  reg reg_spi_data_cl;
  reg reg_spi_data_w;
  reg [7:0] reg_spi_data_in;
- registro reg_spi_data(
+ register #(.DATA_WIDTH(8)) reg_spi_data(
  	.clk(clk),
  	.cl(reg_spi_data_cl),
  	.w(reg_spi_data_w),
@@ -545,6 +545,8 @@ genvar i;
          current_state <= next_state;
  end
 
+
+ assign debug_signal = {counter_block_o[7:0],base_iter[7:0],counter_iter_o[7:0],3'h0,current_state};
 
 
  endmodule : fsm_autotest

@@ -8,6 +8,12 @@
  */
 
 
+localparam N_BLOCK_SIZE = 32;
+localparam SCLK_SPEED_SIZE = 5;
+localparam CMD18_SIZE = 1;
+localparam START_BLOCK = 32'h0x100000;
+localparam CLK_INTERNAL_DIVIDER = 17;
+
 
 module top(
   input sys_clk_pad_i,
@@ -29,9 +35,7 @@ module top(
 );
 
 
-  localparam N_BLOCK_SIZE = 32;
-  localparam SCLK_SPEED_SIZE = 5;
-  localparam CMD18_SIZE = 1;
+ 
 
   logic [31:0] debug_data;
   display #(.N(32),.CLK_HZ(100000000)) display_inst(

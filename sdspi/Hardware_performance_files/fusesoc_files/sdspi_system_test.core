@@ -25,11 +25,13 @@ filesets :
      depend :
       - seven_segments
       - sdspi
+      - memory_module
       
      file_type : systemVerilogSource
 
      files :
        - rtl/top.sv
+       - rtl/sdspi_system.sv
 
 
  rtl_autotest :
