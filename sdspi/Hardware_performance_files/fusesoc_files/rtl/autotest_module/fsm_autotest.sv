@@ -7,7 +7,7 @@
  * @Last modified time: 2019-04-05T13:26:09+02:00
  */
 
- import configuration::*;
+
 
  module fsm_autotest
  (
@@ -42,6 +42,11 @@
      );
 
 assign debug_signal = {counter_block_o[7:0],base_iter[7:0],counter_iter_o[7:0],3'h0,current_state};
+
+localparam N_BLOCK_SIZE = 32;
+localparam SCLK_SPEED_SIZE = 5;
+localparam CMD18_SIZE = 1;
+localparam START_BLOCK = 32'h0x00100000;
 
 genvar i;
 

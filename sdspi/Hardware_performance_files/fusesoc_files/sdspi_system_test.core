@@ -25,7 +25,7 @@ filesets :
      depend :
       - seven_segments
       - sdspi
-
+      
      file_type : systemVerilogSource
 
      files :
@@ -38,10 +38,12 @@ filesets :
     files :
       - rtl/autotest_module/autotest_module.sv
       - rtl/autotest_module/fsm_autotest.sv
-      - rtl/autotest_module/configuration_package.sv{is_include_file : true}
+      
 
 
  constraints :
    file_type : xdc
    files :
      - data/Nexys4DDR_Master.xdc
+
+

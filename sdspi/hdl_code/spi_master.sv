@@ -61,8 +61,9 @@
 
 
  //mosi
- assign mosi = master_out_o[7];
  logic [7:0] master_out_o;
+ assign mosi = master_out_o[7];
+ 
  
  shift_register #(.DATA_WIDTH(8)) master_out_reg(
    .clk(clk),
@@ -100,9 +101,9 @@
  );
 
 
+ logic [31:0] counter_sclk_o;
  assign sclk_curr = counter_sclk_o[sclk_div[4:0]];
  logic up_sclk;
- logic [31:0] counter_sclk_o;
  logic rst_counter_sclk;
  counter #(.DATA_WIDTH(32)) counter_sclk(
     .clk(clk),

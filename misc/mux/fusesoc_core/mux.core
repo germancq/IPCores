@@ -4,7 +4,7 @@ description = "mux"
 
 [verilog]
 src_files =
-  misc/mux/hdl_core/mux.sv
+  misc/mux/hdl_code/mux.sv
   
 
 [provider]

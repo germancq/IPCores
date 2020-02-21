@@ -4,7 +4,7 @@ description = "galois_arithmetic"
 
 [verilog]
 src_files =
-  misc/galois_arithmetic/hdl_core/galois_arithmetic.sv
+  misc/galois_arithmetic/hdl_code/galois_arithmetic.sv
   
 
 [provider]

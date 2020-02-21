@@ -4,7 +4,7 @@ description = "counter"
 
 [verilog]
 src_files =
-  misc/counters/hdl_core/counter.sv
+  misc/counters/hdl_code/counter.sv
   
 
 [provider]

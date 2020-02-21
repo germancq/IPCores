@@ -4,7 +4,7 @@ description = "adder"
 
 [verilog]
 src_files =
-  misc/adder/hdl_core/adder.sv
+  misc/adder/hdl_code/adder.sv
   
 
 [provider]

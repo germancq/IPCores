@@ -4,7 +4,7 @@ description = "register"
 
 [verilog]
 src_files =
-  misc/registers/hdl_core/register.sv
+  misc/registers/hdl_code/register.sv
   
 
 [provider]

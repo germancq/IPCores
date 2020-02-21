@@ -7,7 +7,6 @@
  * @Last modified time: 2019-03-30T19:54:22+01:00
  */
 
-import configuration::*;
 
 
 module top(
@@ -30,7 +29,9 @@ module top(
 );
 
 
-
+  localparam N_BLOCK_SIZE = 32;
+  localparam SCLK_SPEED_SIZE = 5;
+  localparam CMD18_SIZE = 1;
 
   logic [31:0] debug_data;
   display #(.N(32),.CLK_HZ(100000000)) display_inst(

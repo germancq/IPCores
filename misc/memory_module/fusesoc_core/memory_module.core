@@ -4,7 +4,7 @@ description = "memory_module"
 
 [verilog]
 src_files =
-  misc/memory_module/hdl_core/memory_module.sv
+  misc/memory_module/hdl_code/memory_module.sv
   
 
 [provider]

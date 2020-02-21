@@ -8,9 +8,9 @@ depend =
 
 [verilog]
 src_files =
-  sdspi/hdl_core/sdspihost.sv
-  sdspi/hdl_core/sdcmd.sv
-  sdspi/hdl_core/spi_master.sv
+  sdspi/hdl_code/sdspihost.sv
+  sdspi/hdl_code/sdcmd.sv
+  sdspi/hdl_code/spi_master.sv
   
 
 [provider]

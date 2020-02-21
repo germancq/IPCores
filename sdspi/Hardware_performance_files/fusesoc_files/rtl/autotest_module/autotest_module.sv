@@ -7,7 +7,7 @@
  * @Last modified time: 2019-03-05T13:36:26+01:00
  */
 
-import configuration::*;
+
 
 module autotest_module
 (
@@ -30,6 +30,11 @@ module autotest_module
 
     output [31:0] debug
   );
+  
+  localparam CLK_INTERNAL_DIVIDER = 17;
+  localparam N_BLOCK_SIZE = 32;
+  localparam SCLK_SPEED_SIZE = 5;
+  localparam CMD18_SIZE = 1;
 
   logic spi_busy;
   logic [31:0] spi_block_addr;
@@ -57,7 +62,7 @@ module autotest_module
 
   fsm_autotest fsm_isnt(
     .clk(clk),
-    .clk_counter(contador_o[CLK_INTERNAL_DIVIDER]),
+    .clk_counter(counter_o[CLK_INTERNAL_DIVIDER]),
     .rst(rst),
     //sdspihost signals
     .spi_busy(spi_busy),
