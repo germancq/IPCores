@@ -236,7 +236,26 @@ genvar i;
  ///////////////states/////////////////////
   logic [31:0] j;
 
- typedef enum logic[4:0] { INITIAL_CONDITION,IDLE,BEGIN_READ_FROM_SD,WAIT_RST_SPI,SEL_SD_BLOCK,WAIT_BLOCK,READ_DATA,WAIT_BYTE,READ_BYTE,CHECK_SIGNATURE,START_TEST,WAIT_UNTIL_END_TEST_OR_TIMEOUT,END_TEST,SEL_WRITE_SD_BLOCK,WAIT_W_BLOCK,WRITE_DATA,WAIT_SPI_WRITE_DATA,WAIT_W_BYTE,UPDATE_BLOCK_COUNTER,END_FSM } state_t;
+ typedef enum logic[4:0] { INITIAL_CONDITION,
+                           IDLE,
+                           BEGIN_READ_FROM_SD,
+                           WAIT_RST_SPI,
+                           SEL_SD_BLOCK,
+                           WAIT_BLOCK,
+                           READ_DATA,
+                           WAIT_BYTE,
+                           READ_BYTE,
+                           CHECK_SIGNATURE,
+                           START_TEST,
+                           WAIT_UNTIL_END_TEST_OR_TIMEOUT,
+                           END_TEST,
+                           SEL_WRITE_SD_BLOCK,
+                           WAIT_W_BLOCK,
+                           WRITE_DATA,
+                           WAIT_SPI_WRITE_DATA,
+                           WAIT_W_BYTE,
+                           UPDATE_BLOCK_COUNTER,
+                           END_FSM } state_t;
  state_t current_state,next_state;
 
  always_comb begin
@@ -568,6 +587,6 @@ genvar i;
 
 
 
- assign debug_signal = {counter_block_o[7:0],base_iter[7:0],counter_iter_o[7:0],3'h0,current_state};
+ assign debug_signal = {counter_block_o[7:0],counter_iter_o[7:0],counter_bytes_o[7:0],3'h0,current_state};
 
  endmodule : fsm_autotest
