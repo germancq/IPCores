@@ -522,8 +522,8 @@ genvar i;
                    end
                    32'h200:;
                    32'h201:;
-                   32'h202:;
-                   32'h203:
+                   //32'h202:;
+                   32'h202:
                      begin
                          next_state = UPDATE_BLOCK_COUNTER;
                          rst_bytes_counter = 1;
