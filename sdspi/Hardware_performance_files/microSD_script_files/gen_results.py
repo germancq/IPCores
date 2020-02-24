@@ -17,14 +17,15 @@ SIGNATURE = 0xAABBCCDD
 
 def create_fields(sheet1):
     sheet1.write(0,1,'n_blocks')
-    sheet1.write(0,2,'sclk_speed MHz')
-    sheet1.write(0,3,'cmd18')
-    sheet1.write(0,4,'avg_time ms')
-    sheet1.write(0,5,'best time ms')
-    sheet1.write(0,6,'worst time ms')
-    sheet1.write(0,7,'total time minutes')
-    sheet1.write(0,8, 'avg bytes/second')
-    sheet1.write(0,9,'iterations')
+    sheet1.write(0,2,'total_bytes')
+    sheet1.write(0,3,'sclk_speed MHz')
+    sheet1.write(0,4,'cmd18')
+    sheet1.write(0,5,'avg_time ms')
+    sheet1.write(0,6,'best time ms')
+    sheet1.write(0,7,'worst time ms')
+    sheet1.write(0,8,'total time minutes')
+    sheet1.write(0,9, 'avg MB/second')
+    sheet1.write(0,10,'iterations')
 
 def read_params_from_sd(sheet,block_n,micro_sd):
     micro_sd.seek(BLOCK_SIZE*block_n)
@@ -54,7 +55,7 @@ def read_params_from_sd(sheet,block_n,micro_sd):
 
     total_time = (avg_time / (1000.0 * 60))
     avg_time = (avg_time / n_iter)
-    avg_speed = total_bytes/(avg_time*1000)
+    avg_speed = (total_bytes/1024)/(avg_time*1000)
     return (signature,
             n_blocks,
             sclk_speed,
@@ -80,17 +81,19 @@ def calculated_time_in_ms(time_units,base_clk=100,div_clk=7):
 def write_params(sheet1, params , i):
 
     sheet1.write(i,1,params[1])
+    sheet1.write(i,2,params[1]*BLOCK_SIZE)
     sclk_speed = get_clk_speed_from_factor(params[2])
-    sheet1.write(i,2,sclk_speed)
-    sheet1.write(i,3,params[3])
+    sheet1.write(i,3,sclk_speed)
+    sheet1.write(i,4,params[3])
     #avg_time_in_ms = calculated_time_in_ms(params[4])
-    sheet1.write(i,4,params[4])
+    sheet1.write(i,5,params[4])
     #best_time_in_ms = calculated_time_in_ms(params[5])
-    sheet1.write(i,5,params[5])
+    sheet1.write(i,6,params[5])
     #worst_time_in_ms = calculated_time_in_ms(params[6])
-    sheet1.write(i,6,params[6])
-    sheet1.write(i,7,params[7])
-    sheet1.write(i,8,params[8])
+    sheet1.write(i,7,params[6])
+    sheet1.write(i,8,params[7])
+    sheet1.write(i,9,params[8])
+    sheet1.write(i,10,params[9])
     return i+1
 
 def gen_calc(micro_sd):
