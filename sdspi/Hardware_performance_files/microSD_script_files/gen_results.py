@@ -12,7 +12,7 @@ import xlwt
 
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
-RESULTS_OFFSET = 0xC
+RESULTS_OFFSET = 0x0
 SIGNATURE = 0xAABBCCDD
 
 def create_fields(sheet1):
@@ -34,7 +34,7 @@ def read_params_from_sd(sheet,block_n,micro_sd):
     n_blocks = int.from_bytes(micro_sd.read(4),byteorder='little')
     sclk_speed = int.from_bytes(micro_sd.read(1),byteorder='little')
     cmd18 = int.from_bytes(micro_sd.read(1),byteorder='little')
-    micro_sd.seek((BLOCK_SIZE*block_n) + RESULTS_OFFSET)
+    #micro_sd.seek((BLOCK_SIZE*block_n) + RESULTS_OFFSET)
     if n_iter == 0 :
         n_iter = 1
     avg_time = 0
@@ -45,16 +45,19 @@ def read_params_from_sd(sheet,block_n,micro_sd):
     for i in range(0,n_iter):
         time = int.from_bytes(micro_sd.read(4),byteorder='little')
         time_ms = calculated_time_in_ms(time)
-        #print ('iter is = %i' % i)
-        #print ('time is = %i' % time)
+        print ('iter is = %i' % i)
+        print ('time is = %i' % time)
         avg_time = avg_time + time_ms
         if(time_ms > worst_time):
             worst_time = time_ms
         if(time_ms < best_time):
             best_time = time_ms
 
+    
     total_time = (avg_time / (1000.0 * 60))
+    print (total_time)
     avg_time = (avg_time / n_iter)
+    print (avg_time)
     avg_speed = (total_bytes/1024)/(avg_time*1000)
     return (signature,
             n_blocks,
@@ -70,7 +73,7 @@ def read_params_from_sd(sheet,block_n,micro_sd):
 def get_clk_speed_from_factor(n, base_clk=100):
     return (base_clk / (2**(n+1)))
 
-def calculated_time_in_ms(time_units,base_clk=100,div_clk=7):
+def calculated_time_in_ms(time_units,base_clk=100,div_clk=0):
     clk_counter = get_clk_speed_from_factor(div_clk)
     #print ('time units is = %i' % time_units)
     #clk_counter in Mhz

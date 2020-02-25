@@ -220,7 +220,8 @@ always_comb begin
       end
     END_FSM:
       begin
-        finish = 1'b1;
+        if(spi_busy == 1'b0)
+          finish = 1'b1;
       end
   endcase
 

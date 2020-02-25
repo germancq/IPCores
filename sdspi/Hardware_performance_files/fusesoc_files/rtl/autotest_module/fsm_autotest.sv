@@ -449,12 +449,12 @@ genvar i;
              begin
                uut_ctrl_mux = 1;
                uut_start = 1;
+               up_timer_counter = 1;
                next_state = WAIT_UNTIL_END_TEST_OR_TIMEOUT;
              end
           WAIT_UNTIL_END_TEST_OR_TIMEOUT:
              begin
                uut_ctrl_mux = 1;
-               uut_start = 1;
                up_timer_counter = 1;
                if(uut_finish)
                  next_state = END_TEST;
@@ -464,7 +464,6 @@ genvar i;
              end
           END_TEST:
              begin
-               uut_ctrl_mux = 1;
                rst_index = 1'b1;
                rst_bytes_counter = 1;
                if(spi_busy == 1'b0)
@@ -512,6 +511,7 @@ genvar i;
                    32'h5 + (N_BLOCK_SIZE>>3) + 1 : begin
                             reg_spi_data_in = uut_cmd18;
                    end
+                   /*
                    32'h5 + (N_BLOCK_SIZE>>3) + 2 + base_iter + index_o : begin
                           reg_spi_data_in = counter_timer_o >> (index_o * 8);    
                             up_index = 1'b1;
@@ -520,9 +520,13 @@ genvar i;
                             end
                             
                    end
+                   */
+                   32'hB: reg_spi_data_in = counter_timer_o [7:0];
+                   32'hC: reg_spi_data_in = counter_timer_o [15:8];
+                   32'hD: reg_spi_data_in = counter_timer_o [23:16];
+                   32'hE: reg_spi_data_in = counter_timer_o [31:24];
                    32'h200:;
                    32'h201:;
-                   //32'h202:;
                    32'h202:
                      begin
                          next_state = UPDATE_BLOCK_COUNTER;
@@ -552,7 +556,6 @@ genvar i;
           UPDATE_BLOCK_COUNTER:
              begin
                  rst_index = 1'b1;
-                 uut_rst = 1;
                  rst_timer_counter = 1;
                  up_bytes_counter = 1;
 

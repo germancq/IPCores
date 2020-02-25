@@ -13,7 +13,7 @@ import math
 
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
-NUMBER_ITER = 100
+NUMBER_ITER = 1
 SIGNATURE = 0xAABBCCDD
 
 
@@ -29,8 +29,8 @@ SIGNATURE = 0xAABBCCDD
 def gen_all_posibilities(micro_sd):
     parameters = [
         range(0,1+1),
-        range(1,4+1),#sclk_speed
-        range(1,4+1)#n_blocks
+        range(1,3+1),#sclk_speed
+        range(2,3+1)#n_blocks
     ]
     total_posibilities = 1
     modulo_op = []
@@ -41,6 +41,11 @@ def gen_all_posibilities(micro_sd):
     j = 0
     zero = 0
     for n in range (0, total_posibilities):
+
+        #clear block
+        micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
+        micro_sd.write(zero.to_bytes(512, byteorder='big'))
+
         pairs = create_posibility(n,parameters,modulo_op)
         print(pairs)
         n_blocks = 10 ** pairs[2]
@@ -52,7 +57,7 @@ def gen_all_posibilities(micro_sd):
         micro_sd.write(n_blocks.to_bytes(4, byteorder='little'))
         micro_sd.write(pairs[1].to_bytes(1, byteorder='little'))
         micro_sd.write(pairs[0].to_bytes(1, byteorder='little'))
-        micro_sd.write(zero.to_bytes(4, byteorder='big'))
+        #micro_sd.write(zero.to_bytes(4, byteorder='big'))
 
     #last block with no signature
     micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))

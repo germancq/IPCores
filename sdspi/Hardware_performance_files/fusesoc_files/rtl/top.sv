@@ -12,7 +12,7 @@ localparam N_BLOCK_SIZE = 32;
 localparam SCLK_SPEED_SIZE = 5;
 localparam CMD18_SIZE = 1;
 localparam START_BLOCK = 32'h0x100000;
-localparam CLK_INTERNAL_DIVIDER = 7;
+localparam CLK_INTERNAL_DIVIDER = 0;
 
 
 module top(
@@ -55,9 +55,6 @@ module top(
   logic cs_autotest;
   logic sclk_autotest;
   logic mosi_autotest;
-  logic SD_RESET_autotest;
-  logic SD_DAT_1_autotest;
-  logic SD_DAT_2_autotest;
 
   logic uut_ctrl_mux;
   logic uut_rst;
@@ -93,9 +90,6 @@ module top(
   logic cs_uut;
   logic sclk_uut;
   logic mosi_uut;
-  logic SD_RESET_uut;
-  logic SD_DAT_1_uut;
-  logic SD_DAT_2_uut;
 
   sdspi_system uut(
     .clk(sys_clk_pad_i),
