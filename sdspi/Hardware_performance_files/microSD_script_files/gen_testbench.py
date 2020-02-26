@@ -13,7 +13,7 @@ import math
 
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
-NUMBER_ITER = 1
+NUMBER_ITER = 100
 SIGNATURE = 0xAABBCCDD
 
 
@@ -30,7 +30,7 @@ def gen_all_posibilities(micro_sd):
     parameters = [
         range(0,1+1),
         range(1,3+1),#sclk_speed
-        range(2,3+1)#n_blocks
+        range(2,4+1)#n_blocks
     ]
     total_posibilities = 1
     modulo_op = []
