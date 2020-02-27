@@ -60,7 +60,7 @@ def read_params_from_sd(sheet,block_n,micro_sd):
     print (total_time)
     avg_time = (avg_time / n_iter)
     print (avg_time)
-    avg_speed = (total_bytes/1024)/(avg_time*1000)
+    avg_speed = (total_bytes/1024)/(avg_time/1000)
     return (signature,
             n_blocks,
             sclk_speed,

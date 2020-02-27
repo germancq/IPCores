@@ -322,7 +322,7 @@ module key_schedule(
                     
                     
                 end    
-
+            default:;
         endcase
     end
 
