@@ -20,10 +20,10 @@ module autotest_module
 
     /*UUT signals*/
     output rst_uut,
-    output [BLOCK_SIZE-1:0] block_i_uut,
-    output [KEY_INPUT_SIZE-1:0] key_uut,
-    output endec_uut,
-    input [BLOCK_SIZE-1:0] block_o_uut,
+    output [64-1:0] block_i_uut,
+    output [80-1:0] key_uut,
+    output encdec_uut,
+    input [64-1:0] block_o_uut,
     input  end_key_signal_uut,
     input  end_dec_uut,
     input  end_enc_uut,
@@ -31,6 +31,8 @@ module autotest_module
 
     output [31:0] debug
   );
+
+  localparam CLK_INTERNAL_DIVIDER = 1;
 
   logic spi_busy;
   logic [31:0] spi_block_addr;
@@ -74,14 +76,16 @@ module autotest_module
     .spi_w_byte(spi_w_byte),
     .spi_crc_err(spi_crc_err),
     //uut ctrl signals
-    .uut_ctrl_signal_1(uut_ctrl_signal_1),
+    .rst_uut(rst_uut),
     //uut paramters signals
-    .input_to_UUT_1(input_to_UUT_1),
+    .block_i_uut(block_i_uut),
+    .key_uut(key_uut),
+    .encdec_uut(encdec_uut),
     //uut results signals
-    .output_from_UUT_1(output_from_UUT_1),
-    .output_ctrl_from_UUT_1(output_ctrl_from_UUT_1),
-    .output_from_UUT_2(output_from_UUT_2),
-    .output_ctrl_from_UUT_2(output_ctrl_from_UUT_2),
+    .block_o_uut(block_o_uut),
+    .end_key_signal_uut(end_key_signal_uut),
+    .end_dec_uut(end_dec_uut),
+    .end_enc_uut(end_enc_uut),
     //debug
     .debug_signal(debug)
   );

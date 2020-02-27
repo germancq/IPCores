@@ -30,11 +30,11 @@
      //uut ctrl signals
      output logic rst_uut,
      //uut paramters signals
-     output [BLOCK_SIZE-1:0] block_i_uut,
-     output [KEY_INPUT_SIZE-1:0] key_uut,
+     output [64-1:0] block_i_uut,
+     output [80-1:0] key_uut,
      output encdec_uut,
      //uut results signals
-     input [BLOCK_SIZE-1:0] block_o_uut,
+     input [64-1:0] block_o_uut,
      input  end_key_signal_uut,
      input  end_dec_uut,
      input  end_enc_uut,
@@ -42,6 +42,11 @@
      output [31:0] debug_signal
      );
 
+
+localparam BLOCK_SIZE = 64;
+localparam KEY_INPUT_SIZE = 80;
+localparam BASE_OUTPUTS = 32'h5 + (BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3) + 1;
+localparam START_BLOCK = 32'h0x100000;
 
 
 genvar i;
@@ -132,7 +137,7 @@ genvar i;
   );
  
   //////////////output_from_UUT_1////////////
-  logic [BLOCK_SIZE-1:0] output_from_UUT_1_o;
+  logic [BLOCK_SIZE-1:0] block_o_uut_o;
   logic reg_block_o_uut_o_cl;
   logic reg_block_o_uut_o_w;
   register #(.DATA_WIDTH(BLOCK_SIZE)) reg_output_from_UUT_1_o_0(
@@ -431,12 +436,14 @@ genvar i;
          CHECK_SIGNATURE:
              begin
                rst_uut = 1;
+               
                if(signature == 32'hAABBCCDD)
                begin
                  next_state = START_TEST;
                end
                else
                  next_state = END_FSM;
+                 
              end
           START_TEST:
              begin
@@ -506,15 +513,19 @@ genvar i;
                    32'h5 + (BLOCK_SIZE>>3) + index_o : begin
                           reg_spi_data_in = key_uut >> (index_o*8);
                    end
+                   
                    32'h5 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) : begin
                            reg_spi_data_in = encdec_uut;
                    end
-                   32'h5 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + base_iter + index_o : begin
+                   
+                   BASE_OUTPUTS + base_iter + index_o : begin
                           reg_spi_data_in = block_o_uut_o >> (index_o * 8);     
                    end
-                   32'h5 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + (BLOCK_SIZE>>3) + base_iter + index_o : begin
+                   
+                   BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter + index_o : begin
                           reg_spi_data_in = counter_timer_o >> (index_o * 8);    
                    end
+                   
                    32'h200:;
                    32'h201:;
                    32'h202:;
@@ -525,7 +536,6 @@ genvar i;
                          up_iter_counter = 1;
                      end
                    default: begin
-                            rst_index = 1'b1;
                             reg_spi_data_in = memory_inst_o;
                         end
                  endcase
@@ -546,21 +556,20 @@ genvar i;
                      else if(counter_bytes_o == 32'h5+((BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3)-1)) begin
                         rst_index = 1'b1;
                      end
-                     //rst final inputs & 
-                     else if(counter_bytes_o == 32'h5+((BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3))) begin
-                         rst_index = 1'b1;
-                     end
+                     
                      //rst inicio outputs
-                     else if(counter_bytes_o == 32'h5 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + base_iter - 1) begin
+                     else if(counter_bytes_o == BASE_OUTPUTS + base_iter - 1) begin
                         rst_index = 1'b1;
                      end
-                     else if(32'h5 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + (BLOCK_SIZE>>3) + base_iter-1) begin
+                     else if(counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter-1) begin
                         rst_index = 1'b1;
                      end
+                     
                      //rst_final outputs
-                     else if (32'h5 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + (BLOCK_SIZE>>3) + base_iter+3) begin
+                     else if (counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter + 3) begin
                         rst_index = 1'b1;
                      end
+                     
                      up_bytes_counter = 1;
                      next_state = WRITE_DATA;
                  end

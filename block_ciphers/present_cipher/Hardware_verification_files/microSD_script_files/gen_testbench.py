@@ -14,7 +14,7 @@ import numpy as np
 
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
-NUMBER_ITER = 10
+NUMBER_ITER = 1
 SIGNATURE = 0xAABBCCDD
 
 
@@ -23,8 +23,8 @@ def gen_all_posibilities(micro_sd):
 
 
     parameters = [
-        np.random.randint(0,2**63-1,20,dtype=np.int64), #input_1 values
-        np.random.randint(0,2**63-1,20,dtype=np.int64), #input_2 values
+        np.random.randint(0,2**63-1,7,dtype=np.int64), #input_1 values
+        np.random.randint(0,2**63-1,7,dtype=np.int64), #input_2 values
         range(0,1+1)
     ]
     total_posibilities = 1
@@ -52,8 +52,7 @@ def gen_all_posibilities(micro_sd):
         micro_sd.write(NUMBER_ITER.to_bytes(1, byteorder='big'))
         
         micro_sd.write(int(pairs[0]).to_bytes(8, byteorder='little'))#text
-        micro_sd.write(int(key_high_16_bits).to_bytes(2, byteorder = 'little'))#key
-        micro_sd.write(int(pairs[1]).to_bytes(8, byteorder='little'))#key
+        micro_sd.write(int(pairs[1]).to_bytes(10, byteorder='little'))#key
         micro_sd.write(pairs[2].to_bytes(1, byteorder='little'))#enc_dec
 
         micro_sd.write(zero.to_bytes(4, byteorder='big'))

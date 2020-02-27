@@ -53,6 +53,7 @@ filesets :
       - counter
       - sdspi
       - mux
+      - seven_segments
 
     file_type : systemVerilogSource
 

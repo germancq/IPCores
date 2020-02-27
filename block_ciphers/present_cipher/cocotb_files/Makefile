@@ -6,15 +6,15 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 13:59:49 by germancq          #+#    #+#              #
-#    Updated: 2020/02/18 13:08:54 by germancq         ###   ########.fr        #
+#    Updated: 2020/02/27 15:35:23 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-VERILOG_SOURCES = ../hdl_core/present.sv \
-				  ../hdl_core/present_misc.sv \
-				  ../../misc/registers/hdl_core/register.sv \
-				  ../../misc/memory_module/hdl_core/memory_module.sv \
-				  ../../misc/counters/hdl_core/counter.sv	
+VERILOG_SOURCES = ../hdl_code/present.sv \
+				  ../hdl_code/present_misc.sv \
+				  ../../../misc/registers/hdl_code/register.sv \
+				  ../../../misc/memory_module/hdl_code/memory_module.sv \
+				  ../../../misc/counters/hdl_code/counter.sv	
 
 TOPLEVEL=present
 MODULE=present_test

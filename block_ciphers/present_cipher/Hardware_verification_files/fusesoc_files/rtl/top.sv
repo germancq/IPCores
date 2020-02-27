@@ -2,14 +2,11 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: Your name
- * @ Modified time: 2020-02-27 13:14:27
+ * @ Modified time: 2020-02-27 14:34:16
  * @ Description:
  */
 
-localparam CLK_INTERNAL_DIVIDER = 7;
-localparam BLOCK_SIZE = 64;
-localparam KEY_INPUT_SIZE = 80;
-localparam START_BLOCK = 32'h0x100000;
+
 
 
 module top(
@@ -24,19 +21,37 @@ module top(
     output SD_DAT_1,
     output SD_DAT_2,
 
+    output [6:0] seg,
+    output [7:0] AN,
+
     output [15:0] leds_o
 );
 
 
+
+
+  assign SD_RESET = 1'b0;
+  assign SD_DAT_1 = 1'b1;
+  assign SD_DAT_2 = 1'b1;
+
 logic rst_uut;
-logic [BLOCK_SIZE:0] block_i;
-logic [KEY_INPUT_SIZE:0] key;
+logic [63:0] block_i;
+logic [79:0] key;
 logic enc_dec;
 logic end_key_generation;
-logic [BLOCK_SIZE:0] block_o;
+logic [63:0] block_o;
 logic end_dec;
 logic end_enc;
 
+
+logic [31:0] debug_data;
+  display #(.N(32),.CLK_HZ(100000000)) display_inst(
+    .clk(sys_clk_pad_i),
+    .rst(center_button),
+    .din(debug_data),
+    .an(AN),
+    .seg(seg)
+  );
 
 autotest_module autotest_impl(
     .clk(sys_clk_pad_i),
@@ -57,7 +72,7 @@ autotest_module autotest_impl(
     .end_key_signal_uut(end_key_generation),
     .end_dec_uut(end_dec),
     .end_enc_uut(end_enc),
-    .debug(leds_o)
+    .debug(debug_data)
 );
 
 present present_impl(
