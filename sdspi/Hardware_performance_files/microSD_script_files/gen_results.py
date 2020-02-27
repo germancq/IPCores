@@ -12,7 +12,7 @@ import xlwt
 
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
-RESULTS_OFFSET = 0x0
+RESULTS_OFFSET = 0xC
 SIGNATURE = 0xAABBCCDD
 
 def create_fields(sheet1):
@@ -30,11 +30,13 @@ def create_fields(sheet1):
 def read_params_from_sd(sheet,block_n,micro_sd):
     micro_sd.seek(BLOCK_SIZE*block_n)
     signature = int.from_bytes(micro_sd.read(4),byteorder='big')
+    if(signature != SIGNATURE) :
+        return 0
     n_iter = int.from_bytes(micro_sd.read(1),byteorder='big')
     n_blocks = int.from_bytes(micro_sd.read(4),byteorder='little')
     sclk_speed = int.from_bytes(micro_sd.read(1),byteorder='little')
     cmd18 = int.from_bytes(micro_sd.read(1),byteorder='little')
-    #micro_sd.seek((BLOCK_SIZE*block_n) + RESULTS_OFFSET)
+    micro_sd.seek((BLOCK_SIZE*block_n) + RESULTS_OFFSET)
     if n_iter == 0 :
         n_iter = 1
     avg_time = 0
@@ -73,7 +75,7 @@ def read_params_from_sd(sheet,block_n,micro_sd):
 def get_clk_speed_from_factor(n, base_clk=100):
     return (base_clk / (2**(n+1)))
 
-def calculated_time_in_ms(time_units,base_clk=100,div_clk=0):
+def calculated_time_in_ms(time_units,base_clk=100,div_clk=7):
     clk_counter = get_clk_speed_from_factor(div_clk)
     #print ('time units is = %i' % time_units)
     #clk_counter in Mhz
@@ -108,7 +110,8 @@ def gen_calc(micro_sd):
     while valid_signature == 1 :
         params = read_params_from_sd(sheet1,NUM_BLOCK_TEST+i-1,micro_sd)
         #print(params[0])
-        if params[0] != SIGNATURE:
+        if params == 0:
+            valid_signature = 0
             break
         i = write_params(sheet1,params,i)
 

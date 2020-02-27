@@ -2,9 +2,15 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: Your name
- * @ Modified time: 2019-10-08 12:00:54
+ * @ Modified time: 2020-02-27 13:14:27
  * @ Description:
  */
+
+localparam CLK_INTERNAL_DIVIDER = 7;
+localparam BLOCK_SIZE = 64;
+localparam KEY_INPUT_SIZE = 80;
+localparam START_BLOCK = 32'h0x100000;
+
 
 module top(
     input sys_clk_pad_i,
@@ -23,11 +29,11 @@ module top(
 
 
 logic rst_uut;
-logic [63:0] block_i;
-logic [79:0] key;
+logic [BLOCK_SIZE:0] block_i;
+logic [KEY_INPUT_SIZE:0] key;
 logic enc_dec;
 logic end_key_generation;
-logic [63:0] block_o;
+logic [BLOCK_SIZE:0] block_o;
 logic end_dec;
 logic end_enc;
 
@@ -40,9 +46,7 @@ autotest_module autotest_impl(
     .sclk(sclk),
     .mosi(mosi),
     .miso(miso),
-    .SD_RESET(SD_RESET),
-    .SD_DAT_1(SD_DAT_1),
-    .SD_DAT_2(SD_DAT_2),
+    
 
     /*UUT signals*/
     .rst_uut(rst_uut),

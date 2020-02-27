@@ -6,7 +6,10 @@
  * @Last modified by:   germancq
  * @Last modified time: 2019-03-05T13:36:26+01:00
  */
-module autotest_module(
+
+
+module autotest_module
+(
     input clk,
     input rst,
 
@@ -14,47 +17,48 @@ module autotest_module(
     output sclk,
     output mosi,
     input miso,
-    output SD_RESET,
-    output SD_DAT_1,
-    output SD_DAT_2,
 
     /*UUT signals*/
     output rst_uut,
-    output [63:0] block_i_uut,
-    output [79:0] key_uut,
-    output encdec_uut,
-    input [63:0] block_o_uut,
+    output [BLOCK_SIZE-1:0] block_i_uut,
+    output [KEY_INPUT_SIZE-1:0] key_uut,
+    output endec_uut,
+    input [BLOCK_SIZE-1:0] block_o_uut,
     input  end_key_signal_uut,
-    input end_dec_uut,
-    input end_enc_uut,
-    output [15:0] debug
+    input  end_dec_uut,
+    input  end_enc_uut,
+
+
+    output [31:0] debug
   );
 
-  wire spi_busy;
-  wire [31:0] spi_block_addr;
-  wire [7:0] spi_data_out;
-  wire spi_r_block;
-  wire spi_r_multi_block;
-  wire spi_r_byte;
-  wire spi_err;
-  wire spi_rst;
-  wire [7:0] spi_data_in;
-  wire spi_w_block;
-  wire spi_w_byte;
-  wire spi_crc_err;
+  logic spi_busy;
+  logic [31:0] spi_block_addr;
+  logic [7:0] spi_data_out;
+  logic spi_r_block;
+  logic spi_r_multi_block;
+  logic spi_r_byte;
+  logic spi_err;
+  logic spi_rst;
+  logic [7:0] spi_data_in;
+  logic spi_w_block;
+  logic spi_w_byte;
+  logic spi_crc_err;
 
 
-  wire [31:0] contador_o;
-  contador_up div_clk_counter(
+  logic [CLK_INTERNAL_DIVIDER:0] counter_o;
+  counter #(.DATA_WIDTH(CLK_INTERNAL_DIVIDER+1)) div_clk_counter(
      .clk(clk),
      .rst(rst),
      .up(1'b1),
-     .q(contador_o)
+     .down(1'b0),
+     .din({ CLK_INTERNAL_DIVIDER+1 {1'b0} }),
+     .dout(counter_o)
   );
 
   fsm_autotest fsm_isnt(
     .clk(clk),
-    .clk_counter(contador_o[17]),
+    .clk_counter(counter_o[CLK_INTERNAL_DIVIDER]),
     .rst(rst),
     //sdspihost signals
     .spi_busy(spi_busy),
@@ -70,16 +74,14 @@ module autotest_module(
     .spi_w_byte(spi_w_byte),
     .spi_crc_err(spi_crc_err),
     //uut ctrl signals
-    .rst_uut(rst_uut),
+    .uut_ctrl_signal_1(uut_ctrl_signal_1),
     //uut paramters signals
-    .block_i_uut(block_i_uut),
-    .key_uut(key_uut),
-    .encdec_uut(encdec_uut),
+    .input_to_UUT_1(input_to_UUT_1),
     //uut results signals
-    .block_o_uut(block_o_uut),
-    .end_key_signal_uut(end_key_signal_uut),
-    .end_enc_uut(end_enc_uut),
-    .end_dec_uut(end_dec_uut),
+    .output_from_UUT_1(output_from_UUT_1),
+    .output_ctrl_from_UUT_1(output_ctrl_from_UUT_1),
+    .output_from_UUT_2(output_from_UUT_2),
+    .output_ctrl_from_UUT_2(output_ctrl_from_UUT_2),
     //debug
     .debug_signal(debug)
   );
@@ -87,7 +89,6 @@ module autotest_module(
 
   sdspihost sdspi_inst(
     .clk(clk),
-    .clk_spi(clk),
     .reset(spi_rst),
     .busy(spi_busy),
     .err(spi_err),
@@ -110,11 +111,8 @@ module autotest_module(
     .ss(cs),
     ////
     .sclk_speed(4'h7),
-
-    .SD_RESET(SD_RESET),
-    .SD_DAT_1(SD_DAT_1),
-    .SD_DAT_2(SD_DAT_2),
+    
     .debug()
   );
 
-endmodule
+endmodule : autotest_module

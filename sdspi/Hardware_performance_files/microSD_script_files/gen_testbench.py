@@ -13,7 +13,7 @@ import math
 
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
-NUMBER_ITER = 100
+NUMBER_ITER = 10
 SIGNATURE = 0xAABBCCDD
 
 
@@ -61,7 +61,7 @@ def gen_all_posibilities(micro_sd):
 
     #last block with no signature
     micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
-    micro_sd.write(zero.to_bytes(4, byteorder='big'))
+    micro_sd.write(zero.to_bytes(512, byteorder='big'))
 
 
 def create_posibility(n,parameters,modulo_op):
