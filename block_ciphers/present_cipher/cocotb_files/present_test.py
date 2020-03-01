@@ -95,7 +95,8 @@ def enc_test(dut,expected_enc_value) :
 
     print(i)    
     
-    #yield n_cycles_clock(dut,1)
+    yield n_cycles_clock(dut,100)
+
     print(hex(int(dut.block_o.value)))
     print(hex(int(expected_enc_value)))
     if(dut.block_o != expected_enc_value) :
@@ -111,7 +112,7 @@ def dec_test(dut,expected_dec_value) :
     dut.enc_dec = 1    
     print(int(dut.present_dec_impl.key_index.value))
     while dut.end_dec.value == 0 :
-        
+        '''
         print('***********************')
         print(int(dut.key_index.value))
         print(int(dut.present_dec_impl.key_index.value))
@@ -122,12 +123,13 @@ def dec_test(dut,expected_dec_value) :
         
         
         print('*************************')
-        
+        '''
         yield n_cycles_clock(dut,1)
         
         
     
-    #yield n_cycles_clock(dut,1)
+    yield n_cycles_clock(dut,100)
+
     print(hex(int(dut.block_o.value)))
     print(hex(int(expected_dec_value)))
     if(dut.block_o != expected_dec_value) :

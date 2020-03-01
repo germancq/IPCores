@@ -24,9 +24,10 @@ module present(
     logic [63:0] roundkey;
 
     logic [63:0] enc_o,dec_o;
+    logic [63:0] block_o_logic;
 
     assign key_index = enc_dec ? key_index_dec : key_index_enc;
-    assign block_o = enc_dec ? dec_o : enc_o;
+    assign block_o_logic = enc_dec ? dec_o : enc_o;
 
     key_schedule key_sch_impl(
         .clk(clk),
@@ -63,6 +64,14 @@ module present(
         .key_index(key_index_dec),
         .result(dec_o),
         .end_signal(end_dec)
+    );
+
+    register #(.DATA_WIDTH(64)) result(
+        .clk(clk),
+        .cl(rst),
+        .w(end_enc || end_dec),
+        .din(block_o_logic),
+        .dout(block_o)
     );
 
 endmodule : present
