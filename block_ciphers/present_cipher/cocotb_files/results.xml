@@ -1,15 +1,15 @@
 <testsuites name="results">
   <testsuite name="all" package="all" tests="0">
-    <property name="random_seed" value="1583097253" />
-    <testcase classname="present_test" name="run_test_001" ratio_time="8582162057269.274" sim_time_ns="10751000000000" time="1.2527146339416504" />
-    <testcase classname="present_test" name="run_test_002" ratio_time="6877631365111.811" sim_time_ns="10711000000000" time="1.5573675632476807" />
-    <testcase classname="present_test" name="run_test_003" ratio_time="8213582244623.12" sim_time_ns="10711000000000" time="1.3040595054626465" />
-    <testcase classname="present_test" name="run_test_004" ratio_time="8276455879814.395" sim_time_ns="10711000000000" time="1.2941529750823975" />
-    <testcase classname="present_test" name="run_test_005" ratio_time="8138759997724.599" sim_time_ns="10711000000000" time="1.3160481452941895" />
-    <testcase classname="present_test" name="run_test_006" ratio_time="8290406429157.601" sim_time_ns="10711000000000" time="1.2919752597808838" />
-    <testcase classname="present_test" name="run_test_007" ratio_time="8187938901557.789" sim_time_ns="10711000000000" time="1.3081436157226562" />
-    <testcase classname="present_test" name="run_test_008" ratio_time="8118919785050.588" sim_time_ns="10711000000000" time="1.3192641735076904" />
-    <testcase classname="present_test" name="run_test_009" ratio_time="8028835800324.548" sim_time_ns="10711000000000" time="1.334066390991211" />
-    <testcase classname="present_test" name="run_test_010" ratio_time="8261206026894.364" sim_time_ns="10711000000000" time="1.2965419292449951" />
+    <property name="random_seed" value="1583098714" />
+    <testcase classname="present_test" name="run_test_001" ratio_time="9088766829490.496" sim_time_ns="10751000000000" time="1.1828887462615967" />
+    <testcase classname="present_test" name="run_test_002" ratio_time="13329398117247.174" sim_time_ns="10711000000000" time="0.8035621643066406" />
+    <testcase classname="present_test" name="run_test_003" ratio_time="13213143542513.348" sim_time_ns="10711000000000" time="0.8106322288513184" />
+    <testcase classname="present_test" name="run_test_004" ratio_time="12363572005633.967" sim_time_ns="10711000000000" time="0.866335391998291" />
+    <testcase classname="present_test" name="run_test_005" ratio_time="13798023027013.912" sim_time_ns="10711000000000" time="0.7762706279754639" />
+    <testcase classname="present_test" name="run_test_006" ratio_time="13566515397967.553" sim_time_ns="10711000000000" time="0.7895174026489258" />
+    <testcase classname="present_test" name="run_test_007" ratio_time="12591490106928.416" sim_time_ns="10711000000000" time="0.850653886795044" />
+    <testcase classname="present_test" name="run_test_008" ratio_time="13248004888102.383" sim_time_ns="10711000000000" time="0.8084990978240967" />
+    <testcase classname="present_test" name="run_test_009" ratio_time="12917692619162.154" sim_time_ns="10711000000000" time="0.8291728496551514" />
+    <testcase classname="present_test" name="run_test_010" ratio_time="13010740771825.443" sim_time_ns="10711000000000" time="0.8232429027557373" />
   </testsuite>
 </testsuites>
