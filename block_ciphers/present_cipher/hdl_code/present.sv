@@ -116,15 +116,17 @@ module present_enc(
     assign result = register_output ^ roundkey;
 
     always_ff @(posedge clk) begin
-        counter_up = 1'b0;
-        end_signal = 1'b0;
-        if(start_signal == 1'b1) begin
-            counter_up = 1'b1; 
+        if(rst) begin
+            end_signal <= 1'b0;
         end
-        if (key_index == 5'd31) begin
-                counter_up = 1'b0;
-                end_signal = 1'b1;
-        end 
+        else if (key_index == 5'd31) begin
+                counter_up <= 1'b0;
+                end_signal <= 1'b1;
+        end
+        else if(start_signal == 1'b1) begin
+            counter_up <= 1'b1; 
+            end_signal <= 1'b0;
+        end
         
     end
 
@@ -136,7 +138,7 @@ module present_dec(
     input rst,
     input start_signal,
     input [63:0] text,
-    input [63:0] roundkey,
+    input [63:0] roundkey, 
     output [4:0] key_index,
     output [63:0] result,
     output logic end_signal
@@ -153,7 +155,7 @@ module present_dec(
         .dout(key_index)
     );
 
-    //assign end_signal = key_index == 5'd31 ? 1'b1 : 1'b0;
+    //assign end_signal = key_index == 5'd0 ? 1'b1 : 1'b0;
     
     logic [63:0] block_o;
     logic [63:0] register_output;
@@ -179,15 +181,18 @@ module present_dec(
     assign result = register_output ^ roundkey;
 
     always_ff @(posedge clk) begin
-        counter_down = 1'b0;
-        end_signal = 1'b0;
-        if(start_signal == 1'b1) begin
-            counter_down = 1'b1; 
+        if (rst) begin
+            end_signal <= 1'b0;
         end
-        if (key_index == 5'd0) begin
-                counter_down = 1'b0;
-                end_signal = 1'b1;
+        else if (key_index == 5'd0) begin
+                counter_down <= 1'b0;
+                end_signal <= 1'b1;
         end 
+        else if(start_signal == 1'b1) begin
+            counter_down <= 1'b1; 
+            end_signal <= 1'b0;
+        end
+        
         
     end
 

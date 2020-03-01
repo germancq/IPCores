@@ -21,7 +21,7 @@ from cocotb.clock import Clock
 
 import importlib
 import sys
-sys.path.append('/Users/germancq/Documents/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
+sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
 import present
 
 CLK_PERIOD = 20 # 50 MHz
@@ -74,7 +74,7 @@ def generate_round_keys(dut) :
              
 
 @cocotb.coroutine
-def enc_dec_test(dut,expected_enc_value,expected_dec_value) :
+def enc_test(dut,expected_enc_value) :
     
     i = 0
     while dut.end_enc.value == 0 :
@@ -102,10 +102,16 @@ def enc_dec_test(dut,expected_enc_value,expected_dec_value) :
             raise TestFailure("""Error enc_test,wrong value = {0}, expected value is {1}""".format(hex(int(dut.block_o.value)),hex(expected_enc_value)))
     
     
-    dut.enc_dec = 1    
     
+       
+@cocotb.coroutine
+def dec_test(dut,expected_dec_value) :
+    
+    i = 0
+    dut.enc_dec = 1    
+    print(int(dut.present_dec_impl.key_index.value))
     while dut.end_dec.value == 0 :
-        '''
+        
         print('***********************')
         print(int(dut.key_index.value))
         print(int(dut.present_dec_impl.key_index.value))
@@ -116,7 +122,7 @@ def enc_dec_test(dut,expected_enc_value,expected_dec_value) :
         
         
         print('*************************')
-        '''
+        
         yield n_cycles_clock(dut,1)
         
         
@@ -126,9 +132,7 @@ def enc_dec_test(dut,expected_enc_value,expected_dec_value) :
     print(hex(int(expected_dec_value)))
     if(dut.block_o != expected_dec_value) :
             raise TestFailure("""Error dec_test,wrong value = {0}, expected value is {1}""".format(hex(int(dut.block_o.value)),hex(expected_dec_value)))
-    
-       
-
+   
 
 @cocotb.coroutine
 def n_cycles_clock(dut,n):
@@ -155,11 +159,14 @@ def run_test(dut, key = 0):
     
     yield rst_function_test(dut)
     yield generate_round_keys(dut)
-    yield enc_dec_test(dut,expected_enc_value,expected_dec_value)
+    yield enc_test(dut,expected_enc_value)
+    yield rst_function_test(dut)
+    yield generate_round_keys(dut)
+    yield dec_test(dut,expected_dec_value)
 
 
 
-n = 6000
+n = 10
 factory = TestFactory(run_test)
 
 factory.add_option("key", np.random.randint(low=0,high=(2**32)-1,size=n)) #array de 10 int aleatorios entre 0 y 31
