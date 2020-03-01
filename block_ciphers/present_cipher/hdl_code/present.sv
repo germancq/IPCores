@@ -90,7 +90,7 @@ module present_enc(
 
     logic counter_up;
     
-    counter #(.DATA_WIDTH(6)) counter_impl(
+    counter #(.DATA_WIDTH(5)) counter_impl(
         .clk(clk),
         .rst(~start_signal | rst),
         .up(counter_up),
@@ -128,7 +128,7 @@ module present_enc(
         if(rst) begin
             end_signal <= 1'b0;
         end
-        else if (key_index >= 5'd31) begin
+        else if (key_index == 5'd31) begin
                 counter_up <= 1'b0;
                 end_signal <= 1'b1;
         end
