@@ -462,9 +462,10 @@ genvar i;
                         next_state = END_TEST;
                     end    
                end
+               /*
                else if(counter_timer_o >= 32'h6E00000)
                  next_state = END_TEST;
-
+               */
              end
           END_TEST:
              begin

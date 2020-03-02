@@ -23,8 +23,8 @@ def gen_all_posibilities(micro_sd):
 
 
     parameters = [
-        np.random.randint(0,2**63-1,7,dtype=np.int64), #input_1 values
-        np.random.randint(0,2**63-1,7,dtype=np.int64), #input_2 values
+        np.random.randint(0,2**63-1,20,dtype=np.int64), #input_1 values
+        np.random.randint(0,2**63-1,20,dtype=np.int64), #input_2 values
         range(0,1+1)
     ]
     total_posibilities = 1

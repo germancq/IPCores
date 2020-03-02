@@ -26,9 +26,9 @@ S_box_dec = [0x5,0xE,0xF,0x8,0xC,0x1,0x2,0xD,0xB,0x4,0x6,0x3,0x0,0x7,0x9,0xA]
 class Present :
 
     def __init__(self,key) :
-        print("=======================================")
-        print(hex(key))
-        print("=========================================")
+        #print("=======================================")
+        #print(hex(key))
+        #print("=========================================")
         self.round_keys = generate_round_keys(key)
     
     def decrypt(self, ciphertext) :
@@ -56,8 +56,8 @@ class Present :
     def encrypt(self,plaintext):
 
         state = plaintext
-        print("-------------------------------------")
-        print(hex(plaintext))
+        #print("-------------------------------------")
+        #print(hex(plaintext))
         for i in range (1,32):
             #print(i)
             state = addRoundKey(state,self.round_keys[i-1])
@@ -71,7 +71,7 @@ class Present :
         state = addRoundKey(state,self.round_keys[31])    
         
         #print(hex(state))
-        print("---------------------------------------")
+        #print("---------------------------------------")
         return state    
     
 

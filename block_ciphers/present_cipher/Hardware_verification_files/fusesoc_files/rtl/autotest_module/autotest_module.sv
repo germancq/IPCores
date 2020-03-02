@@ -32,7 +32,7 @@ module autotest_module
     output [31:0] debug
   );
 
-  localparam CLK_INTERNAL_DIVIDER = 1;
+  localparam CLK_INTERNAL_DIVIDER = 4;
 
   logic spi_busy;
   logic [31:0] spi_block_addr;
