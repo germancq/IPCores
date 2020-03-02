@@ -175,6 +175,9 @@ VL_MODULE(Vtop) {
         CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__14__KET____DOT__sbox__DOT__dout;
         CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__15__KET____DOT__sbox__DOT__din;
         CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__15__KET____DOT__sbox__DOT__dout;
+        CData/*0:0*/ present__DOT__result__DOT__clk;
+        CData/*0:0*/ present__DOT__result__DOT__cl;
+        CData/*0:0*/ present__DOT__result__DOT__w;
         WData/*79:0*/ present__DOT__key[3];
         WData/*79:0*/ present__DOT__key_sch_impl__DOT__key[3];
         WData/*79:0*/ present__DOT__key_sch_impl__DOT__key_register_input[3];
@@ -186,6 +189,7 @@ VL_MODULE(Vtop) {
         QData/*63:0*/ present__DOT__roundkey;
         QData/*63:0*/ present__DOT__enc_o;
         QData/*63:0*/ present__DOT__dec_o;
+        QData/*63:0*/ present__DOT__block_o_logic;
         QData/*63:0*/ present__DOT__key_sch_impl__DOT__roundkey;
         QData/*63:0*/ present__DOT__key_sch_impl__DOT__memory_impl__DOT__din;
         QData/*63:0*/ present__DOT__key_sch_impl__DOT__memory_impl__DOT__dout;
@@ -223,13 +227,16 @@ VL_MODULE(Vtop) {
         QData/*63:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__player_i__DOT__dout;
         QData/*63:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__din;
         QData/*63:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__dout;
+        QData/*63:0*/ present__DOT__result__DOT__din;
+        QData/*63:0*/ present__DOT__result__DOT__dout;
         QData/*63:0*/ present__DOT__key_sch_impl__DOT__memory_impl__DOT__memory_[32];
     };
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
+    CData/*0:0*/ present__DOT____Vcellinp__result__w;
     CData/*0:0*/ present__DOT__present_enc_impl__DOT____Vcellinp__counter_impl__rst;
-    CData/*0:0*/ present__DOT__present_dec_impl__DOT____Vcellinp__block_register__cl;
+    CData/*0:0*/ present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst;
     CData/*3:0*/ __Vtableidx1;
     CData/*3:0*/ __Vtableidx2;
     CData/*3:0*/ __Vtableidx3;

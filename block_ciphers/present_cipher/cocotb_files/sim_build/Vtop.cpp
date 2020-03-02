@@ -150,7 +150,9 @@ VL_INLINE_OPT void Vtop::_combo__TOP__2(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->present__DOT__block_i;
     vlTOPp->present__DOT__present_dec_impl__DOT__text 
         = vlTOPp->present__DOT__block_i;
+    vlTOPp->present__DOT__result__DOT__cl = vlTOPp->present__DOT__rst;
     vlTOPp->present__DOT__key_sch_impl__DOT__rst = vlTOPp->present__DOT__rst;
+    vlTOPp->present__DOT__result__DOT__clk = vlTOPp->present__DOT__clk;
     vlTOPp->present__DOT__present_enc_impl__DOT__clk 
         = vlTOPp->present__DOT__clk;
     vlTOPp->present__DOT__present_dec_impl__DOT__clk 
@@ -185,14 +187,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present__DOT__block_i = vlTOPp->block_i;
     vlTOPp->present__DOT__rst = vlTOPp->rst;
     vlTOPp->present__DOT__clk = vlTOPp->clk;
-    vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__up 
-        = vlTOPp->present__DOT__present_enc_impl__DOT__counter_up;
-    vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__down 
-        = vlTOPp->present__DOT__present_dec_impl__DOT__counter_down;
-    vlTOPp->present__DOT__end_enc = vlTOPp->present__DOT__present_enc_impl__DOT__end_signal;
-    vlTOPp->present__DOT__end_dec = vlTOPp->present__DOT__present_dec_impl__DOT__end_signal;
-    vlTOPp->present__DOT__start_enc = (1U & (~ (IData)(vlTOPp->enc_dec)));
-    vlTOPp->present__DOT__start_dec = vlTOPp->enc_dec;
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register_cl = 0U;
     vlTOPp->present__DOT__key_sch_impl__DOT__counter_up = 0U;
     if ((1U & (~ ((IData)(vlTOPp->present__DOT__key_sch_impl__DOT__current_state) 
@@ -230,6 +224,9 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
             }
         }
     }
+    vlTOPp->present__DOT__block_o = vlTOPp->present__DOT__result__DOT__dout;
+    vlTOPp->present__DOT__end_enc = vlTOPp->present__DOT__present_enc_impl__DOT__end_signal;
+    vlTOPp->present__DOT__end_dec = vlTOPp->present__DOT__present_dec_impl__DOT__end_signal;
     vlTOPp->present__DOT__key_sch_impl__DOT__counter_output 
         = vlTOPp->present__DOT__key_sch_impl__DOT__counter_impl__DOT__dout;
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register_output[0U] 
@@ -249,14 +246,20 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     }
     vlTOPp->present__DOT__present_enc_impl__DOT__register_output 
         = vlTOPp->present__DOT__present_enc_impl__DOT__block_register__DOT__dout;
-    vlTOPp->present__DOT__present_enc_impl__DOT__key_index 
-        = vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__dout;
     vlTOPp->present__DOT__present_dec_impl__DOT__register_output 
         = vlTOPp->present__DOT__present_dec_impl__DOT__block_register__DOT__dout;
-    vlTOPp->present__DOT__present_dec_impl__DOT__key_index 
-        = vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__dout;
     vlTOPp->present__DOT__key_sch_impl__DOT__roundkey 
         = vlTOPp->present__DOT__key_sch_impl__DOT__memory_impl__DOT__dout;
+    vlTOPp->present__DOT__start_enc = (1U & (~ (IData)(vlTOPp->enc_dec)));
+    vlTOPp->present__DOT__start_dec = vlTOPp->enc_dec;
+    vlTOPp->present__DOT__present_enc_impl__DOT__key_index 
+        = vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__dout;
+    vlTOPp->present__DOT__present_dec_impl__DOT__key_index 
+        = vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__dout;
+    vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__up 
+        = vlTOPp->present__DOT__present_enc_impl__DOT__counter_up;
+    vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__down 
+        = vlTOPp->present__DOT__present_dec_impl__DOT__counter_down;
     vlTOPp->present__DOT__key_sch_impl__DOT__key[0U] 
         = vlTOPp->present__DOT__key[0U];
     vlTOPp->present__DOT__key_sch_impl__DOT__key[1U] 
@@ -267,24 +270,25 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->present__DOT__block_i;
     vlTOPp->present__DOT__present_dec_impl__DOT__text 
         = vlTOPp->present__DOT__block_i;
+    vlTOPp->present__DOT__result__DOT__cl = vlTOPp->present__DOT__rst;
     vlTOPp->present__DOT__key_sch_impl__DOT__rst = vlTOPp->present__DOT__rst;
+    vlTOPp->present__DOT__result__DOT__clk = vlTOPp->present__DOT__clk;
     vlTOPp->present__DOT__present_enc_impl__DOT__clk 
         = vlTOPp->present__DOT__clk;
     vlTOPp->present__DOT__present_dec_impl__DOT__clk 
         = vlTOPp->present__DOT__clk;
     vlTOPp->present__DOT__key_sch_impl__DOT__clk = vlTOPp->present__DOT__clk;
-    vlTOPp->end_enc = vlTOPp->present__DOT__end_enc;
-    vlTOPp->end_dec = vlTOPp->present__DOT__end_dec;
-    vlTOPp->present__DOT__present_enc_impl__DOT__start_signal 
-        = vlTOPp->present__DOT__start_enc;
-    vlTOPp->present__DOT__present_dec_impl__DOT__start_signal 
-        = vlTOPp->present__DOT__start_dec;
     vlTOPp->present__DOT__key_sch_impl__DOT__counter_impl__DOT__up 
         = vlTOPp->present__DOT__key_sch_impl__DOT__counter_up;
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register__DOT__w 
         = vlTOPp->present__DOT__key_sch_impl__DOT__key_register_w;
     vlTOPp->present__DOT__key_sch_impl__DOT__memory_impl__DOT__r_w 
         = vlTOPp->present__DOT__key_sch_impl__DOT__r_w;
+    vlTOPp->block_o = vlTOPp->present__DOT__block_o;
+    vlTOPp->end_enc = vlTOPp->present__DOT__end_enc;
+    vlTOPp->end_dec = vlTOPp->present__DOT__end_dec;
+    vlTOPp->present__DOT____Vcellinp__result__w = ((IData)(vlTOPp->present__DOT__end_enc) 
+                                                   | (IData)(vlTOPp->present__DOT__end_dec));
     vlTOPp->present__DOT__key_sch_impl__DOT__next_state 
         = vlTOPp->present__DOT__key_sch_impl__DOT__current_state;
     if ((4U & (IData)(vlTOPp->present__DOT__key_sch_impl__DOT__current_state))) {
@@ -324,6 +328,11 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->__Vtable1_present__DOT__key_sch_impl__DOT__sbox__DOT__dout
         [vlTOPp->__Vtableidx1];
     vlTOPp->present__DOT__end_key_generation = vlTOPp->present__DOT__key_sch_impl__DOT__end_signal;
+    vlTOPp->present__DOT__roundkey = vlTOPp->present__DOT__key_sch_impl__DOT__roundkey;
+    vlTOPp->present__DOT__present_enc_impl__DOT__start_signal 
+        = vlTOPp->present__DOT__start_enc;
+    vlTOPp->present__DOT__present_dec_impl__DOT__start_signal 
+        = vlTOPp->present__DOT__start_dec;
     vlTOPp->present__DOT__present_enc_impl__DOT__register_w 
         = (0U < (IData)(vlTOPp->present__DOT__present_enc_impl__DOT__key_index));
     vlTOPp->present__DOT__key_index_enc = vlTOPp->present__DOT__present_enc_impl__DOT__key_index;
@@ -336,7 +345,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present__DOT__present_dec_impl__DOT__block_i 
         = ((0x1dU < (IData)(vlTOPp->present__DOT__present_dec_impl__DOT__key_index))
             ? vlTOPp->block_i : vlTOPp->present__DOT__present_dec_impl__DOT__register_output);
-    vlTOPp->present__DOT__roundkey = vlTOPp->present__DOT__key_sch_impl__DOT__roundkey;
     vlTOPp->present__DOT__key_sch_impl__DOT__counter_impl__DOT__rst 
         = vlTOPp->present__DOT__key_sch_impl__DOT__rst;
     vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__clk 
@@ -353,6 +361,7 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->present__DOT__key_sch_impl__DOT__clk;
     vlTOPp->present__DOT__key_sch_impl__DOT__memory_impl__DOT__clk 
         = vlTOPp->present__DOT__key_sch_impl__DOT__clk;
+    vlTOPp->present__DOT__result__DOT__w = vlTOPp->present__DOT____Vcellinp__result__w;
     vlTOPp->present__DOT__key_sch_impl__DOT__s_box_output 
         = vlTOPp->present__DOT__key_sch_impl__DOT__sbox__DOT__dout;
     vlTOPp->end_key_generation = vlTOPp->present__DOT__end_key_generation;
@@ -363,20 +372,9 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present__DOT__present_enc_impl__DOT____Vcellinp__counter_impl__rst 
         = (1U & ((~ (IData)(vlTOPp->present__DOT__start_enc)) 
                  | (~ (IData)(vlTOPp->present__DOT__end_key_generation))));
-    vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__block_register__cl 
+    vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst 
         = (1U & ((~ (IData)(vlTOPp->present__DOT__start_dec)) 
                  | (~ (IData)(vlTOPp->present__DOT__end_key_generation))));
-    vlTOPp->present__DOT__present_enc_impl__DOT__block_register__DOT__w 
-        = vlTOPp->present__DOT__present_enc_impl__DOT__register_w;
-    vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__block_i 
-        = vlTOPp->present__DOT__present_enc_impl__DOT__block_i;
-    vlTOPp->present__DOT__present_dec_impl__DOT__block_register__DOT__w 
-        = vlTOPp->present__DOT__present_dec_impl__DOT__register_w;
-    vlTOPp->present__DOT__key_index = ((IData)(vlTOPp->enc_dec)
-                                        ? (IData)(vlTOPp->present__DOT__key_index_dec)
-                                        : (IData)(vlTOPp->present__DOT__key_index_enc));
-    vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__block_i 
-        = vlTOPp->present__DOT__present_dec_impl__DOT__block_i;
     vlTOPp->present__DOT__present_enc_impl__DOT__roundkey 
         = vlTOPp->present__DOT__roundkey;
     vlTOPp->present__DOT__present_dec_impl__DOT__roundkey 
@@ -387,9 +385,20 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present__DOT__present_dec_impl__DOT__result 
         = (vlTOPp->present__DOT__present_dec_impl__DOT__register_output 
            ^ vlTOPp->present__DOT__roundkey);
+    vlTOPp->present__DOT__present_enc_impl__DOT__block_register__DOT__w 
+        = vlTOPp->present__DOT__present_enc_impl__DOT__register_w;
+    vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__block_i 
+        = vlTOPp->present__DOT__present_enc_impl__DOT__block_i;
     vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT____Vcellinp__slayer_i__din 
         = (vlTOPp->present__DOT__present_enc_impl__DOT__block_i 
            ^ vlTOPp->present__DOT__roundkey);
+    vlTOPp->present__DOT__present_dec_impl__DOT__block_register__DOT__w 
+        = vlTOPp->present__DOT__present_dec_impl__DOT__register_w;
+    vlTOPp->present__DOT__key_index = ((IData)(vlTOPp->enc_dec)
+                                        ? (IData)(vlTOPp->present__DOT__key_index_dec)
+                                        : (IData)(vlTOPp->present__DOT__key_index_enc));
+    vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__block_i 
+        = vlTOPp->present__DOT__present_dec_impl__DOT__block_i;
     vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT____Vcellinp__player_i__din 
         = (vlTOPp->present__DOT__present_dec_impl__DOT__block_i 
            ^ vlTOPp->present__DOT__roundkey);
@@ -510,15 +519,9 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present__DOT__present_enc_impl__DOT__block_register__DOT__cl 
         = vlTOPp->present__DOT__present_enc_impl__DOT____Vcellinp__counter_impl__rst;
     vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__rst 
-        = vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__block_register__cl;
+        = vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst;
     vlTOPp->present__DOT__present_dec_impl__DOT__block_register__DOT__cl 
-        = vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__block_register__cl;
-    vlTOPp->present__DOT__key_sch_impl__DOT__key_index 
-        = vlTOPp->present__DOT__key_index;
-    vlTOPp->present__DOT__key_sch_impl__DOT__mem_addr 
-        = ((IData)(vlTOPp->present__DOT__key_sch_impl__DOT__end_signal)
-            ? (IData)(vlTOPp->present__DOT__key_index)
-            : (IData)(vlTOPp->present__DOT__key_sch_impl__DOT__counter_output));
+        = vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst;
     vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__key_i 
         = vlTOPp->present__DOT__present_enc_impl__DOT__roundkey;
     vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__key_i 
@@ -654,6 +657,12 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__15__KET____DOT__sbox__DOT__dout 
         = vlTOPp->__Vtable17_present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__15__KET____DOT__sbox__DOT__dout
         [vlTOPp->__Vtableidx17];
+    vlTOPp->present__DOT__key_sch_impl__DOT__key_index 
+        = vlTOPp->present__DOT__key_index;
+    vlTOPp->present__DOT__key_sch_impl__DOT__mem_addr 
+        = ((IData)(vlTOPp->present__DOT__key_sch_impl__DOT__end_signal)
+            ? (IData)(vlTOPp->present__DOT__key_index)
+            : (IData)(vlTOPp->present__DOT__key_sch_impl__DOT__counter_output));
     vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__player_i__DOT__din 
         = vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT____Vcellinp__player_i__din;
     vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__player_i__DOT__dout 
@@ -980,11 +989,9 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->present__DOT__key_sch_impl__DOT__key_register_input[1U];
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register__DOT__din[2U] 
         = vlTOPp->present__DOT__key_sch_impl__DOT__key_register_input[2U];
-    vlTOPp->present__DOT__key_sch_impl__DOT__memory_impl__DOT__addr 
-        = vlTOPp->present__DOT__key_sch_impl__DOT__mem_addr;
-    vlTOPp->present__DOT__block_o = ((IData)(vlTOPp->enc_dec)
-                                      ? vlTOPp->present__DOT__dec_o
-                                      : vlTOPp->present__DOT__enc_o);
+    vlTOPp->present__DOT__block_o_logic = ((IData)(vlTOPp->enc_dec)
+                                            ? vlTOPp->present__DOT__dec_o
+                                            : vlTOPp->present__DOT__enc_o);
     vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__dout 
         = ((VL_ULL(0xfffffffffffffff0) & vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__dout) 
            | (IData)((IData)(vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__0__KET____DOT__sbox__DOT__dout)));
@@ -1048,9 +1055,11 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = ((VL_ULL(0xfffffffffffffff) & vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__dout) 
            | ((QData)((IData)(vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__15__KET____DOT__sbox__DOT__dout)) 
               << 0x3cU));
+    vlTOPp->present__DOT__key_sch_impl__DOT__memory_impl__DOT__addr 
+        = vlTOPp->present__DOT__key_sch_impl__DOT__mem_addr;
     vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__p_layer_o 
         = vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__player_i__DOT__dout;
-    vlTOPp->block_o = vlTOPp->present__DOT__block_o;
+    vlTOPp->present__DOT__result__DOT__din = vlTOPp->present__DOT__block_o_logic;
     vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__s_box_o 
         = vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__dout;
     vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__din 
@@ -1601,27 +1610,13 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__dout;
     __Vdly__present__DOT__present_dec_impl__DOT__counter_impl__DOT__dout 
         = vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__dout;
-    vlTOPp->present__DOT__present_enc_impl__DOT__end_signal = 0U;
-    if ((0x1fU == (IData)(vlTOPp->present__DOT__present_enc_impl__DOT__key_index))) {
-        vlTOPp->present__DOT__present_enc_impl__DOT__end_signal = 1U;
-    }
-    vlTOPp->present__DOT__present_enc_impl__DOT__counter_up = 0U;
-    if (vlTOPp->present__DOT__start_enc) {
-        vlTOPp->present__DOT__present_enc_impl__DOT__counter_up = 1U;
-    }
-    if ((0x1fU == (IData)(vlTOPp->present__DOT__present_enc_impl__DOT__key_index))) {
-        vlTOPp->present__DOT__present_enc_impl__DOT__counter_up = 0U;
-    }
-    vlTOPp->present__DOT__present_dec_impl__DOT__end_signal = 0U;
-    if ((0U == (IData)(vlTOPp->present__DOT__present_dec_impl__DOT__key_index))) {
-        vlTOPp->present__DOT__present_dec_impl__DOT__end_signal = 1U;
-    }
-    vlTOPp->present__DOT__present_dec_impl__DOT__counter_down = 0U;
-    if (vlTOPp->present__DOT__start_dec) {
-        vlTOPp->present__DOT__present_dec_impl__DOT__counter_down = 1U;
-    }
-    if ((0U == (IData)(vlTOPp->present__DOT__present_dec_impl__DOT__key_index))) {
-        vlTOPp->present__DOT__present_dec_impl__DOT__counter_down = 0U;
+    if (vlTOPp->rst) {
+        vlTOPp->present__DOT__result__DOT__dout = VL_ULL(0);
+    } else {
+        if (vlTOPp->present__DOT____Vcellinp__result__w) {
+            vlTOPp->present__DOT__result__DOT__dout 
+                = vlTOPp->present__DOT__block_o_logic;
+        }
     }
     if (vlTOPp->present__DOT__key_sch_impl__DOT__r_w) {
         __Vdlyvval__present__DOT__key_sch_impl__DOT__memory_impl__DOT__memory___v0 
@@ -1658,6 +1653,28 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
     }
     vlTOPp->present__DOT__key_sch_impl__DOT__current_state 
         = ((IData)(vlTOPp->rst) ? 0U : (IData)(vlTOPp->present__DOT__key_sch_impl__DOT__next_state));
+    if (vlTOPp->present__DOT__end_key_generation) {
+        if ((0x1fU == (IData)(vlTOPp->present__DOT__present_enc_impl__DOT__key_index))) {
+            vlTOPp->present__DOT__present_enc_impl__DOT__end_signal = 1U;
+        } else {
+            if (vlTOPp->present__DOT__start_enc) {
+                vlTOPp->present__DOT__present_enc_impl__DOT__end_signal = 0U;
+            }
+        }
+    } else {
+        vlTOPp->present__DOT__present_enc_impl__DOT__end_signal = 0U;
+    }
+    if (vlTOPp->present__DOT__end_key_generation) {
+        if ((0U == (IData)(vlTOPp->present__DOT__present_dec_impl__DOT__key_index))) {
+            vlTOPp->present__DOT__present_dec_impl__DOT__end_signal = 1U;
+        } else {
+            if (vlTOPp->present__DOT__start_dec) {
+                vlTOPp->present__DOT__present_dec_impl__DOT__end_signal = 0U;
+            }
+        }
+    } else {
+        vlTOPp->present__DOT__present_dec_impl__DOT__end_signal = 0U;
+    }
     if (vlTOPp->present__DOT__present_enc_impl__DOT____Vcellinp__counter_impl__rst) {
         vlTOPp->present__DOT__present_enc_impl__DOT__block_register__DOT__dout = VL_ULL(0);
     } else {
@@ -1666,7 +1683,7 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                 = vlTOPp->present__DOT__present_enc_impl__DOT__block_o;
         }
     }
-    if (vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__block_register__cl) {
+    if (vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst) {
         vlTOPp->present__DOT__present_dec_impl__DOT__block_register__DOT__dout = VL_ULL(0);
     } else {
         if (vlTOPp->present__DOT__present_dec_impl__DOT__register_w) {
@@ -1682,7 +1699,7 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                 = (0x1fU & ((IData)(1U) + (IData)(vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__dout)));
         }
     }
-    if (vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__block_register__cl) {
+    if (vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst) {
         __Vdly__present__DOT__present_dec_impl__DOT__counter_impl__DOT__dout = 0x1fU;
     } else {
         if (vlTOPp->present__DOT__present_dec_impl__DOT__counter_down) {
@@ -1696,12 +1713,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
             = vlTOPp->present__DOT__key_sch_impl__DOT__memory_impl__DOT__memory_
             [vlTOPp->present__DOT__key_sch_impl__DOT__mem_addr];
     }
-    vlTOPp->present__DOT__end_enc = vlTOPp->present__DOT__present_enc_impl__DOT__end_signal;
-    vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__up 
-        = vlTOPp->present__DOT__present_enc_impl__DOT__counter_up;
-    vlTOPp->present__DOT__end_dec = vlTOPp->present__DOT__present_dec_impl__DOT__end_signal;
-    vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__down 
-        = vlTOPp->present__DOT__present_dec_impl__DOT__counter_down;
     vlTOPp->present__DOT__key_sch_impl__DOT__counter_impl__DOT__dout 
         = __Vdly__present__DOT__key_sch_impl__DOT__counter_impl__DOT__dout;
     vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__dout 
@@ -1712,8 +1723,7 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         vlTOPp->present__DOT__key_sch_impl__DOT__memory_impl__DOT__memory_[__Vdlyvdim0__present__DOT__key_sch_impl__DOT__memory_impl__DOT__memory___v0] 
             = __Vdlyvval__present__DOT__key_sch_impl__DOT__memory_impl__DOT__memory___v0;
     }
-    vlTOPp->end_enc = vlTOPp->present__DOT__end_enc;
-    vlTOPp->end_dec = vlTOPp->present__DOT__end_dec;
+    vlTOPp->present__DOT__block_o = vlTOPp->present__DOT__result__DOT__dout;
     vlTOPp->present__DOT__key_sch_impl__DOT__counter_output 
         = vlTOPp->present__DOT__key_sch_impl__DOT__counter_impl__DOT__dout;
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register_output[0U] 
@@ -1767,16 +1777,33 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
             }
         }
     }
+    vlTOPp->present__DOT__end_enc = vlTOPp->present__DOT__present_enc_impl__DOT__end_signal;
+    vlTOPp->present__DOT__end_dec = vlTOPp->present__DOT__present_dec_impl__DOT__end_signal;
     vlTOPp->present__DOT__present_enc_impl__DOT__register_output 
         = vlTOPp->present__DOT__present_enc_impl__DOT__block_register__DOT__dout;
     vlTOPp->present__DOT__present_dec_impl__DOT__register_output 
         = vlTOPp->present__DOT__present_dec_impl__DOT__block_register__DOT__dout;
-    vlTOPp->present__DOT__present_enc_impl__DOT__key_index 
-        = vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__dout;
-    vlTOPp->present__DOT__present_dec_impl__DOT__key_index 
-        = vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__dout;
+    if (vlTOPp->present__DOT__end_key_generation) {
+        if ((0x1fU == (IData)(vlTOPp->present__DOT__present_enc_impl__DOT__key_index))) {
+            vlTOPp->present__DOT__present_enc_impl__DOT__counter_up = 0U;
+        } else {
+            if (vlTOPp->present__DOT__start_enc) {
+                vlTOPp->present__DOT__present_enc_impl__DOT__counter_up = 1U;
+            }
+        }
+    }
+    if (vlTOPp->present__DOT__end_key_generation) {
+        if ((0U == (IData)(vlTOPp->present__DOT__present_dec_impl__DOT__key_index))) {
+            vlTOPp->present__DOT__present_dec_impl__DOT__counter_down = 0U;
+        } else {
+            if (vlTOPp->present__DOT__start_dec) {
+                vlTOPp->present__DOT__present_dec_impl__DOT__counter_down = 1U;
+            }
+        }
+    }
     vlTOPp->present__DOT__key_sch_impl__DOT__roundkey 
         = vlTOPp->present__DOT__key_sch_impl__DOT__memory_impl__DOT__dout;
+    vlTOPp->block_o = vlTOPp->present__DOT__block_o;
     vlTOPp->present__DOT__key_sch_impl__DOT__next_state 
         = vlTOPp->present__DOT__key_sch_impl__DOT__current_state;
     if ((4U & (IData)(vlTOPp->present__DOT__key_sch_impl__DOT__current_state))) {
@@ -1821,25 +1848,34 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->present__DOT__key_sch_impl__DOT__key_register_w;
     vlTOPp->present__DOT__key_sch_impl__DOT__memory_impl__DOT__r_w 
         = vlTOPp->present__DOT__key_sch_impl__DOT__r_w;
+    vlTOPp->end_enc = vlTOPp->present__DOT__end_enc;
+    vlTOPp->end_dec = vlTOPp->present__DOT__end_dec;
+    vlTOPp->present__DOT____Vcellinp__result__w = ((IData)(vlTOPp->present__DOT__end_enc) 
+                                                   | (IData)(vlTOPp->present__DOT__end_dec));
+    vlTOPp->present__DOT__present_enc_impl__DOT__key_index 
+        = vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__dout;
     vlTOPp->present__DOT__end_key_generation = vlTOPp->present__DOT__key_sch_impl__DOT__end_signal;
-    vlTOPp->present__DOT__present_enc_impl__DOT__register_w 
-        = (0U < (IData)(vlTOPp->present__DOT__present_enc_impl__DOT__key_index));
-    vlTOPp->present__DOT__key_index_enc = vlTOPp->present__DOT__present_enc_impl__DOT__key_index;
-    vlTOPp->present__DOT__present_dec_impl__DOT__register_w 
-        = (0x1fU > (IData)(vlTOPp->present__DOT__present_dec_impl__DOT__key_index));
-    vlTOPp->present__DOT__key_index_dec = vlTOPp->present__DOT__present_dec_impl__DOT__key_index;
+    vlTOPp->present__DOT__present_dec_impl__DOT__key_index 
+        = vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__dout;
     vlTOPp->present__DOT__roundkey = vlTOPp->present__DOT__key_sch_impl__DOT__roundkey;
     vlTOPp->present__DOT__key_sch_impl__DOT__s_box_output 
         = vlTOPp->present__DOT__key_sch_impl__DOT__sbox__DOT__dout;
+    vlTOPp->present__DOT__result__DOT__w = vlTOPp->present__DOT____Vcellinp__result__w;
+    vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__up 
+        = vlTOPp->present__DOT__present_enc_impl__DOT__counter_up;
+    vlTOPp->present__DOT__present_enc_impl__DOT__register_w 
+        = (0U < (IData)(vlTOPp->present__DOT__present_enc_impl__DOT__key_index));
+    vlTOPp->present__DOT__key_index_enc = vlTOPp->present__DOT__present_enc_impl__DOT__key_index;
+    vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__down 
+        = vlTOPp->present__DOT__present_dec_impl__DOT__counter_down;
     vlTOPp->end_key_generation = vlTOPp->present__DOT__end_key_generation;
     vlTOPp->present__DOT__present_enc_impl__DOT__rst 
         = (1U & (~ (IData)(vlTOPp->present__DOT__end_key_generation)));
     vlTOPp->present__DOT__present_dec_impl__DOT__rst 
         = (1U & (~ (IData)(vlTOPp->present__DOT__end_key_generation)));
-    vlTOPp->present__DOT__present_enc_impl__DOT__block_register__DOT__w 
-        = vlTOPp->present__DOT__present_enc_impl__DOT__register_w;
-    vlTOPp->present__DOT__present_dec_impl__DOT__block_register__DOT__w 
-        = vlTOPp->present__DOT__present_dec_impl__DOT__register_w;
+    vlTOPp->present__DOT__present_dec_impl__DOT__register_w 
+        = (0x1fU > (IData)(vlTOPp->present__DOT__present_dec_impl__DOT__key_index));
+    vlTOPp->present__DOT__key_index_dec = vlTOPp->present__DOT__present_dec_impl__DOT__key_index;
     vlTOPp->present__DOT__present_enc_impl__DOT__roundkey 
         = vlTOPp->present__DOT__roundkey;
     vlTOPp->present__DOT__present_dec_impl__DOT__roundkey 
@@ -1850,6 +1886,10 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present__DOT__present_dec_impl__DOT__result 
         = (vlTOPp->present__DOT__present_dec_impl__DOT__register_output 
            ^ vlTOPp->present__DOT__roundkey);
+    vlTOPp->present__DOT__present_enc_impl__DOT__block_register__DOT__w 
+        = vlTOPp->present__DOT__present_enc_impl__DOT__register_w;
+    vlTOPp->present__DOT__present_dec_impl__DOT__block_register__DOT__w 
+        = vlTOPp->present__DOT__present_dec_impl__DOT__register_w;
     vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__key_i 
         = vlTOPp->present__DOT__present_enc_impl__DOT__roundkey;
     vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__key_i 
@@ -1870,9 +1910,6 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present__DOT__present_dec_impl__DOT__block_i 
         = ((0x1dU < (IData)(vlTOPp->present__DOT__present_dec_impl__DOT__key_index))
             ? vlTOPp->block_i : vlTOPp->present__DOT__present_dec_impl__DOT__register_output);
-    vlTOPp->present__DOT__key_index = ((IData)(vlTOPp->enc_dec)
-                                        ? (IData)(vlTOPp->present__DOT__key_index_dec)
-                                        : (IData)(vlTOPp->present__DOT__key_index_enc));
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register_input[0U] = 0U;
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register_input[1U] = 0U;
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register_input[2U] = 0U;
@@ -1985,9 +2022,12 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
             }
         }
     }
-    vlTOPp->present__DOT__block_o = ((IData)(vlTOPp->enc_dec)
-                                      ? vlTOPp->present__DOT__dec_o
-                                      : vlTOPp->present__DOT__enc_o);
+    vlTOPp->present__DOT__key_index = ((IData)(vlTOPp->enc_dec)
+                                        ? (IData)(vlTOPp->present__DOT__key_index_dec)
+                                        : (IData)(vlTOPp->present__DOT__key_index_enc));
+    vlTOPp->present__DOT__block_o_logic = ((IData)(vlTOPp->enc_dec)
+                                            ? vlTOPp->present__DOT__dec_o
+                                            : vlTOPp->present__DOT__enc_o);
     vlTOPp->present__DOT__present_enc_impl__DOT__start_signal 
         = vlTOPp->present__DOT__start_enc;
     vlTOPp->present__DOT__present_enc_impl__DOT____Vcellinp__counter_impl__rst 
@@ -1995,7 +2035,7 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
                  | (~ (IData)(vlTOPp->present__DOT__end_key_generation))));
     vlTOPp->present__DOT__present_dec_impl__DOT__start_signal 
         = vlTOPp->present__DOT__start_dec;
-    vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__block_register__cl 
+    vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst 
         = (1U & ((~ (IData)(vlTOPp->present__DOT__start_dec)) 
                  | (~ (IData)(vlTOPp->present__DOT__end_key_generation))));
     vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__block_i 
@@ -2008,27 +2048,27 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT____Vcellinp__player_i__din 
         = (vlTOPp->present__DOT__present_dec_impl__DOT__block_i 
            ^ vlTOPp->present__DOT__roundkey);
-    vlTOPp->present__DOT__key_sch_impl__DOT__key_index 
-        = vlTOPp->present__DOT__key_index;
-    vlTOPp->present__DOT__key_sch_impl__DOT__mem_addr 
-        = ((IData)(vlTOPp->present__DOT__key_sch_impl__DOT__end_signal)
-            ? (IData)(vlTOPp->present__DOT__key_index)
-            : (IData)(vlTOPp->present__DOT__key_sch_impl__DOT__counter_output));
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register__DOT__din[0U] 
         = vlTOPp->present__DOT__key_sch_impl__DOT__key_register_input[0U];
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register__DOT__din[1U] 
         = vlTOPp->present__DOT__key_sch_impl__DOT__key_register_input[1U];
     vlTOPp->present__DOT__key_sch_impl__DOT__key_register__DOT__din[2U] 
         = vlTOPp->present__DOT__key_sch_impl__DOT__key_register_input[2U];
-    vlTOPp->block_o = vlTOPp->present__DOT__block_o;
+    vlTOPp->present__DOT__key_sch_impl__DOT__key_index 
+        = vlTOPp->present__DOT__key_index;
+    vlTOPp->present__DOT__key_sch_impl__DOT__mem_addr 
+        = ((IData)(vlTOPp->present__DOT__key_sch_impl__DOT__end_signal)
+            ? (IData)(vlTOPp->present__DOT__key_index)
+            : (IData)(vlTOPp->present__DOT__key_sch_impl__DOT__counter_output));
+    vlTOPp->present__DOT__result__DOT__din = vlTOPp->present__DOT__block_o_logic;
     vlTOPp->present__DOT__present_enc_impl__DOT__counter_impl__DOT__rst 
         = vlTOPp->present__DOT__present_enc_impl__DOT____Vcellinp__counter_impl__rst;
     vlTOPp->present__DOT__present_enc_impl__DOT__block_register__DOT__cl 
         = vlTOPp->present__DOT__present_enc_impl__DOT____Vcellinp__counter_impl__rst;
     vlTOPp->present__DOT__present_dec_impl__DOT__counter_impl__DOT__rst 
-        = vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__block_register__cl;
+        = vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst;
     vlTOPp->present__DOT__present_dec_impl__DOT__block_register__DOT__cl 
-        = vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__block_register__cl;
+        = vlTOPp->present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst;
     vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__din 
         = vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT____Vcellinp__slayer_i__din;
     vlTOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__0__KET____DOT__sbox__DOT__din 
@@ -3174,8 +3214,10 @@ void Vtop::_ctor_var_reset() {
     present__DOT__roundkey = VL_RAND_RESET_Q(64);
     present__DOT__enc_o = VL_RAND_RESET_Q(64);
     present__DOT__dec_o = VL_RAND_RESET_Q(64);
+    present__DOT__block_o_logic = VL_RAND_RESET_Q(64);
     present__DOT__start_enc = VL_RAND_RESET_I(1);
     present__DOT__start_dec = VL_RAND_RESET_I(1);
+    present__DOT____Vcellinp__result__w = VL_RAND_RESET_I(1);
     present__DOT__key_sch_impl__DOT__clk = VL_RAND_RESET_I(1);
     present__DOT__key_sch_impl__DOT__rst = VL_RAND_RESET_I(1);
     VL_RAND_RESET_W(80, present__DOT__key_sch_impl__DOT__key);
@@ -3290,10 +3332,10 @@ void Vtop::_ctor_var_reset() {
     present__DOT__present_dec_impl__DOT__result = VL_RAND_RESET_Q(64);
     present__DOT__present_dec_impl__DOT__end_signal = VL_RAND_RESET_I(1);
     present__DOT__present_dec_impl__DOT__counter_down = VL_RAND_RESET_I(1);
+    present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst = VL_RAND_RESET_I(1);
     present__DOT__present_dec_impl__DOT__block_o = VL_RAND_RESET_Q(64);
     present__DOT__present_dec_impl__DOT__register_output = VL_RAND_RESET_Q(64);
     present__DOT__present_dec_impl__DOT__register_w = VL_RAND_RESET_I(1);
-    present__DOT__present_dec_impl__DOT____Vcellinp__block_register__cl = VL_RAND_RESET_I(1);
     present__DOT__present_dec_impl__DOT__block_i = VL_RAND_RESET_Q(64);
     present__DOT__present_dec_impl__DOT__counter_impl__DOT__clk = VL_RAND_RESET_I(1);
     present__DOT__present_dec_impl__DOT__counter_impl__DOT__rst = VL_RAND_RESET_I(1);
@@ -3348,6 +3390,11 @@ void Vtop::_ctor_var_reset() {
     present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__14__KET____DOT__sbox__DOT__dout = VL_RAND_RESET_I(4);
     present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__15__KET____DOT__sbox__DOT__din = VL_RAND_RESET_I(4);
     present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__15__KET____DOT__sbox__DOT__dout = VL_RAND_RESET_I(4);
+    present__DOT__result__DOT__clk = VL_RAND_RESET_I(1);
+    present__DOT__result__DOT__cl = VL_RAND_RESET_I(1);
+    present__DOT__result__DOT__w = VL_RAND_RESET_I(1);
+    present__DOT__result__DOT__din = VL_RAND_RESET_Q(64);
+    present__DOT__result__DOT__dout = VL_RAND_RESET_Q(64);
     __Vtableidx1 = 0;
     __Vtable1_present__DOT__key_sch_impl__DOT__sbox__DOT__dout[0] = 0xcU;
     __Vtable1_present__DOT__key_sch_impl__DOT__sbox__DOT__dout[1] = 5U;

@@ -109,6 +109,7 @@ class Vtop__Syms : public VerilatedSyms {
     VerilatedScope __Vscope_present__present_enc_impl__enc_stage_impl__slayer_i__genblk1__BRA__8__KET____sbox;
     VerilatedScope __Vscope_present__present_enc_impl__enc_stage_impl__slayer_i__genblk1__BRA__9__KET__;
     VerilatedScope __Vscope_present__present_enc_impl__enc_stage_impl__slayer_i__genblk1__BRA__9__KET____sbox;
+    VerilatedScope __Vscope_present__result;
     
     // SCOPE HIERARCHY
     VerilatedHierarchy __Vhier;

@@ -21,7 +21,7 @@ from cocotb.clock import Clock
 
 import importlib
 import sys
-sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
+sys.path.append('/Users/germancq/Documents/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
 import present
 
 CLK_PERIOD = 20 # 50 MHz
@@ -168,7 +168,7 @@ def run_test(dut, key = 0):
 
 
 
-n = 10
+n = 400
 factory = TestFactory(run_test)
 
 factory.add_option("key", np.random.randint(low=0,high=(2**32)-1,size=n)) #array de 10 int aleatorios entre 0 y 31
