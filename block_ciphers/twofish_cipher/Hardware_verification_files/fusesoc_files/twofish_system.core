@@ -54,6 +54,7 @@ filesets :
       - sdspi
       - mux
       - seven_segments
+      - memory_module
 
     file_type : systemVerilogSource
 

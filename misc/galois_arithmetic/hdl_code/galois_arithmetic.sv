@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-31 12:05:35
  * @ Modified by: Your name
- * @ Modified time: 2020-03-06 12:58:50
+ * @ Modified time: 2020-03-06 13:01:44
  * @ Description:
  */
 
@@ -11,7 +11,7 @@ module matrix_multiplication #(
     parameter N = 8,
     parameter COL_A = 4,
     parameter ROW_A = 4,
-    parameter COL_B = 1,
+    parameter COL_B = 1
 )
 (
     input [N-1:0] a [(ROW_A*COL_A)-1:0],
