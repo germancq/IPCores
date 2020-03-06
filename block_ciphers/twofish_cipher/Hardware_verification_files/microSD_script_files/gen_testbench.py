@@ -23,8 +23,8 @@ def gen_all_posibilities(micro_sd):
 
 
     parameters = [
-        np.random.randint(0,2**63-1,20,dtype=np.int64), #input_1 values
-        np.random.randint(0,2**63-1,20,dtype=np.int64), #input_2 values
+        np.random.randint(0,2**63-1,10,dtype=np.int64), #input_1 values
+        np.random.randint(0,2**63-1,10,dtype=np.int64), #input_2 values
         range(0,1+1)
     ]
     total_posibilities = 1
@@ -36,6 +36,10 @@ def gen_all_posibilities(micro_sd):
     j = 0
     zero = 0
     for n in range (0, total_posibilities):
+
+        micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
+        micro_sd.write(zero.to_bytes(512, byteorder='big'))
+
         pairs = create_posibility(n,parameters,modulo_op)
         print(pairs)
         micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
@@ -54,7 +58,7 @@ def gen_all_posibilities(micro_sd):
 
     #last block with no signature
     micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
-    micro_sd.write(zero.to_bytes(4, byteorder='big'))
+    micro_sd.write(zero.to_bytes(512, byteorder='big'))
 
 
 def create_posibility(n,parameters,modulo_op):

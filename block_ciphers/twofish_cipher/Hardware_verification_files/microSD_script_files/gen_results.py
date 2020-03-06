@@ -9,9 +9,10 @@ import sys
 import os
 import itertools
 import xlwt
+import time
 
 import importlib
-sys.path.append('/home/germancq/gitProjects/examples_cryptography/python')
+sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/twofish_cipher/python_code')
 import twofish
 
 BLOCK_SIZE = 512
@@ -26,6 +27,9 @@ def create_fields(sheet1):
     sheet1.write(0,5,'expected_enc_value')
     sheet1.write(0,6,'expected_dec_value')
     sheet1.write(0,7,'error')
+    sheet1.write(0,8,'HW_time_ns')
+    sheet1.write(0,9,'SW_enc_time')
+    sheet1.write(0,10,'SW_dec_time')
 
 def read_params_from_sd(block_n,micro_sd):
     micro_sd.seek(BLOCK_SIZE*block_n)
@@ -39,13 +43,15 @@ def read_params_from_sd(block_n,micro_sd):
         n_iter = 1
     
     result = int.from_bytes(micro_sd.read(16),byteorder='little')
+    exec_time = int.from_bytes(micro_sd.read(4),byteorder='little')
     #print(hex(result))
     
     return (signature,
             param_0,
             param_1,
             param_2,
-            result)
+            result,
+            exec_time)
 
 
 def write_params(sheet1, params , i):
@@ -54,10 +60,18 @@ def write_params(sheet1, params , i):
     key = params[2]
     enc_dec = params[3]
     result = params[4]
+    hw_time = int(calculated_time_in_ms(params[5]))
+    start_prep_time = time.time_ns()
     twofish_SW = twofish.Twofish(key)
+    end_prep_time = time.time_ns()
+    strat_enc_time = time.time_ns()
     expected_enc_value = twofish_SW.encrypt(text)
+    end_enc_time = time.time_ns()
+    start_dec_time = time.time_ns()
     expected_dec_value = twofish_SW.decrypt(text) 
+    end_dec_time = time.time_ns()
     print("*************************")
+    print(hex(params[5]))
     print(hex(result))
     print(hex(expected_enc_value))
     print(hex(expected_dec_value))
@@ -72,6 +86,10 @@ def write_params(sheet1, params , i):
     
 
 
+    prep_time = end_prep_time - start_prep_time
+    enc_time = int(prep_time + (end_enc_time - strat_enc_time))
+    dec_time = int(prep_time + (end_dec_time - start_dec_time))
+
     sheet1.write(i,1,hex(text))
     sheet1.write(i,2,hex(key))
     sheet1.write(i,3,hex(enc_dec))
@@ -79,8 +97,32 @@ def write_params(sheet1, params , i):
     sheet1.write(i,5,hex(expected_enc_value))
     sheet1.write(i,6,hex(expected_dec_value))
     sheet1.write(i,7,hex(error))
+    sheet1.write(i,8,int(hw_time))
+    sheet1.write(i,9,int(enc_time))
+    sheet1.write(i,10,int(dec_time))
     
     return i+1
+
+
+def get_clk_speed_from_factor(n, base_clk=100):
+    return (base_clk / (2**(n+1)))
+
+def calculated_time_in_ms(time_units,base_clk=100,div_clk=7):
+    clk_counter = get_clk_speed_from_factor(div_clk)
+    #print ('time units is = %i' % time_units)
+    #clk_counter in Mhz
+    # 1/clk_counter = (1/clk_counterHz)* 10**(-6) s
+    period_in_us = (1/(clk_counter))
+    return time_units * period_in_us * (10**(-3))  
+
+def calculated_time_in_ns(time_units,base_clk=100,div_clk=7):
+    clk_counter = get_clk_speed_from_factor(div_clk)
+    #print ('time units is = %i' % time_units)
+    #clk_counter in Mhz
+    # 1/clk_counter = (1/clk_counterHz)* 10**(-6) s
+    period_in_us = (1/(clk_counter))
+    time_us = time_units * period_in_us
+    return time_us * 1000    
 
 def gen_calc(micro_sd):
     wb = xlwt.Workbook()
@@ -96,7 +138,7 @@ def gen_calc(micro_sd):
         i = write_params(sheet1,params,i)
 
 
-    wb.save('results_sheet.xls')
+    wb.save('results.xls')
 
 def main():
     with open(sys.argv[1],"rb") as micro_sd:

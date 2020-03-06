@@ -12,7 +12,7 @@ import xlwt
 import time
 
 import importlib
-sys.path.append('/Users/germancq/Documents/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
+sys.path.append('IPCores/block_ciphers/present_cipher/python_code')
 import present
 
 BLOCK_SIZE = 512
