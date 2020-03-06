@@ -1,0 +1,21 @@
+CAPI=1
+[main]
+description = "twofish cipher"
+
+depend = 
+  counter
+  register
+  galois_arithmetic
+  adder
+
+[verilog]
+src_files =
+  block_ciphers/twofish_cipher/hdl_code/twofish.sv
+  
+
+
+[provider] 
+name = github
+user = germancq
+repo = IPCores
+version = master

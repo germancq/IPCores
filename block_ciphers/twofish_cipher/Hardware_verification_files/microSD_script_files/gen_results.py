@@ -31,9 +31,9 @@ def read_params_from_sd(block_n,micro_sd):
     micro_sd.seek(BLOCK_SIZE*block_n)
     signature = int.from_bytes(micro_sd.read(4),byteorder='big')
     n_iter = int.from_bytes(micro_sd.read(1),byteorder='big')
-    param_0 = int.from_bytes(micro_sd.read(16),byteorder='big')
-    param_1 = int.from_bytes(micro_sd.read(16),byteorder='big')
-    param_2 = int.from_bytes(micro_sd.read(1),byteorder='big')
+    param_0 = int.from_bytes(micro_sd.read(16),byteorder='little')
+    param_1 = int.from_bytes(micro_sd.read(16),byteorder='little')
+    param_2 = int.from_bytes(micro_sd.read(1),byteorder='little')
     #micro_sd.seek((BLOCK_SIZE*block_n) + RESULTS_OFFSET)
     if n_iter == 0 :
         n_iter = 1

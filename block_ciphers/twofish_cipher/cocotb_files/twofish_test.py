@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 12:20:30 by germancq          #+#    #+#              #
-#    Updated: 2020/02/18 12:40:50 by germancq         ###   ########.fr        #
+#    Updated: 2020/03/06 12:19:52 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,7 @@ def enc_dec_test(dut,expected_value) :
     print("VERILOG_VALUES")
     while dut.end_signal == 0 :
         if(dut.current_state == 3):
+            '''
             print('//////////////////////////')
             print(int(dut.counter_out.value))
             print(int(dut.stage_impl.i.value))
@@ -94,6 +95,7 @@ def enc_dec_test(dut,expected_value) :
             print(hex(int(dut.R2.value))) 
             print(hex(int(dut.R3.value))) 
             print('//////////////////////////')
+            '''
         yield n_cycles_clock(dut,1)
 
 
@@ -119,7 +121,7 @@ def run_test(dut, key = 0, text = 0):
     
 
     #encrypt
-    print("ENCRYPT")
+    #print("ENCRYPT")
     enc_dec = 0
     expected_value = twofish_SW.encrypt(text)
 
@@ -127,7 +129,7 @@ def run_test(dut, key = 0, text = 0):
     yield rst_function_test(dut,enc_dec)
     yield enc_dec_test(dut,expected_value)
     #decrypt
-    print("DECRYPT")
+    #print("DECRYPT")
     enc_dec = 1
     expected_value = twofish_SW.decrypt(text)
     

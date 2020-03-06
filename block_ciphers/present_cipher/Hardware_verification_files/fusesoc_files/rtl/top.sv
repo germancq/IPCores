@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: Your name
- * @ Modified time: 2020-02-27 14:34:16
+ * @ Modified time: 2020-03-06 12:42:28
  * @ Description:
  */
 
@@ -47,7 +47,7 @@ logic end_enc;
 logic [31:0] debug_data;
   display #(.N(32),.CLK_HZ(100000000)) display_inst(
     .clk(sys_clk_pad_i),
-    .rst(center_button),
+    .rst(rst),
     .din(debug_data),
     .an(AN),
     .seg(seg)

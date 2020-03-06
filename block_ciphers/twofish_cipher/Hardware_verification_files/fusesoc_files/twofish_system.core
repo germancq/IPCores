@@ -49,6 +49,11 @@ filesets :
 
     depend :
       - twofish_cipher
+      - register
+      - counter
+      - sdspi
+      - mux
+      - seven_segments
 
     file_type : systemVerilogSource
 
@@ -58,18 +63,10 @@ filesets :
 
 
   rtl_autotest :
-    file_type : verilogSource
+    file_type : systemVerilogSource
     files : 
-      - rtl/autotest_module/autotest_module.v
-      - rtl/autotest_module/fsm_autotest.v
-      - rtl/autotest_module/misc/contador_up.v
-      - rtl/autotest_module/misc/genericMux.v
-      - rtl/autotest_module/misc/memory_bank.v
-      - rtl/autotest_module/misc/registro_desp.v
-      - rtl/autotest_module/misc/registro.v
-      - rtl/autotest_module/sdspi/sdcmd.v
-      - rtl/autotest_module/sdspi/sdspihost.v
-      - rtl/autotest_module/sdspi/spi_master.v
+      - rtl/autotest_module/autotest_module.sv
+      - rtl/autotest_module/fsm_autotest.sv
       
 
   constraints :
