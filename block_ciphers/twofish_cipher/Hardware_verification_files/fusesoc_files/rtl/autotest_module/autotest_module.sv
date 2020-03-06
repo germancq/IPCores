@@ -54,7 +54,7 @@ module autotest_module(
 
   fsm_autotest fsm_isnt(
     .clk(clk),
-    .clk_counter(contador_o[CLK_INTERNAL_DIVIDER]),
+    .clk_counter(counter_o[CLK_INTERNAL_DIVIDER]),
     .rst(rst),
     //sdspihost signals
     .spi_busy(spi_busy),

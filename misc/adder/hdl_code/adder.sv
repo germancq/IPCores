@@ -2,18 +2,18 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-30 12:07:13
  * @ Modified by: Your name
- * @ Modified time: 2019-10-30 12:42:34
+ * @ Modified time: 2020-03-06 12:55:22
  * @ Description:
  */
 
-module adder(
+module adder #(parameter N = 32)
+(
     input [N-1:0] a,
     input [N-1:0] b,
     output [N-1:0] s,
     output c
 
 );
-    parameter N = 32;
 
     logic [N-1:0] carry_values;
 
@@ -42,13 +42,14 @@ module adder(
 endmodule : adder
 
 
-module fast_adder(
+module fast_adder #(parameter N=32)
+(
      input [N-1:0] a,
      input [N-1:0] b,
      output [N-1:0] s,
      output c   
 );
-    parameter N = 32;
+    
 
     logic [N>>2:0] carry_values;
     assign carry_values[0] = 0;

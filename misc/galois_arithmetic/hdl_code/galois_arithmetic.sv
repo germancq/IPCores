@@ -2,22 +2,24 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-31 12:05:35
  * @ Modified by: Your name
- * @ Modified time: 2019-10-31 13:51:55
+ * @ Modified time: 2020-03-06 12:58:50
  * @ Description:
  */
 
 
-module matrix_multiplication(
+module matrix_multiplication #(
+    parameter N = 8,
+    parameter COL_A = 4,
+    parameter ROW_A = 4,
+    parameter COL_B = 1,
+)
+(
     input [N-1:0] a [(ROW_A*COL_A)-1:0],
     input [N-1:0] b [(COL_A*COL_B)-1:0],
     input [N:0] p,
     output [N-1:0] s [(ROW_A*COL_B)-1:0]
 );
 
-    parameter N = 8;
-    parameter COL_A = 4;
-    parameter ROW_A = 4;
-    parameter COL_B = 1;
 
     genvar i;
     genvar j;
@@ -52,15 +54,17 @@ endmodule : matrix_multiplication
 
 
 
-module row_x_column(
+module row_x_column #(
+    parameter N =8,
+    parameter ELEM_SIZE = 4
+)
+(
     input [N-1:0] a [ELEM_SIZE-1:0],
     input [N-1:0] b [ELEM_SIZE-1:0],
     input [N:0] p,
     output [N-1:0] s
 );
 
-    parameter N = 8;
-    parameter ELEM_SIZE = 4;
 
     logic [N-1:0] mult_out [(ELEM_SIZE<<1)-2:0];
 
@@ -93,27 +97,26 @@ module row_x_column(
 endmodule : row_x_column
 
 
-module galois_adder(
+module galois_adder #(parameter N = 8)
+(
     input [N-1:0] a,
     input [N-1:0] b,
     output [N-1:0] s
 );
-
-    parameter N = 8;
 
     assign s = a ^ b;
 
 endmodule : galois_adder
 
 
-module galois_multiplication(
+module galois_multiplication #(parameter N = 8)
+(
     input [(2*N)-2:0] a,
     input [(2*N)-2:0] b,
     input [N:0] p,
     output [N-1:0] s
 );
 
-    parameter N = 8;
 
     logic [(2*N)-2:0] m_out [(N<<1)-2:0];
     genvar i;
@@ -150,14 +153,15 @@ module galois_multiplication(
 endmodule : galois_multiplication
 
 
-module polinomial_reduction (
+module polinomial_reduction #(
+    parameter N = 8,
+    parameter degree_p = 8
+)
+(
     input [(2*N)-2:0] a,
     input [(2*N)-2:0] p,
     output [N-1:0] s
 );
-
-    parameter N = 8;
-    parameter degree_p = 8;
 
     logic [(2*N)-2:0] m_out [N-1:0]; 
     logic [(2*N)-2:0] polinomials [N-1:0]; 
@@ -190,14 +194,12 @@ endmodule : polinomial_reduction
 
 
 
-module mux2 (
+module mux2 #(parameter N = 8)(
     input [N-1:0] a,
     input [N-1:0] b,
     input sel,
     output [N-1:0] c
 );
-
-    parameter N = 8;
     
     assign c = sel ? b : a ;
 
