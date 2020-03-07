@@ -1,0 +1,22 @@
+CAPI=1
+[main]
+description = "trivium cipher"
+
+depend = 
+  counter
+  register
+
+[verilog]
+src_files =
+  stream_ciphers/trivium_cipher/hdl_code/trivium.sv
+  stream_ciphers/trivium_cipher/hdl_code/trivium_wrapper.sv
+
+[provider] 
+name = github
+user = germancq
+repo = IPCores
+version = master
+
+
+
+ 
