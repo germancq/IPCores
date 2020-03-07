@@ -29,7 +29,7 @@ module autotest_module
     output [31:0] debug
   );
 
-  localparam CLK_INTERNAL_DIVIDER = 4;
+  localparam CLK_INTERNAL_DIVIDER = 7;
 
   logic spi_busy;
   logic [31:0] spi_block_addr;
@@ -79,7 +79,7 @@ module autotest_module
     .key_uut(key_uut),
     //uut results signals
     .block_o_uut(block_o_uut),
-    .end_uut(end_enc_uut),
+    .end_uut(end_uut),
     //debug
     .debug_signal(debug)
   );

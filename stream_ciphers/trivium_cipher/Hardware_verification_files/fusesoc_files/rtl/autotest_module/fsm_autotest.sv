@@ -141,14 +141,14 @@ genvar i;
 
 ///////////////timer//////////////////////
  logic up_timer_counter;
- logic [31:0] counter_timer_o;
+ logic [63:0] counter_timer_o;
  logic rst_timer_counter;
- counter #(.DATA_WIDTH(32)) counter_timer(
-    .clk(clk_counter),
+ counter #(.DATA_WIDTH(64)) counter_timer(
+    .clk(clk),
     .rst(rst_timer_counter),
     .up(up_timer_counter),
     .down(1'b0),
-    .din(32'b0),
+    .din(64'b0),
     .dout(counter_timer_o)
  );
 
@@ -289,9 +289,6 @@ genvar i;
          reg_key_uut_w[j] = 0;
      end
 
-     reg_encdec_uut_o_cl = 0;
-     reg_encdec_uut_o_w = 0;
-
      reg_block_o_uut_o_cl = 0;
      reg_block_o_uut_o_w = 0;
         
@@ -328,7 +325,7 @@ genvar i;
                  end
                  
 
-                 reg_encdec_uut_o_cl = 1;
+                 
                  reg_block_o_uut_o_cl = 1;
                  
 
@@ -442,10 +439,10 @@ genvar i;
                     next_state = END_TEST; 
                end
                
-               /*
-               else if(counter_timer_o >= 32'h6E00000)
+               
+               else if(counter_timer_o >= 64'hFFFFFFFFFFFFFFF0)
                  next_state = END_TEST;
-               */
+               
              end
           END_TEST:
              begin
@@ -539,7 +536,7 @@ genvar i;
                      end
                      
                      //rst_final outputs
-                     else if (counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter + 3) begin
+                     else if (counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter + 7) begin
                         rst_index = 1'b1;
                      end
                      

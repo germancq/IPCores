@@ -129,14 +129,14 @@ genvar i;
 
 ///////////////timer//////////////////////
  logic up_timer_counter;
- logic [31:0] counter_timer_o;
+ logic [63:0] counter_timer_o;
  logic rst_timer_counter;
- counter #(.DATA_WIDTH(32)) counter_timer(
-    .clk(clk_counter),
+ counter #(.DATA_WIDTH(64)) counter_timer(
+    .clk(clk),
     .rst(rst_timer_counter),
     .up(up_timer_counter),
     .down(1'b0),
-    .din(32'b0),
+    .din(64'b0),
     .dout(counter_timer_o)
  );
 
@@ -503,7 +503,7 @@ genvar i;
                         rst_index = 1'b1;
                      end
                      //rst_final outputs
-                     else if (counter_bytes_o == 32'h5 + (SIZE_INPUT_UUT_1>>3) + base_iter + (SIZE_OUTPUT_UUT_1>>3) + (SIZE_OUTPUT_UUT_2>>3)+3) begin
+                     else if (counter_bytes_o == 32'h5 + (SIZE_INPUT_UUT_1>>3) + base_iter + (SIZE_OUTPUT_UUT_1>>3) + (SIZE_OUTPUT_UUT_2>>3)+7) begin
                         rst_index = 1'b1;
                      end
                      up_bytes_counter = 1;
