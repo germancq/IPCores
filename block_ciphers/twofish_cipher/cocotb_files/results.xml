@@ -1,16 +1,15 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <testsuites name="results">
   <testsuite name="all" package="all" tests="0">
-    <property name="random_seed" value="1583493595" />
-    <testcase classname="twofish_test" name="run_test_001" ratio_time="4695400821870.048" sim_time_ns="2421000000000L" time="0.515610933303833" />
-    <testcase classname="twofish_test" name="run_test_002" ratio_time="4936365546590.234" sim_time_ns="2421000000000L" time="0.49044179916381836" />
-    <testcase classname="twofish_test" name="run_test_003" ratio_time="4961868831936.0625" sim_time_ns="2421000000000L" time="0.48792099952697754" />
-    <testcase classname="twofish_test" name="run_test_004" ratio_time="5019012056708.493" sim_time_ns="2421000000000L" time="0.48236584663391113" />
-    <testcase classname="twofish_test" name="run_test_005" ratio_time="5057594170603.485" sim_time_ns="2421000000000L" time="0.4786860942840576" />
-    <testcase classname="twofish_test" name="run_test_006" ratio_time="4985748906925.807" sim_time_ns="2421000000000L" time="0.485584020614624" />
-    <testcase classname="twofish_test" name="run_test_007" ratio_time="4970783013081.433" sim_time_ns="2421000000000L" time="0.4870460033416748" />
-    <testcase classname="twofish_test" name="run_test_008" ratio_time="4851721247043.646" sim_time_ns="2421000000000L" time="0.49899816513061523" />
-    <testcase classname="twofish_test" name="run_test_009" ratio_time="4988798493889.779" sim_time_ns="2421000000000L" time="0.4852871894836426" />
-    <testcase classname="twofish_test" name="run_test_010" ratio_time="5002140372500.077" sim_time_ns="2421000000000L" time="0.4839928150177002" />
+    <property name="random_seed" value="1583587980" />
+    <testcase classname="twofish_test" name="run_test_001" ratio_time="4467357134812.479" sim_time_ns="2421000000000" time="0.54193115234375" />
+    <testcase classname="twofish_test" name="run_test_002" ratio_time="4427849755701.924" sim_time_ns="2421000000000" time="0.5467665195465088" />
+    <testcase classname="twofish_test" name="run_test_003" ratio_time="4534976046074.997" sim_time_ns="2421000000000" time="0.5338506698608398" />
+    <testcase classname="twofish_test" name="run_test_004" ratio_time="4630449922570.549" sim_time_ns="2421000000000" time="0.5228433609008789" />
+    <testcase classname="twofish_test" name="run_test_005" ratio_time="4632638473526.503" sim_time_ns="2421000000000" time="0.5225963592529297" />
+    <testcase classname="twofish_test" name="run_test_006" ratio_time="4641979917870.353" sim_time_ns="2421000000000" time="0.5215446949005127" />
+    <testcase classname="twofish_test" name="run_test_007" ratio_time="4625206670158.737" sim_time_ns="2421000000000" time="0.5234360694885254" />
+    <testcase classname="twofish_test" name="run_test_008" ratio_time="4641003988615.968" sim_time_ns="2421000000000" time="0.5216543674468994" />
+    <testcase classname="twofish_test" name="run_test_009" ratio_time="4725920250872.287" sim_time_ns="2421000000000" time="0.5122811794281006" />
+    <testcase classname="twofish_test" name="run_test_010" ratio_time="4663792438843.588" sim_time_ns="2421000000000" time="0.5191054344177246" />
   </testsuite>
 </testsuites>

@@ -10,15 +10,17 @@
 #                                                                              #
 # **************************************************************************** #
 
-VERILOG_SOURCES = ../hdl_code/trivium_wrapper.sv \
-				  ../hdl_code/trivium.sv \
-				  ../../../misc/registers/hdl_code/register.sv \
-				  ../../../misc/counters/hdl_code/counter.sv	
+VERILOG_SOURCES = ../../hdl_code/trivium_wrapper.sv \
+				  ../../hdl_code/trivium.sv \
+				  ../../../../misc/registers/hdl_code/register.sv \
+				  ../../../../misc/counters/hdl_code/counter.sv	
 
 TOPLEVEL=trivium_wrapper
 MODULE=trivium_wrapper_test
-include $(COCOTB)/makefiles/Makefile.inc
-include $(COCOTB)/makefiles/Makefile.sim
+#include $(COCOTB)/makefiles/Makefile.inc
+#include $(COCOTB)/makefiles/Makefile.sim
+include $(shell cocotb-config --makefiles)/Makefile.inc
+include $(shell cocotb-config --makefiles)/Makefile.sim
 
 
 clean_results : 

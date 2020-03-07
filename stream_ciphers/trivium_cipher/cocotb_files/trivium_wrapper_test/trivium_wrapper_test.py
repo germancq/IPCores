@@ -164,8 +164,10 @@ def n_cycles_clock(dut,n):
 
 @cocotb.coroutine
 def run_test(dut, key = 0 , iv = 0):
-    key = 0x2da9f774
-    iv = 0x420fab91
+    #key = #0x2da9f774
+    #iv = #0x420fab91
+    key = random.randint(0,(2**8)-1)
+    iv = random.randint(0,(2**8)-1)
     expected_value = trivium.trivium_impl(key,iv,64)
     expected_value = int(expected_value,2)
     trivium_SW = trivium.Trivium()
@@ -178,7 +180,7 @@ def run_test(dut, key = 0 , iv = 0):
 
 
 
-n = 2
+n = 10
 factory = TestFactory(run_test)
 factory.add_option("key", np.random.randint(low=0,high=(2**8)-1,size=n)) #array de 10 int aleatorios entre 0 y 31
 factory.add_option("iv", np.random.randint(low=0,high=(2**8)-1,size=n))

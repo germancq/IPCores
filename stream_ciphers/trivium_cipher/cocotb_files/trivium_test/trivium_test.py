@@ -63,22 +63,22 @@ def rst_function_test(dut, key, iv, trivium_SW):
     IV_1 = hex(iv).rstrip("L")#HEX
     trivium_SW.rst()
     trivium_SW.Initialization(key_1,IV_1)
+    
     yield n_cycles_clock(dut,10)
-
+    
 
     if(dut.dout_A != bitArray_to_int_value(trivium_SW.A)):
         raise TestFailure("""Error rst,wrong dout_A value = {0}, expected value is {1}""".format(hex(int(dut.dout_A.value)),hex(bitArray_to_int_value(trivium_SW.A))))
-        
+     
     if(dut.dout_B != bitArray_to_int_value(trivium_SW.B)):
         raise TestFailure("""Error rst,wrong dout_A value = {0}, expected value is {1}""".format(hex(int(dut.dout_A.value)),hex(bitArray_to_int_value(trivium_SW.B))))
-        
+      
     if(dut.dout_C != bitArray_to_int_value(trivium_SW.C)):
         raise TestFailure("""Error rst,wrong dout_A value = {0}, expected value is {1}""".format(hex(int(dut.dout_A.value)),hex(bitArray_to_int_value(trivium_SW.C))))
-        
+       
     if(dut.counter_out != 0x0):
-        raise TestFailure("Error rst,wrong counter value = %s"
-                          % hex(int(dut.counter_out.value)))            
-
+        raise TestFailure("""Error warm_up,wrong counter value = {0}""".format(hex(int(dut.counter_out.value))))           
+    
     
 
     dut.rst = 0
@@ -93,11 +93,11 @@ def warm_up_phase_test(dut, trivium_SW):
     for i in range(0,1152) :
        
        if(dut.counter_out != i):
-            raise TestFailure("Error warm_up,wrong counter value = %s"
-                            % hex(int(dut.counter_out.value)))
+            raise TestFailure("""Error warm_up,wrong counter value = {0}""".format(hex(int(dut.counter_out.value))))
+                            
        if(dut.warm_up_complete != 0):
-            raise TestFailure("Error warm_up,wrong warm_up_complete value = %s"
-                            % hex(int(dut.warm_up_complete.value)))
+            raise TestFailure("""Error warm_up,wrong warm_up_complete value = {0}""".format(hex(int(dut.warm_up_complete.value))))
+                            
         
        if(dut.dout_A != bitArray_to_int_value(trivium_SW.A)):
         raise TestFailure("""Error warm_up,wrong dout_A value = {0}, expected value is {1} at iteration {2}""".format(hex(int(dut.dout_A.value)),hex(bitArray_to_int_value(trivium_SW.A)),i))
@@ -123,8 +123,7 @@ def warm_up_phase_test(dut, trivium_SW):
     
           
     if(dut.warm_up_complete != 1):
-            raise TestFailure("Error warm_up,wrong warm_up_complete value = %s"
-                            % hex(int(dut.warm_up_complete.value)))
+            raise TestFailure("""Error warm_up,wrong warm_up_complete value = {0}""".format(hex(int(dut.warm_up_complete.value))))
             
     
     
@@ -159,16 +158,21 @@ def n_cycles_clock(dut,n):
 
 @cocotb.coroutine
 def run_test(dut, key = 0 , iv = 0):
+    key = random.randint(0,(2**8)-1)
+    iv = random.randint(0,(2**8)-1)
     trivium_SW = trivium.Trivium()
+    
     setup_function(dut, key, iv)
+    
     yield rst_function_test(dut, key, iv, trivium_SW)
+    print("trivium rst completed")
     yield warm_up_phase_test(dut, trivium_SW)
     yield key_stream_generation_test(dut, trivium_SW)
     
 
 
 
-n = 2
+n = 10
 factory = TestFactory(run_test)
 factory.add_option("key", np.random.randint(low=0,high=(2**8)-1,size=n)) #array de 10 int aleatorios entre 0 y 31
 factory.add_option("iv", np.random.randint(low=0,high=(2**8)-1,size=n))

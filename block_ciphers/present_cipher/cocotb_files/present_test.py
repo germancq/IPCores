@@ -21,7 +21,7 @@ from cocotb.clock import Clock
 
 import importlib
 import sys
-sys.path.append('/Users/germancq/Documents/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
+sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
 import present
 
 CLK_PERIOD = 20 # 50 MHz

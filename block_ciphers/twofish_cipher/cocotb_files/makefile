@@ -18,8 +18,10 @@ VERILOG_SOURCES = ../hdl_code/twofish.sv \
 
 TOPLEVEL= twofish
 MODULE=twofish_test
-include $(COCOTB)/makefiles/Makefile.inc
-include $(COCOTB)/makefiles/Makefile.sim
+#include $(COCOTB)/makefiles/Makefile.inc
+#include $(COCOTB)/makefiles/Makefile.sim
+include $(shell cocotb-config --makefiles)/Makefile.inc
+include $(shell cocotb-config --makefiles)/Makefile.sim
 
 
 clean_results : 

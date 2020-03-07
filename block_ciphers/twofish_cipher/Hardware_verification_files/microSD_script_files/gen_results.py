@@ -107,7 +107,7 @@ def write_params(sheet1, params , i):
 def get_clk_speed_from_factor(n, base_clk=100):
     return (base_clk / (2**(n+1)))
 
-def calculated_time_in_ms(time_units,base_clk=100,div_clk=7):
+def calculated_time_in_ms(time_units,base_clk=100,div_clk=2):
     clk_counter = get_clk_speed_from_factor(div_clk)
     #print ('time units is = %i' % time_units)
     #clk_counter in Mhz
@@ -115,7 +115,7 @@ def calculated_time_in_ms(time_units,base_clk=100,div_clk=7):
     period_in_us = (1/(clk_counter))
     return time_units * period_in_us * (10**(-3))  
 
-def calculated_time_in_ns(time_units,base_clk=100,div_clk=7):
+def calculated_time_in_ns(time_units,base_clk=100,div_clk=2):
     clk_counter = get_clk_speed_from_factor(div_clk)
     #print ('time units is = %i' % time_units)
     #clk_counter in Mhz
