@@ -12,7 +12,7 @@ import xlwt
 import time
 
 import importlib
-sys.path.append('IPCores/block_ciphers/present_cipher/python_code')
+sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
 import present
 
 BLOCK_SIZE = 512
@@ -46,7 +46,7 @@ def read_params_from_sd(block_n,micro_sd):
     
     
     result = int.from_bytes(micro_sd.read(8),byteorder='little')
-    exec_time = int.from_bytes(micro_sd.read(4),byteorder='little')
+    exec_time = int.from_bytes(micro_sd.read(8),byteorder='little')
     #print(hex(result))
     
     return (signature,
@@ -65,7 +65,7 @@ def write_params(sheet1, params , i):
     #print(hex(key))
     enc_dec = params[3]
     result = params[4]
-    hw_time = int(calculated_time_in_ms(params[5]))
+    hw_time = int(calculated_time_in_ns(params[5]))
     start_prep_time = time.time_ns()
     present_SW = present.Present(key)
     end_prep_time = time.time_ns()
@@ -107,25 +107,9 @@ def write_params(sheet1, params , i):
     return i+1
 
 
-def get_clk_speed_from_factor(n, base_clk=100):
-    return (base_clk / (2**(n+1)))
-
-def calculated_time_in_ms(time_units,base_clk=100,div_clk=4):
-    clk_counter = get_clk_speed_from_factor(div_clk)
-    #print ('time units is = %i' % time_units)
-    #clk_counter in Mhz
-    # 1/clk_counter = (1/clk_counterHz)* 10**(-6) s
-    period_in_us = (1/(clk_counter))
-    return time_units * period_in_us * (10**(-3))  
-
-def calculated_time_in_ns(time_units,base_clk=100,div_clk=4):
-    clk_counter = get_clk_speed_from_factor(div_clk)
-    #print ('time units is = %i' % time_units)
-    #clk_counter in Mhz
-    # 1/clk_counter = (1/clk_counterHz)* 10**(-6) s
-    period_in_us = (1/(clk_counter))
-    time_us = time_units * period_in_us
-    return time_us * 1000
+def calculated_time_in_ns(time_units,base_clk=100):
+    clk_counter = base_clk#get_clk_speed_from_factor(div_clk)
+    return time_units * (1000/(clk_counter))
     
 
 def gen_calc(micro_sd):

@@ -45,19 +45,10 @@ module autotest_module
   logic spi_crc_err;
 
 
-  logic [CLK_INTERNAL_DIVIDER:0] counter_o;
-  counter #(.DATA_WIDTH(CLK_INTERNAL_DIVIDER+1)) div_clk_counter(
-     .clk(clk),
-     .rst(rst),
-     .up(1'b1),
-     .down(1'b0),
-     .din({ CLK_INTERNAL_DIVIDER+1 {1'b0} }),
-     .dout(counter_o)
-  );
+  
 
   fsm_autotest fsm_isnt(
     .clk(clk),
-    .clk_counter(counter_o[CLK_INTERNAL_DIVIDER]),
     .rst(rst),
     //sdspihost signals
     .spi_busy(spi_busy),

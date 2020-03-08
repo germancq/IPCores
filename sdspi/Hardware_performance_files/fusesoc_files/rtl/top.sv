@@ -12,7 +12,7 @@ localparam N_BLOCK_SIZE = 32;
 localparam SCLK_SPEED_SIZE = 5;
 localparam CMD18_SIZE = 1;
 localparam START_BLOCK = 32'h0x100000;
-localparam CLK_INTERNAL_DIVIDER = 7;
+
 
 
 module top(

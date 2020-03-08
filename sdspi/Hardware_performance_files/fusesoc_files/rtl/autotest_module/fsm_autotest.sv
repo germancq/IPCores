@@ -12,7 +12,6 @@
  module fsm_autotest
  (
      input clk,
-     input clk_counter,
      input rst,
      //sdspihost signals
      input spi_busy,
@@ -147,14 +146,14 @@ genvar i;
 
 ///////////////timer//////////////////////
  logic up_timer_counter;
- logic [31:0] counter_timer_o;
+ logic [63:0] counter_timer_o;
  logic rst_timer_counter;
- counter #(.DATA_WIDTH(32)) counter_timer(
-    .clk(clk_counter),
+ counter #(.DATA_WIDTH(64)) counter_timer(
+    .clk(clk),
     .rst(rst_timer_counter),
     .up(up_timer_counter),
     .down(1'b0),
-    .din(32'b0),
+    .din(64'b0),
     .dout(counter_timer_o)
  );
 
@@ -178,7 +177,7 @@ genvar i;
  logic [31:0] counter_iter_o;
  logic rst_iter_counter;
  logic [31:0] base_iter;
- assign base_iter = ((counter_iter_o) * 4) ;
+ assign base_iter = ((counter_iter_o) * 8) ;
  counter #(.DATA_WIDTH(32)) counter_iter_block(
     .clk(clk),
     .rst(rst_iter_counter),
@@ -462,8 +461,7 @@ genvar i;
                uut_start = 1;
                if(uut_finish == 1'b1)
                  next_state = END_TEST;
-               else if(counter_timer_o >= 32'h6E00000)
-                 next_state = END_TEST;
+               
 
              end
           END_TEST:
@@ -545,7 +543,7 @@ genvar i;
                      else if(counter_bytes_o == 32'hC + base_iter - 1) begin
                         rst_index = 1'b1;
                      end
-                     else if(counter_bytes_o == 32'hC + base_iter + 3) begin
+                     else if(counter_bytes_o == 32'hC + base_iter + 7) begin
                         rst_index = 1'b1;
                      end
                      up_bytes_counter = 1;

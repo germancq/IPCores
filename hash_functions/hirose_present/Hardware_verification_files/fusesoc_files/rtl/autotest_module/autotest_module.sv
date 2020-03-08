@@ -8,7 +8,6 @@
  */
 
 
-
 module autotest_module
 (
     input clk,
@@ -20,18 +19,15 @@ module autotest_module
     input miso,
 
     /*UUT signals*/
-    output uut_ctrl_mux,
-    output uut_rst,
-    output uut_start,
-    output [N_BLOCK_SIZE-1:0] uut_n_blocks,
-    output [SCLK_SPEED_SIZE-1:0] uut_sclk_speed,
-    output [CMD18_SIZE-1:0] uut_cmd18,
-    input uut_finish,
+    output rst_uut,
+    output [64-1:0] plaintext_uut,
+    input [128-1:0] hash_o_uut,
+    input  end_uut,
+
 
     output [31:0] debug
   );
-  
-  
+
 
   logic spi_busy;
   logic [31:0] spi_block_addr;
@@ -66,15 +62,12 @@ module autotest_module
     .spi_w_byte(spi_w_byte),
     .spi_crc_err(spi_crc_err),
     //uut ctrl signals
-    .uut_ctrl_mux(uut_ctrl_mux),
-    .uut_rst(uut_rst),
-    .uut_start(uut_start),
+    .rst_uut(rst_uut),
     //uut paramters signals
-    .uut_n_blocks(uut_n_blocks),
-    .uut_sclk_speed(uut_sclk_speed),
-    .uut_cmd18(uut_cmd18),
+    .plaintext_uut(plaintext_uut),
     //uut results signals
-    .uut_finish(uut_finish),
+    .hash_o_uut(hash_o_uut),
+    .end_uut(end_uut),
     //debug
     .debug_signal(debug)
   );

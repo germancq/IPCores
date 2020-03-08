@@ -12,7 +12,6 @@
  module fsm_autotest
  (
      input clk,
-     input clk_counter,
      input rst,
      //sdspihost signals
      input spi_busy,

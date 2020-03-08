@@ -9,7 +9,6 @@
 
  module fsm_autotest(
      input clk,
-     input clk_counter,
      input rst,
      //sdspihost signals
      input spi_busy,
@@ -147,10 +146,10 @@ genvar i;
 
 ///////////////timer//////////////////////
  logic up_timer_counter;
- logic [31:0] counter_timer_o;
+ logic [63:0] counter_timer_o;
  logic rst_timer_counter;
- counter #(.DATA_WIDTH(32)) counter_timer(
-    .clk(clk_counter),
+ counter #(.DATA_WIDTH(64)) counter_timer(
+    .clk(clk),
     .rst(rst_timer_counter),
     .up(up_timer_counter),
     .down(1'b0),
@@ -556,7 +555,7 @@ genvar i;
                      end
                      
                      //rst_final outputs
-                     else if (counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter + 3) begin
+                     else if (counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter + 7) begin
                         rst_index = 1'b1;
                      end
                      

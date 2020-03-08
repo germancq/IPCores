@@ -45,10 +45,11 @@ def read_params_from_sd(sheet,block_n,micro_sd):
     total_time = 0
     total_bytes = BLOCK_SIZE * n_blocks
     for i in range(0,n_iter):
-        time = int.from_bytes(micro_sd.read(4),byteorder='little')
-        time_ms = calculated_time_in_ms(time)
+        time = int.from_bytes(micro_sd.read(8),byteorder='little')
+        time_ms = calculated_time_in_ns(time) / (10**6)
         print ('iter is = %i' % i)
         print ('time is = %i' % time)
+        print ('time ms is = %i' % time_ms)
         avg_time = avg_time + time_ms
         if(time_ms > worst_time):
             worst_time = time_ms
@@ -75,13 +76,11 @@ def read_params_from_sd(sheet,block_n,micro_sd):
 def get_clk_speed_from_factor(n, base_clk=100):
     return (base_clk / (2**(n+1)))
 
-def calculated_time_in_ms(time_units,base_clk=100,div_clk=7):
-    clk_counter = get_clk_speed_from_factor(div_clk)
-    #print ('time units is = %i' % time_units)
-    #clk_counter in Mhz
-    # 1/clk_counter = (1/clk_counterHz)* 10**(-6) s
-    period_in_us = (1/(clk_counter))
-    return time_units * period_in_us * (10**(-3))
+
+def calculated_time_in_ns(time_units,base_clk=100):
+    clk_counter = base_clk#get_clk_speed_from_factor(div_clk)
+    return time_units * (1000/(clk_counter))
+    
 
 def write_params(sheet1, params , i):
 
