@@ -2,16 +2,16 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-03-09 12:14:34
  * @ Modified by: Your name
- * @ Modified time: 2020-03-09 13:23:52
+ * @ Modified time: 2020-03-09 18:41:50
  * @ Description:
  */
 
-localparam N = 224;
-localparam c = 224;
+localparam N = 256;
+localparam c = 256;
 localparam r = 16;
-localparam R = 120;
-localparam lCounter_initial_state = 7'h01;
-localparam lCounter_feedback_coeff = 8'hC1;
+localparam R = 140;
+localparam lCounter_initial_state = 8'h9E;
+localparam lCounter_feedback_coeff = 9'h11D;
 localparam DATA_WIDTH = 64; 
 
 module top(
