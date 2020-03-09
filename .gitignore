@@ -103,5 +103,10 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+#cocotb_generated_files
+*.xml
+*.pyc
+cocotb_files/build/
+cocotb_files/sim_build/
 
 .HEX

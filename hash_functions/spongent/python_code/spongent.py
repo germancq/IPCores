@@ -32,7 +32,7 @@ class Spongent:
     def generate_hash(self,message, len_msg=0):
         self.initialization_phase(message,len_msg)
         s = self.absorbing_phase()
-        print(hex(s))
+        #print(hex(s))
         return self.squeezing_phase(s)
 
 
@@ -76,13 +76,13 @@ class Spongent:
             block_value = self.m[len(self.m)-1-i]
             state = state ^ block_value
             self.absorbing_before_p_states.append(state)
-            print('------------------')
-            print(hex(state))
-            print('------------------')
+            #print('------------------')
+            #print(hex(state))
+            #print('------------------')
             state = self.permutation(state)
-            print('***********************')
-            print(hex(state))
-            print('***********************')
+            #print('***********************')
+            #print(hex(state))
+            #print('***********************')
             self.absorbing_after_p_states.append(state)
 
             
@@ -103,7 +103,7 @@ class Spongent:
            self.squeezing_results.append(result)
            result = result << self.r
            self.squeezing_states.append(state)
-           print(hex(result))  
+           #print(hex(result))  
            state = self.permutation(state)
 
         return result>>self.r
