@@ -26,7 +26,7 @@ R_candidates = [45,70,90,120,140]
 
 DATA_WIDTH = 64
 
-OPTION_HASH = 0
+OPTION_HASH = 3
 
 N = N_candidates[OPTION_HASH]
 r = r_candidates[OPTION_HASH]
@@ -117,7 +117,7 @@ def gen_calc(micro_sd):
         i = write_params(sheet1,params,i)
 
 
-    wb.save('results_88.xls')
+    wb.save('results_224.xls')
 
 def main():
     with open(sys.argv[1],"rb") as micro_sd:
