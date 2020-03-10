@@ -19,13 +19,18 @@ from cocotb.regression import TestFactory
 from cocotb.result import TestFailure, ReturnValue
 from cocotb.clock import Clock
 
+import os
+abs_path_file_storage = "/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/Hardware_verification_files/microSD_script_files/test_cases.HEX"
+
+
+
 import importlib
 import sys
 sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
 import present
 
 CLK_PERIOD = 20 # 50 MHz
-
+SIGNATURE = 0xAABBCCDD
 
 #the keyword yield
 #   Testbenches built using Cocotb use coroutines.
@@ -145,31 +150,48 @@ def n_cycles_clock(dut,n):
 
 
 @cocotb.coroutine
-def run_test(dut, key = 0):
-    key = random.randint(0,(2**32)-1)
-    text = random.randint(0,(2**32)-1)
+def run_test(dut, index = 0):
 
-    #key = 0x0
-    #text = 0x0
+    try:
+        with(open(abs_path_file_storage,"rb+")) as storage_file:
+            storage_file.close()
+    except:
+        with(open(abs_path_file_storage,"wb+")) as storage_file:
+            storage_file.write(int(n).to_bytes(4, byteorder='little'))
+            storage_file.close()
 
-    print(hex(key))
-    print(hex(text))
-    present_SW = present.Present(key)
-    expected_enc_value = present_SW.encrypt(text)
-    expected_dec_value = present_SW.decrypt(text)
-    setup_function(dut,key,text)
-    
-    yield rst_function_test(dut)
-    yield generate_round_keys(dut)
-    yield enc_test(dut,expected_enc_value)
-    yield rst_function_test(dut)
-    yield generate_round_keys(dut)
-    yield dec_test(dut,expected_dec_value)
+    with(open(abs_path_file_storage,"rb+")) as storage_file:
+        key = random.randint(0,(2**32)-1)
+        text = random.randint(0,(2**32)-1)
+
+        
+        #key = 0x0
+        #text = 0x0
+
+        print(hex(key))
+        print(hex(text))
+        present_SW = present.Present(key)
+        expected_enc_value = present_SW.encrypt(text)
+        expected_dec_value = present_SW.decrypt(text)
+        storage_file.seek((index*34)+4)
+        storage_file.write(int(key).to_bytes(10, byteorder='little'))
+        storage_file.write(int(text).to_bytes(8, byteorder='little'))
+        storage_file.write(int(expected_enc_value).to_bytes(8, byteorder='little'))
+        storage_file.write(int(expected_dec_value).to_bytes(8, byteorder='little'))
+
+        setup_function(dut,key,text)
+        
+        yield rst_function_test(dut)
+        yield generate_round_keys(dut)
+        yield enc_test(dut,expected_enc_value)
+        yield rst_function_test(dut)
+        yield generate_round_keys(dut)
+        yield dec_test(dut,expected_dec_value)
 
 
 
 n = 400
 factory = TestFactory(run_test)
 
-factory.add_option("key", np.random.randint(low=0,high=(2**32)-1,size=n)) #array de 10 int aleatorios entre 0 y 31
+factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31
 factory.generate_tests()

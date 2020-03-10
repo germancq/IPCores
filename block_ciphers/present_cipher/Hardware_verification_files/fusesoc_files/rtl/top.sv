@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: Your name
- * @ Modified time: 2020-03-06 12:42:28
+ * @ Modified time: 2020-03-10 20:51:35
  * @ Description:
  */
 
@@ -24,6 +24,7 @@ module top(
     output [6:0] seg,
     output [7:0] AN,
 
+    input [1:0] switch_i,
     output [15:0] leds_o
 );
 
@@ -72,6 +73,7 @@ autotest_module autotest_impl(
     .end_key_signal_uut(end_key_generation),
     .end_dec_uut(end_dec),
     .end_enc_uut(end_enc),
+    .sw_debug(switch_i),
     .debug(debug_data)
 );
 

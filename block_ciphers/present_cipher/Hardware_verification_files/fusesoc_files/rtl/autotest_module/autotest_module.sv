@@ -28,7 +28,7 @@ module autotest_module
     input  end_dec_uut,
     input  end_enc_uut,
 
-
+    input [1:0] sw_debug,
     output [31:0] debug
   );
 
@@ -78,6 +78,7 @@ module autotest_module
     .end_dec_uut(end_dec_uut),
     .end_enc_uut(end_enc_uut),
     //debug
+    .sw_debug(sw_debug),
     .debug_signal(debug)
   );
 
@@ -105,7 +106,7 @@ module autotest_module
     .sclk(sclk),
     .ss(cs),
     ////
-    .sclk_speed(4'h7),
+    .sclk_speed(4'h1), //25 MHz in a 100Mhz clk_system
     
     .debug()
   );
