@@ -288,9 +288,9 @@ genvar i;
 
 
   localparam INITIAL_CONDITION = 5'h0;
-  localparam IDLE = 5'h1;
-  localparam BEGIN_READ_FROM_SD = 5'h2;
-  localparam WAIT_RST_SPI = 5'h3;
+  localparam BEGIN_READ_FROM_SD = 5'h1;
+  localparam WAIT_RST_SPI = 5'h2;
+  localparam IDLE = 5'h3;
   localparam SEL_SD_BLOCK = 5'h4;
   localparam WAIT_BLOCK = 5'h5;
   localparam READ_DATA = 5'h6;
@@ -391,6 +391,20 @@ genvar i;
                 rst_timer_counter = 1;
                 next_state = IDLE;
             end
+         BEGIN_READ_FROM_SD:
+             begin
+                 rst_uut = 1;
+                 spi_rst = 1;
+                 if(spi_busy == 1'b1)
+                     next_state = WAIT_RST_SPI;
+             end
+         WAIT_RST_SPI:
+             begin
+                 rst_uut = 1;
+                 if(spi_busy == 1'b0)
+                     next_state = SEL_SD_BLOCK;
+
+             end   
          IDLE:
              begin
 
@@ -427,22 +441,11 @@ genvar i;
 
                  reg_spi_data_cl = 1;
 
-                 next_state = BEGIN_READ_FROM_SD;
+                 if(spi_busy==0) begin
+                    next_state = BEGIN_READ_FROM_SD;
+                 end   
              end
-         BEGIN_READ_FROM_SD:
-             begin
-                 rst_uut = 1;
-                 spi_rst = 1;
-                 if(spi_busy == 1'b1)
-                     next_state = WAIT_RST_SPI;
-             end
-         WAIT_RST_SPI:
-             begin
-                 rst_uut = 1;
-                 if(spi_busy == 1'b0)
-                     next_state = SEL_SD_BLOCK;
-
-             end
+         
          SEL_SD_BLOCK:
              begin
                  rst_uut = 1;
@@ -571,8 +574,12 @@ genvar i;
              begin
                  if(expected_result != block_o_uut_o) begin
                      up_error_counter = 1'b1;
+                     next_state = SEL_WRITE_SD_BLOCK;
                  end
-                 next_state = SEL_WRITE_SD_BLOCK;
+                 else begin
+                     next_state = UPDATE_BLOCK_COUNTER;
+                     up_iter_counter = 1;
+                 end    
              end
           SEL_WRITE_SD_BLOCK:
              begin

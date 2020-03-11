@@ -70,19 +70,16 @@ def write_params(sheet1, params , i):
     print(hex(result))
     print(hex(params[5]))
     print("*************************")
-    error = 0
-    if(params[5] != result) :
-        error = 1
-    
-    
-
-    sheet1.write(i,1,hex(text))
-    sheet1.write(i,2,hex(key))
-    sheet1.write(i,3,hex(enc_dec))
-    sheet1.write(i,4,hex(result))
-    sheet1.write(i,5,hex(params[5]))
-    sheet1.write(i,6,hex(error))
-    sheet1.write(i,7,int(hw_time))
+    if(params[5] == 0 and params[6] == 0) :
+        return i+1
+    else :
+        sheet1.write(i,1,hex(text))
+        sheet1.write(i,2,hex(key))
+        sheet1.write(i,3,hex(enc_dec))
+        sheet1.write(i,4,hex(result))
+        sheet1.write(i,5,hex(params[5]))
+        sheet1.write(i,6,hex(1))
+        sheet1.write(i,7,int(hw_time))
 
     
     return i+1
