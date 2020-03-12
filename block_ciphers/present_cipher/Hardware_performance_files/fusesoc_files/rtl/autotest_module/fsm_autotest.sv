@@ -229,7 +229,7 @@ genvar i;
  logic [31:0] counter_iter_o;
  logic rst_iter_counter;
  logic [31:0] base_iter;
- assign base_iter = ((counter_iter_o) * ((BLOCK_SIZE<<3)+8));
+ assign base_iter = ((counter_iter_o) * ((BLOCK_SIZE>>3)+8));
  assign clk_uut_sel = counter_iter_o;
  counter #(.DATA_WIDTH(32)) counter_iter_block(
     .clk(clk),
