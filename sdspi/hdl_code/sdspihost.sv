@@ -632,7 +632,7 @@
              begin
                crc_err_w = 1;
                w_data_internal = 0;
-               next_state = IDLE;
+               next_state = CMD0_0; // revisar esta parte
              end
          end
        WRITE_BYTE:
@@ -751,6 +751,6 @@
      end
  end
 
- assign debug = {counter_o[7:0],spi_in,data_out,3'b000,current_state};
+ assign debug = {counter_o[7:0],spi_in,3'b00,r_block_prev,3'b000,current_state};
 
  endmodule

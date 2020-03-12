@@ -26,6 +26,10 @@
      output logic spi_w_block,
      output logic spi_w_byte,
      input spi_crc_err,
+
+
+     output [1:0] clk_uut_sel,
+
      //uut ctrl signals
      output logic rst_uut,
      //uut paramters signals
@@ -226,6 +230,7 @@ genvar i;
  logic rst_iter_counter;
  logic [31:0] base_iter;
  assign base_iter = ((counter_iter_o) * ((BLOCK_SIZE<<3)+8));
+ assign clk_uut_sel = counter_iter_o;
  counter #(.DATA_WIDTH(32)) counter_iter_block(
     .clk(clk),
     .rst(rst_iter_counter),
@@ -572,15 +577,10 @@ genvar i;
              end   
           COMPARE_RESULT:
              begin
+                 next_state = SEL_WRITE_SD_BLOCK;
                  if(expected_result != block_o_uut_o) begin
                      up_error_counter = 1'b1;
-                     next_state = SEL_WRITE_SD_BLOCK;
                  end
-                 else begin
-                     next_state = UPDATE_BLOCK_COUNTER;
-                     up_iter_counter = 1;
-                 end    
-             end
           SEL_WRITE_SD_BLOCK:
              begin
                  spi_w_block = 1;
@@ -693,10 +693,10 @@ genvar i;
 
                  if(counter_timer_exec_o == 64'h00)
                  begin
-                    if(reg_iteration_o > counter_iter_o)
+                    if(counter_iter_o < 2)
                       begin
                         rst_bytes_counter = 1;
-                        next_state = BEGIN_READ_FROM_SD;
+                        next_state = START_TEST;
                       end
                     else
                       begin

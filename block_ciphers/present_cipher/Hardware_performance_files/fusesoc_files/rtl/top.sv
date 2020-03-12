@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: Your name
- * @ Modified time: 2020-03-12 17:20:10
+ * @ Modified time: 2020-03-12 17:20:47
  * @ Description:
  */
 
@@ -24,7 +24,7 @@ module top(
     output [6:0] seg,
     output [7:0] AN,
 
-    input [1:0] switch_i,
+    input [3:0] switch_i,
     output [15:0] leds_o
 );
 
@@ -43,7 +43,7 @@ logic end_key_generation;
 logic [63:0] block_o;
 logic end_dec;
 logic end_enc;
-
+logic clk_uut; 
 
 
 logic [31:0] debug_data;
@@ -75,14 +75,15 @@ autotest_module autotest_impl(
     .end_dec_uut(end_dec),
     .end_enc_uut(end_enc),
 
-    
-    
-    .sw_debug(switch_i),
+    .clk_sel(switch_i[3:2]),
+    .clk_uut(clk_uut),
+
+    .sw_debug(switch_i[1:0]),
     .debug(debug_data)
 );
 
 present present_impl(
-    .clk(sys_clk_pad_i),
+    .clk(clk_uut),
     .rst(rst_uut),
     .enc_dec(enc_dec),
     .key(key),
