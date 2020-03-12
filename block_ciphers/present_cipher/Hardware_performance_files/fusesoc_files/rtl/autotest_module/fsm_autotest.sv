@@ -394,6 +394,7 @@ genvar i;
                 rst_block_counter = 1;
                 rst_error_counter = 1;
                 rst_timer_counter = 1;
+                rst_iter_counter = 1;
                 next_state = BEGIN_READ_FROM_SD;
             end
          BEGIN_READ_FROM_SD:
@@ -414,7 +415,7 @@ genvar i;
              begin
 
                  rst_timer_exec_counter = 1;
-                 rst_iter_counter = 1;
+                 
                  rst_bytes_counter = 1;
                  rst_index = 1;
 
@@ -581,6 +582,7 @@ genvar i;
                  if(expected_result != block_o_uut_o) begin
                      up_error_counter = 1'b1;
                  end
+             end    
           SEL_WRITE_SD_BLOCK:
              begin
                  spi_w_block = 1;
@@ -693,16 +695,16 @@ genvar i;
 
                  if(counter_timer_exec_o == 64'h00)
                  begin
-                    if(counter_iter_o < 2)
+                    next_state = IDLE;
+                    if(counter_iter_o < 3)
                       begin
                         rst_bytes_counter = 1;
-                        next_state = START_TEST;
                       end
                     else
                       begin
                         up_block_counter = 1;
-                        next_state = IDLE;
-                      end
+                        rst_iter_counter = 1;
+                      end  
                  end
 
              end

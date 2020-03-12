@@ -491,6 +491,8 @@
                 next_state = CMD18_0;
                else if(w_block == 1)
                  next_state = CMD24_0;
+               else
+                 next_state = IDLE;   
               end
          end
        CMD17_0:
@@ -751,6 +753,6 @@
      end
  end
 
- assign debug = {counter_o[7:0],spi_in,3'b00,r_block_prev,3'b000,current_state};
+ assign debug = {counter_o[7:0],spi_in,3'b00,reg_state_prev,3'b000,current_state};
 
  endmodule
