@@ -39,8 +39,6 @@
      input [64-1:0] block_o_uut,
      input  end_dec_uut,
      input  end_enc_uut,
-     //performance_counter
-     input [63:0] performance_counter_o,
      //debug
      input [1:0] sw_debug,
      output [31:0] debug_signal
@@ -169,6 +167,19 @@ genvar i;
     .down(1'b0),
     .din(64'b0),
     .dout(counter_timer_o)
+ );
+
+  ///////////////timer_execution//////////////////////
+ logic up_timer_exec_counter;
+ logic [63:0] counter_timer_exec_o;
+ logic rst_timer_exec_counter;
+ counter #(.DATA_WIDTH(64)) counter_timer_exec(
+    .clk(clk),
+    .rst(rst_timer_exec_counter),
+    .up(up_timer_exec_counter),
+    .down(1'b0),
+    .din(32'b0),
+    .dout(counter_timer_exec_o)
  );
 
 
@@ -304,6 +315,8 @@ genvar i;
      up_error_counter = 0;
      rst_error_counter = 0;
 
+     up_timer_exec_counter = 0;
+     rst_timer_exec_counter = 0;
 
      up_bytes_counter = 0;
      rst_bytes_counter = 0;
@@ -386,6 +399,7 @@ genvar i;
                  
                  rst_bytes_counter = 1;
                  rst_index = 1;
+                 rst_timer_exec_counter = 1;
 
                  rst_uut = 1;
 
@@ -511,6 +525,7 @@ genvar i;
              end
           WAIT_UNTIL_END_TEST_OR_TIMEOUT:
              begin
+               up_timer_exec_counter = 1;
                if(encdec_uut) begin
                     if(end_dec_uut) begin
                         next_state = END_TEST;
@@ -573,7 +588,7 @@ genvar i;
                    end
                    
                    BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter + index_o : begin
-                          reg_spi_data_in = performance_counter_o >> (index_o * 8);    
+                          reg_spi_data_in = counter_timer_exec_o >> (index_o * 8);    
                    end
                    
                    32'h200:;
@@ -619,6 +634,7 @@ genvar i;
                  rst_index = 1'b1;
                  rst_uut = 1;
                  up_bytes_counter = 1;
+                 rst_timer_exec_counter = 1;
 
                  if(counter_bytes_o == 8'h20)
                  begin

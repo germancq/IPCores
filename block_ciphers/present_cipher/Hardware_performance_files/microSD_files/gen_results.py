@@ -73,9 +73,9 @@ def write_params(sheet1, params , i):
     result_100 = params[4]
     result_200 = params[5]
     result_400 = params[6]
-    hw_time_100 = int(calculated_time_in_ns(params[8]))
-    hw_time_200 = int(calculated_time_in_ns(params[9],200))
-    hw_time_400 = int(calculated_time_in_ns(params[10],400))
+    hw_time_100 = int(calculated_time_in_ns(params[8],100))
+    hw_time_200 = int(calculated_time_in_ns(params[9],100))
+    hw_time_400 = int(calculated_time_in_ns(params[10],100))
     print('/////////////////////////')
     print(hex(params[4]))
     print(hex(params[5]))
