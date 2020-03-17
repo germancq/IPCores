@@ -20,7 +20,7 @@ from cocotb.result import TestFailure, ReturnValue
 from cocotb.clock import Clock
 
 import os
-abs_path_file_storage = "/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/Hardware_verification_files/microSD_script_files/test_cases.HEX"
+abs_path_file_storage = "/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code/test_cases.HEX"
 
 
 
@@ -152,33 +152,15 @@ def n_cycles_clock(dut,n):
 @cocotb.coroutine
 def run_test(dut, index = 0):
 
-    try:
-        with(open(abs_path_file_storage,"rb+")) as storage_file:
-            storage_file.close()
-    except:
-        with(open(abs_path_file_storage,"wb+")) as storage_file:
-            storage_file.write(int(n).to_bytes(4, byteorder='little'))
-            storage_file.close()
-
     with(open(abs_path_file_storage,"rb+")) as storage_file:
-        key = random.randint(0,(2**32)-1)
-        text = random.randint(0,(2**32)-1)
-
         
         #key = 0x0
         #text = 0x0
-
-        print(hex(key))
-        print(hex(text))
-        present_SW = present.Present(key)
-        expected_enc_value = present_SW.encrypt(text)
-        expected_dec_value = present_SW.decrypt(text)
-        storage_file.seek((index*34)+4)
-        storage_file.write(int(key).to_bytes(10, byteorder='little'))
-        storage_file.write(int(text).to_bytes(8, byteorder='little'))
-        storage_file.write(int(expected_enc_value).to_bytes(8, byteorder='little'))
-        storage_file.write(int(expected_dec_value).to_bytes(8, byteorder='little'))
-
+        storage_file.seek((index*34))
+        key = int.from_bytes(storage_file.read(10),byteorder='little')
+        text = int.from_bytes(storage_file.read(8),byteorder='little')
+        expected_enc_value = int.from_bytes(storage_file.read(8),byteorder='little')
+        expected_dec_value = int.from_bytes(storage_file.read(8),byteorder='little')
         setup_function(dut,key,text)
         
         yield rst_function_test(dut)

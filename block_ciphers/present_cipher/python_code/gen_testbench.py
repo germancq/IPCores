@@ -1,23 +1,29 @@
-# @Author: German Cano Quiveu <germancq>
-# @Date:   2019-03-06T19:26:17+01:00
-# @Email:  germancq@dte.us.es
-# @Filename: gen_testbench.py
-# @Last modified by:   germancq
-# @Last modified time: 2019-04-05T13:40:59+02:00
+'''
+ # @ Author: German Cano Quiveu, germancq@dte.us.es
+ # @ Create Time: 2020-03-17 12:54:50
+ # @ Modified by: Your name
+ # @ Modified time: 2020-03-17 12:54:59
+ # @ Description:
+ '''
 
 import sys
 import os
 import itertools
 import allpairspy
 import math
+import random
 import numpy as np
+from pwd import getpwnam  
+import grp
+import present
 
+abs_path_file_storage = "/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code/test_cases.HEX"
 
-abs_path_file_storage = "/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/Hardware_verification_files/microSD_script_files/test_cases.HEX"
+username = "germancq"
+groupname = "germancq"
 
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
-NUMBER_ITER = 1
 SIGNATURE = 0xAABBCCDD
 
 '''
@@ -82,30 +88,44 @@ def create_posibility(n,parameters,modulo_op):
 
 '''
 
-def create_microsd_vectors(micro_sd,storage_file):
-    n_cases = int.from_bytes(storage_file.read(4),byteorder='little')
+def create_microsd_vectors(micro_sd,storage_file,N,e):
+    storage_file.seek(0)
+    #storage_file.write(int(N).to_bytes(4,byteorder='big'))
     zero = 0
+    counter_errors = 0
     j=0
-    print(n_cases)
-    for i in range(0,n_cases):
+    for i in range(0,N):
+        
+
+        key = np.random.randint(0,2**63-1,1,dtype=np.int64)
+        text = np.random.randint(0,2**63-1,1,dtype=np.int64)
+        present_SW = present.Present(int(key[0]))
+        expected_enc_value = present_SW.encrypt(int(text[0]))
+        expected_dec_value = present_SW.decrypt(int(text[0]))
+
+        percent = random.randint(1,100)
+        if(percent < e):
+            expected_enc_value = expected_enc_value + 1
+            expected_dec_value = expected_dec_value + 1
+            counter_errors = counter_errors + 1
+
+        storage_file.write(int(key[0]).to_bytes(10, byteorder='little'))   
+        storage_file.write(int(text[0]).to_bytes(8, byteorder='little'))   
+        storage_file.write(expected_enc_value.to_bytes(8, byteorder='little'))   
+        storage_file.write(expected_dec_value.to_bytes(8, byteorder='little'))    
+
+
         #clear block
         micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
         micro_sd.write(zero.to_bytes(512, byteorder='big'))
 
-
         micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
         j=j+1
         micro_sd.write(SIGNATURE.to_bytes(4, byteorder='big'))
-        micro_sd.write(NUMBER_ITER.to_bytes(1, byteorder='big'))
-        key = int.from_bytes(storage_file.read(10),byteorder='little')
-        text = int.from_bytes(storage_file.read(8),byteorder='little')
-        expected_enc = int.from_bytes(storage_file.read(8),byteorder='little')
-        expected_dec = int.from_bytes(storage_file.read(8),byteorder='little')
-
-        micro_sd.write(int(text).to_bytes(8, byteorder='little'))#text
-        micro_sd.write(int(key).to_bytes(10, byteorder='little'))#key
+        micro_sd.write(int(text[0]).to_bytes(8, byteorder='little'))
+        micro_sd.write(int(key[0]).to_bytes(10, byteorder='little'))
         micro_sd.write(int(0).to_bytes(1, byteorder='little'))#enc
-        micro_sd.write(int(expected_enc).to_bytes(8,byteorder='little'))
+        micro_sd.write(int(expected_enc_value).to_bytes(8,byteorder='little'))
 
         #clear block
         micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
@@ -115,18 +135,41 @@ def create_microsd_vectors(micro_sd,storage_file):
         micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
         j = j+1
         micro_sd.write(SIGNATURE.to_bytes(4, byteorder='big'))
-        micro_sd.write(NUMBER_ITER.to_bytes(1, byteorder='big'))
-        micro_sd.write(int(text).to_bytes(8, byteorder='little'))#text
-        micro_sd.write(int(key).to_bytes(10, byteorder='little'))#key
+        micro_sd.write(int(text[0]).to_bytes(8, byteorder='little'))
+        micro_sd.write(int(key[0]).to_bytes(10, byteorder='little'))
         micro_sd.write(int(1).to_bytes(1, byteorder='little'))#enc
-        micro_sd.write(int(expected_dec).to_bytes(8,byteorder='little'))
+        micro_sd.write(int(expected_dec_value).to_bytes(8,byteorder='little'))
 
 
+
+
+
+
+    return counter_errors
 
 def main():
+    '''
+        parameters
+            param1 : microsd path
+            param2 : N numero tests
+            param3 : e , percent of create wrong test
+    '''
+    try:
+        with(open(abs_path_file_storage,"rb+")) as storage_file:
+            storage_file.close()
+    except:
+        with(open(abs_path_file_storage,"wb+")) as storage_file:
+            storage_file.close()
+
+    uid = getpwnam(username).pw_uid   
+    gid = grp.getgrnam(groupname)[2]   
+    os.chown(abs_path_file_storage,uid,gid)
+
     with(open(abs_path_file_storage,"rb+")) as storage_file:
         with open(sys.argv[1],"rb+") as micro_sd:
-            create_microsd_vectors(micro_sd,storage_file)
+            N = int(sys.argv[2])
+            e = int(sys.argv[3])
+            print(create_microsd_vectors(micro_sd,storage_file,N,e))
     
 
 if __name__ == "__main__":

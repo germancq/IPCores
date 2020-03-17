@@ -11,9 +11,6 @@ import itertools
 import xlwt
 import time
 
-import importlib
-sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
-import present
 
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000

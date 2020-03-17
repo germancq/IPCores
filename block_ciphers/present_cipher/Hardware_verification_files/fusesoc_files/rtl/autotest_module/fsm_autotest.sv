@@ -43,7 +43,7 @@
 
 localparam BLOCK_SIZE = 64;
 localparam KEY_INPUT_SIZE = 80;
-localparam BASE_OUTPUTS = 32'h5 + (BLOCK_SIZE>>3) + (BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3) + 1;
+localparam BASE_OUTPUTS = 32'h4 + (BLOCK_SIZE>>3) + (BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3) + 1;
 localparam START_BLOCK = 32'h0x100000;
 
 
@@ -77,19 +77,6 @@ genvar i;
         );
     end
  endgenerate
-
- //////////iteration register///////////////////////
- logic reg_iteration_cl;
- logic reg_iteration_w;
- logic [7:0] reg_iteration_o;
- register #(.DATA_WIDTH(8)) reg_iteration(
- 	.clk(clk),
- 	.cl(reg_iteration_cl),
- 	.w(reg_iteration_w),
- 	.din(spi_data_out),
- 	.dout(reg_iteration_o)
- );
-
 
 ///////////////////////////////////////////////////////////////////
 
@@ -219,21 +206,6 @@ genvar i;
  );
 
 
- ///////////////iter_counter////////////////
- logic up_iter_counter;
- logic [31:0] counter_iter_o;
- logic rst_iter_counter;
- logic [31:0] base_iter;
- assign base_iter = ((counter_iter_o) * ((BLOCK_SIZE<<3)+8));
- counter #(.DATA_WIDTH(32)) counter_iter_block(
-    .clk(clk),
-    .rst(rst_iter_counter),
-    .up(up_iter_counter),
-    .down(1'b0),
-    .din(32'b0),
-    .dout(counter_iter_o)
- );
-
   ////////////bytes counter ////////////////////
 
  logic up_bytes_counter;
@@ -329,9 +301,6 @@ genvar i;
      up_bytes_counter = 0;
      rst_bytes_counter = 0;
 
-     up_iter_counter = 0;
-     rst_iter_counter = 0;
-
      rst_index = 0;
      up_index = 0;
 
@@ -357,8 +326,6 @@ genvar i;
          reg_signature_w[j] = 0;
      end
 
-     reg_iteration_cl = 0;
-     reg_iteration_w = 0;
 
      for (j=0;j<(BLOCK_SIZE>>3);j=j+1) begin
          reg_block_i_uut_cl[j] = 0;
@@ -388,7 +355,6 @@ genvar i;
                 rst_block_counter = 1;
                 rst_error_counter = 1;
                 rst_timer_counter = 1;
-                rst_iter_counter = 1;
                 next_state = BEGIN_READ_FROM_SD;
             end
          BEGIN_READ_FROM_SD:
@@ -417,9 +383,6 @@ genvar i;
                  for (j=0;j<4;j=j+1) begin
                     reg_signature_cl[j] = 1;
                  end
-                 
-
-                 reg_iteration_cl = 1;
 
                  for (j=0;j<(BLOCK_SIZE>>3);j=j+1) begin
                     reg_block_i_uut_cl[j] = 1;
@@ -470,25 +433,24 @@ genvar i;
                         32'h1:reg_signature_w[2] = 1;
                         32'h2:reg_signature_w[1] = 1;
                         32'h3:reg_signature_w[0] = 1;
-                        32'h4:reg_iteration_w = 1;
-                        32'h5 + index_o : begin
+                        32'h4 + index_o : begin
                             reg_block_i_uut_w[index_o] = 1'b1;
                             up_index = 1'b1;
                             if(index_o == (BLOCK_SIZE>>3)-1) begin
                                 rst_index = 1'b1;
                             end
                         end
-                        32'h5 + (BLOCK_SIZE>>3) + index_o : begin
+                        32'h4 + (BLOCK_SIZE>>3) + index_o : begin
                             reg_key_uut_w[index_o] = 1'b1;
                             up_index = 1'b1;
                             if(index_o == (KEY_INPUT_SIZE>>3)-1) begin
                                 rst_index = 1'b1;
                             end
                         end
-                        32'h5 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3): begin
+                        32'h4 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3): begin
                             reg_encdec_uut_o_w = 1;
                         end
-                        32'h5 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + index_o : begin
+                        32'h4 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + index_o : begin
                             reg_expected_result_uut_w[index_o] = 1'b1;
                             up_index = 1'b1;
                             if(index_o == (BLOCK_SIZE>>3)-1) begin
@@ -577,7 +539,6 @@ genvar i;
                  end
                  else begin
                      next_state = UPDATE_BLOCK_COUNTER;
-                     up_iter_counter = 1;
                  end    
              end
           SEL_WRITE_SD_BLOCK:
@@ -608,27 +569,26 @@ genvar i;
                    32'h1: reg_spi_data_in = signature[23:16];
                    32'h2: reg_spi_data_in = signature[15:8];
                    32'h3: reg_spi_data_in = signature[7:0];
-                   32'h4: reg_spi_data_in = reg_iteration_o;
-                   32'h5 + index_o : begin
+                   32'h4 + index_o : begin
                           reg_spi_data_in = block_i_uut >> (index_o * 8);
                    end
-                   32'h5 + (BLOCK_SIZE>>3) + index_o : begin
+                   32'h4 + (BLOCK_SIZE>>3) + index_o : begin
                           reg_spi_data_in = key_uut >> (index_o*8);
                    end
                    
-                   32'h5 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) : begin
+                   32'h4 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) : begin
                            reg_spi_data_in = encdec_uut;
                    end
 
-                   32'h5 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + index_o: begin
+                   32'h4 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + index_o: begin
                            reg_spi_data_in = expected_result >> (index_o*8);
                    end
                    
-                   BASE_OUTPUTS + base_iter + index_o : begin
+                   BASE_OUTPUTS + index_o : begin
                           reg_spi_data_in = block_o_uut_o >> (index_o * 8);     
                    end
                    
-                   BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter + index_o : begin
+                   BASE_OUTPUTS + (BLOCK_SIZE>>3) + index_o : begin
                           reg_spi_data_in = counter_timer_exec_o >> (index_o * 8);    
                    end
                    
@@ -639,7 +599,6 @@ genvar i;
                      begin
                          next_state = UPDATE_BLOCK_COUNTER;
                          rst_bytes_counter = 1;
-                         up_iter_counter = 1;
                      end
                    default: begin
                             reg_spi_data_in = memory_inst_o;
@@ -653,29 +612,29 @@ genvar i;
                  begin
                      up_index = 1'b1;
                      //rst inicio inputs
-                     if(counter_bytes_o == 32'h4) begin
+                     if(counter_bytes_o == 32'h3) begin
                         rst_index = 1'b1;
                      end
-                     else if(counter_bytes_o == 32'h5+((BLOCK_SIZE>>3)-1)) begin
+                     else if(counter_bytes_o == 32'h4+((BLOCK_SIZE>>3)-1)) begin
                         rst_index = 1'b1;
                      end
-                     else if(counter_bytes_o == 32'h5+((BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3)-1)) begin
+                     else if(counter_bytes_o == 32'h4+((BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3)-1)) begin
                         rst_index = 1'b1;
                      end
-                     else if(counter_bytes_o == 32'h5+((BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3))) begin
+                     else if(counter_bytes_o == 32'h4+((BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3))) begin
                         rst_index = 1'b1;
                      end
                      
                      //rst inicio outputs
-                     else if(counter_bytes_o == BASE_OUTPUTS + base_iter - 1) begin
+                     else if(counter_bytes_o == BASE_OUTPUTS - 1) begin
                         rst_index = 1'b1;
                      end
-                     else if(counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter-1) begin
+                     else if(counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) -1) begin
                         rst_index = 1'b1;
                      end
                      
                      //rst_final outputs
-                     else if (counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter + 7) begin
+                     else if (counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + 7) begin
                         rst_index = 1'b1;
                      end
                      
@@ -693,15 +652,7 @@ genvar i;
                  if(counter_timer_exec_o == 64'h00)
                  begin
                     next_state = IDLE;
-                    if(reg_iteration_o > counter_iter_o)
-                      begin
-                        rst_bytes_counter = 1;
-                      end
-                    else
-                      begin
-                        up_block_counter = 1;
-                        rst_iter_counter = 1;
-                      end  
+                    up_block_counter = 1;
                  end
 
              end
@@ -722,7 +673,7 @@ genvar i;
 
 
  mux_4 #(.DATA_WIDTH(32)) mux_debug(
-     .a({counter_block_o[15:0],counter_iter_o[7:0],3'h0,current_state}),
+     .a({counter_block_o[15:0],3'h0,current_state}),
      .b(counter_timer_o[31:0]),
      .c(counter_timer_o[63:32]),
      .d(counter_error_o),
