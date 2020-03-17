@@ -24,7 +24,6 @@ module autotest_module
     output [80-1:0] key_uut,
     output encdec_uut,
     input [64-1:0] block_o_uut,
-    input  end_key_signal_uut,
     input  end_dec_uut,
     input  end_enc_uut,
 
@@ -58,6 +57,18 @@ module autotest_module
     .clk_sel(clk_sel)
   );
 
+  logic [63:0] counter_performance_o;
+  logic up_performance_counter;
+  assign up_performance_counter = encdec_uut == 0 ? !end_enc_uut : !end_dec_uut ;
+  counter #(.DATA_WIDTH(64)) performance_counter(
+    .clk(clk_uut),
+    .rst(rst_uut),
+    .up(up_performance_counter),
+    .down(1'b0),
+    .din(64'h0),
+    .dout(counter_performance_o)
+  );
+
   fsm_autotest fsm_isnt(
     .clk(clk),
     .rst(rst),
@@ -84,9 +95,11 @@ module autotest_module
     .encdec_uut(encdec_uut),
     //uut results signals
     .block_o_uut(block_o_uut),
-    .end_key_signal_uut(end_key_signal_uut),
     .end_dec_uut(end_dec_uut),
     .end_enc_uut(end_enc_uut),
+
+    //performance counter
+    .performance_counter_o(counter_performance_o),
     //debug
     .sw_debug(sw_debug),
     .debug_signal(debug)

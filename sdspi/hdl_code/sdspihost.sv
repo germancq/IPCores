@@ -187,7 +187,7 @@
  logic [5:0] reg_state_prev;
  logic r_state_prev_cl;
  logic r_state_prev_w;
- register #(.DATA_WIDTH(5)) r_state_prev_0(
+ register #(.DATA_WIDTH(6)) r_state_prev_0(
      .clk(clk),
      .cl(r_state_prev_cl),
      .w(r_state_prev_w),
