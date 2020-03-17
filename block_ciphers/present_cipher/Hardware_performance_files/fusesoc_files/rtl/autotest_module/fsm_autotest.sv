@@ -249,11 +249,11 @@ genvar i;
  logic memory_inst_write;
  logic [7:0] memory_inst_o;
 
- memory_module #(.ADDR(16),
+ memory_module #(.ADDR(10),
                  .DATA_WIDTH(8))
  memory_inst(
     .clk(clk),
-    .addr(counter_bytes_o),
+    .addr(counter_bytes_o[9:0]),
     .r_w(memory_inst_write),
     .din(spi_data_out),
     .dout(memory_inst_o)
@@ -434,6 +434,7 @@ genvar i;
          READ_DATA:
              begin
                  rst_uut = 1;
+                 memory_inst_write = 1;
  		         spi_r_block = 1;
 
                  next_state = READ_BYTE;
@@ -467,10 +468,6 @@ genvar i;
                             end
                         end
                         32'h200: next_state = CHECK_SIGNATURE;
-                   default:
-                     begin
-                         memory_inst_write = 1;
-                     end
  		        endcase
              end
          READ_BYTE:
@@ -482,7 +479,7 @@ genvar i;
                  if(spi_busy == 1)
                  begin
                      next_state = WAIT_BYTE;
-                     up_bytes_counter = 1;
+                     
                  end
 
              end
@@ -492,6 +489,7 @@ genvar i;
                  spi_r_block = 1;
                  if(spi_busy == 1'b0)
                  begin
+                     up_bytes_counter = 1;
                      next_state = READ_DATA;
                  end
              end
@@ -570,25 +568,6 @@ genvar i;
                  
 
                  case(counter_bytes_o)
-                   32'h0: reg_spi_data_in = signature[31:24];
-                   32'h1: reg_spi_data_in = signature[23:16];
-                   32'h2: reg_spi_data_in = signature[15:8];
-                   32'h3: reg_spi_data_in = signature[7:0];
-                   32'h4 + index_o : begin
-                          reg_spi_data_in = block_i_uut >> (index_o * 8);
-                   end
-                   32'h4 + (BLOCK_SIZE>>3) + index_o : begin
-                          reg_spi_data_in = key_uut >> (index_o*8);
-                   end
-                   
-                   32'h4 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) : begin
-                           reg_spi_data_in = encdec_uut;
-                   end
-
-                   32'h4 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + index_o: begin
-                           reg_spi_data_in = expected_result >> (index_o*8);
-                   end
-                   
                    BASE_OUTPUTS + base_iter + index_o : begin
                           reg_spi_data_in = block_o_uut_o >> (index_o * 8);     
                    end
@@ -618,22 +597,8 @@ genvar i;
                  if(spi_busy == 1'b0)
                  begin
                      up_index = 1'b1;
-                     //rst inicio inputs
-                     if(counter_bytes_o == 32'h3) begin
-                        rst_index = 1'b1;
-                     end
-                     else if(counter_bytes_o == 32'h4+((BLOCK_SIZE>>3)-1)) begin
-                        rst_index = 1'b1;
-                     end
-                     else if(counter_bytes_o == 32'h4+((BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3)-1)) begin
-                        rst_index = 1'b1;
-                     end
-                     else if(counter_bytes_o == 32'h4+((BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3))) begin
-                        rst_index = 1'b1;
-                     end
-                     
                      //rst inicio outputs
-                     else if(counter_bytes_o == BASE_OUTPUTS + base_iter - 1) begin
+                     if(counter_bytes_o == BASE_OUTPUTS + base_iter - 1) begin
                         rst_index = 1'b1;
                      end
                      else if(counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter-1) begin
@@ -658,7 +623,7 @@ genvar i;
                  if(counter_bytes_o == 8'h20)
                  begin
                     next_state = IDLE;
-                    if(counter_iter_o < 4)
+                    if(counter_iter_o < 3)
                       begin
                         rst_bytes_counter = 1;
                       end
@@ -672,6 +637,7 @@ genvar i;
              end
           END_FSM:
             begin
+                rst_bytes_counter = 1;
                 up_timer_counter = 0;
             end
      endcase

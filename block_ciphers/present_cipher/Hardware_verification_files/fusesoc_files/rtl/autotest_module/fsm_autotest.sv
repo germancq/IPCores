@@ -235,19 +235,6 @@ genvar i;
  );
 
 
- ///////////////memory////////////////
- logic memory_inst_write;
- logic [7:0] memory_inst_o;
-
- memory_module #(.ADDR(16),
-                 .DATA_WIDTH(8))
- memory_inst(
-    .clk(clk),
-    .addr(counter_bytes_o),
-    .r_w(memory_inst_write),
-    .din(spi_data_out),
-    .dout(memory_inst_o)
- );
 
 
 
@@ -315,8 +302,6 @@ genvar i;
      reg_spi_data_cl = 0;
      reg_spi_data_w = 0;
      reg_spi_data_in = 8'hff;
-
-     memory_inst_write = 0;
 
 
      rst_uut = 0;
@@ -458,10 +443,6 @@ genvar i;
                             end
                         end
                         32'h200: next_state = CHECK_SIGNATURE;
-                   default:
-                     begin
-                         memory_inst_write = 1;
-                     end
  		        endcase
              end
          READ_BYTE:
@@ -600,9 +581,6 @@ genvar i;
                          next_state = UPDATE_BLOCK_COUNTER;
                          rst_bytes_counter = 1;
                      end
-                   default: begin
-                            reg_spi_data_in = memory_inst_o;
-                        end
                  endcase
              end   
           WAIT_W_BYTE:

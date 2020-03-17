@@ -59,7 +59,7 @@ module autotest_module
 
   logic [63:0] counter_performance_o;
   logic up_performance_counter;
-  assign up_performance_counter = encdec_uut == 0 ? !end_enc_uut : !end_dec_uut ;
+  assign up_performance_counter = encdec_uut == 0 ? ~end_enc_uut : ~end_dec_uut ;
   counter #(.DATA_WIDTH(64)) performance_counter(
     .clk(clk_uut),
     .rst(rst_uut),

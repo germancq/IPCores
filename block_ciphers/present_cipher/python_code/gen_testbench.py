@@ -141,7 +141,9 @@ def create_microsd_vectors(micro_sd,storage_file,N,e):
         micro_sd.write(int(expected_dec_value).to_bytes(8,byteorder='little'))
 
 
-
+        #clear block
+        micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
+        micro_sd.write(zero.to_bytes(512, byteorder='big'))
 
 
 

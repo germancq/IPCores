@@ -29,16 +29,12 @@ def create_fields(sheet1):
 def read_params_from_sd(block_n,micro_sd):
     micro_sd.seek(BLOCK_SIZE*block_n)
     signature = int.from_bytes(micro_sd.read(4),byteorder='big')
-    n_iter = int.from_bytes(micro_sd.read(1),byteorder='big')
     param_0 = int.from_bytes(micro_sd.read(8),byteorder='little')
     param_1 = int.from_bytes(micro_sd.read(10),byteorder='little')
     param_2 = int.from_bytes(micro_sd.read(1),byteorder='little')
     expected_result = int.from_bytes(micro_sd.read(8),byteorder='little')
     
-    #micro_sd.seek((BLOCK_SIZE*block_n) + RESULTS_OFFSET)
-    if n_iter == 0 :
-        n_iter = 1
-    
+
     
     result = int.from_bytes(micro_sd.read(8),byteorder='little')
     exec_time = int.from_bytes(micro_sd.read(8),byteorder='little')
