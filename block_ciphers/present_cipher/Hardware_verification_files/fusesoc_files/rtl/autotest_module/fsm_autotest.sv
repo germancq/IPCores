@@ -25,7 +25,6 @@
      output [7:0] spi_data_in,
      output logic spi_w_block,
      output logic spi_w_byte,
-     input spi_crc_err,
      //uut ctrl signals
      output logic rst_uut,
      //uut paramters signals
@@ -389,6 +388,7 @@ genvar i;
                 rst_block_counter = 1;
                 rst_error_counter = 1;
                 rst_timer_counter = 1;
+                rst_iter_counter = 1;
                 next_state = BEGIN_READ_FROM_SD;
             end
          BEGIN_READ_FROM_SD:
@@ -409,7 +409,6 @@ genvar i;
              begin
 
                  rst_timer_exec_counter = 1;
-                 rst_iter_counter = 1;
                  rst_bytes_counter = 1;
                  rst_index = 1;
 
@@ -693,16 +692,16 @@ genvar i;
 
                  if(counter_timer_exec_o == 64'h00)
                  begin
+                    next_state = IDLE;
                     if(reg_iteration_o > counter_iter_o)
                       begin
                         rst_bytes_counter = 1;
-                        next_state = BEGIN_READ_FROM_SD;
                       end
                     else
                       begin
                         up_block_counter = 1;
-                        next_state = IDLE;
-                      end
+                        rst_iter_counter = 1;
+                      end  
                  end
 
              end

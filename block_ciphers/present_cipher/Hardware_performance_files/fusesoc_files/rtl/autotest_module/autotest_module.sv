@@ -48,7 +48,6 @@ module autotest_module
   logic [7:0] spi_data_in;
   logic spi_w_block;
   logic spi_w_byte;
-  logic spi_crc_err;
 
   logic [1:0] clk_sel;
 
@@ -74,7 +73,6 @@ module autotest_module
     .spi_data_in(spi_data_in),
     .spi_w_block(spi_w_block),
     .spi_w_byte(spi_w_byte),
-    .spi_crc_err(spi_crc_err),
 
 
     .clk_uut_sel(clk_sel),
@@ -100,7 +98,6 @@ module autotest_module
     .reset(spi_rst),
     .busy(spi_busy),
     .err(spi_err),
-    .crc_err(spi_crc_err),
 
     .r_block(spi_r_block),
     .r_multi_block(spi_r_multi_block),

@@ -25,7 +25,6 @@
      output [7:0] spi_data_in,
      output logic spi_w_block,
      output logic spi_w_byte,
-     input spi_crc_err,
 
 
      output [1:0] clk_uut_sel,

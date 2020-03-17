@@ -10,13 +10,13 @@
   BASED ON https://github.com/paulino/minsdhcspi-host
  *****************************/
 
- module sdspihost(
+ module sdspihost #(parameter CLK_FQ_KHZ = 100000)
+ (
    input clk,
    input reset,
 
    output logic busy,
    output logic err,
-   output crc_err,
 
    input r_block,
    input r_multi_block,
@@ -33,9 +33,6 @@
    output mosi,
    output sclk,
    output ss,
-   //output SD_RESET,
-   //output SD_DAT_1,
-   //output SD_DAT_2,
    ////
    /*
     sclk speed es un divisor de frecuencia del clk global, para poner el sclk de la microsd a un multiplo del clk.
@@ -50,7 +47,7 @@
  //assign SD_DAT_1 = 1'b1;
  //assign SD_DAT_2 = 1'b1;
 
- parameter CYCLES_CLK_WAIT = 32'd25000000;
+ localparam CYCLES_CLK_WAIT = 250 * CLK_FQ_KHZ;
 
 
  //spi_master inteface
@@ -183,11 +180,11 @@
  logic r_block_prev;
  logic r_multi_block_prev;
 
- //21 estados
- logic[4:0] current_state;
- logic[4:0] next_state;
 
- logic [4:0] reg_state_prev;
+ logic[5:0] current_state;
+ logic[5:0] next_state;
+
+ logic [5:0] reg_state_prev;
  logic r_state_prev_cl;
  logic r_state_prev_w;
  register #(.DATA_WIDTH(5)) r_state_prev_0(
@@ -198,51 +195,44 @@
      .dout(reg_state_prev)
  );
 
- reg crc_err_w;
- reg crc_err_cl;
- register #(.DATA_WIDTH(1)) crc_err_reg(
-     .clk(clk),
-     .cl(crc_err_cl),
-     .w(crc_err_w),
-     .din(data_out[1]),
-     .dout(crc_err)
- );
 
- logic [15:0] crc16;
- assign crc16 = 16'h7fa1;
 
- localparam INIT_0 = 5'h0;
- localparam WAIT_250_ms = 5'h1;
- localparam WAIT_74_CYC = 5'h2;
- localparam CMD0_0 = 5'h3;
- localparam CMD0_1 = 5'h4;
- localparam CMD8_0 = 5'h5;
- localparam CMD8_1 = 5'h6;
- localparam CMD55_0 = 5'h7;
- localparam CMD55_1 = 5'h8;
- localparam ACMD41_0 = 5'h9;
- localparam ACMD41_1 = 5'hA;
- localparam IDLE = 5'hB;
- localparam WAIT_BEFORE_READ = 5'hC;
- localparam CMD17_0 = 5'hD;
- localparam CMD17_1 = 5'hE;
- localparam CMD18_0 = 5'hF;
- localparam CMD18_1 = 5'h10;
- localparam CMD24_0 = 5'h11;
- localparam CMD24_1 = 5'h12;
- localparam CMD12_0 = 5'h13;
- localparam CMD12_1 =  5'h14;
- localparam WRITE_FE_TOKEN = 5'h15;
- localparam WAIT_FOR_BYTE_TO_WRITE = 5'h16;
- localparam WRITE_BYTE = 5'h17;
- localparam WAIT_WRITE_BLOCK_RSP = 5'h18;
- localparam WAIT_FE_TOKEN = 5'h19;
- localparam WAIT_BYTE = 5'h1A;
- localparam BYTE_READY = 5'h1B;
- localparam ABORT_READ = 5'h1C;
- localparam WAIT_CMD_RSP = 5'h1D;
- localparam WAIT_SPI = 5'h1E;
- localparam ERROR = 5'h1F;
+
+ localparam INIT_0 = 6'h0;
+ localparam WAIT_250_ms = 6'h1;
+ localparam WAIT_74_CYC = 6'h2;
+ localparam CMD0_0 = 6'h3;
+ localparam CMD0_1 = 6'h4;
+ localparam CMD8_0 = 6'h5;
+ localparam CMD8_1 = 6'h6;
+ localparam CMD55_0 = 6'h7;
+ localparam CMD55_1 = 6'h8;
+ localparam ACMD41_0 = 6'h9;
+ localparam ACMD41_1 = 6'hA;
+ localparam CMD58_0 = 6'hB;
+ localparam CMD58_1 = 6'hC;
+ localparam IDLE = 6'hD;
+ localparam WAIT_BEFORE_READ = 6'hE;
+ localparam CMD17_0 = 6'hF;
+ localparam CMD17_1 = 6'h10;
+ localparam CMD18_0 = 6'h11;
+ localparam CMD18_1 = 6'h12;
+ localparam CMD24_0 = 6'h13;
+ localparam CMD24_1 = 6'h14;
+ localparam CMD12_0 = 6'h15;
+ localparam CMD12_1 =  6'h16;
+ localparam WRITE_FE_TOKEN = 6'h17;
+ localparam WAIT_FOR_BYTE_TO_WRITE = 6'h18;
+ localparam WRITE_BYTE = 6'h19;
+ localparam WAIT_WRITE_BLOCK_RSP = 6'h1A;
+ localparam WAIT_BUSY_WRITE = 6'h1B;
+ localparam WAIT_FE_TOKEN = 6'h1C;
+ localparam WAIT_BYTE = 6'h1D;
+ localparam BYTE_READY = 6'h1E;
+ localparam ABORT_READ = 6'h1F;
+ localparam WAIT_CMD_RSP = 6'h20;
+ localparam WAIT_SPI = 6'h21;
+ localparam ERROR = 6'h22;
 
  /*
    States of SD
@@ -291,9 +281,6 @@
      command_w = 0;
      command_in = 48'hFFFFFFFFFFFF;
      
-
-     crc_err_w = 0;
-     crc_err_cl = 0;
 
      spi_in_internal_signal_w = 0;
      spi_in_internal_signal_cl = 0;
@@ -443,10 +430,7 @@
            up_counter = 1;
            if(response[39:32] == 8'h0)
            begin
-             spi_in_internal_signal = {3'h4,sclk_speed};
-             spi_in_internal_signal_w = 1;
-             switch_sclk = 1;
-             next_state = IDLE;
+             next_state = CMD58_0;
            end
            else
              if(counter_o == 32'hFF)
@@ -454,6 +438,35 @@
              else
                next_state = CMD55_0;
          end
+       CMD58_0:
+         begin
+            spi_mux_ctl = 1;
+           
+            r_state_prev_w = 1;
+
+          
+            command_w = 1;
+            command_in = {1'b0,1'b1,6'h3A,32'h0,8'h1};
+
+            w_cmd = 1;
+            if(sdcmd_busy == 1)
+              next_state = WAIT_CMD_RSP;
+         end  
+        CMD58_1:
+          begin
+            spi_mux_ctl = 1;
+           
+            if(response[30] == 1'h0) begin
+              next_state = IDLE;
+              switch_sclk = 1;
+              spi_in_internal_signal = {3'h4,sclk_speed};
+              spi_in_internal_signal_w = 1;
+            end  
+            else begin
+              next_state = ERROR;
+            end  
+          end 
+         //SPI mode CRC turn off by default 
        IDLE:
          begin
            spi_in_internal_signal = {3'h4,sclk_speed};
@@ -467,7 +480,6 @@
            else if(w_block == 1)
            begin
              next_state = WAIT_BEFORE_READ;
-             crc_err_cl = 1;
            end
          end
        WAIT_BEFORE_READ:
@@ -632,20 +644,28 @@
            next_state = WAIT_SPI;
            if(data_out != 8'hFF)
              begin
-               crc_err_w = 1;
-               w_data_internal = 0;
-               next_state = CMD0_0; // revisar esta parte
+                next_state = WAIT_BUSY_WRITE; 
              end
          end
+         WAIT_BUSY_WRITE: 
+            begin
+                spi_in_internal_signal = 8'hFF;
+                spi_in_internal_signal_w = 1;
+                w_data_internal = 1;
+                r_state_prev_w = 1;
+                next_state = WAIT_SPI;
+                if(data_out == 8'hFF) begin
+                    w_data_internal = 0; 
+                     next_state = IDLE; // revisar esta parte
+                end
+            end
        WRITE_BYTE:
          begin
            spi_in_internal_signal = data_in;
            w_data_internal = 1;
            spi_in_internal_signal_w = 1;
-           if(counter_o == 32'h201)
-             spi_in_internal_signal = crc16[15:8];
-           else if(counter_o == 32'h202)
-             spi_in_internal_signal = crc16[7:0];
+           if(counter_o > 32'h200)
+             spi_in_internal_signal = 8'h0;
 
            r_state_prev_w = 1;
            if(busy_spi == 1)
@@ -753,6 +773,6 @@
      end
  end
 
- assign debug = {counter_o[7:0],spi_in,3'b00,reg_state_prev,3'b000,current_state};
+ assign debug = {counter_o[7:0],spi_in,2'b00,reg_state_prev,2'b00,current_state};
 
  endmodule
