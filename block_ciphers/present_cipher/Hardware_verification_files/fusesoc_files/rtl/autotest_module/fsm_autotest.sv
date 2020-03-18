@@ -33,9 +33,7 @@
      output encdec_uut,
      //uut results signals
      input [64-1:0] block_o_uut,
-     input  end_key_signal_uut,
-     input  end_dec_uut,
-     input  end_enc_uut,
+     input  end_uut,
      //debug
      input [1:0] sw_debug,
      output [31:0] debug_signal
@@ -485,17 +483,10 @@ genvar i;
              end
           WAIT_UNTIL_END_TEST_OR_TIMEOUT:
              begin
-               up_timer_exec_counter = 1;
-               if(encdec_uut) begin
-                    if(end_dec_uut) begin
-                        next_state = END_TEST;
-                    end   
-               end
-               else if(encdec_uut == 0) begin
-                    if(end_enc_uut) begin
-                        next_state = END_TEST;
-                    end    
-               end
+                up_timer_exec_counter = 1;
+                if(end_uut) begin
+                    next_state = END_TEST;
+                end    
              end
           END_TEST:
              begin

@@ -24,9 +24,7 @@ module autotest_module
     output [80-1:0] key_uut,
     output encdec_uut,
     input [64-1:0] block_o_uut,
-    input  end_key_signal_uut,
-    input  end_dec_uut,
-    input  end_enc_uut,
+    input  end_uut,
 
     
     input [1:0] sw_debug,
@@ -74,9 +72,7 @@ module autotest_module
     .encdec_uut(encdec_uut),
     //uut results signals
     .block_o_uut(block_o_uut),
-    .end_key_signal_uut(end_key_signal_uut),
-    .end_dec_uut(end_dec_uut),
-    .end_enc_uut(end_enc_uut),
+    .end_uut(end_uut),
     //debug
     .sw_debug(sw_debug),
     .debug_signal(debug)

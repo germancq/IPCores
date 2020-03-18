@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: Your name
- * @ Modified time: 2020-03-17 16:34:54
+ * @ Modified time: 2020-03-18 15:36:34
  * @ Description:
  */
 
@@ -71,8 +71,7 @@ autotest_module autotest_impl(
     .key_uut(key),
     .encdec_uut(enc_dec),
     .block_o_uut(block_o),
-    .end_dec_uut(end_dec),
-    .end_enc_uut(end_enc),
+    .end_uut(end_dec ^ end_enc),
 
     .clk_uut(clk_uut),
 

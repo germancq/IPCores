@@ -172,7 +172,7 @@ def run_test(dut, index = 0):
 
 
 
-n = 400
+n = 500
 factory = TestFactory(run_test)
 
 factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31

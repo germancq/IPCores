@@ -28,7 +28,6 @@
 
 
      output [1:0] clk_uut_sel,
-
      //uut ctrl signals
      output logic rst_uut,
      //uut paramters signals
@@ -37,8 +36,7 @@
      output encdec_uut,
      //uut results signals
      input [64-1:0] block_o_uut,
-     input  end_dec_uut,
-     input  end_enc_uut,
+     input  end_uut,
      //debug
      input [1:0] sw_debug,
      output [31:0] debug_signal
@@ -169,18 +167,18 @@ genvar i;
     .dout(counter_timer_o)
  );
 
-  ///////////////timer_execution//////////////////////
- logic up_timer_exec_counter;
+ ///////////////timer_execution//////////////////////
  logic [63:0] counter_timer_exec_o;
  logic rst_timer_exec_counter;
+ logic up_timer_exec_counter;
  counter #(.DATA_WIDTH(64)) counter_timer_exec(
     .clk(clk),
     .rst(rst_timer_exec_counter),
     .up(up_timer_exec_counter),
     .down(1'b0),
-    .din(32'b0),
+    .din(64'b0),
     .dout(counter_timer_exec_o)
- );
+ ); 
 
 
  ///////////////error_counter//////////////////////
@@ -312,11 +310,11 @@ genvar i;
      up_timer_counter = 1;
      rst_timer_counter = 0;
 
-     up_error_counter = 0;
-     rst_error_counter = 0;
-
      up_timer_exec_counter = 0;
      rst_timer_exec_counter = 0;
+
+     up_error_counter = 0;
+     rst_error_counter = 0;
 
      up_bytes_counter = 0;
      rst_bytes_counter = 0;
@@ -396,10 +394,9 @@ genvar i;
              end   
          IDLE:
              begin
-                 
+                 rst_timer_exec_counter = 1;
                  rst_bytes_counter = 1;
                  rst_index = 1;
-                 rst_timer_exec_counter = 1;
 
                  rst_uut = 1;
 
@@ -525,17 +522,11 @@ genvar i;
              end
           WAIT_UNTIL_END_TEST_OR_TIMEOUT:
              begin
-               up_timer_exec_counter = 1;
-               if(encdec_uut) begin
-                    if(end_dec_uut) begin
-                        next_state = END_TEST;
-                    end   
-               end
-               else if(encdec_uut == 0) begin
-                    if(end_enc_uut) begin
-                        next_state = END_TEST;
-                    end    
-               end
+                up_timer_exec_counter = 1;
+                if(end_uut) begin
+                    next_state = END_TEST;
+                end   
+              
                /*
                else if(counter_timer_o >= 32'h6E00000)
                  next_state = END_TEST;
