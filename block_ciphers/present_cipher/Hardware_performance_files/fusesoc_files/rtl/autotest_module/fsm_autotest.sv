@@ -545,12 +545,10 @@ genvar i;
              begin
                reg_block_o_uut_o_w = 1;
                rst_index = 1'b1;
-               up_bytes_counter  = 1'b1;
+               rst_bytes_counter = 1'b1;
                if(spi_busy == 1'b0 && index_o == 16'h00) begin
                    next_state = COMPARE_RESULT;
-                   rst_bytes_counter = 1'b1;
                end   
-             
              end   
           COMPARE_RESULT:
              begin
@@ -653,7 +651,6 @@ genvar i;
              end
           END_FSM:
             begin
-                rst_bytes_counter = 1;
                 up_timer_counter = 0;
             end
      endcase

@@ -7,9 +7,11 @@
  * @Last modified time: 2019-03-05T13:36:26+01:00
  */
 
-import configuration::*;
-
-module autotest_module
+module autotest_module #(
+  parameter INPUT_SIZE_1 = 32,
+  parameter INPUT_SIZE_2 = 32,
+  parameter OUTPUT_SIZE = 32
+)
 (
     input clk,
     input rst,
@@ -19,15 +21,18 @@ module autotest_module
     output mosi,
     input miso,
 
-    /*UUT signals*/
-    output uut_ctrl_signal_1,
-    output [31:0] input_to_UUT_1,
-    input [7:0] output_from_UUT_1,
-    input  output_ctrl_from_UUT_1,
-    input [7:0] output_from_UUT_2,
-    input  output_ctrl_from_UUT_2,
+    /*UUT ctrl signals*/
+    output rst_uut,
+    input end_uut,
+    /*inputs to UUT*/
+    output [INPUT_SIZE_1-1:0] input_to_UUT_1,
+    output [INPUT_SIZE_2-1:0] input_to_UUT_2,
+    /*outputs from UUT*/
+    input [OUTPUT_SIZE:0] output_from_UUT,
 
+    output clk_uut,
 
+    input [1:0] sw_debug,
     output [31:0] debug
   );
 
@@ -42,12 +47,24 @@ module autotest_module
   logic [7:0] spi_data_in;
   logic spi_w_block;
   logic spi_w_byte;
-  logic spi_crc_err;
 
 
+  logic [1:0] clk_sel;
+
+  gen_clk_uut gen_clk_inst(
+    .clk(clk),
+    .rst(rst),
+    .clk_uut(clk_uut),
+    .clk_sel(clk_sel)
+  );
   
 
-  fsm_autotest fsm_isnt(
+  fsm_autotest #(
+    .INPUT_SIZE_1(INPUT_SIZE_1),
+    .INPUT_SIZE_2(INPUT_SIZE_2),
+    .OUTPUT_SIZE(OUTPUT_SIZE)
+  )
+  fsm_isnt(
     .clk(clk),
     .rst(rst),
     //sdspihost signals
@@ -62,17 +79,17 @@ module autotest_module
     .spi_data_in(spi_data_in),
     .spi_w_block(spi_w_block),
     .spi_w_byte(spi_w_byte),
-    .spi_crc_err(spi_crc_err),
     //uut ctrl signals
-    .uut_ctrl_signal_1(uut_ctrl_signal_1),
+    .rst_uut(rst_uut),
+    .end_uut(end_uut),
+    .clk_uut_sel(clk_sel),
     //uut paramters signals
     .input_to_UUT_1(input_to_UUT_1),
+    .input_to_UUT_2(input_to_UUT_1),
     //uut results signals
-    .output_from_UUT_1(output_from_UUT_1),
-    .output_ctrl_from_UUT_1(output_ctrl_from_UUT_1),
-    .output_from_UUT_2(output_from_UUT_2),
-    .output_ctrl_from_UUT_2(output_ctrl_from_UUT_2),
+    .output_from_UUT(output_from_UUT),
     //debug
+    .sw_debug(sw_debug),
     .debug_signal(debug)
   );
 
@@ -82,7 +99,6 @@ module autotest_module
     .reset(spi_rst),
     .busy(spi_busy),
     .err(spi_err),
-    .crc_err(spi_crc_err),
 
     .r_block(spi_r_block),
     .r_multi_block(spi_r_multi_block),
@@ -100,9 +116,56 @@ module autotest_module
     .sclk(sclk),
     .ss(cs),
     ////
-    .sclk_speed(4'h7),
+    .sclk_speed(4'h1),
     
     .debug()
   );
 
 endmodule : autotest_module
+
+
+module gen_clk_uut(
+  input clk,
+  input rst,
+  output clk_uut,
+  input [1:0] clk_sel
+);
+
+
+  logic clk_1;
+  logic clk_2;
+  logic clk_max;
+  
+  clk_wiz_0 clk_gen(
+    // Clock out ports
+    .clk_out1(clk_max),
+  // Status and control signals
+    .reset(rst),
+ // Clock in ports
+    .clk_in1(clk)
+  );
+  
+  logic [7:0] counter_o;
+  
+  logic clk_alt;
+  assign clk_alt = clk_sel[0] == 0 ? counter_o[1] : counter_o[0] ;
+  
+  counter #(.DATA_WIDTH(8)) counter_clk(
+    .clk(clk_max),
+    .rst(rst),
+    .up(1'b1),
+    .down(1'b0),
+    .din(8'h0),
+    .dout(counter_o)
+  );
+
+  
+  BUFGMUX BUFGMUX_inst1(
+    .I0(clk_alt),
+    .I1(clk_max),
+    .O(clk_uut),
+    .S(clk_sel[1])
+  );
+  
+  
+endmodule : gen_clk_uut
