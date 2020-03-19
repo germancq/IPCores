@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-03-07 16:03:51
  * @ Modified by: Your name
- * @ Modified time: 2020-03-07 16:05:28
+ * @ Modified time: 2020-03-19 15:16:39
  * @ Description:
  */
 module top(
@@ -20,6 +20,7 @@ module top(
     output [6:0] seg,
     output [7:0] AN,
 
+    input [1:0] switch_i,
     output [15:0] leds_o
 );
 
@@ -47,7 +48,11 @@ logic end_uut;
 logic [63:0] block_o_uut;
 
 
-autotest_module autotest_impl(
+autotest_module #(
+  .INPUT_SIZE_1(80),
+  .INPUT_SIZE_2(80),
+  .OUTPUT_SIZE_1(64)
+) autotest_impl(
     .clk(sys_clk_pad_i),
     .rst(rst),
 
@@ -58,12 +63,12 @@ autotest_module autotest_impl(
 
 
     .rst_uut(rst_uut),
-    .iv_uut(iv),
-    .key_uut(key),
+    .input_to_UUT_1(iv),
+    .input_to_UUT_2(key),
     .end_uut(end_uut),
-    .block_o_uut(block_o_uut),
+    .output_from_UUT_1(block_o_uut),
     
-
+    .sw_debug(switch_i),
     .debug(debug_data)
 );
 

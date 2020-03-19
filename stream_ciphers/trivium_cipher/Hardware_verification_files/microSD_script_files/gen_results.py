@@ -11,10 +11,6 @@ import itertools
 import xlwt
 import time
 
-import importlib
-sys.path.append('/home/germancq/gitProjects/IPCores/stream_ciphers/trivium_cipher/python_code')
-import trivium
-
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
 SIGNATURE = 0xAABBCCDD
@@ -31,12 +27,11 @@ def create_fields(sheet1):
 def read_params_from_sd(block_n,micro_sd):
     micro_sd.seek(BLOCK_SIZE*block_n)
     signature = int.from_bytes(micro_sd.read(4),byteorder='big')
-    n_iter = int.from_bytes(micro_sd.read(1),byteorder='big')
     param_0 = int.from_bytes(micro_sd.read(10),byteorder='little')
     param_1 = int.from_bytes(micro_sd.read(10),byteorder='little')
+    expected_result = int.from_bytes(micro_sd.read(8),byteorder='little')
 
-    if n_iter == 0 :
-        n_iter = 1
+
     
     result = int.from_bytes(micro_sd.read(8),byteorder='little')
     exec_time = int.from_bytes(micro_sd.read(8),byteorder='little')
@@ -47,6 +42,7 @@ def read_params_from_sd(block_n,micro_sd):
             param_0,
             param_1,
             result,
+            expected_result,
             exec_time)
 
 
@@ -55,33 +51,29 @@ def write_params(sheet1, params , i):
     key = params[2]
     iv = params[1]
     result = params[3]
-    hw_time = int(calculated_time_in_ns(params[4]))
+    hw_time = int(calculated_time_in_ns(params[5]))
     
-    start_sw_time = time.time_ns()
-    expected_value = trivium.trivium_impl(key,iv,64)
-    end_sw_time = time.time_ns()
+
     
     #print(expected_value)
-
-    expected_value = int(expected_value,2)
+    print("*************************")
     print(hex(params[4]))
-    print(hex(expected_value))
+    print(hex(params[5]))
     print(hex(result))
+    print("*************************")
 
-    sw_time = end_sw_time - start_sw_time
-    
     error = 0
-    if(expected_value != result) :
+    if(params[4] != result) :
         error = 1
 
 
     sheet1.write(i,1,hex(iv))
     sheet1.write(i,2,hex(key))
     sheet1.write(i,3,hex(result))
-    sheet1.write(i,4,hex(expected_value))
+    sheet1.write(i,4,hex(params[4]))
     sheet1.write(i,5,hex(error))
     sheet1.write(i,6,int(hw_time))
-    sheet1.write(i,7,int(sw_time))
+
     
     
     return i+1
