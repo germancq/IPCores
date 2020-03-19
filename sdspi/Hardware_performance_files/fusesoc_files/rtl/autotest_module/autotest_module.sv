@@ -28,6 +28,7 @@ module autotest_module #(
     output ctrl_mux_uut,
     input end_uut,
     input err_uut,
+    input busy_uut,
     /*inputs to UUT*/
     output [INPUT_SIZE_1-1:0] input_to_UUT_1,
     output [INPUT_SIZE_2-1:0] input_to_UUT_2,
@@ -89,6 +90,7 @@ module autotest_module #(
     .rst_uut(rst_uut),
     .end_uut(end_uut),
     .err_uut(err_uut),
+    .busy_uut(busy_uut),
     .start_uut(start_uut),
     .ctrl_mux_uut(ctrl_mux_uut),
     .clk_uut_sel(clk_sel),

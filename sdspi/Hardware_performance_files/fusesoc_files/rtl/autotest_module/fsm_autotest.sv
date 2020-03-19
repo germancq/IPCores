@@ -31,6 +31,7 @@
      output logic spi_w_byte,
      //uut ctrl signals
      output logic rst_uut,
+     input busy_uut,
      output logic start_uut,
      output logic ctrl_mux_uut,
      input err_uut,
@@ -282,12 +283,13 @@ genvar i;
   localparam WAIT_UNTIL_END_TEST_OR_TIMEOUT = 5'hB;
   localparam END_TEST = 5'hC;
   localparam COMPARE_RESULT = 5'hD;
-  localparam SEL_WRITE_SD_BLOCK = 5'hE;
-  localparam WAIT_W_BLOCK = 5'hF;
-  localparam WRITE_DATA = 5'h10;
-  localparam WAIT_W_BYTE = 5'h11;
-  localparam UPDATE_BLOCK_COUNTER = 5'h12;
-  localparam END_FSM = 5'h13;
+  localparam RST_SDSPI_UUT = 5'hE;
+  localparam SEL_WRITE_SD_BLOCK = 5'hF;
+  localparam WAIT_W_BLOCK = 5'h10;
+  localparam WRITE_DATA = 5'h11;
+  localparam WAIT_W_BYTE = 5'h12;
+  localparam UPDATE_BLOCK_COUNTER = 5'h13;
+  localparam END_FSM = 5'h14;
 
  logic [4:0] current_state;
  logic [4:0] next_state;
@@ -381,8 +383,15 @@ genvar i;
          WAIT_RST_SPI:
              begin
                  rst_uut = 1;
-                 if(spi_busy == 1'b0)
-                     next_state = IDLE;
+                 if(spi_busy == 1'b0) begin
+                     if (counter_timer_exec_o == 0) begin
+                         next_state = IDLE;
+                     end
+                     else begin
+                         next_state = SEL_WRITE_SD_BLOCK;
+                     end
+                 end
+                     
 
              end     
          IDLE:
@@ -501,6 +510,7 @@ genvar i;
                if(signature == 32'hAABBCCDD)
                begin
                  next_state = START_TEST;
+                 ctrl_mux_uut = 1;
                end
                else
                  next_state = END_FSM;
@@ -509,11 +519,11 @@ genvar i;
              begin
                next_state = WAIT_UNTIL_END_TEST_OR_TIMEOUT;
                start_uut = 1;
+               up_index = 1;
                ctrl_mux_uut = 1;
              end
           WAIT_UNTIL_END_TEST_OR_TIMEOUT:
              begin
-               start_uut = 1;
                ctrl_mux_uut = 1;
                up_timer_exec_counter = 1;
                if(end_uut | err_uut)
@@ -525,34 +535,50 @@ genvar i;
           END_TEST:
              begin
                rst_index = 1'b1;
+               ctrl_mux_uut = 1;
                rst_bytes_counter = 1'b1;
-                ctrl_mux_uut = 1;
                if(spi_busy == 1'b0 && index_o == 16'h00) begin
                    next_state = COMPARE_RESULT;
                end    
              end
           COMPARE_RESULT:
              begin
-                 next_state = SEL_WRITE_SD_BLOCK;
+                 next_state = RST_SDSPI_UUT;
                  reg_output_err_o_w = 1;
+                 ctrl_mux_uut = 1;
                  if(err_uut | counter_timer_exec_o > TIMEOUT_VALUE) begin
                      up_error_counter = 1'b1;
                      input_err = 1;
+                     rst_uut = 1'b1;
                  end
-             end    
+             end
+          RST_SDSPI_UUT:
+            begin
+                ctrl_mux_uut = 1;
+                rst_uut = 1'b1;
+                if(busy_uut == 0) begin
+                    next_state = BEGIN_READ_FROM_SD;
+                end
+            end    
           SEL_WRITE_SD_BLOCK:
              begin
-                 spi_w_block = 1;
-                 next_state = WAIT_W_BLOCK;
+                 rst_uut = 1'b1;
+                 ctrl_mux_uut = 1;
+                 if(busy_uut == 0) begin
+                     spi_w_block = 1;
+                     next_state = WAIT_W_BLOCK;
+                 end
              end
           WAIT_W_BLOCK:
              begin
+                 rst_uut = 1'b1;
                  spi_w_block = 1;
                  if(spi_busy == 1'b0)
                      next_state = WRITE_DATA;
              end
           WRITE_DATA:
              begin
+                 rst_uut = 1'b1;
                  spi_w_block = 1;
                  spi_w_byte = 1;
                  reg_spi_data_w = 1;
@@ -588,6 +614,7 @@ genvar i;
              end   
           WAIT_W_BYTE:
              begin
+                 rst_uut = 1'b1;
                  spi_w_block = 1;
                  if(spi_busy == 1'b0)
                  begin

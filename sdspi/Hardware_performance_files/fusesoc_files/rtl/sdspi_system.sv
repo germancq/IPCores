@@ -18,6 +18,7 @@ module sdspi_system(
   input [31:0] n_blocks,
   input cmd18,
   input [4:0] sclk_speed,
+  output busy,
 
   output sclk,
   output cs,
@@ -33,6 +34,8 @@ module sdspi_system(
   logic spi_r_block;
   logic spi_err;
   logic [31:0] spi_block_addr;
+
+  assign busy = spi_busy;
 
   sdspihost sdspi_inst(
     .clk(clk),

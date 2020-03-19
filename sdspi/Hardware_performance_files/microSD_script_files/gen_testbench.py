@@ -29,8 +29,8 @@ SIGNATURE = 0xAABBCCDD
 def gen_all_posibilities(micro_sd):
     parameters = [
         range(0,1+1),
-        range(1,5+1),#sclk_speed
-        range(2,4+1)#n_blocks
+        range(1,4+1),#sclk_speed
+        range(2,2+1)#n_blocks
     ]
     total_posibilities = 1
     modulo_op = []

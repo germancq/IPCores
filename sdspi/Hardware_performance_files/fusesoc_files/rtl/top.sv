@@ -65,6 +65,7 @@ module top(
   logic uut_finish;
   logic clk_uut;
   logic err_uut;
+  logic busy_uut;
 
   autotest_module #(
   .INPUT_SIZE_1(32),
@@ -83,6 +84,7 @@ module top(
     .clk_uut(clk_uut),
 
     .rst_uut(uut_rst),
+    .busy_uut(busy_uut),
     .input_to_UUT_1(uut_n_blocks),
     .input_to_UUT_2(uut_sclk_speed),
     .input_to_UUT_3(uut_cmd18),
@@ -107,6 +109,7 @@ module top(
     .start(uut_start),
     .finish(uut_finish),
     .err(err_uut),
+    .busy(busy_uut),
 
 
     .n_blocks(uut_n_blocks),
