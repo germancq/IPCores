@@ -43,6 +43,7 @@
 localparam BASE_OUTPUTS = 32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) + (OUTPUT_SIZE_1>>3);
 
 localparam START_BLOCK = 32'h100000;
+localparam TIMEOUT_VALUE = 32'h10000000;
 
 genvar i;
 
@@ -462,6 +463,8 @@ genvar i;
                up_timer_exec_counter = 1;
                if(end_uut)
                  next_state = END_TEST;
+               else if(counter_timer_exec_o > TIMEOUT_VALUE)
+                 next_state = END_TEST;  
              end
           END_TEST:
              begin
