@@ -29,7 +29,7 @@ SIGNATURE = 0xAABBCCDD
 def gen_all_posibilities(micro_sd):
     parameters = [
         range(0,1+1),
-        range(1,3+1),#sclk_speed
+        range(1,5+1),#sclk_speed
         range(2,4+1)#n_blocks
     ]
     total_posibilities = 1
@@ -52,7 +52,6 @@ def gen_all_posibilities(micro_sd):
         micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
         j = j+1
         micro_sd.write(SIGNATURE.to_bytes(4, byteorder='big'))
-        micro_sd.write(NUMBER_ITER.to_bytes(1, byteorder='big'))
         #for k in range(0,2+1):
         micro_sd.write(n_blocks.to_bytes(4, byteorder='little'))
         micro_sd.write(pairs[1].to_bytes(1, byteorder='little'))

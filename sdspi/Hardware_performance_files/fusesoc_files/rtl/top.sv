@@ -63,8 +63,15 @@ module top(
   logic [SCLK_SPEED_SIZE-1:0] uut_sclk_speed;
   logic [CMD18_SIZE-1:0] uut_cmd18;
   logic uut_finish;
+  logic clk_uut;
+  logic err_uut;
 
-  autotest_module autotest_inst(
+  autotest_module #(
+  .INPUT_SIZE_1(32),
+  .INPUT_SIZE_2(8),
+  .INPUT_SIZE_3(8),
+  .OUTPUT_SIZE(8)
+) autotest_impl(
     .clk(sys_clk_pad_i),
     .rst(center_button),
 
@@ -73,30 +80,33 @@ module top(
     .mosi(mosi_autotest),
     .miso(miso),
 
-    .uut_ctrl_mux(uut_ctrl_mux),
-    .uut_rst(uut_rst),
-    .uut_start(uut_start),
-    //uut paramters signals
-    .uut_n_blocks(uut_n_blocks),
-    .uut_sclk_speed(uut_sclk_speed),
-    .uut_cmd18(uut_cmd18),
-    //uut results signals
-    .uut_finish(uut_finish),
+    .clk_uut(clk_uut),
 
+    .rst_uut(uut_rst),
+    .input_to_UUT_1(uut_n_blocks),
+    .input_to_UUT_2(uut_sclk_speed),
+    .input_to_UUT_3(uut_cmd18),
+    .end_uut(uut_finish),
+    .err_uut(err_uut),
+
+    .ctrl_mux_uut(uut_ctrl_mux),
+    .start_uut(uut_start),
+    
+    .sw_debug(switch_i[1:0]),
     .debug(debug_data)
-
-  );
+);
 
   logic cs_uut;
   logic sclk_uut;
   logic mosi_uut;
 
   sdspi_system uut(
-    .clk(sys_clk_pad_i),
+    .clk(clk_uut),
     .rst(uut_rst),
 
     .start(uut_start),
     .finish(uut_finish),
+    .err(err_uut),
 
 
     .n_blocks(uut_n_blocks),

@@ -11,6 +11,7 @@ targets :
 
    filesets  :
      - rtl_top
+     - rtl_ip
      - rtl_autotest
      - constraints
 
@@ -34,6 +35,11 @@ filesets :
        - rtl/sdspi_system.sv
 
 
+ rtl_ip:
+    file_type : xci
+    files :
+      - rtl/xilinx_clk_wiz/clk_wiz_0/clk_wiz_0.xci
+
  rtl_autotest :
     file_type : systemVerilogSource
 
@@ -47,5 +53,9 @@ filesets :
    file_type : xdc
    files :
      - data/Nexys4DDR_Master.xdc
+     - rtl/xilinx_clk_wiz/clk_wiz_0/clk_wiz_0.xdc
+     - rtl/xilinx_clk_wiz/clk_wiz_0/clk_wiz_0_board.xdc
+     - rtl/xilinx_clk_wiz/clk_wiz_0/clk_wiz_0_late.xdc
+     - rtl/xilinx_clk_wiz/clk_wiz_0/clk_wiz_0_ooc.xdc
 
 

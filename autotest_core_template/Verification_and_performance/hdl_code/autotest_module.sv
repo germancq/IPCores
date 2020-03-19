@@ -23,6 +23,7 @@ module autotest_module #(
 
     /*UUT ctrl signals*/
     output rst_uut,
+    input err_uut,
     input end_uut,
     /*inputs to UUT*/
     output [INPUT_SIZE_1-1:0] input_to_UUT_1,
@@ -81,6 +82,7 @@ module autotest_module #(
     .spi_w_byte(spi_w_byte),
     //uut ctrl signals
     .rst_uut(rst_uut),
+    .err_uut(err_uut),
     .end_uut(end_uut),
     .clk_uut_sel(clk_sel),
     //uut paramters signals

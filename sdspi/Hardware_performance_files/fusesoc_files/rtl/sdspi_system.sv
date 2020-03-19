@@ -12,6 +12,7 @@ module sdspi_system(
 
   input start,
   output logic finish,
+  output logic err,
 
 
   input [31:0] n_blocks,
@@ -30,14 +31,14 @@ module sdspi_system(
   logic spi_r_byte;
   logic spi_r_multi_block;
   logic spi_r_block;
+  logic spi_err;
   logic [31:0] spi_block_addr;
 
   sdspihost sdspi_inst(
     .clk(clk),
     .reset(spi_rst),
     .busy(spi_busy),
-    .err(),
-    .crc_err(),
+    .err(spi_err),
 
     .r_block(spi_r_block),
     .r_multi_block(spi_r_multi_block),
@@ -112,6 +113,7 @@ localparam READ_BYTE = 4'h6;
 localparam WAIT_BYTE = 4'h7;
 localparam CHANGE_BLOCK = 4'h8;
 localparam END_FSM = 4'h9;
+localparam ERROR = 4'hA;
 
 
 always_comb begin
@@ -131,6 +133,8 @@ always_comb begin
 
   counter_bytes_up = 1'b0;
   counter_bytes_rst = 1'b0;
+
+  err = 1'b0;
 
   case(current_state)
     IDLE:
@@ -223,6 +227,10 @@ always_comb begin
         if(spi_busy == 1'b0)
           finish = 1'b1;
       end
+    ERROR:
+      begin
+          err = 1'b1;
+      end  
   endcase
 
 end
@@ -231,6 +239,8 @@ always_ff @ (posedge clk)
 begin
   if(rst)
     current_state <= IDLE;
+  else if(spi_err)
+    current_state <= ERROR;  
   else
     current_state <= next_state;
 end

@@ -28,6 +28,7 @@
      output logic spi_w_byte,
      //uut ctrl signals
      output logic rst_uut,
+     input err_uut,
      input end_uut,
      //uut paramters signals
      output [INPUT_SIZE_1-1:0] input_to_UUT_1,
@@ -461,8 +462,8 @@ genvar i;
           WAIT_UNTIL_END_TEST_OR_TIMEOUT:
              begin
                up_timer_exec_counter = 1;
-               if(end_uut)
-                 next_state = END_TEST;
+               if(end_uut | err_uut)
+                 next_state = END_TEST;  
                else if(counter_timer_exec_o > TIMEOUT_VALUE)
                  next_state = END_TEST;  
              end
@@ -477,7 +478,7 @@ genvar i;
              end
           COMPARE_RESULT:
              begin
-                 if(expected_result != output_from_UUT_1_o) begin
+                 if((expected_result != output_from_UUT_1_o) || err_uut) begin
                      up_error_counter = 1'b1;
                      next_state = SEL_WRITE_SD_BLOCK;
                  end
