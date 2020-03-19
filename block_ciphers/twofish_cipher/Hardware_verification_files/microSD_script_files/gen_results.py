@@ -24,23 +24,20 @@ def create_fields(sheet1):
     sheet1.write(0,2,'key')
     sheet1.write(0,3,'enc_dec')
     sheet1.write(0,4,'ciphertext')
-    sheet1.write(0,5,'expected_enc_value')
-    sheet1.write(0,6,'expected_dec_value')
-    sheet1.write(0,7,'error')
-    sheet1.write(0,8,'HW_time_ns')
-    sheet1.write(0,9,'SW_enc_time')
-    sheet1.write(0,10,'SW_dec_time')
+    sheet1.write(0,5,'expected_value')
+    sheet1.write(0,6,'error')
+    sheet1.write(0,7,'HW_time_ns')
+
 
 def read_params_from_sd(block_n,micro_sd):
     micro_sd.seek(BLOCK_SIZE*block_n)
     signature = int.from_bytes(micro_sd.read(4),byteorder='big')
-    n_iter = int.from_bytes(micro_sd.read(1),byteorder='big')
     param_0 = int.from_bytes(micro_sd.read(16),byteorder='little')
     param_1 = int.from_bytes(micro_sd.read(16),byteorder='little')
     param_2 = int.from_bytes(micro_sd.read(1),byteorder='little')
-    #micro_sd.seek((BLOCK_SIZE*block_n) + RESULTS_OFFSET)
-    if n_iter == 0 :
-        n_iter = 1
+    expected_result = int.from_bytes(micro_sd.read(16),byteorder='little')
+
+
     
     result = int.from_bytes(micro_sd.read(16),byteorder='little')
     exec_time = int.from_bytes(micro_sd.read(8),byteorder='little')
@@ -51,6 +48,7 @@ def read_params_from_sd(block_n,micro_sd):
             param_1,
             param_2,
             result,
+            expected_result,
             exec_time)
 
 
@@ -60,46 +58,23 @@ def write_params(sheet1, params , i):
     key = params[2]
     enc_dec = params[3]
     result = params[4]
-    hw_time = int(calculated_time_in_ns(params[5]))
-    start_prep_time = time.time_ns()
-    twofish_SW = twofish.Twofish(key)
-    end_prep_time = time.time_ns()
-    strat_enc_time = time.time_ns()
-    expected_enc_value = twofish_SW.encrypt(text)
-    end_enc_time = time.time_ns()
-    start_dec_time = time.time_ns()
-    expected_dec_value = twofish_SW.decrypt(text) 
-    end_dec_time = time.time_ns()
-    print("*************************")
-    print(hex(params[5]))
-    print(hex(result))
-    print(hex(expected_enc_value))
-    print(hex(expected_dec_value))
-    print("*************************")
-    error = 0
-    if(enc_dec) :
-        if(expected_dec_value != result) :
-            error = 1
-    else :   
-        if(expected_enc_value != result) :
-            error = 1 
+    hw_time = int(calculated_time_in_ns(params[6]))
     
-
-
-    prep_time = end_prep_time - start_prep_time
-    enc_time = int(prep_time + (end_enc_time - strat_enc_time))
-    dec_time = int(prep_time + (end_dec_time - start_dec_time))
-
-    sheet1.write(i,1,hex(text))
-    sheet1.write(i,2,hex(key))
-    sheet1.write(i,3,hex(enc_dec))
-    sheet1.write(i,4,hex(result))
-    sheet1.write(i,5,hex(expected_enc_value))
-    sheet1.write(i,6,hex(expected_dec_value))
-    sheet1.write(i,7,hex(error))
-    sheet1.write(i,8,int(hw_time))
-    sheet1.write(i,9,int(enc_time))
-    sheet1.write(i,10,int(dec_time))
+    print("*************************")
+    print(hex(params[6]))
+    print(hex(result))
+    print(hex(params[5]))
+    print("*************************")
+    if(params[5] == 0 and params[6] == 0) :
+        return i+1
+    else :
+        sheet1.write(i,1,hex(text))
+        sheet1.write(i,2,hex(key))
+        sheet1.write(i,3,hex(enc_dec))
+        sheet1.write(i,4,hex(result))
+        sheet1.write(i,5,hex(params[5]))
+        sheet1.write(i,6,hex(1))
+        sheet1.write(i,7,int(hw_time))
     
     return i+1
 

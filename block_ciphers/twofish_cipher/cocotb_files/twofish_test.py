@@ -20,10 +20,9 @@ from cocotb.regression import TestFactory
 from cocotb.result import TestFailure, ReturnValue
 from cocotb.clock import Clock
 
-import importlib
-import sys
-sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/twofish_cipher/python_code')
-import twofish
+
+import os
+abs_path_file_storage = "/home/germancq/gitProjects/IPCores/block_ciphers/twofish_cipher/python_code/test_cases.HEX"
 
 CLK_PERIOD = 20 # 50 MHz
 
@@ -111,36 +110,31 @@ def n_cycles_clock(dut,n):
 
 
 @cocotb.coroutine
-def run_test(dut, key = 0, text = 0):
-    key = random.randint(0,(2**128)-1)
-    text = random.randint(0,(2**128)-1)
+def run_test(dut, index = 0):
 
-    #key = 0x0
-    #text = 0x0
-    twofish_SW = twofish.Twofish(key)
+    with(open(abs_path_file_storage,"rb+")) as storage_file:
+    
+    
+        storage_file.seek((index*64))
+        key = int.from_bytes(storage_file.read(16),byteorder='little')
+        text = int.from_bytes(storage_file.read(16),byteorder='little')
+        expected_enc_value = int.from_bytes(storage_file.read(16),byteorder='little')
+        expected_dec_value = int.from_bytes(storage_file.read(16),byteorder='little')
     
 
-    #encrypt
-    #print("ENCRYPT")
-    enc_dec = 0
-    expected_value = twofish_SW.encrypt(text)
-
-    setup_function(dut,key,enc_dec,text)
-    yield rst_function_test(dut,enc_dec)
-    yield enc_dec_test(dut,expected_value)
-    #decrypt
-    #print("DECRYPT")
-    enc_dec = 1
-    expected_value = twofish_SW.decrypt(text)
-    
-    setup_function(dut,key,enc_dec,text)
-    yield rst_function_test(dut,enc_dec)
-    yield enc_dec_test(dut,expected_value)
+        setup_function(dut,key,0,text)
+        yield rst_function_test(dut,0)
+        yield enc_dec_test(dut,expected_enc_value)
+        #decrypt
+        #print("DECRYPT")
+        setup_function(dut,key,1,text)
+        yield rst_function_test(dut,1)
+        yield enc_dec_test(dut,expected_dec_value)
 
 
 
-n = 10
+n = 500
 factory = TestFactory(run_test)
 
-factory.add_option("key", np.random.randint(low=0,high=(2**32)-1,size=n)) #array de 10 int aleatorios entre 0 y 31
+factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31
 factory.generate_tests()        

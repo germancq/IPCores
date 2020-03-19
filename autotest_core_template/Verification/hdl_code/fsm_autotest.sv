@@ -33,7 +33,7 @@
      output [INPUT_SIZE_1-1:0] input_to_UUT_1,
      output [INPUT_SIZE_2-1:0] input_to_UUT_2,
      //uut results signals
-     input [OUTPUT_SIZE_1-1:0] output_from_UUT_1
+     input [OUTPUT_SIZE_1-1:0] output_from_UUT_1,
      //debug
      input [1:0] sw_debug,
      output [31:0] debug_signal
@@ -294,9 +294,6 @@ genvar i;
          reg_signature_w[j] = 0;
      end
 
-     reg_iteration_cl = 0;
-     reg_iteration_w = 0;
-
      for (j=0;j<(INPUT_SIZE_1>>3);j=j+1) begin
          reg_din_1_cl[j] = 0;
          reg_din_1_w[j] = 0;
@@ -350,9 +347,6 @@ genvar i;
                  for (j=0;j<4;j=j+1) begin
                     reg_signature_cl[j] = 1;
                  end
-                 
-
-                 reg_iteration_cl = 1;
 
                  for (j=0;j<(INPUT_SIZE_1>>3);j=j+1) begin
                     reg_din_1_cl[j] = 1;
@@ -368,7 +362,7 @@ genvar i;
                  
 
                  reg_output_from_UUT_1_o_cl = 1;
-                 reg_output_from_UUT_2_o_cl = 1;
+               
                  
 
                  reg_spi_data_cl = 1;
@@ -555,7 +549,7 @@ genvar i;
                      else if(counter_bytes_o == 32'h4+((INPUT_SIZE_1>>3)-1)) begin
                         rst_index = 1'b1;
                      end
-                     else if(counter_bytes_o == 32'h4+((INPUT_SIZE_1>>3)+(INPUT_SIZE_2-1)) begin
+                     else if(counter_bytes_o == 32'h4+((INPUT_SIZE_1>>3)+(INPUT_SIZE_2>>3)-1)) begin
                         rst_index = 1'b1;
                      end
                      //rst inicio outputs
