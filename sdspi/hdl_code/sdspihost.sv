@@ -359,7 +359,7 @@
            if(response[39:32] == 8'h1)
              next_state = CMD8_0;
            else
-             next_state = INIT_0;
+             next_state = ERROR;
 
          end
        CMD8_0:
