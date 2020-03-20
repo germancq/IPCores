@@ -44,7 +44,7 @@
 localparam BASE_OUTPUTS = 32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) + (OUTPUT_SIZE_1>>3);
 
 localparam START_BLOCK = 32'h100000;
-localparam TIMEOUT_VALUE = 32'h10000000;
+localparam TIMEOUT_VALUE = 64'h10000000;
 
 genvar i;
 

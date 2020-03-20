@@ -18,7 +18,7 @@
 class LFSR :
 
     def __init__(self,n,initial_state,feedback_coefficient) :
-        print()
+        #print()
         self.n = n
         self.state = initial_state
         self.fc = feedback_coefficient

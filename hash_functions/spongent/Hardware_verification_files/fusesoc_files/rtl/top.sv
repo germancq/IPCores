@@ -2,16 +2,16 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-03-09 12:14:34
  * @ Modified by: Your name
- * @ Modified time: 2020-03-09 18:41:50
+ * @ Modified time: 2020-03-20 14:11:07
  * @ Description:
  */
 
-localparam N = 256;
-localparam c = 256;
-localparam r = 16;
-localparam R = 140;
-localparam lCounter_initial_state = 8'h9E;
-localparam lCounter_feedback_coeff = 9'h11D;
+localparam N = 88;
+localparam c = 80;
+localparam r = 8;
+localparam R = 45;
+localparam lCounter_initial_state = 6'h05;
+localparam lCounter_feedback_coeff = 7'h61;
 localparam DATA_WIDTH = 64; 
 
 module top(
@@ -28,6 +28,8 @@ module top(
 
     output [6:0] seg,
     output [7:0] AN,
+
+    input [1:0] switch_i,
 
     output [15:0] leds_o
 );
@@ -55,7 +57,10 @@ logic end_uut;
 logic [N-1:0] hash_o_uut;
 
 
-autotest_module autotest_impl(
+autotest_module #(
+  .INPUT_SIZE_1(64),
+  .OUTPUT_SIZE_1(N)
+) autotest_impl(
     .clk(sys_clk_pad_i),
     .rst(rst),
 
@@ -64,15 +69,16 @@ autotest_module autotest_impl(
     .mosi(mosi),
     .miso(miso),
 
-
+    .err_uut(1'b0),
     .rst_uut(rst_uut),
-    .msg_uut(msg_uut),
+    .input_to_UUT_1(msg_uut),
     .end_uut(end_uut),
-    .hash_o_uut(hash_o_uut),
+    .output_from_UUT_1(hash_o_uut),
     
-
+    .sw_debug(switch_i),
     .debug(debug_data)
 );
+
 
 
 spongent #(

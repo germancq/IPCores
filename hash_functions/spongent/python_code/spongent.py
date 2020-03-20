@@ -45,7 +45,7 @@ class Spongent:
         if len_msg == 0:
             bit_len_msg = math.floor(math.log2(message)) + 1
 
-        print(bit_len_msg)
+        #print(bit_len_msg)
         n = bit_len_msg % self.r
         message = message << (self.r - n)
         #cut into blocks of r bits
@@ -185,14 +185,14 @@ class Spongent:
 
 
 if __name__ == "__main__":
-    print()    
+    #print()    
     spongent_impl = Spongent(88,80,8,45)
     
-    message = 0x53706F6E6765202B2050726573656E74203D2053706F6E67656E7
+    message = 0x7d5e997271ef4ea2
     print(message)
     print(hex(message))
 
-    hash_value = spongent_impl.generate_hash(message)
+    hash_value = spongent_impl.generate_hash(message,64)
     
     print(hash_value)
     print(hex(hash_value))
