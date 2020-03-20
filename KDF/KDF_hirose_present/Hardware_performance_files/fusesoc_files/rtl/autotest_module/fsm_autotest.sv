@@ -11,6 +11,7 @@
  #(
      parameter INPUT_SIZE_1 = 32,
      parameter INPUT_SIZE_2 = 32,
+     parameter INPUT_SIZE_3 = 32,
      parameter OUTPUT_SIZE = 32
  )
  (
@@ -31,11 +32,11 @@
      //uut ctrl signals
      output logic rst_uut,
      input end_uut,
-     input err_uut,
      output [1:0] clk_uut_sel,
      //uut paramters signals
      output [INPUT_SIZE_1-1:0] input_to_UUT_1,
      output [INPUT_SIZE_2-1:0] input_to_UUT_2,
+     output [INPUT_SIZE_3-1:0] input_to_UUT_3,
      //uut results signals
      input [OUTPUT_SIZE-1:0] output_from_UUT,
      //debug
@@ -43,7 +44,7 @@
      output [31:0] debug_signal
      );
 
-localparam BASE_OUTPUTS = 32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) + (OUTPUT_SIZE>>3);
+localparam BASE_OUTPUTS = 32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) + (INPUT_SIZE_3>>3) + (OUTPUT_SIZE>>3);
 localparam START_BLOCK = 32'h100000;
 localparam TIMEOUT_VALUE = 64'h10000000;
 
@@ -109,6 +110,22 @@ genvar i;
             .w(reg_din_2_w[i]),
             .din(spi_data_out),
             .dout(input_to_UUT_2[(i<<3)+7:(i<<3)])
+        );
+    end
+ endgenerate
+
+  /////////////input_to_UUT_3////////////////
+ 
+ logic [0:0] reg_din_3_cl[(INPUT_SIZE_3>>3)-1:0];
+ logic [0:0] reg_din_3_w[(INPUT_SIZE_3>>3)-1:0];
+ generate
+    for (i=0;i<(INPUT_SIZE_3>>3);i=i+1) begin
+        register #(.DATA_WIDTH(8)) reg_input_to_UUT_3_i(
+            .clk(clk),
+            .cl(reg_din_3_cl[i]),
+            .w(reg_din_3_w[i]),
+            .din(spi_data_out),
+            .dout(input_to_UUT_3[(i<<3)+7:(i<<3)])
         );
     end
  endgenerate
@@ -344,6 +361,11 @@ genvar i;
          reg_din_2_w[j] = 0;
      end
 
+     for (j=0;j<(INPUT_SIZE_3>>3);j=j+1) begin
+         reg_din_3_cl[j] = 0;
+         reg_din_3_w[j] = 0;
+     end
+
      for (j=0;j<(OUTPUT_SIZE>>3);j=j+1) begin
          reg_expected_result_uut_cl[j] = 0;
          reg_expected_result_uut_w[j] = 0;
@@ -395,6 +417,10 @@ genvar i;
 
                  for (j=0;j<(INPUT_SIZE_2>>3);j=j+1) begin
                     reg_din_2_cl[j] = 1;
+                 end
+
+                 for (j=0;j<(INPUT_SIZE_3>>3);j=j+1) begin
+                    reg_din_3_cl[j] = 1;
                  end
 
                  for (j=0;j<(OUTPUT_SIZE>>3);j=j+1) begin
@@ -453,6 +479,13 @@ genvar i;
                             end
                         end
                         32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) + index_o : begin
+                            reg_din_3_w[index_o] = 1'b1;
+                            up_index = 1'b1;
+                            if(index_o == (INPUT_SIZE_3>>3)-1) begin
+                                rst_index = 1'b1;
+                            end
+                        end
+                        32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) + (INPUT_SIZE_3>>3) + index_o : begin
                             reg_expected_result_uut_w[index_o] = 1'b1;
                             up_index = 1'b1;
                             if(index_o == (OUTPUT_SIZE>>3)-1) begin
@@ -504,7 +537,7 @@ genvar i;
           WAIT_UNTIL_END_TEST_OR_TIMEOUT:
              begin
                up_timer_exec_counter = 1;
-               if(end_uut | err_uut)
+               if(end_uut)
                  next_state = END_TEST;
                else if(counter_timer_exec_o > TIMEOUT_VALUE)
                  next_state = END_TEST;    
@@ -522,7 +555,7 @@ genvar i;
           COMPARE_RESULT:
              begin
                  next_state = SEL_WRITE_SD_BLOCK;
-                 if((expected_result != output_from_UUT_o) || err_uut) begin
+                 if(expected_result != output_from_UUT_o) begin
                      up_error_counter = 1'b1;
                  end
              end    
