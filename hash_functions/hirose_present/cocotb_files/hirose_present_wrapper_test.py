@@ -19,10 +19,10 @@ from cocotb.regression import TestFactory
 from cocotb.result import TestFailure, ReturnValue
 from cocotb.clock import Clock
 
-import importlib
-import sys
-sys.path.append('/home/germancq/gitProjects/IPCores/hash_functions/hirose_present/python_code')
-import hirose_present
+import os
+abs_path_file_storage = "/home/germancq/gitProjects/IPCores/hash_functions/hirose_present/python_code/test_cases.HEX"
+
+
 
 CLK_PERIOD = 20 # 50 MHz
 
@@ -139,27 +139,23 @@ def n_cycles_clock(dut,n):
 
 
 @cocotb.coroutine
-def run_test(dut, text = 0):
+def run_test(dut, index = 0):
+    c = 0x1234567812345678
+    with(open(abs_path_file_storage,"rb+")) as storage_file:
     
-    text = random.randint(0,(2**32)-1)
+        storage_file.seek(index*24)
+        text = int.from_bytes(storage_file.read(8),byteorder='little')
+        expected_value = int.from_bytes(storage_file.read(16),byteorder='little')
 
-    
-    #text = 0x4b6fa49c
-    c    = 0x1234567812345678
-    len_value = 64
-    hash_SW = hirose_present.HirosePresent(c,len_value)
-    expected_value = hash_SW.generate_hash(text)
-
-    setup_function(dut,text,c)
-    
-    yield rst_function_test(dut)
-    yield hash_test(dut,expected_value)
+        setup_function(dut,text,c)
+        
+        yield rst_function_test(dut)
+        yield hash_test(dut,expected_value)
 
 
 
-n = 10
+n = 500
 factory = TestFactory(run_test)
 
-factory.add_option("text", np.random.randint(low=0,high=(2**32)-1,size=n))
-#factory.add_option("c", np.random.randint(low=0,high=(2**32)-1,size=n)) #array de 10 int aleatorios entre 0 y 31
+factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31
 factory.generate_tests()
