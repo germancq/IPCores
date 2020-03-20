@@ -19,10 +19,9 @@ from cocotb.regression import TestFactory
 from cocotb.result import TestFailure, ReturnValue
 from cocotb.clock import Clock
 
-import importlib
-import sys
-sys.path.append('/home/germancq/gitProjects/IPCores/KDF/KDF_hirose_present/python_code')
-import keyDerivationFunction
+import os
+abs_path_file_storage = "/home/germancq/gitProjects/IPCores/KDF/KDF_hirose_present/python_code/test_cases.HEX"
+
 
 CLK_PERIOD = 20 # 50 MHz
 
@@ -117,31 +116,32 @@ def n_cycles_clock(dut,n):
 
 
 @cocotb.coroutine
-def run_test(dut, text = 0):
+def run_test(dut, index = 0):
     
-    #text = random.randint(0,(2**32)-1)
-
-    salt = random.randint(0,(2**32)-1)
-    count = random.randint(10,(2**5)-1)
-    user_password = random.randint(0,(2**32)-1)
-    print(count)
-
-    kdf_impl = keyDerivationFunction.KDF(count,salt,user_password)   
-    expected_value = kdf_impl.generate_derivate_key()
     
-    first_value = (user_password << 96) + (salt << 32) + count
-    
+    with(open(abs_path_file_storage,"rb+")) as storage_file:
 
-    setup_function(dut,salt,count,user_password)
-    
-    yield rst_function_test(dut,first_value)
-    yield kdf_test(dut,expected_value)
+        storage_file.seek(index*32)
+        
+        salt = int.from_bytes(storage_file.read(8),byteorder='little')
+        count = int.from_bytes(storage_file.read(4),byteorder='little')
+        user_password = int.from_bytes(storage_file.read(4),byteorder='little')
+
+        expected_value = int.from_bytes(storage_file.read(16),byteorder='little')
+        print(count)
+
+        first_value = (user_password << 96) + (salt << 32) + count
+
+
+        setup_function(dut,salt,count,user_password)
+        
+        yield rst_function_test(dut,first_value)
+        yield kdf_test(dut,expected_value)
 
 
 
-n = 10
+n = 25
 factory = TestFactory(run_test)
 
-factory.add_option("text", np.random.randint(low=0,high=(2**32)-1,size=n))
-#factory.add_option("c", np.random.randint(low=0,high=(2**32)-1,size=n)) #array de 10 int aleatorios entre 0 y 31
+factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31
 factory.generate_tests()

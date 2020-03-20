@@ -1,0 +1,20 @@
+CAPI=1
+[main]
+description = "KDF hirose present"
+
+depend =
+  counter
+  register
+  memory_module
+  hirose_present
+
+[verilog]
+src_files =
+  KDF/KDF_hirose_present/hdl_code/KDF_hirose_present.sv
+
+
+[provider] 
+name = github
+user = germancq
+repo = IPCores
+version = master
