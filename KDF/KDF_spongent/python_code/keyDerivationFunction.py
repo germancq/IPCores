@@ -14,20 +14,24 @@ import spongent
 
 
 class KDF:
-    def __init__ (self,count,salt,user_password,N=128,c=128,r=8,R=70):
+    def __init__ (self,count,salt,user_password,N=128,c=128,r=8,R=70,salt_len=64,user_password_len=32):
+
+        #count_len + user_password_len + salt_len <= N
         
         self.count = count #valores de 32 bits
-        self.salt = salt #valores de 64 bits
-        self.user_password = user_password #valores de 32 bits
+        self.salt = salt 
+        self.user_password = user_password 
         self.N = N
         self.hash_function = spongent.Spongent(N,c,r,R)
+        self.salt_len = salt_len
+        self.user_password_len = user_password_len
         
         
 
 
     def generate_derivate_key(self):
         
-        x_i = (self.user_password << 96) + (self.salt << 32) + self.count
+        x_i = (self.user_password << (32+self.salt_len)) + (self.salt << 32) + self.count
         print(hex(x_i))
         for i in range(0,self.count):
             x_i = self.hash_function.generate_hash(x_i,self.N)

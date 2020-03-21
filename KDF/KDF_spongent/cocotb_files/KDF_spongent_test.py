@@ -19,10 +19,16 @@ from cocotb.regression import TestFactory
 from cocotb.result import TestFailure, ReturnValue
 from cocotb.clock import Clock
 
-import importlib
-import sys
-sys.path.append('/home/germancq/gitProjects/IPCores/KDF/KDF_spongent/python_code')
-import keyDerivationFunction
+import os
+abs_path_file_storage = "/home/germancq/gitProjects/IPCores/KDF/KDF_spongent/python_code/test_cases.HEX"
+
+N_candidates =        [88,128,160,224,256]
+salt_len_candidates = [24,64,64,96,128]
+up_len_candidates =   [32,32,64,96,96]
+OPTION_HASH = 1
+N = N_candidates[OPTION_HASH]
+salt_len = salt_len_candidates[OPTION_HASH]
+user_password_len = up_len_candidates[OPTION_HASH]
 
 CLK_PERIOD = 20 # 50 MHz
 
@@ -117,31 +123,34 @@ def n_cycles_clock(dut,n):
 
 
 @cocotb.coroutine
-def run_test(dut, text = 0):
+def run_test(dut, index = 0):
     
-    #text = random.randint(0,(2**32)-1)
+    sum_ = 4 + int(salt_len/8) + int(user_password_len/8) + int(N/8)
+    with(open(abs_path_file_storage,"rb+")) as storage_file:
 
-    salt = random.randint(0,(2**32)-1)
-    count = random.randint(10,(2**5)-1)
-    user_password = random.randint(0,(2**32)-1)
-    print(count)
+        
+        storage_file.seek(index*sum_)
+        
+        salt = int.from_bytes(storage_file.read(int(salt_len/8)),byteorder='little')
+        user_password = int.from_bytes(storage_file.read(int(user_password_len/8)),byteorder='little')
+        count = int.from_bytes(storage_file.read(4),byteorder='little')
 
-    kdf_impl = keyDerivationFunction.KDF(count,salt,user_password)   
-    expected_value = kdf_impl.generate_derivate_key()
-    
-    first_value = (user_password << 96) + (salt << 32) + count
-    
+        expected_value = int.from_bytes(storage_file.read(int(N/8)),byteorder='little')
+        print(count)
 
-    setup_function(dut,salt,count,user_password)
-    
-    yield rst_function_test(dut,first_value)
-    yield kdf_test(dut,expected_value)
+        first_value = (user_password << (32+salt_len)) + (salt << 32) + count
 
 
+        setup_function(dut,salt,count,user_password)
+        
+        yield rst_function_test(dut,first_value)
+        yield kdf_test(dut,expected_value)
 
-n = 10
+
+
+
+n = 25
 factory = TestFactory(run_test)
 
-factory.add_option("text", np.random.randint(low=0,high=(2**32)-1,size=n))
-#factory.add_option("c", np.random.randint(low=0,high=(2**32)-1,size=n)) #array de 10 int aleatorios entre 0 y 31
+factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31
 factory.generate_tests()
