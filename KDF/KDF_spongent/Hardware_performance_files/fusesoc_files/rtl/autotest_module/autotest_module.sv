@@ -10,6 +10,7 @@
 module autotest_module #(
   parameter INPUT_SIZE_1 = 32,
   parameter INPUT_SIZE_2 = 32,
+  parameter INPUT_SIZE_3 = 32,
   parameter OUTPUT_SIZE = 32
 )
 (
@@ -23,11 +24,11 @@ module autotest_module #(
 
     /*UUT ctrl signals*/
     output rst_uut,
-    input err_uut,
     input end_uut,
     /*inputs to UUT*/
     output [INPUT_SIZE_1-1:0] input_to_UUT_1,
     output [INPUT_SIZE_2-1:0] input_to_UUT_2,
+    output [INPUT_SIZE_3-1:0] input_to_UUT_3,
     /*outputs from UUT*/
     input [OUTPUT_SIZE-1:0] output_from_UUT,
 
@@ -63,6 +64,7 @@ module autotest_module #(
   fsm_autotest #(
     .INPUT_SIZE_1(INPUT_SIZE_1),
     .INPUT_SIZE_2(INPUT_SIZE_2),
+    .INPUT_SIZE_3(INPUT_SIZE_3),
     .OUTPUT_SIZE(OUTPUT_SIZE)
   )
   fsm_isnt(
@@ -82,12 +84,12 @@ module autotest_module #(
     .spi_w_byte(spi_w_byte),
     //uut ctrl signals
     .rst_uut(rst_uut),
-    .err_uut(err_uut),
     .end_uut(end_uut),
     .clk_uut_sel(clk_sel),
     //uut paramters signals
     .input_to_UUT_1(input_to_UUT_1),
     .input_to_UUT_2(input_to_UUT_2),
+    .input_to_UUT_3(input_to_UUT_3),
     //uut results signals
     .output_from_UUT(output_from_UUT),
     //debug

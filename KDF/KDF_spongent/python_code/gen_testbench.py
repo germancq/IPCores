@@ -33,7 +33,7 @@ R_candidates =        [45,70,90,120,140]
 salt_len_candidates = [24,64,64,96,128]
 up_len_candidates =   [32,32,64,96,96]
 
-OPTION_HASH = 1
+OPTION_HASH = 4
 
 N = N_candidates[OPTION_HASH]
 r = r_candidates[OPTION_HASH]
@@ -151,6 +151,7 @@ def create_microsd_vectors(micro_sd,storage_file,num,e):
         micro_sd.write(int(user_password[0]).to_bytes(int(user_password_len/8), byteorder='little'))
         micro_sd.write(int(count).to_bytes(4, byteorder='little'))
         micro_sd.write(int(expected_value).to_bytes(int(N/8),byteorder='little'))
+        print("///////////////////////")
 
 
 
