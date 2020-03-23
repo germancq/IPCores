@@ -2,17 +2,22 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-17 16:29:42
  * @ Modified by: Your name
- * @ Modified time: 2020-03-09 18:51:28
+ * @ Modified time: 2020-03-23 14:06:00
  * @ Description:
  */
 
 
-module KDF_hirose_present(
+module KDF_hirose_present #(
+    parameter SALT_WIDTH = 64,
+    parameter COUNT_WIDTH = 32,
+    parameter PSW_WIDTH = 32
+)
+(
     input clk,
     input rst,
-    input [63:0] salt,
-    input [31:0] count,
-    input [31:0] user_password,
+    input [SALT_WIDTH-1:0] salt,
+    input [COUNT_WIDTH-1:0] count,
+    input [PSW_WIDTH-1:0] user_password,
     output end_signal,
     output [127:0] key_derivated
 );
