@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-17 16:29:42
  * @ Modified by: Your name
- * @ Modified time: 2020-03-23 14:06:00
+ * @ Modified time: 2020-03-30 11:32:46
  * @ Description:
  */
 
@@ -22,8 +22,9 @@ module KDF_hirose_present #(
     output [127:0] key_derivated
 );
 
+    localparam DATA_WIDTH = SALT_WIDTH + PSW_WIDTH + COUNT_WIDTH;
     
-    logic [127:0] hash_input;
+    logic [DATA_WIDTH-1:0] hash_input;
     logic [127:0] hash_output;
     logic hash_end_signal;
 
@@ -33,7 +34,7 @@ module KDF_hirose_present #(
 
     assign end_signal = counter_output == count ? 1 : 0;
 
-    hirose_present_wrapper #(.DATA_WIDTH(128)) hash_impl(
+    hirose_present_wrapper #(.DATA_WIDTH(DATA_WIDTH)) hash_impl(
         .clk(clk),
         .rst(rst | hash_end_signal),
         .plaintext(hash_input),

@@ -14,18 +14,21 @@ import hirose_present
 
 
 class KDF:
-    def __init__ (self,count,salt,user_password):
+    def __init__ (self,count,salt,user_password,count_len=32,salt_len=64,psw_len=32):
         
         self.count = count #valores de 32 bits
         self.salt = salt #valores de 64 bits
         self.user_password = user_password #valores de 32 bits
-        self.hash_function = hirose_present.HirosePresent(0x1234567812345678,128)
+        self.count_len = count_len
+        self.salt_len = salt_len
+        self.psw_len = psw_len
+        self.hash_function = hirose_present.HirosePresent(0x1234567812345678,self.count_len+self.salt_len+self.psw_len)
         
 
 
     def generate_derivate_key(self):
         
-        x_i = (self.user_password << 96) + (self.salt << 32) + self.count
+        x_i = (self.user_password << (self.count_len+self.salt_len)) + (self.salt << self.count_len) + self.count
         #print(hex(x_i))
         for i in range(0,self.count):
             x_i = self.hash_function.generate_hash(x_i)

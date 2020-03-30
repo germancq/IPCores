@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-01-07 12:16:24
  * @ Modified by: Your name
- * @ Modified time: 2020-03-09 19:58:22
+ * @ Modified time: 2020-03-30 11:38:21
  * @ Description:
  */
 
@@ -27,6 +27,7 @@ module KDF_spongent #(
     output [N-1:0] key_derivated
 );
 
+    localparam DATA_WIDTH = SALT_WIDTH + COUNT_WIDTH + PSW_WIDTH;
     
     logic [N-1:0] hash_input;
     logic [N-1:0] hash_output;
@@ -39,7 +40,7 @@ module KDF_spongent #(
 
     assign end_signal = counter_output == count ? 1 : 0;
 
-    spongent #(.DATA_WIDTH(N),
+    spongent #(.DATA_WIDTH(DATA_WIDTH),
                .N(N),
                .c(c),
                .r(r),
