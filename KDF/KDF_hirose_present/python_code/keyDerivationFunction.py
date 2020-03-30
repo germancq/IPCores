@@ -10,7 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
+
+import importlib
+import sys
+sys.path.append('/home/germancq/gitProjects/IPCores/hash_functions/hirose_present/python_code')
 import hirose_present
+
 
 
 class KDF:

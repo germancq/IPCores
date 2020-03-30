@@ -10,6 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
+import importlib
+import sys
+sys.path.append('/home/germancq/gitProjects/IPCores/hash_functions/spongent/python_code')
 import spongent
 
 

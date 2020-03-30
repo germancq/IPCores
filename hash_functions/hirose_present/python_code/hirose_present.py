@@ -10,6 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
+
+import importlib
+import sys
+sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
 import present
 import math
 import numpy
