@@ -82,7 +82,7 @@ def generate_round_keys(dut) :
 def enc_test(dut,expected_enc_value) :
     
     i = 0
-    while dut.end_enc.value == 0 :
+    while dut.end_signal.value == 0 :
         '''
         print('//////////////////////////')
         print(int(dut.key_index.value))
@@ -116,7 +116,7 @@ def dec_test(dut,expected_dec_value) :
     i = 0
     dut.enc_dec = 1    
     print(int(dut.present_dec_impl.key_index.value))
-    while dut.end_dec.value == 0 :
+    while dut.end_signal.value == 0 :
         '''
         print('***********************')
         print(int(dut.key_index.value))

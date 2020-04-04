@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-03-07 17:39:46
  * @ Modified by: Your name
- * @ Modified time: 2020-03-07 18:16:53
+ * @ Modified time: 2020-04-04 23:22:04
  * @ Description:
  */
 
@@ -48,8 +48,7 @@ module hirose_present(
         .block_i(input_left),
         .block_o(output_left),
         .enc_dec(1'b0),
-        .end_dec(),
-        .end_enc(end_left)
+        .end_signal(end_left)
     );
 
     present present_right(
@@ -60,8 +59,7 @@ module hirose_present(
         .block_i(input_right),
         .block_o(output_right),
         .enc_dec(1'b0),
-        .end_dec(),
-        .end_enc(end_rigth)
+        .end_signal(end_rigth)
     );
 
     

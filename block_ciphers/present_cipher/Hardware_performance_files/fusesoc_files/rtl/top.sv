@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: Your name
- * @ Modified time: 2020-03-18 15:36:34
+ * @ Modified time: 2020-04-04 23:20:38
  * @ Description:
  */
 
@@ -41,8 +41,7 @@ logic [79:0] key;
 logic enc_dec;
 logic end_key_generation;
 logic [63:0] block_o;
-logic end_dec;
-logic end_enc;
+logic end_signal;
 logic clk_uut; 
 
 
@@ -71,7 +70,7 @@ autotest_module autotest_impl(
     .key_uut(key),
     .encdec_uut(enc_dec),
     .block_o_uut(block_o),
-    .end_uut(end_dec ^ end_enc),
+    .end_uut(end_signal),
 
     .clk_uut(clk_uut),
 
@@ -87,8 +86,6 @@ present present_impl(
     .block_i(block_i),
     .end_key_generation(end_key_generation),
     .block_o(block_o),
-    .end_dec(end_dec),
-    .end_enc(end_enc)
-);
+    .end_signal(end_signal)
 
 endmodule : top

@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-07 12:38:55
  * @ Modified by: Your name
- * @ Modified time: 2019-10-08 13:25:45
+ * @ Modified time: 2020-04-04 23:17:29
  * @ Description:
  */
 
@@ -14,8 +14,7 @@ module present(
     input [63:0] block_i,
     output [63:0] block_o,
     input enc_dec,
-    output end_enc,
-    output end_dec
+    output end_signal
 );
 
     logic [4:0] key_index;
@@ -72,6 +71,14 @@ module present(
         .w(end_enc || end_dec),
         .din(block_o_logic),
         .dout(block_o)
+    );
+
+    register #(.DATA_WIDTH(1)) reg_end_signal(
+        .clk(clk),
+        .cl(rst),
+        .w(end_enc || end_dec),
+        .din(1'b1),
+        .dout(end_signal)
     );
 
 endmodule : present

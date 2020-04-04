@@ -18,6 +18,7 @@ import grp
 import present
 
 abs_path_file_storage = "/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code/test_cases.HEX"
+abs_path_VIOfile_storage = "/home/germancq/test_cases_VIO_generated.txt"
 
 username = "germancq"
 groupname = "germancq"
@@ -88,7 +89,7 @@ def create_posibility(n,parameters,modulo_op):
 
 '''
 
-def create_microsd_vectors(micro_sd,storage_file,N,e):
+def create_microsd_vectors(micro_sd,storage_file,VIOstorage_file,N,e):
     storage_file.seek(0)
     #storage_file.write(int(N).to_bytes(4,byteorder='big'))
     zero = 0
@@ -114,6 +115,13 @@ def create_microsd_vectors(micro_sd,storage_file,N,e):
         storage_file.write(expected_enc_value.to_bytes(8, byteorder='little'))   
         storage_file.write(expected_dec_value.to_bytes(8, byteorder='little'))    
 
+        key_string = '{:020x}'.format(int(key[0]))
+        text_string = '{:016x}'.format(int(text[0]))
+        expected_enc_value_string = '{:016x}'.format(expected_enc_value)
+        expected_dec_value_string = '{:016x}'.format(expected_dec_value)
+
+        VIOstorage_file.write("""{0} {1} 0 {2}\n""".format(key_string,text_string,expected_enc_value_string))
+        VIOstorage_file.write("""{0} {1} 1 {2}\n""".format(key_string,text_string,expected_dec_value_string))
 
         #clear block
         micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
@@ -163,15 +171,24 @@ def main():
         with(open(abs_path_file_storage,"wb+")) as storage_file:
             storage_file.close()
 
+    try:
+        with(open(abs_path_VIOfile_storage,"rb+")) as VIOstorage_file:
+            VIOstorage_file.close()
+    except:
+        with(open(abs_path_VIOfile_storage,"wb+")) as VIOstorage_file:
+            VIOstorage_file.close()        
+
     uid = getpwnam(username).pw_uid   
     gid = grp.getgrnam(groupname)[2]   
     os.chown(abs_path_file_storage,uid,gid)
+    os.chown(abs_path_VIOfile_storage,uid,gid)
 
     with(open(abs_path_file_storage,"rb+")) as storage_file:
-        with open(sys.argv[1],"rb+") as micro_sd:
-            N = int(sys.argv[2])
-            e = int(sys.argv[3])
-            print(create_microsd_vectors(micro_sd,storage_file,N,e))
+        with(open(abs_path_VIOfile_storage,"w")) as VIOstorage_file:
+            with open(sys.argv[1],"rb+") as micro_sd:
+                N = int(sys.argv[2])
+                e = int(sys.argv[3])
+                print(create_microsd_vectors(micro_sd,storage_file,VIOstorage_file,N,e))
     
 
 if __name__ == "__main__":
