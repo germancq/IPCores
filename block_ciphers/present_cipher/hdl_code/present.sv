@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-07 12:38:55
  * @ Modified by: Your name
- * @ Modified time: 2020-04-04 23:17:29
+ * @ Modified time: 2020-04-13 21:17:39
  * @ Description:
  */
 
@@ -24,6 +24,7 @@ module present(
 
     logic [63:0] enc_o,dec_o;
     logic [63:0] block_o_logic;
+    logic end_enc,end_dec;
 
     assign key_index = enc_dec ? key_index_dec : key_index_enc;
     assign block_o_logic = enc_dec ? dec_o : enc_o;

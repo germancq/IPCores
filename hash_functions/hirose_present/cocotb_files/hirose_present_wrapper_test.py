@@ -20,7 +20,8 @@ from cocotb.result import TestFailure, ReturnValue
 from cocotb.clock import Clock
 
 import os
-abs_path_file_storage = "/home/germancq/gitProjects/IPCores/hash_functions/hirose_present/python_code/test_cases.HEX"
+home = os.getenv("HOME")
+abs_path_file_storage = home + "/gitProjects/IPCores/hash_functions/hirose_present/python_code/test_cases.HEX"
 
 
 

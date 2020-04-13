@@ -22,7 +22,8 @@ from cocotb.clock import Clock
 
 
 import os
-abs_path_file_storage = "/home/germancq/gitProjects/IPCores/block_ciphers/twofish_cipher/python_code/test_cases.HEX"
+home = os.getenv("HOME")
+abs_path_file_storage = home + "/gitProjects/IPCores/block_ciphers/twofish_cipher/python_code/test_cases.HEX"
 
 CLK_PERIOD = 20 # 50 MHz
 

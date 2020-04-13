@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-14 15:28:48
  * @ Modified by: Your name
- * @ Modified time: 2020-03-07 18:52:47
+ * @ Modified time: 2020-04-13 21:38:21
  * @ Description:
  */
 
@@ -82,7 +82,7 @@ module hirose_present_wrapper #(parameter DATA_WIDTH = 64)
     typedef enum logic [2:0] {IDLE,RST_HASH,WAIT_FOR_ENC,WRITE_PREV_VALUES,END} state_t;
     state_t current_state, next_state;
 
-    assign hash_plaintext = plaintext >> (counter_output<<4);
+    assign hash_plaintext = 16'(plaintext >> (counter_output<<4));
 
     
 
@@ -124,7 +124,7 @@ module hirose_present_wrapper #(parameter DATA_WIDTH = 64)
                     h_left_w = 1'b1;
                     h_right_w = 1'b1;
                     counter_up = 1'b1;
-                    if(counter_output == (DATA_WIDTH>>4)-1 ) begin
+                    if(counter_output == $clog2(DATA_WIDTH)'(DATA_WIDTH>>4)-1 ) begin
                         next_state = END;
                     end
                     else begin
@@ -136,7 +136,7 @@ module hirose_present_wrapper #(parameter DATA_WIDTH = 64)
                 begin
                     end_signal = 1'b1;
                 end    
-
+            default:;
         endcase
     end
 

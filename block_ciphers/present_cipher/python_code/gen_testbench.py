@@ -17,8 +17,10 @@ from pwd import getpwnam
 import grp
 import present
 
-abs_path_file_storage = "/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code/test_cases.HEX"
-abs_path_VIOfile_storage = "/home/germancq/test_cases_VIO_generated.txt"
+home = os.getenv("HOME")
+
+abs_path_file_storage = home + "/gitProjects/IPCores/block_ciphers/present_cipher/python_code/test_cases.HEX"
+abs_path_VIOfile_storage = home + "/test_cases_VIO_generated.txt"
 
 username = "germancq"
 groupname = "germancq"

@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-17 16:29:42
  * @ Modified by: Your name
- * @ Modified time: 2020-03-30 11:32:46
+ * @ Modified time: 2020-04-13 21:51:05
  * @ Description:
  */
 
@@ -28,7 +28,7 @@ module KDF_hirose_present #(
     logic [127:0] hash_output;
     logic hash_end_signal;
 
-    assign hash_input = counter_output == 0 ? {user_password,salt,count} : register_output;
+    assign hash_input = counter_output == 0 ? {user_password,salt,count} : { {DATA_WIDTH-128{1'b0}}, register_output};
 
     assign key_derivated = register_output;
 

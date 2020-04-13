@@ -20,13 +20,14 @@ from cocotb.result import TestFailure, ReturnValue
 from cocotb.clock import Clock
 
 import os
-abs_path_file_storage = "/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code/test_cases.HEX"
+home = os.getenv("HOME")
+abs_path_file_storage = home + "/gitProjects/IPCores/block_ciphers/present_cipher/python_code/test_cases.HEX"
 
 
 
 import importlib
 import sys
-sys.path.append('/home/germancq/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
+sys.path.append(home + '/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
 import present
 
 CLK_PERIOD = 20 # 50 MHz
