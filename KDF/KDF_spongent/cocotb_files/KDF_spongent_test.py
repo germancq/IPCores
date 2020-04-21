@@ -22,10 +22,28 @@ from cocotb.clock import Clock
 import os
 abs_path_file_storage = "/home/germancq/gitProjects/IPCores/KDF/KDF_spongent/python_code/test_cases.HEX"
 
-N_candidates =        [88,128,160,224,256]
+home = os.getenv("HOME")
+import sys
+sys.path.append(home+'/gitProjects/IPCores/KDF/KDF_spongent/python_code')
+import keyDerivationFunction
+
+
 salt_len_candidates = [24,64,64,96,128]
 up_len_candidates =   [32,32,64,96,96]
+
+N_candidates =        [88,128,160,224,256]
+r_candidates =        [8,8,16,16,16]
+c_candidates =        [80,128,160,224,256]
+R_candidates =        [45,70,90,120,140]
+
 OPTION_HASH = 1
+
+N = N_candidates[OPTION_HASH]
+r = r_candidates[OPTION_HASH]
+c = c_candidates[OPTION_HASH]
+R = R_candidates[OPTION_HASH]
+
+
 N = N_candidates[OPTION_HASH]
 salt_len = salt_len_candidates[OPTION_HASH]
 user_password_len = up_len_candidates[OPTION_HASH]
@@ -130,18 +148,28 @@ def run_test(dut, index = 0):
 
         
         storage_file.seek(index*sum_)
-        
+        '''
         salt = int.from_bytes(storage_file.read(int(salt_len/8)),byteorder='little')
         user_password = int.from_bytes(storage_file.read(int(user_password_len/8)),byteorder='little')
         count = int.from_bytes(storage_file.read(4),byteorder='little')
 
         expected_value = int.from_bytes(storage_file.read(int(N/8)),byteorder='little')
         print(count)
+        '''
+        salt = np.random.randint(0,2**(64-1)-1,1,dtype=np.int64)
+        user_password = np.random.randint(0,2**(64-1)-1,1,dtype=np.int64)
+        count = random.randint(10,(2**5)-1)
+        kdf_impl = keyDerivationFunction.KDF(count,int(salt[0]),int(user_password[0]),N,c,r,R,64,80)   
+        expected_value = kdf_impl.generate_derivate_key()
 
-        first_value = (user_password << (32+salt_len)) + (salt << 32) + count
+        first_value = (int(user_password[0]) << (32+64)) + (int(salt[0]) << 32) + count
 
+        print(hex(count))
+        print(hex(int(salt[0])))
+        print(hex(int(user_password[0])))
+        print(hex(first_value))
 
-        setup_function(dut,salt,count,user_password)
+        setup_function(dut,int(salt[0]),count,int(user_password[0]))
         
         yield rst_function_test(dut,first_value)
         yield kdf_test(dut,expected_value)

@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-01-07 12:16:24
  * @ Modified by: Your name
- * @ Modified time: 2020-03-30 11:38:21
+ * @ Modified time: 2020-04-21 13:20:38
  * @ Description:
  */
 
@@ -15,7 +15,7 @@ module KDF_spongent #(
     parameter lCounter_feedback_coeff = 8'hC1,
     parameter SALT_WIDTH = 64,
     parameter COUNT_WIDTH = 32,
-    parameter PSW_WIDTH = 32
+    parameter PSW_WIDTH = 80
 )
 (
     input clk,
@@ -29,7 +29,7 @@ module KDF_spongent #(
 
     localparam DATA_WIDTH = SALT_WIDTH + COUNT_WIDTH + PSW_WIDTH;
     
-    logic [N-1:0] hash_input;
+    logic [DATA_WIDTH-1:0] hash_input;
     logic [N-1:0] hash_output;
     logic hash_end_signal;
     logic rst_hash;
