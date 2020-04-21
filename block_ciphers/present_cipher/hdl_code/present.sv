@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-07 12:38:55
  * @ Modified by: Your name
- * @ Modified time: 2020-04-13 21:17:39
+ * @ Modified time: 2020-04-21 18:09:42
  * @ Description:
  */
 
@@ -29,7 +29,7 @@ module present(
     assign key_index = enc_dec ? key_index_dec : key_index_enc;
     assign block_o_logic = enc_dec ? dec_o : enc_o;
 
-    key_schedule key_sch_impl(
+    present_key_schedule key_sch_impl(
         .clk(clk),
         .rst(rst),
         .key(key),
@@ -217,7 +217,7 @@ module present_dec(
 endmodule : present_dec
 
 
-module key_schedule(
+module present_key_schedule(
     input clk,
     input rst,
     input [79:0] key,
@@ -359,4 +359,4 @@ module key_schedule(
     end
 
 
-endmodule : key_schedule
+endmodule : present_key_schedule

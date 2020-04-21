@@ -2,17 +2,17 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-01-07 12:16:24
  * @ Modified by: Your name
- * @ Modified time: 2020-04-21 13:20:38
+ * @ Modified time: 2020-04-21 14:20:37
  * @ Description:
  */
 
 module KDF_spongent #(
-    parameter N = 128,
-    parameter c = 128,
+    parameter N = 88,
+    parameter c = 80,
     parameter r = 8,
-    parameter R = 70,
-    parameter lCounter_initial_state = 7'h7A,
-    parameter lCounter_feedback_coeff = 8'hC1,
+    parameter R = 45,
+    parameter lCounter_initial_state = 6'h05,
+    parameter lCounter_feedback_coeff = 7'h61,
     parameter SALT_WIDTH = 64,
     parameter COUNT_WIDTH = 32,
     parameter PSW_WIDTH = 80

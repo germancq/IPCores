@@ -36,7 +36,7 @@ r_candidates =        [8,8,16,16,16]
 c_candidates =        [80,128,160,224,256]
 R_candidates =        [45,70,90,120,140]
 
-OPTION_HASH = 1
+OPTION_HASH = 0
 
 N = N_candidates[OPTION_HASH]
 r = r_candidates[OPTION_HASH]
@@ -148,14 +148,19 @@ def run_test(dut, index = 0):
 
         
         storage_file.seek(index*sum_)
-        '''
+        
         salt = int.from_bytes(storage_file.read(int(salt_len/8)),byteorder='little')
         user_password = int.from_bytes(storage_file.read(int(user_password_len/8)),byteorder='little')
         count = int.from_bytes(storage_file.read(4),byteorder='little')
 
         expected_value = int.from_bytes(storage_file.read(int(N/8)),byteorder='little')
         print(count)
+
+        first_value = ((user_password) << (32+64)) + ((salt) << 32) + count
+        
+        setup_function(dut,salt,count,user_password)
         '''
+        
         salt = np.random.randint(0,2**(64-1)-1,1,dtype=np.int64)
         user_password = np.random.randint(0,2**(64-1)-1,1,dtype=np.int64)
         count = random.randint(10,(2**5)-1)
@@ -170,14 +175,30 @@ def run_test(dut, index = 0):
         print(hex(first_value))
 
         setup_function(dut,int(salt[0]),count,int(user_password[0]))
-        
+        '''
+        '''
+        salt = 0x2c
+        user_password = 0x7be110452ebb79d6dd59
+        count = 0x43
+        kdf_impl = keyDerivationFunction.KDF(count,salt,user_password,N,c,r,R,64,80)   
+        expected_value = kdf_impl.generate_derivate_key()
+
+        first_value = ((user_password) << (32+64)) + ((salt) << 32) + count
+        print(hex(count))
+        print(hex(int(salt)))
+        print(hex(int(user_password)))
+        print(hex(first_value))
+        setup_function(dut,salt,count,user_password)
+        '''
+        yield rst_function_test(dut,first_value)
+        yield kdf_test(dut,expected_value)
         yield rst_function_test(dut,first_value)
         yield kdf_test(dut,expected_value)
 
 
 
 
-n = 25
+n = 1
 factory = TestFactory(run_test)
 
 factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31

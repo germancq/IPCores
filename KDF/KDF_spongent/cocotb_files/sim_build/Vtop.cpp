@@ -30,24 +30,12 @@ CData/*3:0*/ Vtop::__Vtable19_KDF_spongent__DOT__hash_impl__DOT__permutation_imp
 CData/*3:0*/ Vtop::__Vtable20_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__19__KET____DOT__s_box_i__DOT__dout[16];
 CData/*3:0*/ Vtop::__Vtable21_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__20__KET____DOT__s_box_i__DOT__dout[16];
 CData/*3:0*/ Vtop::__Vtable22_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[16];
-CData/*1:0*/ Vtop::__Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[16];
-CData/*0:0*/ Vtop::__Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[16];
-CData/*0:0*/ Vtop::__Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[16];
-CData/*1:0*/ Vtop::__Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[16];
-CData/*0:0*/ Vtop::__Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[16];
-CData/*0:0*/ Vtop::__Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[16];
+CData/*1:0*/ Vtop::__Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[16];
+CData/*0:0*/ Vtop::__Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[16];
+CData/*0:0*/ Vtop::__Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[16];
+CData/*1:0*/ Vtop::__Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[16];
+CData/*0:0*/ Vtop::__Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[16];
+CData/*0:0*/ Vtop::__Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[16];
 
 VL_CTOR_IMP(Vtop) {
     Vtop__Syms* __restrict vlSymsp = __VlSymsp = new Vtop__Syms(this, name());
@@ -128,8 +116,8 @@ void Vtop::_initial__TOP__1(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_initial__TOP__1\n"); );
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__feedback_coeff = 0xc1U;
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__initial_state = 0x7aU;
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__feedback_coeff = 0x61U;
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__initial_state = 5U;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__down = 0U;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__din = 0U;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_impl__DOT__down = 0U;
@@ -188,7 +176,7 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     WData/*191:0*/ __Vtemp8[6];
     WData/*191:0*/ __Vtemp9[6];
     WData/*191:0*/ __Vtemp13[6];
-    WData/*159:0*/ __Vtemp15[5];
+    WData/*95:0*/ __Vtemp15[3];
     // Body
     vlTOPp->KDF_spongent__DOT__salt = vlTOPp->salt;
     vlTOPp->KDF_spongent__DOT__count = vlTOPp->count;
@@ -201,7 +189,7 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->KDF_spongent__DOT__rst = vlTOPp->rst;
     vlTOPp->KDF_spongent__DOT__clk = vlTOPp->clk;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__bit_xored 
-        = (1U & VL_REDXOR_32((0x60U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg))));
+        = (1U & VL_REDXOR_32((0x30U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg))));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__din 
         = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[1U] 
                                        << ((IData)(0x20U) 
@@ -334,106 +322,24 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
                                               - (IData)(0x14U)))) 
                    | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
                       >> 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                      >> 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                      >> 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 8U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0xcU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x10U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x10U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0x10U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x14U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x14U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[5U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[5U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[3U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg;
     vlTOPp->KDF_spongent__DOT__register_output[0U] 
@@ -442,8 +348,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[1U];
     vlTOPp->KDF_spongent__DOT__register_output[2U] 
         = vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[2U];
-    vlTOPp->KDF_spongent__DOT__register_output[3U] 
-        = vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[3U];
     vlTOPp->KDF_spongent__DOT__counter_output = vlTOPp->KDF_spongent__DOT__counter_impl__DOT__dout;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_o 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__dout;
@@ -551,111 +455,31 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__16__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable17_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__16__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx17];
-    vlTOPp->__Vtableidx18 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                   >> 4U)));
+    vlTOPp->__Vtableidx18 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                     >> 4U));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__17__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable18_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__17__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx18];
-    vlTOPp->__Vtableidx19 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                   >> 8U)));
+    vlTOPp->__Vtableidx19 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                     >> 8U));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__18__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable19_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__18__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx19];
-    vlTOPp->__Vtableidx20 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                   >> 0xcU)));
+    vlTOPp->__Vtableidx20 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                     >> 0xcU));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__19__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable20_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__19__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx20];
-    vlTOPp->__Vtableidx21 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                   >> 0x10U)));
+    vlTOPp->__Vtableidx21 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                     >> 0x10U));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__20__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable21_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__20__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx21];
-    vlTOPp->__Vtableidx22 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 0xcU) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                  >> 0x14U)));
+    vlTOPp->__Vtableidx22 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                     >> 0x14U));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable22_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx22];
-    vlTOPp->__Vtableidx23 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 8U) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                >> 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx23];
-    vlTOPp->__Vtableidx24 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 4U) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                >> 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx24];
-    vlTOPp->__Vtableidx25 = (0xfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx25];
-    vlTOPp->__Vtableidx26 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                   >> 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx26];
-    vlTOPp->__Vtableidx27 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                   >> 8U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx27];
-    vlTOPp->__Vtableidx28 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                   >> 0xcU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx28];
-    vlTOPp->__Vtableidx29 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                   >> 0x10U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx29];
-    vlTOPp->__Vtableidx30 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 0xcU) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                  >> 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx30];
-    vlTOPp->__Vtableidx31 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 8U) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                >> 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx31];
-    vlTOPp->__Vtableidx32 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 4U) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                >> 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx32];
-    vlTOPp->__Vtableidx33 = (0xfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx33];
-    vlTOPp->__Vtableidx34 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                     >> 4U));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx34];
     vlTOPp->KDF_spongent__DOT____Vcellinp__hash_impl__rst 
         = ((IData)(vlTOPp->rst) | (IData)(vlTOPp->KDF_spongent__DOT__rst_hash));
     vlTOPp->KDF_spongent__DOT__counter_impl__DOT__rst 
@@ -674,24 +498,15 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[4U];
     vlTOPp->KDF_spongent__DOT__hash_output[0U] = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[0U];
     vlTOPp->KDF_spongent__DOT__hash_output[1U] = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[1U];
     vlTOPp->KDF_spongent__DOT__hash_output[2U] = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[2U];
-    vlTOPp->KDF_spongent__DOT__hash_output[3U] = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[3U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state;
     vlTOPp->KDF_spongent__DOT__key_derivated[0U] = 
@@ -700,12 +515,10 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         vlTOPp->KDF_spongent__DOT__register_output[1U];
     vlTOPp->KDF_spongent__DOT__key_derivated[2U] = 
         vlTOPp->KDF_spongent__DOT__register_output[2U];
-    vlTOPp->KDF_spongent__DOT__key_derivated[3U] = 
-        vlTOPp->KDF_spongent__DOT__register_output[3U];
     vlTOPp->KDF_spongent__DOT__end_signal = ((vlTOPp->KDF_spongent__DOT__counter_output 
                                               == vlTOPp->count)
                                               ? 1U : 0U);
-    VL_EXTEND_WW(176,128, __Vtemp3, vlTOPp->KDF_spongent__DOT__register_output);
+    VL_EXTEND_WW(176,88, __Vtemp3, vlTOPp->KDF_spongent__DOT__register_output);
     vlTOPp->KDF_spongent__DOT__hash_input[0U] = ((0U 
                                                   == vlTOPp->KDF_spongent__DOT__counter_output)
                                                   ? vlTOPp->count
@@ -742,13 +555,13 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
                                                   : 
                                                  __Vtemp3[5U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__end_squeezing 
-        = ((0xfU <= (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_o))
+        = ((0xaU <= (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_o))
             ? 1U : 0U);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__end_absorbing 
         = ((0x17U == (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_o))
             ? 1U : 0U);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__end_permutation 
-        = ((0x46U == (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_o))
+        = ((0x2dU == (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_o))
             ? 1U : 0U);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
         = ((0xfffffff0U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U]) 
@@ -813,74 +626,28 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
            | (0xf0000000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__15__KET____DOT__s_box_i__DOT__dout) 
                              << 0x1cU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xfffffff0U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xfffff0U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__16__KET____DOT__s_box_i__DOT__dout));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xffffff0fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xffff0fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (0xfffffff0U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__17__KET____DOT__s_box_i__DOT__dout) 
                              << 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xfffff0ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xfff0ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (0xffffff00U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__18__KET____DOT__s_box_i__DOT__dout) 
                              << 8U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xffff0fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xff0fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (0xfffff000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__19__KET____DOT__s_box_i__DOT__dout) 
                              << 0xcU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xfff0ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xf0ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (0xffff0000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__20__KET____DOT__s_box_i__DOT__dout) 
                              << 0x10U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xff0fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (0xfff00000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__dout) 
                              << 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xf0ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
-           | (0xff000000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xfffffff0U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xffffff0fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xfffff0ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xffff0fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xfff0ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xffff0000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x10U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xff0fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xfff00000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xf0ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xff000000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xf0U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__rst 
         = vlTOPp->KDF_spongent__DOT____Vcellinp__hash_impl__rst;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__clk 
@@ -897,41 +664,35 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_output[1U];
     vlTOPp->KDF_spongent__DOT__register_data__DOT__din[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_output[2U];
-    vlTOPp->KDF_spongent__DOT__register_data__DOT__din[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_output[3U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__lCounter_state 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x7eU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x3eU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (1U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                    >> 6U)));
+                    >> 5U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x7dU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x3dU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (2U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                    >> 4U)));
+                    >> 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x7bU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x3bU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (4U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                    >> 2U)));
+                    >> 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x77U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
-           | (8U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state)));
+        = ((0x37U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+           | (8U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
+                    << 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x6fU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x2fU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (0x10U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                       << 2U)));
+                       << 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x5fU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x1fU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (0x20U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                       << 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x3fU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
-           | (0x40U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                       << 6U)));
+                       << 5U)));
     vlTOPp->key_derivated[0U] = vlTOPp->KDF_spongent__DOT__key_derivated[0U];
     vlTOPp->key_derivated[1U] = vlTOPp->KDF_spongent__DOT__key_derivated[1U];
     vlTOPp->key_derivated[2U] = vlTOPp->KDF_spongent__DOT__key_derivated[2U];
-    vlTOPp->key_derivated[3U] = vlTOPp->KDF_spongent__DOT__key_derivated[3U];
     vlTOPp->end_signal = vlTOPp->KDF_spongent__DOT__end_signal;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__msg[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_input[0U];
@@ -975,548 +736,354 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (1U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U]));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                           << 0x15U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                    << 1U)));
+        = ((0xffffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         << 0xaU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       << 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       << 3U)));
+        = ((0xfffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                    >> 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 3U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                           << 0x12U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                    >> 2U)));
+        = ((0xffffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x2000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         << 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U]));
+        = ((0xfffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                    >> 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 6U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                            << 0xfU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 5U)));
+        = ((0xffffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         << 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 3U)));
+        = ((0xffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 9U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                            << 0xcU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 8U)));
+        = ((0xffff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         << 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x80U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 7U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 6U)));
+        = ((0xffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 0xaU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0xcU)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x4000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                            << 9U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 0xbU)));
+        = ((0xfffeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                          >> 2U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0xaU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 9U)));
+        = ((0xffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 0xdU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0xfU)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                            << 6U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 0xeU)));
+        = ((0xfffdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                          >> 5U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0xdU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0xcU)));
+        = ((0xffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x80U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 0x10U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0x12U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                             << 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0x11U)));
+        = ((0xfffbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                          >> 8U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0x10U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 0xfU)));
+        = ((0xfffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0x13U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x80U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0x15U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x20000000U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U]));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0x14U)));
+        = ((0xfff7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                          >> 0xbU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0x13U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x2000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 0x12U)));
+        = ((0xfffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0x16U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 8U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                             << 0x1dU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                        << 9U)));
+        = ((0xffefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           << 0x12U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 0xaU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 0xbU)));
+        = ((0xfffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                        << 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 5U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                             << 0x1aU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                        << 6U)));
+        = ((0xffdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           << 0xfU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x2000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 7U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 8U)));
+        = ((0xfff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                        << 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 2U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 3U)));
+        = ((0xfffffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (1U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                    >> 9U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           << 0xcU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 5U)));
+        = ((0xffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         << 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                         >> 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x2000U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U]));
+        = ((0xfffffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                    >> 0xcU)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           << 9U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 2U)));
+        = ((0xffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x2000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         >> 2U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         >> 3U)));
+        = ((0xfffffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                    >> 0xfU)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                            << 6U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 1U)));
+        = ((0xffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         >> 5U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x2000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         >> 6U)));
+        = ((0xfffffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                    >> 0x12U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                            << 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 5U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfff7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 4U)));
+        = ((0xff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         >> 8U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 0xaU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 9U)));
+        = ((0xffffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                       >> 0x15U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x4000000U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U]));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 8U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           >> 7U)));
+        = ((0xfeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 0xbU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 0xdU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 0xcU)));
+        = ((0xffffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                       >> 0x18U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                            >> 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfff7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 0xbU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           >> 0xaU)));
+        = ((0xfdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 0xeU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0x10U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                          << 0x11U)));
+        = ((0xffffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                       << 5U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             << 0x1aU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0x12U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0x13U)));
+        = ((0xfbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                          << 0xfU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0xdU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfff7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                          << 0xeU)));
+        = ((0xffffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                       << 2U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             << 0x17U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0xfU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0x10U)));
+        = ((0xf7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                          << 0xcU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0xaU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0xbU)));
+        = ((0xfffffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                        >> 1U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             << 0x14U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0xcU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0xdU)));
+        = ((0xefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 9U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfff7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 8U)));
+        = ((0xfffffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                        >> 4U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             << 0x11U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 9U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0xaU)));
+        = ((0xdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 6U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 5U)));
+        = ((0xfffffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                        >> 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 6U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x4000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 7U)));
+        = ((0xfffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (1U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                    >> 0x12U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
+        = ((0xbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 2U)));
+        = ((0xfffff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                        >> 0xaU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 3U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           >> 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            >> 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x4000000U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           >> 5U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            >> 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            >> 3U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             >> 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x4000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0x19U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x1aU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x1bU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0x15U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0x16U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x20000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x17U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x4000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0x12U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x13U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (1U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0xbU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0xfU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x10U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x11U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0xeU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0xcU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0xdU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (1U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x12U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x11U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x20000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 9U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0xaU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
+        = ((0xfffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                     >> 0x15U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xf7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 6U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (1U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x19U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0x17U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 3U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x1bU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0x1aU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (1U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U]));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                    << 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       << 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       << 3U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                    >> 3U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                    >> 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0x7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x80U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U]));
+        = ((0x7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x800000U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__rst;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__clk 
@@ -1552,53 +1119,45 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__end_permutation 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation;
-    vlTOPp->__Vtableidx35 = (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation) 
+    vlTOPp->__Vtableidx23 = (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation) 
                               << 3U) | (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__end_absorbing) 
                                          << 2U) | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__current_state)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state 
-        = vlTOPp->__Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state
-        [vlTOPp->__Vtableidx35];
+        = vlTOPp->__Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state
+        [vlTOPp->__Vtableidx23];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation 
-        = vlTOPp->__Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation
-        [vlTOPp->__Vtableidx35];
+        = vlTOPp->__Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation
+        [vlTOPp->__Vtableidx23];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up 
-        = vlTOPp->__Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up
-        [vlTOPp->__Vtableidx35];
-    vlTOPp->__Vtableidx36 = (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation) 
+        = vlTOPp->__Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up
+        [vlTOPp->__Vtableidx23];
+    vlTOPp->__Vtableidx24 = (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation) 
                               << 3U) | (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__end_squeezing) 
                                          << 2U) | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__current_state)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state 
-        = vlTOPp->__Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state
-        [vlTOPp->__Vtableidx36];
+        = vlTOPp->__Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state
+        [vlTOPp->__Vtableidx24];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation 
-        = vlTOPp->__Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation
-        [vlTOPp->__Vtableidx36];
+        = vlTOPp->__Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation
+        [vlTOPp->__Vtableidx24];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up 
-        = vlTOPp->__Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up
-        [vlTOPp->__Vtableidx36];
+        = vlTOPp->__Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up
+        [vlTOPp->__Vtableidx24];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_impl__DOT__rst 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst;
-    VL_EXTEND_WI(136,8, __Vtemp15, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__msg_chunk));
+    VL_EXTEND_WI(88,8, __Vtemp15, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__msg_chunk));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[0U] 
         = (__Vtemp15[0U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[0U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[1U] 
         = (__Vtemp15[1U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[1U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[2U] 
         = (__Vtemp15[2U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[2U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[3U] 
-        = (__Vtemp15[3U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[3U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[4U] 
-        = (__Vtemp15[4U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[4U]);
     vlTOPp->KDF_spongent__DOT__register_data__DOT__w 
         = vlTOPp->KDF_spongent__DOT__hash_end_signal;
     vlTOPp->KDF_spongent__DOT____Vcellinp__counter_impl__up 
@@ -1622,20 +1181,12 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[4U];
     vlTOPp->KDF_spongent__DOT__counter_impl__DOT__up 
         = vlTOPp->KDF_spongent__DOT____Vcellinp__counter_impl__up;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__rst 
@@ -1650,20 +1201,12 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result_chunk 
         = (0xffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[0U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[0U] 
@@ -1678,14 +1221,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_absorbing)
             ? vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[2U]
             : vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[2U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[3U] 
-        = ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_absorbing)
-            ? vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[3U]
-            : vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[3U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[4U] 
-        = ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_absorbing)
-            ? vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[4U]
-            : vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[4U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__rst 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__rst_permutation;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__rst_lCounter 
@@ -1696,10 +1231,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__initial_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__initial_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__initial_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__rst 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__rst;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__rst_lCounter 
@@ -1712,21 +1243,21 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_sequent__TOP__4\n"); );
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
-    CData/*6:0*/ __Vdly__KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg;
-    CData/*6:0*/ __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__dout;
+    CData/*5:0*/ __Vdly__KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg;
+    CData/*5:0*/ __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__dout;
     CData/*5:0*/ __Vdly__KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_impl__DOT__dout;
     CData/*4:0*/ __Vdly__KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__dout;
-    WData/*135:0*/ __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[5];
+    WData/*87:0*/ __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3];
     IData/*31:0*/ __Vdly__KDF_spongent__DOT__counter_impl__DOT__dout;
-    WData/*127:0*/ __Vtemp19[4];
-    WData/*127:0*/ __Vtemp20[4];
-    WData/*127:0*/ __Vtemp21[4];
-    WData/*159:0*/ __Vtemp23[5];
-    WData/*159:0*/ __Vtemp25[5];
-    WData/*159:0*/ __Vtemp26[5];
-    WData/*159:0*/ __Vtemp30[5];
-    WData/*159:0*/ __Vtemp32[5];
-    WData/*159:0*/ __Vtemp33[5];
+    WData/*95:0*/ __Vtemp20[3];
+    WData/*95:0*/ __Vtemp21[3];
+    WData/*95:0*/ __Vtemp23[3];
+    WData/*95:0*/ __Vtemp25[3];
+    WData/*95:0*/ __Vtemp27[3];
+    WData/*95:0*/ __Vtemp28[3];
+    WData/*95:0*/ __Vtemp32[3];
+    WData/*95:0*/ __Vtemp34[3];
+    WData/*95:0*/ __Vtemp35[3];
     // Body
     __Vdly__KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg;
@@ -1744,17 +1275,13 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[1U];
     __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U];
-    __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U];
-    __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U];
     vlTOPp->KDF_spongent__DOT__rst_hash = vlTOPp->KDF_spongent__DOT__hash_end_signal;
     if (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__rst_lCounter) {
-        __Vdly__KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg = 0x7aU;
+        __Vdly__KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg = 5U;
     } else {
         if (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__shift_lCounter) {
             __Vdly__KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg 
-                = ((0x7eU & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg) 
+                = ((0x3eU & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg) 
                              << 1U)) | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__bit_xored));
         }
     }
@@ -1762,27 +1289,24 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                   >> 1U)))) {
         if ((1U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__current_state))) {
             if (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation) {
-                VL_SHIFTL_WWI(128,128,32, __Vtemp19, vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result, 8U);
-                VL_EXTEND_WI(128,8, __Vtemp20, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result_chunk));
+                VL_SHIFTL_WWI(88,88,32, __Vtemp20, vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result, 8U);
+                VL_EXTEND_WI(88,8, __Vtemp21, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result_chunk));
                 vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[0U] 
-                    = (__Vtemp19[0U] | __Vtemp20[0U]);
+                    = (__Vtemp20[0U] | __Vtemp21[0U]);
                 vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[1U] 
-                    = (__Vtemp19[1U] | __Vtemp20[1U]);
+                    = (__Vtemp20[1U] | __Vtemp21[1U]);
                 vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[2U] 
-                    = (__Vtemp19[2U] | __Vtemp20[2U]);
-                vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[3U] 
-                    = (__Vtemp19[3U] | __Vtemp20[3U]);
+                    = (0xffffffU & (__Vtemp20[2U] | 
+                                    __Vtemp21[2U]));
             }
         } else {
-            VL_EXTEND_WI(128,8, __Vtemp21, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result_chunk));
+            VL_EXTEND_WI(88,8, __Vtemp23, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result_chunk));
             vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[0U] 
-                = __Vtemp21[0U];
+                = __Vtemp23[0U];
             vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[1U] 
-                = __Vtemp21[1U];
+                = __Vtemp23[1U];
             vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[2U] 
-                = __Vtemp21[2U];
-            vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[3U] 
-                = __Vtemp21[3U];
+                = __Vtemp23[2U];
         }
     }
     if ((1U & (~ ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__current_state) 
@@ -1795,10 +1319,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                     = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[1U];
                 vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[2U] 
                     = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[2U];
-                vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[3U] 
-                    = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[3U];
-                vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[4U] 
-                    = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[4U];
             }
         } else {
             vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[0U] 
@@ -1807,10 +1327,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                 = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[1U];
             vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[2U] 
                 = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[2U];
-            vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[3U] 
-                = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[3U];
-            vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[4U] 
-                = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[4U];
         }
     }
     if ((1U & (~ ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__current_state) 
@@ -1823,24 +1339,17 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                     = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[1U];
                 vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[2U] 
                     = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[2U];
-                vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[3U] 
-                    = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[3U];
-                vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[4U] 
-                    = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[4U];
             }
         } else {
             vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[0U] = 0U;
             vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[1U] = 0U;
             vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[2U] = 0U;
-            vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[3U] = 0U;
-            vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[4U] = 0U;
         }
     }
     if (vlTOPp->rst) {
         vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[0U] = 0U;
         vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[1U] = 0U;
         vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[2U] = 0U;
-        vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[3U] = 0U;
     } else {
         if (vlTOPp->KDF_spongent__DOT__hash_end_signal) {
             vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[0U] 
@@ -1849,8 +1358,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                 = vlTOPp->KDF_spongent__DOT__hash_output[1U];
             vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[2U] 
                 = vlTOPp->KDF_spongent__DOT__hash_output[2U];
-            vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[3U] 
-                = vlTOPp->KDF_spongent__DOT__hash_output[3U];
         }
     }
     if (vlTOPp->rst) {
@@ -1882,7 +1389,7 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
     } else {
         if ((1U & (~ (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__end_permutation)))) {
             __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__dout 
-                = (0x7fU & ((IData)(1U) + (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__dout)));
+                = (0x3fU & ((IData)(1U) + (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__dout)));
         }
     }
     if (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__rst_permutation) {
@@ -1892,52 +1399,37 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
             = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[1U];
         __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
             = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[2U];
-        __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-            = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[3U];
-        __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-            = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[4U];
     } else {
         if (((~ (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__end_permutation)) 
              & (0U == (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_o)))) {
-            VL_EXTEND_WI(136,7, __Vtemp23, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state));
-            VL_EXTEND_WI(136,7, __Vtemp25, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter));
-            VL_SHIFTL_WWI(136,136,32, __Vtemp26, __Vtemp25, 0x81U);
+            VL_EXTEND_WI(88,6, __Vtemp25, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state));
+            VL_EXTEND_WI(88,6, __Vtemp27, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter));
+            VL_SHIFTL_WWI(88,88,32, __Vtemp28, __Vtemp27, 0x52U);
             __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[0U] 
                 = ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[0U] 
-                    ^ __Vtemp23[0U]) ^ __Vtemp26[0U]);
+                    ^ __Vtemp25[0U]) ^ __Vtemp28[0U]);
             __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[1U] 
                 = ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[1U] 
-                    ^ __Vtemp23[1U]) ^ __Vtemp26[1U]);
+                    ^ __Vtemp25[1U]) ^ __Vtemp28[1U]);
             __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                = ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                    ^ __Vtemp23[2U]) ^ __Vtemp26[2U]);
-            __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                = ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                    ^ __Vtemp23[3U]) ^ __Vtemp26[3U]);
-            __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                = (0xffU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                             ^ __Vtemp23[4U]) ^ __Vtemp26[4U]));
+                = (0xffffffU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                 ^ __Vtemp25[2U]) ^ 
+                                __Vtemp28[2U]));
         } else {
             if ((1U & (~ (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__end_permutation)))) {
-                VL_EXTEND_WI(136,7, __Vtemp30, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state));
-                VL_EXTEND_WI(136,7, __Vtemp32, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter));
-                VL_SHIFTL_WWI(136,136,32, __Vtemp33, __Vtemp32, 0x81U);
+                VL_EXTEND_WI(88,6, __Vtemp32, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state));
+                VL_EXTEND_WI(88,6, __Vtemp34, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter));
+                VL_SHIFTL_WWI(88,88,32, __Vtemp35, __Vtemp34, 0x52U);
                 __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[0U] 
                     = ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[0U] 
-                        ^ __Vtemp30[0U]) ^ __Vtemp33[0U]);
+                        ^ __Vtemp32[0U]) ^ __Vtemp35[0U]);
                 __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[1U] 
                     = ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[1U] 
-                        ^ __Vtemp30[1U]) ^ __Vtemp33[1U]);
+                        ^ __Vtemp32[1U]) ^ __Vtemp35[1U]);
                 __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                    = ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[2U] 
-                        ^ __Vtemp30[2U]) ^ __Vtemp33[2U]);
-                __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                    = ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[3U] 
-                        ^ __Vtemp30[3U]) ^ __Vtemp33[3U]);
-                __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                    = (0xffU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[4U] 
-                                 ^ __Vtemp30[4U]) ^ 
-                                __Vtemp33[4U]));
+                    = (0xffffffU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[2U] 
+                                     ^ __Vtemp32[2U]) 
+                                    ^ __Vtemp35[2U]));
             }
         }
     }
@@ -1957,12 +1449,8 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
         = __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-        = __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-        = __Vdly__KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__bit_xored 
-        = (1U & VL_REDXOR_32((0x60U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg))));
+        = (1U & VL_REDXOR_32((0x30U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg))));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[0U] 
@@ -1971,18 +1459,12 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result[3U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__current_state 
         = ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT____Vcellinp__squeezing_phase_impl__rst)
             ? 0U : (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state));
@@ -1992,10 +1474,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__current_state 
         = ((IData)(vlTOPp->KDF_spongent__DOT____Vcellinp__hash_impl__rst)
             ? 0U : (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state));
@@ -2005,8 +1483,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[1U];
     vlTOPp->KDF_spongent__DOT__register_output[2U] 
         = vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[2U];
-    vlTOPp->KDF_spongent__DOT__register_output[3U] 
-        = vlTOPp->KDF_spongent__DOT__register_data__DOT__dout[3U];
     vlTOPp->KDF_spongent__DOT__counter_output = vlTOPp->KDF_spongent__DOT__counter_impl__DOT__dout;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_o 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__dout;
@@ -2146,78 +1622,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                                               - (IData)(0x14U)))) 
                    | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
                       >> 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                      >> 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                      >> 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 8U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0xcU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x10U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x10U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0x10U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x14U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x14U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                      >> 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[5U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[5U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 4U)));
     vlTOPp->__Vtableidx1 = (0xfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[0U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable1_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__dout
@@ -2318,153 +1722,62 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__16__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable17_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__16__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx17];
-    vlTOPp->__Vtableidx18 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                   >> 4U)));
+    vlTOPp->__Vtableidx18 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                     >> 4U));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__17__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable18_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__17__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx18];
-    vlTOPp->__Vtableidx19 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                   >> 8U)));
+    vlTOPp->__Vtableidx19 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                     >> 8U));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__18__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable19_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__18__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx19];
-    vlTOPp->__Vtableidx20 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                   >> 0xcU)));
+    vlTOPp->__Vtableidx20 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                     >> 0xcU));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__19__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable20_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__19__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx20];
-    vlTOPp->__Vtableidx21 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                   >> 0x10U)));
+    vlTOPp->__Vtableidx21 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                     >> 0x10U));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__20__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable21_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__20__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx21];
-    vlTOPp->__Vtableidx22 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 0xcU) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                  >> 0x14U)));
+    vlTOPp->__Vtableidx22 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
+                                     >> 0x14U));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable22_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx22];
-    vlTOPp->__Vtableidx23 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 8U) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                >> 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx23];
-    vlTOPp->__Vtableidx24 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                      << 4U) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[2U] 
-                                                >> 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx24];
-    vlTOPp->__Vtableidx25 = (0xfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx25];
-    vlTOPp->__Vtableidx26 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                   >> 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx26];
-    vlTOPp->__Vtableidx27 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                   >> 8U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx27];
-    vlTOPp->__Vtableidx28 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                   >> 0xcU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx28];
-    vlTOPp->__Vtableidx29 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                   >> 0x10U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx29];
-    vlTOPp->__Vtableidx30 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 0xcU) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                  >> 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx30];
-    vlTOPp->__Vtableidx31 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 8U) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                >> 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx31];
-    vlTOPp->__Vtableidx32 = (0xfU & ((vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                      << 4U) | (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[3U] 
-                                                >> 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx32];
-    vlTOPp->__Vtableidx33 = (0xfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx33];
-    vlTOPp->__Vtableidx34 = (0xfU & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg[4U] 
-                                     >> 4U));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx34];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state;
     vlTOPp->KDF_spongent__DOT__hash_output[0U] = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[0U];
     vlTOPp->KDF_spongent__DOT__hash_output[1U] = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[1U];
     vlTOPp->KDF_spongent__DOT__hash_output[2U] = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[2U];
-    vlTOPp->KDF_spongent__DOT__hash_output[3U] = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__hash[3U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_state[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_state[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state[4U];
     vlTOPp->KDF_spongent__DOT__key_derivated[0U] = 
         vlTOPp->KDF_spongent__DOT__register_output[0U];
     vlTOPp->KDF_spongent__DOT__key_derivated[1U] = 
         vlTOPp->KDF_spongent__DOT__register_output[1U];
     vlTOPp->KDF_spongent__DOT__key_derivated[2U] = 
         vlTOPp->KDF_spongent__DOT__register_output[2U];
-    vlTOPp->KDF_spongent__DOT__key_derivated[3U] = 
-        vlTOPp->KDF_spongent__DOT__register_output[3U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__end_squeezing 
-        = ((0xfU <= (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_o))
+        = ((0xaU <= (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_o))
             ? 1U : 0U);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__end_absorbing 
         = ((0x17U == (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_o))
             ? 1U : 0U);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__end_permutation 
-        = ((0x46U == (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_o))
+        = ((0x2dU == (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_o))
             ? 1U : 0U);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
         = ((0xfffffff0U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U]) 
@@ -2529,115 +1842,63 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
            | (0xf0000000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__15__KET____DOT__s_box_i__DOT__dout) 
                              << 0x1cU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xfffffff0U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xfffff0U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__16__KET____DOT__s_box_i__DOT__dout));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xffffff0fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xffff0fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (0xfffffff0U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__17__KET____DOT__s_box_i__DOT__dout) 
                              << 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xfffff0ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xfff0ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (0xffffff00U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__18__KET____DOT__s_box_i__DOT__dout) 
                              << 8U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xffff0fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xff0fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (0xfffff000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__19__KET____DOT__s_box_i__DOT__dout) 
                              << 0xcU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xfff0ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xf0ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (0xffff0000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__20__KET____DOT__s_box_i__DOT__dout) 
                              << 0x10U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xff0fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
+        = ((0xfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
            | (0xfff00000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__dout) 
                              << 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xf0ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
-           | (0xff000000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-        = ((0xfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xfffffff0U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xffffff0fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xfffff0ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xffff0fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xfff0ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xffff0000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x10U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xff0fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xfff00000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xf0ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xff000000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-        = ((0xfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xf0U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__lCounter_state 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x7eU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x3eU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (1U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                    >> 6U)));
+                    >> 5U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x7dU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x3dU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (2U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                    >> 4U)));
+                    >> 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x7bU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x3bU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (4U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                    >> 2U)));
+                    >> 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x77U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
-           | (8U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state)));
+        = ((0x37U & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+           | (8U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
+                    << 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x6fU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x2fU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (0x10U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                       << 2U)));
+                       << 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x5fU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x1fU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (0x20U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                       << 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x3fU & (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter)) 
-           | (0x40U & ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__lCounter_state) 
-                       << 6U)));
+                       << 5U)));
     vlTOPp->KDF_spongent__DOT__register_data__DOT__din[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_output[0U];
     vlTOPp->KDF_spongent__DOT__register_data__DOT__din[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_output[1U];
     vlTOPp->KDF_spongent__DOT__register_data__DOT__din[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_output[2U];
-    vlTOPp->KDF_spongent__DOT__register_data__DOT__din[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_output[3U];
     vlTOPp->key_derivated[0U] = vlTOPp->KDF_spongent__DOT__key_derivated[0U];
     vlTOPp->key_derivated[1U] = vlTOPp->KDF_spongent__DOT__key_derivated[1U];
     vlTOPp->key_derivated[2U] = vlTOPp->KDF_spongent__DOT__key_derivated[2U];
-    vlTOPp->key_derivated[3U] = vlTOPp->KDF_spongent__DOT__key_derivated[3U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_hash 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__end_squeezing;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_absorbing 
@@ -2654,548 +1915,354 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (1U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U]));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                           << 0x15U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                    << 1U)));
+        = ((0xffffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         << 0xaU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       << 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       << 3U)));
+        = ((0xfffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                    >> 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 3U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                           << 0x12U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                    >> 2U)));
+        = ((0xffffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x2000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         << 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U]));
+        = ((0xfffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                    >> 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 6U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                            << 0xfU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 5U)));
+        = ((0xffffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         << 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 3U)));
+        = ((0xffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 9U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                            << 0xcU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 8U)));
+        = ((0xffff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         << 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x80U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 7U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 6U)));
+        = ((0xffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 0xaU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0xcU)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x4000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                            << 9U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 0xbU)));
+        = ((0xfffeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                          >> 2U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0xaU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 9U)));
+        = ((0xffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 0xdU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0xfU)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                            << 6U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 0xeU)));
+        = ((0xfffdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                          >> 5U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0xdU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0xcU)));
+        = ((0xffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x80U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 0x10U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0x12U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                             << 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0x11U)));
+        = ((0xfffbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                          >> 8U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0x10U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 0xfU)));
+        = ((0xfffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0x13U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x80U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0x15U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x20000000U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U]));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0x14U)));
+        = ((0xfff7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                          >> 0xbU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0x13U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x2000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 0x12U)));
+        = ((0xfffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0x16U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 8U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                             << 0x1dU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                        << 9U)));
+        = ((0xffefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           << 0x12U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 0xaU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 0xbU)));
+        = ((0xfffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                        << 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 5U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
+        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
+           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                             << 0x1aU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                        << 6U)));
+        = ((0xffdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           << 0xfU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x2000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 7U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 8U)));
+        = ((0xfff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                        << 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 2U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 3U)));
+        = ((0xfffffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (1U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                    >> 9U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           << 0xcU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 5U)));
+        = ((0xffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         << 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                         >> 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x2000U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U]));
+        = ((0xfffffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                    >> 0xcU)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           << 9U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 2U)));
+        = ((0xffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x2000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         >> 2U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffefffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x1000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         >> 3U)));
+        = ((0xfffffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                    >> 0xfU)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                            << 6U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 1U)));
+        = ((0xffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         >> 5U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffdfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x2000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         >> 6U)));
+        = ((0xfffffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                    >> 0x12U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                            << 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 5U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfff7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 4U)));
+        = ((0xff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         >> 8U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffbfffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x4000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 0xaU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 9U)));
+        = ((0xffffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                       >> 0x15U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x4000000U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U]));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 8U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           >> 7U)));
+        = ((0xfeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 0xbU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffff7fffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x8000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 0xdU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 0xcU)));
+        = ((0xffffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                       >> 0x18U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                            >> 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfff7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 0xbU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           >> 0xaU)));
+        = ((0xfdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 0xeU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffeffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x10000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0x10U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                          << 0x11U)));
+        = ((0xffffffbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                       << 5U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             << 0x1aU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0x12U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0x13U)));
+        = ((0xfbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                          << 0xfU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffdffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x20000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0xdU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfff7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                          << 0xeU)));
+        = ((0xffffff7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                       << 2U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             << 0x17U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0xfU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0x10U)));
+        = ((0xf7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                          << 0xcU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffbffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x40000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0xaU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0xbU)));
+        = ((0xfffffeffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x100U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                        >> 1U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             << 0x14U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0xcU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0xdU)));
+        = ((0xefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 9U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfff7ffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x80000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 8U)));
+        = ((0xfffffdffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x200U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                        >> 4U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             << 0x11U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 9U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0xaU)));
+        = ((0xdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 6U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffefffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x100000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 4U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 5U)));
+        = ((0xfffffbffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x400U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                        >> 7U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 6U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x4000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 7U)));
+        = ((0xfffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (1U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                    >> 0x12U)));
+    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
+        = ((0xbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 3U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffdfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x200000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 1U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 2U)));
+        = ((0xfffff7ffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x800U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
+                        >> 0xaU)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 3U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xffbfffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x400000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           >> 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            >> 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x4000000U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xff7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x800000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           >> 5U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            >> 4U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            >> 3U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             >> 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xfeffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x1000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x4000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0x19U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x1aU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x1bU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xfdffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x2000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0x15U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0x16U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x20000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x17U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xfbffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x4000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0x12U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x13U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (1U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0xbU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xf7ffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x8000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                            << 0xfU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x10U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x11U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0xeU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xefffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x10000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0xcU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0xdU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (1U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x12U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x11U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xdfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x20000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 9U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0xaU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
+        = ((0xfffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U] 
                     >> 0x15U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xf7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x14U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0xbfffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x40000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 6U)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (1U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x19U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x18U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0x17U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
-        = ((0x7fffffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
-           | (0x80000000U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 3U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x1cU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x1bU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0x1aU)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffffeU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (1U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U]));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffbU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (4U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                    << 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffffefU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x10U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       << 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xbfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x40U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       << 3U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffffdU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (2U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                    >> 3U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffff7U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (8U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                    >> 2U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffffdfU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20U & (vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 1U)));
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0x7fU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x80U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[4U]));
+        = ((0x7fffffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (0x800000U & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box[2U]));
     vlTOPp->KDF_spongent__DOT__hash_end_signal = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_hash;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__shift_lCounter 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__shift_lCounter;
@@ -3203,40 +2270,36 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__end_permutation 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation;
-    vlTOPp->__Vtableidx35 = (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation) 
+    vlTOPp->__Vtableidx23 = (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation) 
                               << 3U) | (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__end_absorbing) 
                                          << 2U) | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__current_state)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state 
-        = vlTOPp->__Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state
-        [vlTOPp->__Vtableidx35];
+        = vlTOPp->__Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state
+        [vlTOPp->__Vtableidx23];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation 
-        = vlTOPp->__Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation
-        [vlTOPp->__Vtableidx35];
+        = vlTOPp->__Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation
+        [vlTOPp->__Vtableidx23];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up 
-        = vlTOPp->__Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up
-        [vlTOPp->__Vtableidx35];
-    vlTOPp->__Vtableidx36 = (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation) 
+        = vlTOPp->__Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up
+        [vlTOPp->__Vtableidx23];
+    vlTOPp->__Vtableidx24 = (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_permutation) 
                               << 3U) | (((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__end_squeezing) 
                                          << 2U) | (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__current_state)));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state 
-        = vlTOPp->__Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state
-        [vlTOPp->__Vtableidx36];
+        = vlTOPp->__Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state
+        [vlTOPp->__Vtableidx24];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation 
-        = vlTOPp->__Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation
-        [vlTOPp->__Vtableidx36];
+        = vlTOPp->__Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation
+        [vlTOPp->__Vtableidx24];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up 
-        = vlTOPp->__Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up
-        [vlTOPp->__Vtableidx36];
+        = vlTOPp->__Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up
+        [vlTOPp->__Vtableidx24];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U];
     vlTOPp->KDF_spongent__DOT__register_data__DOT__w 
         = vlTOPp->KDF_spongent__DOT__hash_end_signal;
     vlTOPp->KDF_spongent__DOT____Vcellinp__counter_impl__up 
@@ -3258,10 +2321,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state[4U];
     vlTOPp->KDF_spongent__DOT__counter_impl__DOT__up 
         = vlTOPp->KDF_spongent__DOT____Vcellinp__counter_impl__up;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__rst_permutation 
@@ -3274,20 +2333,12 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result_chunk 
         = (0xffU & vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_state[0U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__rst 
@@ -3306,53 +2357,53 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_combo__TOP__5\n"); );
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
-    WData/*191:0*/ __Vtemp38[6];
-    WData/*191:0*/ __Vtemp43[6];
-    WData/*191:0*/ __Vtemp44[6];
-    WData/*191:0*/ __Vtemp48[6];
-    WData/*159:0*/ __Vtemp50[5];
+    WData/*191:0*/ __Vtemp40[6];
+    WData/*191:0*/ __Vtemp45[6];
+    WData/*191:0*/ __Vtemp46[6];
+    WData/*191:0*/ __Vtemp50[6];
+    WData/*95:0*/ __Vtemp52[3];
     // Body
     vlTOPp->KDF_spongent__DOT____Vcellinp__hash_impl__rst 
         = ((IData)(vlTOPp->rst) | (IData)(vlTOPp->KDF_spongent__DOT__rst_hash));
     vlTOPp->KDF_spongent__DOT__end_signal = ((vlTOPp->KDF_spongent__DOT__counter_output 
                                               == vlTOPp->count)
                                               ? 1U : 0U);
-    VL_EXTEND_WW(176,128, __Vtemp38, vlTOPp->KDF_spongent__DOT__register_output);
+    VL_EXTEND_WW(176,88, __Vtemp40, vlTOPp->KDF_spongent__DOT__register_output);
     vlTOPp->KDF_spongent__DOT__hash_input[0U] = ((0U 
                                                   == vlTOPp->KDF_spongent__DOT__counter_output)
                                                   ? vlTOPp->count
                                                   : 
-                                                 __Vtemp38[0U]);
+                                                 __Vtemp40[0U]);
     vlTOPp->KDF_spongent__DOT__hash_input[1U] = ((0U 
                                                   == vlTOPp->KDF_spongent__DOT__counter_output)
                                                   ? (IData)(vlTOPp->salt)
                                                   : 
-                                                 __Vtemp38[1U]);
+                                                 __Vtemp40[1U]);
     vlTOPp->KDF_spongent__DOT__hash_input[2U] = ((0U 
                                                   == vlTOPp->KDF_spongent__DOT__counter_output)
                                                   ? (IData)(
                                                             (vlTOPp->salt 
                                                              >> 0x20U))
                                                   : 
-                                                 __Vtemp38[2U]);
+                                                 __Vtemp40[2U]);
     vlTOPp->KDF_spongent__DOT__hash_input[3U] = ((0U 
                                                   == vlTOPp->KDF_spongent__DOT__counter_output)
                                                   ? 
                                                  vlTOPp->user_password[0U]
                                                   : 
-                                                 __Vtemp38[3U]);
+                                                 __Vtemp40[3U]);
     vlTOPp->KDF_spongent__DOT__hash_input[4U] = ((0U 
                                                   == vlTOPp->KDF_spongent__DOT__counter_output)
                                                   ? 
                                                  vlTOPp->user_password[1U]
                                                   : 
-                                                 __Vtemp38[4U]);
+                                                 __Vtemp40[4U]);
     vlTOPp->KDF_spongent__DOT__hash_input[5U] = ((0U 
                                                   == vlTOPp->KDF_spongent__DOT__counter_output)
                                                   ? 
                                                  vlTOPp->user_password[2U]
                                                   : 
-                                                 __Vtemp38[5U]);
+                                                 __Vtemp40[5U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__rst 
         = vlTOPp->KDF_spongent__DOT____Vcellinp__hash_impl__rst;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT____Vcellinp__squeezing_phase_impl__rst 
@@ -3371,20 +2422,20 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_input[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__msg[5U] 
         = vlTOPp->KDF_spongent__DOT__hash_input[5U];
-    VL_EXTEND_WW(184,176, __Vtemp43, vlTOPp->KDF_spongent__DOT__hash_input);
-    VL_SHIFTL_WWI(184,184,32, __Vtemp44, __Vtemp43, 8U);
+    VL_EXTEND_WW(184,176, __Vtemp45, vlTOPp->KDF_spongent__DOT__hash_input);
+    VL_SHIFTL_WWI(184,184,32, __Vtemp46, __Vtemp45, 8U);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__padded_msg[0U] 
-        = (0x80U | __Vtemp44[0U]);
+        = (0x80U | __Vtemp46[0U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__padded_msg[1U] 
-        = __Vtemp44[1U];
+        = __Vtemp46[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__padded_msg[2U] 
-        = __Vtemp44[2U];
+        = __Vtemp46[2U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__padded_msg[3U] 
-        = __Vtemp44[3U];
+        = __Vtemp46[3U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__padded_msg[4U] 
-        = __Vtemp44[4U];
+        = __Vtemp46[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__padded_msg[5U] 
-        = (0xffffffU & __Vtemp44[5U]);
+        = (0xffffffU & __Vtemp46[5U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__rst;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst 
@@ -3401,36 +2452,28 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__padded_msg[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__padded_msg[5U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__padded_msg[5U];
-    VL_SHIFTR_WWI(184,184,32, __Vtemp48, vlTOPp->KDF_spongent__DOT__hash_impl__DOT__padded_msg, 
+    VL_SHIFTR_WWI(184,184,32, __Vtemp50, vlTOPp->KDF_spongent__DOT__hash_impl__DOT__padded_msg, 
                   ((((IData)(0x17U) - (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_o)) 
                     - (IData)(1U)) << 3U));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__msg_chunk 
-        = (0xffU & __Vtemp48[0U]);
+        = (0xffU & __Vtemp50[0U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_impl__DOT__rst 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst;
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__rst 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst;
-    VL_EXTEND_WI(136,8, __Vtemp50, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__msg_chunk));
+    VL_EXTEND_WI(88,8, __Vtemp52, (IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__msg_chunk));
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[0U] 
-        = (__Vtemp50[0U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[0U]);
+        = (__Vtemp52[0U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[0U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[1U] 
-        = (__Vtemp50[1U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[1U]);
+        = (__Vtemp52[1U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[1U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[2U] 
-        = (__Vtemp50[2U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[2U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[3U] 
-        = (__Vtemp50[3U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[3U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[4U] 
-        = (__Vtemp50[4U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[4U]);
+        = (__Vtemp52[2U] ^ vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state[2U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state[4U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[0U] 
         = ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_absorbing)
             ? vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[0U]
@@ -3443,24 +2486,12 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
         = ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_absorbing)
             ? vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[2U]
             : vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[2U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[3U] 
-        = ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_absorbing)
-            ? vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[3U]
-            : vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[3U]);
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[4U] 
-        = ((IData)(vlTOPp->KDF_spongent__DOT__hash_impl__DOT__end_absorbing)
-            ? vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing[4U]
-            : vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb[4U]);
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__initial_state[0U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[0U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__initial_state[1U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[1U];
     vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__initial_state[2U] 
         = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[2U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__initial_state[3U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[3U];
-    vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__initial_state[4U] 
-        = vlTOPp->KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state[4U];
 }
 
 void Vtop::_eval(Vtop__Syms* __restrict vlSymsp) {
@@ -3529,71 +2560,71 @@ void Vtop::_ctor_var_reset() {
     count = VL_RAND_RESET_I(32);
     VL_RAND_RESET_W(80, user_password);
     end_signal = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(128, key_derivated);
+    VL_RAND_RESET_W(88, key_derivated);
     KDF_spongent__DOT__clk = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__rst = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__salt = VL_RAND_RESET_Q(64);
     KDF_spongent__DOT__count = VL_RAND_RESET_I(32);
     VL_RAND_RESET_W(80, KDF_spongent__DOT__user_password);
     KDF_spongent__DOT__end_signal = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(128, KDF_spongent__DOT__key_derivated);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__key_derivated);
     VL_RAND_RESET_W(176, KDF_spongent__DOT__hash_input);
-    VL_RAND_RESET_W(128, KDF_spongent__DOT__hash_output);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_output);
     KDF_spongent__DOT__hash_end_signal = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__rst_hash = VL_RAND_RESET_I(1);
     KDF_spongent__DOT____Vcellinp__hash_impl__rst = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__counter_output = VL_RAND_RESET_I(32);
     KDF_spongent__DOT__counter_up = VL_RAND_RESET_I(1);
     KDF_spongent__DOT____Vcellinp__counter_impl__up = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(128, KDF_spongent__DOT__register_output);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__register_output);
     KDF_spongent__DOT__hash_impl__DOT__clk = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__rst = VL_RAND_RESET_I(1);
     VL_RAND_RESET_W(176, KDF_spongent__DOT__hash_impl__DOT__msg);
-    VL_RAND_RESET_W(128, KDF_spongent__DOT__hash_impl__DOT__hash);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__hash);
     KDF_spongent__DOT__hash_impl__DOT__end_hash = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__rst_lCounter = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__shift_lCounter = VL_RAND_RESET_I(1);
-    KDF_spongent__DOT__hash_impl__DOT__lCounter_state = VL_RAND_RESET_I(7);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__permutation_state);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state);
+    KDF_spongent__DOT__hash_impl__DOT__lCounter_state = VL_RAND_RESET_I(6);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__permutation_state);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state);
     KDF_spongent__DOT__hash_impl__DOT__end_permutation = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__rst_permutation = VL_RAND_RESET_I(1);
     VL_RAND_RESET_W(184, KDF_spongent__DOT__hash_impl__DOT__padded_msg);
     KDF_spongent__DOT__hash_impl__DOT__end_absorbing = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__absorbing_state);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__absorbing_state);
     KDF_spongent__DOT__hash_impl__DOT__rst_permutation_from_absorb = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_absorb);
     KDF_spongent__DOT__hash_impl__DOT__rst_permutation_from_squezzing = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__permutation_initial_state_from_squezzing);
     KDF_spongent__DOT__hash_impl__DOT____Vcellinp__squeezing_phase_impl__rst = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__clk = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__rst = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__shift = VL_RAND_RESET_I(1);
-    KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__feedback_coeff = VL_RAND_RESET_I(8);
-    KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__initial_state = VL_RAND_RESET_I(7);
-    KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state = VL_RAND_RESET_I(7);
-    KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg = VL_RAND_RESET_I(7);
+    KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__feedback_coeff = VL_RAND_RESET_I(7);
+    KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__initial_state = VL_RAND_RESET_I(6);
+    KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state = VL_RAND_RESET_I(6);
+    KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__state_reg = VL_RAND_RESET_I(6);
     KDF_spongent__DOT__hash_impl__DOT__lCounter__DOT__bit_xored = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__clk = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__rst = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__initial_state);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__lCounter_state = VL_RAND_RESET_I(7);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__initial_state);
+    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__lCounter_state = VL_RAND_RESET_I(6);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__rst_lCounter = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__shift_lCounter = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__end_permutation = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_o = VL_RAND_RESET_I(7);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter = VL_RAND_RESET_I(7);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_reg);
+    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_o = VL_RAND_RESET_I(6);
+    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__reverse_lCounter = VL_RAND_RESET_I(6);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__state_S_box);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__clk = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__rst = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__up = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__down = VL_RAND_RESET_I(1);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__din = VL_RAND_RESET_I(7);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__dout = VL_RAND_RESET_I(7);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__din);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout);
+    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__din = VL_RAND_RESET_I(6);
+    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__counter_impl__DOT__dout = VL_RAND_RESET_I(6);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__din);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__1__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
@@ -3638,42 +2669,18 @@ void Vtop::_ctor_var_reset() {
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__20__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
     KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
     KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__clk = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__end_permutation = VL_RAND_RESET_I(1);
     VL_RAND_RESET_W(184, KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__padded_msg);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_state);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_state);
     KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__permutation_initial_state);
     KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__end_absorbing = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__absorbing_state);
     KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_o = VL_RAND_RESET_I(6);
     KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__state);
     KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__msg_chunk = VL_RAND_RESET_I(8);
     KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__current_state = VL_RAND_RESET_I(2);
     KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state = VL_RAND_RESET_I(2);
@@ -3686,14 +2693,14 @@ void Vtop::_ctor_var_reset() {
     KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__clk = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__end_permutation = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_state);
     KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__permutation_initial_state);
     KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__end_squeezing = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(128, KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result);
     KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_o = VL_RAND_RESET_I(5);
     KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(136, KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__state);
     KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__result_chunk = VL_RAND_RESET_I(8);
     KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__current_state = VL_RAND_RESET_I(2);
     KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state = VL_RAND_RESET_I(2);
@@ -3712,8 +2719,8 @@ void Vtop::_ctor_var_reset() {
     KDF_spongent__DOT__register_data__DOT__clk = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__register_data__DOT__cl = VL_RAND_RESET_I(1);
     KDF_spongent__DOT__register_data__DOT__w = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(128, KDF_spongent__DOT__register_data__DOT__din);
-    VL_RAND_RESET_W(128, KDF_spongent__DOT__register_data__DOT__dout);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__register_data__DOT__din);
+    VL_RAND_RESET_W(88, KDF_spongent__DOT__register_data__DOT__dout);
     __Vtableidx1 = 0;
     __Vtable1_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
     __Vtable1_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
@@ -4089,305 +3096,101 @@ void Vtop::_ctor_var_reset() {
     __Vtable22_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__dout[14] = 3U;
     __Vtable22_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__21__KET____DOT__s_box_i__DOT__dout[15] = 6U;
     __Vtableidx23 = 0;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__22__KET____DOT__s_box_i__DOT__dout[15] = 6U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[0] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[1] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[2] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[3] = 3U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[4] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[5] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[6] = 3U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[7] = 3U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[8] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[9] = 2U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[10] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[11] = 3U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[12] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[13] = 2U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[14] = 3U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[15] = 3U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[0] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[1] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[2] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[3] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[4] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[5] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[6] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[7] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[8] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[9] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[10] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[11] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[12] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[13] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[14] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[15] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[0] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[1] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[2] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[3] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[4] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[5] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[6] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[7] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[8] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[9] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[10] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[11] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[12] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[13] = 1U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[14] = 0U;
+    __Vtable23_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[15] = 0U;
     __Vtableidx24 = 0;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__23__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx25 = 0;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable25_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__24__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx26 = 0;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable26_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__25__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx27 = 0;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable27_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__26__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx28 = 0;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable28_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__27__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx29 = 0;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable29_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__28__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx30 = 0;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable30_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__29__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx31 = 0;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable31_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__30__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx32 = 0;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable32_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx33 = 0;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable33_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx34 = 0;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable34_KDF_spongent__DOT__hash_impl__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx35 = 0;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[0] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[1] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[2] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[3] = 3U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[4] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[5] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[6] = 3U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[7] = 3U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[8] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[9] = 2U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[10] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[11] = 3U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[12] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[13] = 2U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[14] = 3U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__next_state[15] = 3U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[0] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[1] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[2] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[3] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[4] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[5] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[6] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[7] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[8] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[9] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[10] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[11] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[12] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[13] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[14] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__rst_permutation[15] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[0] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[1] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[2] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[3] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[4] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[5] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[6] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[7] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[8] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[9] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[10] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[11] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[12] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[13] = 1U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[14] = 0U;
-    __Vtable35_KDF_spongent__DOT__hash_impl__DOT__absorbing_phase_impl__DOT__counter_up[15] = 0U;
-    __Vtableidx36 = 0;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[0] = 2U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[1] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[2] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[3] = 3U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[4] = 2U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[5] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[6] = 3U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[7] = 3U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[8] = 2U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[9] = 2U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[10] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[11] = 3U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[12] = 2U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[13] = 2U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[14] = 3U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[15] = 3U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[0] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[1] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[2] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[3] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[4] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[5] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[6] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[7] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[8] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[9] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[10] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[11] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[12] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[13] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[14] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[15] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[0] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[1] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[2] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[3] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[4] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[5] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[6] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[7] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[8] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[9] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[10] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[11] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[12] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[13] = 1U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[14] = 0U;
-    __Vtable36_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[15] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[0] = 2U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[1] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[2] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[3] = 3U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[4] = 2U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[5] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[6] = 3U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[7] = 3U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[8] = 2U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[9] = 2U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[10] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[11] = 3U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[12] = 2U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[13] = 2U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[14] = 3U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__next_state[15] = 3U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[0] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[1] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[2] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[3] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[4] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[5] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[6] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[7] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[8] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[9] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[10] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[11] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[12] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[13] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[14] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__rst_permutation[15] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[0] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[1] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[2] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[3] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[4] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[5] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[6] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[7] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[8] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[9] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[10] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[11] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[12] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[13] = 1U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[14] = 0U;
+    __Vtable24_KDF_spongent__DOT__hash_impl__DOT__squeezing_phase_impl__DOT__counter_up[15] = 0U;
 }
