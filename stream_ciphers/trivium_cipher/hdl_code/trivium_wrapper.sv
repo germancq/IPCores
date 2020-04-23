@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-09 12:15:55
  * @ Modified by: Your name
- * @ Modified time: 2020-03-06 13:28:37
+ * @ Modified time: 2020-04-23 19:40:20
  * @ Description:
  */
 
@@ -12,6 +12,7 @@ module trivium_wrapper #(parameter DATA_WIDTH = 64)(
     input rst,
     input [79:0] key,
     input [79:0] iv,
+    input next_data,
     output logic end_block,
     output [DATA_WIDTH-1:0] block_o
 
@@ -55,9 +56,11 @@ module trivium_wrapper #(parameter DATA_WIDTH = 64)(
         .key_stream(key_stream)
     );
 
+    logic counter_rst;
+
     counter #(.DATA_WIDTH($clog2(DATA_WIDTH))) counter_impl(
         .clk(clk),
-        .rst(rst),
+        .rst(rst | counter_rst),
         .up(counter_up),
         .down(1'b0),
         .din(counter_in),
@@ -77,6 +80,7 @@ module trivium_wrapper #(parameter DATA_WIDTH = 64)(
         shift_right = 0;
         trivium_en = 0;
         end_block = 0;
+        counter_rst = 0;
         
 
         case(current_state)
@@ -106,7 +110,10 @@ module trivium_wrapper #(parameter DATA_WIDTH = 64)(
                 begin
                     
                     end_block = 1'b1;
-                    
+                    counter_rst = 1'b1;
+                    if(next_data == 1'b1) begin
+                        next_state = TRIVIUM_KEYSTREAM;
+                    end
                     
                 end    
 

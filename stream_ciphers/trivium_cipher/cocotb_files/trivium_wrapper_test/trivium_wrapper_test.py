@@ -53,6 +53,7 @@ def setup_function(dut, key, iv):
     dut.rst = 0
     dut.key = key
     dut.iv = iv
+    dut.next_data = 0
     
 
 @cocotb.coroutine

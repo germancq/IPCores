@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-03-07 16:03:51
  * @ Modified by: Your name
- * @ Modified time: 2020-03-19 15:16:39
+ * @ Modified time: 2020-04-23 19:41:01
  * @ Description:
  */
 module top(
@@ -78,6 +78,7 @@ trivium_wrapper #(.DATA_WIDTH(64)) trivium_wrapper_impl(
     .rst(rst_uut),
     .key(key),
     .iv(iv),
+    .next_data(0),
     .end_block(end_uut),
     .block_o(block_o_uut)
 );
