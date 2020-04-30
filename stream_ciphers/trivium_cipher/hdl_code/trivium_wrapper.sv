@@ -2,12 +2,12 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-09 12:15:55
  * @ Modified by: Your name
- * @ Modified time: 2020-04-23 19:40:20
+ * @ Modified time: 2020-04-30 21:36:51
  * @ Description:
  */
 
 
-module trivium_wrapper #(parameter DATA_WIDTH = 64)(
+module trivium_wrapper #(parameter DATA_WIDTH = 80)(
     input clk,
     input rst,
     input [79:0] key,
@@ -31,14 +31,15 @@ module trivium_wrapper #(parameter DATA_WIDTH = 64)(
     logic [$clog2(DATA_WIDTH) - 1 : 0] counter_in;
     logic counter_up;
     logic [$clog2(DATA_WIDTH) - 1 : 0] stop_value;
-    assign stop_value = {DATA_WIDTH{1'b1}};
     assign counter_in = 0;
+    logic load_reg;
 
     shift_register #(.DATA_WIDTH(DATA_WIDTH)) reg_impl(
         .clk(clk),
+        .cl(1'b0),
         .shift_right(shift_right),
         .shift_left(1'b0),
-        .load(rst),
+        .load(rst | load_reg),
         .input_bit(key_stream),
         .din(reg_in),
         .output_bit(),
@@ -81,12 +82,14 @@ module trivium_wrapper #(parameter DATA_WIDTH = 64)(
         trivium_en = 0;
         end_block = 0;
         counter_rst = 0;
+        load_reg = 0;
         
 
         case(current_state)
             IDLE : 
                 begin
                     next_state = WARM_UP_PHASE;
+                    counter_rst = 1'b1;
                     
                 end
             WARM_UP_PHASE :
@@ -102,7 +105,7 @@ module trivium_wrapper #(parameter DATA_WIDTH = 64)(
                     counter_up = 1'b1;
                     shift_right = 1'b1;
                     trivium_en = 1'b1;
-                    if(counter_out == stop_value-1) begin
+                    if(counter_out == DATA_WIDTH-2) begin
                         next_state = END;
                     end
                 end             
@@ -112,7 +115,10 @@ module trivium_wrapper #(parameter DATA_WIDTH = 64)(
                     end_block = 1'b1;
                     counter_rst = 1'b1;
                     if(next_data == 1'b1) begin
+                        //load_reg = 1;
                         next_state = TRIVIUM_KEYSTREAM;
+                        trivium_en = 1'b1;
+                        shift_right = 1'b1;
                     end
                     
                 end    
