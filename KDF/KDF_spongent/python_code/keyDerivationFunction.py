@@ -36,10 +36,10 @@ class KDF:
     def generate_derivate_key(self):
         
         x_i = (self.user_password << (self.count_len+self.salt_len)) + (self.salt << self.count_len) + self.count
-        print(hex(x_i))
+        #print(hex(x_i))
         for i in range(0,self.count):
             x_i = self.hash_function.generate_hash(x_i,self.data_in_len)
-            print(hex(x_i))
+            print(hex(i))
 
         return x_i
 
