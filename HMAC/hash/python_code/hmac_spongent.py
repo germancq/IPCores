@@ -32,12 +32,12 @@ class HMAC_Sponegnt:
         return int(str_result, 2)    
 
     def generate_MAC(self,x_i,len_x_i):
-        S_i = self.ipad ^ self.key
-        hash_input_1 = (S_i<<len_x_i) | x_i
+        self.S_i = self.ipad ^ self.key
+        hash_input_1 = (self.S_i<<len_x_i) | x_i
         len_hash_input_1 = len_x_i + self.n
-        h_1 = self.hash_function.generate_hash(hash_input_1,len_hash_input_1)
-        S_o = self.opad ^ self.key
-        hash_input_2 = (S_o<<self.n) |  h_1
+        self.h_1 = self.hash_function.generate_hash(hash_input_1,len_hash_input_1)
+        self.S_o = self.opad ^ self.key
+        hash_input_2 = (self.S_o<<self.n) |  self.h_1
         len_hash_input_2 = 2 * (self.n)
         return self.hash_function.generate_hash(hash_input_2,len_hash_input_2)
 
