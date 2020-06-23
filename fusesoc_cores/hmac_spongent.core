@@ -1,0 +1,19 @@
+CAPI=1
+[main]
+description = "HMAC spongent"
+
+depend =
+ spongent_hash
+
+
+[verilog]
+src_files =
+  HMAC/hash/hdl_code/spongent.sv
+  
+
+
+[provider] 
+name = github
+user = germancq
+repo = IPCores
+version = master
