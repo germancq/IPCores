@@ -24,6 +24,7 @@ sys.path.append(home+'/gitProjects/IPCores/hash_functions/spongent/python_code')
 import spongent
 sys.path.append(home+'/gitProjects/IPCores/HMAC/hash/python_code')
 import hmac_spongent
+abs_path_file_storage = home + "/gitProjects/IPCores/HMAC/hash/python_code/test_cases.HEX"
 
 
 N_candidates =        [88,128,160,224,256]
@@ -37,6 +38,9 @@ N = N_candidates[OPTION_HASH]
 r = r_candidates[OPTION_HASH]
 c = c_candidates[OPTION_HASH]
 R = R_candidates[OPTION_HASH]
+
+INPUT_WIDTH = 64
+KEY_WIDTH = 64
 
 
 CLK_PERIOD = 20 # 50 MHz
@@ -62,11 +66,11 @@ def setup_function(dut,key,msg):
 
 
 @cocotb.coroutine
-def rst_function_test(dut,hmac_impl):
+def rst_function_test(dut):
     dut.rst = 1
     yield n_cycles_clock(dut,20)
 
-
+    '''
     if(dut.ipad != hmac_impl.ipad):
         raise TestFailure("""Error in reset ipad value, wrong value = {0}, expected value = {1}""".format(hex(int(dut.ipad.value)),hex(hmac_impl.ipad)))
 
@@ -78,7 +82,7 @@ def rst_function_test(dut,hmac_impl):
 
     if(dut.So != hmac_impl.S_o):
         raise TestFailure("""Error in reset opad value, wrong value = {0}, expected value = {1}""".format(hex(int(dut.S_o.value)),hex(hmac_impl.S_o)))
-
+    '''
     if(dut.hash_1.rst != 1):
         raise TestFailure("""Error in reset hash_1 value, wrong value = {0}, expected value = {1}""".format(hex(int(dut.hash_1.rst.value)),hex(1)))
 
@@ -87,7 +91,7 @@ def rst_function_test(dut,hmac_impl):
 
 
 @cocotb.coroutine
-def hmac_test(dut,expected_result,hmac_impl):
+def hmac_test(dut,expected_result):
     dut.rst = 0
     yield n_cycles_clock(dut,1)
 
@@ -120,21 +124,33 @@ def n_cycles_clock(dut,n):
 
 
 @cocotb.coroutine
-def run_test(dut,msg=0,key=0):
-    msg = random.randint(0,(2**24)-1) 
-    key = random.randint(0,(2**24)-1)
-    hmac_impl = hmac_spongent.HMAC_Sponegnt(key,N,c,r,R)
-    expected_result = hmac_impl.generate_MAC(msg,64)
-    setup_function(dut,key,msg) 
-    yield rst_function_test(dut,hmac_impl) 
-    yield hmac_test(dut,expected_result,hmac_impl)
+def run_test(dut,index=0):
+    len_data = int((N+INPUT_WIDTH+KEY_WIDTH)/8)
+    with(open(abs_path_file_storage,"rb+")) as storage_file:
+        
+        '''
+        msg = random.randint(0,(2**24)-1) 
+        key = random.randint(0,(2**24)-1)
+        hmac_impl = hmac_spongent.HMAC_Sponegnt(key,N,c,r,R)
+        expected_value = hmac_impl.generate_MAC(msg,64)
+        '''
+        storage_file.seek((index*len_data))
+
+        msg = int.from_bytes(storage_file.read(int(INPUT_WIDTH/8)),byteorder='little')
+        key = int.from_bytes(storage_file.read(int(KEY_WIDTH/8)),byteorder='little')
+        expected_result = int.from_bytes(storage_file.read(int(N/8)),byteorder='little')
+         
+
+        
+        setup_function(dut,key,msg) 
+        yield rst_function_test(dut) 
+        yield hmac_test(dut,expected_result)
 
           
 
 
-n = 2
+n = 100
 factory = TestFactory(run_test)
 
-factory.add_option("msg", np.random.randint(low=1,high=(2**8)-1,size=n))
-factory.add_option("key", np.random.randint(low=1,high=(2**8)-1,size=n))
-factory.generate_tests() 
+factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31
+factory.generate_tests()

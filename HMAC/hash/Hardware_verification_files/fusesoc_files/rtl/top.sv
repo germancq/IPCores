@@ -2,16 +2,16 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-23 12:52:12
  * @ Modified by: Your name
- * @ Modified time: 2020-06-23 12:56:29
+ * @ Modified time: 2020-06-23 19:58:00
  * @ Description:
  */
 
-localparam N = 88;
-localparam c = 80;
-localparam r = 8;
-localparam R = 45;
-localparam lCounter_initial_state = 6'h05;
-localparam lCounter_feedback_coeff = 7'h61;
+localparam N = 256;
+localparam c = 256;
+localparam r = 16;
+localparam R = 140;
+localparam lCounter_initial_state = 8'h9E;
+localparam lCounter_feedback_coeff = 9'h11D;
 localparam INPUT_WIDTH = 64; 
 localparam KEY_WIDTH = 64;
 
@@ -98,7 +98,7 @@ hmac_spongent #(
 ) hmac_uut(
     .clk(sys_clk_pad_i),
     .rst(rst_uut),
-    .key(),
+    .key(key_uut),
     .msg(msg_uut),
     .digest(digest_o_uut),
     .end_hmac(end_uut)

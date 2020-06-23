@@ -8,7 +8,7 @@ depend =
 
 [verilog]
 src_files =
-  HMAC/hash/hdl_code/spongent.sv
+  HMAC/hash/hdl_code/hmac_spongent.sv
   
 
 

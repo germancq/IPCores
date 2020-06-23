@@ -12,7 +12,7 @@ home = os.getenv("HOME")
 sys.path.append(home + '/gitProjects/IPCores/hash_functions/spongent/python_code')
 import spongent
 
-class HMAC_Sponegnt:
+class HMAC_Spongent:
 
     def __init__(self,key,n,c,r,R):
         self.key = key
@@ -26,16 +26,23 @@ class HMAC_Sponegnt:
         str_result = ''
         number_steps = int(len/8)
 
-        for i in range(0,number_steps):
+        for _ in range(0,number_steps):
             str_result = str_result + pattern
 
         return int(str_result, 2)    
 
     def generate_MAC(self,x_i,len_x_i):
+        #print(hex(self.key))
+        #print(hex(x_i))
+        #print(len_x_i)
+        #print(hex(self.ipad))
         self.S_i = self.ipad ^ self.key
+        #print(hex(self.S_i))
         hash_input_1 = (self.S_i<<len_x_i) | x_i
+        #print(hex(hash_input_1))
         len_hash_input_1 = len_x_i + self.n
         self.h_1 = self.hash_function.generate_hash(hash_input_1,len_hash_input_1)
+        #print(hex(self.h_1))
         self.S_o = self.opad ^ self.key
         hash_input_2 = (self.S_o<<self.n) |  self.h_1
         len_hash_input_2 = 2 * (self.n)
@@ -47,6 +54,6 @@ if __name__ == "__main__":
     print()    
     key = 0x1122334455667788
     msg = 0x1122334455667788
-    hmac_impl = HMAC_Sponegnt(key,88,80,8,45)
+    hmac_impl = HMAC_Spongent(key,88,80,8,45)
     result = hmac_impl.generate_MAC(msg,64)
     print(hex(result))

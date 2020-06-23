@@ -2,14 +2,14 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-23 12:51:31
  * @ Modified by: Your name
- * @ Modified time: 2020-06-23 12:57:46
+ * @ Modified time: 2020-06-23 13:08:42
  * @ Description:
  */
 
 
 module autotest_module
 #(parameter INPUT_SIZE_1 = 32,
-  parameter INPUT_SIZE_2 = 32;
+  parameter INPUT_SIZE_2 = 32,
   parameter OUTPUT_SIZE_1 = 32)
 (
     input clk,
