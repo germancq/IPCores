@@ -1,14 +1,10 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    spongent.py                                         :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/12/02 13:14:32 by germancq          #+#    #+#              #
-#    Updated: 2019/12/02 13:14:47 by germancq         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+'''
+ # @ Author: German Cano Quiveu, germancq@dte.us.es
+ # @ Create Time: 2020-06-25 22:20:02
+ # @ Modified by: Your name
+ # @ Modified time: 2020-06-25 22:20:16
+ # @ Description:
+ '''
 
 import LFSR
 import math
@@ -27,72 +23,24 @@ class Spongent:
         self.b = r + c
         self.state = 0
         self.initialize_lCounter()
-        
-
-    def generate_hash(self,message, len_msg=0):
-        self.initialization_phase(message,len_msg)
-        s = self.absorbing_phase()
-        #print(hex(s))
-        return self.squeezing_phase(s)
-
-
-    def initialization_phase(self,message,len_msg=0):
-        #padding message with 1 
-        message = message << 1
-        message = message | 0x1
-        #fill with zeros until r multiple
-        bit_len_msg = len_msg + 1
-        if len_msg == 0:
-            bit_len_msg = math.floor(math.log2(message)) + 1
-
-        #print(bit_len_msg)
-        n = bit_len_msg % self.r
-        message = message << (self.r - n)
-        #cut into blocks of r bits
-        #print(hex(message))
-        self.padded_msg = message
-        self.m = []
         self.mask = 0xFFFF
+        self.padding = 0x8000
         if(self.r == 8):
             self.mask = 0xFF
-
-        
-            
-        for i in range(0,int(bit_len_msg/self.r)+1):
-            message_part = ((message >> (self.r * i)) & self.mask)      
-            if(self.r == 16):
-                message_part = (message_part >> 8) | ((message_part & 0XFF) << 8)         
-            self.m.append(message_part) 
+            self.padding = 0x80
+         
         
         
-        
-
-    def absorbing_phase(self):
-        state = 0
-        
-        self.absorbing_before_p_states=[]
-        self.absorbing_after_p_states=[]
-        for i in range(0,len(self.m)):
-            block_value = self.m[len(self.m)-1-i]
-            print(hex(block_value))
-            state = state ^ block_value
-            self.absorbing_before_p_states.append(state)
-            #print('------------------')
-            #print(hex(state))
-            #print('------------------')
-            state = self.permutation(state)
-            #print('***********************')
-            #print(hex(state))
-            #print('***********************')
-            self.absorbing_after_p_states.append(state)
-
-            
-            
-        return state   
-        
+    def feed_data(self,block_value,state):
+        if(self.r == 16):
+            block_value = (block_value >> 8) | ((block_value & 0XFF) << 8) 
+        state = block_value ^ state
+        state = self.permutation(state)
+        return state
 
 
     def squeezing_phase(self,state):
+        state = self.feed_data(self.padding,state)
         result = 0
         self.squeezing_results = []
         self.squeezing_states = []
@@ -186,14 +134,28 @@ class Spongent:
 
 
 if __name__ == "__main__":
-    #print()    
-    spongent_impl = Spongent(88,80,8,45)
+    #print()   
+    r = 8 
+    spongent_impl = Spongent(88,80,r,45)
     
     message = 0x7d5e997271ef4ea2
     print(message)
     print(hex(message))
+    len_msg = 64
+    mask = 0xFFFF
+    #padding = 0x8000
+    if(r == 8):
+        mask = 0xFF
+        #padding = 0x80
+    j = int(len_msg/r)
+    spongent_state = 0
+    for i in range(0,j):
+        data_chunk = (message >> (r*(j-i-1))) & mask
+        spongent_state = spongent_impl.feed_data(data_chunk,spongent_state)
+    #spongent_state = spongent_impl.feed_data(padding,spongent_state)
+    hash_value = spongent_impl.squeezing_phase(spongent_state)
 
-    hash_value = spongent_impl.generate_hash(message,64)
+    
     
     print(hash_value)
     print(hex(hash_value))
