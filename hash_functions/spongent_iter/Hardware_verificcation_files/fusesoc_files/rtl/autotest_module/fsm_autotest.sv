@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:42:54
  * @ Modified by: Your name
- * @ Modified time: 2020-06-29 13:52:01
+ * @ Modified time: 2020-06-29 17:59:56
  * @ Description:
  */
 
@@ -29,9 +29,9 @@
      output logic rst_uut,
      input err_uut,
      input end_uut,
-     output feed_data_control_uut,
+     output logic feed_data_control_uut,
      input busy_uut,
-     output stop_feed_uut,
+     output logic stop_feed_uut,
      //uut paramters signals
      output [FEED_DATA_SIZE-1:0] feed_data_uut,
      //uut results signals
@@ -143,16 +143,16 @@ genvar i;
 
 
 /////////////// feed_data_reg ///////////////////
-  logic [0:0] feed_data_cl[(FEED_DATA_SIZE_1>>3)-1:0];
-  logic [0:0] feed_data_w[(FEED_DATA_SIZE_1>>3)-1:0];
+  logic [0:0] feed_data_cl[(FEED_DATA_SIZE>>3)-1:0];
+  logic [0:0] feed_data_w[(FEED_DATA_SIZE>>3)-1:0];
   generate
-    for (i=0;i<(OUTPUT_SIZE_1>>3);i=i+1) begin
+    for (i=0;i<(FEED_DATA_SIZE>>3);i=i+1) begin
         register #(.DATA_WIDTH(8)) reg_feed_data_i(
             .clk(clk),
             .cl(feed_data_cl[FEED_DATA_SIZE-1-i]), //big endian
             .w(feed_data_w[FEED_DATA_SIZE-1-i]),
             .din(spi_data_out),
-            .dout(feed_data_control_uut[(i<<3)+7:(i<<3)])
+            .dout(feed_data_uut[(i<<3)+7:(i<<3)])
         );
     end
   endgenerate
@@ -436,7 +436,7 @@ genvar i;
                  rst_uut = 1;
                  spi_r_block = 1;
                  if(spi_busy == 1'b0)
-                     next_state = READ_DATA;
+                     next_state = READ_CONTROL_BLOCK;
              end
          READ_CONTROL_BLOCK:
              begin
@@ -463,7 +463,7 @@ genvar i;
                                 rst_index = 1'b1;
                             end
                         end
-                        32'h4 + (32>>3) + (64>>3) index_o:begin
+                        32'h4 + (32>>3) + (64>>3) + index_o:begin
                             reg_expected_result_uut_w[index_o] = 1'b1;
                             up_index = 1'b1;
                             if(index_o == (OUTPUT_SIZE_1>>3)-1) begin
@@ -493,7 +493,7 @@ genvar i;
                  spi_r_block = 1;
                  if(spi_busy == 1'b0)
                  begin
-                     next_state = READ_DATA;
+                     next_state = READ_CONTROL_BLOCK;
                  end
              end
          CHECK_SIGNATURE:
@@ -589,7 +589,7 @@ genvar i;
             STOP_FEED : 
                 begin
                     stop_feed_uut = 1'b1;
-                    next_state = WAIT_UNTIL_END_TEST_OR_TIMEOUT
+                    next_state = WAIT_UNTIL_END_TEST_OR_TIMEOUT;
                 end    
             WAIT_UNTIL_END_TEST_OR_TIMEOUT:
              begin
@@ -633,7 +633,7 @@ genvar i;
                 begin
                     spi_r_block = 1;
                     if(spi_busy == 1'b0) begin
-                        next_state = SEL_WRITE_SD_BLOCK;
+                        next_state = WAIT_W_BLOCK;
                     end 
                 end 
             WAIT_W_BLOCK:
@@ -679,7 +679,7 @@ genvar i;
                    32'h202:;
                    32'h203:
                      begin
-                         next_state = UPDATE_BLOCK_COUNTER;
+                         next_state = UPDATE_NEXT_CONTROL_BLOCK;
                          rst_bytes_counter = 1;
                      end
                    default:;
@@ -744,4 +744,4 @@ genvar i;
  );
 
 
- endmodule : fsm_autotest
+ endmodule : fsm_autotest_feed

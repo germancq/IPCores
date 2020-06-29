@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:42:54
  * @ Modified by: Your name
- * @ Modified time: 2020-06-29 13:53:09
+ * @ Modified time: 2020-06-29 17:57:23
  * @ Description:
  */
 
@@ -53,7 +53,7 @@ module autotest_feed_module
 
   
 
-  fsm_autotest #(
+  fsm_autotest_feed #(
     .FEED_DATA_SIZE(FEED_DATA_SIZE),
     .OUTPUT_SIZE_1(OUTPUT_SIZE_1)
   )
@@ -116,4 +116,4 @@ module autotest_feed_module
     .debug()
   );
 
-endmodule : autotest_module
+endmodule : autotest_feed_module

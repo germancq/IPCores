@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-09-30 15:29:16
  * @ Modified by: Your name
- * @ Modified time: 2020-06-29 15:39:49
+ * @ Modified time: 2020-06-29 18:02:28
  * @ Description:
  */
 
@@ -31,7 +31,7 @@ end
 
 endmodule : register
 
-module register_intial_state
+module register_initial_state
     #(parameter DATA_WIDTH = 8)
     (
         input clk,
