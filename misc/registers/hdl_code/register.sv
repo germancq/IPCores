@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-09-30 15:29:16
  * @ Modified by: Your name
- * @ Modified time: 2020-06-29 18:02:28
+ * @ Modified time: 2020-06-29 18:54:35
  * @ Description:
  */
 
@@ -53,7 +53,7 @@ always_ff @(posedge clk) begin
     end
 end
 
-endmodule : register_intial_state
+endmodule : register_initial_state
 
 
 module shift_register
