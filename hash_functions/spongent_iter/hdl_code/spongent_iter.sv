@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-24 18:09:55
  * @ Modified by: Your name
- * @ Modified time: 2020-06-26 21:45:55
+ * @ Modified time: 2020-06-29 16:48:12
  * @ Description:
  */
 
@@ -31,7 +31,7 @@ module spongent_iter #(
     input data_ready,
     input start_hash, 
     output logic busy,
-    output end_hash,
+    output logic end_hash,
     output [N-1:0] digest
 );
 
