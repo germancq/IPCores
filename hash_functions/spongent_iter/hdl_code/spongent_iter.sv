@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-24 18:09:55
  * @ Modified by: Your name
- * @ Modified time: 2020-06-25 23:30:42
+ * @ Modified time: 2020-06-26 21:45:55
  * @ Description:
  */
 
@@ -22,8 +22,7 @@ module spongent_iter #(
     parameter r = 16,
     parameter R = 140,
     parameter lCounter_initial_state = 8'h9E,
-    parameter lCounter_feedback_coeff = 9'h11D,
-    parameter DATA_WIDTH = 64
+    parameter lCounter_feedback_coeff = 9'h11D
 )
 (
     input clk,
