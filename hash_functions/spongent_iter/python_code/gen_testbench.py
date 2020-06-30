@@ -113,19 +113,22 @@ def create_microsd_vectors(micro_sd,example_file,num,e):
     next_block = NUM_BLOCK_TEST
     for i in range(0,num):
         example_file.seek(0)
-        size = random.randint(764,16400)
+        size = random.randint(10,400)
+        if((size & 0x1) == 1):
+            size = size + 1
         example_file.write(os.urandom(size))
         example_file.seek(0)
         spongent_impl = spongent_iter.Spongent(N,c,r,R)
         expected_value = 0
         spongent_state = 0
         for k in range (0,size):
-            data_feed = int.from_bytes(example_file.read(r),byteorder='big')
+            data_feed = int.from_bytes(example_file.read(r),byteorder='little')
             spongent_state = spongent_impl.feed_data(data_feed,spongent_state)
         expected_value = spongent_impl.squeezing_phase(spongent_state)
 
-        
+        print(i)
         print(hex(expected_value))
+        
         percent = random.randint(1,100)
         if(percent < e):
             expected_value = expected_value + 1
@@ -133,17 +136,34 @@ def create_microsd_vectors(micro_sd,example_file,num,e):
 
 
         #clear block
-        micro_sd.seek(BLOCK_SIZE*(next_block))
-        micro_sd.write(zero.to_bytes(512, byteorder='big'))
+        #micro_sd.seek(BLOCK_SIZE*(next_block))
+        #micro_sd.write(zero.to_bytes(512, byteorder='big'))
 
+        current_block = next_block
+        n_blocks = int(math.ceil(size/BLOCK_SIZE))
+        next_block = next_block + n_blocks + 1
 
-        micro_sd.seek(BLOCK_SIZE*(next_block))
-        next_block = next_block + int(math.ceil(size/BLOCK_SIZE))
+        micro_sd.seek(BLOCK_SIZE*current_block)
+        print(hex(current_block))
+        print(hex(next_block))
+        print(hex(size))
         micro_sd.write(SIGNATURE.to_bytes(4, byteorder='big'))
         micro_sd.write(next_block.to_bytes(4, byteorder='little'))
         micro_sd.write(size.to_bytes(8, byteorder='little'))
         micro_sd.write(int(expected_value).to_bytes(int(N/8),byteorder='little')
         )
+        example_file.seek(0)
+        j = 0
+        for _ in range(0,n_blocks):
+            block_to_write = current_block+j+1
+            j = j+1
+            print(hex(block_to_write))
+            micro_sd.seek(BLOCK_SIZE*(block_to_write))
+            for _ in range(0,int(BLOCK_SIZE/r)):
+                micro_sd.write(example_file.read(r))
+                size = size - r
+                if(size <= 0):
+                    break
 
 
 

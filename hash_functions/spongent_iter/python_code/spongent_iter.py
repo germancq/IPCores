@@ -138,10 +138,10 @@ if __name__ == "__main__":
     r = 8 
     spongent_impl = Spongent(88,80,r,45)
     
-    message = 0x7d5e997271ef4ea2
+    message = 0#0x7d5e997271ef4ea2
     print(message)
     print(hex(message))
-    len_msg = 64
+    len_msg = 24
     mask = 0xFFFF
     #padding = 0x8000
     if(r == 8):

@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:43:00
  * @ Modified by: Your name
- * @ Modified time: 2020-06-29 13:59:53
+ * @ Modified time: 2020-06-29 20:56:02
  * @ Description:
  */
 
@@ -34,6 +34,10 @@ module top(
     output [15:0] leds_o
 );
 
+
+    assign SD_RESET = 1'b0;
+    assign SD_DAT_1 = 1'b1;
+    assign SD_DAT_2 = 1'b1;
 
     logic [31:0] debug_data;
     display #(.N(32),.CLK_HZ(100000000)) display_inst(
