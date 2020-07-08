@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:42:54
  * @ Modified by: Your name
- * @ Modified time: 2020-06-30 20:26:38
+ * @ Modified time: 2020-07-07 22:32:29
  * @ Description:
  */
 
@@ -420,7 +420,6 @@ genvar i;
 
                  reg_output_from_UUT_1_o_cl = 1;
                
-                 current_block_cl = 1;
 
                  reg_spi_data_cl = 1;
 
@@ -503,6 +502,7 @@ genvar i;
          CHECK_SIGNATURE:
              begin
                rst_uut = 1;
+               rst_block_counter = 1;
                if(signature == 32'hAABBCCDD)
                begin
                  next_state = START_TEST;
@@ -535,6 +535,7 @@ genvar i;
           START_TEST: 
             begin
                 if(spi_busy == 0) begin
+                    up_timer_exec_counter = 1;
                     up_block_counter = 1'b1;
                     next_state = SEL_SD_BLOCK_CMD18;
                     rst_bytes_counter = 1'b1;
@@ -542,6 +543,7 @@ genvar i;
             end  
           SEL_SD_BLOCK_CMD18:
             begin
+                up_timer_exec_counter = 1;
                 spi_r_multi_block = 1;
                  if(spi_busy == 1) begin
                      next_state = WAIT_BLOCK_CMD18;
@@ -549,12 +551,14 @@ genvar i;
             end  
           WAIT_BLOCK_CMD18:
             begin
+                up_timer_exec_counter = 1;
                 spi_r_multi_block = 1;
                 if(spi_busy == 1'b0)
                      next_state = READ_FEED_DATA;
             end  
             READ_FEED_DATA:
             begin
+                up_timer_exec_counter = 1;
                 feed_data_w[index_o] = 1'b1;
                 spi_r_multi_block = 1;
                 next_state = READ_FEED_DATA_BYTE;
@@ -562,6 +566,7 @@ genvar i;
             end
             READ_FEED_DATA_BYTE:
              begin
+                 up_timer_exec_counter = 1;
                  spi_r_multi_block = 1;
                  spi_r_byte = 1;
 
@@ -574,6 +579,7 @@ genvar i;
              end
             WAIT_FEED_BYTE:
              begin
+                 up_timer_exec_counter = 1;
                  spi_r_multi_block = 1;
                  if(spi_busy == 1'b0)
                  begin
@@ -586,31 +592,9 @@ genvar i;
                         end
                  end
              end  
-             /*
-            WAIT_FEED_DATA:
-                begin
-                    spi_r_multi_block = 1;
-                    if(spi_busy == 1'b0 && busy_uut == 1'b1)
-                    begin
-                        next_state = WAIT_UNTIL_BUSY;
-                    end
-                end
-            WAIT_UNTIL_BUSY:  
-                begin
-                    spi_r_multi_block = 1;
-                    if(busy_uut == 1'b0) begin
-                        if((FEED_DATA_SIZE >> 3) == index_o) begin
-                            next_state = FEED_CONTROL;
-                            rst_index = 1'b1;
-                        end
-                        else begin
-                            next_state = READ_FEED_DATA;
-                        end
-                    end
-                end  
-                */
             FEED_CONTROL : 
                 begin
+                    up_timer_exec_counter = 1;
                     spi_r_multi_block = 1;
                     if(busy_uut == 0) begin
                         feed_data_control_uut = 1;
@@ -623,6 +607,7 @@ genvar i;
                 end    
             STOP_FEED : 
                 begin
+                    up_timer_exec_counter = 1;
                     stop_feed_uut = 1'b1;
                     next_state = WAIT_UNTIL_END_TEST_OR_TIMEOUT;
                 end    
@@ -651,7 +636,7 @@ genvar i;
                         if((expected_result != output_from_UUT_1_o) || err_uut) begin
                             up_error_counter = 1'b1;
                             current_block_w = 1'b1;
-                            next_state = UPDATE_NEXT_CONTROL_BLOCK;
+                            next_state = SEL_WRITE_SD_BLOCK;
                         end
                         else begin
                             current_block_w = 1'b1;
@@ -747,7 +732,7 @@ genvar i;
                 rst_block_counter = 1'b1;
                 rst_bytes_counter = 1;
                 if(counter_bytes_o == 0) begin
-                    next_state = SEL_SD_BLOCK;
+                    next_state = IDLE;
                 end
             end
             END_FSM:

@@ -704,14 +704,17 @@
              next_state = CMD12_0;
            else if(r_multi_block == 1 && counter_o > 32'h200)
              begin
+               
                busy = 1;
+               next_state = WAIT_BYTE;
+
                if(counter_o == 32'h204)
                begin
                  next_state = WAIT_FE_TOKEN;
                  rst_counter = 1;
                end
 
-               next_state = WAIT_BYTE;
+               
              end
            else if(r_byte == 1)
              next_state = WAIT_BYTE;

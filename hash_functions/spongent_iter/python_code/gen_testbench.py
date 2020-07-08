@@ -44,91 +44,50 @@ r = r_candidates[OPTION_HASH]
 c = c_candidates[OPTION_HASH]
 R = R_candidates[OPTION_HASH]
 
-'''
-def gen_all_posibilities(micro_sd):
 
-
-
-    parameters = [
-        np.random.randint(0,2**63-1,400,dtype=np.int64), #input_1 values
-    ]
-    total_posibilities = 1
-    modulo_op = []
-    for i in range(0,len(parameters)):
-        total_posibilities = total_posibilities * len(parameters[i])
-        modulo_op.insert(i,total_posibilities)
-    print(total_posibilities)
-    j = 0
-    zero = 0
-    for n in range (0, total_posibilities):
-        #clear block
-        micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
-        micro_sd.write(zero.to_bytes(512, byteorder='big'))
-
-        pairs = create_posibility(n,parameters,modulo_op)
-        print(pairs)
-        micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
-        j = j+1
-        
-        #pairs[0] = 0
-        #pairs[1] = 0        
-
-        micro_sd.write(SIGNATURE.to_bytes(4, byteorder='big'))
-        micro_sd.write(NUMBER_ITER.to_bytes(1, byteorder='big'))
-        
-        micro_sd.write(int(pairs[0]).to_bytes(8, byteorder='little'))#text
-        
-        
-
-        
-
-    #last block with no signature
-    micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
-    micro_sd.write(zero.to_bytes(512, byteorder='big'))
-
-
-def create_posibility(n,parameters,modulo_op):
-    result = []
-    for i in range(0,len(parameters)):
-        x = n % modulo_op[i]
-        long = len(parameters[i])
-        factor_div = math.floor(modulo_op[i] / long)
-
-        if(x != 0):
-            element = math.floor(x / factor_div)
-        else:
-            element = 0
-
-        result.append(parameters[i][element])
-    return result
-
-'''
-   
-
-def create_microsd_vectors(micro_sd,example_file,num,e):
+def create_microsd_vectors(micro_sd,num,e):
     
-    #storage_file.write(int(N).to_bytes(4,byteorder='big'))
     zero = 0
     counter_errors = 0
     next_block = NUM_BLOCK_TEST
     for i in range(0,num):
-        example_file.seek(0)
-        size = random.randint(10,400)
+
+        size = random.randint(1000,4000)
         if((size & 0x1) == 1):
             size = size + 1
-        example_file.write(os.urandom(size))
-        example_file.seek(0)
         spongent_impl = spongent_iter.Spongent(N,c,r,R)
         expected_value = 0
         spongent_state = 0
+
+        n_blocks = int(math.ceil(size/BLOCK_SIZE))
+        print(n_blocks)
+        current_block = next_block
+        next_block = next_block + n_blocks + 1
+
+        j = 0
+        print('------------------------------')
+        print(i)
+
+        block_to_write = current_block+j+1
         for k in range (0,size):
-            data_feed = int.from_bytes(example_file.read(r),byteorder='little')
+            data_feed = random.randint(0,255) 
+            #print(hex(data_feed))
             spongent_state = spongent_impl.feed_data(data_feed,spongent_state)
+            if(k % 512 == 0):
+                micro_sd.seek(BLOCK_SIZE*(block_to_write))
+                micro_sd.write(zero.to_bytes(512, byteorder='big'))
+                micro_sd.seek(BLOCK_SIZE*(block_to_write))
+                j = j+1
+                block_to_write = current_block+j+1
+
+            micro_sd.write(data_feed.to_bytes(1,byteorder='little'))
+
+                    
         expected_value = spongent_impl.squeezing_phase(spongent_state)
 
-        print(i)
-        print(hex(expected_value))
         
+        print(hex(expected_value))
+        print('------------------------------')
         percent = random.randint(1,100)
         if(percent < e):
             expected_value = expected_value + 1
@@ -136,34 +95,17 @@ def create_microsd_vectors(micro_sd,example_file,num,e):
 
 
         #clear block
-        #micro_sd.seek(BLOCK_SIZE*(next_block))
-        #micro_sd.write(zero.to_bytes(512, byteorder='big'))
+        micro_sd.seek(BLOCK_SIZE*current_block)
+        micro_sd.write(zero.to_bytes(512, byteorder='big'))
 
-        current_block = next_block
-        n_blocks = int(math.ceil(size/BLOCK_SIZE))
-        next_block = next_block + n_blocks + 1
+        
 
         micro_sd.seek(BLOCK_SIZE*current_block)
-        print(hex(current_block))
-        print(hex(next_block))
-        print(hex(size))
         micro_sd.write(SIGNATURE.to_bytes(4, byteorder='big'))
         micro_sd.write(next_block.to_bytes(4, byteorder='little'))
         micro_sd.write(size.to_bytes(8, byteorder='little'))
         micro_sd.write(int(expected_value).to_bytes(int(N/8),byteorder='little')
         )
-        example_file.seek(0)
-        j = 0
-        for _ in range(0,n_blocks):
-            block_to_write = current_block+j+1
-            j = j+1
-            print(hex(block_to_write))
-            micro_sd.seek(BLOCK_SIZE*(block_to_write))
-            for _ in range(0,int(BLOCK_SIZE/r)):
-                micro_sd.write(example_file.read(r))
-                size = size - r
-                if(size <= 0):
-                    break
 
 
 
@@ -182,22 +124,11 @@ def main():
             param2 : N numero tests
             param3 : e , percent of create wrong test
     '''
-    try:
-        with(open(abs_path_file_to_hash,"rb+")) as hash_file:
-            hash_file.close()
-    except:
-        with(open(abs_path_file_to_hash,"wb+")) as hash_file:
-            hash_file.close()
 
-    uid = getpwnam(username).pw_uid   
-    gid = grp.getgrnam(groupname)[2]
-    os.chown(abs_path_file_to_hash,uid,gid)
-
-    with(open(abs_path_file_to_hash,"rb+")) as hash_file:
-        with open(sys.argv[1],"rb+") as micro_sd:
-            num = int(sys.argv[2])
-            e = int(sys.argv[3])
-            print(create_microsd_vectors(micro_sd,hash_file,num,e))
+    with open(sys.argv[1],"rb+") as micro_sd:
+        num = int(sys.argv[2])
+        e = int(sys.argv[3])
+        print(create_microsd_vectors(micro_sd,num,e))
 
 
 if __name__ == "__main__":

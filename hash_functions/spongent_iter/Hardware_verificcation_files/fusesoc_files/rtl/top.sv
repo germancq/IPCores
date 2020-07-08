@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:43:00
  * @ Modified by: Your name
- * @ Modified time: 2020-06-29 20:56:02
+ * @ Modified time: 2020-07-07 21:25:12
  * @ Description:
  */
 
@@ -89,7 +89,7 @@ module top(
         .lCounter_initial_state(lCounter_initial_state)
     )uut(
         .clk(sys_clk_pad_i),
-        .rst(rst),
+        .rst(rst_uut),
         .data_input(feed_data_uut),
         .data_ready(feed_data_control_uut),
         .start_hash(stop_feed_uut),
