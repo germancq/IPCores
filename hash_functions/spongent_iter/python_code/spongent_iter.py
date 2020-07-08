@@ -135,7 +135,7 @@ class Spongent:
 
 if __name__ == "__main__":
     #print()   
-    r = 8 
+    r = 16 
     spongent_impl = Spongent(88,80,r,45)
     
     message = 0#0x7d5e997271ef4ea2

@@ -36,7 +36,7 @@ r_candidates = [8,8,16,16,16]
 c_candidates = [80,128,160,224,256]
 R_candidates = [45,70,90,120,140]
 
-OPTION_HASH = 0
+OPTION_HASH = 4
 
 
 N = N_candidates[OPTION_HASH]
@@ -54,7 +54,7 @@ def create_microsd_vectors(micro_sd,num,e):
 
         size = random.randint(1000,4000)
         if((size & 0x1) == 1):
-            size = size + 1
+            size = size + 1  
         spongent_impl = spongent_iter.Spongent(N,c,r,R)
         expected_value = 0
         spongent_state = 0
@@ -62,26 +62,28 @@ def create_microsd_vectors(micro_sd,num,e):
         n_blocks = int(math.ceil(size/BLOCK_SIZE))
         print(n_blocks)
         current_block = next_block
-        next_block = next_block + n_blocks + 1
+        next_block = current_block + n_blocks + 1
 
         j = 0
         print('------------------------------')
         print(i)
 
         block_to_write = current_block+j+1
-        for k in range (0,size):
-            data_feed = random.randint(0,255) 
+        for k in range (0,int(size/int(r/8))):
+            data_feed = random.randint(0,255*(int(r/8))) 
             #print(hex(data_feed))
             spongent_state = spongent_impl.feed_data(data_feed,spongent_state)
-            if(k % 512 == 0):
+            if(k % int(512/int(r/8)) == 0):
+                print(k)
+                print(hex(block_to_write))
                 micro_sd.seek(BLOCK_SIZE*(block_to_write))
                 micro_sd.write(zero.to_bytes(512, byteorder='big'))
                 micro_sd.seek(BLOCK_SIZE*(block_to_write))
                 j = j+1
                 block_to_write = current_block+j+1
 
-            micro_sd.write(data_feed.to_bytes(1,byteorder='little'))
-
+            micro_sd.write(data_feed.to_bytes((int(r/8)),byteorder='big'))
+            
                     
         expected_value = spongent_impl.squeezing_phase(spongent_state)
 

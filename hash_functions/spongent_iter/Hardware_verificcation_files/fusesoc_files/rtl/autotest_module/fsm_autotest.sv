@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:42:54
  * @ Modified by: Your name
- * @ Modified time: 2020-07-07 22:32:29
+ * @ Modified time: 2020-07-08 13:34:24
  * @ Description:
  */
 
@@ -599,7 +599,7 @@ genvar i;
                     if(busy_uut == 0) begin
                         feed_data_control_uut = 1;
                         next_state = READ_FEED_DATA;
-                        if(counter_bytes_o == total_bytes_o+1) begin
+                        if(counter_bytes_o >= total_bytes_o+1) begin
                             feed_data_control_uut = 0;
                             next_state = STOP_FEED;
                         end
