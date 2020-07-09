@@ -22,6 +22,7 @@ class HMAC_Spongent_iter:
         self.ipad = self.generate_bit_pattern('00110110',n)
         self.opad = self.generate_bit_pattern('01011100',n)
         self.spongent_state = 0
+        self.h_1 = 0
         self.mask = 0xFFFF
         if(self.r == 8):
             self.mask = 0xFF
@@ -43,7 +44,9 @@ class HMAC_Spongent_iter:
         self.spongent_state = 0
         for i in range (0,j):
             data_chunk = (self.S_i >> (self.r*(j-i-1))) & self.mask
+            #print(hex(data_chunk))
             self.spongent_state = self.hash_function.feed_data(data_chunk,self.spongent_state)
+            #print(hex(self.spongent_state))
 
 
     def feed_data(self,block_value):
@@ -76,6 +79,7 @@ if __name__ == "__main__":
     hmac_impl.begin_hmac()
     for i in range(0,j):
         data_chunk = (msg >> (r*(j-i-1))) & hmac_impl.mask
+        print(hex(data_chunk))
         hmac_impl.feed_data(data_chunk)
     result = hmac_impl.stop_feed()
     print(hex(result))
