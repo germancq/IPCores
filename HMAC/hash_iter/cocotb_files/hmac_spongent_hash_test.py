@@ -174,7 +174,7 @@ def execution_test(dut,msg,len_msg,hmac_impl):
         #print(int(dut.counter_n_o.value))
         yield n_cycles_clock(dut,1)
 
-    yield n_cycles_clock(dut,1)    
+    #yield n_cycles_clock(dut,1)    
 
         
     
