@@ -16,6 +16,7 @@ import numpy as np
 from pwd import getpwnam  
 import grp
 import present
+import time
 
 home = os.getenv("HOME")
 
@@ -166,6 +167,7 @@ def main():
             param2 : N numero tests
             param3 : e , percent of create wrong test
     '''
+    
     try:
         with(open(abs_path_file_storage,"rb+")) as storage_file:
             storage_file.close()
@@ -193,5 +195,9 @@ def main():
                 print(create_microsd_vectors(micro_sd,storage_file,VIOstorage_file,N,e))
     
 
+
 if __name__ == "__main__":
+    start = time.time()
     main()
+    end = time.time()
+    print(end - start)
