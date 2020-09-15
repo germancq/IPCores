@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-09-04 11:55:00
  * @ Modified by: Your name
- * @ Modified time: 2020-09-04 12:10:04
+ * @ Modified time: 2020-09-15 13:58:34
  * @ Description:
  */
 
@@ -19,7 +19,7 @@ module present_ctr(
 
     logic end_key_generation;    
     logic end_enc;
-    logic [4:0] key_index_dec;
+    logic [4:0] key_index_enc;
     logic [63:0] roundkey;
     logic [63:0] text;
     logic [63:0] enc_o;
@@ -29,7 +29,7 @@ module present_ctr(
         .clk(clk),
         .rst(rst),
         .key(key),
-        .key_index(key_index_dec),
+        .key_index(key_index_enc),
         .end_signal(end_key_generation),
         .roundkey(roundkey)
     );

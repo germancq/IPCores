@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/04 12:40:15 by germancq          #+#    #+#              #
-#    Updated: 2020/09/04 13:10:10 by germancq         ###   ########.fr        #
+#    Updated: 2020/09/15 17:48:21 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,16 +44,19 @@ def create_microsd_vectors(micro_sd,storage_file,num,e):
 
     for i in range(0,num):
         
-        key = np.random.randint(0,2**63-1,1,dtype=np.int64)
-        IV = np.random.randint(0,2**63-1,1,dtype=np.int64)
+        key = random.randint(0,2**31)#np.random.randint(0,2**30,1,dtype=np.int64)
+        IV = random.randint(0,2**31)#np.random.randint(0,2**30,1,dtype=np.int64)
         
         n_blocks = random.randint(5,10)
 
-        present_SW = present_ctr.Present_CTR(key[0],IV[0])
+        present_SW = present_ctr.Present_CTR(key,IV)
+
+        print(hex(present_SW.key))
+        print(hex(present_SW.IV))
 
         storage_file.write(n_blocks.to_bytes(4,byteorder='little'))
-        storage_file.write(int(key[0]).to_bytes(10, byteorder='little'))  
-        storage_file.write(int(IV[0]).to_bytes(8, byteorder='little'))  
+        storage_file.write(int(key).to_bytes(10, byteorder='little'))  
+        storage_file.write(int(IV).to_bytes(8, byteorder='little'))  
 
         #clear block
         micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+k))
@@ -62,8 +65,8 @@ def create_microsd_vectors(micro_sd,storage_file,num,e):
         micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+k))
         k=k+1
         micro_sd.write(SIGNATURE.to_bytes(4, byteorder='big'))
-        micro_sd.write(int(IV[0]).to_bytes(8, byteorder='little'))
-        micro_sd.write(int(key[0]).to_bytes(10, byteorder='little'))
+        micro_sd.write(int(IV).to_bytes(8, byteorder='little'))
+        micro_sd.write(int(key).to_bytes(10, byteorder='little'))
         micro_sd.write(n_blocks.to_bytes(4,byteorder='little'))
 
         microsd_blocks_ciphered = math.ceil((n_blocks*64)/BLOCK_SIZE)
@@ -71,8 +74,7 @@ def create_microsd_vectors(micro_sd,storage_file,num,e):
         k = k+1
         l = 0
         for j in range(0,n_blocks):
-            text = np.random.randint(0,2**63-1,1,dtype=np.int64)
-            plaintext = text[0]
+            plaintext = 0#random.randint(0,2**31)
             ciphertext = present_SW.encryption_decryption(plaintext,j)
             storage_file.write(int(plaintext).to_bytes(8, byteorder='little'))
             storage_file.write(int(ciphertext).to_bytes(8, byteorder='little'))
@@ -90,6 +92,7 @@ def create_microsd_vectors(micro_sd,storage_file,num,e):
     k = k+1
     micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+k))
     micro_sd.write(zero.to_bytes(512, byteorder='big'))
+    return counter_errors
         
        
 

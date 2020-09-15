@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/04 12:27:39 by germancq          #+#    #+#              #
-#    Updated: 2020/09/04 13:36:34 by germancq         ###   ########.fr        #
+#    Updated: 2020/09/15 17:49:14 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ def setup_function(dut,key,IV,block_i,num_block):
     dut.key = key
     dut.IV = IV
     dut.block_i = block_i
-    dut.num_block = num_block
+    dut.block_number = num_block
 
 @cocotb.coroutine
 def rst_function_test(dut):
@@ -71,7 +71,7 @@ def generate_round_keys(dut) :
         i = i+1
         yield n_cycles_clock(dut,1)
         
-    print(i)    
+    #print(i)    
     #yield n_cycles_clock(dut,1)
             
     if(dut.end_key_generation != 1):
@@ -79,22 +79,45 @@ def generate_round_keys(dut) :
 
 
 @cocotb.coroutine
-def enc_dec_test(dut,num_block,text,expected_value):
+def enc_dec_test(dut,num_block,text,expected_value,IV,key):
     
     i = 0
     dut.block_i = text
-    dut.num_block = num_block
+    dut.block_number = num_block
+
+    present_SW = present_ctr.Present_CTR(key,IV)
+
+    expected_result = present_SW.encryption_decryption(text,num_block)
+
     
     while dut.end_signal.value == 0 :
+        '''
+        print('//////////////////////////')
+        print(int(dut.key_index_enc.value))
+        print(int(dut.present_enc_impl.key_index.value))
+        
+        print(hex(int(dut.roundkey.value))) 
+        print(hex(int(dut.present_enc_impl.roundkey.value)))
+        print(hex(int(present_SW.round_keys[int(dut.key_index_enc.value)])))
+        
+        print(hex(int(dut.present_enc_impl.block_i.value))) 
+        print(hex(int(dut.present_enc_impl.block_o.value))) 
+        
+        
+        print('//////////////////////////')
+        '''
         yield n_cycles_clock(dut,1)
         i=i+1
 
-    print(i)    
+    #print(i)    
     
     yield n_cycles_clock(dut,100)
-
+    print('//////////////////////////')
     print(hex(int(dut.block_o.value)))
-    print(hex(int(expected_value)))
+    print(hex(int(expected_result)))
+    print(hex(text))
+    print(hex(expected_value))
+    print('//////////////////////////')
     if(dut.block_o != expected_value) :
             raise TestFailure("""Error enc_dec_test,wrong value = {0}, expected value is {1}""".format(hex(int(dut.block_o.value)),hex(expected_value)))
 
@@ -120,7 +143,8 @@ def run_test(dut, index = 0):
             
             key = int.from_bytes(storage_file.read(10),byteorder='little')
             IV = int.from_bytes(storage_file.read(8),byteorder='little')
-            
+            print(hex(key))
+            print(hex(IV))
             
 
             
@@ -129,12 +153,13 @@ def run_test(dut, index = 0):
             yield rst_function_test(dut)
             yield generate_round_keys(dut)
             for j in range (0,n_blocks):
+                print(j)
                 plaintext = int.from_bytes(storage_file.read(8),byteorder='little')
                 ciphertext = int.from_bytes(storage_file.read(8),byteorder='little')
                 if(index == 0):
-                    yield enc_dec_test(dut,j,plaintext,ciphertext)
+                    yield enc_dec_test(dut,j,plaintext,ciphertext,IV,key)
                 else:
-                    yield enc_dec_test(dut,j,ciphertext,plaintext)
+                    yield enc_dec_test(dut,j,ciphertext,plaintext,IV,key)
 
 
             n_blocks = int.from_bytes(storage_file.read(4),byteorder='little')

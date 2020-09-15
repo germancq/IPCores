@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/25 11:38:14 by germancq          #+#    #+#              #
-#    Updated: 2020/09/04 11:52:34 by germancq         ###   ########.fr        #
+#    Updated: 2020/09/15 17:42:25 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ class Present_CTR :
         #print("=======================================")
         #print(hex(key))
         #print("=========================================")
+        self.key = key
         self.round_keys = generate_round_keys(key)
         self.IV = IV
     
