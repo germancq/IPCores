@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/04 12:40:15 by germancq          #+#    #+#              #
-#    Updated: 2020/09/15 17:48:21 by germancq         ###   ########.fr        #
+#    Updated: 2020/09/17 16:29:18 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,27 +69,21 @@ def create_microsd_vectors(micro_sd,storage_file,num,e):
         micro_sd.write(int(key).to_bytes(10, byteorder='little'))
         micro_sd.write(n_blocks.to_bytes(4,byteorder='little'))
 
-        microsd_blocks_ciphered = math.ceil((n_blocks*64)/BLOCK_SIZE)
-               
-        k = k+1
+        
         l = 0
         for j in range(0,n_blocks):
             plaintext = 0#random.randint(0,2**31)
             ciphertext = present_SW.encryption_decryption(plaintext,j)
             storage_file.write(int(plaintext).to_bytes(8, byteorder='little'))
             storage_file.write(int(ciphertext).to_bytes(8, byteorder='little'))
-            if(l % 512 == 0):
-                k = k+1
-                micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+k))
-                micro_sd.write(zero.to_bytes(512, byteorder='big'))
+            
 
             micro_sd.write(int(plaintext).to_bytes(8, byteorder='little'))
             micro_sd.write(int(ciphertext).to_bytes(8, byteorder='little'))
-            l = l+16
+            
 
         
     #clear block
-    k = k+1
     micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+k))
     micro_sd.write(zero.to_bytes(512, byteorder='big'))
     return counter_errors

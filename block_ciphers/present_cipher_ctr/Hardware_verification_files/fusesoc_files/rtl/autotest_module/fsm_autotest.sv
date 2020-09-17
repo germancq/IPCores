@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-09-17 13:20:37
  * @ Modified by: Your name
- * @ Modified time: 2020-09-17 16:05:44
+ * @ Modified time: 2020-09-17 16:10:39
  * @ Description:
  */
 
@@ -234,7 +234,7 @@ genvar i;
  logic up_num_block_counter;
  logic [INPUT_SIZE_4-1:0] input_to_UUT_4;
  logic rst_num_block_counter;
- counter #(.DATA_WIDTH(INPUT_SIZE_4)) counter_block(
+ counter #(.DATA_WIDTH(INPUT_SIZE_4)) counter_num_block(
     .clk(clk),
     .rst(rst_num_block_counter),
     .up(up_num_block_counter),
@@ -608,7 +608,7 @@ genvar i;
                   rst_uut = 1;
                   rst_index = 1;
                  //comprobar si counter_num_block == num_blocks_uut
-                  if(input_to_UUT_4 == num_blocks_uut) begin
+                  if(input_to_UUT_4 == n_blocks_uut) begin
                       next_state = READ_PLAINTEXT_AND_EXPECTED_RESULT;
                   end
                   else begin

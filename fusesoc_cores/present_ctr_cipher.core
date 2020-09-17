@@ -4,6 +4,7 @@ description = "present ctr cipher"
 
 depend = 
   present_cipher
+  adder
 
 [verilog]
 src_files =
