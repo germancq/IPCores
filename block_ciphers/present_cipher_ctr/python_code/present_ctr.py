@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/25 11:38:14 by germancq          #+#    #+#              #
-#    Updated: 2020/09/15 17:42:25 by germancq         ###   ########.fr        #
+#    Updated: 2020/09/28 13:27:46 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ class Present_CTR :
         
         #print(hex(state))
         #print("---------------------------------------")
+        state = state & ((2**64)-1)
         return state ^ text   
     
 
@@ -160,7 +161,7 @@ if __name__ == "__main__":
     IV = random.randint(0,2**30)
     key = random.randint(0,2**30)
     present_impl = Present_CTR(key,IV)
-    for i in range (0,10):
+    for i in range (0,2):
         text = random.randint(0,2**30)
         ciphertext = present_impl.encryption_decryption(text,i)
         plaintext = present_impl.encryption_decryption(ciphertext,i)
