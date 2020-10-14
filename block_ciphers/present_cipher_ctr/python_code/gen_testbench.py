@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/04 12:40:15 by germancq          #+#    #+#              #
-#    Updated: 2020/09/17 16:29:18 by germancq         ###   ########.fr        #
+#    Updated: 2020/10/14 16:16:48 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ def create_microsd_vectors(micro_sd,storage_file,num,e):
         
         l = 0
         for j in range(0,n_blocks):
-            plaintext = 0#random.randint(0,2**31)
+            plaintext = random.randint(0,2**31)
             ciphertext = present_SW.encryption_decryption(plaintext,j)
             storage_file.write(int(plaintext).to_bytes(8, byteorder='little'))
             storage_file.write(int(ciphertext).to_bytes(8, byteorder='little'))
