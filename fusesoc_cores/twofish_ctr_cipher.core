@@ -10,7 +10,7 @@ depend =
 
 [verilog]
 src_files =
-  block_ciphers/twofish_ctr_cipher/hdl_code/twofish_ctr.sv
+  block_ciphers/twofish_cipher_ctr/hdl_code/twofish_ctr.sv
   
 
 
