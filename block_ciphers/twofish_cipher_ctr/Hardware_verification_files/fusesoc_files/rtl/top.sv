@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-11-05 15:47:48
  * @ Modified by: Your name
- * @ Modified time: 2020-03-19 13:04:28
+ * @ Modified time: 2020-10-17 20:26:47
  * @ Description:
  */
 
@@ -34,7 +34,8 @@ module top(
 logic rst_uut;
 logic [127:0] block_i;
 logic [127:0] key;
-logic enc_dec;
+logic [127:0] IV;
+logic [63:0] block_number;
 logic [127:0] block_o;
 logic end_signal;
 
@@ -51,7 +52,8 @@ logic [31:0] debug_data;
 autotest_module #(
   .INPUT_SIZE_1(128),
   .INPUT_SIZE_2(128),
-  .INPUT_SIZE_3(8),
+  .INPUT_SIZE_3(128),
+  .INPUT_SIZE_4(64),
   .OUTPUT_SIZE_1(128)
 )
 autotest_impl(
@@ -65,20 +67,24 @@ autotest_impl(
 
     /*UUT signals*/
     .rst_uut(rst_uut),
-    .input_to_UUT_1(block_i),
-    .input_to_UUT_2(key),
-    .input_to_UUT_3(enc_dec),
-    .output_from_UUT_1(block_o),
     .end_uut(end_signal),
+    
+    .input_to_UUT_1(IV),
+    .input_to_UUT_2(key),
+    .input_to_UUT_3(block_i),
+    .input_to_UUT_4(block_number),
+    .output_from_UUT_1(block_o),
+    
     
     .sw_debug(switch_i),
     .debug(debug_data)
 );
 
-twofish twofish_impl(
+twofish_ctr twofish_impl(
     .clk(sys_clk_pad_i),
     .rst(rst_uut),
-    .enc_dec(enc_dec),
+    .IV(IV),
+    .block_number(block_number),
     .key(key),
     .text_input(block_i),
     .text_output(block_o),
