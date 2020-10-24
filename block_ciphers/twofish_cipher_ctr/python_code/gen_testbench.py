@@ -104,7 +104,7 @@ def create_microsd_vectors(micro_sd,storage_file,N,e):
         iv = random.randint(0,2**31)
         n_blocks = random.randint(5,10)
 
-        twofish_SW = twofish_ctr.Twofish(key,iv)
+        twofish_SW = twofish_ctr.Twofish_CTR(key,iv)
 
         storage_file.write(n_blocks.to_bytes(4, byteorder='little')) 
         storage_file.write(int(key).to_bytes(16, byteorder='little')) 
