@@ -14,6 +14,7 @@ VERILOG_SOURCES = ../hdl_code/hmac_spongent_iter.sv \
 
 TOPLEVEL= hmac_spongent_iter
 MODULE= hmac_spongent_hash_test
+SIM = verilator
 #include $(COCOTB)/makefiles/Makefile.inc
 #include $(COCOTB)/makefiles/Makefile.sim
 include $(shell cocotb-config --makefiles)/Makefile.inc

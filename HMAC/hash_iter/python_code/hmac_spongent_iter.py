@@ -69,19 +69,28 @@ class HMAC_Spongent_iter:
 
 
 if __name__ == "__main__":
-    key = 0x0#0x1122334455667788
-    msg = 0x0#0x1122334455667788
-    for k in range (1,20):
-        print(k)
-        len_msg = 8*k#64
-        r = 8
-        j = int(len_msg/r)
+    key = 0x1122334455667788
+    msg = 0x8B92
+    expected = 0xafd8824cf14b564caa27aa
+    for t in range (0,0x10000):
+        
+        msg = t
+        print(hex(msg))
+        for k in range (1,3):
+            #print(k)
+            len_msg = 8*k#64
+            r = 8
+            j = int(len_msg/r)
 
-        hmac_impl = HMAC_Spongent_iter(key,88,80,r,45)
-        hmac_impl.begin_hmac()
-        for i in range(0,j):
-            data_chunk = (msg >> (r*(j-i-1))) & hmac_impl.mask
-            #print(hex(data_chunk))
-            hmac_impl.feed_data(data_chunk)
-        result = hmac_impl.stop_feed()
-        print(hex(result))
+            hmac_impl = HMAC_Spongent_iter(key,88,80,r,45)
+            hmac_impl.begin_hmac()
+            for i in range(0,j):
+                data_chunk = (msg >> (r*(j-i-1))) & hmac_impl.mask
+                #print(hex(data_chunk))
+                hmac_impl.feed_data(data_chunk)
+            result = hmac_impl.stop_feed()
+            #print(hex(result))
+            if(expected == result):
+                print(hex(result))
+                print(hex(msg))
+                break
