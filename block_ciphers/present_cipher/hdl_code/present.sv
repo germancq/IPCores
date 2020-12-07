@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-07 12:38:55
  * @ Modified by: Your name
- * @ Modified time: 2020-04-21 18:09:42
+ * @ Modified time: 2020-12-06 15:11:05
  * @ Description:
  */
 
@@ -14,6 +14,7 @@ module present(
     input [63:0] block_i,
     output [63:0] block_o,
     input enc_dec,
+    input rq_data,
     output end_signal
 );
 
@@ -46,7 +47,7 @@ module present(
 
     present_enc present_enc_impl(
         .clk(clk),
-        .rst(~end_key_generation),
+        .rst(~end_key_generation || rq_data),
         .start_signal(start_enc),
         .text(block_i),
         .roundkey(roundkey),
@@ -57,7 +58,7 @@ module present(
 
     present_dec present_dec_impl(
         .clk(clk),
-        .rst(~end_key_generation),
+        .rst(~end_key_generation || rq_data),
         .start_signal(start_dec),
         .text(block_i),
         .roundkey(roundkey),

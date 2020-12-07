@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-09 12:15:55
  * @ Modified by: Your name
- * @ Modified time: 2020-04-30 21:36:51
+ * @ Modified time: 2020-12-06 11:56:12
  * @ Description:
  */
 
@@ -14,6 +14,7 @@ module trivium_wrapper #(parameter DATA_WIDTH = 80)(
     input [79:0] iv,
     input next_data,
     output logic end_block,
+    //keystream
     output [DATA_WIDTH-1:0] block_o
 
 );

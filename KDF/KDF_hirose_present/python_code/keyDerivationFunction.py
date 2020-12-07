@@ -37,7 +37,7 @@ class KDF:
         #print(hex(x_i))
         for i in range(0,self.count):
             x_i = self.hash_function.generate_hash(x_i)
-            print(hex(i))
+            #print(hex(i))
 
         return x_i
 
