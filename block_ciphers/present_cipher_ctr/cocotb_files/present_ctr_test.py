@@ -53,6 +53,7 @@ def setup_function(dut,key,IV,block_i,num_block):
     dut.IV = IV
     dut.block_i = block_i
     dut.block_number = num_block
+    dut.rq_data = 0
 
 @cocotb.coroutine
 def rst_function_test(dut):
@@ -65,6 +66,7 @@ def rst_function_test(dut):
 
 @cocotb.coroutine
 def generate_round_keys(dut) :
+    print('generate_round_keys')
     dut.rst = 0
     i = 0
     while dut.end_key_generation.value == 0 :
@@ -80,7 +82,11 @@ def generate_round_keys(dut) :
 
 @cocotb.coroutine
 def enc_dec_test(dut,num_block,text,expected_value,IV,key):
-    
+    print('enc_dec_test')
+    dut.rq_data = 1
+    yield n_cycles_clock(dut,1)
+    dut.rq_data = 0
+
     i = 0
     dut.block_i = text
     dut.block_number = num_block
@@ -112,12 +118,12 @@ def enc_dec_test(dut,num_block,text,expected_value,IV,key):
     #print(i)    
     
     yield n_cycles_clock(dut,100)
-    print('//////////////////////////')
+    print('*************************')
     print(hex(int(dut.block_o.value)))
     print(hex(int(expected_result)))
     print(hex(text))
     print(hex(expected_value))
-    print('//////////////////////////')
+    print('*************************')
     if(dut.block_o != expected_value) :
             raise TestFailure("""Error enc_dec_test,wrong value = {0}, expected value is {1}""".format(hex(int(dut.block_o.value)),hex(expected_value)))
 
@@ -137,8 +143,9 @@ def run_test(dut, index = 0):
         #key = 0x0
         #text = 0x0
         storage_file.seek(0)
-        i = 0
         n_blocks = int.from_bytes(storage_file.read(4),byteorder='little')
+        
+
         while(n_blocks != 0):
             
             key = int.from_bytes(storage_file.read(10),byteorder='little')
@@ -152,6 +159,8 @@ def run_test(dut, index = 0):
             setup_function(dut,key,IV,0,0)
             yield rst_function_test(dut)
             yield generate_round_keys(dut)
+
+            print(n_blocks)
             for j in range (0,n_blocks):
                 print(j)
                 plaintext = int.from_bytes(storage_file.read(8),byteorder='little')

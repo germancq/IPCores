@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-09-04 11:55:00
  * @ Modified by: Your name
- * @ Modified time: 2020-09-15 13:58:34
+ * @ Modified time: 2020-12-07 23:47:27
  * @ Description:
  */
 
@@ -14,10 +14,12 @@ module present_ctr(
     input [79:0] key,
     input [63:0] block_i,
     output [63:0] block_o,
+    input rq_data,
+    output end_key_generation,
     output end_signal
 );
 
-    logic end_key_generation;    
+    
     logic end_enc;
     logic [4:0] key_index_enc;
     logic [63:0] roundkey;
@@ -44,7 +46,7 @@ module present_ctr(
 
     present_enc present_enc_impl(
         .clk(clk),
-        .rst(~end_key_generation),
+        .rst(~end_key_generation || rq_data),
         .start_signal(1'b1),
         .text(text),
         .roundkey(roundkey),
@@ -55,7 +57,7 @@ module present_ctr(
 
     register #(.DATA_WIDTH(64)) result(
         .clk(clk),
-        .cl(rst),
+        .cl(rst || rq_data),
         .w(end_enc),
         .din(enc_o ^ block_i),
         .dout(block_o)
@@ -63,7 +65,7 @@ module present_ctr(
 
     register #(.DATA_WIDTH(1)) reg_end_signal(
         .clk(clk),
-        .cl(rst),
+        .cl(rst || rq_data),
         .w(end_enc),
         .din(1'b1),
         .dout(end_signal)

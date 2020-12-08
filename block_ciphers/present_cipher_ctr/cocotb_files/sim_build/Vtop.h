@@ -5,11 +5,13 @@
 // The class here is then constructed to instantiate the design.
 // See the Verilator manual for examples.
 
-#ifndef _Vtop_H_
-#define _Vtop_H_
+#ifndef _VTOP_H_
+#define _VTOP_H_  // guard
 
 #include "verilated.h"
 #include "Vtop__Dpi.h"
+
+//==========
 
 class Vtop__Syms;
 
@@ -23,6 +25,8 @@ VL_MODULE(Vtop) {
     // propagate new values into/out from the Verilated model.
     VL_IN8(clk,0,0);
     VL_IN8(rst,0,0);
+    VL_IN8(rq_data,0,0);
+    VL_OUT8(end_key_generation,0,0);
     VL_OUT8(end_signal,0,0);
     VL_INW(key,79,0,3);
     VL_IN64(IV,63,0);
@@ -36,8 +40,9 @@ VL_MODULE(Vtop) {
     struct {
         CData/*0:0*/ present_ctr__DOT__clk;
         CData/*0:0*/ present_ctr__DOT__rst;
-        CData/*0:0*/ present_ctr__DOT__end_signal;
+        CData/*0:0*/ present_ctr__DOT__rq_data;
         CData/*0:0*/ present_ctr__DOT__end_key_generation;
+        CData/*0:0*/ present_ctr__DOT__end_signal;
         CData/*0:0*/ present_ctr__DOT__end_enc;
         CData/*4:0*/ present_ctr__DOT__key_index_enc;
         CData/*0:0*/ present_ctr__DOT__key_sch_impl__DOT__clk;
@@ -97,9 +102,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__2__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__2__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__2__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__2__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__2__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__2__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__2__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__2__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -163,9 +168,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__6__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__6__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__6__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__6__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__6__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__6__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__6__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__6__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -229,9 +234,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__10__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__10__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__10__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__10__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__10__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__10__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__10__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__10__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -295,9 +300,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__14__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__14__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__14__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__14__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__14__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__14__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__14__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__14__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -361,9 +366,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__18__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__18__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__18__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__18__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__18__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__18__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__18__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__18__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -427,9 +432,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__22__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__22__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__22__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__22__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__22__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__22__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__22__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__22__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -493,9 +498,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__26__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__26__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__26__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__26__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__26__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__26__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__26__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__26__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -559,9 +564,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__30__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__30__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__30__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__30__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__30__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__30__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__30__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__30__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -625,9 +630,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__34__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__34__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__34__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__34__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__34__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__34__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__34__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__34__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -691,9 +696,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__38__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__38__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__38__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__38__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__38__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__38__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__38__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__38__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -757,9 +762,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__42__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__42__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__42__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__42__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__42__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__42__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__42__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__42__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -823,9 +828,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__46__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__46__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__46__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__46__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__46__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__46__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__46__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__46__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -889,9 +894,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__50__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__50__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__50__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__50__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__50__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__50__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__50__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__50__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -955,9 +960,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__54__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__54__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__54__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__54__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__54__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__54__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__54__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__54__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -1021,9 +1026,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__58__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__58__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__58__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__58__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__58__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__58__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__58__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__58__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -1087,9 +1092,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__62__KET____DOT__f_i__DOT__c_1;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__62__KET____DOT__f_i__DOT__s_0;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__62__KET____DOT__f_i__DOT__h0__DOT__a;
-        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__62__KET____DOT__f_i__DOT__h0__DOT__b;
     };
     struct {
+        CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__62__KET____DOT__f_i__DOT__h0__DOT__b;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__62__KET____DOT__f_i__DOT__h0__DOT__carry;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__62__KET____DOT__f_i__DOT__h0__DOT__s;
         CData/*0:0*/ present_ctr__DOT__adder_inst__DOT__genblk1__BRA__62__KET____DOT__f_i__DOT__h1__DOT__a;
@@ -1153,9 +1158,9 @@ VL_MODULE(Vtop) {
         CData/*3:0*/ present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__11__KET____DOT__sbox__DOT__din;
         CData/*3:0*/ present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__11__KET____DOT__sbox__DOT__dout;
         CData/*3:0*/ present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__12__KET____DOT__sbox__DOT__din;
-        CData/*3:0*/ present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__12__KET____DOT__sbox__DOT__dout;
     };
     struct {
+        CData/*3:0*/ present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__12__KET____DOT__sbox__DOT__dout;
         CData/*3:0*/ present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__13__KET____DOT__sbox__DOT__din;
         CData/*3:0*/ present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__13__KET____DOT__sbox__DOT__dout;
         CData/*3:0*/ present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__14__KET____DOT__sbox__DOT__din;
@@ -1214,6 +1219,8 @@ VL_MODULE(Vtop) {
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
+    CData/*0:0*/ present_ctr__DOT____Vcellinp__present_enc_impl__rst;
+    CData/*0:0*/ present_ctr__DOT____Vcellinp__result__cl;
     CData/*3:0*/ __Vtableidx1;
     CData/*3:0*/ __Vtableidx2;
     CData/*3:0*/ __Vtableidx3;
@@ -1257,9 +1264,6 @@ VL_MODULE(Vtop) {
     // Internals; generally not touched by application code
     Vtop__Syms* __VlSymsp;  // Symbol table
     
-    // PARAMETERS
-    // Parameters marked /*verilator public*/ for use by application code
-    
     // CONSTRUCTORS
   private:
     VL_UNCOPYABLE(Vtop);  ///< Copying not allowed
@@ -1273,7 +1277,12 @@ VL_MODULE(Vtop) {
     
     // API METHODS
     /// Evaluate the model.  Application must call when inputs change.
-    void eval();
+    void eval() { eval_step(); }
+    /// Evaluate when calling multiple units/models per time step.
+    void eval_step();
+    /// Evaluate at end of a timestep for tracing, when using eval_step().
+    /// Application must call after all eval() and before time changes.
+    void eval_end_step() {}
     /// Simulation complete, run final blocks.  Application must call on completion.
     void final();
     
@@ -1294,7 +1303,7 @@ VL_MODULE(Vtop) {
   private:
 #ifdef VL_DEBUG
     void _eval_debug_assertions();
-#endif // VL_DEBUG
+#endif  // VL_DEBUG
   public:
     static void _eval_initial(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
     static void _eval_settle(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
@@ -1302,6 +1311,9 @@ VL_MODULE(Vtop) {
     static void _sequent__TOP__4(Vtop__Syms* __restrict vlSymsp);
     static void _settle__TOP__3(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
     static void _settle__TOP__6(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
-} VL_ATTR_ALIGNED(128);
+} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
 
-#endif // guard
+//----------
+
+
+#endif  // guard

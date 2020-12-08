@@ -551,8 +551,10 @@ Vtop__Syms::Vtop__Syms(Vtop* topp, const char* namep)
         __Vscope_TOP.varInsert(__Vfinal,"block_number", &(TOPp->block_number), VLVT_UINT64,VLVD_IN|VLVF_PUB_RW,1 ,63,0);
         __Vscope_TOP.varInsert(__Vfinal,"block_o", &(TOPp->block_o), VLVT_UINT64,VLVD_OUT|VLVF_PUB_RW,1 ,63,0);
         __Vscope_TOP.varInsert(__Vfinal,"clk", &(TOPp->clk), VLVT_UINT8,VLVD_IN|VLVF_PUB_RW,0);
+        __Vscope_TOP.varInsert(__Vfinal,"end_key_generation", &(TOPp->end_key_generation), VLVT_UINT8,VLVD_OUT|VLVF_PUB_RW,0);
         __Vscope_TOP.varInsert(__Vfinal,"end_signal", &(TOPp->end_signal), VLVT_UINT8,VLVD_OUT|VLVF_PUB_RW,0);
         __Vscope_TOP.varInsert(__Vfinal,"key", &(TOPp->key), VLVT_WDATA,VLVD_IN|VLVF_PUB_RW,1 ,79,0);
+        __Vscope_TOP.varInsert(__Vfinal,"rq_data", &(TOPp->rq_data), VLVT_UINT8,VLVD_IN|VLVF_PUB_RW,0);
         __Vscope_TOP.varInsert(__Vfinal,"rst", &(TOPp->rst), VLVT_UINT8,VLVD_IN|VLVF_PUB_RW,0);
         __Vscope_present_ctr.varInsert(__Vfinal,"IV", &(TOPp->present_ctr__DOT__IV), VLVT_UINT64,VLVD_NODIR|VLVF_PUB_RW,1 ,63,0);
         __Vscope_present_ctr.varInsert(__Vfinal,"block_i", &(TOPp->present_ctr__DOT__block_i), VLVT_UINT64,VLVD_NODIR|VLVF_PUB_RW,1 ,63,0);
@@ -566,6 +568,7 @@ Vtop__Syms::Vtop__Syms(Vtop* topp, const char* namep)
         __Vscope_present_ctr.varInsert(__Vfinal,"key", &(TOPp->present_ctr__DOT__key), VLVT_WDATA,VLVD_NODIR|VLVF_PUB_RW,1 ,79,0);
         __Vscope_present_ctr.varInsert(__Vfinal,"key_index_enc", &(TOPp->present_ctr__DOT__key_index_enc), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,4,0);
         __Vscope_present_ctr.varInsert(__Vfinal,"roundkey", &(TOPp->present_ctr__DOT__roundkey), VLVT_UINT64,VLVD_NODIR|VLVF_PUB_RW,1 ,63,0);
+        __Vscope_present_ctr.varInsert(__Vfinal,"rq_data", &(TOPp->present_ctr__DOT__rq_data), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present_ctr.varInsert(__Vfinal,"rst", &(TOPp->present_ctr__DOT__rst), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present_ctr.varInsert(__Vfinal,"text", &(TOPp->present_ctr__DOT__text), VLVT_UINT64,VLVD_NODIR|VLVF_PUB_RW,1 ,63,0);
         __Vscope_present_ctr__adder_inst.varInsert(__Vfinal,"a", &(TOPp->present_ctr__DOT__adder_inst__DOT__a), VLVT_UINT64,VLVD_NODIR|VLVF_PUB_RW,1 ,63,0);

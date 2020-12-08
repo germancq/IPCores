@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-09-17 13:20:37
  * @ Modified by: Your name
- * @ Modified time: 2020-09-17 13:27:16
+ * @ Modified time: 2020-12-07 21:29:51
  * @ Description:
  */
 
@@ -26,7 +26,9 @@ module autotest_module
 
     /*UUT control signals*/
     output rst_uut,
+    output rq_uut,
     input end_uut,
+    input end_stage_1_uut,
     /*inputs to UUT*/
     output [INPUT_SIZE_1-1:0] input_to_UUT_1,
     output [INPUT_SIZE_2-1:0] input_to_UUT_2,
@@ -80,6 +82,8 @@ module autotest_module
     //uut ctrl signals
     .rst_uut(rst_uut),
     .end_uut(end_uut),
+    .rq_uut(rq_uut),
+    .end_stage_1_uut(end_stage_1_uut),
     //uut paramters signals
     .input_to_UUT_1(input_to_UUT_1),
     .input_to_UUT_2(input_to_UUT_2),

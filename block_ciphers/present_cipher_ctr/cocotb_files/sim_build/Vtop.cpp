@@ -7,10 +7,7 @@
 
 #include "verilated_dpi.h"
 
-
-//--------------------
-// STATIC VARIABLES
-
+//==========
 CData/*3:0*/ Vtop::__Vtable1_present_ctr__DOT__key_sch_impl__DOT__sbox__DOT__dout[16];
 CData/*3:0*/ Vtop::__Vtable2_present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__0__KET____DOT__sbox__DOT__dout[16];
 CData/*3:0*/ Vtop::__Vtable3_present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__1__KET____DOT__sbox__DOT__dout[16];
@@ -28,8 +25,6 @@ CData/*3:0*/ Vtop::__Vtable14_present_ctr__DOT__present_enc_impl__DOT__enc_stage
 CData/*3:0*/ Vtop::__Vtable15_present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__13__KET____DOT__sbox__DOT__dout[16];
 CData/*3:0*/ Vtop::__Vtable16_present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__14__KET____DOT__sbox__DOT__dout[16];
 CData/*3:0*/ Vtop::__Vtable17_present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__15__KET____DOT__sbox__DOT__dout[16];
-
-//--------------------
 
 VL_CTOR_IMP(Vtop) {
     Vtop__Syms* __restrict vlSymsp = __VlSymsp = new Vtop__Syms(this, name());
@@ -49,10 +44,7 @@ Vtop::~Vtop() {
     delete __VlSymsp; __VlSymsp=NULL;
 }
 
-//--------------------
-
-
-void Vtop::eval() {
+void Vtop::eval_step() {
     VL_DEBUG_IF(VL_DBG_MSGF("+++++TOP Evaluate Vtop::eval\n"); );
     Vtop__Syms* __restrict vlSymsp = this->__VlSymsp;  // Setup global symbol table
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
@@ -109,9 +101,6 @@ void Vtop::_eval_initial_loop(Vtop__Syms* __restrict vlSymsp) {
     } while (VL_UNLIKELY(__Vchange));
 }
 
-//--------------------
-// Internal Methods
-
 void Vtop::_initial__TOP__1(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_initial__TOP__1\n"); );
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
@@ -129,6 +118,7 @@ VL_INLINE_OPT void Vtop::_combo__TOP__2(Vtop__Syms* __restrict vlSymsp) {
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     vlTOPp->present_ctr__DOT__block_i = vlTOPp->block_i;
+    vlTOPp->present_ctr__DOT__rq_data = vlTOPp->rq_data;
     vlTOPp->present_ctr__DOT__adder_inst__DOT__h0__DOT__a 
         = (1U & (IData)((vlTOPp->IV >> 0U)));
     vlTOPp->present_ctr__DOT__adder_inst__DOT__h0__DOT__b 
@@ -1160,9 +1150,6 @@ VL_INLINE_OPT void Vtop::_combo__TOP__2(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__63__KET____DOT__f_i__DOT__a;
     vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__63__KET____DOT__f_i__DOT__h0__DOT__b 
         = vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__63__KET____DOT__f_i__DOT__b;
-    vlTOPp->present_ctr__DOT__result__DOT__cl = vlTOPp->present_ctr__DOT__rst;
-    vlTOPp->present_ctr__DOT__reg_end_signal__DOT__cl 
-        = vlTOPp->present_ctr__DOT__rst;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__rst 
         = vlTOPp->present_ctr__DOT__rst;
     vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__1__KET____DOT__f_i__DOT__c_0 
@@ -3343,6 +3330,7 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     vlTOPp->present_ctr__DOT__block_i = vlTOPp->block_i;
+    vlTOPp->present_ctr__DOT__rq_data = vlTOPp->rq_data;
     vlTOPp->present_ctr__DOT__adder_inst__DOT__h0__DOT__a 
         = (1U & (IData)((vlTOPp->IV >> 0U)));
     vlTOPp->present_ctr__DOT__adder_inst__DOT__h0__DOT__b 
@@ -4115,6 +4103,8 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present_ctr__DOT__adder_inst__DOT__h0__DOT__carry 
         = (1U & ((IData)(vlTOPp->IV) & (IData)(vlTOPp->block_number)));
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_cl = 0U;
+    vlTOPp->present_ctr__DOT____Vcellinp__result__cl 
+        = ((IData)(vlTOPp->rst) | (IData)(vlTOPp->rq_data));
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_w = 0U;
     if ((4U & (IData)(vlTOPp->present_ctr__DOT__key_sch_impl__DOT__current_state))) {
         if ((1U & (~ ((IData)(vlTOPp->present_ctr__DOT__key_sch_impl__DOT__current_state) 
@@ -4439,9 +4429,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__63__KET____DOT__f_i__DOT__a;
     vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__63__KET____DOT__f_i__DOT__h0__DOT__b 
         = vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__63__KET____DOT__f_i__DOT__b;
-    vlTOPp->present_ctr__DOT__result__DOT__cl = vlTOPp->present_ctr__DOT__rst;
-    vlTOPp->present_ctr__DOT__reg_end_signal__DOT__cl 
-        = vlTOPp->present_ctr__DOT__rst;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__rst 
         = vlTOPp->present_ctr__DOT__rst;
     vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__1__KET____DOT__f_i__DOT__c_0 
@@ -4709,6 +4696,9 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present_ctr__DOT__adder_inst__DOT__carry_values 
         = ((VL_ULL(0xfffffffffffffffe) & vlTOPp->present_ctr__DOT__adder_inst__DOT__carry_values) 
            | (IData)((IData)(vlTOPp->present_ctr__DOT__adder_inst__DOT__h0__DOT__carry)));
+    vlTOPp->present_ctr__DOT__result__DOT__cl = vlTOPp->present_ctr__DOT____Vcellinp__result__cl;
+    vlTOPp->present_ctr__DOT__reg_end_signal__DOT__cl 
+        = vlTOPp->present_ctr__DOT____Vcellinp__result__cl;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__w 
         = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_w;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_impl__DOT__up 
@@ -5595,12 +5585,10 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = (1U & ((IData)(vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__63__KET____DOT__f_i__DOT__s_0) 
                  ^ (IData)((vlTOPp->present_ctr__DOT__adder_inst__DOT__carry_values 
                             >> 0x3eU))));
-    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__rst 
-        = (1U & (~ (IData)(vlTOPp->present_ctr__DOT__end_key_generation)));
-    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__rst 
-        = (1U & (~ (IData)(vlTOPp->present_ctr__DOT__end_key_generation)));
-    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_register__DOT__cl 
-        = (1U & (~ (IData)(vlTOPp->present_ctr__DOT__end_key_generation)));
+    vlTOPp->end_key_generation = vlTOPp->present_ctr__DOT__end_key_generation;
+    vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst 
+        = (1U & ((~ (IData)(vlTOPp->present_ctr__DOT__end_key_generation)) 
+                 | (IData)(vlTOPp->rq_data)));
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__s_box_output 
         = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__sbox__DOT__dout;
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__roundkey 
@@ -5994,6 +5982,12 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__62__KET____DOT__f_i__DOT__h1__DOT__s;
     vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__63__KET____DOT__f_i__DOT__s 
         = vlTOPp->present_ctr__DOT__adder_inst__DOT__genblk1__BRA__63__KET____DOT__f_i__DOT__h1__DOT__s;
+    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__rst 
+        = vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst;
+    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__rst 
+        = vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst;
+    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_register__DOT__cl 
+        = vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_input[0U] = 0U;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_input[1U] = 0U;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_input[2U] = 0U;
@@ -7355,19 +7349,22 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
     CData/*4:0*/ __Vdly__present_ctr__DOT__key_sch_impl__DOT__counter_impl__DOT__dout;
     CData/*4:0*/ __Vdlyvdim0__present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__memory___v0;
     CData/*0:0*/ __Vdlyvset__present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__memory___v0;
+    CData/*4:0*/ __Vdly__present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout;
     QData/*63:0*/ __Vdlyvval__present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__memory___v0;
     // Body
     __Vdlyvset__present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__memory___v0 = 0U;
     __Vdly__present_ctr__DOT__key_sch_impl__DOT__counter_impl__DOT__dout 
         = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_impl__DOT__dout;
-    if (vlTOPp->rst) {
+    __Vdly__present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout 
+        = vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout;
+    if (vlTOPp->present_ctr__DOT____Vcellinp__result__cl) {
         vlTOPp->present_ctr__DOT__reg_end_signal__DOT__dout = 0U;
     } else {
         if (vlTOPp->present_ctr__DOT__end_enc) {
             vlTOPp->present_ctr__DOT__reg_end_signal__DOT__dout = 1U;
         }
     }
-    if (vlTOPp->rst) {
+    if (vlTOPp->present_ctr__DOT____Vcellinp__result__cl) {
         vlTOPp->present_ctr__DOT__result__DOT__dout = VL_ULL(0);
     } else {
         if (vlTOPp->present_ctr__DOT__end_enc) {
@@ -7394,8 +7391,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                 = (0x1fU & ((IData)(1U) + (IData)(vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_impl__DOT__dout)));
         }
     }
-    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__current_state 
-        = ((IData)(vlTOPp->rst) ? 0U : (IData)(vlTOPp->present_ctr__DOT__key_sch_impl__DOT__next_state));
     if (vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_cl) {
         vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__dout[0U] = 0U;
         vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__dout[1U] = 0U;
@@ -7410,29 +7405,31 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                 = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_input[2U];
         }
     }
+    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__current_state 
+        = ((IData)(vlTOPp->rst) ? 0U : (IData)(vlTOPp->present_ctr__DOT__key_sch_impl__DOT__next_state));
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__end_signal 
-        = ((IData)(vlTOPp->present_ctr__DOT__end_key_generation) 
+        = ((~ (IData)(vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst)) 
            & (0x1fU == (IData)(vlTOPp->present_ctr__DOT__present_enc_impl__DOT__key_index)));
-    if (vlTOPp->present_ctr__DOT__end_key_generation) {
+    if (vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst) {
+        vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_register__DOT__dout = VL_ULL(0);
+    } else {
         if (vlTOPp->present_ctr__DOT__present_enc_impl__DOT__register_w) {
             vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_register__DOT__dout 
                 = vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_o;
         }
-    } else {
-        vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_register__DOT__dout = VL_ULL(0);
     }
     if ((1U & (~ (IData)(vlTOPp->present_ctr__DOT__key_sch_impl__DOT__r_w)))) {
         vlTOPp->present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__dout 
             = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__memory_
             [vlTOPp->present_ctr__DOT__key_sch_impl__DOT__mem_addr];
     }
-    if (vlTOPp->present_ctr__DOT__end_key_generation) {
+    if (vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst) {
+        __Vdly__present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout = 0U;
+    } else {
         if (vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_up) {
-            vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout 
+            __Vdly__present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout 
                 = (0x1fU & ((IData)(1U) + (IData)(vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout)));
         }
-    } else {
-        vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout = 0U;
     }
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_impl__DOT__dout 
         = __Vdly__present_ctr__DOT__key_sch_impl__DOT__counter_impl__DOT__dout;
@@ -7440,10 +7437,18 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         vlTOPp->present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__memory_[__Vdlyvdim0__present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__memory___v0] 
             = __Vdlyvval__present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__memory___v0;
     }
+    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout 
+        = __Vdly__present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout;
     vlTOPp->present_ctr__DOT__end_signal = vlTOPp->present_ctr__DOT__reg_end_signal__DOT__dout;
     vlTOPp->present_ctr__DOT__block_o = vlTOPp->present_ctr__DOT__result__DOT__dout;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_output 
         = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_impl__DOT__dout;
+    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_output[0U] 
+        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__dout[0U];
+    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_output[1U] 
+        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__dout[1U];
+    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_output[2U] 
+        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__dout[2U];
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_w = 0U;
     if ((4U & (IData)(vlTOPp->present_ctr__DOT__key_sch_impl__DOT__current_state))) {
         if ((1U & (~ ((IData)(vlTOPp->present_ctr__DOT__key_sch_impl__DOT__current_state) 
@@ -7489,18 +7494,12 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
             }
         }
     }
-    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_output[0U] 
-        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__dout[0U];
-    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_output[1U] 
-        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__dout[1U];
-    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_output[2U] 
-        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__dout[2U];
     vlTOPp->present_ctr__DOT__end_enc = vlTOPp->present_ctr__DOT__present_enc_impl__DOT__end_signal;
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__register_output 
         = vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_register__DOT__dout;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__roundkey 
         = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__dout;
-    if (vlTOPp->present_ctr__DOT__end_key_generation) {
+    if ((1U & (~ (IData)(vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst)))) {
         vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_up 
             = (0x1fU != (IData)(vlTOPp->present_ctr__DOT__present_enc_impl__DOT__key_index));
     }
@@ -7523,12 +7522,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                                    ? ((0x1fU == (IData)(vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_output))
                                        ? 5U : 2U) : 1U));
     }
-    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__w 
-        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_w;
-    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_impl__DOT__up 
-        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_up;
-    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__r_w 
-        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__r_w;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__din 
         = (((0U == 0x10U) ? VL_ULL(0) : ((QData)((IData)(
                                                          vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_output[2U])) 
@@ -7550,15 +7543,22 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__sbox__DOT__dout 
         = vlTOPp->__Vtable1_present_ctr__DOT__key_sch_impl__DOT__sbox__DOT__dout
         [vlTOPp->__Vtableidx1];
+    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register__DOT__w 
+        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__key_register_w;
+    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_impl__DOT__up 
+        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__counter_up;
+    vlTOPp->present_ctr__DOT__key_sch_impl__DOT__memory_impl__DOT__r_w 
+        = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__r_w;
+    vlTOPp->present_ctr__DOT__end_key_generation = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__end_signal;
     vlTOPp->present_ctr__DOT__result__DOT__w = vlTOPp->present_ctr__DOT__end_enc;
     vlTOPp->present_ctr__DOT__reg_end_signal__DOT__w 
         = vlTOPp->present_ctr__DOT__end_enc;
     vlTOPp->present_ctr__DOT__roundkey = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__roundkey;
-    vlTOPp->present_ctr__DOT__end_key_generation = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__end_signal;
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__key_index 
         = vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__dout;
     vlTOPp->present_ctr__DOT__key_sch_impl__DOT__s_box_output 
         = vlTOPp->present_ctr__DOT__key_sch_impl__DOT__sbox__DOT__dout;
+    vlTOPp->end_key_generation = vlTOPp->present_ctr__DOT__end_key_generation;
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__roundkey 
         = vlTOPp->present_ctr__DOT__roundkey;
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__result 
@@ -7566,12 +7566,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
            ^ vlTOPp->present_ctr__DOT__roundkey);
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__up 
         = vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_up;
-    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__rst 
-        = (1U & (~ (IData)(vlTOPp->present_ctr__DOT__end_key_generation)));
-    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__rst 
-        = (1U & (~ (IData)(vlTOPp->present_ctr__DOT__end_key_generation)));
-    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_register__DOT__cl 
-        = (1U & (~ (IData)(vlTOPp->present_ctr__DOT__end_key_generation)));
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__register_w 
         = (0U < (IData)(vlTOPp->present_ctr__DOT__present_enc_impl__DOT__key_index));
     vlTOPp->present_ctr__DOT__key_index_enc = vlTOPp->present_ctr__DOT__present_enc_impl__DOT__key_index;
@@ -7594,6 +7588,11 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_combo__TOP__5\n"); );
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
+    vlTOPp->present_ctr__DOT____Vcellinp__result__cl 
+        = ((IData)(vlTOPp->rst) | (IData)(vlTOPp->rq_data));
+    vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst 
+        = (1U & ((~ (IData)(vlTOPp->present_ctr__DOT__end_key_generation)) 
+                 | (IData)(vlTOPp->rq_data)));
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_i 
         = ((2U > (IData)(vlTOPp->present_ctr__DOT__present_enc_impl__DOT__key_index))
             ? vlTOPp->present_ctr__DOT__text : vlTOPp->present_ctr__DOT__present_enc_impl__DOT__register_output);
@@ -7711,6 +7710,15 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
     }
     vlTOPp->present_ctr__DOT____Vcellinp__result__din 
         = (vlTOPp->present_ctr__DOT__enc_o ^ vlTOPp->block_i);
+    vlTOPp->present_ctr__DOT__result__DOT__cl = vlTOPp->present_ctr__DOT____Vcellinp__result__cl;
+    vlTOPp->present_ctr__DOT__reg_end_signal__DOT__cl 
+        = vlTOPp->present_ctr__DOT____Vcellinp__result__cl;
+    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__rst 
+        = vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst;
+    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__counter_impl__DOT__rst 
+        = vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst;
+    vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_register__DOT__cl 
+        = vlTOPp->present_ctr__DOT____Vcellinp__present_enc_impl__rst;
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__block_i 
         = vlTOPp->present_ctr__DOT__present_enc_impl__DOT__block_i;
     vlTOPp->present_ctr__DOT__present_enc_impl__DOT__enc_stage_impl__DOT____Vcellinp__slayer_i__din 
@@ -8317,8 +8325,10 @@ void Vtop::_eval_debug_assertions() {
         Verilated::overWidthError("rst");}
     if (VL_UNLIKELY((key[2U] & 0xffff0000U))) {
         Verilated::overWidthError("key");}
+    if (VL_UNLIKELY((rq_data & 0xfeU))) {
+        Verilated::overWidthError("rq_data");}
 }
-#endif // VL_DEBUG
+#endif  // VL_DEBUG
 
 void Vtop::_ctor_var_reset() {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_ctor_var_reset\n"); );
@@ -8330,6 +8340,8 @@ void Vtop::_ctor_var_reset() {
     VL_RAND_RESET_W(80, key);
     block_i = VL_RAND_RESET_Q(64);
     block_o = VL_RAND_RESET_Q(64);
+    rq_data = VL_RAND_RESET_I(1);
+    end_key_generation = VL_RAND_RESET_I(1);
     end_signal = VL_RAND_RESET_I(1);
     present_ctr__DOT__clk = VL_RAND_RESET_I(1);
     present_ctr__DOT__rst = VL_RAND_RESET_I(1);
@@ -8338,14 +8350,17 @@ void Vtop::_ctor_var_reset() {
     VL_RAND_RESET_W(80, present_ctr__DOT__key);
     present_ctr__DOT__block_i = VL_RAND_RESET_Q(64);
     present_ctr__DOT__block_o = VL_RAND_RESET_Q(64);
-    present_ctr__DOT__end_signal = VL_RAND_RESET_I(1);
+    present_ctr__DOT__rq_data = VL_RAND_RESET_I(1);
     present_ctr__DOT__end_key_generation = VL_RAND_RESET_I(1);
+    present_ctr__DOT__end_signal = VL_RAND_RESET_I(1);
     present_ctr__DOT__end_enc = VL_RAND_RESET_I(1);
     present_ctr__DOT__key_index_enc = VL_RAND_RESET_I(5);
     present_ctr__DOT__roundkey = VL_RAND_RESET_Q(64);
     present_ctr__DOT__text = VL_RAND_RESET_Q(64);
     present_ctr__DOT__enc_o = VL_RAND_RESET_Q(64);
+    present_ctr__DOT____Vcellinp__present_enc_impl__rst = VL_RAND_RESET_I(1);
     present_ctr__DOT____Vcellinp__result__din = VL_RAND_RESET_Q(64);
+    present_ctr__DOT____Vcellinp__result__cl = VL_RAND_RESET_I(1);
     present_ctr__DOT__key_sch_impl__DOT__clk = VL_RAND_RESET_I(1);
     present_ctr__DOT__key_sch_impl__DOT__rst = VL_RAND_RESET_I(1);
     VL_RAND_RESET_W(80, present_ctr__DOT__key_sch_impl__DOT__key);

@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-07 12:38:55
  * @ Modified by: Your name
- * @ Modified time: 2020-12-06 15:11:05
+ * @ Modified time: 2020-12-07 21:11:13
  * @ Description:
  */
 
@@ -69,7 +69,7 @@ module present(
 
     register #(.DATA_WIDTH(64)) result(
         .clk(clk),
-        .cl(rst),
+        .cl(rst || rq_data),
         .w(end_enc || end_dec),
         .din(block_o_logic),
         .dout(block_o)
@@ -77,7 +77,7 @@ module present(
 
     register #(.DATA_WIDTH(1)) reg_end_signal(
         .clk(clk),
-        .cl(rst),
+        .cl(rst || rq_data),
         .w(end_enc || end_dec),
         .din(1'b1),
         .dout(end_signal)

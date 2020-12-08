@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-09-17 13:20:37
  * @ Modified by: Your name
- * @ Modified time: 2020-09-17 16:10:39
+ * @ Modified time: 2020-12-07 21:29:07
  * @ Description:
  */
 
@@ -31,7 +31,9 @@
      output logic spi_w_byte,
      //uut ctrl signals
      output logic rst_uut,
+     output logic rq_uut,
      input end_uut,
+     input end_stage_1_uut,
      //uut paramters signals
      output [INPUT_SIZE_1-1:0] input_to_UUT_1,
      output [INPUT_SIZE_2-1:0] input_to_UUT_2,
@@ -364,6 +366,7 @@ genvar i;
 
 
      rst_uut = 0;
+     rq_uut = 0;
 
      for (j=0;j<4;j=j+1) begin
          reg_signature_cl[j] = 0;
@@ -570,8 +573,12 @@ genvar i;
              end
           START_TEST:
              begin
-               spi_r_block = 1;  
-               next_state = WAIT_UNTIL_END_TEST_OR_TIMEOUT;
+               spi_r_block = 1; 
+               up_timer_exec_counter = 1; 
+               if(end_stage_1_uut == 1) begin
+                   next_state = WAIT_UNTIL_END_TEST_OR_TIMEOUT;
+               end
+               
              end
           WAIT_UNTIL_END_TEST_OR_TIMEOUT:
              begin
@@ -618,7 +625,7 @@ genvar i;
           READ_PLAINTEXT_AND_EXPECTED_RESULT:
              begin
                  spi_r_block = 1;
-                 rst_uut = 1;
+                 rq_uut = 1;
                  r_state_prev_w = 1'b1;
                  //leer plaintext
                  //leer expected result

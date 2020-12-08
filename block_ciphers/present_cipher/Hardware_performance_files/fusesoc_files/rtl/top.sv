@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: Your name
- * @ Modified time: 2020-04-05 00:41:23
+ * @ Modified time: 2020-12-07 20:37:43
  * @ Description:
  */
 
@@ -86,6 +86,7 @@ present present_impl(
     .block_i(block_i),
     .end_key_generation(end_key_generation),
     .block_o(block_o),
+    .rq_data(1'b0),
     .end_signal(end_signal)
 );
 

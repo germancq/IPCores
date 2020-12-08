@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2020-09-17 13:10:35
  * @ Modified by: Your name
- * @ Modified time: 2020-09-17 15:53:18
+ * @ Modified time: 2020-12-07 21:31:46
  * @ Description:
  */
 
@@ -39,6 +39,8 @@ logic [63:0] IV;
 logic [63:0] block_number;
 logic [63:0] block_o;
 logic end_signal;
+logic rq_data;
+logic end_key_generation;
 
 
 
@@ -71,6 +73,8 @@ autotest_impl(
     /*UUT signals*/
     .rst_uut(rst_uut),
     .end_uut(end_signal),
+    .rq_uut(rq_data),
+    .end_stage_1_uut(end_key_generation),
 
     .input_to_UUT_1(IV),
     .input_to_UUT_2(key),
@@ -93,6 +97,8 @@ present_ctr present_impl(
     .key(key),
     .block_i(block_i),
     .block_o(block_o),
+    .rq_data(rq_data),
+    .end_key_generation(end_key_generation),
     .end_signal(end_signal)
 );
 
