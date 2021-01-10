@@ -627,13 +627,15 @@ genvar i;
 
                  if(counter_bytes_o == 8'h20)
                  begin
-                    next_state = IDLE;
+                    
                     if(counter_iter_o < 3)
                       begin
                         rst_bytes_counter = 1;
+                        next_state = START_TEST;
                       end
                     else
                       begin
+                        next_state = IDLE;
                         up_block_counter = 1;
                         rst_iter_counter = 1;
                       end  
