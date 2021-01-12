@@ -257,6 +257,7 @@ genvar i;
  ///////////////memory////////////////
  logic memory_inst_write;
  logic [7:0] memory_inst_o;
+ logic [7:0] memory_inst_input;
 
  memory_module #(.ADDR(10),
                  .DATA_WIDTH(8))
@@ -264,7 +265,7 @@ genvar i;
     .clk(clk),
     .addr(counter_bytes_o[9:0]),
     .r_w(memory_inst_write),
-    .din(spi_data_out),
+    .din(memory_inst_input),
     .dout(memory_inst_o)
  );
 
@@ -338,6 +339,7 @@ genvar i;
      reg_spi_data_in = 8'hff;
 
      memory_inst_write = 0;
+     memory_inst_input = spi_data_out;
 
 
      rst_uut = 0;
@@ -446,6 +448,7 @@ genvar i;
              begin
                  rst_uut = 1;
                  memory_inst_write = 1;
+                 
  		         spi_r_block = 1;
 
                  next_state = READ_BYTE;
@@ -574,10 +577,14 @@ genvar i;
                  case(counter_bytes_o)
                    BASE_OUTPUTS + base_iter + index_o : begin
                           reg_spi_data_in = block_o_uut_o >> (index_o * 8);     
+                          memory_inst_write = 1;
+                          memory_inst_input = block_o_uut_o >> (index_o * 8);
                    end
                    
                    BASE_OUTPUTS + (BLOCK_SIZE>>3) + base_iter + index_o : begin
                           reg_spi_data_in = counter_timer_exec_o >> (index_o * 8);    
+                          memory_inst_write = 1;
+                          memory_inst_input = counter_timer_exec_o >> (index_o * 8);
                    end
                    
                    32'h200:;

@@ -18,6 +18,10 @@ NUM_BLOCK_TEST = 0x00100000
 SIGNATURE = 0xAABBCCDD
 RESULTS_OFFSET = 0x0
 
+TOTAL_TIME_100 = 0
+TOTAL_TIME_200 = 0
+TOTAL_TIME_400 = 0
+
 def create_fields(sheet1):
     sheet1.write(0,1,'text')
     sheet1.write(0,2,'key')
@@ -66,6 +70,10 @@ def read_params_from_sd(block_n,micro_sd):
 
 
 def write_params(sheet1, params , i):
+    global TOTAL_TIME_100
+    global TOTAL_TIME_200
+    global TOTAL_TIME_400
+
 
     text = params[1]
     key = params[2]
@@ -111,6 +119,9 @@ def write_params(sheet1, params , i):
     sheet1.write(i,12,hex(error_400))
     sheet1.write(i,13,hw_time_400)
 
+    TOTAL_TIME_100 = TOTAL_TIME_100 + hw_time_100
+    TOTAL_TIME_200 = TOTAL_TIME_200 + hw_time_200
+    TOTAL_TIME_400 = TOTAL_TIME_400 + hw_time_400
     
     return i+1
 
@@ -121,6 +132,14 @@ def calculated_time_in_ns(time_units,base_clk=100):
     
 
 def gen_calc(micro_sd):
+    global TOTAL_TIME_100
+    global TOTAL_TIME_200
+    global TOTAL_TIME_400
+
+    TOTAL_TIME_100 = 0
+    TOTAL_TIME_200 = 0
+    TOTAL_TIME_400 = 0
+
     wb = xlwt.Workbook()
     sheet1 = wb.add_sheet("Hoja_1")
     create_fields(sheet1)
@@ -135,6 +154,11 @@ def gen_calc(micro_sd):
 
 
     wb.save('results_new.xls')
+
+    print('RESULTS')
+    print(TOTAL_TIME_100)
+    print(TOTAL_TIME_200)
+    print(TOTAL_TIME_400)
 
 def main():
     with open(sys.argv[1],"rb") as micro_sd:

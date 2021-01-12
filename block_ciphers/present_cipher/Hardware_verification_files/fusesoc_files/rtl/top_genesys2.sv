@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: Your name
- * @ Modified time: 2021-01-12 21:08:28
+ * @ Modified time: 2021-01-12 21:39:07
  * @ Description:
  */
 
@@ -10,7 +10,8 @@
 
 
 module top(
-    input sys_clk_pad_i,
+    input sysclk_n,
+    input sysclk_p,
     input rst,
 
     output cs,
@@ -42,7 +43,17 @@ logic end_key_generation;
 logic [63:0] block_o;
 logic end_signal;
 
+logic sys_clk_pad_i;
 
+IBUFGDS#(.DIFF_TERM("FALSE"),//DifferentialTermination.
+         .IBUF_LOW_PWR("TRUE"),//Lowpower="TRUE",Highestperformance="FALSE"
+         .IOSTANDARD("DEFAULT")//SpecifytheinputI/Ostandard
+         )
+         IBUFGDS_inst(
+           .O(sys_clk_pad_i),//Clockbufferoutput
+           .I(sysclk_p),//Diff_pclockbufferinput(connectdirectlytotop-levelport)
+           .IB(sysclk_n)//Diff_nclockbufferinput(connectdirectlytotop-levelport
+         );
 
 logic [31:0] debug_data;
   display #(.N(32),.CLK_HZ(100000000)) display_inst(
