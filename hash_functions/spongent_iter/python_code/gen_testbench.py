@@ -36,7 +36,8 @@ r_candidates = [8,8,16,16,16]
 c_candidates = [80,128,160,224,256]
 R_candidates = [45,70,90,120,140]
 
-OPTION_HASH = 4
+OPTION_HASH = 0
+SIZE_FEED_DATA_BYTES = 512*1024
 
 
 N = N_candidates[OPTION_HASH]
@@ -52,7 +53,7 @@ def create_microsd_vectors(micro_sd,num,e):
     next_block = NUM_BLOCK_TEST
     for i in range(0,num):
 
-        size = random.randint(1000,4000)
+        size = SIZE_FEED_DATA_BYTES#random.randint(1000,4000)
         if((size & 0x1) == 1):
             size = size + 1  
         spongent_impl = spongent_iter.Spongent(N,c,r,R)
