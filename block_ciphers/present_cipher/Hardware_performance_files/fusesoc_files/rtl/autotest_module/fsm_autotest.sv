@@ -635,7 +635,7 @@ genvar i;
                  if(counter_bytes_o == 8'h20)
                  begin
                     
-                    if(counter_iter_o < 3)
+                    if(counter_iter_o < 4)
                       begin
                         rst_bytes_counter = 1;
                         next_state = START_TEST;

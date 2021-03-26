@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-31 16:03:20
  * @ Modified by: Your name
- * @ Modified time: 2020-02-18 12:42:09
+ * @ Modified time: 2021-03-19 14:01:12
  * @ Description:
  */
 
@@ -673,7 +673,7 @@ module expanded_key_words(
     assign B = {h1_output[23:0],h1_output[31:24]};
 
     logic [31:0] adder_out;
-    logic [31:0] m;//2*i*p
+    logic [31:0] m;//i*p
     assign m = {i,i,i,i};
     
 

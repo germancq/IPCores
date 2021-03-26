@@ -2,17 +2,17 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:43:00
  * @ Modified by: Your name
- * @ Modified time: 2021-01-17 21:46:20
+ * @ Modified time: 2021-01-20 15:26:21
  * @ Description:
  */
 
 
-localparam N = 88;
-localparam c = 80;
+localparam N = 128;
+localparam c = 128;
 localparam r = 8;
-localparam R = 45;
-localparam lCounter_initial_state = 6'h05;
-localparam lCounter_feedback_coeff = 7'h61; 
+localparam R = 70;
+localparam lCounter_initial_state = 7'h7A;
+localparam lCounter_feedback_coeff = 8'hC1; 
 
 module top(
     input sys_clk_pad_i,

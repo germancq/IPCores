@@ -128,19 +128,32 @@ module gen_clk_uut(
 );
 
 
-  logic clk_100;
-  logic clk_200;
-  logic clk_400;
+  logic clk_out1;
+  logic clk_out2;
+  logic clk_out3;
+  logic clk_out4;
+  logic clk_out5;
+  logic clk_out6;
+  logic clk_out7;
+  logic clk_fb;
   
   clk_wiz_0 clk_gen(
     // Clock out ports
-    .clk_out1(clk_400),
+    .clk_out1(clk_out1),
+    .clk_out2(clk_out2),
+    .clk_out3(clk_out3),
+    .clk_out4(clk_out4),
+    .clk_out5(clk_out5),
+    .clk_out6(clk_out6),
+    .clk_out7(clk_out7),
+    .clkfb_out(clk_fb),
   // Status and control signals
     .reset(rst),
  // Clock in ports
+    .clkfb_in(clk_fb),
     .clk_in1(clk)
   );
-  
+  /*
   logic [7:0] counter_o;
   
   logic clk_100_200;
@@ -154,15 +167,34 @@ module gen_clk_uut(
     .din(8'h0),
     .dout(counter_o)
   );
-
+*/
   
-  logic clk_mux_0;
+//  logic clk_125_225;
+//  assign clk_125_225 = clk_sel[0] == 0 ? clk_225 : clk_125 ;
+//  logic clk_375_450;
+//  assign clk_375_450 = clk_sel[0] == 0 ? clk_450 : clk_375 ;
+
+  logic  clk_mux;
+  mux_4 #(.DATA_WIDTH(1)) clkMux(
+    .a(clk_out4),
+    .b(clk_out5),
+    .c(clk_out6),
+    .d(clk_out7),
+    .e(clk_mux),
+    .sel(clk_sel)
+  );
+
+  BUFG clk_buffer(
+    .O(clk_uut),
+    .I(clk_mux)
+  );
+  /* 
   BUFGMUX BUFGMUX_inst1(
-    .I0(clk_100_200),
-    .I1(clk_400),
+    .I0(clk_375_450),
+    .I1(clk_125_225),
     .O(clk_uut),
     .S(clk_sel[1])
   );
-  
+  */
   
 endmodule : gen_clk_uut
