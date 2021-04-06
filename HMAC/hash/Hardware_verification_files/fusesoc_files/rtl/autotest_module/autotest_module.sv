@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-23 12:51:31
- * @ Modified by: Your name
- * @ Modified time: 2020-06-23 13:08:42
+ * @ Modified by: German Cano Quiveu, germancq@dte.us.es
+ * @ Modified time: 2021-04-06 21:30:25
  * @ Description:
  */
 
@@ -14,6 +14,7 @@ module autotest_module
 (
     input clk,
     input rst,
+    input start,
 
     output cs,
     output sclk,
@@ -50,7 +51,7 @@ module autotest_module
 
   
 
-  fsm_autotest #(
+  control_unit #(
     .INPUT_SIZE_1(INPUT_SIZE_1),
     .INPUT_SIZE_2(INPUT_SIZE_2),
     .OUTPUT_SIZE_1(OUTPUT_SIZE_1)
@@ -58,6 +59,7 @@ module autotest_module
   fsm_isnt(
     .clk(clk),
     .rst(rst),
+    .start(start),
     //sdspihost signals
     .spi_busy(spi_busy),
     .spi_block_addr(spi_block_addr),
