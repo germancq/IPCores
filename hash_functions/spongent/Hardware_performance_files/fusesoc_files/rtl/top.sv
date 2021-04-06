@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-03-20 14:53:33
- * @ Modified by: Your name
- * @ Modified time: 2020-03-20 17:13:52
+ * @ Modified by: German Cano Quiveu, germancq@dte.us.es
+ * @ Modified time: 2021-04-06 21:03:50
  * @ Description:
  */
 
@@ -17,6 +17,7 @@ localparam DATA_WIDTH = 64;
 module top(
     input sys_clk_pad_i,
     input rst,
+    input start,
 
     output cs,
     output sclk,
@@ -63,6 +64,7 @@ autotest_module #(
 ) autotest_impl(
     .clk(sys_clk_pad_i),
     .rst(rst),
+    .start(start),
 
     .cs(cs),
     .sclk(sclk),

@@ -319,6 +319,7 @@ genvar i;
      case(current_state)
         INITIAL_CONDITION :
             begin
+                up_timer_counter = 0;
                 if (start == 1'b1) begin
                     rst_block_counter = 1;
                     rst_error_counter = 1;
