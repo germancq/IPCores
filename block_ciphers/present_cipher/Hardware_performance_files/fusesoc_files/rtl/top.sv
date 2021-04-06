@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
- * @ Modified by: Your name
- * @ Modified time: 2020-12-07 20:37:43
+ * @ Modified by: German Cano Quiveu, germancq@dte.us.es
+ * @ Modified time: 2021-04-06 20:20:35
  * @ Description:
  */
 
@@ -12,6 +12,7 @@
 module top(
     input sys_clk_pad_i,
     input rst,
+    input start,
 
     output cs,
     output sclk,
@@ -38,7 +39,7 @@ module top(
 logic rst_uut;
 logic [63:0] block_i;
 logic [79:0] key;
-logic enc_dec;
+logic [7:0] enc_dec;
 logic end_key_generation;
 logic [63:0] block_o;
 logic end_signal;
@@ -54,9 +55,15 @@ logic [31:0] debug_data;
     .seg(seg)
   );
 
-autotest_module autotest_impl(
+autotest_module #(
+    .INPUT_SIZE_1(64),
+    .INPUT_SIZE_2(80),
+    .INPUT_SIZE_3(8),
+    .OUTPUT_SIZE_1(64)
+  )autotest_impl(
     .clk(sys_clk_pad_i),
     .rst(rst),
+    .start(start),
 
     .cs(cs),
     .sclk(sclk),
@@ -66,9 +73,9 @@ autotest_module autotest_impl(
 
     /*UUT signals*/
     .rst_uut(rst_uut),
-    .block_i_uut(block_i),
-    .key_uut(key),
-    .encdec_uut(enc_dec),
+    .input_to_UUT_1(block_i),
+    .input_to_UUT_2(key),
+    .input_to_UUT_3(enc_dec),
     .block_o_uut(block_o),
     .end_uut(end_signal),
 
@@ -81,7 +88,7 @@ autotest_module autotest_impl(
 present present_impl(
     .clk(clk_uut),
     .rst(rst_uut),
-    .enc_dec(enc_dec),
+    .enc_dec(enc_dec[0]),
     .key(key),
     .block_i(block_i),
     .end_key_generation(end_key_generation),
