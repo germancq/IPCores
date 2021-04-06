@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-03-21 15:17:01
- * @ Modified by: Your name
- * @ Modified time: 2020-03-21 18:13:47
+ * @ Modified by: German Cano Quiveu, germancq@dte.us.es
+ * @ Modified time: 2021-04-06 21:53:01
  * @ Description:
  */
 
@@ -19,6 +19,7 @@ localparam PSW_WIDTH = 96;
 module top(
     input sys_clk_pad_i,
     input rst,
+    input start,
 
     output cs,
     output sclk,
@@ -67,6 +68,7 @@ autotest_module #(
 ) autotest_impl(
     .clk(sys_clk_pad_i),
     .rst(rst),
+    .start(start),
 
     .cs(cs),
     .sclk(sclk),
