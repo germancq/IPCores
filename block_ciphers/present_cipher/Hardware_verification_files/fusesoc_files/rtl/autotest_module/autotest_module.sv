@@ -9,6 +9,9 @@
 
 
 module autotest_module
+#(parameter INPUT_SIZE_1 = 64,
+  parameter INPUT_SIZE_2 = 80,
+  parameter OUTPUT_SIZE_1 = 32)
 (
     input clk,
     input rst,
@@ -20,10 +23,10 @@ module autotest_module
 
     /*UUT signals*/
     output rst_uut,
-    output [64-1:0] block_i_uut,
-    output [80-1:0] key_uut,
+    output [INPUT_SIZE_1-1:0] block_i_uut,
+    output [INPUT_SIZE_2-1:0] key_uut,
     output encdec_uut,
-    input [64-1:0] block_o_uut,
+    input [OUTPUT_SIZE_1-1:0] block_o_uut,
     input  end_uut,
 
     

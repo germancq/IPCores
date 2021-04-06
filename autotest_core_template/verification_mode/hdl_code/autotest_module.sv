@@ -51,12 +51,12 @@ module autotest_module
 
   
 
-  fsm_autotest #(
+  control_unit #(
     .INPUT_SIZE_1(INPUT_SIZE_1),
     .INPUT_SIZE_2(INPUT_SIZE_2),
     .OUTPUT_SIZE_1(OUTPUT_SIZE_1)
   )
-  fsm_isnt(
+  control_unit_isnt(
     .clk(clk),
     .rst(rst),
     //sdspihost signals
