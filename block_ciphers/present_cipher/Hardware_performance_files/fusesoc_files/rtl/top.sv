@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: German Cano Quiveu, germancq@dte.us.es
- * @ Modified time: 2021-04-06 20:20:35
+ * @ Modified time: 2021-04-06 22:23:11
  * @ Description:
  */
 
@@ -59,7 +59,7 @@ autotest_module #(
     .INPUT_SIZE_1(64),
     .INPUT_SIZE_2(80),
     .INPUT_SIZE_3(8),
-    .OUTPUT_SIZE_1(64)
+    .OUTPUT_SIZE(64)
   )autotest_impl(
     .clk(sys_clk_pad_i),
     .rst(rst),
