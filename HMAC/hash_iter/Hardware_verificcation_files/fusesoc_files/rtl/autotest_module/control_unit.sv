@@ -1,19 +1,20 @@
 /**
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:42:54
- * @ Modified by: Your name
- * @ Modified time: 2020-07-10 14:27:44
+ * @ Modified by: German Cano Quiveu, germancq@dte.us.es
+ * @ Modified time: 2021-04-06 22:16:52
  * @ Description:
  */
 
 
- module fsm_autotest_feed #(
+ module control_unit_feed #(
   parameter FEED_DATA_SIZE = 32,
   parameter INPUT_SIZE_1 = 64,
   parameter OUTPUT_SIZE_1 = 32)
  (
      input clk,
      input rst,
+     input start,
      //sdspihost signals
      input spi_busy,
      output [31:0] spi_block_addr,
@@ -48,6 +49,7 @@ localparam BASE_OUTPUTS = 32'h4 + (32>>3) + (64>>3) + (INPUT_SIZE_1>>3) + (OUTPU
 
 localparam START_BLOCK = 32'h100000;
 localparam TIMEOUT_VALUE = 64'h30000000;
+localparam SIGNATURE = 32'hAABBCCDD;
 
 genvar i;
 
@@ -390,11 +392,15 @@ genvar i;
      case(current_state)
         INITIAL_CONDITION :
             begin
-                rst_block_counter = 1;
-                rst_error_counter = 1;
-                rst_timer_counter = 1;
-                current_block_cl = 1;
-                next_state = BEGIN_READ_FROM_SD;
+                up_timer_counter = 0;
+                if (start == 1'b1) begin
+                    rst_block_counter = 1;
+                    rst_error_counter = 1;
+                    rst_timer_counter = 1;
+                    current_block_cl = 1;
+                    next_state = BEGIN_READ_FROM_SD;
+                end
+                
             end
          BEGIN_READ_FROM_SD:
              begin
@@ -538,7 +544,7 @@ genvar i;
              begin
                rst_uut = 1;
                rst_block_counter = 1;
-               if(signature == 32'hAABBCCDD)
+               if(signature == SIGNATURE)
                begin
                  next_state = START_TEST;
                end
@@ -681,15 +687,13 @@ genvar i;
             COMPARE_RESULT:
                 begin
                     if(spi_busy == 1'b0) begin
-                        if((expected_result != output_from_UUT_1_o) || err_uut) begin
+                        next_state = SEL_WRITE_SD_BLOCK;
+                        if((expected_result != output_from_UUT_1_o) || err_uut) 
+                        begin
                             up_error_counter = 1'b1;
                             current_block_w = 1'b1;
-                            next_state = SEL_WRITE_SD_BLOCK;
+                           
                         end
-                        else begin
-                            current_block_w = 1'b1;
-                            next_state = UPDATE_NEXT_CONTROL_BLOCK;
-                        end  
                     end
                       
                 end 
@@ -792,6 +796,7 @@ genvar i;
             END_FSM:
             begin
                 up_timer_counter = 0;
+                next_state = INITIAL_CONDITION;
             end
      endcase
  end
@@ -815,4 +820,4 @@ genvar i;
  );
 
 
- endmodule : fsm_autotest_feed
+ endmodule : control_unit_feed

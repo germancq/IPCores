@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:42:54
  * @ Modified by: German Cano Quiveu, germancq@dte.us.es
- * @ Modified time: 2021-04-06 22:08:51
+ * @ Modified time: 2021-04-06 22:16:29
  * @ Description:
  */
 
@@ -639,10 +639,11 @@ genvar i;
             COMPARE_RESULT:
                 begin
                     if(spi_busy == 1'b0) begin
+                        next_state = SEL_WRITE_SD_BLOCK;
                         if((expected_result != output_from_UUT_1_o) || err_uut) begin
                             up_error_counter = 1'b1;
                             current_block_w = 1'b1;
-                            next_state = SEL_WRITE_SD_BLOCK;
+                            
                         end
                     end
                       
