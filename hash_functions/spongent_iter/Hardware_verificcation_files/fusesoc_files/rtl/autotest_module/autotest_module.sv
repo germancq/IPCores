@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:42:54
- * @ Modified by: Your name
- * @ Modified time: 2020-06-29 17:57:23
+ * @ Modified by: German Cano Quiveu, germancq@dte.us.es
+ * @ Modified time: 2021-04-06 22:05:10
  * @ Description:
  */
 
@@ -15,6 +15,7 @@ module autotest_feed_module
 (
     input clk,
     input rst,
+    input start,
 
     output cs,
     output sclk,
@@ -53,13 +54,14 @@ module autotest_feed_module
 
   
 
-  fsm_autotest_feed #(
+  control_unit_feed #(
     .FEED_DATA_SIZE(FEED_DATA_SIZE),
     .OUTPUT_SIZE_1(OUTPUT_SIZE_1)
   )
   fsm_isnt(
     .clk(clk),
     .rst(rst),
+    .start(start),
     //sdspihost signals
     .spi_busy(spi_busy),
     .spi_block_addr(spi_block_addr),

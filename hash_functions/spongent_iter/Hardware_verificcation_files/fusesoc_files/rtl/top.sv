@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:43:00
- * @ Modified by: Your name
- * @ Modified time: 2021-01-17 21:46:20
+ * @ Modified by: German Cano Quiveu, germancq@dte.us.es
+ * @ Modified time: 2021-04-06 22:04:19
  * @ Description:
  */
 
@@ -17,6 +17,7 @@ localparam lCounter_feedback_coeff = 7'h61;
 module top(
     input sys_clk_pad_i,
     input rst,
+    input start,
 
     output cs,
     output sclk,
@@ -63,6 +64,7 @@ module top(
     )autotest_impl(
         .clk(sys_clk_pad_i),
         .rst(rst),
+        .start(start),
         .cs(cs),
         .sclk(sclk),
         .mosi(mosi),
