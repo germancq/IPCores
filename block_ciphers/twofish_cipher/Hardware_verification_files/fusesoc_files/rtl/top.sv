@@ -1,14 +1,15 @@
 /**
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-11-05 15:47:48
- * @ Modified by: Your name
- * @ Modified time: 2020-03-19 13:04:28
+ * @ Modified by: German Cano Quiveu, germancq@dte.us.es
+ * @ Modified time: 2021-04-06 20:25:36
  * @ Description:
  */
 
 module top(
     input sys_clk_pad_i,
     input rst,
+    input start,
 
     output cs,
     output sclk,
@@ -57,6 +58,7 @@ autotest_module #(
 autotest_impl(
     .clk(sys_clk_pad_i),
     .rst(rst),
+    .start(start),
 
     .cs(cs),
     .sclk(sclk),
