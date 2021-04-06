@@ -24,11 +24,12 @@ home = os.getenv("HOME")
 
 abs_path_file_to_hash = home + "/gitProjects/IPCores/hash_functions/spongent_iter/files/example.txt"
 
+
 username = "germancq"
 groupname = "germancq"
 
 BLOCK_SIZE = 512
-NUM_BLOCK_TEST = 0x00100000
+NUM_BLOCK_TEST = 0#0x00100000
 SIGNATURE = 0xAABBCCDD
 
 N_candidates = [88,128,160,224,256]
@@ -46,7 +47,7 @@ c = c_candidates[OPTION_HASH]
 R = R_candidates[OPTION_HASH]
 
 
-def create_microsd_vectors(micro_sd,num,e):
+def create_microsd_vectors(micro_sd,VIOstorage_file,num,e):
     
     zero = 0
     counter_errors = 0
@@ -84,7 +85,12 @@ def create_microsd_vectors(micro_sd,num,e):
                 block_to_write = current_block+j+1
 
             micro_sd.write(data_feed.to_bytes((int(r/8)),byteorder='big'))
+
+            feed_data_string = '{:04x}'.format(data_feed)
+            if(r == 8):
+                feed_data_string = '{:02x}'.format(data_feed)
             
+            VIOstorage_file.write("""{0}\n""".format(feed_data_string))
                     
         expected_value = spongent_impl.squeezing_phase(spongent_state)
 
@@ -123,15 +129,23 @@ def create_microsd_vectors(micro_sd,num,e):
 def main():
     '''
         parameters
-            param1 : microsd path
-            param2 : N numero tests
-            param3 : e , percent of create wrong test
+            param1 : microsd file path
+            param2 : VIO feed data file path
+            param3 : N numero tests
+            param4 : e , percent of create wrong test
     '''
+    try:
+        with(open(sys.argv[2],"rb+")) as VIOstorage_file:
+            VIOstorage_file.close()
+    except:
+        with(open(sys.argv[2],"wb+")) as VIOstorage_file:
+            VIOstorage_file.close()
 
-    with open(sys.argv[1],"rb+") as micro_sd:
-        num = int(sys.argv[2])
-        e = int(sys.argv[3])
-        print(create_microsd_vectors(micro_sd,num,e))
+    with(open(sys.argv[2],"w")) as VIOstorage_file:        
+        with open(sys.argv[1],"rb+") as micro_sd:
+            num = int(sys.argv[3])
+            e = int(sys.argv[4])
+            print(create_microsd_vectors(micro_sd,VIOstorage_file,num,e))
 
 
 if __name__ == "__main__":
