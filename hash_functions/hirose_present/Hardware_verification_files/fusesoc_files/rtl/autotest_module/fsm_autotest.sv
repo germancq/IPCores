@@ -7,12 +7,13 @@
  * @Last modified time: 2019-04-05T13:26:09+02:00
  */
 
- module fsm_autotest #(
+ module control_unit #(
   parameter INPUT_SIZE_1 = 32,
   parameter OUTPUT_SIZE_1 = 32)
  (
      input clk,
      input rst,
+     input start,
      //sdspihost signals
      input spi_busy,
      output [31:0] spi_block_addr,
@@ -43,6 +44,7 @@ localparam BASE_OUTPUTS = 32'h4 + (INPUT_SIZE_1>>3) + (OUTPUT_SIZE_1>>3);
 
 localparam START_BLOCK = 32'h100000;
 localparam TIMEOUT_VALUE = 32'h30000000;
+localparam SIGNATURE = 32'hAABBCCDD;
 
 genvar i;
 
@@ -296,10 +298,14 @@ genvar i;
      case(current_state)
         INITIAL_CONDITION :
             begin
-                rst_block_counter = 1;
-                rst_error_counter = 1;
-                rst_timer_counter = 1;
-                next_state = BEGIN_READ_FROM_SD;
+                up_timer_counter = 0;
+                if (start == 1'b1) begin
+                    rst_block_counter = 1;
+                    rst_error_counter = 1;
+                    rst_timer_counter = 1;
+                    next_state = BEGIN_READ_FROM_SD;
+                end
+                
             end
          BEGIN_READ_FROM_SD:
              begin
@@ -416,7 +422,7 @@ genvar i;
          CHECK_SIGNATURE:
              begin
                rst_uut = 1;
-               if(signature == 32'hAABBCCDD)
+               if(signature == SIGNATURE)
                begin
                  next_state = START_TEST;
                end
@@ -446,13 +452,12 @@ genvar i;
              end
           COMPARE_RESULT:
              begin
+                 next_state = SEL_WRITE_SD_BLOCK;
                  if((expected_result != output_from_UUT_1_o) || err_uut) begin
                      up_error_counter = 1'b1;
-                     next_state = SEL_WRITE_SD_BLOCK;
+                     
                  end
-                 else begin
-                     next_state = UPDATE_BLOCK_COUNTER;
-                 end    
+                     
              end   
           SEL_WRITE_SD_BLOCK:
              begin
@@ -547,6 +552,7 @@ genvar i;
           END_FSM:
             begin
                 up_timer_counter = 0;
+                next_state = INITIAL_CONDITION;
             end
      endcase
  end
@@ -570,4 +576,4 @@ genvar i;
  );
 
 
- endmodule : fsm_autotest
+ endmodule : control_unit
