@@ -15,6 +15,7 @@ module autotest_module #(
 (
     input clk,
     input rst,
+    input start,
 
     output cs,
     output sclk,
@@ -68,6 +69,7 @@ module autotest_module #(
   control_unit_isnt(
     .clk(clk),
     .rst(rst),
+    .start(start),
     //sdspihost signals
     .spi_busy(spi_busy),
     .spi_block_addr(spi_block_addr),

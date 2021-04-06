@@ -7,12 +7,15 @@
  * @Last modified time: 2019-04-05T13:26:09+02:00
  */
 
-
-
- module fsm_autotest
+ module control_unit #(
+  parameter INPUT_SIZE_1 = 32,
+  parameter INPUT_SIZE_2 = 32,
+  parameter INPUT_SIZE_3 = 32,
+  parameter OUTPUT_SIZE_1 = 32)
  (
      input clk,
      input rst,
+     input start,
      //sdspihost signals
      input spi_busy,
      output [31:0] spi_block_addr,
@@ -27,23 +30,25 @@
      output logic spi_w_byte,
      //uut ctrl signals
      output logic rst_uut,
+     input err_uut,
+     input end_uut,
      //uut paramters signals
-     output [64-1:0] block_i_uut,
-     output [80-1:0] key_uut,
-     output encdec_uut,
+     output [INPUT_SIZE_1-1:0] input_to_UUT_1,
+     output [INPUT_SIZE_2-1:0] input_to_UUT_2,
+     output [INPUT_SIZE_3-1:0] input_to_UUT_3,
      //uut results signals
-     input [64-1:0] block_o_uut,
-     input  end_uut,
+     input [OUTPUT_SIZE_1-1:0] output_from_UUT_1,
      //debug
      input [1:0] sw_debug,
      output [31:0] debug_signal
      );
 
-localparam BLOCK_SIZE = 64;
-localparam KEY_INPUT_SIZE = 80;
-localparam BASE_OUTPUTS = 32'h4 + (BLOCK_SIZE>>3) + (BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3) + 1;
-localparam START_BLOCK = 32'h0x100000;
 
+localparam BASE_OUTPUTS = 32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) + (INPUT_SIZE_3>>3) +(OUTPUT_SIZE_1>>3);
+
+localparam INITIAL_BLOCK = 32'h100000;
+localparam TIMEOUT_VALUE = 64'h10000000;
+localparam SIGNATURE = 32'hAABBCCDD;
 
 genvar i;
 
@@ -81,51 +86,59 @@ genvar i;
 //////////uut specific registers///////////////////////
   /////////////input_to_UUT_1////////////////
  
- logic [0:0] reg_block_i_uut_cl[(BLOCK_SIZE>>3)-1:0];
- logic [0:0] reg_block_i_uut_w[(BLOCK_SIZE>>3)-1:0];
+ logic [0:0] reg_din_1_cl[(INPUT_SIZE_1>>3)-1:0];
+ logic [0:0] reg_din_1_w[(INPUT_SIZE_1>>3)-1:0];
  generate
-    for (i=0;i<(BLOCK_SIZE>>3);i=i+1) begin
-        register #(.DATA_WIDTH(8)) reg_input_block_i(
+    for (i=0;i<(INPUT_SIZE_1>>3);i=i+1) begin
+        register #(.DATA_WIDTH(8)) reg_input_to_UUT_1_i(
             .clk(clk),
-            .cl(reg_block_i_uut_cl[i]),
-            .w(reg_block_i_uut_w[i]),
+            .cl(reg_din_1_cl[i]),
+            .w(reg_din_1_w[i]),
             .din(spi_data_out),
-            .dout(block_i_uut[(i<<3)+7:(i<<3)])
+            .dout(input_to_UUT_1[(i<<3)+7:(i<<3)])
         );
     end
  endgenerate
+
   /////////////input_to_UUT_2////////////////
-  logic [0:0] reg_key_uut_cl[(KEY_INPUT_SIZE>>3)-1:0];
-  logic [0:0] reg_key_uut_w[(KEY_INPUT_SIZE>>3)-1:0];
-  generate
-    for (i=0;i<(KEY_INPUT_SIZE>>3);i=i+1) begin
-        register #(.DATA_WIDTH(8)) reg_input_key_i(
+ 
+ logic [0:0] reg_din_2_cl[(INPUT_SIZE_2>>3)-1:0];
+ logic [0:0] reg_din_2_w[(INPUT_SIZE_2>>3)-1:0];
+ generate
+    for (i=0;i<(INPUT_SIZE_2>>3);i=i+1) begin
+        register #(.DATA_WIDTH(8)) reg_input_to_UUT_2_i(
             .clk(clk),
-            .cl(reg_key_uut_cl[i]),
-            .w(reg_key_uut_w[i]),
+            .cl(reg_din_2_cl[i]),
+            .w(reg_din_2_w[i]),
             .din(spi_data_out),
-            .dout(key_uut[(i<<3)+7:(i<<3)])
+            .dout(input_to_UUT_2[(i<<3)+7:(i<<3)])
         );
     end
-  endgenerate
+ endgenerate
+
   /////////////input_to_UUT_3////////////////
-  logic reg_encdec_uut_o_cl;
-  logic reg_encdec_uut_o_w;
-  register #(.DATA_WIDTH(8)) reg_encdec_uut_o_0(
-  	.clk(clk),
-  	.cl(reg_encdec_uut_o_cl),
-  	.w(reg_encdec_uut_o_w),
-  	.din(spi_data_out),
-  	.dout(encdec_uut)
-  );
+ 
+ logic [0:0] reg_din_3_cl[(INPUT_SIZE_3>>3)-1:0];
+ logic [0:0] reg_din_3_w[(INPUT_SIZE_3>>3)-1:0];
+ generate
+    for (i=0;i<(INPUT_SIZE_3>>3);i=i+1) begin
+        register #(.DATA_WIDTH(8)) reg_input_to_UUT_3_i(
+            .clk(clk),
+            .cl(reg_din_3_cl[i]),
+            .w(reg_din_3_w[i]),
+            .din(spi_data_out),
+            .dout(input_to_UUT_3[(i<<3)+7:(i<<3)])
+        );
+    end
+ endgenerate
 
   ////////////expected_result///////////////
-  logic [BLOCK_SIZE-1:0] expected_result;
-  logic [0:0] reg_expected_result_uut_cl[(BLOCK_SIZE>>3)-1:0];
-  logic [0:0] reg_expected_result_uut_w[(BLOCK_SIZE>>3)-1:0];
+  logic [OUTPUT_SIZE_1-1:0] expected_result;
+  logic [0:0] reg_expected_result_uut_cl[(OUTPUT_SIZE_1>>3)-1:0];
+  logic [0:0] reg_expected_result_uut_w[(OUTPUT_SIZE_1>>3)-1:0];
   generate
-    for (i=0;i<(BLOCK_SIZE>>3);i=i+1) begin
-        register #(.DATA_WIDTH(8)) reg_input_block_i(
+    for (i=0;i<(OUTPUT_SIZE_1>>3);i=i+1) begin
+        register #(.DATA_WIDTH(8)) reg_expected_result_i(
             .clk(clk),
             .cl(reg_expected_result_uut_cl[i]),
             .w(reg_expected_result_uut_w[i]),
@@ -136,22 +149,21 @@ genvar i;
   endgenerate
  
   //////////////output_from_UUT_1////////////
-  logic [BLOCK_SIZE-1:0] block_o_uut_o;
-  logic reg_block_o_uut_o_cl;
-  logic reg_block_o_uut_o_w;
-  register #(.DATA_WIDTH(BLOCK_SIZE)) reg_output_from_UUT_1_o_0(
+  logic [OUTPUT_SIZE_1-1:0] output_from_UUT_1_o;
+  logic reg_output_from_UUT_1_o_cl;
+  logic reg_output_from_UUT_1_o_w;
+  register #(.DATA_WIDTH(OUTPUT_SIZE_1)) reg_output_from_UUT_1_o_0(
   	.clk(clk),
-  	.cl(reg_block_o_uut_o_cl),
-  	.w(reg_block_o_uut_o_w),
-  	.din(block_o_uut),
-  	.dout(block_o_uut_o)
+  	.cl(reg_output_from_UUT_1_o_cl),
+  	.w(reg_output_from_UUT_1_o_w),
+  	.din(output_from_UUT_1),
+  	.dout(output_from_UUT_1_o)
   );
-  
   
 
 ///////////////timer//////////////////////
- logic [63:0] counter_timer_o;
  logic up_timer_counter;
+ logic [63:0] counter_timer_o;
  logic rst_timer_counter;
  counter #(.DATA_WIDTH(64)) counter_timer(
     .clk(clk),
@@ -162,7 +174,7 @@ genvar i;
     .dout(counter_timer_o)
  );
 
- ///////////////timer_execution//////////////////////
+  ///////////////timer_execution//////////////////////
  logic up_timer_exec_counter;
  logic [63:0] counter_timer_exec_o;
  logic rst_timer_exec_counter;
@@ -175,8 +187,7 @@ genvar i;
     .dout(counter_timer_exec_o)
  );
 
-
- ///////////////error_counter//////////////////////
+  ///////////////error_counter//////////////////////
  logic up_error_counter;
  logic [31:0] counter_error_o;
  logic rst_error_counter;
@@ -199,10 +210,9 @@ genvar i;
     .rst(rst_block_counter),
     .up(up_block_counter),
     .down(1'b0),
-    .din(START_BLOCK),
+    .din(INITIAL_BLOCK),
     .dout(counter_block_o)
  );
-
 
   ////////////bytes counter ////////////////////
 
@@ -238,10 +248,8 @@ genvar i;
 
 
 
-
  ///////////////states/////////////////////
   logic [31:0] j;
-
 
   localparam INITIAL_CONDITION = 5'h0;
   localparam BEGIN_READ_FROM_SD = 5'h1;
@@ -282,7 +290,6 @@ genvar i;
      up_error_counter = 0;
      rst_error_counter = 0;
 
-
      up_bytes_counter = 0;
      rst_bytes_counter = 0;
 
@@ -309,36 +316,40 @@ genvar i;
          reg_signature_w[j] = 0;
      end
 
-
-     for (j=0;j<(BLOCK_SIZE>>3);j=j+1) begin
-         reg_block_i_uut_cl[j] = 0;
-         reg_block_i_uut_w[j] = 0;
+     for (j=0;j<(INPUT_SIZE_1>>3);j=j+1) begin
+         reg_din_1_cl[j] = 0;
+         reg_din_1_w[j] = 0;
      end
 
-     for (j=0;j<(KEY_INPUT_SIZE>>3);j=j+1) begin
-         reg_key_uut_cl[j] = 0;
-         reg_key_uut_w[j] = 0;
+     for (j=0;j<(INPUT_SIZE_2>>3);j=j+1) begin
+         reg_din_2_cl[j] = 0;
+         reg_din_2_w[j] = 0;
      end
 
-     reg_encdec_uut_o_cl = 0;
-     reg_encdec_uut_o_w = 0;
+     for (j=0;j<(INPUT_SIZE_3>>3);j=j+1) begin
+         reg_din_3_cl[j] = 0;
+         reg_din_3_w[j] = 0;
+     end
 
-     for (j=0;j<(BLOCK_SIZE>>3);j=j+1) begin
+     for (j=0;j<(OUTPUT_SIZE_1>>3);j=j+1) begin
          reg_expected_result_uut_cl[j] = 0;
          reg_expected_result_uut_w[j] = 0;
      end
 
-     reg_block_o_uut_o_cl = 0;
-     reg_block_o_uut_o_w = 0;
+     reg_output_from_UUT_1_o_cl = 0;
+     reg_output_from_UUT_1_o_w = 0;
         
 
      case(current_state)
         INITIAL_CONDITION :
             begin
-                rst_block_counter = 1;
-                rst_error_counter = 1;
-                rst_timer_counter = 1;
-                next_state = BEGIN_READ_FROM_SD;
+                if (start == 1'b1) begin
+                    rst_block_counter = 1;
+                    rst_error_counter = 1;
+                    rst_timer_counter = 1;
+                    next_state = BEGIN_READ_FROM_SD;
+                end
+                
             end
          BEGIN_READ_FROM_SD:
              begin
@@ -346,14 +357,14 @@ genvar i;
                  spi_rst = 1;
                  if(spi_busy == 1'b1)
                      next_state = WAIT_RST_SPI;
-             end
+             end 
          WAIT_RST_SPI:
              begin
                  rst_uut = 1;
                  if(spi_busy == 1'b0)
                      next_state = IDLE;
 
-             end   
+             end      
          IDLE:
              begin
 
@@ -367,21 +378,25 @@ genvar i;
                     reg_signature_cl[j] = 1;
                  end
 
-                 for (j=0;j<(BLOCK_SIZE>>3);j=j+1) begin
-                    reg_block_i_uut_cl[j] = 1;
+                 for (j=0;j<(INPUT_SIZE_1>>3);j=j+1) begin
+                    reg_din_1_cl[j] = 1;
                  end
 
-                 for (j=0;j<(BLOCK_SIZE>>3);j=j+1) begin
+                 for (j=0;j<(INPUT_SIZE_2>>3);j=j+1) begin
+                    reg_din_2_cl[j] = 1;
+                 end
+
+                 for (j=0;j<(INPUT_SIZE_3>>3);j=j+1) begin
+                    reg_din_3_cl[j] = 1;
+                 end
+
+                 for (j=0;j<(OUTPUT_SIZE_1>>3);j=j+1) begin
                     reg_expected_result_uut_cl[j] = 1;
-                 end
-
-                 for (j=0;j<(KEY_INPUT_SIZE>>3);j=j+1) begin
-                    reg_key_uut_cl[j] = 1;
                  end
                  
 
-                 reg_encdec_uut_o_cl = 1;
-                 reg_block_o_uut_o_cl = 1;
+                 reg_output_from_UUT_1_o_cl = 1;
+               
                  
 
                  reg_spi_data_cl = 1;
@@ -390,7 +405,6 @@ genvar i;
                     next_state = SEL_SD_BLOCK;
                  end   
              end
-         
          SEL_SD_BLOCK:
              begin
                  rst_uut = 1;
@@ -411,37 +425,42 @@ genvar i;
  		         spi_r_block = 1;
 
                  next_state = READ_BYTE;
- 		              case(counter_bytes_o)
+ 		            case(counter_bytes_o)
  		                32'h0:reg_signature_w[3] = 1;
                         32'h1:reg_signature_w[2] = 1;
                         32'h2:reg_signature_w[1] = 1;
                         32'h3:reg_signature_w[0] = 1;
                         32'h4 + index_o : begin
-                            reg_block_i_uut_w[index_o] = 1'b1;
+                            reg_din_1_w[index_o] = 1'b1;
                             up_index = 1'b1;
-                            if(index_o == (BLOCK_SIZE>>3)-1) begin
+                            if(index_o == (INPUT_SIZE_1>>3)-1) begin
                                 rst_index = 1'b1;
                             end
                         end
-                        32'h4 + (BLOCK_SIZE>>3) + index_o : begin
-                            reg_key_uut_w[index_o] = 1'b1;
+                        32'h4 + (INPUT_SIZE_1>>3) + index_o : begin
+                            reg_din_2_w[index_o] = 1'b1;
                             up_index = 1'b1;
-                            if(index_o == (KEY_INPUT_SIZE>>3)-1) begin
+                            if(index_o == (INPUT_SIZE_2>>3)-1) begin
                                 rst_index = 1'b1;
                             end
                         end
-                        32'h4 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3): begin
-                            reg_encdec_uut_o_w = 1;
+                        32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) + index_o:begin
+                            reg_din_3_w[index_o] = 1'b1;
+                            up_index = 1'b1;
+                            if(index_o == (INPUT_SIZE_3>>3)-1) begin
+                                rst_index = 1'b1;
+                            end
                         end
-                        32'h4 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + index_o : begin
+                        32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) + (INPUT_SIZE_3>>3) + index_o:begin
                             reg_expected_result_uut_w[index_o] = 1'b1;
                             up_index = 1'b1;
-                            if(index_o == (BLOCK_SIZE>>3)-1) begin
+                            if(index_o == (OUTPUT_SIZE_1>>3)-1) begin
                                 rst_index = 1'b1;
                             end
                         end
                         32'h200: next_state = CHECK_SIGNATURE;
- 		        endcase
+                        default:;
+ 		            endcase
              end
          READ_BYTE:
              begin
@@ -468,46 +487,43 @@ genvar i;
          CHECK_SIGNATURE:
              begin
                rst_uut = 1;
-               
-               if(signature == 32'hAABBCCDD)
+               if(signature == SIGNATURE)
                begin
                  next_state = START_TEST;
                end
                else
                  next_state = END_FSM;
-                 
              end
           START_TEST:
              begin
                next_state = WAIT_UNTIL_END_TEST_OR_TIMEOUT;
+               up_index = 1;
              end
           WAIT_UNTIL_END_TEST_OR_TIMEOUT:
              begin
-                up_timer_exec_counter = 1;
-                if(end_uut) begin
-                    next_state = END_TEST;
-                end    
+               up_timer_exec_counter = 1;
+               if(end_uut | err_uut)
+                 next_state = END_TEST;  
+               else if(counter_timer_exec_o > TIMEOUT_VALUE)
+                 next_state = END_TEST;  
              end
           END_TEST:
              begin
-               reg_block_o_uut_o_w = 1;
                rst_index = 1'b1;
+               reg_output_from_UUT_1_o_w = 1;
                rst_bytes_counter = 1'b1;
-               if(spi_busy == 1'b0 && index_o == 16'h00) begin
+               if(spi_busy == 1'b0 && index_o == 16'h0) begin
                    next_state = COMPARE_RESULT;  
-               end   
-             
-             end   
+               end    
+             end
           COMPARE_RESULT:
              begin
-                 if(expected_result != block_o_uut_o) begin
-                     up_error_counter = 1'b1;
-                     next_state = SEL_WRITE_SD_BLOCK;
+                 next_state = SEL_WRITE_SD_BLOCK;
+                 if((expected_result != output_from_UUT_1_o) || err_uut) begin
+                     up_error_counter = 1'b1;    
                  end
-                 else begin
-                     next_state = UPDATE_BLOCK_COUNTER;
-                 end    
-             end
+                    
+             end   
           SEL_WRITE_SD_BLOCK:
              begin
                  spi_w_block = 1;
@@ -537,28 +553,23 @@ genvar i;
                    32'h2: reg_spi_data_in = signature[15:8];
                    32'h3: reg_spi_data_in = signature[7:0];
                    32'h4 + index_o : begin
-                          reg_spi_data_in = block_i_uut >> (index_o * 8);
+                          reg_spi_data_in = input_to_UUT_1 >> (index_o * 8);
                    end
-                   32'h4 + (BLOCK_SIZE>>3) + index_o : begin
-                          reg_spi_data_in = key_uut >> (index_o*8);
+                   32'h4 + (INPUT_SIZE_1>>3) + index_o : begin
+                          reg_spi_data_in = input_to_UUT_2 >> (index_o * 8);
                    end
-                   
-                   32'h4 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) : begin
-                           reg_spi_data_in = encdec_uut;
+                   32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) + index_o : begin
+                          reg_spi_data_in = input_to_UUT_3 >> (index_o * 8);    
                    end
-
-                   32'h4 + (BLOCK_SIZE>>3) + (KEY_INPUT_SIZE>>3) + 1 + index_o: begin
-                           reg_spi_data_in = expected_result >> (index_o*8);
+                   32'h4 + (INPUT_SIZE_1>>3) + (INPUT_SIZE_2>>3) +(INPUT_SIZE_3>>3) + index_o : begin
+                          reg_spi_data_in = expected_result >> (index_o * 8);     
                    end
-                   
                    BASE_OUTPUTS + index_o : begin
-                          reg_spi_data_in = block_o_uut_o >> (index_o * 8);     
+                          reg_spi_data_in = output_from_UUT_1_o >> (index_o * 8);     
                    end
-                   
-                   BASE_OUTPUTS + (BLOCK_SIZE>>3) + index_o : begin
+                   BASE_OUTPUTS + (OUTPUT_SIZE_1>>3) + index_o : begin
                           reg_spi_data_in = counter_timer_exec_o >> (index_o * 8);    
                    end
-                   
                    32'h200:;
                    32'h201:;
                    32'h202:;
@@ -567,6 +578,7 @@ genvar i;
                          next_state = UPDATE_BLOCK_COUNTER;
                          rst_bytes_counter = 1;
                      end
+                   default:;
                  endcase
              end   
           WAIT_W_BYTE:
@@ -579,29 +591,23 @@ genvar i;
                      if(counter_bytes_o == 32'h3) begin
                         rst_index = 1'b1;
                      end
-                     else if(counter_bytes_o == 32'h4+((BLOCK_SIZE>>3)-1)) begin
+                     else if(counter_bytes_o == 32'h4+((INPUT_SIZE_1>>3)-1)) begin
                         rst_index = 1'b1;
                      end
-                     else if(counter_bytes_o == 32'h4+((BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3)-1)) begin
+                     else if(counter_bytes_o == 32'h4+((INPUT_SIZE_1>>3)+(INPUT_SIZE_2>>3)-1)) begin
                         rst_index = 1'b1;
                      end
-                     else if(counter_bytes_o == 32'h4+((BLOCK_SIZE>>3)+(KEY_INPUT_SIZE>>3))) begin
+                     else if(counter_bytes_o == 32'h4+((INPUT_SIZE_1>>3)+(INPUT_SIZE_2>>3)+(INPUT_SIZE_3>>3)-1)) begin
                         rst_index = 1'b1;
                      end
-                     
                      //rst inicio outputs
                      else if(counter_bytes_o == BASE_OUTPUTS - 1) begin
                         rst_index = 1'b1;
                      end
-                     else if(counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) -1) begin
-                        rst_index = 1'b1;
-                     end
-                     
                      //rst_final outputs
-                     else if (counter_bytes_o == BASE_OUTPUTS + (BLOCK_SIZE>>3) + 7) begin
+                     else if (counter_bytes_o == BASE_OUTPUTS + (OUTPUT_SIZE_1>>3) + 7) begin
                         rst_index = 1'b1;
                      end
-                     
                      up_bytes_counter = 1;
                      next_state = WRITE_DATA;
                  end
@@ -623,6 +629,7 @@ genvar i;
           END_FSM:
             begin
                 up_timer_counter = 0;
+                next_state = INITIAL_CONDITION;
             end
      endcase
  end
@@ -646,4 +653,4 @@ genvar i;
  );
 
 
- endmodule : fsm_autotest
+ endmodule : control_unit
