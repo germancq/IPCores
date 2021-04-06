@@ -652,4 +652,4 @@ genvar i;
  );
 
 
- endmodule : fsm_autotest
+ endmodule : control_unit
