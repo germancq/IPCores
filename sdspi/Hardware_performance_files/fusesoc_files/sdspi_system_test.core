@@ -45,7 +45,7 @@ filesets :
 
     files :
       - rtl/autotest_module/autotest_module.sv
-      - rtl/autotest_module/fsm_autotest.sv
+      - rtl/autotest_module/control_unit.sv
       
 
 

@@ -18,6 +18,7 @@ localparam START_BLOCK = 32'h0x100000;
 module top(
   input sys_clk_pad_i,
   input center_button,
+  input start,
 
   input [15:0] switch_i,
   output [15:0] leds_o,
@@ -75,6 +76,7 @@ module top(
 ) autotest_impl(
     .clk(sys_clk_pad_i),
     .rst(center_button),
+    .start(start),
 
     .cs(cs_autotest),
     .sclk(sclk_autotest),
