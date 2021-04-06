@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2019-10-01 16:32:35
  * @ Modified by: German Cano Quiveu, germancq@dte.us.es
- * @ Modified time: 2021-04-06 22:23:11
+ * @ Modified time: 2021-04-06 22:27:34
  * @ Description:
  */
 
@@ -73,10 +73,11 @@ autotest_module #(
 
     /*UUT signals*/
     .rst_uut(rst_uut),
+    .err_uut(1'b0),
     .input_to_UUT_1(block_i),
     .input_to_UUT_2(key),
     .input_to_UUT_3(enc_dec),
-    .block_o_uut(block_o),
+    .output_from_UUT(block_o),
     .end_uut(end_signal),
 
     .clk_uut(clk_uut),
