@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/18 17:52:50 by germancq          #+#    #+#              #
-#    Updated: 2019/12/18 18:42:35 by germancq         ###   ########.fr        #
+#    Updated: 2021/04/07 13:29:15 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,12 +33,14 @@ r_candidates =        [8,8,16,16,16]
 c_candidates =        [80,128,160,224,256]
 R_candidates =        [45,70,90,120,140]
 
-OPTION_HASH = 4
+OPTION_HASH = 3
 
 N = N_candidates[OPTION_HASH]
 r = r_candidates[OPTION_HASH]
 c = c_candidates[OPTION_HASH]
 R = R_candidates[OPTION_HASH]
+
+SIZE = 1*1024
 
 CLK_PERIOD = 20 # 50 MHz
 
@@ -94,18 +96,19 @@ def execution_test(dut,msg,len_msg,spongent_impl):
         yield n_cycles_clock(dut,1)
         dut.data_ready = 0
         yield n_cycles_clock(dut,1)
-        print(i)
+        #print(i)
         #print(hex(dut.state.value))
         
         while(dut.busy == 1):
             yield n_cycles_clock(dut,1) 
-        spongent_state = spongent_impl.feed_data(data_chunk,spongent_state)     
+        spongent_state = spongent_impl.feed_data(data_chunk,spongent_state)  
+        '''  
         print('-------------------------------------')
         print(hex(dut.state.value))    
         print(hex(spongent_state))
         print('-------------------------------------')
-
-    print('msg send it')        
+        '''
+    #print('msg send it')        
 
     dut.start_hash = 1
     
@@ -137,10 +140,10 @@ def run_test(dut,msg=0):
     
     setup_function(dut) 
     yield rst_function_test(dut)    
-    yield execution_test(dut,msg,64,spongent_impl)  
+    yield execution_test(dut,msg,SIZE,spongent_impl)  
 
              
-n = 50
+n = 100
 factory = TestFactory(run_test)
 
 factory.add_option("msg", np.random.randint(low=1,high=(2**8)-1,size=n))

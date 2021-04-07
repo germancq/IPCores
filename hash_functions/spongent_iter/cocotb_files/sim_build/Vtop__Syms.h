@@ -4,8 +4,8 @@
 // Internal details; most calling programs do not need this header,
 // unless using verilator public meta comments.
 
-#ifndef _VTOP__SYMS_H_
-#define _VTOP__SYMS_H_  // guard
+#ifndef _Vtop__Syms_H_
+#define _Vtop__Syms_H_
 
 #include "verilated.h"
 
@@ -143,22 +143,6 @@ class Vtop__Syms : public VerilatedSyms {
     VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__59__KET____s_box_i;
     VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__5__KET__;
     VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__5__KET____s_box_i;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__60__KET__;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__60__KET____s_box_i;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__61__KET__;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__61__KET____s_box_i;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__62__KET__;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__62__KET____s_box_i;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__63__KET__;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__63__KET____s_box_i;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__64__KET__;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__64__KET____s_box_i;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__65__KET__;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__65__KET____s_box_i;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__66__KET__;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__66__KET____s_box_i;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__67__KET__;
-    VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__67__KET____s_box_i;
     VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__6__KET__;
     VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__6__KET____s_box_i;
     VerilatedScope __Vscope_spongent_iter__permutation_impl__genblk2__BRA__7__KET__;
@@ -181,6 +165,6 @@ class Vtop__Syms : public VerilatedSyms {
     // METHODS
     inline const char* name() { return __Vm_namep; }
     
-} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+} VL_ATTR_ALIGNED(64);
 
 #endif  // guard

@@ -37,8 +37,8 @@ r_candidates = [8,8,16,16,16]
 c_candidates = [80,128,160,224,256]
 R_candidates = [45,70,90,120,140]
 
-OPTION_HASH = 0
-SIZE_FEED_DATA_BYTES = 64*1024
+OPTION_HASH = 4
+SIZE_FEED_DATA_BYTES = 1*1024
 
 
 N = N_candidates[OPTION_HASH]
@@ -102,6 +102,19 @@ def create_microsd_vectors(micro_sd,VIOstorage_file,num,e):
             expected_value = expected_value + 1
             counter_errors = counter_errors + 1
 
+        expected_value_string = '{:22x}'.format(expected_value)
+        if (N == 128):
+            expected_value_string = '{:32x}'.format(expected_value)
+        elif(N == 160):
+            expected_value_string = '{:40x}'.format(expected_value)
+        elif(N == 224):
+            expected_value_string = '{:54x}'.format(expected_value)
+        elif(N == 256):
+            expected_value_string = '{:64x}'.format(expected_value)
+
+        VIOstorage_file.write("""expected result {0}\n""".format(expected_value_string))
+
+       
 
         #clear block
         micro_sd.seek(BLOCK_SIZE*current_block)
@@ -133,7 +146,14 @@ def main():
             param2 : VIO feed data file path
             param3 : N numero tests
             param4 : e , percent of create wrong test
+
     '''
+    try:
+        with(open(sys.argv[1],"rb+")) as micro_sd:
+            micro_sd.close()
+    except:
+        with(open(sys.argv[1],"wb+")) as micro_sd:
+            micro_sd.close()
     try:
         with(open(sys.argv[2],"rb+")) as VIOstorage_file:
             VIOstorage_file.close()
