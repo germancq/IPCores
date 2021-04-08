@@ -141,21 +141,25 @@ if __name__ == "__main__":
     message = 0#0x7d5e997271ef4ea2
     print(message)
     print(hex(message))
-    len_msg = 24
-    mask = 0xFFFF
-    #padding = 0x8000
-    if(r == 8):
-        mask = 0xFF
-        #padding = 0x80
-    j = int(len_msg/r)
-    spongent_state = 0
-    for i in range(0,j):
-        data_chunk = (message >> (r*(j-i-1))) & mask
-        spongent_state = spongent_impl.feed_data(data_chunk,spongent_state)
-    #spongent_state = spongent_impl.feed_data(padding,spongent_state)
-    hash_value = spongent_impl.squeezing_phase(spongent_state)
+    for t in range(1,2):
+        len_msg = 8 * t
+        mask = 0xFFFF
+        #padding = 0x8000
+        if(r == 8):
+            mask = 0xFF
+            #padding = 0x80
+        j = int(len_msg/r)
+        spongent_state = 0
+        for i in range(0,j):
+            data_chunk = 0#(message >> (r*(j-i-1))) & mask
+            spongent_state = spongent_impl.feed_data(data_chunk,spongent_state)
+            print(hex(spongent_state))
+            
+        #spongent_state = spongent_impl.feed_data(padding,spongent_state)
+        hash_value = spongent_impl.squeezing_phase(spongent_state)
 
-    
-    
-    print(hash_value)
-    print(hex(hash_value))
+        print(j)
+        print(hex(hash_value))
+        
+
+        

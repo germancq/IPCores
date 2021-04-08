@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/18 17:52:50 by germancq          #+#    #+#              #
-#    Updated: 2021/04/07 13:29:15 by germancq         ###   ########.fr        #
+#    Updated: 2021/04/08 14:05:14 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ r_candidates =        [8,8,16,16,16]
 c_candidates =        [80,128,160,224,256]
 R_candidates =        [45,70,90,120,140]
 
-OPTION_HASH = 3
+OPTION_HASH = 4
 
 N = N_candidates[OPTION_HASH]
 r = r_candidates[OPTION_HASH]
