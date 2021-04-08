@@ -48,12 +48,12 @@ def read_params_from_sd(block_n,micro_sd):
     
     
     
-    result_100 = int.from_bytes(micro_sd.read(8),byteorder='little')
-    exec_time_100 = int.from_bytes(micro_sd.read(8),byteorder='little')
-    result_200 = int.from_bytes(micro_sd.read(8),byteorder='little')
-    exec_time_200 = int.from_bytes(micro_sd.read(8),byteorder='little')
     result_400 = int.from_bytes(micro_sd.read(8),byteorder='little')
     exec_time_400 = int.from_bytes(micro_sd.read(8),byteorder='little')
+    result_200 = int.from_bytes(micro_sd.read(8),byteorder='little')
+    exec_time_200 = int.from_bytes(micro_sd.read(8),byteorder='little')
+    result_100 = int.from_bytes(micro_sd.read(8),byteorder='little')
+    exec_time_100 = int.from_bytes(micro_sd.read(8),byteorder='little')
     #print(hex(result))
     
     return (signature,
@@ -153,7 +153,7 @@ def gen_calc(micro_sd):
         i = write_params(sheet1,params,i)
 
 
-    wb.save('results_new.xls')
+    wb.save('results_new_1.xls')
 
     print('RESULTS')
     print(TOTAL_TIME_100)
