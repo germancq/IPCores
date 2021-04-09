@@ -31,7 +31,7 @@ r_candidates = [8,8,16,16,16]
 c_candidates = [80,128,160,224,256]
 R_candidates = [45,70,90,120,140]
 
-OPTION_HASH = 4
+OPTION_HASH = 0
 DATA_WIDTH = 64
 
 N = N_candidates[OPTION_HASH]
@@ -101,7 +101,7 @@ def create_posibility(n,parameters,modulo_op):
 
 
 
-def create_microsd_vectors(micro_sd,storage_file,num,e):
+def create_microsd_vectors(micro_sd,VIOstorage_file,storage_file,num,e):
     storage_file.seek(0)
     #storage_file.write(int(N).to_bytes(4,byteorder='big'))
     zero = 0
@@ -120,6 +120,17 @@ def create_microsd_vectors(micro_sd,storage_file,num,e):
             expected_value = expected_value + 1
             counter_errors = counter_errors + 1
 
+        text_string = '{0:0{1}x}'.format(int(text[0]),16)
+        expected_value_string = '{:022x}'.format(expected_value)
+        if (N == 128):
+            expected_value_string = '{:032x}'.format(expected_value)
+        elif(N == 160):
+            expected_value_string = '{:040x}'.format(expected_value)
+        elif(N == 224):
+            expected_value_string = '{:054x}'.format(expected_value)
+        elif(N == 256):
+            expected_value_string = '{:064x}'.format(expected_value)
+        VIOstorage_file.write("""{0} {1}\n""".format(text_string,expected_value_string))
 
         #clear block
         micro_sd.seek(BLOCK_SIZE*(NUM_BLOCK_TEST+j))
@@ -145,8 +156,9 @@ def main():
     '''
         parameters
             param1 : microsd path
-            param2 : N numero tests
-            param3 : e , percent of create wrong test
+            param2 : VIO path
+            param3 : N numero tests
+            param4 : e , percent of create wrong test
     '''
     try:
         with(open(abs_path_file_storage,"rb+")) as storage_file:
@@ -155,15 +167,24 @@ def main():
         with(open(abs_path_file_storage,"wb+")) as storage_file:
             storage_file.close()
 
+    try:
+        with(open(sys.argv[2],"rb+")) as VIOstorage_file:
+            VIOstorage_file.close()
+    except:
+        with(open(sys.argv[2],"wb+")) as VIOstorage_file:
+            VIOstorage_file.close()
+
     uid = getpwnam(username).pw_uid   
     gid = grp.getgrnam(groupname)[2]   
     os.chown(abs_path_file_storage,uid,gid)
+    os.chown(sys.argv[2],uid,gid)
 
     with(open(abs_path_file_storage,"rb+")) as storage_file:
-        with open(sys.argv[1],"rb+") as micro_sd:
-            num = int(sys.argv[2])
-            e = int(sys.argv[3])
-            print(create_microsd_vectors(micro_sd,storage_file,num,e))
+        with(open(sys.argv[2],"w")) as VIOstorage_file:
+            with open(sys.argv[1],"rb+") as micro_sd:
+                num = int(sys.argv[3])
+                e = int(sys.argv[4])
+                print(create_microsd_vectors(micro_sd,VIOstorage_file,storage_file,num,e))
     
 
 if __name__ == "__main__":

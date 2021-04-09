@@ -17,7 +17,7 @@ BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
 SIGNATURE = 0xAABBCCDD
 RESULTS_OFFSET = 0x0
-N = 256
+N = 88
 
 def create_fields(sheet1):
     sheet1.write(0,1,'text')
@@ -125,7 +125,7 @@ def gen_calc(micro_sd):
         i = write_params(sheet1,params,i)
 
 
-    wb.save('results_256.xls')
+    wb.save('results_88_v02.xls')
 
 def main():
     with open(sys.argv[1],"rb") as micro_sd:
