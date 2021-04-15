@@ -182,6 +182,13 @@ def main():
         with(open(abs_path_VIOfile_storage,"wb+")) as VIOstorage_file:
             VIOstorage_file.close()        
 
+    try:
+        with(open(sys.argv[1],"rb+")) as micro_sd:
+            micro_sd.close()
+    except:
+        with(open(sys.argv[1],"wb+")) as micro_sd:
+            micro_sd.close() 
+
     uid = getpwnam(username).pw_uid   
     gid = grp.getgrnam(groupname)[2]   
     os.chown(abs_path_file_storage,uid,gid)

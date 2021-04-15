@@ -7,13 +7,11 @@
 ### Switches...
 # Coverage output mode?  0/1 (from --coverage)
 VM_COVERAGE = 0
-# Parallel builds?  0/1 (from --output-split)
-VM_PARALLEL_BUILDS = 0
 # Threaded output mode?  0/1/N threads (from --threads)
 VM_THREADS = 0
 # Tracing output mode?  0/1 (from --trace)
 VM_TRACE = 0
-# Tracing threaded output mode?  0/1 (from --trace-fst-thread)
+# Tracing threadeds output mode?  0/1 (from --trace-fst-thread)
 VM_TRACE_THREADED = 0
 
 ### Object file lists...

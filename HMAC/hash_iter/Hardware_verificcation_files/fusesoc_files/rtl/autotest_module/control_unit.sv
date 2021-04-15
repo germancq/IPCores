@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-26 21:42:54
- * @ Modified by: German Cano Quiveu, germancq@dte.us.es
- * @ Modified time: 2021-04-06 22:16:52
+ * @ Modified by: Your name
+ * @ Modified time: 2021-04-14 16:26:01
  * @ Description:
  */
 
@@ -691,7 +691,7 @@ genvar i;
                         if((expected_result != output_from_UUT_1_o) || err_uut) 
                         begin
                             up_error_counter = 1'b1;
-                            current_block_w = 1'b1;
+                            
                            
                         end
                     end

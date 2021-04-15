@@ -59,19 +59,19 @@ def write_params(sheet1, params , i):
     result = params[4]
     hw_time = int(calculated_time_in_ns(params[6]))
     print("*************************")
-    print(hex(params[6]))
-    print(hex(result))
-    print(hex(params[5]))
+    for j in range(0,7):
+        print(hex(params[j]))
     print("*************************")
-    if(params[5] == 0 and params[6] == 0) :
-        return i+1
+    error = 0
+    if(params[5] != result) :
+        error = 1
     else :
         sheet1.write(i,1,hex(text))
         sheet1.write(i,2,hex(key))
         sheet1.write(i,3,hex(enc_dec))
         sheet1.write(i,4,hex(result))
         sheet1.write(i,5,hex(params[5]))
-        sheet1.write(i,6,hex(1))
+        sheet1.write(i,6,hex(error))
         sheet1.write(i,7,int(hw_time))
 
     
@@ -97,7 +97,7 @@ def gen_calc(micro_sd):
         i = write_params(sheet1,params,i)
 
 
-    wb.save('results_new.xls')
+    wb.save('results_new_100.xls')
 
 def main():
     with open(sys.argv[1],"rb") as micro_sd:

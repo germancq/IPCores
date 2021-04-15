@@ -102,6 +102,7 @@ Vtop__Syms::Vtop__Syms(Vtop* topp, const char* namep)
     __Vscope_present__present_enc_impl__enc_stage_impl__slayer_i__genblk1__BRA__8__KET____sbox.configure(this, name(), "present.present_enc_impl.enc_stage_impl.slayer_i.genblk1__BRA__8__KET__.sbox", "sbox", VerilatedScope::SCOPE_MODULE);
     __Vscope_present__present_enc_impl__enc_stage_impl__slayer_i__genblk1__BRA__9__KET__.configure(this, name(), "present.present_enc_impl.enc_stage_impl.slayer_i.genblk1__BRA__9__KET__", "genblk1__BRA__9__KET__", VerilatedScope::SCOPE_OTHER);
     __Vscope_present__present_enc_impl__enc_stage_impl__slayer_i__genblk1__BRA__9__KET____sbox.configure(this, name(), "present.present_enc_impl.enc_stage_impl.slayer_i.genblk1__BRA__9__KET__.sbox", "sbox", VerilatedScope::SCOPE_MODULE);
+    __Vscope_present__reg_end_signal.configure(this, name(), "present.reg_end_signal", "reg_end_signal", VerilatedScope::SCOPE_MODULE);
     __Vscope_present__result.configure(this, name(), "present.result", "result", VerilatedScope::SCOPE_MODULE);
     
     // Setup scope hierarchy
@@ -109,6 +110,7 @@ Vtop__Syms::Vtop__Syms(Vtop* topp, const char* namep)
     __Vhier.add(&__Vscope_present, &__Vscope_present__key_sch_impl);
     __Vhier.add(&__Vscope_present, &__Vscope_present__present_dec_impl);
     __Vhier.add(&__Vscope_present, &__Vscope_present__present_enc_impl);
+    __Vhier.add(&__Vscope_present, &__Vscope_present__reg_end_signal);
     __Vhier.add(&__Vscope_present, &__Vscope_present__result);
     __Vhier.add(&__Vscope_present__key_sch_impl, &__Vscope_present__key_sch_impl__counter_impl);
     __Vhier.add(&__Vscope_present__key_sch_impl, &__Vscope_present__key_sch_impl__key_register);
@@ -163,10 +165,10 @@ Vtop__Syms::Vtop__Syms(Vtop* topp, const char* namep)
         __Vscope_TOP.varInsert(__Vfinal,"block_o", &(TOPp->block_o), VLVT_UINT64,VLVD_OUT|VLVF_PUB_RW,1 ,63,0);
         __Vscope_TOP.varInsert(__Vfinal,"clk", &(TOPp->clk), VLVT_UINT8,VLVD_IN|VLVF_PUB_RW,0);
         __Vscope_TOP.varInsert(__Vfinal,"enc_dec", &(TOPp->enc_dec), VLVT_UINT8,VLVD_IN|VLVF_PUB_RW,0);
-        __Vscope_TOP.varInsert(__Vfinal,"end_dec", &(TOPp->end_dec), VLVT_UINT8,VLVD_OUT|VLVF_PUB_RW,0);
-        __Vscope_TOP.varInsert(__Vfinal,"end_enc", &(TOPp->end_enc), VLVT_UINT8,VLVD_OUT|VLVF_PUB_RW,0);
         __Vscope_TOP.varInsert(__Vfinal,"end_key_generation", &(TOPp->end_key_generation), VLVT_UINT8,VLVD_OUT|VLVF_PUB_RW,0);
+        __Vscope_TOP.varInsert(__Vfinal,"end_signal", &(TOPp->end_signal), VLVT_UINT8,VLVD_OUT|VLVF_PUB_RW,0);
         __Vscope_TOP.varInsert(__Vfinal,"key", &(TOPp->key), VLVT_WDATA,VLVD_IN|VLVF_PUB_RW,1 ,79,0);
+        __Vscope_TOP.varInsert(__Vfinal,"rq_data", &(TOPp->rq_data), VLVT_UINT8,VLVD_IN|VLVF_PUB_RW,0);
         __Vscope_TOP.varInsert(__Vfinal,"rst", &(TOPp->rst), VLVT_UINT8,VLVD_IN|VLVF_PUB_RW,0);
         __Vscope_present.varInsert(__Vfinal,"block_i", &(TOPp->present__DOT__block_i), VLVT_UINT64,VLVD_NODIR|VLVF_PUB_RW,1 ,63,0);
         __Vscope_present.varInsert(__Vfinal,"block_o", &(TOPp->present__DOT__block_o), VLVT_UINT64,VLVD_NODIR|VLVF_PUB_RW,1 ,63,0);
@@ -178,11 +180,13 @@ Vtop__Syms::Vtop__Syms(Vtop* topp, const char* namep)
         __Vscope_present.varInsert(__Vfinal,"end_dec", &(TOPp->present__DOT__end_dec), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present.varInsert(__Vfinal,"end_enc", &(TOPp->present__DOT__end_enc), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present.varInsert(__Vfinal,"end_key_generation", &(TOPp->present__DOT__end_key_generation), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
+        __Vscope_present.varInsert(__Vfinal,"end_signal", &(TOPp->present__DOT__end_signal), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present.varInsert(__Vfinal,"key", &(TOPp->present__DOT__key), VLVT_WDATA,VLVD_NODIR|VLVF_PUB_RW,1 ,79,0);
         __Vscope_present.varInsert(__Vfinal,"key_index", &(TOPp->present__DOT__key_index), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,4,0);
         __Vscope_present.varInsert(__Vfinal,"key_index_dec", &(TOPp->present__DOT__key_index_dec), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,4,0);
         __Vscope_present.varInsert(__Vfinal,"key_index_enc", &(TOPp->present__DOT__key_index_enc), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,4,0);
         __Vscope_present.varInsert(__Vfinal,"roundkey", &(TOPp->present__DOT__roundkey), VLVT_UINT64,VLVD_NODIR|VLVF_PUB_RW,1 ,63,0);
+        __Vscope_present.varInsert(__Vfinal,"rq_data", &(TOPp->present__DOT__rq_data), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present.varInsert(__Vfinal,"rst", &(TOPp->present__DOT__rst), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present.varInsert(__Vfinal,"start_dec", &(TOPp->present__DOT__start_dec), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present.varInsert(__Vfinal,"start_enc", &(TOPp->present__DOT__start_enc), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
@@ -352,6 +356,11 @@ Vtop__Syms::Vtop__Syms(Vtop* topp, const char* namep)
         __Vscope_present__present_enc_impl__enc_stage_impl__slayer_i__genblk1__BRA__8__KET____sbox.varInsert(__Vfinal,"dout", &(TOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__8__KET____DOT__sbox__DOT__dout), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,3,0);
         __Vscope_present__present_enc_impl__enc_stage_impl__slayer_i__genblk1__BRA__9__KET____sbox.varInsert(__Vfinal,"din", &(TOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__9__KET____DOT__sbox__DOT__din), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,3,0);
         __Vscope_present__present_enc_impl__enc_stage_impl__slayer_i__genblk1__BRA__9__KET____sbox.varInsert(__Vfinal,"dout", &(TOPp->present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__9__KET____DOT__sbox__DOT__dout), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,3,0);
+        __Vscope_present__reg_end_signal.varInsert(__Vfinal,"cl", &(TOPp->present__DOT__reg_end_signal__DOT__cl), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
+        __Vscope_present__reg_end_signal.varInsert(__Vfinal,"clk", &(TOPp->present__DOT__reg_end_signal__DOT__clk), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
+        __Vscope_present__reg_end_signal.varInsert(__Vfinal,"din", &(TOPp->present__DOT__reg_end_signal__DOT__din), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,0,0);
+        __Vscope_present__reg_end_signal.varInsert(__Vfinal,"dout", &(TOPp->present__DOT__reg_end_signal__DOT__dout), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,0,0);
+        __Vscope_present__reg_end_signal.varInsert(__Vfinal,"w", &(TOPp->present__DOT__reg_end_signal__DOT__w), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present__result.varInsert(__Vfinal,"cl", &(TOPp->present__DOT__result__DOT__cl), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present__result.varInsert(__Vfinal,"clk", &(TOPp->present__DOT__result__DOT__clk), VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_present__result.varInsert(__Vfinal,"din", &(TOPp->present__DOT__result__DOT__din), VLVT_UINT64,VLVD_NODIR|VLVF_PUB_RW,1 ,63,0);

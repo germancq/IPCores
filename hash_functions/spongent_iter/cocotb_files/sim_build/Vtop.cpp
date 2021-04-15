@@ -45,43 +45,9 @@ CData/*3:0*/ Vtop::__Vtable31_spongent_iter__DOT__permutation_impl__DOT__genblk2
 CData/*3:0*/ Vtop::__Vtable32_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout[16];
 CData/*3:0*/ Vtop::__Vtable33_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout[16];
 CData/*3:0*/ Vtop::__Vtable34_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[16];
-CData/*3:0*/ Vtop::__Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[16];
-CData/*1:0*/ Vtop::__Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[16];
-CData/*0:0*/ Vtop::__Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[16];
-CData/*0:0*/ Vtop::__Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[16];
+CData/*1:0*/ Vtop::__Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[16];
+CData/*0:0*/ Vtop::__Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[16];
+CData/*0:0*/ Vtop::__Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[16];
 
 //--------------------
 
@@ -170,13 +136,13 @@ void Vtop::_initial__TOP__1(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_initial__TOP__1\n"); );
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    vlTOPp->spongent_iter__DOT__lCounter__DOT__feedback_coeff = 0x11dU;
-    vlTOPp->spongent_iter__DOT__lCounter__DOT__initial_state = 0x9eU;
+    vlTOPp->spongent_iter__DOT__lCounter__DOT__feedback_coeff = 0xc1U;
+    vlTOPp->spongent_iter__DOT__lCounter__DOT__initial_state = 0x7aU;
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__down = 0U;
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__din = 0U;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__down = 0U;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__din = 0U;
-    vlTOPp->spongent_iter__DOT__last_padded_data = 0x8000U;
+    vlTOPp->spongent_iter__DOT__last_padded_data = 0x80U;
 }
 
 VL_INLINE_OPT void Vtop::_combo__TOP__2(Vtop__Syms* __restrict vlSymsp) {
@@ -204,8 +170,8 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_settle__TOP__3\n"); );
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
-    WData/*287:0*/ __Vtemp1[9];
-    WData/*287:0*/ __Vtemp3[9];
+    WData/*159:0*/ __Vtemp1[5];
+    WData/*159:0*/ __Vtemp3[5];
     // Body
     vlTOPp->spongent_iter__DOT__rst = vlTOPp->rst;
     vlTOPp->spongent_iter__DOT__data_input = vlTOPp->data_input;
@@ -213,7 +179,7 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->spongent_iter__DOT__start_hash = vlTOPp->start_hash;
     vlTOPp->spongent_iter__DOT__clk = vlTOPp->clk;
     vlTOPp->spongent_iter__DOT__lCounter__DOT__bit_xored 
-        = (1U & VL_REDXOR_32((0x8eU & (IData)(vlTOPp->spongent_iter__DOT__lCounter__DOT__state_reg))));
+        = (1U & VL_REDXOR_32((0x60U & (IData)(vlTOPp->spongent_iter__DOT__lCounter__DOT__state_reg))));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__din 
         = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[1U] 
                                        << ((IData)(0x20U) 
@@ -418,218 +384,10 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
                                            - (IData)(4U)))) 
                    | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
                       >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x10U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x10U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x14U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x14U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x10U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x10U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x14U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x14U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x10U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x10U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x14U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x14U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x10U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x10U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x14U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x14U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[9U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                      >> 0U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[9U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                      >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[9U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                      >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[9U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                      >> 0xcU)));
     vlTOPp->spongent_iter__DOT__digest[0U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[0U];
     vlTOPp->spongent_iter__DOT__digest[1U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[1U];
     vlTOPp->spongent_iter__DOT__digest[2U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[2U];
     vlTOPp->spongent_iter__DOT__digest[3U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[3U];
-    vlTOPp->spongent_iter__DOT__digest[4U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[4U];
-    vlTOPp->spongent_iter__DOT__digest[5U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[5U];
-    vlTOPp->spongent_iter__DOT__digest[6U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[6U];
-    vlTOPp->spongent_iter__DOT__digest[7U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[7U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[0U] 
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[0U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[1U] 
@@ -640,18 +398,7 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[3U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[4U] 
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[4U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[5U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[5U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[6U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[6U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[7U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[7U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[8U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[8U];
-    VL_EXTEND_WI(272,16, __Vtemp1, ((0xff00U & ((IData)(vlTOPp->data_input) 
-                                                << 8U)) 
-                                    | (0xffU & ((IData)(vlTOPp->data_input) 
-                                                >> 8U))));
+    VL_EXTEND_WI(136,8, __Vtemp1, (IData)(vlTOPp->data_input));
     vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[0U] 
         = (__Vtemp1[0U] ^ vlTOPp->spongent_iter__DOT__state[0U]);
     vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[1U] 
@@ -662,14 +409,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = (__Vtemp1[3U] ^ vlTOPp->spongent_iter__DOT__state[3U]);
     vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[4U] 
         = (__Vtemp1[4U] ^ vlTOPp->spongent_iter__DOT__state[4U]);
-    vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[5U] 
-        = (__Vtemp1[5U] ^ vlTOPp->spongent_iter__DOT__state[5U]);
-    vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[6U] 
-        = (__Vtemp1[6U] ^ vlTOPp->spongent_iter__DOT__state[6U]);
-    vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[7U] 
-        = (__Vtemp1[7U] ^ vlTOPp->spongent_iter__DOT__state[7U]);
-    vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[8U] 
-        = (__Vtemp1[8U] ^ vlTOPp->spongent_iter__DOT__state[8U]);
     vlTOPp->spongent_iter__DOT__lCounter__DOT__state 
         = vlTOPp->spongent_iter__DOT__lCounter__DOT__state_reg;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_o 
@@ -876,221 +615,11 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable33_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx33];
-    vlTOPp->__Vtableidx34 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                   >> 4U)));
+    vlTOPp->__Vtableidx34 = (0xfU & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
+                                     >> 4U));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable34_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx34];
-    vlTOPp->__Vtableidx35 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                   >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx35];
-    vlTOPp->__Vtableidx36 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                   >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx36];
-    vlTOPp->__Vtableidx37 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                   >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx37];
-    vlTOPp->__Vtableidx38 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 0xcU) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                  >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx38];
-    vlTOPp->__Vtableidx39 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 8U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx39];
-    vlTOPp->__Vtableidx40 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 4U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx40];
-    vlTOPp->__Vtableidx41 = (0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U]);
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx41];
-    vlTOPp->__Vtableidx42 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                   >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx42];
-    vlTOPp->__Vtableidx43 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                   >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx43];
-    vlTOPp->__Vtableidx44 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                   >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx44];
-    vlTOPp->__Vtableidx45 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                   >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx45];
-    vlTOPp->__Vtableidx46 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 0xcU) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                  >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx46];
-    vlTOPp->__Vtableidx47 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 8U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx47];
-    vlTOPp->__Vtableidx48 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 4U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx48];
-    vlTOPp->__Vtableidx49 = (0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U]);
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx49];
-    vlTOPp->__Vtableidx50 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                   >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx50];
-    vlTOPp->__Vtableidx51 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                   >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx51];
-    vlTOPp->__Vtableidx52 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                   >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx52];
-    vlTOPp->__Vtableidx53 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                   >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx53];
-    vlTOPp->__Vtableidx54 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 0xcU) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                  >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx54];
-    vlTOPp->__Vtableidx55 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 8U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx55];
-    vlTOPp->__Vtableidx56 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 4U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx56];
-    vlTOPp->__Vtableidx57 = (0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U]);
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx57];
-    vlTOPp->__Vtableidx58 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                   >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx58];
-    vlTOPp->__Vtableidx59 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                   >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx59];
-    vlTOPp->__Vtableidx60 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                   >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx60];
-    vlTOPp->__Vtableidx61 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                   >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx61];
-    vlTOPp->__Vtableidx62 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 0xcU) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                  >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx62];
-    vlTOPp->__Vtableidx63 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 8U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx63];
-    vlTOPp->__Vtableidx64 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 4U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx64];
-    vlTOPp->__Vtableidx65 = (0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U]);
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx65];
-    vlTOPp->__Vtableidx66 = (0xfU & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                     >> 4U));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx66];
-    vlTOPp->__Vtableidx67 = (0xfU & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                     >> 8U));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx67];
-    vlTOPp->__Vtableidx68 = (0xfU & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                     >> 0xcU));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx68];
     vlTOPp->spongent_iter__DOT__busy = 1U;
     if ((0U == (IData)(vlTOPp->spongent_iter__DOT__current_state))) {
         vlTOPp->spongent_iter__DOT__busy = 0U;
@@ -1163,10 +692,7 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
             }
         }
     }
-    VL_EXTEND_WI(272,16, __Vtemp3, ((0xff00U & ((IData)(vlTOPp->spongent_iter__DOT__last_padded_data) 
-                                                << 8U)) 
-                                    | (0xffU & ((IData)(vlTOPp->spongent_iter__DOT__last_padded_data) 
-                                                >> 8U))));
+    VL_EXTEND_WI(136,8, __Vtemp3, (IData)(vlTOPp->spongent_iter__DOT__last_padded_data));
     vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[0U] 
         = (__Vtemp3[0U] ^ vlTOPp->spongent_iter__DOT__state[0U]);
     vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[1U] 
@@ -1177,14 +703,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = (__Vtemp3[3U] ^ vlTOPp->spongent_iter__DOT__state[3U]);
     vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[4U] 
         = (__Vtemp3[4U] ^ vlTOPp->spongent_iter__DOT__state[4U]);
-    vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[5U] 
-        = (__Vtemp3[5U] ^ vlTOPp->spongent_iter__DOT__state[5U]);
-    vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[6U] 
-        = (__Vtemp3[6U] ^ vlTOPp->spongent_iter__DOT__state[6U]);
-    vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[7U] 
-        = (__Vtemp3[7U] ^ vlTOPp->spongent_iter__DOT__state[7U]);
-    vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[8U] 
-        = (__Vtemp3[8U] ^ vlTOPp->spongent_iter__DOT__state[8U]);
     vlTOPp->spongent_iter__DOT__lCounter__DOT__clk 
         = vlTOPp->spongent_iter__DOT__clk;
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__clk 
@@ -1195,10 +713,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->digest[1U] = vlTOPp->spongent_iter__DOT__digest[1U];
     vlTOPp->digest[2U] = vlTOPp->spongent_iter__DOT__digest[2U];
     vlTOPp->digest[3U] = vlTOPp->spongent_iter__DOT__digest[3U];
-    vlTOPp->digest[4U] = vlTOPp->spongent_iter__DOT__digest[4U];
-    vlTOPp->digest[5U] = vlTOPp->spongent_iter__DOT__digest[5U];
-    vlTOPp->digest[6U] = vlTOPp->spongent_iter__DOT__digest[6U];
-    vlTOPp->digest[7U] = vlTOPp->spongent_iter__DOT__digest[7U];
     vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[0U] 
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[0U];
     vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[1U] 
@@ -1209,20 +723,12 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[3U];
     vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[4U] 
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[4U];
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[5U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[5U];
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[6U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[6U];
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[7U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[7U];
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[8U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[8U];
     vlTOPp->spongent_iter__DOT__lCounter_state = vlTOPp->spongent_iter__DOT__lCounter__DOT__state;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__end_squeezing 
         = ((0xfU <= (IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_o))
             ? 1U : 0U);
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__end_permutation 
-        = ((0x8cU == (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_o))
+        = ((0x46U == (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_o))
             ? 1U : 0U);
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
         = ((0xfffffff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]) 
@@ -1349,144 +855,12 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
            | (0xf0000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout) 
                              << 0x1cU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xfffffff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
+        = ((0xf0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
            | (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xffffff0fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
+        = ((0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
            | (0xfffffff0U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout) 
                              << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xfffff0ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xffff0fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xfff0ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xffff0000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xff0fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xfff00000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xf0ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xff000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xfffffff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xffffff0fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xfffff0ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xffff0fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xfff0ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xffff0000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xff0fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xfff00000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xf0ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xff000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xfffffff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xffffff0fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xfffff0ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xffff0fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xfff0ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xffff0000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xff0fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xfff00000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xf0ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xff000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xfffffff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xffffff0fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xfffff0ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xffff0fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xfff0ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xffff0000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xff0fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xfff00000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xf0ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xff000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-        = ((0xfff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]) 
-           | (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-        = ((0xff0fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-        = ((0xf0ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-        = ((0xfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
     vlTOPp->busy = vlTOPp->spongent_iter__DOT__busy;
     vlTOPp->end_hash = vlTOPp->spongent_iter__DOT__end_hash;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__rst 
@@ -1511,22 +885,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = ((IData)(vlTOPp->spongent_iter__DOT__last_block)
             ? vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[4U]
             : vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[4U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[5U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__last_block)
-            ? vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[5U]
-            : vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[5U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[6U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__last_block)
-            ? vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[6U]
-            : vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[6U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[7U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__last_block)
-            ? vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[7U]
-            : vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[7U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[8U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__last_block)
-            ? vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[8U]
-            : vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[8U]);
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__clk 
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__clk;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__clk 
@@ -1534,37 +892,32 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__lCounter_state 
         = vlTOPp->spongent_iter__DOT__lCounter_state;
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xfeU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x7eU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (1U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                    >> 7U)));
+                    >> 6U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xfdU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x7dU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (2U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                    >> 5U)));
+                    >> 4U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xfbU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x7bU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (4U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                    >> 3U)));
+                    >> 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xf7U & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
-           | (8U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                    >> 1U)));
+        = ((0x77U & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+           | (8U & (IData)(vlTOPp->spongent_iter__DOT__lCounter_state)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xefU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x6fU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (0x10U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                       << 1U)));
+                       << 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xdfU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x5fU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (0x20U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                       << 3U)));
+                       << 4U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xbfU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x3fU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (0x40U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                       << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x7fU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
-           | (0x80U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                       << 7U)));
+                       << 6U)));
     vlTOPp->spongent_iter__DOT__end_squeezing = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__end_squeezing;
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__up 
         = (1U & (~ (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__end_permutation)));
@@ -1581,1090 +934,544 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (1U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                    << 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       << 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                        << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         << 9U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 3U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                    >> 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x20U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         << 6U)));
+           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 1U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x80U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 6U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 5U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x400U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         << 3U)));
+                       >> 4U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 3U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 9U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 8U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x8000U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]));
+                       >> 7U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 6U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0xcU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 0xbU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0xaU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                         >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                          >> 3U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0xfU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 0xeU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0xdU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                         >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                          >> 6U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0x12U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0x11U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                          >> 9U)));
+                        >> 0x10U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         >> 0xfU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0x15U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0x14U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                          >> 0xcU)));
+                        >> 0x13U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         >> 0x12U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 8U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                        << 9U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         << 0xaU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          << 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           << 0x11U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 5U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                        << 6U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         << 7U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           << 0xeU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         << 3U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           << 0xbU)));
+                         << 4U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          << 5U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                         >> 1U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x2000U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U]));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           << 8U)));
+                         << 1U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          << 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 4U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         >> 3U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                           >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                            << 5U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 7U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         >> 6U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 5U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                           >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                            << 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 0xaU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 9U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                            >> 1U)));
+                          >> 8U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           >> 7U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 0xdU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 0xcU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           >> 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                            >> 4U)));
+                          >> 0xbU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           >> 0xaU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0x10U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                          << 0x11U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 0x12U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0x16U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 0x19U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0xdU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                          << 0xeU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 0xfU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 0x16U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0xaU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 0xbU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 0x13U)));
+                           << 0xcU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            << 0xdU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 7U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 8U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 0x10U)));
+                           << 9U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            << 0xaU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 4U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 5U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            << 6U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                             << 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                    >> 0x13U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 1U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            << 3U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                    >> 0x16U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            >> 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            >> 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                    >> 0x19U)));
+           | (0x4000000U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U]));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             << 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            >> 5U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            >> 4U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                    >> 0x1cU)));
+                            >> 3U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             >> 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                             << 0x18U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                            << 0x19U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0x1aU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 0x1bU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       << 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                             << 0x15U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                            << 0x16U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0x17U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                             << 0x12U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0x13U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x15U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 5U)));
+                             << 0x14U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xfeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0xbU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                             << 0xfU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0x10U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 8U)));
+                             << 0x11U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xfdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0xeU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 0xcU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0xdU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
         = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
            | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0x12U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xfbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                     >> 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                        >> 0xbU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 9U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0xaU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
         = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
            | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0x15U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xf7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                     >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                        >> 0xeU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 6U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
+        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0x19U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
         = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
            | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x17U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                        >> 0x11U)));
+                    >> 0x18U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                       >> 0x17U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 3U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
+        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0x1cU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
         = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
            | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x1aU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0x17U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                        >> 0x14U)));
+                    >> 0x1bU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                       >> 0x1aU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
         = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
            | (1U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
+        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
+                    << 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
         = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
            | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
+                       << 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
                        << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         << 9U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
         = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
            | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
                     >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                    >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x400U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                    >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x8000U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                          >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                          >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        >> 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                          >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 0x15U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        >> 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         >> 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                          >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                        << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         << 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          << 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           << 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                        << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          << 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           << 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                        << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           << 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                        >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                            << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         >> 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                            << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         >> 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          >> 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                            >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         >> 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          >> 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           >> 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                            >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                          << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 0x16U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 0x19U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                          << 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 0x16U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                          << 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                          << 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                    >> 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                    >> 0x16U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                    >> 0x19U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           >> 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                    >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                            << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 0x1bU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                            << 0x15U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                            << 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 0x15U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                            << 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                        >> 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                        >> 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 0x17U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                        >> 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 0x1aU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 0x17U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xf7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                        >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (1U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                       << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                        << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                         << 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                    >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x20U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                        << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                         << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                    >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                       >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x400U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                         << 3U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                    >> 9U)));
+           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
+                    >> 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
+                       >> 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                       >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                        >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0x7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x8000U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]));
+        = ((0x7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (0x80U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]));
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__rst 
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__rst;
     vlTOPp->spongent_iter__DOT__permutation_initial_state[0U] 
@@ -2687,37 +1494,21 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
             ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[4U]
             : vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[4U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state[5U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
-            ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[5U]
-            : vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[5U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state[6U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
-            ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[6U]
-            : vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[6U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state[7U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
-            ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[7U]
-            : vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[7U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state[8U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
-            ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[8U]
-            : vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[8U]);
     vlTOPp->spongent_iter__DOT__shift_lCounter = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__shift_lCounter;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__end_permutation 
         = vlTOPp->spongent_iter__DOT__end_permutation;
-    vlTOPp->__Vtableidx69 = (((IData)(vlTOPp->spongent_iter__DOT__end_permutation) 
+    vlTOPp->__Vtableidx35 = (((IData)(vlTOPp->spongent_iter__DOT__end_permutation) 
                               << 3U) | (((IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__end_squeezing) 
                                          << 2U) | (IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__current_state)));
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__next_state 
-        = vlTOPp->__Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state
-        [vlTOPp->__Vtableidx69];
+        = vlTOPp->__Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state
+        [vlTOPp->__Vtableidx35];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation 
-        = vlTOPp->__Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation
-        [vlTOPp->__Vtableidx69];
+        = vlTOPp->__Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation
+        [vlTOPp->__Vtableidx35];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up 
-        = vlTOPp->__Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up
-        [vlTOPp->__Vtableidx69];
+        = vlTOPp->__Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up
+        [vlTOPp->__Vtableidx35];
     vlTOPp->spongent_iter__DOT__next_state = vlTOPp->spongent_iter__DOT__current_state;
     if ((0U == (IData)(vlTOPp->spongent_iter__DOT__current_state))) {
         if (vlTOPp->data_ready) {
@@ -2767,14 +1558,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[0U] 
         = vlTOPp->spongent_iter__DOT__permutation_initial_state[0U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[1U] 
@@ -2785,14 +1568,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_initial_state[3U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_initial_state[4U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_initial_state[5U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_initial_state[6U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_initial_state[7U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_initial_state[8U];
     vlTOPp->spongent_iter__DOT__lCounter__DOT__shift 
         = vlTOPp->spongent_iter__DOT__shift_lCounter;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__up 
@@ -2809,14 +1584,6 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[3U];
     vlTOPp->spongent_iter__DOT__permutation_state[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[4U];
-    vlTOPp->spongent_iter__DOT__permutation_state[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[5U];
-    vlTOPp->spongent_iter__DOT__permutation_state[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[6U];
-    vlTOPp->spongent_iter__DOT__permutation_state[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[7U];
-    vlTOPp->spongent_iter__DOT__permutation_state[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[8U];
     vlTOPp->spongent_iter__DOT__rst_permutation = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
                                                     ? (IData)(vlTOPp->spongent_iter__DOT__rst_permutation_from_squezzing)
                                                     : (IData)(vlTOPp->spongent_iter__DOT__rst_permutation_from_absorb));
@@ -2830,20 +1597,8 @@ void Vtop::_settle__TOP__3(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_state[3U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_state[4U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_state[5U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_state[6U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_state[7U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_state[8U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result_chunk 
-        = ((0xff00U & (vlTOPp->spongent_iter__DOT__permutation_state[0U] 
-                       << 8U)) | (0xffU & ((vlTOPp->spongent_iter__DOT__permutation_state[1U] 
-                                            << 0x18U) 
-                                           | (vlTOPp->spongent_iter__DOT__permutation_state[0U] 
-                                              >> 8U))));
+        = (0xffU & vlTOPp->spongent_iter__DOT__permutation_state[0U]);
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__rst 
         = vlTOPp->spongent_iter__DOT__rst_permutation;
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__rst_lCounter 
@@ -2859,20 +1614,20 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_sequent__TOP__4\n"); );
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
-    CData/*7:0*/ __Vdly__spongent_iter__DOT__lCounter__DOT__state_reg;
-    CData/*7:0*/ __Vdly__spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__dout;
+    CData/*6:0*/ __Vdly__spongent_iter__DOT__lCounter__DOT__state_reg;
+    CData/*6:0*/ __Vdly__spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__dout;
     CData/*4:0*/ __Vdly__spongent_iter__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__dout;
-    WData/*271:0*/ __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[9];
-    WData/*255:0*/ __Vtemp8[8];
-    WData/*255:0*/ __Vtemp9[8];
-    WData/*255:0*/ __Vtemp10[8];
-    WData/*287:0*/ __Vtemp12[9];
-    WData/*287:0*/ __Vtemp14[9];
-    WData/*287:0*/ __Vtemp15[9];
-    WData/*287:0*/ __Vtemp19[9];
-    WData/*287:0*/ __Vtemp21[9];
-    WData/*287:0*/ __Vtemp22[9];
-    WData/*287:0*/ __Vtemp25[9];
+    WData/*135:0*/ __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[5];
+    WData/*127:0*/ __Vtemp8[4];
+    WData/*127:0*/ __Vtemp9[4];
+    WData/*127:0*/ __Vtemp10[4];
+    WData/*159:0*/ __Vtemp12[5];
+    WData/*159:0*/ __Vtemp14[5];
+    WData/*159:0*/ __Vtemp15[5];
+    WData/*159:0*/ __Vtemp19[5];
+    WData/*159:0*/ __Vtemp21[5];
+    WData/*159:0*/ __Vtemp22[5];
+    WData/*159:0*/ __Vtemp25[5];
     // Body
     __Vdly__spongent_iter__DOT__lCounter__DOT__state_reg 
         = vlTOPp->spongent_iter__DOT__lCounter__DOT__state_reg;
@@ -2890,14 +1645,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[3U];
     __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U];
-    __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U];
-    __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U];
-    __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U];
-    __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U];
     if ((0U == (IData)(vlTOPp->spongent_iter__DOT__current_state))) {
         vlTOPp->spongent_iter__DOT__begin_squeezing = 0U;
     } else {
@@ -2911,16 +1658,21 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
             }
         }
     }
+    if (vlTOPp->spongent_iter__DOT__rst_lCounter) {
+        __Vdly__spongent_iter__DOT__lCounter__DOT__state_reg = 0x7aU;
+    } else {
+        if (vlTOPp->spongent_iter__DOT__shift_lCounter) {
+            __Vdly__spongent_iter__DOT__lCounter__DOT__state_reg 
+                = ((0x7eU & ((IData)(vlTOPp->spongent_iter__DOT__lCounter__DOT__state_reg) 
+                             << 1U)) | (IData)(vlTOPp->spongent_iter__DOT__lCounter__DOT__bit_xored));
+        }
+    }
     if ((0U == (IData)(vlTOPp->spongent_iter__DOT__current_state))) {
         vlTOPp->spongent_iter__DOT__state[0U] = 0U;
         vlTOPp->spongent_iter__DOT__state[1U] = 0U;
         vlTOPp->spongent_iter__DOT__state[2U] = 0U;
         vlTOPp->spongent_iter__DOT__state[3U] = 0U;
         vlTOPp->spongent_iter__DOT__state[4U] = 0U;
-        vlTOPp->spongent_iter__DOT__state[5U] = 0U;
-        vlTOPp->spongent_iter__DOT__state[6U] = 0U;
-        vlTOPp->spongent_iter__DOT__state[7U] = 0U;
-        vlTOPp->spongent_iter__DOT__state[8U] = 0U;
     } else {
         if ((1U != (IData)(vlTOPp->spongent_iter__DOT__current_state))) {
             if ((2U == (IData)(vlTOPp->spongent_iter__DOT__current_state))) {
@@ -2935,14 +1687,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                         = vlTOPp->spongent_iter__DOT__permutation_state[3U];
                     vlTOPp->spongent_iter__DOT__state[4U] 
                         = vlTOPp->spongent_iter__DOT__permutation_state[4U];
-                    vlTOPp->spongent_iter__DOT__state[5U] 
-                        = vlTOPp->spongent_iter__DOT__permutation_state[5U];
-                    vlTOPp->spongent_iter__DOT__state[6U] 
-                        = vlTOPp->spongent_iter__DOT__permutation_state[6U];
-                    vlTOPp->spongent_iter__DOT__state[7U] 
-                        = vlTOPp->spongent_iter__DOT__permutation_state[7U];
-                    vlTOPp->spongent_iter__DOT__state[8U] 
-                        = vlTOPp->spongent_iter__DOT__permutation_state[8U];
                 }
             }
         }
@@ -2951,8 +1695,8 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                   >> 1U)))) {
         if ((1U & (IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__current_state))) {
             if (vlTOPp->spongent_iter__DOT__end_permutation) {
-                VL_SHIFTL_WWI(256,256,32, __Vtemp8, vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result, 0x10U);
-                VL_EXTEND_WI(256,16, __Vtemp9, (IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result_chunk));
+                VL_SHIFTL_WWI(128,128,32, __Vtemp8, vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result, 8U);
+                VL_EXTEND_WI(128,8, __Vtemp9, (IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result_chunk));
                 vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[0U] 
                     = (__Vtemp8[0U] | __Vtemp9[0U]);
                 vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[1U] 
@@ -2961,17 +1705,9 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                     = (__Vtemp8[2U] | __Vtemp9[2U]);
                 vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[3U] 
                     = (__Vtemp8[3U] | __Vtemp9[3U]);
-                vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[4U] 
-                    = (__Vtemp8[4U] | __Vtemp9[4U]);
-                vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[5U] 
-                    = (__Vtemp8[5U] | __Vtemp9[5U]);
-                vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[6U] 
-                    = (__Vtemp8[6U] | __Vtemp9[6U]);
-                vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[7U] 
-                    = (__Vtemp8[7U] | __Vtemp9[7U]);
             }
         } else {
-            VL_EXTEND_WI(256,16, __Vtemp10, (IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result_chunk));
+            VL_EXTEND_WI(128,8, __Vtemp10, (IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result_chunk));
             vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[0U] 
                 = __Vtemp10[0U];
             vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[1U] 
@@ -2980,23 +1716,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                 = __Vtemp10[2U];
             vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[3U] 
                 = __Vtemp10[3U];
-            vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[4U] 
-                = __Vtemp10[4U];
-            vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[5U] 
-                = __Vtemp10[5U];
-            vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[6U] 
-                = __Vtemp10[6U];
-            vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[7U] 
-                = __Vtemp10[7U];
-        }
-    }
-    if (vlTOPp->spongent_iter__DOT__rst_lCounter) {
-        __Vdly__spongent_iter__DOT__lCounter__DOT__state_reg = 0x9eU;
-    } else {
-        if (vlTOPp->spongent_iter__DOT__shift_lCounter) {
-            __Vdly__spongent_iter__DOT__lCounter__DOT__state_reg 
-                = ((0xfeU & ((IData)(vlTOPp->spongent_iter__DOT__lCounter__DOT__state_reg) 
-                             << 1U)) | (IData)(vlTOPp->spongent_iter__DOT__lCounter__DOT__bit_xored));
         }
     }
     if ((1U & (~ ((IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__current_state) 
@@ -3013,14 +1732,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                     = vlTOPp->spongent_iter__DOT__permutation_state[3U];
                 vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[4U] 
                     = vlTOPp->spongent_iter__DOT__permutation_state[4U];
-                vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[5U] 
-                    = vlTOPp->spongent_iter__DOT__permutation_state[5U];
-                vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[6U] 
-                    = vlTOPp->spongent_iter__DOT__permutation_state[6U];
-                vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[7U] 
-                    = vlTOPp->spongent_iter__DOT__permutation_state[7U];
-                vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[8U] 
-                    = vlTOPp->spongent_iter__DOT__permutation_state[8U];
             }
         } else {
             vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[0U] 
@@ -3033,14 +1744,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                 = vlTOPp->spongent_iter__DOT__permutation_state[3U];
             vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[4U] 
                 = vlTOPp->spongent_iter__DOT__permutation_state[4U];
-            vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[5U] 
-                = vlTOPp->spongent_iter__DOT__permutation_state[5U];
-            vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[6U] 
-                = vlTOPp->spongent_iter__DOT__permutation_state[6U];
-            vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[7U] 
-                = vlTOPp->spongent_iter__DOT__permutation_state[7U];
-            vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[8U] 
-                = vlTOPp->spongent_iter__DOT__permutation_state[8U];
         }
     }
     if (vlTOPp->spongent_iter__DOT__rst_squezzing) {
@@ -3056,7 +1759,7 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
     } else {
         if ((1U & (~ (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__end_permutation)))) {
             __Vdly__spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__dout 
-                = (0xffU & ((IData)(1U) + (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__dout)));
+                = (0x7fU & ((IData)(1U) + (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__dout)));
         }
     }
     if (vlTOPp->spongent_iter__DOT__rst_permutation) {
@@ -3070,20 +1773,12 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
             = vlTOPp->spongent_iter__DOT__permutation_initial_state[3U];
         __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
             = vlTOPp->spongent_iter__DOT__permutation_initial_state[4U];
-        __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-            = vlTOPp->spongent_iter__DOT__permutation_initial_state[5U];
-        __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-            = vlTOPp->spongent_iter__DOT__permutation_initial_state[6U];
-        __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-            = vlTOPp->spongent_iter__DOT__permutation_initial_state[7U];
-        __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-            = vlTOPp->spongent_iter__DOT__permutation_initial_state[8U];
     } else {
         if (((~ (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__end_permutation)) 
              & (0U == (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_o)))) {
-            VL_EXTEND_WI(272,8, __Vtemp12, (IData)(vlTOPp->spongent_iter__DOT__lCounter_state));
-            VL_EXTEND_WI(272,8, __Vtemp14, (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter));
-            VL_SHIFTL_WWI(272,272,32, __Vtemp15, __Vtemp14, 0x108U);
+            VL_EXTEND_WI(136,7, __Vtemp12, (IData)(vlTOPp->spongent_iter__DOT__lCounter_state));
+            VL_EXTEND_WI(136,7, __Vtemp14, (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter));
+            VL_SHIFTL_WWI(136,136,32, __Vtemp15, __Vtemp14, 0x81U);
             __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[0U] 
                 = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[0U] 
                     ^ __Vtemp12[0U]) ^ __Vtemp15[0U]);
@@ -3097,25 +1792,13 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                 = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[3U] 
                     ^ __Vtemp12[3U]) ^ __Vtemp15[3U]);
             __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                    ^ __Vtemp12[4U]) ^ __Vtemp15[4U]);
-            __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                    ^ __Vtemp12[5U]) ^ __Vtemp15[5U]);
-            __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                    ^ __Vtemp12[6U]) ^ __Vtemp15[6U]);
-            __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                    ^ __Vtemp12[7U]) ^ __Vtemp15[7U]);
-            __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                = (0xffffU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                               ^ __Vtemp12[8U]) ^ __Vtemp15[8U]));
+                = (0xffU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
+                             ^ __Vtemp12[4U]) ^ __Vtemp15[4U]));
         } else {
             if ((1U & (~ (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__end_permutation)))) {
-                VL_EXTEND_WI(272,8, __Vtemp19, (IData)(vlTOPp->spongent_iter__DOT__lCounter_state));
-                VL_EXTEND_WI(272,8, __Vtemp21, (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter));
-                VL_SHIFTL_WWI(272,272,32, __Vtemp22, __Vtemp21, 0x108U);
+                VL_EXTEND_WI(136,7, __Vtemp19, (IData)(vlTOPp->spongent_iter__DOT__lCounter_state));
+                VL_EXTEND_WI(136,7, __Vtemp21, (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter));
+                VL_SHIFTL_WWI(136,136,32, __Vtemp22, __Vtemp21, 0x81U);
                 __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[0U] 
                     = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[0U] 
                         ^ __Vtemp19[0U]) ^ __Vtemp22[0U]);
@@ -3129,21 +1812,9 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                     = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[3U] 
                         ^ __Vtemp19[3U]) ^ __Vtemp22[3U]);
                 __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                    = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[4U] 
-                        ^ __Vtemp19[4U]) ^ __Vtemp22[4U]);
-                __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                    = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[5U] 
-                        ^ __Vtemp19[5U]) ^ __Vtemp22[5U]);
-                __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                    = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[6U] 
-                        ^ __Vtemp19[6U]) ^ __Vtemp22[6U]);
-                __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                    = ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[7U] 
-                        ^ __Vtemp19[7U]) ^ __Vtemp22[7U]);
-                __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                    = (0xffffU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[8U] 
-                                   ^ __Vtemp19[8U]) 
-                                  ^ __Vtemp22[8U]));
+                    = (0xffU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[4U] 
+                                 ^ __Vtemp19[4U]) ^ 
+                                __Vtemp22[4U]));
             }
         }
     }
@@ -3163,14 +1834,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[3U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
         = __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[4U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-        = __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[5U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-        = __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[6U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-        = __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[7U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-        = __Vdly__spongent_iter__DOT__permutation_impl__DOT__state_reg[8U];
     if ((0U == (IData)(vlTOPp->spongent_iter__DOT__current_state))) {
         vlTOPp->spongent_iter__DOT__last_block = 0U;
     } else {
@@ -3184,10 +1847,11 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
             }
         }
     }
-    VL_EXTEND_WI(272,16, __Vtemp25, ((0xff00U & ((IData)(vlTOPp->spongent_iter__DOT__last_padded_data) 
-                                                 << 8U)) 
-                                     | (0xffU & ((IData)(vlTOPp->spongent_iter__DOT__last_padded_data) 
-                                                 >> 8U))));
+    vlTOPp->spongent_iter__DOT__lCounter__DOT__bit_xored 
+        = (1U & VL_REDXOR_32((0x60U & (IData)(vlTOPp->spongent_iter__DOT__lCounter__DOT__state_reg))));
+    vlTOPp->spongent_iter__DOT__lCounter__DOT__state 
+        = vlTOPp->spongent_iter__DOT__lCounter__DOT__state_reg;
+    VL_EXTEND_WI(136,8, __Vtemp25, (IData)(vlTOPp->spongent_iter__DOT__last_padded_data));
     vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[0U] 
         = (__Vtemp25[0U] ^ vlTOPp->spongent_iter__DOT__state[0U]);
     vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[1U] 
@@ -3198,26 +1862,10 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = (__Vtemp25[3U] ^ vlTOPp->spongent_iter__DOT__state[3U]);
     vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[4U] 
         = (__Vtemp25[4U] ^ vlTOPp->spongent_iter__DOT__state[4U]);
-    vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[5U] 
-        = (__Vtemp25[5U] ^ vlTOPp->spongent_iter__DOT__state[5U]);
-    vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[6U] 
-        = (__Vtemp25[6U] ^ vlTOPp->spongent_iter__DOT__state[6U]);
-    vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[7U] 
-        = (__Vtemp25[7U] ^ vlTOPp->spongent_iter__DOT__state[7U]);
-    vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[8U] 
-        = (__Vtemp25[8U] ^ vlTOPp->spongent_iter__DOT__state[8U]);
     vlTOPp->spongent_iter__DOT__digest[0U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[0U];
     vlTOPp->spongent_iter__DOT__digest[1U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[1U];
     vlTOPp->spongent_iter__DOT__digest[2U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[2U];
     vlTOPp->spongent_iter__DOT__digest[3U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[3U];
-    vlTOPp->spongent_iter__DOT__digest[4U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[4U];
-    vlTOPp->spongent_iter__DOT__digest[5U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[5U];
-    vlTOPp->spongent_iter__DOT__digest[6U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[6U];
-    vlTOPp->spongent_iter__DOT__digest[7U] = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result[7U];
-    vlTOPp->spongent_iter__DOT__lCounter__DOT__bit_xored 
-        = (1U & VL_REDXOR_32((0x8eU & (IData)(vlTOPp->spongent_iter__DOT__lCounter__DOT__state_reg))));
-    vlTOPp->spongent_iter__DOT__lCounter__DOT__state 
-        = vlTOPp->spongent_iter__DOT__lCounter__DOT__state_reg;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[0U] 
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[0U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[1U] 
@@ -3228,14 +1876,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[3U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[4U] 
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[4U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[5U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[5U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[6U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[6U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[7U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[7U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[8U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__state[8U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__current_state 
         = ((IData)(vlTOPp->spongent_iter__DOT__rst_squezzing)
             ? 0U : (IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__next_state));
@@ -3447,210 +2087,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
                                            - (IData)(4U)))) 
                    | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
                       >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x10U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x10U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x14U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x14U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                      >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x10U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x10U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x14U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x14U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                      >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x10U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x10U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x14U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x14U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                      >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x10U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x10U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x14U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x14U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x18U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x18U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0x1cU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                          << ((IData)(0x20U) 
-                                              - (IData)(0x1cU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                      >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[9U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(0U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                      >> 0U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 4U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[9U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(4U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                      >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 8U) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[9U] 
-                                       << ((IData)(0x20U) 
-                                           - (IData)(8U)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                      >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__din 
-        = (0xfU & (((0U == 0xcU) ? 0U : (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[9U] 
-                                         << ((IData)(0x20U) 
-                                             - (IData)(0xcU)))) 
-                   | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                      >> 0xcU)));
     vlTOPp->__Vtableidx1 = (0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[0U]);
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable1_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__dout
@@ -3851,230 +2287,16 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable33_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx33];
-    vlTOPp->__Vtableidx34 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                   >> 4U)));
+    vlTOPp->__Vtableidx34 = (0xfU & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
+                                     >> 4U));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout 
         = vlTOPp->__Vtable34_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout
         [vlTOPp->__Vtableidx34];
-    vlTOPp->__Vtableidx35 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                   >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx35];
-    vlTOPp->__Vtableidx36 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                   >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx36];
-    vlTOPp->__Vtableidx37 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                   >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx37];
-    vlTOPp->__Vtableidx38 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 0xcU) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                  >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx38];
-    vlTOPp->__Vtableidx39 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 8U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx39];
-    vlTOPp->__Vtableidx40 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                      << 4U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[4U] 
-                                                >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx40];
-    vlTOPp->__Vtableidx41 = (0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U]);
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx41];
-    vlTOPp->__Vtableidx42 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                   >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx42];
-    vlTOPp->__Vtableidx43 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                   >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx43];
-    vlTOPp->__Vtableidx44 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                   >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx44];
-    vlTOPp->__Vtableidx45 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                   >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx45];
-    vlTOPp->__Vtableidx46 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 0xcU) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                  >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx46];
-    vlTOPp->__Vtableidx47 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 8U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx47];
-    vlTOPp->__Vtableidx48 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                      << 4U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[5U] 
-                                                >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx48];
-    vlTOPp->__Vtableidx49 = (0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U]);
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx49];
-    vlTOPp->__Vtableidx50 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                   >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx50];
-    vlTOPp->__Vtableidx51 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                   >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx51];
-    vlTOPp->__Vtableidx52 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                   >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx52];
-    vlTOPp->__Vtableidx53 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                   >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx53];
-    vlTOPp->__Vtableidx54 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 0xcU) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                  >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx54];
-    vlTOPp->__Vtableidx55 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 8U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx55];
-    vlTOPp->__Vtableidx56 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                      << 4U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[6U] 
-                                                >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx56];
-    vlTOPp->__Vtableidx57 = (0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U]);
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx57];
-    vlTOPp->__Vtableidx58 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 0x1cU) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                   >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx58];
-    vlTOPp->__Vtableidx59 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 0x18U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                   >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx59];
-    vlTOPp->__Vtableidx60 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 0x14U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                   >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx60];
-    vlTOPp->__Vtableidx61 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 0x10U) | (
-                                                   vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                   >> 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx61];
-    vlTOPp->__Vtableidx62 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 0xcU) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                  >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx62];
-    vlTOPp->__Vtableidx63 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 8U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                >> 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx63];
-    vlTOPp->__Vtableidx64 = (0xfU & ((vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                      << 4U) | (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[7U] 
-                                                >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx64];
-    vlTOPp->__Vtableidx65 = (0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U]);
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx65];
-    vlTOPp->__Vtableidx66 = (0xfU & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                     >> 4U));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx66];
-    vlTOPp->__Vtableidx67 = (0xfU & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                     >> 8U));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx67];
-    vlTOPp->__Vtableidx68 = (0xfU & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_reg[8U] 
-                                     >> 0xcU));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout 
-        = vlTOPp->__Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout
-        [vlTOPp->__Vtableidx68];
+    vlTOPp->spongent_iter__DOT__lCounter_state = vlTOPp->spongent_iter__DOT__lCounter__DOT__state;
     vlTOPp->digest[0U] = vlTOPp->spongent_iter__DOT__digest[0U];
     vlTOPp->digest[1U] = vlTOPp->spongent_iter__DOT__digest[1U];
     vlTOPp->digest[2U] = vlTOPp->spongent_iter__DOT__digest[2U];
     vlTOPp->digest[3U] = vlTOPp->spongent_iter__DOT__digest[3U];
-    vlTOPp->digest[4U] = vlTOPp->spongent_iter__DOT__digest[4U];
-    vlTOPp->digest[5U] = vlTOPp->spongent_iter__DOT__digest[5U];
-    vlTOPp->digest[6U] = vlTOPp->spongent_iter__DOT__digest[6U];
-    vlTOPp->digest[7U] = vlTOPp->spongent_iter__DOT__digest[7U];
-    vlTOPp->spongent_iter__DOT__lCounter_state = vlTOPp->spongent_iter__DOT__lCounter__DOT__state;
     vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[0U] 
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[0U];
     vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[1U] 
@@ -4085,19 +2307,11 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[3U];
     vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[4U] 
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[4U];
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[5U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[5U];
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[6U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[6U];
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[7U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[7U];
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[8U] 
-        = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state[8U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__end_squeezing 
         = ((0xfU <= (IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_o))
             ? 1U : 0U);
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__end_permutation 
-        = ((0x8cU == (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_o))
+        = ((0x46U == (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_o))
             ? 1U : 0U);
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
         = ((0xfffffff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]) 
@@ -4224,181 +2438,44 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
            | (0xf0000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__31__KET____DOT__s_box_i__DOT__dout) 
                              << 0x1cU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xfffffff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
+        = ((0xf0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
            | (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xffffff0fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
+        = ((0xfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
            | (0xfffffff0U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout) 
                              << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xfffff0ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xffff0fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xfff0ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xffff0000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xff0fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xfff00000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xf0ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xff000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-        = ((0xfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xfffffff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xffffff0fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xfffff0ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xffff0fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xfff0ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xffff0000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xff0fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xfff00000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xf0ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xff000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-        = ((0xfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xfffffff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xffffff0fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xfffff0ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xffff0fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xfff0ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xffff0000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xff0fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xfff00000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xf0ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xff000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-        = ((0xfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xfffffff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xffffff0fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xfffff0ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xffff0fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xfff0ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xffff0000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xff0fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xfff00000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xf0ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xff000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-        = ((0xfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U]) 
-           | (0xf0000000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout) 
-                             << 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-        = ((0xfff0U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]) 
-           | (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-        = ((0xff0fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]) 
-           | (0xfffffff0U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout) 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-        = ((0xf0ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]) 
-           | (0xffffff00U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout) 
-                             << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-        = ((0xfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]) 
-           | (0xfffff000U & ((IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout) 
-                             << 0xcU)));
     vlTOPp->spongent_iter__DOT__current_state = ((IData)(vlTOPp->rst)
                                                   ? 0U
                                                   : (IData)(vlTOPp->spongent_iter__DOT__next_state));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__lCounter_state 
         = vlTOPp->spongent_iter__DOT__lCounter_state;
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xfeU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x7eU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (1U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                    >> 7U)));
+                    >> 6U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xfdU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x7dU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (2U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                    >> 5U)));
+                    >> 4U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xfbU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x7bU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (4U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                    >> 3U)));
+                    >> 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xf7U & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
-           | (8U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                    >> 1U)));
+        = ((0x77U & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+           | (8U & (IData)(vlTOPp->spongent_iter__DOT__lCounter_state)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xefU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x6fU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (0x10U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                       << 1U)));
+                       << 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xdfU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x5fU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (0x20U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                       << 3U)));
+                       << 4U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0xbfU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
+        = ((0x3fU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
            | (0x40U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                       << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter 
-        = ((0x7fU & (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter)) 
-           | (0x80U & ((IData)(vlTOPp->spongent_iter__DOT__lCounter_state) 
-                       << 7U)));
+                       << 6U)));
     vlTOPp->spongent_iter__DOT__end_squeezing = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__end_squeezing;
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__up 
         = (1U & (~ (IData)(vlTOPp->spongent_iter__DOT__permutation_impl__DOT__end_permutation)));
@@ -4415,1105 +2492,559 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (1U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                    << 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       << 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                        << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         << 9U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 3U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                    >> 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x20U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         << 6U)));
+           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 1U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x80U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 6U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 5U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x400U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         << 3U)));
+                       >> 4U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 3U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                     >> 9U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 8U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                       >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x8000U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U]));
+                       >> 7U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 6U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0xcU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 0xbU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0xaU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                         >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                          >> 3U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0xfU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                       >> 0xeU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0xdU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                         >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                          >> 6U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0x12U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0x11U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                          >> 9U)));
+                        >> 0x10U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         >> 0xfU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
                        >> 0x15U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                        >> 0x14U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                        >> 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                         >> 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
-                          >> 0xcU)));
+                        >> 0x13U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[0U] 
+                         >> 0x12U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 8U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                        << 9U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         << 0xaU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          << 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           << 0x11U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 5U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                        << 6U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         << 7U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           << 0xeU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                         << 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         << 3U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           << 0xbU)));
+                         << 4U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          << 5U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                         >> 1U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x2000U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U]));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                         << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           << 8U)));
+                         << 1U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          << 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 4U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         >> 3U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                           >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                            << 5U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 7U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                         >> 6U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 5U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                           >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                            << 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 0xaU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 9U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                            >> 1U)));
+                          >> 8U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           >> 7U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
                          >> 0xdU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                          >> 0xcU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                          >> 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                           >> 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
-                            >> 4U)));
+                          >> 0xbU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[1U] 
+                           >> 0xaU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0x10U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                          << 0x11U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 0x12U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0x16U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 0x19U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0xdU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                          << 0xeU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 0xfU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 0x16U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 0xaU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 0xbU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 0x13U)));
+                           << 0xcU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            << 0xdU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                           << 7U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 8U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                           << 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 0x10U)));
+                           << 9U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            << 0xaU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 4U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 5U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            << 6U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                             << 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                    >> 0x13U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            << 1U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                           << 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            << 3U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                    >> 0x16U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            >> 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            >> 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                    >> 0x19U)));
+           | (0x4000000U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U]));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             << 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
                            >> 5U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                            >> 4U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                            >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                             << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
-                    >> 0x1cU)));
+                            >> 3U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[2U] 
+                             >> 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                             << 0x18U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                            << 0x19U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0x1aU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 0x1bU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       << 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                             << 0x15U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                            << 0x16U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0x17U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 2U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                             << 0x12U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0x13U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x15U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 5U)));
+                             << 0x14U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xfeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0xbU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                             << 0xfU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0x10U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
            | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                             << 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 8U)));
+                             << 0x11U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xfdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0xeU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 0xcU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0xdU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
         = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
            | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0x12U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xfbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                     >> 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                        >> 0xbU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 9U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
+        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
+           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                             << 0xaU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
         = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
            | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0x15U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xf7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                     >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                        >> 0xeU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 6U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
+        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0x19U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
         = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
            | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x17U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                        >> 0x11U)));
+                    >> 0x18U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                       >> 0x17U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U] 
         = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U]) 
            | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
                              << 3U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
+        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                    >> 0x1cU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
         = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
            | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                    >> 0x1aU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                       >> 0x17U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
-                        >> 0x14U)));
+                    >> 0x1bU)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[3U] 
+                       >> 0x1aU)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
         = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
            | (1U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
+        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
+           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
+                    << 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
         = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
            | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
+                       << 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
+        = ((0xbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
                        << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         << 9U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
         = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
            | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
                     >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                    >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x400U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                    >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x8000U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                          >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                          >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        >> 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                          >> 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                       >> 0x15U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                        >> 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                         >> 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
-                          >> 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                        << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         << 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          << 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           << 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                        << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          << 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           << 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                        << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           << 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                        >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           << 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                            << 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         >> 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                            << 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffffbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         >> 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          >> 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                            >> 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffff7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x8000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                         >> 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                          >> 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                           >> 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[5U] 
-                            >> 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffeffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                          << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 0x16U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 0x19U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffdffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                          << 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 0x16U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfffbffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                          << 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfff7ffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                          << 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 0xdU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 0x10U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffefffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x100000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 0xaU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                    >> 0x13U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffdfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x200000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 7U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                    >> 0x16U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xffbfffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x400000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 4U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                    >> 0x19U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xff7fffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x800000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                           >> 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                            >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                             << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[6U] 
-                    >> 0x1cU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfeffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x1000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                            << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 0x1bU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       << 1U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfdffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x2000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                            << 0x15U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 0x18U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 2U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xfbffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x4000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                            << 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 0x15U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 5U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xf7ffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x8000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                            << 0xfU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 0x12U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 8U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xefffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x10000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 0xcU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (1U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                        >> 0xbU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xdfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x20000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                        >> 0xeU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0xbfffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x40000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 0x17U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xfbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x400U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                        >> 0x11U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U] 
-        = ((0x7fffffffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[1U]) 
-           | (0x80000000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                             << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                    >> 0x1aU)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                       >> 0x17U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xf7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[7U] 
-                        >> 0x14U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffeU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (1U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffffefU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x10U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                       << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffeffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x100U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                        << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xefffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x1000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                         << 9U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffdU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (2U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                    >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x20U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffdffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x200U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                        << 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xdfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x2000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                         << 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
-        = ((0xfffffffbU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (4U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                    >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffffbfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x40U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                       >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffffbffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x400U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0xbfffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x4000U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                         << 3U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U] 
         = ((0xfffffff7U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[2U]) 
-           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                    >> 9U)));
+           | (8U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
+                    >> 2U)));
+    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U] 
+        = ((0xffffffdfU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U]) 
+           | (0x20U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U] 
+                       >> 1U)));
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U] 
-        = ((0xffffff7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
-           | (0x80U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                       >> 6U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U] 
-        = ((0xfffff7ffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U]) 
-           | (0x800U & (vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U] 
-                        >> 3U)));
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U] 
-        = ((0x7fffU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U]) 
-           | (0x8000U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[8U]));
+        = ((0x7fU & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U]) 
+           | (0x80U & vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state_S_box[4U]));
     vlTOPp->spongent_iter__DOT__shift_lCounter = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__shift_lCounter;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__end_permutation 
         = vlTOPp->spongent_iter__DOT__end_permutation;
-    vlTOPp->__Vtableidx69 = (((IData)(vlTOPp->spongent_iter__DOT__end_permutation) 
+    vlTOPp->__Vtableidx35 = (((IData)(vlTOPp->spongent_iter__DOT__end_permutation) 
                               << 3U) | (((IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__end_squeezing) 
                                          << 2U) | (IData)(vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__current_state)));
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__next_state 
-        = vlTOPp->__Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state
-        [vlTOPp->__Vtableidx69];
+        = vlTOPp->__Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state
+        [vlTOPp->__Vtableidx35];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation 
-        = vlTOPp->__Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation
-        [vlTOPp->__Vtableidx69];
+        = vlTOPp->__Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation
+        [vlTOPp->__Vtableidx35];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up 
-        = vlTOPp->__Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up
-        [vlTOPp->__Vtableidx69];
+        = vlTOPp->__Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up
+        [vlTOPp->__Vtableidx35];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[0U] 
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[0U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[1U] 
@@ -5524,14 +3055,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[3U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[4U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[5U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[6U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[7U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout[8U];
     vlTOPp->spongent_iter__DOT__busy = 1U;
     if ((0U == (IData)(vlTOPp->spongent_iter__DOT__current_state))) {
         vlTOPp->spongent_iter__DOT__busy = 0U;
@@ -5620,14 +3143,6 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[3U];
     vlTOPp->spongent_iter__DOT__permutation_state[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[4U];
-    vlTOPp->spongent_iter__DOT__permutation_state[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[5U];
-    vlTOPp->spongent_iter__DOT__permutation_state[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[6U];
-    vlTOPp->spongent_iter__DOT__permutation_state[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[7U];
-    vlTOPp->spongent_iter__DOT__permutation_state[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_impl__DOT__state[8U];
     vlTOPp->busy = vlTOPp->spongent_iter__DOT__busy;
     vlTOPp->end_hash = vlTOPp->spongent_iter__DOT__end_hash;
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__rst 
@@ -5645,20 +3160,8 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__4(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_state[3U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_state[4U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_state[5U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_state[6U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_state[7U];
-    vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_state[8U];
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__result_chunk 
-        = ((0xff00U & (vlTOPp->spongent_iter__DOT__permutation_state[0U] 
-                       << 8U)) | (0xffU & ((vlTOPp->spongent_iter__DOT__permutation_state[1U] 
-                                            << 0x18U) 
-                                           | (vlTOPp->spongent_iter__DOT__permutation_state[0U] 
-                                              >> 8U))));
+        = (0xffU & vlTOPp->spongent_iter__DOT__permutation_state[0U]);
     vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__rst 
         = vlTOPp->spongent_iter__DOT__squeezing_phase_impl__DOT__rst;
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__rst 
@@ -5676,12 +3179,9 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_combo__TOP__5\n"); );
     Vtop* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
-    WData/*287:0*/ __Vtemp27[9];
+    WData/*159:0*/ __Vtemp27[5];
     // Body
-    VL_EXTEND_WI(272,16, __Vtemp27, ((0xff00U & ((IData)(vlTOPp->data_input) 
-                                                 << 8U)) 
-                                     | (0xffU & ((IData)(vlTOPp->data_input) 
-                                                 >> 8U))));
+    VL_EXTEND_WI(136,8, __Vtemp27, (IData)(vlTOPp->data_input));
     vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[0U] 
         = (__Vtemp27[0U] ^ vlTOPp->spongent_iter__DOT__state[0U]);
     vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[1U] 
@@ -5692,14 +3192,6 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
         = (__Vtemp27[3U] ^ vlTOPp->spongent_iter__DOT__state[3U]);
     vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[4U] 
         = (__Vtemp27[4U] ^ vlTOPp->spongent_iter__DOT__state[4U]);
-    vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[5U] 
-        = (__Vtemp27[5U] ^ vlTOPp->spongent_iter__DOT__state[5U]);
-    vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[6U] 
-        = (__Vtemp27[6U] ^ vlTOPp->spongent_iter__DOT__state[6U]);
-    vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[7U] 
-        = (__Vtemp27[7U] ^ vlTOPp->spongent_iter__DOT__state[7U]);
-    vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[8U] 
-        = (__Vtemp27[8U] ^ vlTOPp->spongent_iter__DOT__state[8U]);
     vlTOPp->spongent_iter__DOT__next_state = vlTOPp->spongent_iter__DOT__current_state;
     if ((0U == (IData)(vlTOPp->spongent_iter__DOT__current_state))) {
         if (vlTOPp->data_ready) {
@@ -5759,22 +3251,6 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
         = ((IData)(vlTOPp->spongent_iter__DOT__last_block)
             ? vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[4U]
             : vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[4U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[5U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__last_block)
-            ? vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[5U]
-            : vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[5U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[6U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__last_block)
-            ? vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[6U]
-            : vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[6U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[7U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__last_block)
-            ? vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[7U]
-            : vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[7U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[8U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__last_block)
-            ? vlTOPp->spongent_iter__DOT__last_initial_state_from_absorb[8U]
-            : vlTOPp->spongent_iter__DOT__standart_initial_state_from_absorb[8U]);
     vlTOPp->spongent_iter__DOT__permutation_initial_state[0U] 
         = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
             ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[0U]
@@ -5795,22 +3271,6 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
         = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
             ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[4U]
             : vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[4U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state[5U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
-            ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[5U]
-            : vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[5U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state[6U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
-            ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[6U]
-            : vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[6U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state[7U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
-            ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[7U]
-            : vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[7U]);
-    vlTOPp->spongent_iter__DOT__permutation_initial_state[8U] 
-        = ((IData)(vlTOPp->spongent_iter__DOT__begin_squeezing)
-            ? vlTOPp->spongent_iter__DOT__permutation_initial_state_from_squezzing[8U]
-            : vlTOPp->spongent_iter__DOT__permutation_initial_state_from_absorb[8U]);
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[0U] 
         = vlTOPp->spongent_iter__DOT__permutation_initial_state[0U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[1U] 
@@ -5821,14 +3281,6 @@ VL_INLINE_OPT void Vtop::_combo__TOP__5(Vtop__Syms* __restrict vlSymsp) {
         = vlTOPp->spongent_iter__DOT__permutation_initial_state[3U];
     vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[4U] 
         = vlTOPp->spongent_iter__DOT__permutation_initial_state[4U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[5U] 
-        = vlTOPp->spongent_iter__DOT__permutation_initial_state[5U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[6U] 
-        = vlTOPp->spongent_iter__DOT__permutation_initial_state[6U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[7U] 
-        = vlTOPp->spongent_iter__DOT__permutation_initial_state[7U];
-    vlTOPp->spongent_iter__DOT__permutation_impl__DOT__initial_state[8U] 
-        = vlTOPp->spongent_iter__DOT__permutation_initial_state[8U];
 }
 
 void Vtop::_eval(Vtop__Syms* __restrict vlSymsp) {
@@ -5895,69 +3347,69 @@ void Vtop::_ctor_var_reset() {
     // Body
     clk = VL_RAND_RESET_I(1);
     rst = VL_RAND_RESET_I(1);
-    data_input = VL_RAND_RESET_I(16);
+    data_input = VL_RAND_RESET_I(8);
     data_ready = VL_RAND_RESET_I(1);
     start_hash = VL_RAND_RESET_I(1);
     busy = VL_RAND_RESET_I(1);
     end_hash = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(256, digest);
+    VL_RAND_RESET_W(128, digest);
     spongent_iter__DOT__clk = VL_RAND_RESET_I(1);
     spongent_iter__DOT__rst = VL_RAND_RESET_I(1);
-    spongent_iter__DOT__data_input = VL_RAND_RESET_I(16);
+    spongent_iter__DOT__data_input = VL_RAND_RESET_I(8);
     spongent_iter__DOT__data_ready = VL_RAND_RESET_I(1);
     spongent_iter__DOT__start_hash = VL_RAND_RESET_I(1);
     spongent_iter__DOT__busy = VL_RAND_RESET_I(1);
     spongent_iter__DOT__end_hash = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(256, spongent_iter__DOT__digest);
+    VL_RAND_RESET_W(128, spongent_iter__DOT__digest);
     spongent_iter__DOT__rst_lCounter = VL_RAND_RESET_I(1);
     spongent_iter__DOT__shift_lCounter = VL_RAND_RESET_I(1);
-    spongent_iter__DOT__lCounter_state = VL_RAND_RESET_I(8);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__permutation_state);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__permutation_initial_state);
+    spongent_iter__DOT__lCounter_state = VL_RAND_RESET_I(7);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__permutation_state);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__permutation_initial_state);
     spongent_iter__DOT__rst_permutation = VL_RAND_RESET_I(1);
     spongent_iter__DOT__end_permutation = VL_RAND_RESET_I(1);
     spongent_iter__DOT__rst_squezzing = VL_RAND_RESET_I(1);
     spongent_iter__DOT__rst_permutation_from_squezzing = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__permutation_initial_state_from_squezzing);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__permutation_initial_state_from_squezzing);
     spongent_iter__DOT__end_squeezing = VL_RAND_RESET_I(1);
     spongent_iter__DOT__rst_permutation_from_absorb = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__permutation_initial_state_from_absorb);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__permutation_initial_state_from_absorb);
     spongent_iter__DOT__begin_squeezing = VL_RAND_RESET_I(1);
     spongent_iter__DOT__last_block = VL_RAND_RESET_I(1);
-    spongent_iter__DOT__last_padded_data = VL_RAND_RESET_I(16);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__state);
+    spongent_iter__DOT__last_padded_data = VL_RAND_RESET_I(8);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__state);
     spongent_iter__DOT__current_state = VL_RAND_RESET_I(4);
     spongent_iter__DOT__next_state = VL_RAND_RESET_I(4);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__standart_initial_state_from_absorb);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__last_initial_state_from_absorb);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__standart_initial_state_from_absorb);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__last_initial_state_from_absorb);
     spongent_iter__DOT__lCounter__DOT__clk = VL_RAND_RESET_I(1);
     spongent_iter__DOT__lCounter__DOT__rst = VL_RAND_RESET_I(1);
     spongent_iter__DOT__lCounter__DOT__shift = VL_RAND_RESET_I(1);
-    spongent_iter__DOT__lCounter__DOT__feedback_coeff = VL_RAND_RESET_I(9);
-    spongent_iter__DOT__lCounter__DOT__initial_state = VL_RAND_RESET_I(8);
-    spongent_iter__DOT__lCounter__DOT__state = VL_RAND_RESET_I(8);
-    spongent_iter__DOT__lCounter__DOT__state_reg = VL_RAND_RESET_I(8);
+    spongent_iter__DOT__lCounter__DOT__feedback_coeff = VL_RAND_RESET_I(8);
+    spongent_iter__DOT__lCounter__DOT__initial_state = VL_RAND_RESET_I(7);
+    spongent_iter__DOT__lCounter__DOT__state = VL_RAND_RESET_I(7);
+    spongent_iter__DOT__lCounter__DOT__state_reg = VL_RAND_RESET_I(7);
     spongent_iter__DOT__lCounter__DOT__bit_xored = VL_RAND_RESET_I(1);
     spongent_iter__DOT__permutation_impl__DOT__clk = VL_RAND_RESET_I(1);
     spongent_iter__DOT__permutation_impl__DOT__rst = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__permutation_impl__DOT__initial_state);
-    spongent_iter__DOT__permutation_impl__DOT__lCounter_state = VL_RAND_RESET_I(8);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__permutation_impl__DOT__initial_state);
+    spongent_iter__DOT__permutation_impl__DOT__lCounter_state = VL_RAND_RESET_I(7);
     spongent_iter__DOT__permutation_impl__DOT__rst_lCounter = VL_RAND_RESET_I(1);
     spongent_iter__DOT__permutation_impl__DOT__shift_lCounter = VL_RAND_RESET_I(1);
     spongent_iter__DOT__permutation_impl__DOT__end_permutation = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__permutation_impl__DOT__state);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__permutation_impl__DOT__state_reg);
-    spongent_iter__DOT__permutation_impl__DOT__counter_o = VL_RAND_RESET_I(8);
-    spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter = VL_RAND_RESET_I(8);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__permutation_impl__DOT__state_S_box);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__permutation_impl__DOT__state);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__permutation_impl__DOT__state_reg);
+    spongent_iter__DOT__permutation_impl__DOT__counter_o = VL_RAND_RESET_I(7);
+    spongent_iter__DOT__permutation_impl__DOT__reverse_lCounter = VL_RAND_RESET_I(7);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__permutation_impl__DOT__state_S_box);
     spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__clk = VL_RAND_RESET_I(1);
     spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__rst = VL_RAND_RESET_I(1);
     spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__up = VL_RAND_RESET_I(1);
     spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__down = VL_RAND_RESET_I(1);
-    spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__din = VL_RAND_RESET_I(8);
-    spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__dout = VL_RAND_RESET_I(8);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout);
+    spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__din = VL_RAND_RESET_I(7);
+    spongent_iter__DOT__permutation_impl__DOT__counter_impl__DOT__dout = VL_RAND_RESET_I(7);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__din);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__permutation_impl__DOT__pLayer_impl__DOT__dout);
     spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
     spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__0__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
     spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__1__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
@@ -6026,86 +3478,18 @@ void Vtop::_ctor_var_reset() {
     spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__32__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
     spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
     spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__din = VL_RAND_RESET_I(4);
-    spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout = VL_RAND_RESET_I(4);
     spongent_iter__DOT__squeezing_phase_impl__DOT__clk = VL_RAND_RESET_I(1);
     spongent_iter__DOT__squeezing_phase_impl__DOT__rst = VL_RAND_RESET_I(1);
     spongent_iter__DOT__squeezing_phase_impl__DOT__end_permutation = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_state);
     spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__squeezing_phase_impl__DOT__permutation_initial_state);
     spongent_iter__DOT__squeezing_phase_impl__DOT__end_squeezing = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(256, spongent_iter__DOT__squeezing_phase_impl__DOT__result);
+    VL_RAND_RESET_W(128, spongent_iter__DOT__squeezing_phase_impl__DOT__result);
     spongent_iter__DOT__squeezing_phase_impl__DOT__counter_o = VL_RAND_RESET_I(5);
     spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up = VL_RAND_RESET_I(1);
-    VL_RAND_RESET_W(272, spongent_iter__DOT__squeezing_phase_impl__DOT__state);
-    spongent_iter__DOT__squeezing_phase_impl__DOT__result_chunk = VL_RAND_RESET_I(16);
+    VL_RAND_RESET_W(136, spongent_iter__DOT__squeezing_phase_impl__DOT__state);
+    spongent_iter__DOT__squeezing_phase_impl__DOT__result_chunk = VL_RAND_RESET_I(8);
     spongent_iter__DOT__squeezing_phase_impl__DOT__current_state = VL_RAND_RESET_I(2);
     spongent_iter__DOT__squeezing_phase_impl__DOT__next_state = VL_RAND_RESET_I(2);
     spongent_iter__DOT__squeezing_phase_impl__DOT__counter_impl__DOT__clk = VL_RAND_RESET_I(1);
@@ -6693,630 +4077,52 @@ void Vtop::_ctor_var_reset() {
     __Vtable34_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[14] = 3U;
     __Vtable34_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__33__KET____DOT__s_box_i__DOT__dout[15] = 6U;
     __Vtableidx35 = 0;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable35_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__34__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx36 = 0;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable36_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__35__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx37 = 0;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable37_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__36__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx38 = 0;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable38_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__37__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx39 = 0;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable39_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__38__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx40 = 0;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable40_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__39__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx41 = 0;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable41_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__40__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx42 = 0;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable42_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__41__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx43 = 0;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable43_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__42__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx44 = 0;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable44_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__43__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx45 = 0;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable45_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__44__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx46 = 0;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable46_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__45__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx47 = 0;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable47_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__46__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx48 = 0;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable48_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__47__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx49 = 0;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable49_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__48__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx50 = 0;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable50_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__49__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx51 = 0;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable51_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__50__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx52 = 0;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable52_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__51__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx53 = 0;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable53_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__52__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx54 = 0;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable54_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__53__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx55 = 0;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable55_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__54__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx56 = 0;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable56_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__55__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx57 = 0;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable57_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__56__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx58 = 0;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable58_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__57__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx59 = 0;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable59_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__58__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx60 = 0;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable60_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__59__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx61 = 0;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable61_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__60__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx62 = 0;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable62_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__61__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx63 = 0;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable63_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__62__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx64 = 0;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable64_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__63__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx65 = 0;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable65_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__64__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx66 = 0;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable66_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__65__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx67 = 0;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable67_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__66__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx68 = 0;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[0] = 0xeU;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[1] = 0xdU;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[2] = 0xbU;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[3] = 0U;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[4] = 2U;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[5] = 1U;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[6] = 4U;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[7] = 0xfU;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[8] = 7U;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[9] = 0xaU;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[10] = 8U;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[11] = 5U;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[12] = 9U;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[13] = 0xcU;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[14] = 3U;
-    __Vtable68_spongent_iter__DOT__permutation_impl__DOT__genblk2__BRA__67__KET____DOT__s_box_i__DOT__dout[15] = 6U;
-    __Vtableidx69 = 0;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[0] = 2U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[1] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[2] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[3] = 3U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[4] = 2U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[5] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[6] = 3U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[7] = 3U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[8] = 2U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[9] = 2U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[10] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[11] = 3U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[12] = 2U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[13] = 2U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[14] = 3U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[15] = 3U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[0] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[1] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[2] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[3] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[4] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[5] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[6] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[7] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[8] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[9] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[10] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[11] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[12] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[13] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[14] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[15] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[0] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[1] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[2] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[3] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[4] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[5] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[6] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[7] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[8] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[9] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[10] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[11] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[12] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[13] = 1U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[14] = 0U;
-    __Vtable69_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[15] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[0] = 2U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[1] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[2] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[3] = 3U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[4] = 2U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[5] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[6] = 3U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[7] = 3U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[8] = 2U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[9] = 2U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[10] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[11] = 3U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[12] = 2U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[13] = 2U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[14] = 3U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__next_state[15] = 3U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[0] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[1] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[2] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[3] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[4] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[5] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[6] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[7] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[8] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[9] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[10] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[11] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[12] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[13] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[14] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__rst_permutation[15] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[0] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[1] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[2] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[3] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[4] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[5] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[6] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[7] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[8] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[9] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[10] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[11] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[12] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[13] = 1U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[14] = 0U;
+    __Vtable35_spongent_iter__DOT__squeezing_phase_impl__DOT__counter_up[15] = 0U;
 }

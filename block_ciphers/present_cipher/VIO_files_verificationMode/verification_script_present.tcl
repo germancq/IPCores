@@ -1,4 +1,5 @@
-set_property CORE_REFRESH_RATE_MS 0 [get_hw_vios hw_vio_1]
+set_property PARAM.FREQUENCY 30000000 [get_hw_targets localhost:3121/xilinx_tcf/Digilent/210292745836A]
+set_property CORE_REFRESH_RATE_MS 0 [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]
 set start [clock milliseconds]
 set inputFile {/home/germancq/test_cases_VIO_generated.txt}
 set outputFile {/home/germancq/test_output_cases_VIO.txt}
@@ -6,12 +7,14 @@ set fd [open $inputFile r]
 set wf [open $outputFile w]
 set lines [split [read $fd] "\n"]
 set errors 0
+set i 0
 
-reset_hw_vio_activity [get_hw_vios {hw_vio_1}]
+reset_hw_vio_activity [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]
  
 
 foreach line $lines {
-        
+    puts stdout $i
+	set i [expr $i + 1]    
 	set values [split $line " "]
 	set key [lindex $values 0]
 	if {$key == ""} {
@@ -23,49 +26,54 @@ foreach line $lines {
 
 	
 
-	set_property OUTPUT_VALUE 1 [get_hw_probes design_1_i/vio_0_probe_out3]
-	commit_hw_vio [get_hw_probes {design_1_i/vio_0_probe_out3}]
-	
-	set_property OUTPUT_VALUE $enc_dec [get_hw_probes design_1_i/vio_0_probe_out2]
-	commit_hw_vio [get_hw_probes {design_1_i/vio_0_probe_out2}]
-	set_property OUTPUT_VALUE $text  [get_hw_probes design_1_i/vio_0_probe_out0]
-	commit_hw_vio [get_hw_probes {design_1_i/vio_0_probe_out0}]
-	set_property OUTPUT_VALUE $key [get_hw_probes design_1_i/vio_0_probe_out1]
-	commit_hw_vio [get_hw_probes {design_1_i/vio_0_probe_out1}]
-	
-	while {1} {
-		
-		refresh_hw_vio [get_hw_vios {hw_vio_1}]
-		set end_signal [get_property INPUT_VALUE [get_hw_probes design_1_i/present_0_end_signal]]
-		
-		if {$end_signal == 0} {
-			break
-		}	
+	set_property OUTPUT_VALUE 1 [get_hw_probes rst_uut -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+        
+    commit_hw_vio [get_hw_probes {rst_uut} -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+
+    while {1} {
+            
+        refresh_hw_vio [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]
+
+        set end_signal [get_property INPUT_VALUE [get_hw_probes end_signal -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]]
+        
+        if {$end_signal == 0} {
+            break
+        }	
+    }
+
+    set_property OUTPUT_VALUE $text [get_hw_probes block_i -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+    commit_hw_vio [get_hw_probes {block_i} -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+
+    set_property OUTPUT_VALUE $enc_dec [get_hw_probes enc_dec -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+    commit_hw_vio [get_hw_probes {enc_dec} -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+
+    set_property OUTPUT_VALUE $key [get_hw_probes key -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+    commit_hw_vio [get_hw_probes {key} -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+
+    refresh_hw_vio [get_hw_vios -of_objects [get_hw_devices xc7a100t_0]]
+
+    set_property OUTPUT_VALUE 0 [get_hw_probes rst_uut -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+        
+    commit_hw_vio [get_hw_probes {rst_uut} -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+
+    while {1} {
+            
+        refresh_hw_vio [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]
+
+        set end_signal [get_property INPUT_VALUE [get_hw_probes end_signal -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]]
+        
+        if {$end_signal == 1} {
+            break
+        }	
+    }
+
+    set block_o [get_property INPUT_VALUE [get_hw_probes block_o -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]]
+    if {$block_o != $expected_result} {
+				set errors [expr $errors + 1] 
+				
 	}
-	
-	set_property OUTPUT_VALUE 0 [get_hw_probes design_1_i/vio_0_probe_out3]
-	commit_hw_vio [get_hw_probes {design_1_i/vio_0_probe_out3}]
-
-	
-	while {1} {
-
-		refresh_hw_vio [get_hw_vios {hw_vio_1}]
-		set end_signal [get_property INPUT_VALUE [get_hw_probes design_1_i/present_0_end_signal]]
-		
-		if {$end_signal == 1} {
-			
-			refresh_hw_vio [get_hw_vios {hw_vio_1}]
-			set block_o [get_property INPUT_VALUE [get_hw_probes design_1_i/present_0_block_o]]
-			
-			if {$block_o != $expected_result} {
-				incr errors 
-				set combined "${line} ${block_o}"
-				puts $wf $combined
-			}
-			break
-		}	
-	}
-
+	set combined "${line} ${block_o}"
+	puts $wf $combined
 
 }
 

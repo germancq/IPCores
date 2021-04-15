@@ -565,6 +565,9 @@ genvar i;
                      else if(counter_bytes_o == BASE_OUTPUTS - 1) begin
                         rst_index = 1'b1;
                      end
+                     else if (counter_bytes_o == BASE_OUTPUTS + (OUTPUT_SIZE_1>>3) - 1) begin
+                        rst_index = 1'b1;
+                     end
                      //rst_final outputs
                      else if (counter_bytes_o == BASE_OUTPUTS + (OUTPUT_SIZE_1>>3) + 7) begin
                         rst_index = 1'b1;

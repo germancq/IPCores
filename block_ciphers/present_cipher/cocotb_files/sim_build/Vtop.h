@@ -5,13 +5,11 @@
 // The class here is then constructed to instantiate the design.
 // See the Verilator manual for examples.
 
-#ifndef _VTOP_H_
-#define _VTOP_H_  // guard
+#ifndef _Vtop_H_
+#define _Vtop_H_
 
 #include "verilated.h"
 #include "Vtop__Dpi.h"
-
-//==========
 
 class Vtop__Syms;
 
@@ -27,8 +25,8 @@ VL_MODULE(Vtop) {
     VL_IN8(rst,0,0);
     VL_OUT8(end_key_generation,0,0);
     VL_IN8(enc_dec,0,0);
-    VL_OUT8(end_enc,0,0);
-    VL_OUT8(end_dec,0,0);
+    VL_IN8(rq_data,0,0);
+    VL_OUT8(end_signal,0,0);
     VL_INW(key,79,0,3);
     VL_IN64(block_i,63,0);
     VL_OUT64(block_o,63,0);
@@ -41,11 +39,13 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present__DOT__rst;
         CData/*0:0*/ present__DOT__end_key_generation;
         CData/*0:0*/ present__DOT__enc_dec;
-        CData/*0:0*/ present__DOT__end_enc;
-        CData/*0:0*/ present__DOT__end_dec;
+        CData/*0:0*/ present__DOT__rq_data;
+        CData/*0:0*/ present__DOT__end_signal;
         CData/*4:0*/ present__DOT__key_index;
         CData/*4:0*/ present__DOT__key_index_enc;
         CData/*4:0*/ present__DOT__key_index_dec;
+        CData/*0:0*/ present__DOT__end_enc;
+        CData/*0:0*/ present__DOT__end_dec;
         CData/*0:0*/ present__DOT__start_enc;
         CData/*0:0*/ present__DOT__start_dec;
         CData/*0:0*/ present__DOT__key_sch_impl__DOT__clk;
@@ -99,10 +99,10 @@ VL_MODULE(Vtop) {
         CData/*3:0*/ present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__2__KET____DOT__sbox__DOT__dout;
         CData/*3:0*/ present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__3__KET____DOT__sbox__DOT__din;
         CData/*3:0*/ present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__3__KET____DOT__sbox__DOT__dout;
-        CData/*3:0*/ present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__4__KET____DOT__sbox__DOT__din;
-        CData/*3:0*/ present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__4__KET____DOT__sbox__DOT__dout;
     };
     struct {
+        CData/*3:0*/ present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__4__KET____DOT__sbox__DOT__din;
+        CData/*3:0*/ present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__4__KET____DOT__sbox__DOT__dout;
         CData/*3:0*/ present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__5__KET____DOT__sbox__DOT__din;
         CData/*3:0*/ present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__5__KET____DOT__sbox__DOT__dout;
         CData/*3:0*/ present__DOT__present_enc_impl__DOT__enc_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__6__KET____DOT__sbox__DOT__din;
@@ -165,10 +165,10 @@ VL_MODULE(Vtop) {
         CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__10__KET____DOT__sbox__DOT__dout;
         CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__11__KET____DOT__sbox__DOT__din;
         CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__11__KET____DOT__sbox__DOT__dout;
-        CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__12__KET____DOT__sbox__DOT__din;
-        CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__12__KET____DOT__sbox__DOT__dout;
     };
     struct {
+        CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__12__KET____DOT__sbox__DOT__din;
+        CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__12__KET____DOT__sbox__DOT__dout;
         CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__13__KET____DOT__sbox__DOT__din;
         CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__13__KET____DOT__sbox__DOT__dout;
         CData/*3:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__genblk1__BRA__14__KET____DOT__sbox__DOT__din;
@@ -178,6 +178,11 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ present__DOT__result__DOT__clk;
         CData/*0:0*/ present__DOT__result__DOT__cl;
         CData/*0:0*/ present__DOT__result__DOT__w;
+        CData/*0:0*/ present__DOT__reg_end_signal__DOT__clk;
+        CData/*0:0*/ present__DOT__reg_end_signal__DOT__cl;
+        CData/*0:0*/ present__DOT__reg_end_signal__DOT__w;
+        CData/*0:0*/ present__DOT__reg_end_signal__DOT__din;
+        CData/*0:0*/ present__DOT__reg_end_signal__DOT__dout;
         WData/*79:0*/ present__DOT__key[3];
         WData/*79:0*/ present__DOT__key_sch_impl__DOT__key[3];
         WData/*79:0*/ present__DOT__key_sch_impl__DOT__key_register_input[3];
@@ -226,6 +231,8 @@ VL_MODULE(Vtop) {
         QData/*63:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__player_i__DOT__din;
         QData/*63:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__player_i__DOT__dout;
         QData/*63:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__din;
+    };
+    struct {
         QData/*63:0*/ present__DOT__present_dec_impl__DOT__dec_stage_impl__DOT__slayer_i__DOT__dout;
         QData/*63:0*/ present__DOT__result__DOT__din;
         QData/*63:0*/ present__DOT__result__DOT__dout;
@@ -234,7 +241,9 @@ VL_MODULE(Vtop) {
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
+    CData/*0:0*/ present__DOT____Vcellinp__present_enc_impl__rst;
     CData/*0:0*/ present__DOT____Vcellinp__result__w;
+    CData/*0:0*/ present__DOT____Vcellinp__result__cl;
     CData/*0:0*/ present__DOT__present_enc_impl__DOT____Vcellinp__counter_impl__rst;
     CData/*0:0*/ present__DOT__present_dec_impl__DOT____Vcellinp__counter_impl__rst;
     CData/*3:0*/ __Vtableidx1;
@@ -311,6 +320,9 @@ VL_MODULE(Vtop) {
     // Internals; generally not touched by application code
     Vtop__Syms* __VlSymsp;  // Symbol table
     
+    // PARAMETERS
+    // Parameters marked /*verilator public*/ for use by application code
+    
     // CONSTRUCTORS
   private:
     VL_UNCOPYABLE(Vtop);  ///< Copying not allowed
@@ -324,12 +336,7 @@ VL_MODULE(Vtop) {
     
     // API METHODS
     /// Evaluate the model.  Application must call when inputs change.
-    void eval() { eval_step(); }
-    /// Evaluate when calling multiple units/models per time step.
-    void eval_step();
-    /// Evaluate at end of a timestep for tracing, when using eval_step().
-    /// Application must call after all eval() and before time changes.
-    void eval_end_step() {}
+    void eval();
     /// Simulation complete, run final blocks.  Application must call on completion.
     void final();
     
@@ -350,7 +357,7 @@ VL_MODULE(Vtop) {
   private:
 #ifdef VL_DEBUG
     void _eval_debug_assertions();
-#endif  // VL_DEBUG
+#endif // VL_DEBUG
   public:
     static void _eval_initial(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
     static void _eval_settle(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
@@ -358,9 +365,6 @@ VL_MODULE(Vtop) {
     static void _sequent__TOP__4(Vtop__Syms* __restrict vlSymsp);
     static void _settle__TOP__3(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
     static void _settle__TOP__6(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
-} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+} VL_ATTR_ALIGNED(128);
 
-//----------
-
-
-#endif  // guard
+#endif // guard

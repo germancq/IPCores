@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2021-04-06 19:22:21
- * @ Modified by: German Cano Quiveu, germancq@dte.us.es
- * @ Modified time: 2021-04-06 22:17:58
+ * @ Modified by: Your name
+ * @ Modified time: 2021-04-14 16:26:04
  * @ Description:
  */
 
@@ -690,7 +690,7 @@ genvar i;
                         if((expected_result != output_from_UUT_1_o) || err_uut) 
                         begin
                             up_error_counter = 1'b1;
-                            current_block_w = 1'b1;
+                            
                            
                         end
                     end
@@ -774,6 +774,9 @@ genvar i;
                      end
                      //rst inicio outputs
                      else if(counter_bytes_o == BASE_OUTPUTS - 1) begin
+                        rst_index = 1'b1;
+                     end
+                     else if (counter_bytes_o == BASE_OUTPUTS + (OUTPUT_SIZE_1>>3) - 1) begin
                         rst_index = 1'b1;
                      end
                      //rst_final outputs
