@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-06-24 18:09:55
  * @ Modified by: Your name
- * @ Modified time: 2021-01-17 21:14:04
+ * @ Modified time: 2021-04-16 17:13:12
  * @ Description:
  */
 
@@ -138,8 +138,10 @@ module spongent_iter #(
                 end
             end
             PERMUTATION: begin
-                rst_permutation_from_absorb = 1;
-                next_state = WAIT_PERMUTATION;
+                if(data_ready == 1'b0 || start_hash) begin
+                    rst_permutation_from_absorb = 1;
+                    next_state = WAIT_PERMUTATION;
+                end
             end
             WAIT_PERMUTATION:begin
                 rst_permutation_from_absorb = 0;
