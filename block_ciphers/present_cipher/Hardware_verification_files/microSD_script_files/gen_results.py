@@ -24,7 +24,12 @@ def create_fields(sheet1):
     sheet1.write(0,4,'ciphertext')
     sheet1.write(0,5,'expected_value')
     sheet1.write(0,6,'error')
-    sheet1.write(0,7,'HW_time_ns')
+    sheet1.write(0,7,'IPCUT_execution_time_ns')
+    sheet1.write(0,8,'setup_read_microSD_time_ns')
+    sheet1.write(0,9,'exec_read_microSD_time_ns')
+    sheet1.write(0,10,'read_microSD_total_time_ns')
+    sheet1.write(0,11,'write_microSD_time_ns')
+    sheet1.write(0,12,'total_time_ns')
 
 def read_params_from_sd(block_n,micro_sd):
     micro_sd.seek(BLOCK_SIZE*block_n)
@@ -38,6 +43,10 @@ def read_params_from_sd(block_n,micro_sd):
     
     result = int.from_bytes(micro_sd.read(8),byteorder='little')
     exec_time = int.from_bytes(micro_sd.read(8),byteorder='little')
+    setup_read_time = int.from_bytes(micro_sd.read(4),byteorder='little')
+    read_time = int.from_bytes(micro_sd.read(4),byteorder='little')
+    write_time = int.from_bytes(micro_sd.read(4),byteorder='little')
+    total_time = int.from_bytes(micro_sd.read(4),byteorder='little')
     #print(hex(result))
     
     return (signature,
@@ -46,7 +55,11 @@ def read_params_from_sd(block_n,micro_sd):
             param_2,
             result,
             expected_result,
-            exec_time)
+            exec_time,
+            setup_read_time,
+            read_time,
+            write_time,
+            total_time)
 
 
 def write_params(sheet1, params , i):
@@ -58,22 +71,31 @@ def write_params(sheet1, params , i):
     enc_dec = params[3]
     result = params[4]
     hw_time = int(calculated_time_in_ns(params[6]))
+    setup_rd_time = int(calculated_time_in_ns(params[7]))
+    exec_rd_time = int(calculated_time_in_ns(params[8]))
+    rd_time = setup_rd_time + exec_rd_time
+    wr_time = int(calculated_time_in_ns(params[9]))
+    total_time = int(calculated_time_in_ns(params[10]))
     print("*************************")
-    for j in range(0,7):
+    for j in range(0,11):
         print(hex(params[j]))
     print("*************************")
     error = 0
     if(params[5] != result) :
         error = 1
-    else :
-        sheet1.write(i,1,hex(text))
-        sheet1.write(i,2,hex(key))
-        sheet1.write(i,3,hex(enc_dec))
-        sheet1.write(i,4,hex(result))
-        sheet1.write(i,5,hex(params[5]))
-        sheet1.write(i,6,hex(error))
-        sheet1.write(i,7,int(hw_time))
-
+    
+    sheet1.write(i,1,hex(text))
+    sheet1.write(i,2,hex(key))
+    sheet1.write(i,3,hex(enc_dec))
+    sheet1.write(i,4,hex(result))
+    sheet1.write(i,5,hex(params[5]))
+    sheet1.write(i,6,hex(error))
+    sheet1.write(i,7,int(hw_time))
+    sheet1.write(i,8,int(setup_rd_time))
+    sheet1.write(i,9,int(exec_rd_time))
+    sheet1.write(i,10,int(rd_time))
+    sheet1.write(i,11,int(wr_time))
+    sheet1.write(i,12,int(total_time))
     
     return i+1
 
@@ -97,7 +119,7 @@ def gen_calc(micro_sd):
         i = write_params(sheet1,params,i)
 
 
-    wb.save('results_new_100.xls')
+    wb.save('results_100_detailed.xls')
 
 def main():
     with open(sys.argv[1],"rb") as micro_sd:

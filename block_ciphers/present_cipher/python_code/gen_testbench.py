@@ -114,8 +114,13 @@ def create_microsd_vectors(micro_sd,storage_file,VIOstorage_file,N,e):
             counter_errors = counter_errors + 1
 
         storage_file.write(int(key[0]).to_bytes(10, byteorder='little'))   
-        storage_file.write(int(text[0]).to_bytes(8, byteorder='little'))   
+        storage_file.write(int(text[0]).to_bytes(8, byteorder='little')) 
+        storage_file.write(int(0).to_bytes(1, byteorder='little')) 
         storage_file.write(expected_enc_value.to_bytes(8, byteorder='little'))   
+
+        storage_file.write(int(key[0]).to_bytes(10, byteorder='little'))   
+        storage_file.write(int(text[0]).to_bytes(8, byteorder='little')) 
+        storage_file.write(int(1).to_bytes(1, byteorder='little')) 
         storage_file.write(expected_dec_value.to_bytes(8, byteorder='little'))    
 
         key_string = '{:020x}'.format(int(key[0]))

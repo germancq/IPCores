@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:13:14 by germancq          #+#    #+#              #
-#    Updated: 2021/04/14 14:05:01 by germancq         ###   ########.fr        #
+#    Updated: 2021/04/15 18:53:07 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -157,23 +157,25 @@ def run_test(dut, index = 0):
         
         #key = 0x0
         #text = 0x0
-        storage_file.seek((index*34))
+        storage_file.seek((index*27))
         key = int.from_bytes(storage_file.read(10),byteorder='little')
         text = int.from_bytes(storage_file.read(8),byteorder='little')
-        expected_enc_value = int.from_bytes(storage_file.read(8),byteorder='little')
-        expected_dec_value = int.from_bytes(storage_file.read(8),byteorder='little')
+        enc_dec = int.from_bytes(storage_file.read(1),byteorder='little')
+        expected_value = int.from_bytes(storage_file.read(8),byteorder='little')
+        
         setup_function(dut,key,text)
         
         yield rst_function_test(dut)
         yield generate_round_keys(dut)
-        yield enc_test(dut,expected_enc_value)
-        yield rst_function_test(dut)
-        yield generate_round_keys(dut)
-        yield dec_test(dut,expected_dec_value)
+        if (enc_dec):
+            yield dec_test(dut,expected_value)
+        else :    
+            yield enc_test(dut,expected_value)
+        
 
 
 
-n = 5
+n = 100
 factory = TestFactory(run_test)
 
 factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31

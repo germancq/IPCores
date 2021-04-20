@@ -2,10 +2,9 @@
  * @ Author: German Cano Quiveu, germancq@dte.us.es
  * @ Create Time: 2020-07-09 15:46:42
  * @ Modified by: Your name
- * @ Modified time: 2020-07-10 00:17:47
+ * @ Modified time: 2021-04-16 17:10:33
  * @ Description:
  */
-
 module hmac_spongent_iter #(
     parameter N = 256,
     parameter c = 256,

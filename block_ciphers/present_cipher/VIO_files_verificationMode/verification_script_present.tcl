@@ -12,9 +12,7 @@ set i 0
 reset_hw_vio_activity [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]
  
 
-foreach line $lines {
-    puts stdout $i
-	set i [expr $i + 1]    
+foreach line $lines { 
 	set values [split $line " "]
 	set key [lindex $values 0]
 	if {$key == ""} {
@@ -24,11 +22,20 @@ foreach line $lines {
     set enc_dec [lindex $values 2]
 	set expected_result [lindex $values 3]
 
-	
+	set start_inst [clock milliseconds]
 
-	set_property OUTPUT_VALUE 1 [get_hw_probes rst_uut -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
-        
-    commit_hw_vio [get_hw_probes {rst_uut} -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+    set_property OUTPUT_VALUE 1 [get_hw_probes rst_uut -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+
+    set_property OUTPUT_VALUE $text [get_hw_probes block_i -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+    
+
+    set_property OUTPUT_VALUE $enc_dec [get_hw_probes enc_dec -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+    
+
+    set_property OUTPUT_VALUE $key [get_hw_probes key -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
+    
+
+    commit_hw_vio [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]
 
     while {1} {
             
@@ -40,17 +47,6 @@ foreach line $lines {
             break
         }	
     }
-
-    set_property OUTPUT_VALUE $text [get_hw_probes block_i -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
-    commit_hw_vio [get_hw_probes {block_i} -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
-
-    set_property OUTPUT_VALUE $enc_dec [get_hw_probes enc_dec -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
-    commit_hw_vio [get_hw_probes {enc_dec} -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
-
-    set_property OUTPUT_VALUE $key [get_hw_probes key -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
-    commit_hw_vio [get_hw_probes {key} -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
-
-    refresh_hw_vio [get_hw_vios -of_objects [get_hw_devices xc7a100t_0]]
 
     set_property OUTPUT_VALUE 0 [get_hw_probes rst_uut -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
         
@@ -72,7 +68,9 @@ foreach line $lines {
 				set errors [expr $errors + 1] 
 				
 	}
-	set combined "${line} ${block_o}"
+    set finish_inst [clock milliseconds]
+    set exec_time [expr $finish_inst - $start_inst]
+	set combined "${line} ${block_o} ${exec_time}"
 	puts $wf $combined
 
 }

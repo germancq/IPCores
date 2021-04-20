@@ -35,7 +35,15 @@ def create_fields(sheet1):
     sheet1.write(0,1,'hash')
     sheet1.write(0,2,'expected_value')
     sheet1.write(0,3,'error')
-    sheet1.write(0,4,'HW_time_ns')
+    sheet1.write(0,4,'IPCUT_execution_time_ns')
+    sheet1.write(0,5,'setup_read_microSD_time_ns')
+    sheet1.write(0,6,'exec_read_microSD_time_ns')
+    sheet1.write(0,7,'read_microSD_total_time_ns')
+    sheet1.write(0,8,'setup_feed_read_microSD_time_ns')
+    sheet1.write(0,9,'exec_feed_read_microSD_time_ns')
+    sheet1.write(0,10,'feed_read_microSD_total_time_ns')
+    sheet1.write(0,11,'write_microSD_time_ns')
+    sheet1.write(0,12,'total_time_ns')
 
 def read_params_from_sd(block_n,micro_sd):
     n = int(math.ceil(N/8))
@@ -49,6 +57,12 @@ def read_params_from_sd(block_n,micro_sd):
     
     result = int.from_bytes(micro_sd.read(n),byteorder='little')
     exec_time = int.from_bytes(micro_sd.read(8),byteorder='little')
+    setup_rd_time = int.from_bytes(micro_sd.read(4),byteorder='little')
+    rd_time = int.from_bytes(micro_sd.read(4),byteorder='little')
+    setup_feed_rd_time = int.from_bytes(micro_sd.read(4),byteorder='little')
+    feed_rd_time = int.from_bytes(micro_sd.read(8),byteorder='little')
+    wr_time = int.from_bytes(micro_sd.read(4),byteorder='little')
+    total_time = int.from_bytes(micro_sd.read(8),byteorder='little')
     #print(hex(result))
     
     return (signature,
@@ -56,7 +70,13 @@ def read_params_from_sd(block_n,micro_sd):
             size_feed_data,
             result,
             expected_result,
-            exec_time)
+            exec_time,
+            setup_rd_time,
+            rd_time,
+            setup_feed_rd_time,
+            feed_rd_time,
+            wr_time,
+            total_time)
 
 
 def write_params(sheet1, params , i, j):
@@ -67,20 +87,35 @@ def write_params(sheet1, params , i, j):
     #print(hex(key))
     result = params[3]
     hw_time = int(calculated_time_in_ns(params[5]))
+    setup_rd_time = int(calculated_time_in_ns(params[6]))
+    exec_rd_time = int(calculated_time_in_ns(params[7]))
+    rd_time = setup_rd_time + exec_rd_time
+    setup_feed_rd_time = int(calculated_time_in_ns(params[8]))
+    exec_feed_rd_time = int(calculated_time_in_ns(params[9]))
+    feed_rd_time = setup_feed_rd_time + exec_feed_rd_time
+    wr_time = int(calculated_time_in_ns(params[10]))
+    total_time = int(calculated_time_in_ns(params[11]))
     print("*************************")
-    for k in range(0,6):
+    for k in range(0,12):
         print(hex(params[k]))
     print("*************************")
     error = 0
     if(params[4] != result) :
         error = 1
-    else :
-        sheet1.write(j,0,hex(size_feed_data))
-        sheet1.write(j,1,hex(result))
-        sheet1.write(j,2,hex(params[4]))
-        sheet1.write(j,3,hex(error))
-        sheet1.write(j,4,int(hw_time))
-
+    
+    sheet1.write(j,0,hex(size_feed_data))
+    sheet1.write(j,1,hex(result))
+    sheet1.write(j,2,hex(params[4]))
+    sheet1.write(j,3,hex(error))
+    sheet1.write(j,4,int(hw_time))
+    sheet1.write(j,5,int(setup_rd_time))
+    sheet1.write(j,6,int(exec_rd_time))
+    sheet1.write(j,7,int(rd_time))
+    sheet1.write(j,8,int(setup_feed_rd_time))
+    sheet1.write(j,9,int(exec_feed_rd_time))
+    sheet1.write(j,10,int(feed_rd_time))
+    sheet1.write(j,11,int(wr_time))
+    sheet1.write(j,12,int(total_time))
     
     return next_block+1
 
@@ -106,7 +141,7 @@ def gen_calc(micro_sd):
         j = j+1
 
 
-    wb.save('results_spongent88_100_64kB.xls')
+    wb.save('results_spongent88_100_64kB_detailed.xls')
 
 def main():
     with open(sys.argv[1],"rb") as micro_sd:
