@@ -1,17 +1,17 @@
 /**
- * @Author: German Cano Quiveu <germancq>
- * @Date:   2019-03-01T15:43:26+01:00
- * @Email:  germancq@dte.us.es
- * @Filename: autotest_module.v
- * @Last modified by:   germancq
- * @Last modified time: 2019-03-05T13:36:26+01:00
+ * @ Author: German Cano Quiveu, germancq@dte.us.es
+ * @ Create Time: 2021-04-06 19:22:21
+ * @ Modified by: German Cano Quiveu, germancq
+ * @ Modified time: 2021-07-06 14:00:51
+ * @ Description:
  */
 
-module autotest_module #(
-  parameter INPUT_SIZE_1 = 32,
-  parameter INPUT_SIZE_2 = 32,
-  parameter OUTPUT_SIZE = 32
-)
+
+
+module autotest_core
+#(parameter WORD_SIZE = 32,
+  parameter INPUT_SIZE_1 = 64,
+  parameter OUTPUT_SIZE_1 = 32)
 (
     input clk,
     input rst,
@@ -22,17 +22,19 @@ module autotest_module #(
     output mosi,
     input miso,
 
-    /*UUT ctrl signals*/
+    /*UUT control signals*/
     output rst_uut,
     input err_uut,
     input end_uut,
+    output feed_data_control_uut,
+    input busy_uut,
+    output stop_feed_uut,
     /*inputs to UUT*/
+    output [WORD_SIZE-1:0] feed_data_uut,
     output [INPUT_SIZE_1-1:0] input_to_UUT_1,
-    output [INPUT_SIZE_2-1:0] input_to_UUT_2,
     /*outputs from UUT*/
-    input [OUTPUT_SIZE-1:0] output_from_UUT,
+    input [OUTPUT_SIZE_1-1:0] output_from_UUT_1,
 
-    output clk_uut,
 
     input [1:0] sw_debug,
     output [31:0] debug
@@ -51,22 +53,14 @@ module autotest_module #(
   logic spi_w_byte;
 
 
-  logic [1:0] clk_sel;
-
-  gen_clk_uut gen_clk_inst(
-    .clk(clk),
-    .rst(rst),
-    .clk_uut(clk_uut),
-    .clk_sel(clk_sel)
-  );
   
 
-  control_unit #(
+  control_unit_feed #(
+    .WORD_SIZE(WORD_SIZE),
     .INPUT_SIZE_1(INPUT_SIZE_1),
-    .INPUT_SIZE_2(INPUT_SIZE_2),
-    .OUTPUT_SIZE(OUTPUT_SIZE)
+    .OUTPUT_SIZE_1(OUTPUT_SIZE_1)
   )
-  control_unit_isnt(
+  fsm_isnt(
     .clk(clk),
     .rst(rst),
     .start(start),
@@ -86,12 +80,14 @@ module autotest_module #(
     .rst_uut(rst_uut),
     .err_uut(err_uut),
     .end_uut(end_uut),
-    .clk_uut_sel(clk_sel),
+    .feed_data_control_uut(feed_data_control_uut),
+    .busy_uut(busy_uut),
+    .stop_feed_uut(stop_feed_uut),
     //uut paramters signals
+    .feed_data_uut(feed_data_uut),
     .input_to_UUT_1(input_to_UUT_1),
-    .input_to_UUT_2(input_to_UUT_2),
     //uut results signals
-    .output_from_UUT(output_from_UUT),
+    .output_from_UUT_1(output_from_UUT_1),
     //debug
     .sw_debug(sw_debug),
     .debug_signal(debug)
@@ -120,55 +116,9 @@ module autotest_module #(
     .sclk(sclk),
     .ss(cs),
     ////
-    .sclk_speed(4'h1),
+    .sclk_speed(4'h1), //25MHz if clk is 100MHz
     
     .debug()
   );
 
-endmodule : autotest_module
-
-
-module gen_clk_uut(
-  input clk,
-  input rst,
-  output clk_uut,
-  input [1:0] clk_sel
-);
-
-
-  logic clk_1;
-  logic clk_2;
-  logic clk_max;
-  
-  clk_wiz_0 clk_gen(
-    // Clock out ports
-    .clk_out1(clk_max),
-  // Status and control signals
-    .reset(rst),
- // Clock in ports
-    .clk_in1(clk)
-  );
-  
-  logic [7:0] counter_o;
-  
-  logic clk_alt;
-  
-  counter #(.DATA_WIDTH(8)) counter_clk(
-    .clk(clk_max),
-    .rst(rst),
-    .up(1'b1),
-    .down(1'b0),
-    .din(8'h0),
-    .dout(counter_o)
-  );
-
-  
-  BUFGMUX BUFGMUX_inst1(
-    .I0(clk_max),
-    .I1(counter_o[clk_sel[1]]),
-    .O(clk_uut),
-    .S(clk_sel[0]^clk_sel[1])
-  );
-  
-  
-endmodule : gen_clk_uut
+endmodule : autotest_core

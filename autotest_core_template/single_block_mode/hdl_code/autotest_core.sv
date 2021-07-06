@@ -1,16 +1,16 @@
 /**
- * @ Author: German Cano Quiveu, germancq@dte.us.es
- * @ Create Time: 2021-04-06 19:22:21
- * @ Modified by: German Cano Quiveu, germancq@dte.us.es
- * @ Modified time: 2021-04-06 22:18:27
- * @ Description:
+ * @Author: German Cano Quiveu <germancq>
+ * @Date:   2019-03-01T15:43:26+01:00
+ * @Email:  germancq@dte.us.es
+ * @Filename: autotest_core.sv
+ * @Last modified by:   germancq
+ * @Last modified time: 2019-03-05T13:36:26+01:00
  */
 
 
-
-module autotest_feed_module
-#(parameter FEED_DATA_SIZE = 32,
-  parameter INPUT_SIZE_1 = 64,
+module autotest_core
+#(parameter INPUT_SIZE_1 = 32,
+  parameter INPUT_SIZE_2 = 32,
   parameter OUTPUT_SIZE_1 = 32)
 (
     input clk,
@@ -26,12 +26,9 @@ module autotest_feed_module
     output rst_uut,
     input err_uut,
     input end_uut,
-    output feed_data_control_uut,
-    input busy_uut,
-    output stop_feed_uut,
     /*inputs to UUT*/
-    output [FEED_DATA_SIZE-1:0] feed_data_uut,
     output [INPUT_SIZE_1-1:0] input_to_UUT_1,
+    output [INPUT_SIZE_2-1:0] input_to_UUT_2,
     /*outputs from UUT*/
     input [OUTPUT_SIZE_1-1:0] output_from_UUT_1,
 
@@ -55,11 +52,12 @@ module autotest_feed_module
 
   
 
-  control_unit_feed #(
-    .FEED_DATA_SIZE(FEED_DATA_SIZE),
+  control_unit #(
+    .INPUT_SIZE_1(INPUT_SIZE_1),
+    .INPUT_SIZE_2(INPUT_SIZE_2),
     .OUTPUT_SIZE_1(OUTPUT_SIZE_1)
   )
-  fsm_isnt(
+  control_unit_isnt(
     .clk(clk),
     .rst(rst),
     .start(start),
@@ -79,12 +77,9 @@ module autotest_feed_module
     .rst_uut(rst_uut),
     .err_uut(err_uut),
     .end_uut(end_uut),
-    .feed_data_control_uut(feed_data_control_uut),
-    .busy_uut(busy_uut),
-    .stop_feed_uut(stop_feed_uut),
     //uut paramters signals
-    .feed_data_uut(feed_data_uut),
     .input_to_UUT_1(input_to_UUT_1),
+    .input_to_UUT_2(input_to_UUT_2),
     //uut results signals
     .output_from_UUT_1(output_from_UUT_1),
     //debug
@@ -120,4 +115,4 @@ module autotest_feed_module
     .debug()
   );
 
-endmodule : autotest_feed_module
+endmodule : autotest_core
