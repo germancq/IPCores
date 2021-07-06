@@ -38,7 +38,7 @@ c_candidates = [80,128,160,224,256]
 R_candidates = [45,70,90,120,140]
 
 OPTION_HASH = 0
-SIZE_FEED_DATA_BYTES = 64*1024
+SIZE_FEED_DATA_BYTES = 1*1024
 
 
 N = N_candidates[OPTION_HASH]

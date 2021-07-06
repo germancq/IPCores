@@ -36,7 +36,7 @@ VM_USER_CFLAGS = \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
-	-L/home/germancq/cocotb/cocotb/libs/verilator -lcocotbvpi -lgpi -lcocotb -lgpilog -lcocotbutils \
+	-Wl,-rpath,/usr/local/lib/python3.7/site-packages/cocotb/libs -L/usr/local/lib/python3.7/site-packages/cocotb/libs -lcocotbvpi_verilator \
 
 # User .cpp files (from .cpp's on Verilator command line)
 VM_USER_CLASSES = \
@@ -44,7 +44,7 @@ VM_USER_CLASSES = \
 
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
-	/home/germancq/cocotb/cocotb/share/lib/verilator \
+	/usr/local/lib/python3.7/site-packages/cocotb/share/lib/verilator \
 
 
 ### Default rules...
@@ -56,12 +56,12 @@ include $(VERILATOR_ROOT)/include/verilated.mk
 ### Executable rules... (from --exe)
 VPATH += $(VM_USER_DIR)
 
-verilator.o: /home/germancq/cocotb/cocotb/share/lib/verilator/verilator.cpp
+verilator.o: /usr/local/lib/python3.7/site-packages/cocotb/share/lib/verilator/verilator.cpp
 	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
 
 ### Link rules... (from --exe)
-present: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a
-	$(LINK) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@ $(LIBS) $(SC_LIBS)
+present: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_HIER_LIBS)
+	$(LINK) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) $(LIBS) $(SC_LIBS) -o $@
 
 
 # Verilated -*- Makefile -*-

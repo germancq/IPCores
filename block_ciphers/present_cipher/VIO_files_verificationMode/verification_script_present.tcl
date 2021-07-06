@@ -1,8 +1,9 @@
+package require Tclx
 set_property PARAM.FREQUENCY 30000000 [get_hw_targets localhost:3121/xilinx_tcf/Digilent/210292745836A]
 set_property CORE_REFRESH_RATE_MS 0 [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]
 set start [clock milliseconds]
 set inputFile {/home/germancq/test_cases_VIO_generated.txt}
-set outputFile {/home/germancq/test_output_cases_VIO.txt}
+set outputFile {/home/germancq/VIO_1000_present_test6.txt}
 set fd [open $inputFile r]
 set wf [open $outputFile w]
 set lines [split [read $fd] "\n"]
@@ -22,7 +23,7 @@ foreach line $lines {
     set enc_dec [lindex $values 2]
 	set expected_result [lindex $values 3]
 
-	set start_inst [clock milliseconds]
+	set start_inst [times]
 
     set_property OUTPUT_VALUE 1 [get_hw_probes rst_uut -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
 
@@ -68,8 +69,9 @@ foreach line $lines {
 				set errors [expr $errors + 1] 
 				
 	}
-    set finish_inst [clock milliseconds]
-    set exec_time [expr $finish_inst - $start_inst]
+    set finish_inst [times]
+    #time in milliseconds
+    set exec_time [expr {([lindex $finish_inst 0] - [lindex $start_inst 0]) / 1.0}]
 	set combined "${line} ${block_o} ${exec_time}"
 	puts $wf $combined
 

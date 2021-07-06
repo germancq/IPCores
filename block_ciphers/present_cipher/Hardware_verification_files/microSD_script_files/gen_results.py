@@ -9,13 +9,19 @@ import sys
 import os
 import itertools
 import xlwt
+import xlrd
 import time
-
+from xlutils.copy import copy as xl_copy
 
 BLOCK_SIZE = 512
 NUM_BLOCK_TEST = 0x00100000
 SIGNATURE = 0xAABBCCDD
 RESULTS_OFFSET = 0x0
+
+
+N_SAMPLES = 1000
+INIT_VALUE = 4
+FINISH_VALUE = INIT_VALUE + N_SAMPLES - 1
 
 def create_fields(sheet1):
     sheet1.write(0,1,'text')
@@ -107,6 +113,10 @@ def calculated_time_in_ns(time_units,base_clk=100):
 
 def gen_calc(micro_sd):
     wb = xlwt.Workbook()
+    #rb = xlrd.open_workbook('results_detailed_sd1.xls')
+
+    #wb = xl_copy(rb)
+
     sheet1 = wb.add_sheet("Hoja_1")
     create_fields(sheet1)
     valid_signature = 1
@@ -119,7 +129,36 @@ def gen_calc(micro_sd):
         i = write_params(sheet1,params,i)
 
 
-    wb.save('results_100_detailed.xls')
+    sheet1.write(i,6,"MIN")
+    sheet1.write(i,7,xlwt.Formula("MIN(H"+str(INIT_VALUE)+":H"+str(FINISH_VALUE)+")"))
+    sheet1.write(i,8,xlwt.Formula("MIN(I"+str(INIT_VALUE)+":I"+str(FINISH_VALUE)+")"))
+    sheet1.write(i,9,xlwt.Formula("MIN(J"+str(INIT_VALUE)+":J"+str(FINISH_VALUE)+")"))
+    sheet1.write(i,10,xlwt.Formula("MIN(K"+str(INIT_VALUE)+":K"+str(FINISH_VALUE)+")"))
+    sheet1.write(i,11,xlwt.Formula("MIN(L"+str(INIT_VALUE)+":L"+str(FINISH_VALUE)+")"))
+    sheet1.write(i,12,xlwt.Formula("MIN(M"+str(INIT_VALUE)+":M"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+1,6,"MAX")
+    sheet1.write(i+1,7,xlwt.Formula("MAX(H"+str(INIT_VALUE)+":H"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+1,8,xlwt.Formula("MAX(I"+str(INIT_VALUE)+":I"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+1,9,xlwt.Formula("MAX(J"+str(INIT_VALUE)+":J"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+1,10,xlwt.Formula("MAX(K"+str(INIT_VALUE)+":K"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+1,11,xlwt.Formula("MAX(L"+str(INIT_VALUE)+":L"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+1,12,xlwt.Formula("MAX(M"+str(INIT_VALUE)+":M"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+2,6,"AVG")
+    sheet1.write(i+2,7,xlwt.Formula("AVERAGE(H"+str(INIT_VALUE)+":H"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+2,8,xlwt.Formula("AVERAGE(I"+str(INIT_VALUE)+":I"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+2,9,xlwt.Formula("AVERAGE(J"+str(INIT_VALUE)+":J"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+2,10,xlwt.Formula("AVERAGE(K"+str(INIT_VALUE)+":K"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+2,11,xlwt.Formula("AVERAGE(L"+str(INIT_VALUE)+":L"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+2,12,xlwt.Formula("AVERAGE(M"+str(INIT_VALUE)+":M"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+3,6,"DEVEST")
+    sheet1.write(i+3,7,xlwt.Formula("STDEV(H"+str(INIT_VALUE)+":H"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+3,8,xlwt.Formula("STDEV(I"+str(INIT_VALUE)+":I"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+3,9,xlwt.Formula("STDEV(J"+str(INIT_VALUE)+":J"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+3,10,xlwt.Formula("STDEV(K"+str(INIT_VALUE)+":K"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+3,11,xlwt.Formula("STDEV(L"+str(INIT_VALUE)+":L"+str(FINISH_VALUE)+")"))
+    sheet1.write(i+3,12,xlwt.Formula("STDEV(M"+str(INIT_VALUE)+":M"+str(FINISH_VALUE)+")"))
+
+    wb.save('results_detailed_1000_case3_sd1.xls')
 
 def main():
     with open(sys.argv[1],"rb") as micro_sd:

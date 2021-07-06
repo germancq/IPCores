@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:13:14 by germancq          #+#    #+#              #
-#    Updated: 2021/04/15 18:53:07 by germancq         ###   ########.fr        #
+#    Updated: 2021/04/29 13:10:31 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -175,7 +175,7 @@ def run_test(dut, index = 0):
 
 
 
-n = 100
+n = 1000
 factory = TestFactory(run_test)
 
 factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31

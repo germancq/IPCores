@@ -1,8 +1,9 @@
+package require Tclx
 set_property PARAM.FREQUENCY 30000000 [get_hw_targets localhost:3121/xilinx_tcf/Digilent/210292745836A]
 set_property CORE_REFRESH_RATE_MS 0 [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]
 set start [clock milliseconds]
-set inputFile {/home/germancq/gitProjects/IPCores/hash_functions/spongent_iter/files/VIO_inputTests_1kB_88_100_0}
-set outputFile {/home/germancq/gitProjects/IPCores/hash_functions/spongent_iter/files/VIO_output_1kB_88_100_0}
+set inputFile {/home/germancq/gitProjects/IPCores/hash_functions/spongent_iter/files/VIO_inputTests_1kB_88_1000_0}
+set outputFile {/home/germancq/gitProjects/IPCores/hash_functions/spongent_iter/files/VIO_output_1kB_88_1000_case3}
 set fd [open $inputFile r]
 set wf [open $outputFile w]
 set lines [split [read $fd] "\n"]
@@ -30,7 +31,7 @@ set_property OUTPUT_VALUE 0 [get_hw_probes rst_uut -of_objects [get_hw_vios -of_
         
 commit_hw_vio [get_hw_probes {rst_uut} -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
 
-set start_inst [clock milliseconds]
+set start_inst [times]
 foreach line $lines {
     
     set values [split $line " "]
@@ -85,10 +86,11 @@ foreach line $lines {
         if {$output_from_UUT_1 != $expected_result} {
 				set errors [expr $errors + 1]  		
 		}
-        set finish_inst [clock milliseconds]
-        set exec_time [expr $finish_inst - $start_inst]
+        set finish_inst [times]
+        set exec_time [expr {([lindex $finish_inst 0] - [lindex $start_inst 0]) / 1.0}]
         set combined "${line} ${output_from_UUT_1} ${exec_time}"
         puts $wf $combined
+        
 
         set_property OUTPUT_VALUE 1 [get_hw_probes rst_uut -of_objects [get_hw_vios -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"vio_impl"}]]
         
@@ -117,7 +119,7 @@ foreach line $lines {
                 break
             }
         }
-        set start_inst [clock milliseconds]
+        set start_inst [times]
 
 	}
     if {$value != "expected"} {

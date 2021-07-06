@@ -4,10 +4,10 @@
 // Internal details; most calling programs do not need this header,
 // unless using verilator public meta comments.
 
-#ifndef _Vtop__Syms_H_
-#define _Vtop__Syms_H_
+#ifndef VERILATED_VTOP__SYMS_H_
+#define VERILATED_VTOP__SYMS_H_  // guard
 
-#include "verilated.h"
+#include "verilated_heavy.h"
 
 // INCLUDE MODULE CLASSES
 #include "Vtop.h"
@@ -116,12 +116,12 @@ class Vtop__Syms : public VerilatedSyms {
     VerilatedHierarchy __Vhier;
     
     // CREATORS
-    Vtop__Syms(Vtop* topp, const char* namep);
-    ~Vtop__Syms() {}
+    Vtop__Syms(VerilatedContext* contextp, Vtop* topp, const char* namep);
+    ~Vtop__Syms();
     
     // METHODS
     inline const char* name() { return __Vm_namep; }
     
-} VL_ATTR_ALIGNED(64);
+} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
 
 #endif  // guard

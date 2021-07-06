@@ -141,7 +141,7 @@ def gen_calc(micro_sd):
         j = j+1
 
 
-    wb.save('results_spongent88_100_64kB_detailed.xls')
+    wb.save('results_spongent88_1000_1kB_detailed_case3.xls')
 
 def main():
     with open(sys.argv[1],"rb") as micro_sd:
