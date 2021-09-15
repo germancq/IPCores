@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2021-09-15 15:45:43
  * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2021-09-15 15:47:19
+ * @ Modified time: 2021-09-15 16:07:59
  * @ Description:
  */
 
@@ -30,9 +30,9 @@ module top(
     output [6:0] seg,
     output [7:0] AN,
 
-    input [1:0] switch_i,
+    input [1:0] switch_i
 
-    output [15:0] leds_o
+    //output [15:0] leds_o
 );
 
 

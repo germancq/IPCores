@@ -23,7 +23,7 @@ CAPI=2:
 
 
 
-name : ::spongent_iter_system:0
+name : ::spongent_iter_system_genesys2:0
 description : Spongent iter Hash example on genesys2
 
 
