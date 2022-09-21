@@ -1,0 +1,14 @@
+CAPI=1
+[main]
+description = "stack"
+
+[verilog]
+src_files =
+  misc/stack/hdl_code/stack.sv
+  
+
+[provider]
+name = github
+user = germancq
+repo = IPCores
+version = master    
