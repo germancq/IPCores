@@ -74,7 +74,7 @@ class Spongent:
         self.absorbing_after_p_states=[]
         for i in range(0,len(self.m)):
             block_value = self.m[len(self.m)-1-i]
-            print(hex(block_value))
+            #print(hex(block_value))
             state = state ^ block_value
             self.absorbing_before_p_states.append(state)
             #print('------------------')

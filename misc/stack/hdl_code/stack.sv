@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2022-09-21 12:12:32
  * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2022-09-21 13:13:17
+ * @ Modified time: 2022-09-21 13:43:23
  * @ Description:
  */
 
@@ -41,7 +41,7 @@ module stack_fifo
         else if(pop) begin
             if (empty == 0) begin
                 sp <= sp - 1;
-                data_o <= stack[sp];
+                data_o <= stack[sp-1];
             end
         end
     end
