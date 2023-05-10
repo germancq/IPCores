@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2023-05-04 16:06:30
- * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2023-05-10 14:32:03
+ * @ Modified by: German Cano Quiveu, germancq@dte.us.es
+ * @ Modified time: 2023-05-10 18:29:54
  * @ Description:
  */
 
@@ -62,6 +62,8 @@ module key_schedule #(
     assign cte[6] = 32'he04ef22a;
     assign cte[7] = 32'he5c40957;
 
+    logic [31:0] T [7:0];
+
     logic [KEY_LEN-1:0] key_reorder;
     generate
         genvar i;
@@ -69,15 +71,79 @@ module key_schedule #(
             assign key_reorder[31+(i<<5):(i<<5)] = order_word(key[31+(i<<5):(i<<5)]);
         end
     endgenerate
+
+    //round key counter
+    logic rk_counter_rst;
+    logic rk_counter_down;
+    logic [4:0] rk_counter_din;
+    logic [4:0] rk_counter_dout;
+
+    generate
+        case(KEY_LEN)
+            128: begin
+                assign rk_counter_din = 23;
+            end
+            192: begin
+                assign rk_counter_din = 27;
+            end
+            256: begin
+                assign rk_counter_din = 31;
+            end
+            default: begin
+                assign rk_counter_din = 23;
+            end
+        endcase
+    endgenerate
+
+    //assign rk_counter_din = (KEY_LEN == 128) ? 5'd23 : ((KEY_LEN == 192) ? 5'd27 : 5'd31)  
+
+
+    counter #(.DATA_WIDTH(5)) roundkey_counter(
+        .clk(clk),
+        .rst(rk_counter_rst),
+        .up(0),
+        .down(rk_counter_down),
+        .din(rk_counter_din),
+        .dout(rk_counter_dout)
+    );
     
     // idle, espera start o reset a 0
     // check final de cuenta
     // crea T's
     //almacena RKi
     //vuelve a check final
+    logic [3:0] next_state;
+    logic [3:0] current_state;
+
+    localparam IDLE = 0;
+
     always_comb begin
+        next_state = current_state;
         
-        
+        case(current_state)
+            IDLE:
+                begin
+                    //valores iniciales de T
+                    next_state = ;
+                end
+            CHECK_ROUND:
+                begin
+                    
+                end
+            CALCULATE_T:
+                begin
+                    
+                end
+            STORE_RK:
+                begin
+                    
+                end
+            END_STATE:
+                begin
+                    
+                end
+            default:;
+        endcase
     end    
     
 
