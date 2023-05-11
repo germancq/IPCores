@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2023-05-04 16:06:30
- * @ Modified by: German Cano Quiveu, germancq@dte.us.es
- * @ Modified time: 2023-05-10 18:29:54
+ * @ Modified by: German Cano Quiveu, germancq
+ * @ Modified time: 2023-05-11 17:16:29
  * @ Description:
  */
 
@@ -30,12 +30,49 @@ module LEA #(
     output end_signal
 
 );
+
+    logic r_w_roundkeys;
+    logic [4:0] addr_roundkeys;
+    logic [191:0] din_roundkeys;
+    logic [191:0] dout_roundkeys;
+
+    logic [4:0] addr_roundkeys_ks;
+    logic [4:0] addr_roundkeys_crypto;
+
+    logic r_w_roundkeys_ks;
+    logic r_w_roundkeys_crypto;
+
+
+    mux #(.DATA_WIDTH(5)) mux_roundkeys_addr(
+        .a(addr_roundkeys_ks),
+        .b(addr_roundkeys_crypto),
+        .sel(end_key_generation),
+        .c(addr_roundkeys)
+    );
+
+    mux #(.DATA_WIDTH(1)) mux_roundkeys_rw(
+        .a(r_w_roundkeys_ks),
+        .b(r_w_roundkeys_crypto),
+        .sel(end_key_generation),
+        .c(r_w_roundkeys)
+    );
+
+    memory_module #(.ADDR(5),.DATA_WIDTH(192)) roundkeys_mem(
+        .clk(clk),
+        .r_w(r_w_roundkeys),
+        .addr(addr_roundkeys),
+        .din(din_roundkeys),
+        .dout(dout_roundkeys)
+    );
+
     key_schedule #(.KEY_LEN(KEY_LEN)) impl(
         .clk(clk),
         .rst(rst),
         .key(key),
-        .roundkeys(),
-        .end_key_generation()
+        .roundkeys_addr(addr_roundkeys_ks),
+        .roundkeys_din(din_roundkeys),
+        .roundkeys_rw(r_w_roundkeys_ks),
+        .end_key_generation(end_key_generation)
     );
     
 endmodule : LEA
@@ -48,7 +85,9 @@ module key_schedule #(
     input clk,
     input rst,
     input [KEY_LEN-1:0] key,
-    output [191:0] roundkeys [31:0],
+    output [4:0] roundkeys_addr,
+    output [191:0] roundkeys_din,
+    output roundkeys_rw,
     output end_key_generation
 );
 
@@ -62,11 +101,33 @@ module key_schedule #(
     assign cte[6] = 32'he04ef22a;
     assign cte[7] = 32'he5c40957;
 
-    logic [31:0] T [7:0];
+    logic [5:0] index_rol [5:0];
+    assign index_rol[0] = 1;
+    assign index_rol[1] = 3;
+    assign index_rol[2] = 6;
+    assign index_rol[3] = 11;
+    assign index_rol[4] = 13;
+    assign index_rol[5] = 17;
+
+    genvar i;
+    logic [31:0] T_din [7:0];
+    logic [31:0] T_dout [7:0];
+    logic [0:0] T_w [7:0];
+    logic [0:0] T_cl [7:0];
+    generate
+        for (i = 0; i<8; i++) begin
+            register #(.DATA_WIDTH(32)) r_T_i(
+                .clk(clk),
+                .cl(T_cl[i]),
+                .w(T_w[i]),
+                .din(T_din[i]),
+                .dout(T_dout[i])
+            );
+        end
+    endgenerate
 
     logic [KEY_LEN-1:0] key_reorder;
-    generate
-        genvar i;
+    generate   
         for (i = 0;i<(KEY_LEN>>3);i++) begin
             assign key_reorder[31+(i<<5):(i<<5)] = order_word(key[31+(i<<5):(i<<5)]);
         end
@@ -116,35 +177,121 @@ module key_schedule #(
     logic [3:0] current_state;
 
     localparam IDLE = 0;
+    localparam CHECK_ROUND = 1;
+    localparam CALCULATE_T = 2;
 
+    logic [31:0] j;
     always_comb begin
         next_state = current_state;
+
+        roundkeys_din = 0;
+        roundkeys_addr = 0;
+        roundkeys_rw = 0;
         
+        for (j =0 ;j<8 ;j++ ) begin
+            T_w[j] = 0;
+            T_cl[j] = 0;
+            T_din[j] = 32'h0;
+        end
+
+        rk_counter_rst = 0;
+        rk_counter_down = 0;
+
+        end_key_generation = 0;
+
         case(current_state)
             IDLE:
                 begin
                     //valores iniciales de T
-                    next_state = ;
+                    
+                    for (j=0 ;j<8 ;j++ ) begin
+                        T_w[j]=1;
+                        T_din[j] = key_reorder[KEY_LEN-1-(~j[2:0]*32):KEY_LEN-((~j[2:0]+1)*32)];    
+                    end
+                    
+                    next_state = CHECK_ROUND;
                 end
             CHECK_ROUND:
                 begin
-                    
+                    next_state = CALCULATE_T_STEP1;
+                    if(rk_counter_dout == 0) begin
+                        next_state = END_STATE;
+                    end
                 end
-            CALCULATE_T:
+            CALCULATE_T_STEP1:
                 begin
-                    
+                    for (j = 0;j<8 ;j++ ) begin
+                        if(KEY_LEN == 128) begin
+                            if((j+(23-rk_counter_dout)) == 0) begin
+                                T_din[j] = T_dout[j] + cte[j%4];
+                            end
+                            else begin
+                                T_din[j] = T_dout[j] + {cte[j%4][31-(j+(23-rk_counter_dout)):0],cte[j%4][31:32-(j+(23-rk_counter_dout))]};
+                            end
+                            T_w[j] = 1;
+                        end
+                        else if(KEY_LEN == 192) begin
+                            
+                        end
+                        else begin
+                            
+                        end
+                    end
+                    next_state = CALCULATE_T_STEP2;
+                end
+            CALCULATE_T_STEP2:
+                begin
+                    for (j = 0;j<8 ;j++ ) begin
+                        if(KEY_LEN == 128) begin
+                            T_din[j] = {T_dout[j][31-index_rol[j]],T_dout[j][31:32-index_rol[j]]};
+                            T_w[j] = 1;
+                        end
+                        else if(KEY_LEN == 192) begin
+                            
+                        end
+                        else begin
+                            
+                        end
+                    end
+                    next_state = STORE_RK;
                 end
             STORE_RK:
                 begin
-                    
+                    if(KEY_LEN == 128) begin
+                        
+                        roundkeys_din = {T_dout[0],T_dout[1],T_dout[2],T_dout[1],T_dout[3],T_dout[1]};
+                        roundkeys_addr = (23-rk_counter_din);
+                        roundkeys_rw = 1;
+                    end
+                    else if(KEY_LEN == 192) begin
+                        
+                    end
+                    else begin
+                        
+                    end
+                    next_state = UPDATE_COUNTER;
                 end
+            UPDATE_COUNTER:
+                begin
+                    rk_counter_down = 1;
+                    next_state = CHECK_ROUND;
+                end    
             END_STATE:
                 begin
-                    
+                    end_key_generation = 1;
                 end
             default:;
         endcase
     end    
+
+    always_ff @( posedge clk ) begin
+        if(rst) begin
+            current_state <= IDLE;
+        end
+        else begin
+            current_state <= next_state;
+        end 
+    end
     
 
 endmodule: key_schedule
