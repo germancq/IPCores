@@ -42,14 +42,14 @@ class LEA:
         T6 = LEA.order_word(self.Key>>32)
         T7 = LEA.order_word(self.Key) 
         
-        self.T.insert(0,T0)
-        self.T.insert(1,T1)
-        self.T.insert(2,T2)
-        self.T.insert(3,T3)
-        self.T.insert(4,T4)
-        self.T.insert(5,T5)
-        self.T.insert(6,T6)
-        self.T.insert(7,T7)
+        self.T.insert(0,[T0,T1,T2,T3,T4,T5,T6,T7])
+        #self.T.insert(1,T1)
+        #self.T.insert(2,T2)
+        #self.T.insert(3,T3)
+        #self.T.insert(4,T4)
+        #self.T.insert(5,T5)
+        #self.T.insert(6,T6)
+        #self.T.insert(7,T7)
         
 
         if self.len_128:
@@ -70,13 +70,13 @@ class LEA:
         for i in range(0,24):
             i_mod4 = i%4
             
-
+            self.T.insert(i+1,[0]*24)
             for j in range (0,4):
-                self.T[j] = (self.T[j] + LEA.rol(RK_cte[i_mod4],32,i+j))%(2**32)  
-                self.T[j] = LEA.rol(self.T[j],32,index[j])
-                self.T[j] = self.T[j] & 0xFFFFFFFF
+                self.T[i+1][j] = (self.T[i][j] + LEA.rol(RK_cte[i_mod4],32,i+j))%(2**32)  
+                self.T[i+1][j] = LEA.rol(self.T[i][j],32,index[j])
+                self.T[i+1][j] = self.T[i][j] & 0xFFFFFFFF
 
-            roundkey=(self.T[0]<<160) + (self.T[1]<<128) + (self.T[2]<<96) + (self.T[1]<<64) + (self.T[3]<<32) + self.T[1]
+            roundkey=(self.T[i+1][0]<<160) + (self.T[i+1][1]<<128) + (self.T[i+1][2]<<96) + (self.T[i+1][1]<<64) + (self.T[i+1][3]<<32) + self.T,[i+1][1]
             self.roundkeys.insert(i,roundkey)
 
     
@@ -183,4 +183,6 @@ if __name__ == "__main__":
     #print(hex(RK[6]))
     lea = LEA(0x0f1e2d3c4b5a69788796a5b4c3d2e1f0)
     print(hex(lea.roundkeys[0]))
+    print(hex(lea.roundkeys[1]))
+    print(hex(lea.roundkeys[2]))
     print(hex(lea.encrypt(0x101112131415161718191a1b1c1d1e1f)))
