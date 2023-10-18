@@ -20,6 +20,7 @@ def setup_block_cipher(dut,key,plaintext):
     dut.key = key
     dut.rst = 0
     dut.block_i = plaintext
+    dut.rq_data = 0
 
 async def rst_function_test(dut):
     dut.rst = 1
@@ -30,9 +31,9 @@ async def rst_function_test(dut):
     dut.rst = 0
 
 
-async def round_keys_test(dut):
+#async def round_keys_test(dut):
     #check each T iteration
-    lea = LEA(dut.key)
+    #lea = LEA(dut.key)
 
 async def n_cycles_clock(dut,n):
     for i in range(0,n):

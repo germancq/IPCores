@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2023-05-04 16:06:30
  * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2023-05-11 17:16:29
+ * @ Modified time: 2023-10-18 18:51:27
  * @ Description:
  */
 
@@ -128,8 +128,15 @@ module key_schedule #(
 
     logic [KEY_LEN-1:0] key_reorder;
     generate   
-        for (i = 0;i<(KEY_LEN>>3);i++) begin
+        for (i = 0;i<(KEY_LEN>>5);i++) begin
             assign key_reorder[31+(i<<5):(i<<5)] = order_word(key[31+(i<<5):(i<<5)]);
+        end
+    endgenerate
+
+    logic [31:0] key_reorder_words [(KEY_LEN>>5)-1:0];
+    generate
+        for(i=0;i<(KEY_LEN>>5);i++) begin
+            assign key_reorder_words[i] = key_reorder[31+(i<<5):(i<<5)];
         end
     endgenerate
 
@@ -178,9 +185,14 @@ module key_schedule #(
 
     localparam IDLE = 0;
     localparam CHECK_ROUND = 1;
-    localparam CALCULATE_T = 2;
+    localparam CALCULATE_T_STEP1 = 2;
+    localparam CALCULATE_T_STEP2 = 3;
+    localparam STORE_RK = 4;
+    localparam UPDATE_COUNTER = 5;
+    localparam END_STATE = 6;
 
     logic [31:0] j;
+    logic [31:0] k;
     always_comb begin
         next_state = current_state;
 
@@ -188,7 +200,7 @@ module key_schedule #(
         roundkeys_addr = 0;
         roundkeys_rw = 0;
         
-        for (j =0 ;j<8 ;j++ ) begin
+        for (j =0 ;j<(KEY_LEN>>5) ;j++ ) begin
             T_w[j] = 0;
             T_cl[j] = 0;
             T_din[j] = 32'h0;
@@ -204,9 +216,9 @@ module key_schedule #(
                 begin
                     //valores iniciales de T
                     
-                    for (j=0 ;j<8 ;j++ ) begin
+                    for (j=8 ;j>0 ;j-- ) begin
                         T_w[j]=1;
-                        T_din[j] = key_reorder[KEY_LEN-1-(~j[2:0]*32):KEY_LEN-((~j[2:0]+1)*32)];    
+                        T_din[j] = key_reorder_words[j];              
                     end
                     
                     next_state = CHECK_ROUND;
@@ -220,27 +232,18 @@ module key_schedule #(
                 end
             CALCULATE_T_STEP1:
                 begin
-                    for (j = 0;j<8 ;j++ ) begin
-                        if(KEY_LEN == 128) begin
-                            if((j+(23-rk_counter_dout)) == 0) begin
-                                T_din[j] = T_dout[j] + cte[j%4];
-                            end
-                            else begin
-                                T_din[j] = T_dout[j] + {cte[j%4][31-(j+(23-rk_counter_dout)):0],cte[j%4][31:32-(j+(23-rk_counter_dout))]};
-                            end
-                            T_w[j] = 1;
-                        end
-                        else if(KEY_LEN == 192) begin
-                            
-                        end
-                        else begin
-                            
-                        end
+                    
+                    //calculo de T's segun KEY_LEN
+                    for (j = 0;j<(KEY_LEN>>5) ;j++ ) begin
+                        T_din[j] = T_dout[j] + 
+                        {cte[rk_counter_dout%(KEY_LEN>>5)]<<(rk_counter_dout+j)};
                     end
+
                     next_state = CALCULATE_T_STEP2;
                 end
             CALCULATE_T_STEP2:
                 begin
+                    /*
                     for (j = 0;j<8 ;j++ ) begin
                         if(KEY_LEN == 128) begin
                             T_din[j] = {T_dout[j][31-index_rol[j]],T_dout[j][31:32-index_rol[j]]};
@@ -253,6 +256,7 @@ module key_schedule #(
                             
                         end
                     end
+                    */
                     next_state = STORE_RK;
                 end
             STORE_RK:
