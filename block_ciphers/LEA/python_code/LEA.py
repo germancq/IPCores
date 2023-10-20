@@ -87,30 +87,40 @@ class LEA:
         for i in range(0,28):
             i_mod6 = i%6
             
+            self.T.insert(i+1,[0]*28)
             for j in range (0,6):
-                self.T[j] = (self.T[j] + LEA.rol(RK_cte[i_mod6],32,i+j))%(2**32)  
-                self.T[j] = LEA.rol(self.T[j],32,index[j])
-                self.T[j] = self.T[j] & 0xFFFFFFFF
+                self.T[i+1][j] = (self.T[i][j] + LEA.rol(RK_cte[i_mod6],32,i+j))%(2**32)  
+                self.T[i+1][j] = LEA.rol(self.T[i+1][j],32,index[j])
+                self.T[i+1][j] = self.T[i+1][j] & 0xFFFFFFFF
 
             
 
-            roundkey=(self.T[0]<<160) + (self.T[1]<<128) + (self.T[2]<<96) + (self.T[3]<<64) + (self.T[4]<<32) + self.T[5]
+            roundkey=(self.T[i+1][0]<<160) + (self.T[i+1][1]<<128) + (self.T[i+1][2]<<96) + (self.T[i+1][3]<<64) + (self.T[i+1][4]<<32) + self.T[i+1][5]
             self.roundkeys.insert(i,roundkey)
 
     def roundkeys256(self):
         index = [1,3,6,11,13,17]
         for i in range(0,32):
-            i_mod8 = i%6
+            i_mod8 = i%8
             T_index = (6*i)
             
+            self.T.insert(i+1,[0]*32)
+
+            #copiar valores de los previos T
+            #en ronda 1 se procesa T0 a T5
+            #en ronda 2 se procesan T6,T7 y T0-T3 pero con los valores de la ronda 1. Si no se copiaran los valores T6 y T7 serian 0 ya que no se procesaron en ronda 1, dando lugar a errores.
+            for j in range(0,8):
+                self.T[i+1][j] = self.T[i][j]
+
+
             for j in range (0,6):
-                self.T[(T_index+j)%8] = (self.T[(T_index+j)%8] + LEA.rol(RK_cte[i_mod8],32,i+j))%(2**32)  
-                self.T[j] = LEA.rol(self.T[(T_index+j)%8],32,index[(T_index+j)%8])
-                self.T[(T_index+j)%8] = self.T[(T_index+j)%8] & 0xFFFFFFFF
+                self.T[i+1][(T_index+j)%8] = (self.T[i][(T_index+j)%8] + LEA.rol(RK_cte[i_mod8],32,i+j))%(2**32) 
+                self.T[i+1][(T_index+j)%8] = LEA.rol(self.T[i+1][(T_index+j)%8],32,index[j])
+                self.T[i+1][(T_index+j)%8] = self.T[i+1][(T_index+j)%8] & 0xFFFFFFFF
 
             
 
-            roundkey=(self.T[(T_index+0)%8]<<160) + (self.T[(T_index+1)%8]<<128) + (self.T[(T_index+2)%8]<<96) + (self.T[(T_index+3)%8]<<64) + (self.T[(T_index+4)%8]<<32) + self.T[(T_index+5)%8]
+            roundkey=(self.T[i+1][(T_index+0)%8]<<160) + (self.T[i+1][(T_index+1)%8]<<128) + (self.T[i+1][(T_index+2)%8]<<96) + (self.T[i+1][(T_index+3)%8]<<64) + (self.T[i+1][(T_index+4)%8]<<32) + self.T[i+1][(T_index+5)%8]
             self.roundkeys.insert(i,roundkey)
 
     
@@ -183,8 +193,26 @@ if __name__ == "__main__":
     #for i in range(0,6):
     #RK = LEA.gen_roundKeys(0x0f1e2d3c4b5a69788796a5b4c3d2e1f0)
     #print(hex(RK[6]))
+
+    '''128 example'''
+    '''
     lea = LEA(0x0f1e2d3c4b5a69788796a5b4c3d2e1f0)
     print(hex(lea.roundkeys[0]))
     print(hex(lea.roundkeys[1]))
     print(hex(lea.roundkeys[2]))
     print(hex(lea.encrypt(0x101112131415161718191a1b1c1d1e1f)))
+    '''
+    '''192 example'''
+    '''
+    lea = LEA(0x0f1e2d3c4b5a69788796a5b4c3d2e1f0f0e1d2c3b4a59687)
+    print(hex(lea.roundkeys[0]))
+    print(hex(lea.roundkeys[1]))
+    print(hex(lea.roundkeys[2]))
+    print(hex(lea.encrypt(0x202122232425262728292a2b2c2d2e2f)))
+    '''
+    '''256 example'''
+    lea = LEA(0x0f1e2d3c4b5a69788796a5b4c3d2e1f0f0e1d2c3b4a5968778695a4b3c2d1e0f)
+    print(hex(lea.roundkeys[0]))
+    print(hex(lea.roundkeys[1]))
+    print(hex(lea.roundkeys[2]))
+    print(hex(lea.encrypt(0x303132333435363738393a3b3c3d3e3f)))
