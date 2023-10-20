@@ -51,7 +51,7 @@ class LEA:
         #self.T.insert(6,T6)
         #self.T.insert(7,T7)
         
-
+        
         if self.len_128:
             self.roundkeys128()
         elif self.len_192:
@@ -72,12 +72,14 @@ class LEA:
             
             self.T.insert(i+1,[0]*24)
             for j in range (0,4):
-                self.T[i+1][j] = (self.T[i][j] + LEA.rol(RK_cte[i_mod4],32,i+j))%(2**32)  
-                self.T[i+1][j] = LEA.rol(self.T[i][j],32,index[j])
-                self.T[i+1][j] = self.T[i][j] & 0xFFFFFFFF
+                self.T[i+1][j] = (self.T[i][j] + LEA.rol(RK_cte[i_mod4],32,i+j))%(2**32)
+                self.T[i+1][j] = LEA.rol(self.T[i+1][j],32,index[j])
+                self.T[i+1][j] = self.T[i+1][j] & 0xFFFFFFFF
 
-            roundkey=(self.T[i+1][0]<<160) + (self.T[i+1][1]<<128) + (self.T[i+1][2]<<96) + (self.T[i+1][1]<<64) + (self.T[i+1][3]<<32) + self.T,[i+1][1]
+            roundkey=(self.T[i+1][0]<<160) + (self.T[i+1][1]<<128) + (self.T[i+1][2]<<96) + (self.T[i+1][1]<<64) + (self.T[i+1][3]<<32) + self.T[i+1][1]
             self.roundkeys.insert(i,roundkey)
+
+    
 
     
     def roundkeys192(self):

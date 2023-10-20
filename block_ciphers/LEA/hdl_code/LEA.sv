@@ -2,20 +2,13 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2023-05-04 16:06:30
  * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2023-10-18 18:51:27
+ * @ Modified time: 2023-10-20 16:47:59
  * @ Description:
  */
 
-package common_functions;
 
-    function logic[31:0] order_word(input logic[31:0] word);
-        return {word[7:0],word[15:8],word[23:16],word[31:24]};
-    endfunction : order_word
-    
-endpackage : common_functions
- 
+ import common_functions::*;
 
-import common_functions::*;
 
 module LEA #(
     parameter KEY_LEN = 128
@@ -30,6 +23,9 @@ module LEA #(
     output end_signal
 
 );
+
+
+
 
     logic r_w_roundkeys;
     logic [4:0] addr_roundkeys;
@@ -65,7 +61,7 @@ module LEA #(
         .dout(dout_roundkeys)
     );
 
-    key_schedule #(.KEY_LEN(KEY_LEN)) impl(
+    key_schedule #(.KEY_LEN(KEY_LEN)) key_sch(
         .clk(clk),
         .rst(rst),
         .key(key),
@@ -85,10 +81,10 @@ module key_schedule #(
     input clk,
     input rst,
     input [KEY_LEN-1:0] key,
-    output [4:0] roundkeys_addr,
-    output [191:0] roundkeys_din,
-    output roundkeys_rw,
-    output end_key_generation
+    output logic [4:0] roundkeys_addr,
+    output logic [191:0] roundkeys_din,
+    output logic roundkeys_rw,
+    output logic end_key_generation
 );
 
     logic [31:0] cte [7:0];
@@ -115,7 +111,7 @@ module key_schedule #(
     logic [0:0] T_w [7:0];
     logic [0:0] T_cl [7:0];
     generate
-        for (i = 0; i<8; i++) begin
+        for (i = 0; i<(KEY_LEN>>5); i++) begin
             register #(.DATA_WIDTH(32)) r_T_i(
                 .clk(clk),
                 .cl(T_cl[i]),
@@ -149,16 +145,16 @@ module key_schedule #(
     generate
         case(KEY_LEN)
             128: begin
-                assign rk_counter_din = 23;
+                assign rk_counter_din = 24;
             end
             192: begin
-                assign rk_counter_din = 27;
+                assign rk_counter_din = 28;
             end
             256: begin
-                assign rk_counter_din = 31;
+                assign rk_counter_din = 32;
             end
             default: begin
-                assign rk_counter_din = 23;
+                assign rk_counter_din = 24;
             end
         endcase
     endgenerate
@@ -191,8 +187,10 @@ module key_schedule #(
     localparam UPDATE_COUNTER = 5;
     localparam END_STATE = 6;
 
+    //auxiliar var
     logic [31:0] j;
     logic [31:0] k;
+    logic [31:0] l;
     always_comb begin
         next_state = current_state;
 
@@ -215,8 +213,9 @@ module key_schedule #(
             IDLE:
                 begin
                     //valores iniciales de T
+                    rk_counter_rst = 1;
                     
-                    for (j=8 ;j>0 ;j-- ) begin
+                    for (j=0 ;j<(KEY_LEN<<5) ;j++ ) begin
                         T_w[j]=1;
                         T_din[j] = key_reorder_words[j];              
                     end
@@ -235,14 +234,28 @@ module key_schedule #(
                     
                     //calculo de T's segun KEY_LEN
                     for (j = 0;j<(KEY_LEN>>5) ;j++ ) begin
-                        T_din[j] = T_dout[j] + 
-                        {cte[rk_counter_dout%(KEY_LEN>>5)]<<(rk_counter_dout+j)};
+
+                        k = cte[(rk_counter_din-rk_counter_dout)%(KEY_LEN>>5)]<<((rk_counter_din-rk_counter_dout)+j);
+                        l = cte[(rk_counter_din-rk_counter_dout)%(KEY_LEN>>5)]>>(32-(rk_counter_din-rk_counter_dout+j));
+                        
+                        T_din[j] = T_dout[j] + (k|l);
+                        
+                        
+                        T_w[j] = 1;
                     end
 
                     next_state = CALCULATE_T_STEP2;
                 end
             CALCULATE_T_STEP2:
                 begin
+                    
+                    for (j = 0;j<(KEY_LEN>>5) ;j++ ) begin
+                        
+
+                        T_din[j] = T_dout[j]<<(index_rol[j]) | T_dout[j]>>(32-index_rol[j]);
+                        
+                        T_w[j] = 1;
+                    end
                     /*
                     for (j = 0;j<8 ;j++ ) begin
                         if(KEY_LEN == 128) begin
@@ -264,15 +277,22 @@ module key_schedule #(
                     if(KEY_LEN == 128) begin
                         
                         roundkeys_din = {T_dout[0],T_dout[1],T_dout[2],T_dout[1],T_dout[3],T_dout[1]};
-                        roundkeys_addr = (23-rk_counter_din);
-                        roundkeys_rw = 1;
                     end
                     else if(KEY_LEN == 192) begin
-                        
+                        roundkeys_din = {T_dout[0],T_dout[1],T_dout[2],T_dout[3],T_dout[4],T_dout[5]};
                     end
                     else begin
-                        
+                        roundkeys_din = {
+                            T_dout[((rk_counter_din-rk_counter_dout)*6) % 8],
+                            T_dout[((rk_counter_din-rk_counter_dout)*6)+1 % 8],
+                            T_dout[((rk_counter_din-rk_counter_dout)*6)+2 % 8],
+                            T_dout[((rk_counter_din-rk_counter_dout)*6)+3 % 8],
+                            T_dout[((rk_counter_din-rk_counter_dout)*6)+4 % 8],
+                            T_dout[((rk_counter_din-rk_counter_dout)*6)+5 % 8]
+                        };
                     end
+                    roundkeys_addr = (rk_counter_din-rk_counter_dout);
+                    roundkeys_rw = 1;
                     next_state = UPDATE_COUNTER;
                 end
             UPDATE_COUNTER:
