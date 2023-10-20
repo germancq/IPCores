@@ -6,7 +6,7 @@
 #    By: germancq <germancq@dte.us.es>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 14:02:54 by germancq          #+#    #+#              #
-#    Updated: 2023/10/19 12:36:24 by germancq         ###   ########.fr        #
+#    Updated: 2023/10/20 17:49:54 by germancq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ VERILOG_SOURCES = ../../../packages/common_functions.sv \
 TOPLEVEL=LEA
 MODULE=lea_test
 SIM = icarus
+
 #include $(COCOTB)/makefiles/Makefile.inc
 #include $(COCOTB)/makefiles/Makefile.sim
 include $(shell cocotb-config --makefiles)/Makefile.inc

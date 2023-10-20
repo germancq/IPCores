@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2023-05-04 16:06:30
  * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2023-10-20 16:47:59
+ * @ Modified time: 2023-10-20 18:04:41
  * @ Description:
  */
 
@@ -11,7 +11,7 @@
 
 
 module LEA #(
-    parameter KEY_LEN = 128
+    parameter KEY_LEN = 192
 ) (
     input clk,
     input rst,
@@ -125,7 +125,7 @@ module key_schedule #(
     logic [KEY_LEN-1:0] key_reorder;
     generate   
         for (i = 0;i<(KEY_LEN>>5);i++) begin
-            assign key_reorder[31+(i<<5):(i<<5)] = order_word(key[31+(i<<5):(i<<5)]);
+            assign key_reorder[31+(i<<5):(i<<5)] = key[31+(i<<5):(i<<5)];//order_word(key[31+(i<<5):(i<<5)]);
         end
     endgenerate
 

@@ -20,8 +20,15 @@ import LEA
 
 
 CLK_PERIOD = 20
-KEY_LEN = 128
-ROUNDS = 24
+KEY_LEN = 192
+ROUNDS = 28
+KEY_128 = 0x0f1e2d3c4b5a69788796a5b4c3d2e1f0
+KEY_192 = 0x0f1e2d3c4b5a69788796a5b4c3d2e1f0f0e1d2c3b4a59687
+KEY_256 = 0x0f1e2d3c4b5a69788796a5b4c3d2e1f0f0e1d2c3b4a5968778695a4b3c2d1e0f
+INPUT_128 = 0x101112131415161718191a1b1c1d1e1f
+INPUT_192 = 0x202122232425262728292a2b2c2d2e2f
+INPUT_256 = 0x303132333435363738393a3b3c3d3e3f
+
 
 def setup_block_cipher(dut,key,plaintext):
     cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
@@ -42,7 +49,23 @@ async def rst_function_test(dut):
 async def round_keys_test(dut):
     #check each T iteration
     lea = LEA.LEA(dut.key.value) # implementacion python
+    print(hex(lea.Key))
     lea.gen_roundKeys()
+    print(hex(lea.T[0][0]))
+    print(hex(lea.T[0][1]))
+    print(hex(lea.T[0][2]))
+    print(hex(lea.T[0][3]))
+    print(hex(lea.T[0][4]))
+    print(hex(lea.T[0][5]))
+    print(lea.len_128)
+    print(lea.len_192)
+    print(lea.len_256)
+    print(hex(dut.key_sch.T_dout[0].value))
+    print(hex(dut.key_sch.T_dout[1].value))
+    print(hex(dut.key_sch.T_dout[2].value))
+    print(hex(dut.key_sch.T_dout[3].value))
+    print(hex(dut.key_sch.T_dout[4].value))
+    print(hex(dut.key_sch.T_dout[5].value))
 
     for round in range(0,ROUNDS):
         await n_cycles_clock(dut,1)
@@ -84,6 +107,7 @@ async def n_cycles_clock(dut,n):
 
 @cocotb.test()
 async def testLUA(dut):
-    setup_block_cipher(dut,0x0f1e2d3c4b5a69788796a5b4c3d2e1f0,0x101112131415161718191a1b1c1d1e1f)
+    
+    setup_block_cipher(dut,KEY_192,INPUT_192)
     await rst_function_test(dut)
     await round_keys_test(dut)
