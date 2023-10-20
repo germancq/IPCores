@@ -1,7 +1,7 @@
 package common_functions;
 
     function logic[31:0] order_word(input logic[31:0] word);
-        return {order_byte(word[31:24]),order_byte(word[23:16]),order_byte(word[15:8]),order_byte(word[7:0])};
+        return {word[7:0],word[15:8],word[23:16],word[31:24]};
     endfunction : order_word
 
     function logic[7:0] order_byte(input logic [7:0] byte_data);

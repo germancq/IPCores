@@ -1,8 +1,8 @@
 /**
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2023-05-04 16:06:30
- * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2023-10-20 18:04:41
+ * @ Modified by: German Cano Quiveu, germancq@dte.us.es
+ * @ Modified time: 2023-10-21 00:36:51
  * @ Description:
  */
 
@@ -11,7 +11,7 @@
 
 
 module LEA #(
-    parameter KEY_LEN = 192
+    parameter KEY_LEN = 256
 ) (
     input clk,
     input rst,
@@ -125,7 +125,7 @@ module key_schedule #(
     logic [KEY_LEN-1:0] key_reorder;
     generate   
         for (i = 0;i<(KEY_LEN>>5);i++) begin
-            assign key_reorder[31+(i<<5):(i<<5)] = key[31+(i<<5):(i<<5)];//order_word(key[31+(i<<5):(i<<5)]);
+            assign key_reorder[31+(i<<5):(i<<5)] = order_word(key[(KEY_LEN-1)-(i<<5):(KEY_LEN-1-31)-(i<<5)]);
         end
     endgenerate
 
@@ -139,8 +139,8 @@ module key_schedule #(
     //round key counter
     logic rk_counter_rst;
     logic rk_counter_down;
-    logic [4:0] rk_counter_din;
-    logic [4:0] rk_counter_dout;
+    logic [5:0] rk_counter_din;
+    logic [5:0] rk_counter_dout;
 
     generate
         case(KEY_LEN)
@@ -162,7 +162,7 @@ module key_schedule #(
     //assign rk_counter_din = (KEY_LEN == 128) ? 5'd23 : ((KEY_LEN == 192) ? 5'd27 : 5'd31)  
 
 
-    counter #(.DATA_WIDTH(5)) roundkey_counter(
+    counter #(.DATA_WIDTH(6)) roundkey_counter(
         .clk(clk),
         .rst(rk_counter_rst),
         .up(0),
@@ -233,43 +233,60 @@ module key_schedule #(
                 begin
                     
                     //calculo de T's segun KEY_LEN
-                    for (j = 0;j<(KEY_LEN>>5) ;j++ ) begin
+                    if(KEY_LEN != 256) begin
+                        for (j = 0;j<(KEY_LEN>>5) ;j++ ) begin
 
-                        k = cte[(rk_counter_din-rk_counter_dout)%(KEY_LEN>>5)]<<((rk_counter_din-rk_counter_dout)+j);
-                        l = cte[(rk_counter_din-rk_counter_dout)%(KEY_LEN>>5)]>>(32-(rk_counter_din-rk_counter_dout+j));
-                        
-                        T_din[j] = T_dout[j] + (k|l);
-                        
-                        
-                        T_w[j] = 1;
+                            k = cte[(rk_counter_din-rk_counter_dout)%(KEY_LEN>>5)]<<((rk_counter_din-rk_counter_dout)+j);
+                            l = cte[(rk_counter_din-rk_counter_dout)%(KEY_LEN>>5)]>>(32-(rk_counter_din-rk_counter_dout+j));
+                            
+                            T_din[j] = T_dout[j] + (k|l);
+                            
+                            
+                            T_w[j] = 1;
+                        end
                     end
+                    else begin
+                        for (j = 0;j<6 ;j++ ) begin
+
+                            k = cte[(rk_counter_din-rk_counter_dout)%(KEY_LEN>>5)]<<(((rk_counter_din-rk_counter_dout)+j)%32);
+
+                            l = cte[(rk_counter_din-rk_counter_dout)%(KEY_LEN>>5)]>>(32-((rk_counter_din-rk_counter_dout+j)%32));
+                            
+                            T_din[(6*(rk_counter_din-rk_counter_dout)+j)%8] = T_dout[(6*(rk_counter_din-rk_counter_dout)+j)%8] + (k|l);
+
+                            
+                                
+                            
+                            
+                            
+                            T_w[(6*(rk_counter_din-rk_counter_dout)+j)%8] = 1;
+                        end
+                    end
+                    
 
                     next_state = CALCULATE_T_STEP2;
                 end
             CALCULATE_T_STEP2:
                 begin
-                    
-                    for (j = 0;j<(KEY_LEN>>5) ;j++ ) begin
-                        
+                    if(KEY_LEN != 256) begin
+                        for (j = 0;j<(KEY_LEN>>5) ;j++ ) begin
+                            
 
-                        T_din[j] = T_dout[j]<<(index_rol[j]) | T_dout[j]>>(32-index_rol[j]);
-                        
-                        T_w[j] = 1;
-                    end
-                    /*
-                    for (j = 0;j<8 ;j++ ) begin
-                        if(KEY_LEN == 128) begin
-                            T_din[j] = {T_dout[j][31-index_rol[j]],T_dout[j][31:32-index_rol[j]]};
+                            T_din[j] = T_dout[j]<<(index_rol[j]) | T_dout[j]>>(32-index_rol[j]);
+                            
                             T_w[j] = 1;
                         end
-                        else if(KEY_LEN == 192) begin
+                    end
+                    else begin
+                        for (j = 0;j<6 ;j++ ) begin
                             
-                        end
-                        else begin
+
+                            T_din[(6*(rk_counter_din-rk_counter_dout)+j)%8] = T_dout[(6*(rk_counter_din-rk_counter_dout)+j)%8]<<(index_rol[j]) | 
+                            T_dout[(6*(rk_counter_din-rk_counter_dout)+j)%8]>>(32-index_rol[j]);
                             
+                            T_w[(6*(rk_counter_din-rk_counter_dout)+j)%8] = 1;
                         end
                     end
-                    */
                     next_state = STORE_RK;
                 end
             STORE_RK:
@@ -284,11 +301,11 @@ module key_schedule #(
                     else begin
                         roundkeys_din = {
                             T_dout[((rk_counter_din-rk_counter_dout)*6) % 8],
-                            T_dout[((rk_counter_din-rk_counter_dout)*6)+1 % 8],
-                            T_dout[((rk_counter_din-rk_counter_dout)*6)+2 % 8],
-                            T_dout[((rk_counter_din-rk_counter_dout)*6)+3 % 8],
-                            T_dout[((rk_counter_din-rk_counter_dout)*6)+4 % 8],
-                            T_dout[((rk_counter_din-rk_counter_dout)*6)+5 % 8]
+                            T_dout[(((rk_counter_din-rk_counter_dout)*6)+1) % 8],
+                            T_dout[(((rk_counter_din-rk_counter_dout)*6)+2) % 8],
+                            T_dout[(((rk_counter_din-rk_counter_dout)*6)+3) % 8],
+                            T_dout[(((rk_counter_din-rk_counter_dout)*6)+4) % 8],
+                            T_dout[(((rk_counter_din-rk_counter_dout)*6)+5) % 8]
                         };
                     end
                     roundkeys_addr = (rk_counter_din-rk_counter_dout);

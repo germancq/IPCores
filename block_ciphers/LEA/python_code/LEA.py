@@ -101,6 +101,7 @@ class LEA:
     def roundkeys256(self):
         index = [1,3,6,11,13,17]
         for i in range(0,32):
+            print(f"ronda {i}")
             i_mod8 = i%8
             T_index = (6*i)
             
@@ -115,8 +116,11 @@ class LEA:
 
             for j in range (0,6):
                 self.T[i+1][(T_index+j)%8] = (self.T[i][(T_index+j)%8] + LEA.rol(RK_cte[i_mod8],32,i+j))%(2**32) 
+                print(hex(self.T[i+1][(T_index+j)%8]))
                 self.T[i+1][(T_index+j)%8] = LEA.rol(self.T[i+1][(T_index+j)%8],32,index[j])
+                print(hex(self.T[i+1][(T_index+j)%8]))
                 self.T[i+1][(T_index+j)%8] = self.T[i+1][(T_index+j)%8] & 0xFFFFFFFF
+                print(hex(self.T[i+1][(T_index+j)%8]))
 
             
 

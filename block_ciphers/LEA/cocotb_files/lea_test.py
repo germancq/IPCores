@@ -10,6 +10,7 @@ import cocotb
 from cocotb.triggers import Timer,RisingEdge, FallingEdge
 from cocotb.clock import Clock
 
+import random
 
 import os
 home = os.getenv("HOME")
@@ -49,23 +50,10 @@ async def rst_function_test(dut):
 async def round_keys_test(dut):
     #check each T iteration
     lea = LEA.LEA(dut.key.value) # implementacion python
-    print(hex(lea.Key))
     lea.gen_roundKeys()
-    print(hex(lea.T[0][0]))
-    print(hex(lea.T[0][1]))
-    print(hex(lea.T[0][2]))
-    print(hex(lea.T[0][3]))
-    print(hex(lea.T[0][4]))
-    print(hex(lea.T[0][5]))
-    print(lea.len_128)
-    print(lea.len_192)
-    print(lea.len_256)
-    print(hex(dut.key_sch.T_dout[0].value))
-    print(hex(dut.key_sch.T_dout[1].value))
-    print(hex(dut.key_sch.T_dout[2].value))
-    print(hex(dut.key_sch.T_dout[3].value))
-    print(hex(dut.key_sch.T_dout[4].value))
-    print(hex(dut.key_sch.T_dout[5].value))
+    
+    
+    
 
     for round in range(0,ROUNDS):
         await n_cycles_clock(dut,1)
@@ -86,11 +74,34 @@ async def round_keys_test(dut):
         #calculate T step 2
         assert dut.key_sch.current_state.value == dut.key_sch.CALCULATE_T_STEP2.value, f"KEY_SCH ERROR, EXPECTED STATE CALCULATE_T_STEP2, STATE={dut.key_sch.current_state.value}"
 
+        
+        print(hex(dut.key_sch.T_dout[0].value))
+        print(hex(dut.key_sch.T_dout[1].value))
+        print(hex(dut.key_sch.T_dout[2].value))
+        print(hex(dut.key_sch.T_dout[3].value))
+        print(hex(dut.key_sch.T_dout[4].value))
+        print(hex(dut.key_sch.T_dout[5].value))
+        print(hex(dut.key_sch.T_dout[6].value))
+        print(hex(dut.key_sch.T_dout[7].value))
+
         await n_cycles_clock(dut,1)
         #store rk
         assert dut.key_sch.current_state.value == dut.key_sch.STORE_RK.value, f"KEY_SCH ERROR, EXPECTED STATE STORE_RK, STATE={dut.key_sch.current_state.value}"
+        
+        print(hex(dut.key_sch.T_dout[0].value))
+        print(hex(dut.key_sch.T_dout[1].value))
+        print(hex(dut.key_sch.T_dout[2].value))
+        print(hex(dut.key_sch.T_dout[3].value))
+        print(hex(dut.key_sch.T_dout[4].value))
+        print(hex(dut.key_sch.T_dout[5].value))
+        print(hex(dut.key_sch.T_dout[6].value))
+        print(hex(dut.key_sch.T_dout[7].value))
+        
+
         #check roundkey
         assert lea.roundkeys[round] == dut.key_sch.roundkeys_din.value, f"ERROR GENERATING ROUNDKEYS, RK[{round}] should be {hex(lea.roundkeys[round])}, however it is {hex(dut.key_sch.roundkeys_din.value)}"
+
+        print(hex(dut.key_sch.roundkeys_din.value))
 
         assert round == dut.key_sch.roundkeys_addr.value,f"ERROR GENERATING ROUNDKEYS, RK_addr should be {round}, however it is {int(dut.key_sch.roundkeys_addr.value)}"
 
@@ -107,7 +118,22 @@ async def n_cycles_clock(dut,n):
 
 @cocotb.test()
 async def testLUA(dut):
+    global KEY_LEN
+    global ROUNDS
+
+
+
+    KEY_LEN = 256
+    ROUNDS = 32
+
+    for i in range(0,3):
+        key = random.getrandbits(KEY_LEN)
+        input = random.getrandbits(128)
+
+        print(f"key is = {hex(key)}")
+
+        setup_block_cipher(dut,key,input)
+        await rst_function_test(dut)
+        await round_keys_test(dut)
     
-    setup_block_cipher(dut,KEY_192,INPUT_192)
-    await rst_function_test(dut)
-    await round_keys_test(dut)
+
