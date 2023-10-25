@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2023-10-25 12:30:45
  * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2023-10-25 19:06:35
+ * @ Modified time: 2023-10-25 19:26:15
  * @ Description:
  */
 
@@ -90,15 +90,29 @@ module LEA_enc #(
     assign roundkey_addr = rk_counter_din - rk_counter_dout;
 
 
-    logic [1:0] next_state,current_state;
+    logic [2:0] next_state,current_state;
 
     localparam IDLE = 0;
-    localparam CALCULATE_X_1 = 1;
-    localparam CALCULATE_X_2 = 2;
+    localparam CHECK_ROUNDS = 1;
+    localparam CALCULATE_X_1 = 2;
+    localparam CALCULATE_X_2 = 3;
+    localparam UPDATE_ROUNDS = 4;
+    localparam END_STATE = 5;
 
     logic [31:0] j;
     always_comb begin
         next_state = current_state;
+
+        for (j =0 ;j<4 ;j++ ) begin
+            X_w[j] = 0;
+            X_cl[j] = 0;
+            X_din[j] = 32'h0;
+        end
+
+        rk_counter_rst = 0;
+        rk_counter_down = 0;
+
+        end_signal = 0;
 
         case (current_state)
             IDLE:begin
