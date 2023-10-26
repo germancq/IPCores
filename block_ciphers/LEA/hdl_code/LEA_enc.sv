@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2023-10-25 12:30:45
  * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2023-10-25 19:26:15
+ * @ Modified time: 2023-10-26 17:20:27
  * @ Description:
  */
 
@@ -14,7 +14,7 @@ module LEA_enc #(
     input rst,
     input start_signal,
     input [127:0] plaintext,
-    input [KEY_LEN-1:0] roundkey,
+    input [191:0] roundkey,
     output logic [4:0] roundkey_addr,
     output logic [127:0] result,
     output logic end_signal
@@ -38,7 +38,7 @@ module LEA_enc #(
         end
     endgenerate
 
-    assign result = {X_dout[0],X_dout[1],X_dout[2],X_dout[3]};
+    assign result = {order_word(X_dout[0]),order_word(X_dout[1]),order_word(X_dout[2]),order_word(X_dout[3])};
 
 
     logic [KEY_LEN-1:0] plaintext_reorder;
@@ -100,6 +100,7 @@ module LEA_enc #(
     localparam END_STATE = 5;
 
     logic [31:0] j;
+    logic [31:0] k;
     always_comb begin
         next_state = current_state;
 
@@ -121,6 +122,8 @@ module LEA_enc #(
                     X_w[j] = 1;
                 end
 
+                rk_counter_rst = 1;
+
                 if(start_signal == 1) begin
                     next_state = CHECK_ROUNDS;
                 end
@@ -134,8 +137,8 @@ module LEA_enc #(
             CALCULATE_X_1: begin
                 for (j = 0;j<3 ;j++ ) begin
                     
-                    X_din[j] = (X_dout[j] ^ utils_functions#(192)::getWord(roundkey,2*j)) + 
-                    (X_dout[j+1] ^ utils_functions#(192)::getWord(roundkey,(2*j)+1));
+                    X_din[j] = (X_dout[j] ^ utils_functions#(192)::getWord(roundkey,5-2*j)) + 
+                    (X_dout[j+1] ^ utils_functions#(192)::getWord(roundkey,(5-2*j)-1));
                     
                     X_w[j] = 1;
                 end

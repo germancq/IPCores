@@ -52,11 +52,9 @@ async def round_keys_test(dut):
     lea = LEA.LEA(dut.key.value) # implementacion python
     lea.gen_roundKeys()
     
-    
-    
-
     for round in range(0,ROUNDS):
         await n_cycles_clock(dut,1)
+
         #check round state
         assert dut.key_sch.current_state.value == dut.key_sch.CHECK_ROUND.value, f"KEY_SCH ERROR, EXPECTED STATE CHECK_ROUND, STATE={dut.key_sch.current_state.value}"
         #check counter 
@@ -70,44 +68,81 @@ async def round_keys_test(dut):
         #calculate T step 
         assert dut.key_sch.current_state.value == dut.key_sch.CALCULATE_T_STEP1.value, f"KEY_SCH ERROR, EXPECTED STATE CALCULATE_T_STEP1, STATE={dut.key_sch.current_state.value}"
 
+
         await n_cycles_clock(dut,1)
         #calculate T step 2
         assert dut.key_sch.current_state.value == dut.key_sch.CALCULATE_T_STEP2.value, f"KEY_SCH ERROR, EXPECTED STATE CALCULATE_T_STEP2, STATE={dut.key_sch.current_state.value}"
 
-        
-        print(hex(dut.key_sch.T_dout[0].value))
-        print(hex(dut.key_sch.T_dout[1].value))
-        print(hex(dut.key_sch.T_dout[2].value))
-        print(hex(dut.key_sch.T_dout[3].value))
-        print(hex(dut.key_sch.T_dout[4].value))
-        print(hex(dut.key_sch.T_dout[5].value))
-        print(hex(dut.key_sch.T_dout[6].value))
-        print(hex(dut.key_sch.T_dout[7].value))
 
         await n_cycles_clock(dut,1)
         #store rk
         assert dut.key_sch.current_state.value == dut.key_sch.STORE_RK.value, f"KEY_SCH ERROR, EXPECTED STATE STORE_RK, STATE={dut.key_sch.current_state.value}"
-        
-        print(hex(dut.key_sch.T_dout[0].value))
-        print(hex(dut.key_sch.T_dout[1].value))
-        print(hex(dut.key_sch.T_dout[2].value))
-        print(hex(dut.key_sch.T_dout[3].value))
-        print(hex(dut.key_sch.T_dout[4].value))
-        print(hex(dut.key_sch.T_dout[5].value))
-        print(hex(dut.key_sch.T_dout[6].value))
-        print(hex(dut.key_sch.T_dout[7].value))
-        
+
 
         #check roundkey
         assert lea.roundkeys[round] == dut.key_sch.roundkeys_din.value, f"ERROR GENERATING ROUNDKEYS, RK[{round}] should be {hex(lea.roundkeys[round])}, however it is {hex(dut.key_sch.roundkeys_din.value)}"
 
-        print(hex(dut.key_sch.roundkeys_din.value))
-
         assert round == dut.key_sch.roundkeys_addr.value,f"ERROR GENERATING ROUNDKEYS, RK_addr should be {round}, however it is {int(dut.key_sch.roundkeys_addr.value)}"
 
+
         await n_cycles_clock(dut,1)
+
         #update_counter
         assert dut.key_sch.current_state.value == dut.key_sch.UPDATE_COUNTER.value, f"KEY_SCH ERROR, EXPECTED STATE UPDATE_COUNTER, STATE={dut.key_sch.current_state.value}"
+
+    await n_cycles_clock(dut,2)
+
+    assert dut.key_sch.current_state.value == dut.key_sch.END_STATE.value, f"KEY_SCH ERROR, EXPECTED STATE END_STATE, STATE={dut.key_sch.current_state.value}"
+
+
+
+async def enc_test(dut):
+
+    lea = LEA.LEA(dut.key.value) # implementacion python
+    lea.gen_roundKeys()
+    expected_result = lea.encrypt(dut.block_i.value.value)
+
+    assert dut.enc_impl.current_state.value == dut.enc_impl.IDLE.value, f"ENC ERROR, EXPECTED STATE IDLE, STATE={dut.enc_impl.current_state.value}"
+
+    await n_cycles_clock(dut,10)
+
+    assert dut.enc_impl.current_state.value == dut.enc_impl.IDLE.value, f"ENC ERROR, EXPECTED STATE IDLE, STATE={dut.enc_impl.current_state.value}"
+
+    dut.rq_data = 1
+
+    
+
+    for round in range(0,ROUNDS):
+        await n_cycles_clock(dut,1)
+
+        assert dut.enc_impl.current_state.value == dut.enc_impl.CHECK_ROUNDS.value, f"ENC ERROR, EXPECTED STATE CHECK_ROUNDS, STATE={dut.enc_impl.current_state.value}"
+
+        #check counter 
+        assert ((ROUNDS) - dut.enc_impl.rk_counter_dout.value) == round, f"ERROR in ENC with the round counter it should be {round}, however it is {(ROUNDS) - dut.enc_impl.rk_counter_dout.value}"
+
+        #check X's values
+        for i in range(0,4):
+            assert lea.X[round][i] == dut.enc_impl.X_dout[i].value, f"ERROR in ROUND {round} X{i} should be: {hex(lea.X[round][i])}, however it is {hex(dut.enc_impl.X_dout[i].value)}"
+
+        await n_cycles_clock(dut,1)
+        
+
+        assert dut.enc_impl.current_state.value == dut.enc_impl.CALCULATE_X_1.value, f"ENC ERROR, EXPECTED STATE CALCULATE_X_1, STATE={dut.enc_impl.current_state.value}"
+
+        await n_cycles_clock(dut,1)
+
+        assert dut.enc_impl.current_state.value == dut.enc_impl.CALCULATE_X_2.value, f"ENC ERROR, EXPECTED STATE CALCULATE_X_2, STATE={dut.enc_impl.current_state.value}"
+       
+        await n_cycles_clock(dut,1)
+
+        assert dut.enc_impl.current_state.value == dut.enc_impl.UPDATE_ROUNDS.value, f"ENC ERROR, EXPECTED STATE UPDATE_ROUNDS, STATE={dut.enc_impl.current_state.value}"
+
+    await n_cycles_clock(dut,2)
+
+    assert dut.enc_impl.current_state.value == dut.enc_impl.END_STATE.value, f"ENC ERROR, EXPECTED STATE END_STATE, STATE={dut.enc_impl.current_state.value}"
+
+    assert expected_result == dut.enc_impl.result.value, f"ENC ERROR, WRONG RESULT, expected = {hex(expected_result)}, however it is {hex(dut.enc_impl.result.value)}"
+
 
 async def n_cycles_clock(dut,n):
     for i in range(0,n):
@@ -126,7 +161,7 @@ async def testLUA(dut):
     KEY_LEN = 256
     ROUNDS = 32
 
-    for i in range(0,3):
+    for i in range(0,50):
         key = random.getrandbits(KEY_LEN)
         input = random.getrandbits(128)
 
@@ -135,5 +170,6 @@ async def testLUA(dut):
         setup_block_cipher(dut,key,input)
         await rst_function_test(dut)
         await round_keys_test(dut)
+        await enc_test(dut)
     
 

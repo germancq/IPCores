@@ -2,7 +2,7 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2023-10-25 12:21:37
  * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2023-10-25 18:43:43
+ * @ Modified time: 2023-10-26 16:48:11
  * @ Description:
  */
 
@@ -128,7 +128,7 @@ module key_schedule #(
         next_state = current_state;
 
         roundkeys_din = 0;
-        roundkeys_addr = 0;
+        roundkeys_addr = (rk_counter_din-rk_counter_dout);
         roundkeys_rw = 0;
         
         for (j =0 ;j<(KEY_LEN>>5) ;j++ ) begin
@@ -241,6 +241,7 @@ module key_schedule #(
                             T_dout[(((rk_counter_din-rk_counter_dout)*6)+5) % 8]
                         };
                     end
+                    
                     roundkeys_addr = (rk_counter_din-rk_counter_dout);
                     roundkeys_rw = 1;
                     next_state = UPDATE_COUNTER;

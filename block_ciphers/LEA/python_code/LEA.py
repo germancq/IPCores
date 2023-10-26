@@ -101,7 +101,7 @@ class LEA:
     def roundkeys256(self):
         index = [1,3,6,11,13,17]
         for i in range(0,32):
-            print(f"ronda {i}")
+            #print(f"ronda {i}")
             i_mod8 = i%8
             T_index = (6*i)
             
@@ -116,11 +116,11 @@ class LEA:
 
             for j in range (0,6):
                 self.T[i+1][(T_index+j)%8] = (self.T[i][(T_index+j)%8] + LEA.rol(RK_cte[i_mod8],32,i+j))%(2**32) 
-                print(hex(self.T[i+1][(T_index+j)%8]))
+                #print(hex(self.T[i+1][(T_index+j)%8]))
                 self.T[i+1][(T_index+j)%8] = LEA.rol(self.T[i+1][(T_index+j)%8],32,index[j])
-                print(hex(self.T[i+1][(T_index+j)%8]))
+                #print(hex(self.T[i+1][(T_index+j)%8]))
                 self.T[i+1][(T_index+j)%8] = self.T[i+1][(T_index+j)%8] & 0xFFFFFFFF
-                print(hex(self.T[i+1][(T_index+j)%8]))
+                #print(hex(self.T[i+1][(T_index+j)%8]))
 
             
 
@@ -129,7 +129,10 @@ class LEA:
 
     
     def encrypt(self,plaintext):
-        print(hex(plaintext))
+
+        self.X = []
+
+        #print(hex(plaintext))
         X0 = LEA.order_word(plaintext>>96) #input ordering in LEA see Table1 from paper
         #print(hex(X0))
         X1 = LEA.order_word(plaintext>>64)
@@ -138,6 +141,8 @@ class LEA:
        # print(hex(X2))
         X3 = LEA.order_word(plaintext)
         #print(hex(X3))
+
+        self.X.insert(0,[X0,X1,X2,X3])
 
         rounds = 24
 
@@ -148,7 +153,7 @@ class LEA:
             rounds = 32
 
 
-        print(hex((X0<<96) + (X1<<64) + (X2<<32) + X3 ))
+        #print(hex((X0<<96) + (X1<<64) + (X2<<32) + X3 ))
         for i in range (0,rounds):
             X0_prev = X0
             X1_prev = X1
@@ -169,7 +174,9 @@ class LEA:
 
             X3 = X0_prev
 
-            print(hex((X0<<96) + (X1<<64) + (X2<<32) + X3 ))
+            self.X.insert(i+1,[X0,X1,X2,X3])
+
+            #print(hex((X0<<96) + (X1<<64) + (X2<<32) + X3 ))
 
         X0 = LEA.order_word(X0)
         X1 = LEA.order_word(X1)
