@@ -9,11 +9,13 @@
 import cocotb
 from cocotb.triggers import Timer,RisingEdge, FallingEdge
 from cocotb.clock import Clock
+from cocotb.regression import TestFactory
 
 import random
 
 import os
 home = os.getenv("HOME")
+abs_path_file_storage = home + "/gitProjects/IPCores/block_ciphers/LEA/python_code/test_cases.HEX"
 
 import sys
 sys.path.append(home + '/gitProjects/IPCores/block_ciphers/LEA/python_code')
@@ -21,8 +23,8 @@ import LEA
 
 
 CLK_PERIOD = 20
-KEY_LEN = 192
-ROUNDS = 28
+KEY_LEN = 128
+ROUNDS = 24
 KEY_128 = 0x0f1e2d3c4b5a69788796a5b4c3d2e1f0
 KEY_192 = 0x0f1e2d3c4b5a69788796a5b4c3d2e1f0f0e1d2c3b4a59687
 KEY_256 = 0x0f1e2d3c4b5a69788796a5b4c3d2e1f0f0e1d2c3b4a5968778695a4b3c2d1e0f
@@ -60,6 +62,8 @@ async def round_keys_test(dut):
         #check counter 
         assert ((ROUNDS) - dut.key_sch.rk_counter_dout.value) == round, f"ERROR in KEY_SCH with the round counter it should be {round}, however it is {(ROUNDS) - dut.key_sch.rk_counter_dout.value}"
 
+        print(round)
+        print(hex(dut.key_sch.T_dout[0].value))
         #check T's values
         for i in range(0,int(KEY_LEN/32)):
             assert lea.T[round][i] == dut.key_sch.T_dout[i].value, f"ERROR in ROUND {round} T{i} should be: {hex(lea.T[round][i])}, however it is {hex(dut.key_sch.T_dout[i].value)}"
@@ -67,12 +71,12 @@ async def round_keys_test(dut):
         await n_cycles_clock(dut,1)
         #calculate T step 
         assert dut.key_sch.current_state.value == dut.key_sch.CALCULATE_T_STEP1.value, f"KEY_SCH ERROR, EXPECTED STATE CALCULATE_T_STEP1, STATE={dut.key_sch.current_state.value}"
-
+        print(hex(dut.key_sch.T_dout[0].value))
 
         await n_cycles_clock(dut,1)
         #calculate T step 2
         assert dut.key_sch.current_state.value == dut.key_sch.CALCULATE_T_STEP2.value, f"KEY_SCH ERROR, EXPECTED STATE CALCULATE_T_STEP2, STATE={dut.key_sch.current_state.value}"
-
+        print(hex(dut.key_sch.T_dout[0].value))
 
         await n_cycles_clock(dut,1)
         #store rk
@@ -96,7 +100,7 @@ async def round_keys_test(dut):
 
 
 
-async def enc_test(dut):
+async def enc_test(dut,expected_test_result):
 
     lea = LEA.LEA(dut.key.value) # implementacion python
     lea.gen_roundKeys()
@@ -108,7 +112,7 @@ async def enc_test(dut):
 
     assert dut.enc_impl.current_state.value == dut.enc_impl.IDLE.value, f"ENC ERROR, EXPECTED STATE IDLE, STATE={dut.enc_impl.current_state.value}"
 
-    dut.rq_data = 1
+    dut.rq_data.value = 1
 
     
 
@@ -120,10 +124,13 @@ async def enc_test(dut):
         #check counter 
         assert ((ROUNDS) - dut.enc_impl.rk_counter_dout.value) == round, f"ERROR in ENC with the round counter it should be {round}, however it is {(ROUNDS) - dut.enc_impl.rk_counter_dout.value}"
 
+        print(round)
         #check X's values
         for i in range(0,4):
             assert lea.X[round][i] == dut.enc_impl.X_dout[i].value, f"ERROR in ROUND {round} X{i} should be: {hex(lea.X[round][i])}, however it is {hex(dut.enc_impl.X_dout[i].value)}"
 
+
+        print(hex(dut.enc_impl.X_dout[i].value))
         await n_cycles_clock(dut,1)
         
 
@@ -143,6 +150,8 @@ async def enc_test(dut):
 
     assert expected_result == dut.enc_impl.result.value, f"ENC ERROR, WRONG RESULT, expected = {hex(expected_result)}, however it is {hex(dut.enc_impl.result.value)}"
 
+    assert expected_test_result == dut.enc_impl.result.value, f"ENC ERROR, WRONG TEST RESULT, expected = {hex(expected_result)}, however it is {hex(dut.enc_impl.result.value)}"
+
 
 async def n_cycles_clock(dut,n):
     for i in range(0,n):
@@ -152,24 +161,47 @@ async def n_cycles_clock(dut,n):
 
 
 @cocotb.test()
-async def testLUA(dut):
+async def testLUA(dut, index=0):
     global KEY_LEN
     global ROUNDS
 
 
 
-    KEY_LEN = 256
-    ROUNDS = 32
+    KEY_LEN = 128
+    ROUNDS = 24
+    BLOCK_LEN = 128
+    
+    BYTES_PER_TEST = (2*(int(BLOCK_LEN/8))) + int(KEY_LEN/8)
 
-    for i in range(0,50):
-        key = random.getrandbits(KEY_LEN)
-        input = random.getrandbits(128)
+    with(open(abs_path_file_storage,"rb+")) as storage_file:
+        storage_file.seek(index*BYTES_PER_TEST)
+        key = KEY_128#int.from_bytes(storage_file.read(int(KEY_LEN/8)),byteorder='little')
+        input = INPUT_128#int.from_bytes(storage_file.read(int(BLOCK_LEN/8)),byteorder='little')
+        expected_result = int.from_bytes(storage_file.read(int(BLOCK_LEN/8)),byteorder='little')
 
-        print(f"key is = {hex(key)}")
+        print(hex(key))
 
         setup_block_cipher(dut,key,input)
         await rst_function_test(dut)
         await round_keys_test(dut)
-        await enc_test(dut)
-    
+        await enc_test(dut,expected_result)
 
+        '''
+        for i in range(0,50):
+            key = random.getrandbits(KEY_LEN)
+            input = random.getrandbits(128)
+
+            print(f"key is = {hex(key)}")
+
+            setup_block_cipher(dut,key,input)
+            await rst_function_test(dut)
+            await round_keys_test(dut)
+            await enc_test(dut)
+        '''
+
+
+n = 5
+factory = TestFactory(testLUA)
+
+factory.add_option("index",range(0,n))
+factory.generate_tests()

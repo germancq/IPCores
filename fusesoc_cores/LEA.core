@@ -1,0 +1,33 @@
+CAPI=2:
+
+name : ::LEA:0
+description : LEA block cipher
+
+targets:
+    default:
+        filesets: 
+            - rtl
+
+
+
+filesets:
+    rtl:
+        file_type: systemVerilogSource
+        files: 
+            - packages/common_functions.sv
+            - classes/utils_functions.sv
+            - block_ciphers/LEA/hdl_code/LEA.sv
+            - block_ciphers/LEA/hdl_code/LEA_enc.sv
+            - block_ciphers/LEA/hdl_code/LEA_Key_schedule.sv
+            
+        depend:
+            - counter
+            - mux
+            - memory_module
+            - register
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master

@@ -2,18 +2,18 @@
  * @ Author: German Cano Quiveu, germancq
  * @ Create Time: 2023-05-04 16:06:30
  * @ Modified by: German Cano Quiveu, germancq
- * @ Modified time: 2023-10-26 17:22:55
+ * @ Modified time: 2023-11-20 17:48:05
  * @ Description:
  */
 
 
  import common_functions::*;
 
- 
+ `define DEBUG_LEA
 
 
 module LEA #(
-    parameter KEY_LEN = 256
+    parameter KEY_LEN = 128
 ) (
     input clk,
     input rst,
