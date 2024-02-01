@@ -16,25 +16,25 @@ SS = np.array([
     [0xa,0x2,0x6,0xd,0x3,0x4,0x5,0xe,0x0,0x7,0x8,0x9,0xb,0xf,0xc,0x1]])
 
 MS_f = np.array([
-    [0x18],
-    [0x51],
-    [0x01],
-    [0x06],
-    [0x65],
-    [0x5c],
-    [0x60],
-    [0x81]
+    [0,0,0,1,1,0,0,0],
+    [0,1,0,1,0,0,0,1],
+    [0,0,0,0,0,0,0,1],
+    [0,0,0,0,0,1,1,0],
+    [0,1,1,0,0,1,0,1],
+    [0,1,0,1,1,1,0,0],
+    [0,1,1,0,0,0,0,0],
+    [1,0,0,0,0,0,0,1]
 ])
 
 MS_g = np.array([
-    [0x0a],
-    [0x41],
-    [0x58],
-    [0x20],
-    [0x30],
-    [0x02],
-    [0x90],
-    [0x44]
+    [0,0,0,0,1,0,1,0],
+    [0,1,0,0,0,0,0,1],
+    [0,1,0,1,1,0,0,0],
+    [0,0,1,0,0,0,0,0],
+    [0,0,1,1,0,0,0,0],
+    [0,0,0,0,0,0,1,0],
+    [1,0,0,1,0,0,0,0],
+    [0,1,0,0,0,1,0,0]
 ])
 
 class CLEFIA:
@@ -79,25 +79,35 @@ class CLEFIA:
 
     def S1(self,x):
         p = (1<<8) + (1<<4) + (1<<3) + (1<<2) + 1
-        x_a = np.array([x])
+        
+        x_a = np.zeros((8,1),dtype=np.uint32)
+        for i in range(0,8):
+            x_a[7-i] = (x>>i) & 0x01
+
         f = self.f_S1(x_a,p)
+        f_inverse = 
+        print(f)
         return self.g_S1(f,p)
 
 
     def f_S1(self,x,p):
-        k = 0x1e
-        
-        r = self.galois8.matrix_multiplication(MS_f,x,p)
-        return self.galois8.add(r,k)
+        k = np.array([0,0,0,1,1,1,1,0])#0x1e
 
-    def g_S1(self,x):
-        k = 0x69
+        r = self.galois8.matrix_multiplication(MS_f,x,p)
+        return self.galois8.matrix_add(r,k)
+        
+       
+
+    def g_S1(self,x,p):
+        k = np.array([0,1,1,0,1,0,0,1])#0x69
 
         r = self.galois8.matrix_multiplication(MS_g,x,p)
-        return self.galois8.add(r,k)
+        return self.galois8.matrix_add(r,k)
+        
+
 
 
 if __name__ == "__main__":
     cipher = CLEFIA()
-    print(hex(cipher.S0(0x68)))
-    print(hex(cipher.S1(0x68)))
+    print(hex(cipher.S0(0x00)))
+    print(hex(cipher.S1(0x00)))
