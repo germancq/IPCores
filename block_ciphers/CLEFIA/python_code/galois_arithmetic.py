@@ -19,14 +19,101 @@ class GaloisField:
     def inverse_mul(self,x,p):
         pass
 
-    def polynomial_extended_euclidean_algorithm(a,b):
+    def polynomial_extended_euclidean_algorithm(self,a,b):
         #a y b son arrays
+        q = np.zeros((np.shape(a)[0]),dtype=np.uint32)
         r0 = a
         r1 = b
-        s0 = 1
-        s1 = 0
-        t0 = 0
-        t1 = 1
+        s0 = np.array([1],dtype=np.uint32)
+        s1 = np.array([0],dtype=np.uint32)
+        t0 = np.array([0],dtype=np.uint32)
+        t1 = np.array([1],dtype=np.uint32)
+
+        return self.pol_eea(r0,r1,s0,s1,t0,t1,q)
+
+    #r_j = r_(i+1)
+    def pol_eea(self,r_i,r_j,s_i,s_j,t_i,t_j,q):
+        #print('pol_eea')
+        #print(r_i)
+        #print(r_j)
+        #print(s_i)
+        #print(s_j)
+        #print(t_i)
+        #print(t_j)
+        #caso base r_i es 0
+        if(not np.any(r_j)):
+            return q,s_i,t_i,r_i
+        #iteracion
+        q = np.zeros((np.shape(r_i)[0]),dtype=np.uint32)
+        q,r = self.polynomial_long_division(r_i,r_j,q)
+        #q = np.flip(q)
+        #q = np.trim_zeros(q,'f')
+        
+        s_q = np.flip(self.polynomial_multiplication(np.flip(s_j),q))
+        t_q = np.flip(self.polynomial_multiplication(np.flip(t_j),q))
+        
+
+        
+        s_q = np.trim_zeros(s_q,'f')
+        t_q = np.trim_zeros(t_q,'f')
+
+        
+
+        if(not np.any(s_q)):
+            s_k = s_i
+        else:    
+            size_sq = np.shape(s_q)[0]
+            size_si = np.shape(s_i)[0]
+            diff = abs(size_sq-size_si)
+            z_append = np.zeros((diff),dtype=np.uint)
+            if(size_si<size_sq):
+                s_i = np.append(z_append,s_i)
+            else:
+                s_q = np.append(z_append,s_q)
+
+            s_k = np.bitwise_xor(s_i,s_q)
+
+        if(not np.any(t_q)):
+            t_k = t_i    
+        else:
+            size_tq = np.shape(t_q)[0]
+            size_ti = np.shape(t_i)[0]
+            diff = abs(size_tq-size_ti)
+            z_append = np.zeros((diff),dtype=np.uint)
+            if(size_ti<size_tq):
+                t_i = np.append(z_append,t_i)
+            else:
+                t_q = np.append(z_append,t_q)
+
+            t_k = np.bitwise_xor(t_i,t_q)
+        
+        
+        return self.pol_eea(r_j,r,s_j,s_k,t_j,t_k,q)
+
+    
+    def polynomial_long_division(self,a,b,q):
+        #print('polinomial_long_division')
+        #print(a)
+        #print(b)
+        #print(q)
+
+        size_a = np.shape(a)[0]
+        size_b = np.shape(b)[0]
+
+        if(size_a < size_b):
+            return q,a
+
+        q_i = size_a - size_b
+        q[q_i] = 1
+        #print(q)
+        z = np.zeros((q_i),dtype=np.uint32)
+        b_q = np.append(b,z)
+        #print(b_q)
+        r = np.bitwise_xor(a,b_q)
+        r = np.trim_zeros(r,'f')#trim front zeros
+        #print(r)
+        #return
+        return self.polynomial_long_division(r,b,q)
 
         
 
@@ -197,6 +284,21 @@ class GaloisField:
 
         return self.reduced_polinomial(t,p)
     
+    def polynomial_multiplication(self,a,b):
+        #print('polynomial_mult')
+        #print(a)
+        #print(b)
+        size_a = np.shape(a)[0]
+        size_b = np.shape(b)[0]
+        t = np.zeros((size_a+size_b),dtype=np.uint32)
+        for i in range(0,size_a):
+            for j in range(0,size_b):
+                if (a[i] == 1 and b[j] == 1):
+                    t[i+j] = t[i+j] ^ 1
+        #print(t)
+        #print('end_mult')            
+        return t    
+
     def reduced_polinomial(self,a,p):
         n = math.ceil(math.log(p,2))
         n = n - 1

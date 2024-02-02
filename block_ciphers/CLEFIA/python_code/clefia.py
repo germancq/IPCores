@@ -85,7 +85,7 @@ class CLEFIA:
             x_a[7-i] = (x>>i) & 0x01
 
         f = self.f_S1(x_a,p)
-        f_inverse = 
+        #f_inverse = 
         print(f)
         return self.g_S1(f,p)
 
@@ -109,5 +109,20 @@ class CLEFIA:
 
 if __name__ == "__main__":
     cipher = CLEFIA()
-    print(hex(cipher.S0(0x00)))
-    print(hex(cipher.S1(0x00)))
+    a = np.array([1,0,0,0,1,1,0,1,1],dtype=np.uint32)
+    b = np.array([1,0,1,0,0,1,1],dtype=np.uint32)
+    q = np.zeros((9),dtype=np.uint32)
+    gf = galois_arithmetic.GaloisField(8)
+    #q,r = gf.polynomial_long_division(a,b,q)
+
+    #print(q)
+    #print(r)
+
+    q,s,t,r = gf.polynomial_extended_euclidean_algorithm(a,b)
+    print(q)
+    print(s)
+    print(t)
+    print(r)
+
+    #print(hex(cipher.S0(0x00)))
+    #print(hex(cipher.S1(0x00)))
