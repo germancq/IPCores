@@ -79,15 +79,19 @@ class CLEFIA:
 
     def S1(self,x):
         p = (1<<8) + (1<<4) + (1<<3) + (1<<2) + 1
+        p_array = np.array([1,0,0,0,1,1,1,0,1])# 
         
         x_a = np.zeros((8,1),dtype=np.uint32)
         for i in range(0,8):
             x_a[7-i] = (x>>i) & 0x01
 
         f = self.f_S1(x_a,p)
-        #f_inverse = 
+        f_inverse = self.galois8.inverse_mul(np.reshape(np.transpose(f),8),p_array)
         print(f)
-        return self.g_S1(f,p)
+        print(f_inverse)
+        f_inverse = f_inverse + np.zeros(8,dtype=np.uint)
+        np.transpose(np.reshape((f_inverse),8))
+        return self.g_S1(f_inverse,p)
 
 
     def f_S1(self,x,p):
@@ -109,6 +113,7 @@ class CLEFIA:
 
 if __name__ == "__main__":
     cipher = CLEFIA()
+    '''
     a = np.array([1,0,0,0,1,1,0,1,1],dtype=np.uint32)
     b = np.array([1,0,1,0,0,1,1],dtype=np.uint32)
     q = np.zeros((9),dtype=np.uint32)
@@ -124,5 +129,7 @@ if __name__ == "__main__":
     print(t)
     print(r)
 
-    #print(hex(cipher.S0(0x00)))
-    #print(hex(cipher.S1(0x00)))
+    print(gf.inverse_mul(b,a))
+    '''
+    print(hex(cipher.S0(0x00)))
+    print(hex(cipher.S1(0x00)))

@@ -17,7 +17,8 @@ class GaloisField:
         pass
 
     def inverse_mul(self,x,p):
-        pass
+        return self.polynomial_extended_euclidean_algorithm(p,x)[2]
+        
 
     def polynomial_extended_euclidean_algorithm(self,a,b):
         #a y b son arrays
@@ -33,13 +34,13 @@ class GaloisField:
 
     #r_j = r_(i+1)
     def pol_eea(self,r_i,r_j,s_i,s_j,t_i,t_j,q):
-        #print('pol_eea')
-        #print(r_i)
-        #print(r_j)
-        #print(s_i)
-        #print(s_j)
-        #print(t_i)
-        #print(t_j)
+        print('pol_eea')
+        print(r_i)
+        print(r_j)
+        print(s_i)
+        print(s_j)
+        print(t_i)
+        print(t_j)
         #caso base r_i es 0
         if(not np.any(r_j)):
             return q,s_i,t_i,r_i
@@ -92,10 +93,13 @@ class GaloisField:
 
     
     def polynomial_long_division(self,a,b,q):
-        #print('polinomial_long_division')
-        #print(a)
-        #print(b)
-        #print(q)
+        print('polinomial_long_division')
+        print(a)
+        print(b)
+        print(q)
+
+        a = np.trim_zeros(a,'f')
+        b = np.trim_zeros(b,'f')
 
         size_a = np.shape(a)[0]
         size_b = np.shape(b)[0]
@@ -105,13 +109,13 @@ class GaloisField:
 
         q_i = size_a - size_b
         q[q_i] = 1
-        #print(q)
+        print(q)
         z = np.zeros((q_i),dtype=np.uint32)
         b_q = np.append(b,z)
-        #print(b_q)
+        print(b_q)
         r = np.bitwise_xor(a,b_q)
         r = np.trim_zeros(r,'f')#trim front zeros
-        #print(r)
+        print(r)
         #return
         return self.polynomial_long_division(r,b,q)
 
@@ -192,7 +196,7 @@ class GaloisField:
 
         for i in range(0,rows_a):
             for j in range(0,cols_b):
-                print('get_cij')
+                #print('get_cij')
                 result[i][j] = self.get_c_ij(A,B,p,cols_a,cols_b,i,j)
                 
 
@@ -215,11 +219,11 @@ class GaloisField:
                     
             m = self.multiplication(a,b,p)
             
-            print('mult')
-            print(a)
-            print(b)
-            print(m)
-            print('-------------------')
+            #print('mult')
+            #print(a)
+            #print(b)
+            #print(m)
+            #print('-------------------')
             
             result = self.add(m,result)
 
