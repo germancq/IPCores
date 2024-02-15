@@ -34,13 +34,13 @@ class GaloisField:
 
     #r_j = r_(i+1)
     def pol_eea(self,r_i,r_j,s_i,s_j,t_i,t_j,q):
-        print('pol_eea')
-        print(r_i)
-        print(r_j)
-        print(s_i)
-        print(s_j)
-        print(t_i)
-        print(t_j)
+        #print('pol_eea')
+        #print(r_i)
+        #print(r_j)
+        #print(s_i)
+        #print(s_j)
+        #print(t_i)
+        #print(t_j)
         #caso base r_i es 0
         if(not np.any(r_j)):
             return q,s_i,t_i,r_i
@@ -93,10 +93,10 @@ class GaloisField:
 
     
     def polynomial_long_division(self,a,b,q):
-        print('polinomial_long_division')
-        print(a)
-        print(b)
-        print(q)
+        #print('polinomial_long_division')
+        #print(a)
+        #print(b)
+        #print(q)
 
         a = np.trim_zeros(a,'f')
         b = np.trim_zeros(b,'f')
@@ -109,13 +109,13 @@ class GaloisField:
 
         q_i = size_a - size_b
         q[q_i] = 1
-        print(q)
+        #print(q)
         z = np.zeros((q_i),dtype=np.uint32)
         b_q = np.append(b,z)
-        print(b_q)
+        #print(b_q)
         r = np.bitwise_xor(a,b_q)
         r = np.trim_zeros(r,'f')#trim front zeros
-        print(r)
+        #print(r)
         #return
         return self.polynomial_long_division(r,b,q)
 
@@ -130,11 +130,11 @@ class GaloisField:
         result = np.zeros((rows_a,cols_a),dtype=np.uint32)
         for i in range(0,rows_a):
             for j in range(0,cols_a):
-                print(M1[i][j])
+                #print(M1[i][j])
                 result[i][j] = self.multiplication(M1[i][j],k,p)
 
-        print('scalar by matrix')
-        print(result)
+        #print('scalar by matrix')
+        #print(result)
         return result
 
     def matrix_add(self,A,B):
@@ -183,25 +183,25 @@ class GaloisField:
             rows_b = np.shape(B)[0]
             cols_b = 1
 
-        print(rows_b)
-        print(cols_a)
+        #print(rows_b)
+        #print(cols_a)
         if(cols_a != rows_b):
             #error
             return -1
         
-        print('matrix mult')
-        print(A)
-        print(B)
+        #print('matrix mult')
+        #print(A)
+        #print(B)
         result = np.zeros((rows_a,cols_b),dtype=np.uint32)
 
         for i in range(0,rows_a):
             for j in range(0,cols_b):
-                #print('get_cij')
+                ##print('get_cij')
                 result[i][j] = self.get_c_ij(A,B,p,cols_a,cols_b,i,j)
                 
 
-        print(result)
-        print('end matrix mult')
+        #print(result)
+        #print('end matrix mult')
         return result
     
 
@@ -219,11 +219,11 @@ class GaloisField:
                     
             m = self.multiplication(a,b,p)
             
-            #print('mult')
-            #print(a)
-            #print(b)
-            #print(m)
-            #print('-------------------')
+            ##print('mult')
+            ##print(a)
+            ##print(b)
+            ##print(m)
+            ##print('-------------------')
             
             result = self.add(m,result)
 
@@ -261,14 +261,14 @@ class GaloisField:
                     #result[i][j] = (a_1 + (a_2 * a_3))
                     gf_1 = self.galois_multiplication(a_2,a_3,p)
                     
-                    print("==========================")
-                    print(i)
-                    print(j)
-                    print(hex(a_2))
-                    print(hex(a_3))
-                    print(hex(gf_1))
-                    print(hex(a_1))
-                    print("==========================")
+                    #print("==========================")
+                    #print(i)
+                    #print(j)
+                    #print(hex(a_2))
+                    #print(hex(a_3))
+                    #print(hex(gf_1))
+                    #print(hex(a_1))
+                    #print("==========================")
                     
                     result[i][j] = self.galois_add(a_1,gf_1)
 
@@ -289,9 +289,9 @@ class GaloisField:
         return self.reduced_polinomial(t,p)
     
     def polynomial_multiplication(self,a,b):
-        #print('polynomial_mult')
-        #print(a)
-        #print(b)
+        ##print('polynomial_mult')
+        ##print(a)
+        ##print(b)
         size_a = np.shape(a)[0]
         size_b = np.shape(b)[0]
         t = np.zeros((size_a+size_b),dtype=np.uint32)
@@ -299,8 +299,8 @@ class GaloisField:
             for j in range(0,size_b):
                 if (a[i] == 1 and b[j] == 1):
                     t[i+j] = t[i+j] ^ 1
-        #print(t)
-        #print('end_mult')            
+        ##print(t)
+        ##print('end_mult')            
         return t    
 
     def reduced_polinomial(self,a,p):
