@@ -61,15 +61,41 @@ class CLEFIA:
         self.galois4 = galois_arithmetic.GaloisField(4)
         
 
-    def encrypt(self,):
-        pass
+    def encrypt(self,plaintext,WK,RK):
+        p_a = np.zeros(4,dtype=np.uint32)
+        p_a[0] = plaintext>>96 & 0xFFFFFFFF
+        p_a[1] = plaintext>>64 & 0xFFFFFFFF
+        p_a[2] = plaintext>>32 & 0xFFFFFFFF
+        p_a[3] = plaintext     & 0xFFFFFFFF
+        
+        print('encrypt with p0 = {}; p1 = {}; p2 = {};p3 = {}'.format(hex(p_a[0]),hex(p_a[1]),hex(p_a[2]),hex(p_a[3])))
+        print('WK[0] = {}, WK[1] = {}'.format(hex(WK[0]),hex(WK[1])))
+        p_a[1] = p_a[1] ^ WK[0]
+        p_a[3] = p_a[3] ^ WK[1]
+        print('p1 = p1 ^ {} = {}'.format(hex(WK[0]),hex(p_a[1])))
+        print('p3 = p3 ^ {} = {}'.format(hex(WK[1]),hex(p_a[3])))
+        
+
+        t = self.GFN(4,18,p_a,RK)
+
+        t[1] = t[1] ^ WK[2]
+        t[3] = t[3] ^ WK[3]
+        print(t)
+        return (t[0] << 96) + (t[1] << 64) + (t[2] << 32) + t[3]
 
     def key_schedule(self,key):
+        key_a = np.zeros(4,dtype=np.uint32)
+        key_a[0] = key>>96 & 0xFFFFFFFF
+        key_a[1] = key>>64 & 0xFFFFFFFF
+        key_a[2] = key>>32 & 0xFFFFFFFF
+        key_a[3] = key     & 0xFFFFFFFF
         #key 128-bits
+        WK = np.zeros(4,dtype=np.uint32)
+        WK = np.copy(key_a)
         RK = np.zeros(36,dtype=np.uint32)
         T_a,CON = self.generate_constants(0x428A,30)
-        L = self.GFN(4,12,key,CON[0:24])
-
+        L = self.GFN(4,12,key_a,CON[0:24])
+        '''
         print(hex(L[0]))
         print(hex(L[1]))
         print(hex(L[2]))
@@ -77,32 +103,27 @@ class CLEFIA:
 
         print(hex(CON[58]))
         print(hex(CON[59]))
-
-        WK = np.zeros(4,dtype=np.uint32)
+        '''
+        
         T = np.zeros(4,dtype=np.uint32)
-
-        for i in range(0,4):
-            WK[i] = (key>>32*i) & 0xFFFFFFFF
-            print(hex(WK[i]))
 
         for i in range(0,9):
             for j in range(0,4):     
                 c = CON[24+(4*i)+j]
-                print('L[{}] ^ c = {} ^ {} = {} '.format(j,hex(L[j]),hex(c),hex(T[j]^c)))
+                #print('L[{}] ^ c = {} ^ {} = {} '.format(j,hex(L[j]),hex(c),hex(T[j]^c)))
                 T[j] = c ^ L[j]
                 if(i%2 != 0):
-                    print('T[{}] ^ WK[{}] = {} ^ {} = {} '.format(j,j,hex(T[j]),hex(WK[j]),hex(T[j]^WK[j])))
+                    #print('T[{}] ^ WK[{}] = {} ^ {} = {} '.format(j,j,hex(T[j]),hex(WK[j]),hex(T[j]^WK[j])))
                     T[j] = T[j] ^ WK[j]
                     
-            print(L)
+            #print(L)
             L = self.doubleSwap(L)
-            print(L)
+            #print(L)
             for j in range(0,4):
                 RK[(4*i)+j] = T[j]
                 print('RK[{}] = {}'.format((4*i)+j,hex(T[j])))
                
-
-        pass
+        return WK,RK
 
 
     def generate_constants(self,IV,l):
@@ -141,18 +162,18 @@ class CLEFIA:
     def doubleSwap(self,x_a):
         x_h = (x_a[0] << 32) + (x_a[1])
         x_l = (x_a[2]<<32) + x_a[3]
-        print('-------------------------------------')
-        print(x_a)
-        print(hex(x_h))
-        print(hex(x_l))
+        #print('-------------------------------------')
+        #print(x_a)
+        #print(hex(x_h))
+        #print(hex(x_l))
         x0 = x_l & 0x7F
         x1 = (x_l>>7) & 0x1FFFFFFFFFFFFFF
         x2 = (x_h) & 0x1FFFFFFFFFFFFFF
         x3 = (x_h>>(57)) & 0x7F
-        print(hex(x0))
-        print(hex(x1))
-        print(hex(x2))
-        print(hex(x3))
+        #print(hex(x0))
+        #print(hex(x1))
+        #print(hex(x2))
+        #print(hex(x3))
 
         y_h = (x2 << 7) + x0
         y_l = (x3 << 57) + x1
@@ -161,26 +182,25 @@ class CLEFIA:
         for i in range(0,2):
             y_a[i] = y_h>>(32 - 32*i) & 0xFFFFFFFF
             y_a[i+2] = y_l>>(32 - 32*i) & 0xFFFFFFFF
-        print('-------------------------------------------')
+        #print('-------------------------------------------')
         return y_a
 
 
-    def GFN(self,d,r,x,rk_a):
-        T_a = np.zeros(d,dtype=np.uint32)
-        for i in range(0,d):
-            T_a[i] = (x>>32*i) & 0xFFFFFFFF
-            #print(hex(T_a[i]))
-
+    def GFN(self,d,r,T_a,rk_a):
+        print('///////////////////////')
+        print('GFN d={} ,r={}'.format(d,r))
+        
         for i in range(0,r):
+            print('GFN round {}; input = {}'.format(i,T_a))
             for j in range(0,d,4):
                 #print('---------------------------------------')
                 #print(hex(T_a[j+1]))
                 #print(hex(rk_a[(int(d/2)*i)]))
                 #print(hex(T_a[j]))
                 #print(hex(self.F0(rk_a[(int(d/2)*i)],T_a[j])[0]))
-
+                print('T_a[{}] = {} ^ {}'.format(j+1,hex(T_a[j+1]),hex(self.F0(rk_a[(int(d/2)*i)],T_a[j])[0])))
                 T_a[j+1] = self.galois8.add(T_a[j+1],self.F0(rk_a[(int(d/2)*i)],T_a[j])[0])
-
+                print('T_[{}] = {}'.format(j+1,hex(T_a[j+1])))
                 #print(hex(T_a[j+1]))
                 #print('--------------------------')
 
@@ -188,7 +208,7 @@ class CLEFIA:
                 #print(hex(rk_a[(int(d/2)*i)+1]))
                 #print(hex(T_a[j+2]))
                 #print(hex(self.F1(rk_a[(int(d/2)*i)+1],T_a[j+2])[0]))
-
+                print('T_a[{}] = T_a[{}] ^ {}'.format(j+3,T_a[j+3],self.F1(rk_a[(int(d/2)*i)+1],T_a[j+2])[0]))
                 T_a[j+3] = self.galois8.add(T_a[j+3],self.F1(rk_a[(int(d/2)*i)+1],T_a[j+2])[0])
 
                 #print(hex(T_a[j+3]))
@@ -201,9 +221,12 @@ class CLEFIA:
         return np.roll(T_a,1)
 
     def F0(self,rk,x):
-        #print('**********F0*********')
+        print('**********F0*********')
         T_a = np.zeros((4,1),dtype=np.uint32)
         T = self.galois8.add(rk,x)
+        print('F0 input is = {}'.format(hex(x)))
+        print('F0 round key is = {}'.format(hex(rk)))
+        print('F0 after key add = {}'.format(hex(T)))
         #print(hex(rk))
         #print(hex(x))
         #print(hex(T))
@@ -217,10 +240,11 @@ class CLEFIA:
             T_a[i][0] = T_n[i]
             #print(i)
             #print(hex(T_n[i]))
-
+            print('F0 after S = {} and i = {}'.format(hex(T_n[i]),i))
         p = (1<<8) + (1<<4) + (1<<3) + (1<<2) + 1
         y = self.galois8.matrix_multiplication(M0,T_a,p)
-        #print('**********************************')
+        print('F0 after M = {}'.format(y))
+        print('**********************************')
         return (y[3]<<24) + (y[2]<<16) + (y[1]<<8) + y[0]
 
     def F1(self,rk,x):
@@ -338,8 +362,13 @@ if __name__ == "__main__":
 
     #cipher.generate_constants(0x428a,30)
     key = 0xFFEEDDCCBBAA99887766554433221100
-    key = 0x3322110077665544bbaa9988ffeeddcc
-    cipher.key_schedule(key)
+    #key = 0x3322110077665544bbaa9988ffeeddcc
+    plaintext = 0x000102030405060708090a0b0c0d0e0f
+    #plaintext = 0x0c0d0e0f08090a0b0405060700010203
+    WK,RK = cipher.key_schedule(key)
+    print('/////////////////******************///////////////')
+    c = cipher.encrypt(plaintext,WK,RK)
+    print(hex(c))
 
     #print(hex(cipher.S0(0x10)))
     #print(hex(cipher.S1(0x10)))
