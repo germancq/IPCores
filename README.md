@@ -2,7 +2,7 @@
 
 - Build an example from this git
 
-    1. Download and install fusesoc
+    1. Download and install fusesoc:
         get fusesoc from [here](https://github.com/olofk/fusesoc)
 
     2. Launch fusesoc with the cores from this git
