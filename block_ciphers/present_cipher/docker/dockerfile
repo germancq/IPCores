@@ -1,0 +1,7 @@
+FROM debian:bookworm
+
+WORKDIR /core
+
+COPY python_code/ hdl_code/ cocotb_files/ /core/
+
+CMD [ "bash" ]
