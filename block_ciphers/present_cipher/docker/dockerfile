@@ -2,6 +2,29 @@ FROM debian:bookworm
 
 WORKDIR /core
 
-COPY python_code/ hdl_code/ cocotb_files/ /core/
+ARG PYTHON_VERSION=3.11
+
+ARG COCOTB_VERSION=1.9.2
+
+ARG BITSTRING_VERSION=4.3.0
+
+COPY python_code/ /core/python_code
+
+
+COPY hdl_code/ /core/hdl_code 
+
+
+COPY cocotb_files/ /core/cocotb_files
+
+COPY cocotb_files/ /core/cocotb_files_copy
+
+RUN apt-get update
+
+RUN apt-get install -y python${PYTHON_VERSION} python3 python3-venv python${PYTHON_VERSION}-venv build-essential python3-dev iverilog verilator
+
+RUN python3.11 -m venv /core/venv
+
+RUN . venv/bin/activate && pip install cocotb==${COCOTB_VERSION} bitstring==${BITSTRING_VERSION}
+
 
 CMD [ "bash" ]
