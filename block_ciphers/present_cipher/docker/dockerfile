@@ -8,6 +8,8 @@ ARG COCOTB_VERSION=1.9.2
 
 ARG BITSTRING_VERSION=4.3.0
 
+ARG FUSESOC_VERSION=2.4.2
+
 COPY python_code/ /core/python_code
 
 
@@ -20,11 +22,13 @@ COPY cocotb_files/ /core/cocotb_files_copy
 
 RUN apt-get update
 
-RUN apt-get install -y python${PYTHON_VERSION} python3 python3-venv python${PYTHON_VERSION}-venv build-essential python3-dev iverilog verilator
+RUN apt-get install -y python${PYTHON_VERSION} python3 python3-venv python${PYTHON_VERSION}-venv build-essential python3-dev iverilog verilator git
 
 RUN python3.11 -m venv /core/venv
 
-RUN . venv/bin/activate && pip install cocotb==${COCOTB_VERSION} bitstring==${BITSTRING_VERSION}
+RUN . venv/bin/activate && pip install cocotb==${COCOTB_VERSION} bitstring==${BITSTRING_VERSION} fusesoc==${FUSESOC_VERSION}
+
+RUN . venv/bin/activate && fusesoc library add fusesoc_cores https://github.com/germancq/IPCores
 
 
 CMD [ "bash" ]
