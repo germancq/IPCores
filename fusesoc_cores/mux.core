@@ -4,16 +4,17 @@ name : ::mux:0
 description : collection of mux
 
 filesets :
-	rtl :
-		files :
-			- misc/mux/hdl_code/mux.sv
+  rtl :
+    files :
+      - misc/mux/hdl_code/mux.sv
 
-		file_type : systemVerilogSource
+    file_type : systemVerilogSource
+
 targets :
-	default : {filesets : [rtl]}
+  default : {filesets : [rtl]}
 
 provider :
-	name : github
-	user : germancq
-	repo : IPCores
-	version : master
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
