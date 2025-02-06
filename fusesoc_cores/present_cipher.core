@@ -22,3 +22,4 @@ provider :
   name : github
   user : germancq
   repo : IPCores
+  version : master
