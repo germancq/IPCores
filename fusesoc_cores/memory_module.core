@@ -4,14 +4,17 @@ name : ::memory_module:0
 description : memory module
 
 filesets :
-	rtl :
-		files :
-			- misc/memory_module/hdl_code/memory_module.sv
+  rtl :
+    files :
+      - misc/memory_module/hdl_code/memory_module.sv
 
-		file_type : systemVerilogSource
+    file_type : systemVerilogSource
+
+targets :
+  default : {filesets : [rtl]}
 
 provider :
-	name : github
-	user : germancq
-	repo : IPCores
-	version : master
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master

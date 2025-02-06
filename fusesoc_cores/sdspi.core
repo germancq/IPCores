@@ -4,20 +4,23 @@ name : ::sdspi:0
 description : sd rw for spi protocol
 
 filesets :
-	rtl :
-		depend :
-			- counter
-			- register
-			- mux
-		files :
-			- sdspi/hdl_code/sdspihost.sv
-			- sdspi/hdl_code/sdcmd.sv
-			- sdspi/hdl_code/spi_master.sv
+  rtl :
+    depend :
+      - counter
+      - register
+      - mux
+    files :
+      - sdspi/hdl_code/sdspihost.sv
+      - sdspi/hdl_code/sdcmd.sv
+      - sdspi/hdl_code/spi_master.sv
 
-		file_type : systemVerilogSource
+    file_type : systemVerilogSource
+
+targets :
+  default : {filesets : [rtl]}
 
 provider :
-	name : github
-	user : germancq
-	repo : IPCores
-	version : master
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master

@@ -4,14 +4,17 @@ name : ::register:0
 description : collection of registers
 
 filesets :
-	rtl :
-		files :
-			- misc/registers/hdl_code/register.sv
+  rtl :
+    files :
+      - misc/registers/hdl_code/register.sv
 
-		file_type : systemVerilogSource
+    file_type : systemVerilogSource
+
+targets :
+  default : {filesets : [rtl]}
 
 provider :
-	name : github
-	user : germancq
-	repo : IPCores
-	version : master
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
