@@ -1,14 +1,17 @@
-CAPI=1
-[main]
-description = "memory_module"
+CAPI=2:
 
-[verilog]
-src_files =
-  misc/memory_module/hdl_code/memory_module.sv
-  
+name : ::memory_module:0
+description : memory module
 
-[provider]
-name = github
-user = germancq
-repo = IPCores
-version = master    
+filesets :
+	rtl :
+		files :
+			- misc/memory_module/hdl_code/memory_module.sv
+
+		file_type : systemVerilogSource
+
+provider :
+	name : github
+	user : germancq
+	repo : IPCores
+	version : master

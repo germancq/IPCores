@@ -1,14 +1,17 @@
-CAPI=1
-[main]
-description = "mux"
+CAPI=2:
 
-[verilog]
-src_files =
-  misc/mux/hdl_code/mux.sv
-  
+name : ::mux:0
+description : collection of mux
 
-[provider]
-name = github
-user = germancq
-repo = IPCores
-version = master    
+filesets :
+	rtl :
+		files :
+			- misc/mux/hdl_code/mux.sv
+
+		file_type : systemVerilogSource
+
+provider :
+	name : github
+	user : germancq
+	repo : IPCores
+	version : master
