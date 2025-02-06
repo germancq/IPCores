@@ -9,6 +9,8 @@ filesets :
 			- misc/mux/hdl_code/mux.sv
 
 		file_type : systemVerilogSource
+targets :
+	default : {filesets : [rtl]}
 
 provider :
 	name : github
