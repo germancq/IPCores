@@ -150,7 +150,7 @@ def run_test(dut, index=0):
     key = random.getrandbits(KEY_LEN)
     text = random.getrandbits(BLOCK_LEN)
     present_SW = present.Present(key)
-    expected_value_enc = present_SW.encript(text)
+    expected_value_enc = present_SW.encrypt(text)
     expected_value_dec = present_SW.decrypt(text)
 
     setup_function(dut, key, text)
