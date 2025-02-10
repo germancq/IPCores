@@ -69,9 +69,10 @@ async def generate_round_keys(dut):
 async def enc_test(dut, expected_enc_value):
 
     i = 0
+    dut.enc_dec.value = 0
     while dut.end_signal.value == 0:
-        """
-        print('//////////////////////////')
+
+        print("//////////////////////////")
         print(int(dut.key_index.value))
         print(int(dut.present_enc_impl.key_index.value))
         print(hex(int(dut.roundkey.value)))
@@ -79,9 +80,8 @@ async def enc_test(dut, expected_enc_value):
         print(hex(int(dut.present_enc_impl.block_i.value)))
         print(hex(int(dut.present_enc_impl.block_o.value)))
 
+        print("//////////////////////////")
 
-        print('//////////////////////////')
-        """
         await n_cycles_clock(dut, 1)
         i = i + 1
 
@@ -105,8 +105,8 @@ async def dec_test(dut, expected_dec_value):
     dut.enc_dec.value = 1
     print(int(dut.present_dec_impl.key_index.value))
     while dut.end_signal.value == 0:
-        """
-        print('***********************')
+
+        print("***********************")
         print(int(dut.key_index.value))
         print(int(dut.present_dec_impl.key_index.value))
         print(hex(int(dut.roundkey.value)))
@@ -114,9 +114,8 @@ async def dec_test(dut, expected_dec_value):
         print(hex(int(dut.present_dec_impl.block_i.value)))
         print(hex(int(dut.present_dec_impl.block_o.value)))
 
+        print("*************************")
 
-        print('*************************')
-        """
         await n_cycles_clock(dut, 1)
 
     await n_cycles_clock(dut, 100)
