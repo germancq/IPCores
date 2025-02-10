@@ -19,46 +19,44 @@ BLOCK_LEN = 128
 CLK_PERIOD = 20  # 50 MHz
 SIGNATURE = 0xAABBCCDD
 
-# the keyword yield
+# the keyword await
 #   Testbenches built using Cocotb use coroutines.
 #   While the coroutine is executing the simulation is paused.
-#   The coroutine uses the yield keyword
+#   The coroutine uses the await keyword
 #   to pass control of execution back to
 #   the simulator and simulation time can advance again.
 #
-#   yield return when the 'Trigger' is resolve
+#   await return when the 'Trigger' is resolve
 #
-#   Coroutines may also yield a list of triggers
+#   Coroutines may also await a list of triggers
 #   to indicate that execution should resume if any of them fires
 
 
 def setup_function(dut, key, plaintext):
     cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
-    dut.rst = 0
-    dut.key = key
-    dut.block_i = plaintext
-    dut.enc_dec = 0
+    dut.rst.value = 0
+    dut.key.value = key
+    dut.block_i.value = plaintext
+    dut.enc_dec.value = 0
 
 
-@cocotb.coroutine
-def rst_function_test(dut):
-    dut.rst = 1
+async def rst_function_test(dut):
+    dut.rst.value = 1
 
-    yield n_cycles_clock(dut, 10)
+    await n_cycles_clock(dut, 10)
 
-    dut.rst = 0
+    dut.rst.value = 0
 
 
-@cocotb.coroutine
-def generate_round_keys(dut):
-    dut.rst = 0
+async def generate_round_keys(dut):
+    dut.rst.value = 0
     i = 0
     while dut.end_key_generation.value == 0:
         i = i + 1
-        yield n_cycles_clock(dut, 1)
+        await n_cycles_clock(dut, 1)
 
     print(i)
-    # yield n_cycles_clock(dut,1)
+    # await n_cycles_clock(dut,1)
 
     if dut.end_key_generation != 1:
         raise TestFailure(
@@ -68,8 +66,7 @@ def generate_round_keys(dut):
         )
 
 
-@cocotb.coroutine
-def enc_test(dut, expected_enc_value):
+async def enc_test(dut, expected_enc_value):
 
     i = 0
     while dut.end_signal.value == 0:
@@ -85,12 +82,12 @@ def enc_test(dut, expected_enc_value):
 
         print('//////////////////////////')
         """
-        yield n_cycles_clock(dut, 1)
+        await n_cycles_clock(dut, 1)
         i = i + 1
 
     print(i)
 
-    yield n_cycles_clock(dut, 100)
+    await n_cycles_clock(dut, 100)
 
     print(hex(int(dut.block_o.value)))
     print(hex(int(expected_enc_value)))
@@ -102,11 +99,10 @@ def enc_test(dut, expected_enc_value):
         )
 
 
-@cocotb.coroutine
-def dec_test(dut, expected_dec_value):
+async def dec_test(dut, expected_dec_value):
 
     i = 0
-    dut.enc_dec = 1
+    dut.enc_dec.value = 1
     print(int(dut.present_dec_impl.key_index.value))
     while dut.end_signal.value == 0:
         """
@@ -121,9 +117,9 @@ def dec_test(dut, expected_dec_value):
 
         print('*************************')
         """
-        yield n_cycles_clock(dut, 1)
+        await n_cycles_clock(dut, 1)
 
-    yield n_cycles_clock(dut, 100)
+    await n_cycles_clock(dut, 100)
 
     print(hex(int(dut.block_o.value)))
     print(hex(int(expected_dec_value)))
@@ -135,15 +131,13 @@ def dec_test(dut, expected_dec_value):
         )
 
 
-@cocotb.coroutine
-def n_cycles_clock(dut, n):
+async def n_cycles_clock(dut, n):
     for i in range(0, n):
-        yield RisingEdge(dut.clk)
-        yield FallingEdge(dut.clk)
+        await RisingEdge(dut.clk)
+        await FallingEdge(dut.clk)
 
 
-@cocotb.coroutine
-def run_test(dut, index=0):
+async def run_test(dut, index=0):
 
     # key = 0x0
     # text = 0x0
@@ -155,10 +149,10 @@ def run_test(dut, index=0):
 
     setup_function(dut, key, text)
 
-    yield rst_function_test(dut)
-    yield generate_round_keys(dut)
-    yield dec_test(dut, expected_value_dec)
-    yield enc_test(dut, expected_value_enc)
+    await rst_function_test(dut)
+    await generate_round_keys(dut)
+    await dec_test(dut, expected_value_dec)
+    await enc_test(dut, expected_value_enc)
 
 
 n = 10
