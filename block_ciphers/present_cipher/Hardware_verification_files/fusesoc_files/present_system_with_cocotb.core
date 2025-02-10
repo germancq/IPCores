@@ -46,6 +46,7 @@ targets :
     flow : sim
     flow_options :
       tool : icarus
+      iverilog_options : [-g2012]
       cocotb_module : block_ciphers/present_cipher/cocotb_files/present_test
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
