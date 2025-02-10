@@ -15,7 +15,7 @@ from cocotb.triggers import FallingEdge, RisingEdge, Timer
 home = os.getenv("HOME")
 
 KEY_LEN = 80
-BLOCK_LEN = 128
+BLOCK_LEN = 64
 CLK_PERIOD = 20  # 50 MHz
 SIGNATURE = 0xAABBCCDD
 
