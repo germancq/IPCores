@@ -7,7 +7,7 @@ description : Present core, testing in cococtb and in a complete system for hard
 filesets :
   cocotb :
     files :
-      - block_ciphers/present_cipher/cocotb_files/present_test.py : {file_type : user, copyto : .}
+      - block_ciphers/present_cipher/cocotb_files/present_test_docker.py : {file_type : user, copyto : .}
       - block_ciphers/present_cipher/python_code/present.py : {file_type : user, copyto : .}
     depend :
       - vlog_tb_utils
@@ -48,7 +48,7 @@ targets :
     flow_options :
       tool : icarus
       iverilog_options : [-g2012]
-      cocotb_module : present_test
+      cocotb_module : present_test_docker
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
     filesets : [rtl_present,cocotb]  
