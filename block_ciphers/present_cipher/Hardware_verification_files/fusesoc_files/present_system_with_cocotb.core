@@ -8,6 +8,7 @@ filesets :
   cocotb :
     files :
       - block_ciphers/present_cipher/cocotb_files/present_test.py : {file_type : user, copyto : .}
+      - block_ciphers/present_cipher/python_code/present.py : {file_type : user, copyto : .}
     depend :
       - vlog_tb_utils
   rtl_present :
