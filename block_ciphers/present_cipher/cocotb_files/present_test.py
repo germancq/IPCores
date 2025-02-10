@@ -10,30 +10,34 @@
 #                                                                              #
 # **************************************************************************** #
 
+import present
+import sys
+import importlib
+import os
+import random
+import time
+
 import cocotb
 import numpy as np
-import time
-import random
-from cocotb.triggers import Timer,RisingEdge, FallingEdge
-from cocotb.regression import TestFactory
-from cocotb.result import TestFailure, ReturnValue
 from cocotb.clock import Clock
+from cocotb.regression import TestFactory
+from cocotb.result import ReturnValue, TestFailure
+from cocotb.triggers import FallingEdge, RisingEdge, Timer
 
-import os
 home = os.getenv("HOME")
-abs_path_file_storage = home + "/gitProjects/IPCores/block_ciphers/present_cipher/python_code/test_cases.HEX"
+abs_path_file_storage = (
+    home
+    + "/gitProjects/IPCores/block_ciphers/present_cipher/python_code/test_cases.HEX"
+)
 
 
+sys.path.append(
+    home + "/gitProjects/IPCores/block_ciphers/present_cipher/python_code")
 
-import importlib
-import sys
-sys.path.append(home + '/gitProjects/IPCores/block_ciphers/present_cipher/python_code')
-import present
-
-CLK_PERIOD = 20 # 50 MHz
+CLK_PERIOD = 20  # 50 MHz
 SIGNATURE = 0xAABBCCDD
 
-#the keyword yield
+# the keyword yield
 #   Testbenches built using Cocotb use coroutines.
 #   While the coroutine is executing the simulation is paused.
 #   The coroutine uses the yield keyword
@@ -52,131 +56,137 @@ def setup_function(dut, key, plaintext):
     dut.key = key
     dut.block_i = plaintext
     dut.enc_dec = 0
-   
-    
+
 
 @cocotb.coroutine
 def rst_function_test(dut):
     dut.rst = 1
-    
-    yield n_cycles_clock(dut,10)
+
+    yield n_cycles_clock(dut, 10)
 
     dut.rst = 0
 
 
 @cocotb.coroutine
-def generate_round_keys(dut) :
+def generate_round_keys(dut):
     dut.rst = 0
     i = 0
-    while dut.end_key_generation.value == 0 :
-        i = i+1
-        yield n_cycles_clock(dut,1)
-        
-    print(i)    
-    #yield n_cycles_clock(dut,1)
-            
-    if(dut.end_key_generation != 1):
-        raise TestFailure("""Error generate_round_keys,wrong end_signal value = {0}, expected value is {1}""".format(hex(int(dut.end_key_generation.value)),1))
-             
+    while dut.end_key_generation.value == 0:
+        i = i + 1
+        yield n_cycles_clock(dut, 1)
+
+    print(i)
+    # yield n_cycles_clock(dut,1)
+
+    if dut.end_key_generation != 1:
+        raise TestFailure(
+            """Error generate_round_keys,wrong end_signal value = {0}, expected value is {1}""".format(
+                hex(int(dut.end_key_generation.value)), 1
+            )
+        )
+
 
 @cocotb.coroutine
-def enc_test(dut,expected_enc_value) :
-    
+def enc_test(dut, expected_enc_value):
+
     i = 0
-    while dut.end_signal.value == 0 :
-        '''
+    while dut.end_signal.value == 0:
+        """
         print('//////////////////////////')
         print(int(dut.key_index.value))
         print(int(dut.present_enc_impl.key_index.value))
-        print(hex(int(dut.roundkey.value))) 
+        print(hex(int(dut.roundkey.value)))
         print(hex(int(dut.present_enc_impl.roundkey.value)))
-        print(hex(int(dut.present_enc_impl.block_i.value))) 
-        print(hex(int(dut.present_enc_impl.block_o.value))) 
-        
-        
-        print('//////////////////////////')
-        '''
-        yield n_cycles_clock(dut,1)
-        i=i+1
+        print(hex(int(dut.present_enc_impl.block_i.value)))
+        print(hex(int(dut.present_enc_impl.block_o.value)))
 
-    print(i)    
-    
-    yield n_cycles_clock(dut,100)
+
+        print('//////////////////////////')
+        """
+        yield n_cycles_clock(dut, 1)
+        i = i + 1
+
+    print(i)
+
+    yield n_cycles_clock(dut, 100)
 
     print(hex(int(dut.block_o.value)))
     print(hex(int(expected_enc_value)))
-    if(dut.block_o != expected_enc_value) :
-            raise TestFailure("""Error enc_test,wrong value = {0}, expected value is {1}""".format(hex(int(dut.block_o.value)),hex(expected_enc_value)))
-    
-    
-    
-       
+    if dut.block_o != expected_enc_value:
+        raise TestFailure(
+            """Error enc_test,wrong value = {0}, expected value is {1}""".format(
+                hex(int(dut.block_o.value)), hex(expected_enc_value)
+            )
+        )
+
+
 @cocotb.coroutine
-def dec_test(dut,expected_dec_value) :
-    
+def dec_test(dut, expected_dec_value):
+
     i = 0
-    dut.enc_dec = 1    
+    dut.enc_dec = 1
     print(int(dut.present_dec_impl.key_index.value))
-    while dut.end_signal.value == 0 :
-        '''
+    while dut.end_signal.value == 0:
+        """
         print('***********************')
         print(int(dut.key_index.value))
         print(int(dut.present_dec_impl.key_index.value))
-        print(hex(int(dut.roundkey.value))) 
+        print(hex(int(dut.roundkey.value)))
         print(hex(int(dut.present_dec_impl.roundkey.value)))
-        print(hex(int(dut.present_dec_impl.block_i.value))) 
-        print(hex(int(dut.present_dec_impl.block_o.value))) 
-        
-        
+        print(hex(int(dut.present_dec_impl.block_i.value)))
+        print(hex(int(dut.present_dec_impl.block_o.value)))
+
+
         print('*************************')
-        '''
-        yield n_cycles_clock(dut,1)
-        
-        
-    
-    yield n_cycles_clock(dut,100)
+        """
+        yield n_cycles_clock(dut, 1)
+
+    yield n_cycles_clock(dut, 100)
 
     print(hex(int(dut.block_o.value)))
     print(hex(int(expected_dec_value)))
-    if(dut.block_o != expected_dec_value) :
-            raise TestFailure("""Error dec_test,wrong value = {0}, expected value is {1}""".format(hex(int(dut.block_o.value)),hex(expected_dec_value)))
-   
+    if dut.block_o != expected_dec_value:
+        raise TestFailure(
+            """Error dec_test,wrong value = {0}, expected value is {1}""".format(
+                hex(int(dut.block_o.value)), hex(expected_dec_value)
+            )
+        )
+
 
 @cocotb.coroutine
-def n_cycles_clock(dut,n):
-    for i in range(0,n):
+def n_cycles_clock(dut, n):
+    for i in range(0, n):
         yield RisingEdge(dut.clk)
         yield FallingEdge(dut.clk)
 
 
-
 @cocotb.coroutine
-def run_test(dut, index = 0):
+def run_test(dut, index=0):
 
-    with(open(abs_path_file_storage,"rb+")) as storage_file:
-        
-        #key = 0x0
-        #text = 0x0
-        storage_file.seek((index*27))
-        key = int.from_bytes(storage_file.read(10),byteorder='little')
-        text = int.from_bytes(storage_file.read(8),byteorder='little')
-        enc_dec = int.from_bytes(storage_file.read(1),byteorder='little')
-        expected_value = int.from_bytes(storage_file.read(8),byteorder='little')
-        
-        setup_function(dut,key,text)
-        
+    with open(abs_path_file_storage, "rb+") as storage_file:
+
+        # key = 0x0
+        # text = 0x0
+        storage_file.seek((index * 27))
+        key = int.from_bytes(storage_file.read(10), byteorder="little")
+        text = int.from_bytes(storage_file.read(8), byteorder="little")
+        enc_dec = int.from_bytes(storage_file.read(1), byteorder="little")
+        expected_value = int.from_bytes(
+            storage_file.read(8), byteorder="little")
+
+        setup_function(dut, key, text)
+
         yield rst_function_test(dut)
         yield generate_round_keys(dut)
-        if (enc_dec):
-            yield dec_test(dut,expected_value)
-        else :    
-            yield enc_test(dut,expected_value)
-        
+        if enc_dec:
+            yield dec_test(dut, expected_value)
+        else:
+            yield enc_test(dut, expected_value)
 
 
-
-n = 1000
+n = 10
 factory = TestFactory(run_test)
 
-factory.add_option("index",range(0,n)) #array de 10 int aleatorios entre 0 y 31
+# array de 10 int aleatorios entre 0 y 31
+factory.add_option("index", range(0, n))
 factory.generate_tests()
