@@ -1,0 +1,60 @@
+CAPI=2:
+
+
+name : ::present_ctr_system_cocotb:0 
+description : Present ctr core, testing in cococtb and in a complete system for hardware
+
+filesets :
+  cocotb :
+    files :
+      - block_ciphers/present_cipher_ctr/cocotb_files/present_ctr_test_docker.py : {file_type : user, copyto : .}
+      - block_ciphers/present_cipher_ctr/python_code/present_ctr.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+  rtl_present :
+    depend :
+      - present_ctr_cipher
+      - register 
+      - counter
+
+  rtl_top :
+
+    depend :
+      - sdspi
+      - mux
+      - seven_segments
+
+    file_type : systemVerilogSource
+
+    files :
+      - block_ciphers/present_cipher_ctr/Hardware_verfication_files/fusesoc_files/rtl/top.sv
+
+
+  rtl_autotest :
+    file_type : systemVerilogSource
+    files : 
+      - block_ciphers/present_cipher_ctr/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/autotest_module.sv
+      - block_ciphers/present_cipher_ctr/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/control_unit_detailed.sv
+
+  constraints : 
+    file_type : xdc
+    files :
+      - block_ciphers/present_cipher_ctr/Hardware_verfication_files/fusesoc_files/data/Nexys4DDR_Master.xdc
+
+targets :
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : icarus
+      iverilog_options : [-g2012]
+      cocotb_module : present_ctr_test_docker
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl_present,cocotb]  
+    toplevel : present_ctr
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master

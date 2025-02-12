@@ -1,21 +1,23 @@
-CAPI=1
-[main]
-description = "present ctr cipher"
+CAPI=2:
 
-depend = 
-  present_cipher
-  adder
+name : ::present_ctr_cipher:0
+description : present cipher ctr mode
 
-[verilog]
-src_files =
-  block_ciphers/present_cipher_ctr/hdl_code/present_ctr.sv
+filesets :
+  rtl :
+    depend :
+      - present_cipher
+      - adder
+    files :
+      - block_ciphers/present_cipher/hdl_code/present_ctr.sv
 
-[provider] 
-name = github
-user = germancq
-repo = IPCores
-version = master
+    file_type : systemVerilogSource
 
+targets :
+  default : {filesets : [rtl]}
 
-
- 
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master

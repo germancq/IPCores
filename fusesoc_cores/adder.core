@@ -1,14 +1,19 @@
-CAPI=1
-[main]
-description = "adder"
+CAPI=2:
 
-[verilog]
-src_files =
-  misc/adder/hdl_code/adder.sv
-  
+name : ::adder:0
+description : adder core
 
-[provider]
-name = github
-user = germancq
-repo = IPCores
-version = master    
+filesets :
+  rtl :
+    files :
+      - misc/adder/hdl_code/adder.sv
+    file_type : systemVerilogSource
+
+targets :
+  default : {filesets : [rtl]}
+
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master

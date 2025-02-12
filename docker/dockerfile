@@ -10,16 +10,6 @@ ARG BITSTRING_VERSION=4.3.0
 
 ARG FUSESOC_VERSION=2.4.2
 
-COPY python_code/ /core/python_code
-
-
-COPY hdl_code/ /core/hdl_code 
-
-
-COPY cocotb_files/ /core/cocotb_files
-
-COPY cocotb_files/ /core/cocotb_files_copy
-
 RUN apt-get update
 
 RUN apt-get install -y python${PYTHON_VERSION} python3 python3-venv python${PYTHON_VERSION}-venv build-essential python3-dev iverilog verilator git
