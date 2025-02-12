@@ -1,12 +1,12 @@
-import present_ctr
-import sys
 import importlib
 import os
 import random
+import sys
 import time
 
 import cocotb
 import numpy as np
+import present_ctr
 from cocotb.clock import Clock
 from cocotb.regression import TestFactory
 from cocotb.result import ReturnValue, TestFailure
@@ -129,22 +129,20 @@ async def run_test(dut, index=0):
 
     n_blocks = 5
 
-    while n_blocks != 0:
+    key = random.getrandbits(KEY_LEN)
+    IV = random.getrandbits(IV_LEN)
+    print(hex(key))
+    print(hex(IV))
 
-        key = random.getrandbits(KEY_LEN)
-        IV = random.getrandbits(IV_LEN)
-        print(hex(key))
-        print(hex(IV))
+    setup_function(dut, key, IV, 0, 0)
+    await rst_function_test(dut)
+    await generate_round_keys(dut)
 
-        setup_function(dut, key, IV, 0, 0)
-        await rst_function_test(dut)
-        await generate_round_keys(dut)
-
-        print(n_blocks)
-        for j in range(0, n_blocks):
-            print(j)
-            plaintext = random.getrandbits(BLOCK_LEN)
-            await enc_dec_test(dut, j, plaintext, IV, key)
+    print(n_blocks)
+    for j in range(0, n_blocks):
+        print(j)
+        plaintext = random.getrandbits(BLOCK_LEN)
+        await enc_dec_test(dut, j, plaintext, IV, key)
 
 
 n = 10
