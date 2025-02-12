@@ -9,7 +9,7 @@ filesets :
       - present_cipher
       - adder
     files :
-      - block_ciphers/present_cipher/hdl_code/present_ctr.sv
+      - block_ciphers/present_cipher_ctr/hdl_code/present_ctr.sv
 
     file_type : systemVerilogSource
 
