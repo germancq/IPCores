@@ -20,7 +20,7 @@ import present_ctr
 CLK_PERIOD = 20  # 50 MHz
 SIGNATURE = 0xAABBCCDD
 KEY_LEN = 80
-IV_LEN = 80
+IV_LEN = 64
 BLOCK_LEN = 64
 # the keyword await
 #   Testbenches built using Cocotb use coroutines.
