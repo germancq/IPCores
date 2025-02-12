@@ -10,9 +10,11 @@ ARG BITSTRING_VERSION=4.3.0
 
 ARG FUSESOC_VERSION=2.4.2
 
+ARG VERILATOR_VERSION=5.032
+
 RUN apt-get update
 
-RUN apt-get install -y python${PYTHON_VERSION} python3 python3-venv python${PYTHON_VERSION}-venv build-essential python3-dev iverilog verilator git
+RUN apt-get install -y python${PYTHON_VERSION} python3 python3-venv python${PYTHON_VERSION}-venv build-essential python3-dev iverilog git flex bison help2man perl make autoconf
 
 RUN python3.11 -m venv /core/venv
 
@@ -20,5 +22,20 @@ RUN . venv/bin/activate && pip install cocotb==${COCOTB_VERSION} bitstring==${BI
 
 RUN . venv/bin/activate && fusesoc library add fusesoc_cores https://github.com/germancq/IPCores
 
+RUN git clone https://github.com/germancq/IPCores.git
+
+RUN git clone https://github.com/verilator/verilator
+
+RUN cd verilator && git checkout v${VERILATOR_VERSION}
+
+RUN unset VERILATOR_ROOT
+
+RUN autoconf
+
+RUN ./configure
+
+RUN make && make install
+
+RUN echo 'export PATH="/usr/local:$PATH"' >> /root/.bashrc
 
 CMD [ "bash" ]
