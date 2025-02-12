@@ -1,3 +1,6 @@
+import present_ctr
+import sys
+import importlib
 import os
 import random
 import time
@@ -11,11 +14,6 @@ from cocotb.triggers import FallingEdge, RisingEdge, Timer
 
 home = os.getenv("HOME")
 
-
-import importlib
-import sys
-
-import present_ctr
 
 CLK_PERIOD = 20  # 50 MHz
 SIGNATURE = 0xAABBCCDD
@@ -36,7 +34,7 @@ BLOCK_LEN = 64
 
 
 def setup_function(dut, key, IV, block_i, num_block):
-    cocotb.fork(Clock(dut.clk.value, CLK_PERIOD).start())
+    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
     dut.key.value = key
     dut.IV.value = IV
@@ -152,5 +150,6 @@ async def run_test(dut, index=0):
 n = 10
 factory = TestFactory(run_test)
 
-factory.add_option("index", range(0, n))  # array de 10 int aleatorios entre 0 y 31
+# array de 10 int aleatorios entre 0 y 31
+factory.add_option("index", range(0, n))
 factory.generate_tests()
