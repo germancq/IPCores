@@ -123,8 +123,8 @@ async def enc_dec_test(dut, num_block, text, IV, key):
 
 async def n_cycles_clock(dut, n):
     for i in range(0, n):
-        await RisingEdge(dut.clk.value)
-        await FallingEdge(dut.clk.value)
+        await RisingEdge(dut.clk)
+        await FallingEdge(dut.clk)
 
 
 async def run_test(dut, index=0):
