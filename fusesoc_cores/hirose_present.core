@@ -14,8 +14,8 @@ filesets:
     rtl:
         file_type: systemVerilogSource
         files: 
-   	    - hash_functions/hirose_present/hdl_code/hirose_present_wrapper.sv
-  	    - hash_functions/hirose_present/hdl_code/hirose_present.sv
+            - hash_functions/hirose_present/hdl_code/hirose_present_wrapper.sv
+            - hash_functions/hirose_present/hdl_code/hirose_present.sv
             
         depend:
             - counter

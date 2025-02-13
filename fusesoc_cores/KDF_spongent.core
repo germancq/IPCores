@@ -14,7 +14,7 @@ filesets:
     rtl:
         file_type: systemVerilogSource
         files: 
-  	    - KDF/KDF_spongent/hdl_code/KDF_spongent.sv
+            - KDF/KDF_spongent/hdl_code/KDF_spongent.sv
             
         depend:
             - counter

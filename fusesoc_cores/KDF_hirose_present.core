@@ -14,7 +14,7 @@ filesets:
     rtl:
         file_type: systemVerilogSource
         files: 
-  	    - KDF/KDF_hirose_present/hdl_code/KDF_hirose_present.sv
+            - KDF/KDF_hirose_present/hdl_code/KDF_hirose_present.sv
             
         depend:
             - counter
