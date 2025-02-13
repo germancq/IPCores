@@ -5,6 +5,7 @@ import time
 
 import cocotb
 import numpy as np
+import twofish
 from cocotb.clock import Clock
 from cocotb.regression import TestFactory
 from cocotb.result import ReturnValue, TestFailure
