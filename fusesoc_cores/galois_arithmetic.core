@@ -17,5 +17,4 @@ provider :
   name : github
   user : germancq
   version : master
-  ersion : master
- repo : IPCores
+  repo : IPCores
