@@ -1,14 +1,20 @@
-CAPI=1
-[main]
-description = "galois_arithmetic"
+CAPI=2:
 
-[verilog]
-src_files =
-  misc/galois_arithmetic/hdl_code/galois_arithmetic.sv
-  
+name : ::galois_arithmetic:0
+description : galois arithmetic module
 
-[provider]
-name = github
-user = germancq
-repo = IPCores
-version = master    
+filesets :
+  rtl :
+    files :
+      - misc/counters/hdl_code/galois_arithmetic.sv
+
+    file_type : systemVerilogSource
+
+targets :
+  default : {filesets : [rtl]}
+
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
