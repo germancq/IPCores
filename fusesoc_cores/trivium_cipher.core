@@ -1,22 +1,28 @@
-CAPI=1
-[main]
-description = "trivium cipher"
+CAPI=2:
 
-depend = 
-  counter
-  register
+name : ::trivium_cipher:0
+description : trivium stream cipher
 
-[verilog]
-src_files =
-  stream_ciphers/trivium_cipher/hdl_code/trivium.sv
-  stream_ciphers/trivium_cipher/hdl_code/trivium_wrapper.sv
-
-[provider] 
-name = github
-user = germancq
-repo = IPCores
-version = master
+targets:
+    default:
+        filesets: 
+            - rtl
 
 
 
- 
+filesets:
+    rtl:
+        file_type: systemVerilogSource
+        files: 
+            - stream_ciphers/trivium_cipher/hdl_code/trivium.sv
+            - stream_ciphers/trivium_cipher/hdl_code/trivium_wrapper.sv
+            
+        depend:
+            - counter
+            - register
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master

@@ -1,14 +1,23 @@
-CAPI=1
-[main]
-description = "stack"
+CAPI=2:
 
-[verilog]
-src_files =
-  misc/stack/hdl_code/stack.sv
-  
+name : ::stack:0
+description : stack core
 
-[provider]
-name = github
-user = germancq
-repo = IPCores
-version = master    
+targets:
+    default:
+        filesets: 
+            - rtl
+
+
+
+filesets:
+    rtl:
+        file_type: systemVerilogSource
+        files: 
+            - misc/stack/hdl_code/stack.sv
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master

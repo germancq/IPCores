@@ -1,21 +1,29 @@
-CAPI=1
-[main]
-description = "twofish ctr cipher"
+CAPI=2:
 
-depend = 
-  counter
-  register
-  galois_arithmetic
-  adder
+name : ::twofish_ctr_cipher:0
+description : twofish block cipher in ctr mode
 
-[verilog]
-src_files =
-  block_ciphers/twofish_cipher_ctr/hdl_code/twofish_ctr.sv
-  
+targets:
+    default:
+        filesets: 
+            - rtl
 
 
-[provider] 
-name = github
-user = germancq
-repo = IPCores
-version = master
+
+filesets:
+    rtl:
+        file_type: systemVerilogSource
+        files: 
+            - block_ciphers/twofish_cipher_ctr/hdl_code/twofish_ctr.sv
+            
+        depend:
+            - counter
+            - adder
+            - galois_arithmetic
+            - register
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master

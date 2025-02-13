@@ -1,13 +1,24 @@
-CAPI=1
-[main]
-description = "pulse_button"
+CAPI=2:
 
-[verilog]
-src_files =
-  misc/pulse_button/hdl_code/pulse_button.v
+name : ::pulse_button:0
+description : pulse button 
 
-[provider] 
-name = github
-user = germancq
-repo = IPCores
-version = master
+targets:
+    default:
+        filesets: 
+            - rtl
+
+
+
+filesets:
+    rtl:
+        file_type: systemVerilogSource
+        files: 
+            - misc/pulse_button/hdl_code/pulse_button.v
+            
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master

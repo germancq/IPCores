@@ -1,20 +1,27 @@
-CAPI=1
-[main]
-description = "spongent hash"
+CAPI=2:
 
-depend =
- register
- counter
+name : ::spongent_hash:0
+description : spongent hash
 
-
-[verilog]
-src_files =
-  hash_functions/spongent/hdl_code/spongent.sv
-  
+targets:
+    default:
+        filesets: 
+            - rtl
 
 
-[provider] 
-name = github
-user = germancq
-repo = IPCores
-version = master
+
+filesets:
+    rtl:
+        file_type: systemVerilogSource
+        files: 
+            - hash_functions/spongent/hdl_code/spongent.sv
+            
+        depend:
+            - counter
+            - register
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
