@@ -1,21 +1,26 @@
-CAPI=1
-[main]
-description = "twofish cipher"
+CAPI=2:
 
-depend = 
-  counter
-  register
-  galois_arithmetic
-  adder
+name : ::twofish_cipher:0
+description : twofish cipher ecb mode
 
-[verilog]
-src_files =
-  block_ciphers/twofish_cipher/hdl_code/twofish.sv
-  
+filesets :
+  rtl :
+    depend :
+      - counter
+      - register
+      - memory_module
+      - adder
+      - galois_arithmetic
+    files :
+      - block_ciphers/twofish_cipher/hdl_code/twofish.sv
 
+    file_type : systemVerilogSource
 
-[provider] 
-name = github
-user = germancq
-repo = IPCores
-version = master
+targets :
+  default : {filesets : [rtl]}
+
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
