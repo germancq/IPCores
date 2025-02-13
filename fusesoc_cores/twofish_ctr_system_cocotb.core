@@ -1,0 +1,63 @@
+CAPI=2:
+
+
+name : ::twofish_ctr_system_cocotb:0 
+description : twofish_ctr core, testing in cococtb and in a complete system for hardware
+
+filesets :
+  cocotb :
+    files :
+      - block_ciphers/twofish_ctr_cipher/cocotb_files/twofish_ctr_test_docker.py : {file_type : user, copyto : .}
+      - block_ciphers/twofish_ctr_cipher/python_code/twofish_ctr.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+  rtl_twofish_ctr :
+    depend :
+      - twofish_ctr_cipher
+      - register 
+      - counter
+      - memory_module
+      - galois_arithmetic
+
+  rtl_top :
+
+    depend :
+      - sdspi
+      - mux
+      - seven_segments
+
+    file_type : systemVerilogSource
+
+    files :
+      - block_ciphers/twofish_ctr_cipher/Hardware_verfication_files/fusesoc_files/rtl/top.sv
+
+
+  rtl_autotest :
+    file_type : systemVerilogSource
+    files : 
+      - block_ciphers/twofish_ctr_cipher/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/autotest_module.sv
+      - block_ciphers/twofish_ctr_cipher/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/control_unit_detailed.sv
+
+  constraints : 
+    file_type : xdc
+    files :
+      - block_ciphers/twofish_ctr_cipher/Hardware_verfication_files/fusesoc_files/data/Nexys4DDR_Master.xdc
+
+targets :
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : icarus
+      iverilog_options : [-g2012]
+      cocotb_module : twofish_ctr_test_docker
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl_twofish_ctr ,cocotb]  
+    toplevel : twofish_ctr
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
+
