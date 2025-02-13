@@ -6,7 +6,7 @@ description : galois arithmetic module
 filesets :
   rtl :
     files :
-      - misc/counters/hdl_code/galois_arithmetic.sv
+      - misc/galois_arithmetic/hdl_code/galois_arithmetic.sv
 
     file_type : systemVerilogSource
 
@@ -16,5 +16,6 @@ targets :
 provider :
   name : github
   user : germancq
-  repo : IPCores
   version : master
+  ersion : master
+ repo : IPCores
