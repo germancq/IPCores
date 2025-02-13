@@ -1,20 +1,29 @@
-CAPI=1
-[main]
-description = "KDF spongent"
+CAPI=2:
 
-depend =
-  counter
-  register
-  memory_module
-  spongent_hash
+name : ::KDF_spongent:0
+description : key derivation function based on spongent
 
-[verilog]
-src_files =
-  KDF/KDF_spongent/hdl_code/KDF_spongent.sv
+targets:
+    default:
+        filesets: 
+            - rtl
 
 
-[provider] 
-name = github
-user = germancq
-repo = IPCores
-version = master
+
+filesets:
+    rtl:
+        file_type: systemVerilogSource
+        files: 
+  	    - KDF/KDF_spongent/hdl_code/KDF_spongent.sv
+            
+        depend:
+            - counter
+            - spongent_hash
+            - memory_module
+            - register
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master

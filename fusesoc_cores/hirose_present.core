@@ -1,21 +1,30 @@
-CAPI=1
-[main]
-description = "hirose present"
+CAPI=2:
 
-depend =
-  counter
-  register
-  memory_module
-  present_cipher
+name : ::hirose_present:0
+description : hirose hash with present block cipher
 
-[verilog]
-src_files =
-  hash_functions/hirose_present/hdl_code/hirose_present_wrapper.sv
-  hash_functions/hirose_present/hdl_code/hirose_present.sv
+targets:
+    default:
+        filesets: 
+            - rtl
 
 
-[provider] 
-name = github
-user = germancq
-repo = IPCores
-version = master
+
+filesets:
+    rtl:
+        file_type: systemVerilogSource
+        files: 
+   	    - hash_functions/hirose_present/hdl_code/hirose_present_wrapper.sv
+  	    - hash_functions/hirose_present/hdl_code/hirose_present.sv
+            
+        depend:
+            - counter
+            - present_cipher
+            - memory_module
+            - register
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master

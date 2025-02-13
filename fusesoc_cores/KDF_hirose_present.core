@@ -1,20 +1,29 @@
-CAPI=1
-[main]
-description = "KDF hirose present"
+CAPI=2:
 
-depend =
-  counter
-  register
-  memory_module
-  hirose_present
+name : ::KDF_hirose_present:0
+description : key derivation function based on hirose
 
-[verilog]
-src_files =
-  KDF/KDF_hirose_present/hdl_code/KDF_hirose_present.sv
+targets:
+    default:
+        filesets: 
+            - rtl
 
 
-[provider] 
-name = github
-user = germancq
-repo = IPCores
-version = master
+
+filesets:
+    rtl:
+        file_type: systemVerilogSource
+        files: 
+  	    - KDF/KDF_hirose_present/hdl_code/KDF_hirose_present.sv
+            
+        depend:
+            - counter
+            - hirose_present
+            - memory_module
+            - register
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
