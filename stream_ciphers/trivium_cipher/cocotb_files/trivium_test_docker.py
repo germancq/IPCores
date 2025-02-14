@@ -174,7 +174,7 @@ async def n_cycles_clock(dut, n):
         await FallingEdge(dut.clk)
 
 
-async def run_test(dut, key=0, iv=0):
+async def run_test(dut, index=0):
     key = random.getrandbits(KEY_LEN)
     iv = random.getrandbits(IV_LEN)
     trivium_SW = trivium.Trivium()
@@ -189,8 +189,5 @@ async def run_test(dut, key=0, iv=0):
 
 n = 10
 factory = TestFactory(run_test)
-factory.add_option(
-    "key", np.random.randint(low=0, high=(2**8) - 1, size=n)
-)  # array de 10 int aleatorios entre 0 y 31
-factory.add_option("iv", np.random.randint(low=0, high=(2**8) - 1, size=n))
+factory.add_option("index", range(0, n))
 factory.generate_tests()
