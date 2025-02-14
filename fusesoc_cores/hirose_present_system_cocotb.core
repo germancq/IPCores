@@ -9,6 +9,7 @@ filesets :
     files :
       - hash_functions/hirose_present/cocotb_files/hirose_present_wrapper_test_docker.py : {file_type : user, copyto : .}
       - hash_functions/hirose_present/python_code/hirose_present.py : {file_type : user, copyto : .}
+      - block_ciphers/present_cipher/python_code/present.py : {file_type : user, copyto : .}
     depend :
       - vlog_tb_utils
   rtl_hirose :
