@@ -175,8 +175,8 @@ async def n_cycles_clock(dut, n):
 
 
 async def run_test(dut, key=0, iv=0):
-    key = random.randbytes(KEY_LEN)
-    iv = random.randbytes(IV_LEN)
+    key = random.getrandbits(KEY_LEN)
+    iv = random.getrandbits(IV_LEN)
     trivium_SW = trivium.Trivium()
 
     setup_function(dut, key, iv)
