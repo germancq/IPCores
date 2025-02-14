@@ -1,0 +1,70 @@
+CAPI=2:
+
+
+name : ::hirose_present_system_cocotb:0 
+description : hirose hash core, testing in cococtb and in a complete system for hardware
+
+filesets :
+  cocotb :
+    files :
+      - hash_functions/hirose_present/cocotb_files/hirose_present_wrapper_test_docker.py : {file_type : user, copyto : .}
+      - hash_functions/hirose_present/python_code/hirose_present.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+  rtl_hirose :
+    depend :
+      - hirose_present
+      - register 
+      - counter
+      - mux
+      - memory_module
+
+  rtl_top :
+
+    depend :
+      - sdspi
+      - seven_segments
+
+    file_type : systemVerilogSource
+
+    files :
+      - hash_functions/hirose_present/Hardware_verfication_files/fusesoc_files/rtl/top.sv
+
+
+  rtl_autotest :
+    file_type : systemVerilogSource
+    files : 
+      - hash_functions/hirose_present/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/autotest_module.sv
+      - hash_functions/hirose_present/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/control_unit_detailed.sv
+
+  constraints : 
+    file_type : xdc
+    files :
+      - hash_functions/hirose_present/Hardware_verfication_files/fusesoc_files/data/Nexys4DDR_Master.xdc
+
+targets :
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : verilator
+      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC]
+      cocotb_module : hirose_present_wrapper_test
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl_hirose ,cocotb]  
+    toplevel : hirose_present_wrapper 
+    parameters :
+      - DATA_WIDTH = 64
+
+parameters :
+  DATA_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
+
