@@ -7,8 +7,8 @@ description : trivium core, testing in cococtb and in a complete system for hard
 filesets :
   cocotb :
     files :
-      - block_ciphers/trivium_cipher/cocotb_files/trivium_test_docker.py : {file_type : user, copyto : .}
-      - block_ciphers/trivium_cipher/python_code/trivium.py : {file_type : user, copyto : .}
+      - stream_ciphers/trivium_cipher/cocotb_files/trivium_test_docker.py : {file_type : user, copyto : .}
+      - stream_ciphers/trivium_cipher/python_code/trivium.py : {file_type : user, copyto : .}
     depend :
       - vlog_tb_utils
   rtl_trivium :
@@ -28,19 +28,19 @@ filesets :
     file_type : systemVerilogSource
 
     files :
-      - block_ciphers/trivium_cipher/Hardware_verfication_files/fusesoc_files/rtl/top.sv
+      - stream_ciphers/trivium_cipher/Hardware_verfication_files/fusesoc_files/rtl/top.sv
 
 
   rtl_autotest :
     file_type : systemVerilogSource
     files : 
-      - block_ciphers/trivium_cipher/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/autotest_module.sv
-      - block_ciphers/trivium_cipher/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/control_unit_detailed.sv
+      - stream_ciphers/trivium_cipher/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/autotest_module.sv
+      - stream_ciphers/trivium_cipher/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/control_unit_detailed.sv
 
   constraints : 
     file_type : xdc
     files :
-      - block_ciphers/trivium_cipher/Hardware_verfication_files/fusesoc_files/data/Nexys4DDR_Master.xdc
+      - stream_ciphers/trivium_cipher/Hardware_verfication_files/fusesoc_files/data/Nexys4DDR_Master.xdc
 
 targets :
 
