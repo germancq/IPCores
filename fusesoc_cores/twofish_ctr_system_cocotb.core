@@ -7,8 +7,8 @@ description : twofish_ctr core, testing in cococtb and in a complete system for 
 filesets :
   cocotb :
     files :
-      - block_ciphers/twofish_ctr_cipher/cocotb_files/twofish_ctr_test_docker.py : {file_type : user, copyto : .}
-      - block_ciphers/twofish_ctr_cipher/python_code/twofish_ctr.py : {file_type : user, copyto : .}
+      - block_ciphers/twofish_cipher_ctr/cocotb_files/twofish_ctr_test_docker.py : {file_type : user, copyto : .}
+      - block_ciphers/twofish_cipher_ctr/python_code/twofish_ctr.py : {file_type : user, copyto : .}
     depend :
       - vlog_tb_utils
   rtl_twofish_ctr :
@@ -29,19 +29,19 @@ filesets :
     file_type : systemVerilogSource
 
     files :
-      - block_ciphers/twofish_ctr_cipher/Hardware_verfication_files/fusesoc_files/rtl/top.sv
+      - block_ciphers/twofish_cipher_ctr/Hardware_verfication_files/fusesoc_files/rtl/top.sv
 
 
   rtl_autotest :
     file_type : systemVerilogSource
     files : 
-      - block_ciphers/twofish_ctr_cipher/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/autotest_module.sv
-      - block_ciphers/twofish_ctr_cipher/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/control_unit_detailed.sv
+      - block_ciphers/twofish_cipher_ctr/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/autotest_module.sv
+      - block_ciphers/twofish_cipher_ctr/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/control_unit_detailed.sv
 
   constraints : 
     file_type : xdc
     files :
-      - block_ciphers/twofish_ctr_cipher/Hardware_verfication_files/fusesoc_files/data/Nexys4DDR_Master.xdc
+      - block_ciphers/twofish_cipher_ctr/Hardware_verfication_files/fusesoc_files/data/Nexys4DDR_Master.xdc
 
 targets :
 
