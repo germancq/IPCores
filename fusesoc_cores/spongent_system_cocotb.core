@@ -1,0 +1,63 @@
+CAPI=2:
+
+
+name : ::spongent_system_cocotb:0 
+description : Spongent core, testing in cococtb and in a complete system for hardware
+
+filesets :
+  cocotb :
+    files :
+      - hash_functions/spongent/cocotb_files/spongent_test_docker.py : {file_type : user, copyto : .}
+      - hash_functions/spongent/python_code/spongent.py : {file_type : user, copyto : .}
+      - hash_functions/spongent/python_code/LFSR.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+  rtl_spongent :
+    depend :
+      - spongent_hash
+      - register 
+      - counter
+      - mux
+      - memory_module
+
+  rtl_top :
+
+    depend :
+      - sdspi
+      - seven_segments
+
+    file_type : systemVerilogSource
+
+    files :
+      - hash_functions/spongent/Hardware_verfication_files/fusesoc_files/rtl/top.sv
+
+
+  rtl_autotest :
+    file_type : systemVerilogSource
+    files : 
+      - hash_functions/spongent/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/autotest_module.sv
+      - hash_functions/spongent/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/control_unit_detailed.sv
+
+  constraints : 
+    file_type : xdc
+    files :
+      - hash_functions/spongent/Hardware_verfication_files/fusesoc_files/data/Nexys4DDR_Master.xdc
+
+targets :
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : icarus
+      iverilog_options : [-g2012]
+      cocotb_module : spongent_test_docker
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl_spongent ,cocotb]  
+    toplevel : spongent 
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
+
