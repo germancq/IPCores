@@ -1,0 +1,101 @@
+CAPI=2:
+
+
+name : ::hmac_spongent_system_cocotb:0 
+description : hmac_spongent core, testing in cococtb and in a complete system for hardware
+
+filesets :
+  cocotb :
+    files :
+      - HMAC/hash/cocotb_files/hmac_spongent_test_docker.py : {file_type : user, copyto : .}
+      - HMAC/hash/python_code/hmac_spongent.py : {file_type : user, copyto : .}
+      - hash_functions/spongent/python_code/LFSR.py : {file_type : user, copyto : .}
+      - hash_functions/spongent/python_code/spongent.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+  rtl_hmac_spongent :
+    depend :
+      - hmac_spongent
+      - register 
+      - counter
+      - mux
+      - memory_module
+
+  rtl_top :
+
+    depend :
+      - sdspi
+      - seven_segments
+
+    file_type : systemVerilogSource
+
+    files :
+      - HMAC/hash/Hardware_verfication_files/fusesoc_files/rtl/top.sv
+
+
+  rtl_autotest :
+    file_type : systemVerilogSource
+    files : 
+      - HMAC/hash/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/autotest_module.sv
+      - HMAC/hash/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/control_unit_detailed.sv
+
+  constraints : 
+    file_type : xdc
+    files :
+      - HMAC/hash/Hardware_verfication_files/fusesoc_files/data/Nexys4DDR_Master.xdc
+
+targets :
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : icarus
+      iverilog_options : [-g2012]
+      cocotb_module : hmac_spongent_test_docker
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl_hmac_spongent ,cocotb]  
+    toplevel : hmac_spongent 
+    parameters :
+      - N=256
+      - c=256
+      - r=16
+      - R=140
+      - lCounter_initial_state=0x9E
+      - lCounter_feedback_coeff=0x11D
+      - KEY_WIDTH=64
+      - INPUT_WIDTH=64
+
+parameters :
+  N :
+    datatype : int
+    paramtype : vlogparam
+  c :
+    datatype : int
+    paramtype : vlogparam
+  r :
+    datatype : int
+    paramtype : vlogparam
+  R :
+    datatype : int
+    paramtype : vlogparam
+  lCounter_initial_state :
+    datatype : int
+    paramtype : vlogparam
+  lCounter_feedback_coeff :
+    datatype : int
+    paramtype : vlogparam
+  KEY_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+  INPUT_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
+
+

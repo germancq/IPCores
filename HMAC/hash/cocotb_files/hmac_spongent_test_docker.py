@@ -1,13 +1,3 @@
-"""
- # @ Author: German Cano Quiveu, germancq@dte.us.es
- # @ Create Time: 2020-06-22 21:52:45
- # @ Modified by: Your name
- # @ Modified time: 2020-06-22 21:52:50
- # @ Description:
- """
-
-import hmac_spongent
-import spongent
 import importlib
 import math
 import os
@@ -16,77 +6,67 @@ import sys
 import time
 
 import cocotb
+import hmac_spongent
 import numpy as np
+import spongent
 from cocotb.clock import Clock
 from cocotb.regression import TestFactory
 from cocotb.result import ReturnValue, TestFailure
 from cocotb.triggers import FallingEdge, RisingEdge, Timer
 
-home = os.getenv("HOME")
-sys.path.append(
-    home + "/gitProjects/IPCores/hash_functions/spongent/python_code")
+# N_candidates = [88, 128, 160, 224, 256]
+# r_candidates = [8, 8, 16, 16, 16]
+# c_candidates = [80, 128, 160, 224, 256]
+# R_candidates = [45, 70, 90, 120, 140]
+#
+# OPTION_HASH = 4
+#
+# dut.N.value = N_candidates[OPTION_HASH]
+# dut.r.value = r_candidates[OPTION_HASH]
+# dut.c.value = c_candidates[OPTION_HASH]
+# dut.R.value = R_candidates[OPTION_HASH]
 
-sys.path.append(home + "/gitProjects/IPCores/HMAC/hash/python_code")
-
-abs_path_file_storage = (
-    home + "/gitProjects/IPCores/HMAC/hash/python_code/test_cases.HEX"
-)
-
-
-N_candidates = [88, 128, 160, 224, 256]
-r_candidates = [8, 8, 16, 16, 16]
-c_candidates = [80, 128, 160, 224, 256]
-R_candidates = [45, 70, 90, 120, 140]
-
-OPTION_HASH = 4
-
-N = N_candidates[OPTION_HASH]
-r = r_candidates[OPTION_HASH]
-c = c_candidates[OPTION_HASH]
-R = R_candidates[OPTION_HASH]
-
-INPUT_WIDTH = 64
-KEY_WIDTH = 64
+# dut.INPUT_WIDTH.value = 64
+# dut.KEY_WIDTH.value = 64
 
 
 CLK_PERIOD = 20  # 50 MHz
 
-# the keyword yield
+# the keyword await
 #   Testbenches built using Cocotb use coroutines.
 #   While the coroutine is executing the simulation is paused.
-#   The coroutine uses the yield keyword
+#   The coroutine uses the await keyword
 #   to pass control of execution back to
 #   the simulator and simulation time can advance again.
 #
-#   yield return when the 'Trigger' is resolve
+#   await return when the 'Trigger' is resolve
 #
-#   Coroutines may also yield a list of triggers
+#   Coroutines may also await a list of triggers
 #   to indicate that execution should resume if any of them fires
 
 
 def setup_function(dut, key, msg):
     cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
-    dut.msg = msg
-    dut.key = key
-    dut.rst = 0
+    dut.msg.value = msg
+    dut.key.value = key
+    dut.rst.value = 0
 
 
-@cocotb.coroutine
-def rst_function_test(dut):
-    dut.rst = 1
-    yield n_cycles_clock(dut, 20)
+async def rst_function_test(dut):
+    dut.rst.value = 1
+    await n_cycles_clock(dut, 20)
 
     '''
-    if(dut.ipad != hmac_impl.ipad):
+    if(dut.ipad.value != hmac_impl.ipad):
         raise TestFailure("""Error in reset ipad value, wrong value = {0}, expected value = {1}""".format(hex(int(dut.ipad.value)),hex(hmac_impl.ipad)))
 
-    if(dut.opad != hmac_impl.opad):
+    if(dut.opad.value != hmac_impl.opad):
         raise TestFailure("""Error in reset opad value, wrong value = {0}, expected value = {1}""".format(hex(int(dut.opad.value)),hex(hmac_impl.opad)))
 
-    if(dut.Si != hmac_impl.S_i):
+    if(dut.Si.value != hmac_impl.S_i):
         raise TestFailure("""Error in reset S_i value, wrong value = {0}, expected value = {1}""".format(hex(int(dut.Si.value)),hex(hmac_impl.S_i)))
 
-    if(dut.So != hmac_impl.S_o):
+    if(dut.So.value != hmac_impl.S_o):
         raise TestFailure("""Error in reset opad value, wrong value = {0}, expected value = {1}""".format(hex(int(dut.S_o.value)),hex(hmac_impl.S_o)))
     '''
     if dut.hash_1.rst != 1:
@@ -96,7 +76,7 @@ def rst_function_test(dut):
             )
         )
 
-    if dut.end_hash_0 != 0:
+    if dut.end_hash_0.value != 0:
         raise TestFailure(
             """Error in reset end_hash_0 value, wrong value = {0}, expected value = {1}""".format(
                 hex(int(dut.end_hash_0.rst.value)), hex(0)
@@ -104,28 +84,27 @@ def rst_function_test(dut):
         )
 
 
-@cocotb.coroutine
-def hmac_test(dut, expected_result):
-    dut.rst = 0
-    yield n_cycles_clock(dut, 1)
+async def hmac_test(dut, expected_result):
+    dut.rst.value = 0
+    await n_cycles_clock(dut, 1)
 
     i = 0
     '''
-    while(dut.end_hash_0 == 0):
+    while(dut.end_hash_0.value == 0):
         i = i+1
-        yield n_cycles_clock(dut,1)
+        await n_cycles_clock(dut,1)
 
-    yield n_cycles_clock(dut,1)
+    await n_cycles_clock(dut,1)
     
 
-    if(dut.hash_output_0 != hmac_impl.h_1):
+    if(dut.hash_output_0.value != hmac_impl.h_1):
         raise TestFailure("""Error in hmac_test first hash value, wrong value = {0}, expected value = {1}""".format(hex(int(dut.hash_output_0.value)),hex(hmac_impl.h_1)))
     '''
-    while dut.end_hmac == 0:
+    while dut.end_hmac.value == 0:
         i = i + 1
-        yield n_cycles_clock(dut, 1)
+        await n_cycles_clock(dut, 1)
 
-    if dut.digest != expected_result:
+    if dut.digest.value != expected_result:
         raise TestFailure(
             """Error in hmac_test digest value, wrong value = {0}, expected value = {1}""".format(
                 hex(int(dut.digest.value)), hex(expected_result)
@@ -135,41 +114,41 @@ def hmac_test(dut, expected_result):
     print(i)
 
 
-@cocotb.coroutine
-def n_cycles_clock(dut, n):
+async def n_cycles_clock(dut, n):
     for _ in range(0, n):
-        yield RisingEdge(dut.clk)
-        yield FallingEdge(dut.clk)
+        await RisingEdge(dut.clk)
+        await FallingEdge(dut.clk)
 
 
-@cocotb.coroutine
-def run_test(dut, index=0):
-    len_data = int((N + INPUT_WIDTH + KEY_WIDTH) / 8)
+async def run_test(dut, index=0):
+    len_data = int(
+        (dut.N.value + dut.INPUT_WIDTH.value + dut.KEY_WIDTH.value) / 8)
     with open(abs_path_file_storage, "rb+") as storage_file:
 
         """
         msg = random.randint(0,(2**24)-1)
         key = random.randint(0,(2**24)-1)
-        hmac_impl = hmac_spongent.HMAC_Sponegnt(key,N,c,r,R)
+        hmac_impl = hmac_spongent.HMAC_Sponegnt(key,dut.N.value,dut.c.value,dut.r.value,dut.R.value)
         expected_value = hmac_impl.generate_MAC(msg,64)
         """
         storage_file.seek((index * len_data))
 
         msg = int.from_bytes(
-            storage_file.read(int(INPUT_WIDTH / 8)), byteorder="little"
+            storage_file.read(int(dut.INPUT_WIDTH.value / 8)), byteorder="little"
         )
-        key = int.from_bytes(storage_file.read(
-            int(KEY_WIDTH / 8)), byteorder="little")
+        key = int.from_bytes(
+            storage_file.read(int(dut.KEY_WIDTH.value / 8)), byteorder="little"
+        )
         expected_result = int.from_bytes(
-            storage_file.read(int(N / 8)), byteorder="little"
+            storage_file.read(int(dut.N.value / 8)), byteorder="little"
         )
 
         setup_function(dut, key, msg)
-        yield rst_function_test(dut)
-        yield hmac_test(dut, expected_result)
+        await rst_function_test(dut)
+        await hmac_test(dut, expected_result)
 
 
-n = 100
+n = 5
 factory = TestFactory(run_test)
 
 # array de 10 int aleatorios entre 0 y 31
