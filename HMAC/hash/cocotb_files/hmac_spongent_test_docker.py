@@ -126,7 +126,7 @@ async def run_test(dut, index=0):
 
     msg = random.randint(0, (2**24) - 1)
     key = random.randint(0, (2**24) - 1)
-    hmac_impl = hmac_spongent.HMAC_Sponegnt(
+    hmac_impl = hmac_spongent.HMAC_Spongent(
         key, dut.N.value, dut.c.value, dut.r.value, dut.R.value
     )
     expected_value = hmac_impl.generate_MAC(msg, 64)
