@@ -55,6 +55,38 @@ targets :
       vcs_options : [-timescale=1ns/1ns]
     filesets : [rtl_spongent ,cocotb]  
     toplevel : spongent 
+    parameters :
+      - N=256
+      - c=256
+      - r=16
+      - R=140
+      - lCounter_initial_state=0x9E
+      - lCounter_feedback_coeff=0x11D
+      - DATA_WIDTH=64
+
+parameters :
+  N :
+    datatype : int
+    paramtype : vlogparam
+  c :
+    datatype : int
+    paramtype : vlogparam
+  r :
+    datatype : int
+    paramtype : vlogparam
+  R :
+    datatype : int
+    paramtype : vlogparam
+  lCounter_initial_state :
+    datatype : int
+    paramtype : vlogparam
+  lCounter_feedback_coeff :
+    datatype : int
+    paramtype : vlogparam
+  DATA_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+
 provider :
   name : github
   user : germancq
