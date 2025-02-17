@@ -14,17 +14,17 @@ from cocotb.regression import TestFactory
 from cocotb.result import ReturnValue, TestFailure
 from cocotb.triggers import FallingEdge, RisingEdge, Timer
 
-N_candidates = [88, 128, 160, 224, 256]
-r_candidates = [8, 8, 16, 16, 16]
-c_candidates = [80, 128, 160, 224, 256]
-R_candidates = [45, 70, 90, 120, 140]
+# N_candidates = [88, 128, 160, 224, 256]
+# r_candidates = [8, 8, 16, 16, 16]
+# c_candidates = [80, 128, 160, 224, 256]
+# R_candidates = [45, 70, 90, 120, 140]
 
-OPTION_HASH = 0
-
-N = N_candidates[OPTION_HASH]
-r = r_candidates[OPTION_HASH]
-c = c_candidates[OPTION_HASH]
-R = R_candidates[OPTION_HASH]
+# OPTION_HASH = 0
+#
+# dut.N = N_candidates[OPTION_HASH]
+# dut.r.value = r_candidates[OPTION_HASH]
+# dut.c.value = c_candidates[OPTION_HASH]
+# dut.R.value = R_candidates[OPTION_HASH]
 
 SIZE = 64 * 1024
 
@@ -69,16 +69,16 @@ async def execution_test(dut, msg, len_msg, spongent_impl):
     print(hex(dut.last_padded_data.value))
     mask = 0xFFFF
     padding = 0x8000
-    if r == 8:
+    if dut.r.value == 8:
         mask = 0xFF
         padding = 0x80
 
-    n = int(len_msg / r)
+    n = int(len_msg / dut.r.value)
     j = 0
     spongent_state = 0
     for i in range(0, n):
         j = j + 1
-        data_chunk = (msg >> (r * (j - i - 1))) & mask
+        data_chunk = (msg >> (dut.r.value * (j - i - 1))) & mask
         dut.data_input.value = data_chunk
         dut.data_ready.value = 1
         await n_cycles_clock(dut, 1)
@@ -126,7 +126,9 @@ async def n_cycles_clock(dut, n):
 async def run_test(dut, msg=0):
     msg = random.randint(0, (2**24) - 1)
     # print(hex(msg))
-    spongent_impl = spongent_iter.Spongent(N, c, r, R)
+    spongent_impl = spongent_iter.Spongent(
+        dut.N.value, dut.c.value, dut.r.value, dut.R.value
+    )
 
     setup_function(dut)
     await rst_function_test(dut)
