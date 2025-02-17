@@ -123,18 +123,17 @@ async def n_cycles_clock(dut, n):
 async def run_test(dut, index=0):
     len_data = int(
         (dut.N.value + dut.INPUT_WIDTH.value + dut.KEY_WIDTH.value) / 8)
-    with open(abs_path_file_storage, "rb+") as storage_file:
 
-        msg = random.randint(0, (2**24) - 1)
-        key = random.randint(0, (2**24) - 1)
-        hmac_impl = hmac_spongent.HMAC_Sponegnt(
-            key, dut.N.value, dut.c.value, dut.r.value, dut.R.value
-        )
-        expected_value = hmac_impl.generate_MAC(msg, 64)
+    msg = random.randint(0, (2**24) - 1)
+    key = random.randint(0, (2**24) - 1)
+    hmac_impl = hmac_spongent.HMAC_Sponegnt(
+        key, dut.N.value, dut.c.value, dut.r.value, dut.R.value
+    )
+    expected_value = hmac_impl.generate_MAC(msg, 64)
 
-        setup_function(dut, key, msg)
-        await rst_function_test(dut)
-        await hmac_test(dut, expected_result)
+    setup_function(dut, key, msg)
+    await rst_function_test(dut)
+    await hmac_test(dut, expected_result)
 
 
 n = 5
