@@ -129,7 +129,7 @@ async def run_test(dut, index=0):
     hmac_impl = hmac_spongent.HMAC_Spongent(
         key, dut.N.value, dut.c.value, dut.r.value, dut.R.value
     )
-    expected_value = hmac_impl.generate_MAC(msg, 64)
+    expected_result = hmac_impl.generate_MAC(msg, 64)
 
     setup_function(dut, key, msg)
     await rst_function_test(dut)
