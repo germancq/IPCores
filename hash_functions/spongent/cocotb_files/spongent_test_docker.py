@@ -153,8 +153,7 @@ async def squeezing_test(dut, spongent_impl, expected_result):
     if dut.squeezing_phase_impl.result.value != expected_result:
         raise TestFailure(
             """Error in Hash, wrong value = {0}, expected value = {1}""".format(
-                hex(int(dut.squeezing_phase_impl.result.value)), hex(
-                    expected_result)
+                hex(int(dut.squeezing_phase_impl.result.value)), hex(expected_result)
             )
         )
 
@@ -168,8 +167,10 @@ async def n_cycles_clock(dut, n):
 async def run_test(dut, msg=0):
     msg = random.randint(0, (2**24) - 1)
     print(hex(msg))
-    spongent_impl = spongent.Spongent(256, 256, 16, 140)
-    spongent_impl.initialization_phase(msg, 64)
+    spongent_impl = spongent.Spongent(
+        dut.N.value, dut.c.value, dut.r.value, dut.R.value
+    )
+    spongent_impl.initialization_phase(msg, dut.DATA_WIDTH.value)
     expected_padded_msg = spongent_impl.padded_msg
     expected_state = spongent_impl.absorbing_phase()
     expected_result = spongent_impl.squeezing_phase(expected_state)
