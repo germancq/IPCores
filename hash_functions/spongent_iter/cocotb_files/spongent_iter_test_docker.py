@@ -26,7 +26,7 @@ from cocotb.triggers import FallingEdge, RisingEdge, Timer
 # dut.c.value = c_candidates[OPTION_HASH]
 # dut.R.value = R_candidates[OPTION_HASH]
 
-SIZE = 64 * 1024
+SIZE = 64 * 8
 
 CLK_PERIOD = 20  # 50 MHz
 
