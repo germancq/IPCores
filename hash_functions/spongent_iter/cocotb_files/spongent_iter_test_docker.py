@@ -84,19 +84,19 @@ async def execution_test(dut, msg, len_msg, spongent_impl):
         await n_cycles_clock(dut, 1)
         dut.data_ready.value = 0
         await n_cycles_clock(dut, 1)
-        # print(i)
-        # print(hex(dut.state.value))
+        print(i)
+        print(hex(dut.state.value))
 
         while dut.busy.value == 1:
             await n_cycles_clock(dut, 1)
         spongent_state = spongent_impl.feed_data(data_chunk, spongent_state)
-        """  
-        print('-------------------------------------')
-        print(hex(dut.state.value))    
+
+        print("-------------------------------------")
+        print(hex(dut.state.value))
         print(hex(spongent_state))
-        print('-------------------------------------')
-        """
-    # print('msg send it')
+        print("-------------------------------------")
+
+    print("msg send it")
 
     dut.start_hash.value = 1
 
