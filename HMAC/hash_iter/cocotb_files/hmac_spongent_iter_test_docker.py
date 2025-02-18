@@ -41,7 +41,7 @@ CLK_PERIOD = 20  # 50 MHz
 
 
 def setup_function(dut, key):
-    cocotb.start_soon(Clock(dut.clk, CLK_PERIOD).start())
+    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
     dut.key.value = key
     dut.data_ready.value = 0
@@ -83,7 +83,6 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
         dut.data_ready.value = 0
         await n_cycles_clock(dut, 1)
         print(i)
-
         print(dut.current_state.value)
 
         while dut.busy.value == 1:
