@@ -118,7 +118,7 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
         dut.data_ready.value = 0
         await n_cycles_clock(dut, 1)
         print(i)
-        print(hex(dut.state.value))
+        # print(hex(dut.state.value))
 
         while dut.current_state.value != 0xF:
             await n_cycles_clock(dut, 1)
