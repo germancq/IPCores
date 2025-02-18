@@ -125,6 +125,7 @@ async def run_test(dut, index=0):
     salt = random.getrandbits(dut.SALT_WIDTH.value)
     user_password = random.getrandbits(dut.PSW_WIDTH.value)
     count = random.getrandbits(dut.COUNT_WIDTH.value)
+    print(dut.COUNT_WIDTH.value)
 
     kdf_impl = keyDerivationFunction.KDF(
         count,
