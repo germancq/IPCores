@@ -10,7 +10,7 @@ filesets :
       - HMAC/hash_iter/cocotb_files/hmac_spongent_iter_test_docker.py : {file_type : user, copyto : .}
       - HMAC/hash_iter/python_code/hmac_spongent_iter.py : {file_type : user, copyto : .}
       - hash_functions/spongent/python_code/LFSR.py : {file_type : user, copyto : .}
-      - hash_functions/spongent/python_code/spongent.py : {file_type : user, copyto : .}
+      - hash_functions/spongent/python_code/spongent_iter.py : {file_type : user, copyto : .}
     depend :
       - vlog_tb_utils
   rtl_hmac_spongent_iter :
