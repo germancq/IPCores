@@ -64,6 +64,7 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
     dut.rst.value = 0
 
     mask = 0xFFFF
+    print("execution_test begin")
     if dut.r.value == 8:
         mask = 0xFF
 
@@ -185,7 +186,7 @@ async def n_cycles_clock(dut, n):
 async def run_test(dut, msg=0):
     key = random.randint(0, (2**24) - 1)
     msg = random.randint(0, (2**24) - 1)
-    # print(hex(msg))
+    print(hex(msg))
     hmac_impl = hmac_spongent_iter.HMAC_Spongent_iter(
         key, dut.N.value, dut.c.value, dut.r.value, dut.R.value
     )
