@@ -120,6 +120,7 @@ async def run_test(dut, index=0):
         + (salt << dut.COUNT_WIDTH.value)
         + count
     )
+    print(hex(first_value))
 
     setup_function(dut, salt, count, user_password)
 

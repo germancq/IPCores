@@ -11,9 +11,10 @@
 # **************************************************************************** #
 
 
-import hirose_present
 import importlib
 import sys
+
+import hirose_present
 
 sys.path.append(
     "/home/germancq/gitProjects/IPCores/hash_functions/hirose_present/python_code"
@@ -45,7 +46,7 @@ class KDF:
         print(hex(x_i))
         for i in range(0, self.count):
             x_i = self.hash_function.generate_hash(x_i)
-            print(hex(i))
+            print(hex(x_i))
 
         return x_i
 
