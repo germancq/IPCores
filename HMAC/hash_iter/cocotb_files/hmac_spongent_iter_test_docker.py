@@ -70,7 +70,6 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
 
     n = int(len_msg / dut.r.value)
     j = 0
-    spongent_state = 0
 
     data_chunk = (msg >> (dut.r.value * (n - 1))) & mask
     dut.feed_data.value = data_chunk
@@ -85,15 +84,9 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
         print(i)
         print(dut.current_state.value)
 
-        while True:
-            await n_cycles_clock(dut, 1)
-            print("ciclo")
-            if dut.busy.value == 1:
-                break
         while dut.busy.value == 1:
-            await RisingEdge(dut.clk)
+            await n_cycles_clock(dut, 1)
             print("rising")
-            print(dut.current_state.value)
 
         print("busy end")
         hmac_impl.feed_data(data_chunk)
@@ -162,8 +155,8 @@ async def run_test(dut, msg=0):
     await execution_test(dut, msg, 64, hmac_impl)
 
 
-n = 10
+C = 10
 factory = TestFactory(run_test)
 
-factory.add_option("msg", np.random.randint(low=1, high=(2**8) - 1, size=n))
+factory.add_option("msg", np.random.randint(low=1, high=(2**8) - 1, size=C))
 factory.generate_tests()
