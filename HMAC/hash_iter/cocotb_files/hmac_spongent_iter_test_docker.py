@@ -84,6 +84,8 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
         await n_cycles_clock(dut, 1)
         print(i)
 
+        print(dut.current_state.value)
+
         while dut.busy.value == 1:
             await RisingEdge(dut.clk)
             print("rising")
