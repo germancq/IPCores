@@ -33,7 +33,7 @@ def setup_function(dut, salt, count, user_password):
     dut.user_password.value = user_password
 
 
-async def rst_function_test(dut):
+async def rst_function_test(dut, first_value):
     dut.rst.value = 1
 
     await n_cycles_clock(dut, 10)
@@ -56,6 +56,13 @@ async def rst_function_test(dut):
         raise TestFailure(
             """Error rst counter_output,wrong counter_output value = {0}, expected value is {1}""".format(
                 hex(int(dut.counter_output.value)), 0
+            )
+        )
+
+    if dut.hash_input.value != first_value:
+        raise TestFailure(
+            """Error rst hash_input,wrong hash_input value = {0}, expected value is {1}""".format(
+                hex(int(dut.hash_input.value)), hex(first_value)
             )
         )
 
@@ -100,15 +107,23 @@ async def n_cycles_clock(dut, n):
 
 async def run_test(dut, index=0):
 
-    salt = np.random.randint(0, 2**63 - 1, 1, dtype=np.int64)
-    count = random.randint(10, (2**5) - 1)
-    user_password = random.randint(0, (2**16) - 1)
-    kdf_impl = keyDerivationFunction.KDF(count, int(salt[0]), user_password)
+    salt = random.getrandbits(dut.SALT_WIDTH.value)
+    count = random.getrandbits(4)
+    user_password = random.getrandbits(dut.PSW_WIDTH.value)
+
+    kdf_impl = keyDerivationFunction.KDF(count, salt, user_password)
     expected_value = kdf_impl.generate_derivate_key()
+    print(count)
 
-    setup_function(dut, int(salt[0]), count, user_password)
+    first_value = (
+        (user_password << (dut.COUNT_WIDTH.value + dut.SALT_WIDTH.value))
+        + (salt << dut.COUNT_WIDTH.value)
+        + count
+    )
 
-    await rst_function_test(dut)
+    setup_function(dut, salt, count, user_password)
+
+    await rst_function_test(dut, first_value)
     await kdf_test(dut, expected_value)
 
 
