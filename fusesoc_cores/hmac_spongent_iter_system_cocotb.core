@@ -50,6 +50,7 @@ targets :
     flow : sim
     flow_options :
       tool : verilator
+      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC]
       cocotb_module : hmac_spongent_iter_test_docker
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
