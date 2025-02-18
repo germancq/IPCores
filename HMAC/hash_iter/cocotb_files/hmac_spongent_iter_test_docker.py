@@ -74,42 +74,41 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
 
     data_chunk = (msg >> (dut.r.value * (n - 1))) & mask
     dut.feed_data.value = data_chunk
-    """
-    print('-------------------------------------------------')
+    print("-------------------------------------------------")
     print(hex(dut.Si.value))
-    #Si phase
-    for k in range(0,int(dut.N.value/dut.r.value)):
-        dut.data_ready.value = 1    
-        await n_cycles_clock(dut,1)
+    # Si phase
+    for k in range(0, int(dut.N.value / dut.r.value)):
+        dut.data_ready.value = 1
+        await n_cycles_clock(dut, 1)
         dut.data_ready.value = 0
-        #await n_cycles_clock(dut,1)
+        # await n_cycles_clock(dut,1)
 
-        while(dut.current_state.value != 0x1):
-            await n_cycles_clock(dut,1)
+        while dut.current_state.value != 0x1:
+            await n_cycles_clock(dut, 1)
 
         print(int(dut.counter_n_o.value))
-        await n_cycles_clock(dut,1)
-       
-        print(hex(dut.feed_data_hash.value)) 
-        #await n_cycles_clock(dut,1)
+        await n_cycles_clock(dut, 1)
 
-        #while(dut.hash_impl.busy.value != 0):
-        #    await n_cycles_clock(dut,1)   
+        print(hex(dut.feed_data_hash.value))
+        # await n_cycles_clock(dut,1)
+
+        # while(dut.hash_impl.busy.value != 0):
+        #    await n_cycles_clock(dut,1)
 
         print(hex(dut.hash_impl.state.value))
 
-    while(dut.current_state.value != 4):
-        await n_cycles_clock(dut,1)
+    while dut.current_state.value != 4:
+        await n_cycles_clock(dut, 1)
 
-    print('-------------------------------------')
-    print(hex(dut.hash_impl.state.value))    
+    print("-------------------------------------")
+    print(hex(dut.hash_impl.state.value))
     print(hex(hmac_impl.spongent_state))
-    print('-------------------------------------')    
-    await n_cycles_clock(dut,2)
+    print("-------------------------------------")
+    await n_cycles_clock(dut, 2)
     hmac_impl.feed_data(data_chunk)
-    while(dut.current_state.value != 5):
-        await n_cycles_clock(dut,1)
-    """
+    while dut.current_state.value != 5:
+        await n_cycles_clock(dut, 1)
+
     for i in range(0, n):
         j = j + 1
         data_chunk = (msg >> (dut.r.value * (n - i - 1))) & mask
