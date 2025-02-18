@@ -128,7 +128,8 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
         # print(hex(dut.feed_data_hash.value))
 
         while dut.busy.value == 1:
-            await n_cycles_clock(dut, 1)
+            await RisingEdge(dut.clk)
+            print("rising")
 
         print("busy end")
         hmac_impl.feed_data(data_chunk)
@@ -181,9 +182,7 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
 async def n_cycles_clock(dut, n):
     for _ in range(0, n):
         await RisingEdge(dut.clk)
-        print("rising")
         await FallingEdge(dut.clk)
-        print("falling")
 
 
 async def run_test(dut, msg=0):
