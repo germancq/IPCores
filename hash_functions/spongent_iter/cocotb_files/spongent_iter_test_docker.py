@@ -89,6 +89,7 @@ async def execution_test(dut, msg, len_msg, spongent_impl):
 
         while dut.busy.value == 1:
             await n_cycles_clock(dut, 1)
+            print("ciclo")
         spongent_state = spongent_impl.feed_data(data_chunk, spongent_state)
 
         print("-------------------------------------")
