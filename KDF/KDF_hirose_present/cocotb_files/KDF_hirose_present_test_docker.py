@@ -113,7 +113,7 @@ async def run_test(dut, index=0):
 
     kdf_impl = keyDerivationFunction.KDF(count, salt, user_password)
     expected_value = kdf_impl.generate_derivate_key()
-    print(count)
+    print(dut.COUNT_WIDTH.value)
 
     first_value = (
         (user_password << (dut.COUNT_WIDTH.value + dut.SALT_WIDTH.value))
