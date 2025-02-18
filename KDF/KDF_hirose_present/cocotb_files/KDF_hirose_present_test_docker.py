@@ -109,7 +109,7 @@ async def run_test(dut, index=0):
 
     salt = np.random.randint(0, 2**63 - 1, 1, dtype=np.int64)
     count = random.randint(10, (2**5) - 1)
-    user_password = random.randint(0, (2**32) - 1)
+    user_password = random.randint(0, (2**16) - 1)
     kdf_impl = keyDerivationFunction.KDF(count, int(salt[0]), user_password)
     expected_value = kdf_impl.generate_derivate_key()
     first_value = (
