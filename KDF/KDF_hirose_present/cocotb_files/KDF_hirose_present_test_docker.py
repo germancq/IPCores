@@ -88,9 +88,7 @@ async def kdf_test(dut, expected_value):
 
         # i = i+1
 
-        print("hir")
         await n_cycles_clock(dut, 1)
-        print("kdf")
 
     print(hex(expected_value))
     if dut.key_derivated.value != expected_value:
