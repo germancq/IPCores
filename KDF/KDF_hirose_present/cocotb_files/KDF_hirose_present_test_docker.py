@@ -107,14 +107,11 @@ async def n_cycles_clock(dut, n):
 
 async def run_test(dut, index=0):
 
-    salt = random.getrandbits(dut.SALT_WIDTH.value)
-    count = random.getrandbits(4)
-    user_password = random.getrandbits(dut.PSW_WIDTH.value)
-
-    kdf_impl = keyDerivationFunction.KDF(count, salt, user_password)
+    salt = np.random.randint(0, 2**63 - 1, 1, dtype=np.int64)
+    count = random.randint(10, (2**5) - 1)
+    user_password = random.randint(0, (2**32) - 1)
+    kdf_impl = keyDerivationFunction.KDF(count, int(salt[0]), user_password)
     expected_value = kdf_impl.generate_derivate_key()
-    print(count)
-
     first_value = (
         (user_password << (dut.COUNT_WIDTH.value + dut.SALT_WIDTH.value))
         + (salt << dut.COUNT_WIDTH.value)
