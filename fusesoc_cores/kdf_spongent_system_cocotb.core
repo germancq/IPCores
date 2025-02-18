@@ -64,7 +64,7 @@ targets :
       - lCounter_initial_state=0x05
       - lCounter_feedback_coeff=0x61
       - SALT_WIDTH=64
-      - COUNT_WIDTH=32
+      - COUNT_WIDTH=4
       - PSW_WIDTH=80
 
 parameters :
