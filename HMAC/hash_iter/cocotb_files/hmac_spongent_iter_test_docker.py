@@ -121,14 +121,15 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
         print(i)
         # print(hex(dut.state.value))
 
-        while dut.current_state.value != 0xF:
-            await n_cycles_clock(dut, 1)
-            print(hex(dut.current_state.value))
-        print(hex(data_chunk))
-        print(hex(dut.feed_data_hash.value))
+        # while dut.current_state.value != 0xF:
+        #    await n_cycles_clock(dut, 1)
+        #    print(hex(dut.current_state.value))
+        # print(hex(data_chunk))
+        # print(hex(dut.feed_data_hash.value))
 
         while dut.busy.value == 1:
             await n_cycles_clock(dut, 1)
+            print(hex(dut.current_state.value))
 
         hmac_impl.feed_data(data_chunk)
         print("-------------------------------------")
