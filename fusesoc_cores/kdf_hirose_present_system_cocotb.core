@@ -1,0 +1,82 @@
+CAPI=2:
+
+
+name : ::KDF_hirose_present_system_cocotb:0 
+description : KDF_hirose_present core, testing in cococtb and in a complete system for hardware
+
+filesets :
+  cocotb :
+    files :
+      - KDF/KDF_hirose_present/cocotb_files/KDF_hirose_present_test_docker.py : {file_type : user, copyto : .}
+      - KDF/KDF_hirose_present/python_code/keyDerivationFunction.py : {file_type : user, copyto : .}
+      - block_ciphers/present_cipher/python_code/present.py : {file_type : user, copyto : .}
+      - hash_functions/hirose_present/python_code/hirose_present.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+  rtl_KDF_hirose_present :
+    depend :
+      - KDF_hirose_present
+      - register 
+      - counter
+      - mux
+      - memory_module
+
+  rtl_top :
+
+    depend :
+      - sdspi
+      - seven_segments
+
+    file_type : systemVerilogSource
+
+    files :
+      - KDF/KDF_hirose_present/Hardware_verfication_files/fusesoc_files/rtl/top.sv
+
+
+  rtl_autotest :
+    file_type : systemVerilogSource
+    files : 
+      - KDF/KDF_hirose_present/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/autotest_module.sv
+      - KDF/KDF_hirose_present/Hardware_verfication_files/fusesoc_files/rtl/autotest_module/control_unit_detailed.sv
+
+  constraints : 
+    file_type : xdc
+    files :
+      - KDF/KDF_hirose_present/Hardware_verfication_files/fusesoc_files/data/Nexys4DDR_Master.xdc
+
+targets :
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : icarus
+      iverilog_options : [-g2012]
+      cocotb_module : KDF_hirose_present_test_docker
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl_KDF_hirose_present ,cocotb]  
+    toplevel : KDF_hirose_present 
+    parameters :
+      - SALT_WIDTH=64
+      - COUNT_WIDTH=32
+      - PSW_WIDTH=32
+
+parameters :
+  SALT_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+  COUNT_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+  PSW_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
+
+
+
