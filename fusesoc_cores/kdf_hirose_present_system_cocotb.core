@@ -49,7 +49,8 @@ targets :
   sim : 
     flow : sim
     flow_options :
-      tool : verilator
+      tool : icarus
+      iverilog_options : [-g2012]
       cocotb_module : KDF_hirose_present_test_docker
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
