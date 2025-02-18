@@ -57,8 +57,8 @@ targets :
     filesets : [rtl_KDF_hirose_present ,cocotb]  
     toplevel : KDF_hirose_present 
     parameters :
-      - SALT_WIDTH=96
-      - COUNT_WIDTH=4
+      - SALT_WIDTH=64
+      - COUNT_WIDTH=32
       - PSW_WIDTH=32
 
 parameters :
