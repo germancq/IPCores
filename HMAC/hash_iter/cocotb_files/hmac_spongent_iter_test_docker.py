@@ -129,7 +129,9 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
 
         while dut.busy.value == 1:
             print(hex(dut.current_state.value))
+            print(dut.busy.value)
             await n_cycles_clock(dut, 1)
+            print("ciclo")
 
         print("busy end")
         hmac_impl.feed_data(data_chunk)
