@@ -118,21 +118,21 @@ async def execution_test(dut, msg, len_msg, hmac_impl):
         dut.data_ready.value = 0
         await n_cycles_clock(dut, 1)
         print(i)
-        # print(hex(dut.state.value))
+        print(hex(dut.state.value))
 
-        # while(dut.current_state.value != 0xf):
-        #    await n_cycles_clock(dut,1)
-        # print(hex(data_chunk))
-        # print(hex(dut.feed_data_hash.value))
+        while dut.current_state.value != 0xF:
+            await n_cycles_clock(dut, 1)
+        print(hex(data_chunk))
+        print(hex(dut.feed_data_hash.value))
 
         while dut.busy.value == 1:
             await n_cycles_clock(dut, 1)
 
         hmac_impl.feed_data(data_chunk)
-        # print('-------------------------------------')
-        # print(hex(dut.hash_impl.state.value))
-        # print(hex(hmac_impl.spongent_state))
-        # print('-------------------------------------')
+        print("-------------------------------------")
+        print(hex(dut.hash_impl.state.value))
+        print(hex(hmac_impl.spongent_state))
+        print("-------------------------------------")
 
     print("msg send it")
     expected_result = hmac_impl.stop_feed()
