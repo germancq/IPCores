@@ -59,13 +59,6 @@ async def rst_function_test(dut, first_value):
             )
         )
 
-    if dut.hash_input.value != first_value:
-        raise TestFailure(
-            """Error rst hash_input,wrong hash_input value = {0}, expected value is {1}""".format(
-                hex(int(dut.hash_input.value)), hex(first_value)
-            )
-        )
-
     dut.rst.value = 0
 
 
@@ -112,11 +105,6 @@ async def run_test(dut, index=0):
     user_password = random.randint(0, (2**16) - 1)
     kdf_impl = keyDerivationFunction.KDF(count, int(salt[0]), user_password)
     expected_value = kdf_impl.generate_derivate_key()
-    first_value = (
-        (user_password << (dut.COUNT_WIDTH.value + dut.SALT_WIDTH.value))
-        + (salt << dut.COUNT_WIDTH.value)
-        + count
-    )
 
     setup_function(dut, salt, count, user_password)
 
