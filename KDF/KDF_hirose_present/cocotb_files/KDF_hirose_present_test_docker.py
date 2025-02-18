@@ -33,7 +33,7 @@ def setup_function(dut, salt, count, user_password):
     dut.user_password.value = user_password
 
 
-async def rst_function_test(dut, first_value):
+async def rst_function_test(dut):
     dut.rst.value = 1
 
     await n_cycles_clock(dut, 10)
@@ -106,9 +106,9 @@ async def run_test(dut, index=0):
     kdf_impl = keyDerivationFunction.KDF(count, int(salt[0]), user_password)
     expected_value = kdf_impl.generate_derivate_key()
 
-    setup_function(dut, salt, count, user_password)
+    setup_function(dut, int(salt[0]), count, user_password)
 
-    await rst_function_test(dut, first_value)
+    await rst_function_test(dut)
     await kdf_test(dut, expected_value)
 
 
