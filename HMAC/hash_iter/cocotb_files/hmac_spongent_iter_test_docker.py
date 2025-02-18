@@ -41,7 +41,7 @@ CLK_PERIOD = 20  # 50 MHz
 
 
 def setup_function(dut, key):
-    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
+    cocotb.start_soon(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
     dut.key.value = key
     dut.data_ready.value = 0
