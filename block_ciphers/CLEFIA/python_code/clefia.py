@@ -304,9 +304,11 @@ class CLEFIA:
         return T, CON
 
     def doubleSwap(self, x_a):
-        x_h = (x_a[0] << 32) + (x_a[1])
-        x_l = (x_a[2] << 32) + x_a[3]
+        x_copy = x_a.astype(np.uint64)
+        x_h = (x_copy[0] << 32) + (x_copy[1])
+        x_l = (x_copy[2] << 32) + x_copy[3]
         print("-------------------------------------")
+        print(type(x_h))
         # print(x_a)
         # print(hex(x_h))
         # print(hex(x_l))
