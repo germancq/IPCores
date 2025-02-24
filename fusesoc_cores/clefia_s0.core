@@ -4,9 +4,9 @@ name : ::clefia_s0:0
 description : clefia S0 function
 
 targets:
-    default:
-        filesets: 
-            - rtl
+  default:
+    filesets: 
+      - rtl
 
   sim : 
     flow : sim
