@@ -25,9 +25,9 @@ async def test(dut, index=0):
 
     print(hex(x))
     print(hex(dut.y.value))
-    print(expected_result)
-    assert (
-        dut.y.value == expected_result
+    print(hex(expected_result))
+    assert hex(dut.y.value) == hex(
+        expected_result
     ), f"ERROR, EXPECTED value should be {hex(expected_result)}, however hdl value is {hex(dut.y.value)}"
 
 
