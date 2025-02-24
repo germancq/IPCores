@@ -4,12 +4,11 @@ import sys
 
 import clefia
 import cocotb
+import galois_arithmetic
 import numpy as np
 from cocotb.clock import Clock
 from cocotb.regression import TestFactory
 from cocotb.triggers import FallingEdge, RisingEdge, Timer
-
-from block_ciphers.CLEFIA.python_code import galois_arithmetic
 
 SS = np.array(
     [
