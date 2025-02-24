@@ -13,7 +13,7 @@ module F0 (
 );
 
   logic [7:0] T [ 3:0];
-  logic [7:0] s [ 3:0];
+  wire  [7:0] s [ 3:0];
 
   logic [7:0] M0[15:0];
   assign M0[0]  = 8'h01;
@@ -65,6 +65,7 @@ module F0 (
 
   assign y = {s[3], s[2], s[1], s[0]};
 endmodule
+
 
 
 
