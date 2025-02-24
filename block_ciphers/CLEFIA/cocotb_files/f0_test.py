@@ -56,8 +56,8 @@ async def test(dut, index=0):
             T_n[i]
         ), f"ERROR, EXPECTED value should be {hex(T[i])}, however hdl value is {hex(dut.T[i].value)}"
 
-    assert hex(dut.y.value) == hex(
-        expected_result
+    assert (
+        hex(dut.y.value) == expected_result[0]
     ), f"ERROR, EXPECTED value should be {hex(expected_result)}, however hdl value is {hex(dut.y.value)}"
 
 
