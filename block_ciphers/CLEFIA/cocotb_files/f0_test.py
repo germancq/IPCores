@@ -34,7 +34,7 @@ async def test(dut, index=0):
     clefia_sw = clefia.CLEFIA()
     expected_result = clefia_sw.F0(rk, x)
     setup_block_cipher(dut, x, rk)
-    await Timer(10, units="ns")
+    await Timer(20, units="ns")
 
     T_a = np.zeros((4, 1), dtype=np.uint32)
     T = clefia_sw.galois8.add(rk, x)
@@ -50,6 +50,7 @@ async def test(dut, index=0):
     y = clefia_sw.galois8.matrix_multiplication(M0, T_a, p)
 
     for i in range(0, 4):
+        print(dut.s[i].value)
         print(hex(dut.s[i].value))
         assert hex(dut.T[i].value) == hex(
             T_n[i]
