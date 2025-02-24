@@ -17,7 +17,7 @@ targets:
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
     filesets : [rtl ,cocotb]  
-    toplevel : s1
+    toplevel : S1
 
 filesets:
   cocotb :
