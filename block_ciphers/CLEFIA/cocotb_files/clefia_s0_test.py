@@ -23,7 +23,9 @@ async def test(dut, index=0):
     setup_block_cipher(dut, x)
     await Timer(10, units="ns")
 
+    print(hex(x))
     print(hex(dut.y.value))
+    print(expected_result)
     assert (
         dut.y.value == expected_result
     ), f"ERROR, EXPECTED value should be {hex(expected_result)}, however hdl value is {hex(dut.y.value)}"
