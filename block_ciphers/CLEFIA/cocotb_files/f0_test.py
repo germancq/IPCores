@@ -32,7 +32,7 @@ async def test(dut, index=0):
     rk = random.getrandbits(32)
 
     clefia_sw = clefia.CLEFIA()
-    expected_result = clefia_sw.F0(x)
+    expected_result = clefia_sw.F0(rk, x)
     setup_block_cipher(dut, x, rk)
     await Timer(10, units="ns")
 
