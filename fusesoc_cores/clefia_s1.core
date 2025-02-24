@@ -1,0 +1,43 @@
+CAPI=2:
+
+name : ::clefia_s1:0
+description : clefia s1 function
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : icarus
+      iverilog_options : [-g2012]
+      cocotb_module : s1_test
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl ,cocotb]  
+    toplevel : s1
+
+filesets:
+  cocotb :
+    files :
+      - block_ciphers/CLEFIA/cocotb_files/s1_test.py : {file_type : user, copyto : .}
+      - block_ciphers/CLEFIA/python_code/clefia.py : {file_type : user, copyto : .}
+      - block_ciphers/CLEFIA/python_code/galois_arithmetic.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+
+
+  rtl:
+    file_type: systemVerilogSource
+    files: 
+      - block_ciphers/CLEFIA/hdl_code/s1.sv      
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+

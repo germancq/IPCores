@@ -8,8 +8,9 @@
 
 import math
 
-import galois_arithmetic
 import numpy as np
+
+import galois_arithmetic
 
 np.set_printoptions(formatter={"int": hex})
 
@@ -475,6 +476,12 @@ class CLEFIA:
 
         return S1
 
+    def gen_S1_values_for_sv(self):
+
+        for i in range(0, 256):
+            value = self.S1(i)
+            print(f"assign s1[{i}] = 8'h{hex(value)}")
+
     def f_S1(self, x, p):
         k = np.array([0, 0, 0, 1, 1, 1, 1, 0])  # 0x1e
 
@@ -535,5 +542,6 @@ if __name__ == "__main__":
     print("/////////////////******************///////////////")
     c = cipher.encrypt(plaintext, WK, RK)
 
+    cipher.gen_S1_values_for_sv()
     # print(hex(cipher.S0(0x10)))
     # print(hex(cipher.S1(0x10)))
