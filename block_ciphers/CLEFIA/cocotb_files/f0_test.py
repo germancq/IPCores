@@ -58,7 +58,7 @@ async def test(dut, index=0):
 
     assert (
         hex(dut.y.value) == expected_result[0]
-    ), f"ERROR, EXPECTED value should be {hex(expected_result)}, however hdl value is {hex(dut.y.value)}"
+    ), f"ERROR, EXPECTED value should be {expected_result}, however hdl value is {hex(dut.y.value)}"
 
 
 n = 0x10
