@@ -49,7 +49,9 @@ async def test(dut, index=0):
     p = (1 << 8) + (1 << 4) + (1 << 3) + (1 << 2) + 1
     y = clefia_sw.galois8.matrix_multiplication(M0, T_a, p)
 
+    print(hex(y))
     for i in range(0, 4):
+        print(hex(dut.s[i].value))
         assert hex(dut.T[i].value) == hex(
             T_n[i]
         ), f"ERROR, EXPECTED value should be {hex(T[i])}, however hdl value is {hex(dut.T[i].value)}"
