@@ -33,6 +33,10 @@ filesets:
     file_type: systemVerilogSource
     files: 
       - block_ciphers/CLEFIA/hdl_code/f0.sv      
+    depend:
+      - clefia_s0
+      - clefia_s1
+      - galois_arithmetic
 
 provider:
     name: github
