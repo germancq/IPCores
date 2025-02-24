@@ -119,6 +119,9 @@ async def test(dut, index=0):
     y0 = SS[2][u0]
     y1 = SS[3][u1]
 
+    print(hex(x))
+    print(hex(x0))
+    print(hex(x1))
     assert hex(dut.t0.value) == hex(
         t0
     ), f"ERROR, EXPECTED value should be {hex(t0)}, however hdl value is {hex(dut.t0.value)}"
