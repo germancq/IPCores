@@ -8,7 +8,7 @@ targets:
     filesets: 
       - rtl
 
-  sim : 
+  sim_alt : 
     flow : sim
     flow_options :
       tool : icarus
@@ -16,25 +16,41 @@ targets:
       cocotb_module : clefia_s0_test
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
-    filesets : [rtl ,cocotb]  
+    filesets : [rtl_alt ,cocotb]  
     toplevel : S0
 
+  sim : 
+    flow : sim
+    flow_options :
+      tool : icarus
+      iverilog_options : [-g2012]
+      cocotb_module : s0_test
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl ,cocotb]  
+    toplevel : S0
 
 filesets:
   cocotb :
     files :
       - block_ciphers/CLEFIA/cocotb_files/clefia_s0_test.py : {file_type : user, copyto : .}
+      - block_ciphers/CLEFIA/cocotb_files/s0_test.py : {file_type : user, copyto : .}
       - block_ciphers/CLEFIA/python_code/clefia.py : {file_type : user, copyto : .}
       - block_ciphers/CLEFIA/python_code/galois_arithmetic.py : {file_type : user, copyto : .}
     depend :
       - vlog_tb_utils
 
+  rtl_alt:
+    file_type: systemVerilogSource
+    files: 
+      - block_ciphers/CLEFIA/hdl_code/s0_alt.sv      
+    depend:
+      - galois_arithmetic
+
   rtl:
     file_type: systemVerilogSource
     files: 
       - block_ciphers/CLEFIA/hdl_code/s0.sv      
-    depend:
-      - galois_arithmetic
 
 provider:
     name: github
