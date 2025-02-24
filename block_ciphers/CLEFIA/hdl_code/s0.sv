@@ -83,8 +83,8 @@ module S0 (
   assign SS3[15] = 4'h1;
 
   logic [3:0] t0, t1, u0, u1, y0, y1, m0, m1;
-  assign t0 = SS0[x[3:0]];
-  assign t1 = SS1[x[7:4]];
+  assign t1 = SS0[x[3:0]];
+  assign t0 = SS1[x[7:4]];
 
   galois_multiplication #(
       .N(4)
