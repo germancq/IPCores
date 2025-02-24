@@ -21,7 +21,7 @@ async def test(dut, index=0):
     clefia_sw = clefia.CLEFIA()
     expected_result = clefia_sw.S0(x)
     setup_block_cipher(dut, x)
-    await Timer(10, unit="ns")
+    await Timer(10, units="ns")
 
     assert (
         dut.y.value == expected_result
