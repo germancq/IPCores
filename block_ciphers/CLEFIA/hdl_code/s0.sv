@@ -82,7 +82,7 @@ module S0 (
   assign SS3[14] = 4'hc;
   assign SS3[15] = 4'h1;
 
-  logic [3:0] t0, t1, u0, u1, y0, y1, m1, m2;
+  logic [3:0] t0, t1, u0, u1, y0, y1, m0, m1;
   assign t0 = SS0[x[3:0]];
   assign t1 = SS1[x[7:4]];
 
@@ -92,12 +92,12 @@ module S0 (
       .a(4'h2),
       .b(t1),
       .p(5'b10011),
-      .s(m1)
+      .s(m0)
   );
   galois_adder #(
       .N(4)
   ) a1 (
-      .a(m1),
+      .a(m0),
       .b(t0),
       .s(u0)
   );
@@ -107,12 +107,12 @@ module S0 (
       .a(4'h2),
       .b(t0),
       .p(5'b10011),
-      .s(m2)
+      .s(m1)
   );
   galois_adder #(
       .N(4)
   ) a2 (
-      .a(m2),
+      .a(m1),
       .b(t1),
       .s(u1)
   );
