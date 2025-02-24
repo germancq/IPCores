@@ -12,7 +12,6 @@ import sys
 
 import clefia
 import cocotb
-import galois_algorithm
 import numpy as np
 from cocotb.clock import Clock
 from cocotb.regression import TestFactory
