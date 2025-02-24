@@ -12,9 +12,9 @@ module F0 (
     output [31:0] y
 );
 
-  logic [31:0] T;
+  logic [7:0] T [ 3:0];
 
-  logic [ 7:0] M0[15:0];
+  logic [7:0] M0[15:0];
   assign M0[0]  = 8'h01;
   assign M0[1]  = 8'h02;
   assign M0[2]  = 8'h04;
@@ -34,20 +34,20 @@ module F0 (
 
   S1 box0 (
       .x(rk[7:0] ^ x[7:0]),
-      .y(T[7:0])
+      .y(T[0])
   );
 
   S0 box1 (
       .x(rk[15:8] ^ x[15:8]),
-      .y(T[15:8])
+      .y(T[1])
   );
   S1 box2 (
       .x(rk[23:16] ^ x[23:16]),
-      .y(T[23:16])
+      .y(T[2])
   );
   S0 box3 (
       .x(rk[31:24] ^ x[31:24]),
-      .y(T[31:24])
+      .y(T[3])
   );
 
   matrix_multiplication #(
@@ -63,6 +63,7 @@ module F0 (
   );
 
 endmodule
+
 
 
 
