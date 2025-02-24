@@ -117,8 +117,8 @@ module S0 (
       .s(u1)
   );
 
-  assign y[3:0] = SS2[u0];
-  assign y[7:4] = SS3[u1];
+  assign y[7:4] = SS2[u0];
+  assign y[3:0] = SS3[u1];
 
 endmodule : S0
 

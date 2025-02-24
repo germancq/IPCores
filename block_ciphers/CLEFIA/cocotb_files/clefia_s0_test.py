@@ -95,7 +95,7 @@ def setup_block_cipher(dut, x):
 @cocotb.test()
 async def test(dut, index=0):
 
-    x = random.getrandbits(8)
+    x = index
 
     galois4 = galois_arithmetic.GaloisField(4)
     clefia_sw = clefia.CLEFIA()
@@ -151,7 +151,7 @@ async def test(dut, index=0):
     ), f"ERROR, EXPECTED value should be {hex(expected_result)}, however hdl value is {hex(dut.y.value)}"
 
 
-n = 10
+n = 0x100
 factory = TestFactory(test)
 
 factory.add_option("index", range(0, n))
