@@ -27,6 +27,7 @@ def setup_block_cipher(dut, rk, blk_i):
     print("comprobacion")
     print(dut.block_i.value)
     for i in range(0, dut.d.value):
+        print(blk_i[i])
         dut.block_i[i].value = 0
         print("valor")
 
