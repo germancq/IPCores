@@ -1,0 +1,82 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# File              : gfn_test.py
+# Author            : German C.Quiveu <germancq@dte.us.es>
+# Date              : 25.02.2025
+# Last Modified Date: 25.02.2025
+# Last Modified By  : German C.Quiveu <germancq@dte.us.es>
+
+import os
+import random
+import sys
+
+import clefia
+import cocotb
+import numpy as np
+from cocotb.clock import Clock
+from cocotb.regression import TestFactory
+from cocotb.triggers import FallingEdge, RisingEdge, Timer
+
+CLK_PERIOD = 20
+
+
+def setup_block_cipher(dut, rk, blk_i):
+    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
+    dut.rst.value = 0
+    for i in range(0, dut.d.value):
+        dut.block_i[i].value = blk_i[i]
+
+    for i in range(0, (dut.d.value * 2) * dut.r.value):
+        dut.round_keys[i].value = rk[i]
+
+
+async def rst_function_test(dut):
+    dut.rst.value = 1
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.STEP_1.value
+    ), f"ERROR STATE IN STEP_1, STATE={dut.current_state.value}"
+    await n_cycles_clock(dut, 10)
+
+    assert (
+        dut.current_state.value == dut.STEP_1.value
+    ), f"ERROR STATE IN STEP_1, STATE={dut.current_state.value}"
+
+    assert (
+        dut.dout_rounds_counter.value == 0
+    ), f"ERROR STATE IN STEP_1, dout_rounds_counter={dut.current_state.value}, should be 0"
+
+    for i in range(0, dut.d.value):
+        assert (
+            dut.T_dout[i].value == dut.block_i[i].value
+        ), f"ERROR in STEP 1, T values incorrect"
+
+    dut.rst.value = 0
+
+
+async def n_cycles_clock(dut, n):
+    for i in range(0, n):
+        await RisingEdge(dut.clk)
+        await FallingEdge(dut.clk)
+
+
+@cocotb.test()
+async def test(dut, index=0):
+
+    blk_i = np.zeros(dut.d.value, dtype=np.uint32)
+    for i in range(0, dut.d.value):
+        dut.blk_i[i].value = random.getrandbits(32)
+
+    rk = np.zeros((dut.d.value * 2) * dut.r.value, dtype=np.uint32)
+    for i in range(0, (dut.d.value * 2) * dut.r.value):
+        dut.rk[i].value = random.getrandbits(32)
+
+    setup_block_cipher(dut, rk, blk_i)
+    await rst_function_test(dut)
+
+
+n = 10
+factory = TestFactory(test)
+
+factory.add_option("index", range(0, n))
+factory.generate_tests()

@@ -1,0 +1,51 @@
+CAPI=2:
+
+name : ::clefia_gfn:0
+description : clefia gfn function
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : icarus
+      iverilog_options : [-g2012]
+      cocotb_module : gfn_test
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl ,cocotb]  
+    toplevel : gfn
+
+filesets:
+  cocotb :
+    files :
+      - block_ciphers/CLEFIA/cocotb_files/gfn_test.py : {file_type : user, copyto : .}
+      - block_ciphers/CLEFIA/python_code/clefia.py : {file_type : user, copyto : .}
+      - block_ciphers/CLEFIA/python_code/galois_arithmetic.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+
+
+  rtl:
+    file_type: systemVerilogSource
+    files: 
+      - block_ciphers/CLEFIA/hdl_code/gfn.sv      
+    depend:
+      - clefia_f0
+      - clefia_f1
+      - counter
+      - register
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+
+
+
