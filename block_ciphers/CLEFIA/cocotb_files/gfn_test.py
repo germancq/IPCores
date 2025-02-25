@@ -28,7 +28,7 @@ def setup_block_cipher(dut, rk, blk_i):
     print(dut.block_i.value)
     for i in range(0, dut.d.value):
         print(blk_i[i])
-        dut.block_i[i].value = blk_i[i]
+        dut.block_i[i].value = hex(blk_i[i])
         print("valor")
 
     for i in range(0, (dut.d.value * 2) * dut.r.value):
