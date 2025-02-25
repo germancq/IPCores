@@ -11,8 +11,8 @@ targets:
   sim : 
     flow : sim
     flow_options :
-      tool : icarus 
-      iverilog_options : [-g2012]
+      tool : verilator 
+      verilator_options : [-Wno-INFINITELOOP]
       cocotb_module : gfn_test
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
@@ -23,7 +23,7 @@ targets:
       - r=12
 
 parameters :
-  d :
+  N :
     datatype : int
     paramtype : vlogparam
   r :
