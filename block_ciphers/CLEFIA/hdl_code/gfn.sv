@@ -88,6 +88,11 @@ module gfn #(
   logic [$clog2(d)-1:0] j;
   always_ff @(posedge clk) begin
 
+    if (rst) begin
+      current_state = STEP_1;
+    end else begin
+      current_state = next_state;
+    end
   end
 
 endmodule : gfn
