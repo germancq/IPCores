@@ -39,6 +39,7 @@ async def rst_function_test(dut):
     print("rst function")
     dut.rst.value = 1
     print("ciclos_reloj")
+    await Timer(10, units="ns")
     await n_cycles_clock(dut, 1)
     print("check 1")
     assert (
