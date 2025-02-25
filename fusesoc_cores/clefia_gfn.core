@@ -11,7 +11,7 @@ targets:
   sim : 
     flow : sim
     flow_options :
-      tool : velirator
+      tool : verilator
       verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC]
       cocotb_module : gfn_test
       timescale : 1ns/1ns
