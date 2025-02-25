@@ -67,10 +67,10 @@ async def rst_function_test(dut):
 
 async def n_cycles_clock(dut, n):
     for i in range(0, n):
-        await RisingEdge(dut.clk)
-        print(i)
-        await FallingEdge(dut.clk)
-        print(i)
+        dut.clk.value = 0
+        await Timer(int(CLK_PERIOD / 2), units="ns")
+        dut.clk.value = 1
+        await Timer(int(CLK_PERIOD / 2), units="ns")
 
 
 @cocotb.test()
