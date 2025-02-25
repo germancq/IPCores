@@ -28,7 +28,7 @@ def setup_block_cipher(dut):
         dut.block_i[i].value = random.getrandbits(32)
         print(i)
 
-    for i in range(0, (dut.d.value / 2) * dut.r.value):
+    for i in range(0, int(dut.d.value / 2) * dut.r.value):
         dut.round_keys[i].value = random.getrandbits(32)
         print(i)
 
