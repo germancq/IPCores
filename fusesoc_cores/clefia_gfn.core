@@ -23,7 +23,7 @@ targets:
       - r=12
 
 parameters :
-  N :
+  d :
     datatype : int
     paramtype : vlogparam
   r :
