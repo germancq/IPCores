@@ -22,7 +22,7 @@ CLK_PERIOD = 20
 
 def setup_block_cipher(dut, blk_i, rk):
     print("setup block cipher")
-    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
+    #    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
     for i in range(0, dut.d.value):
         aux = random.getrandbits(32)
@@ -68,9 +68,11 @@ async def rst_function_test(dut):
 
 async def n_cycles_clock(dut, n):
     for i in range(0, n):
-        await RisingEdge(dut.clk)
+        dut.clk.value = 0
+        await Timer(10, units="ns")
         print(i)
-        await FallingEdge(dut.clk)
+        dut.clk.value = 1
+        await Timer(10, units="ns")
         print(i)
 
 
