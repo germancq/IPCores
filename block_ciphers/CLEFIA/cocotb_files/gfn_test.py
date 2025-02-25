@@ -38,6 +38,7 @@ def setup_block_cipher(dut, blk_i, rk):
 async def rst_function_test(dut):
     print("rst function")
     dut.rst.value = 1
+    await Timer(10, units="ns")
     print("ciclos_reloj")
     await Timer(10, units="ns")
     await n_cycles_clock(dut, 1)
@@ -68,6 +69,7 @@ async def rst_function_test(dut):
 
 async def n_cycles_clock(dut, n):
     for i in range(0, n):
+        print(dut.clk.value)
         dut.clk.value = 0
         await Timer(10, units="ns")
         print(i)
