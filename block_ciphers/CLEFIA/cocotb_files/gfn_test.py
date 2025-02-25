@@ -39,15 +39,18 @@ async def rst_function_test(dut):
     print("rst function")
     dut.rst.value = 1
     await n_cycles_clock(dut, 1)
+    print("check 1")
     assert (
         dut.current_state.value == dut.STEP_1.value
     ), f"ERROR STATE IN STEP_1, STATE={dut.current_state.value}"
     await n_cycles_clock(dut, 10)
+    print("check 2")
 
     assert (
         dut.current_state.value == dut.STEP_1.value
     ), f"ERROR STATE IN STEP_1, STATE={dut.current_state.value}"
 
+    print("check 3")
     assert (
         dut.dout_rounds_counter.value == 0
     ), f"ERROR STATE IN STEP_1, dout_rounds_counter={dut.current_state.value}, should be 0"
