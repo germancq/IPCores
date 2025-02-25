@@ -26,9 +26,11 @@ def setup_block_cipher(dut, rk, blk_i):
     dut.rst.value = 0
     for i in range(0, dut.d.value):
         dut.block_i[i].value = blk_i[i]
+        print("valor")
 
     for i in range(0, (dut.d.value * 2) * dut.r.value):
         dut.round_keys[i].value = rk[i]
+        print("value")
 
 
 async def rst_function_test(dut):
