@@ -20,7 +20,7 @@ from cocotb.triggers import FallingEdge, RisingEdge, Timer
 CLK_PERIOD = 20
 
 
-def setup_block_cipher(dut, blk_i):
+def setup_block_cipher(dut, blk_i, rk):
     print("setup block cipher")
     cocotb.start_soon(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
@@ -31,7 +31,9 @@ def setup_block_cipher(dut, blk_i):
         print(i)
 
     for i in range(0, int(dut.d.value / 2) * dut.r.value):
-        dut.round_keys[i].value = random.getrandbits(32)
+        aux = random.getrandbits(32)
+        dut.round_keys[i].value = aux
+        rk[i] = aux
         print(i)
 
 
@@ -70,14 +72,11 @@ async def n_cycles_clock(dut, n):
 async def test(dut, index=0):
 
     blk_i = np.zeros(dut.d.value, dtype=np.uint32)
-    setup_block_cipher(dut, blk_i)
-
     rk = np.zeros(int(dut.d.value / 2) * dut.r.value, dtype=np.uint32)
-    for i in range(0, int(dut.d.value / 2) * dut.r.value):
-        rk[i] = dut.round_keys[i].value
-        print(i)
+    setup_block_cipher(dut, blk_i, rk)
 
     await rst_function_test(dut)
+    print(blk_i)
 
 
 n = 10
