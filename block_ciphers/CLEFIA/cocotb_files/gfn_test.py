@@ -24,9 +24,10 @@ def setup_block_cipher(dut, rk, blk_i):
     print("setup block cipher")
     cocotb.start_soon(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
+    print("comprobacion")
     print(dut.block_i.value)
     for i in range(0, dut.d.value):
-        dut.block_i[i].value = blk_i[i]
+        dut.block_i[i].value = 0
         print("valor")
 
     for i in range(0, (dut.d.value * 2) * dut.r.value):
