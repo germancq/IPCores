@@ -28,13 +28,11 @@ def setup_block_cipher(dut, blk_i, rk):
         aux = random.getrandbits(32)
         dut.block_i[i].value = aux
         blk_i[i] = aux
-        print(i)
 
     for i in range(0, int(dut.d.value / 2) * dut.r.value):
         aux = random.getrandbits(32)
         dut.round_keys[i].value = aux
         rk[i] = aux
-        print(i)
 
 
 async def rst_function_test(dut):
@@ -55,6 +53,7 @@ async def rst_function_test(dut):
     ), f"ERROR STATE IN STEP_1, dout_rounds_counter={dut.current_state.value}, should be 0"
 
     for i in range(0, dut.d.value):
+        print(i)
         assert (
             dut.T_dout[i].value == dut.block_i[i].value
         ), f"ERROR in STEP 1, T values incorrect"
@@ -76,6 +75,7 @@ async def test(dut, index=0):
     setup_block_cipher(dut, blk_i, rk)
 
     await rst_function_test(dut)
+    print("final")
     print(blk_i)
 
 
