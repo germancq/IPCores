@@ -86,6 +86,70 @@ module gfn #(
   localparam STEP_3 = 4;
 
   logic [$clog2(d)-1:0] j;
+  always_comb begin
+
+    next_state = current_state;
+    //default values
+    end_signal = 0;
+    rst_rounds_counter = 1'b0;
+    up_rounds_counter = 1'b0;
+    din_rounds_counter = 0;
+    for (j = 0; j < d; j++) begin
+      T_w[j]   = 0;
+      T_cl[j]  = 0;
+      T_din[j] = 32'h0;
+    end
+    for (j = 0; j < (d << 2); j++) begin
+      f0_x_input[j]  = 32'h0;
+      f0_rk_input[j] = 32'h0;
+      f1_x_input[j]  = 32'h0;
+      f1_rk_input[j] = 32'h0;
+    end
+
+    case (current_state)
+      STEP_1: begin
+
+        rst_rounds_counter = 1;
+        for (j = 0; j < d; j++) begin
+          T_w[j]   = 1;
+          T_din[j] = block_i[j];
+        end
+        next_state = STEP_2;
+      end
+      STEP_2: begin
+        if (dout_rounds_counter == r - 1) begin
+
+          next_state = STEP_3;
+        end
+        next_state = STEP_2_1;
+      end
+      STEP_2_1: begin
+        next_state = STEP_2_2;
+        for (j = 0; j < (d << 2); j++) begin
+          f0_x_input[j]   = T_dout[(j>>2)];
+          f0_rk_input[j]  = round_keys[dout_rounds_counter>>(d<<1)+(j>>1)];
+          f1_x_input[j]   = T_dout[(j>>2)+2];
+          f1_rk_input[j]  = round_keys[dout_rounds_counter>>(d<<1)+((j>>1)+1)];
+          T_w[(j>>2)+1]   = 1;
+          T_din[(j>>2)+1] = T_dout[(j>>2)+1] ^ f0_y_output[j];
+          T_w[(j>>2)+3]   = 1;
+          T_din[(j>>2)+3] = T_dout[(j>>2)+3] ^ f1_y_output[j];
+        end
+
+      end
+      STEP_2_2: begin
+        for (j = 0; j < d; j++) begin
+          T_w[j]   = 1;
+          T_din[j] = T_dout[(j+1)%d];
+        end
+      end
+      STEP_3: begin
+
+        end_signal = 1;
+
+      end
+    endcase
+  end
   always_ff @(posedge clk) begin
 
     if (rst) begin
