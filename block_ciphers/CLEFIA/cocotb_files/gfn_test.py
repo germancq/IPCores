@@ -22,10 +22,12 @@ CLK_PERIOD = 20
 
 def setup_block_cipher(dut, rk, blk_i):
     print("setup block cipher")
-    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
+    cocotb.start_soon(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
+    dut.block_i.value = blk_i
+    print("ok")
     for i in range(0, dut.d.value):
-        dut.block_i[i] = blk_i[i]
+        dut.block_i[i].value = blk_i[i]
         print("valor")
 
     for i in range(0, (dut.d.value * 2) * dut.r.value):
