@@ -11,13 +11,24 @@ targets:
   sim : 
     flow : sim
     flow_options :
-      tool : verilator
-      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -Wno-UNOPTFLAT -Wno-INFINITELOOP]
+      tool : icarus 
+      iverilog_options : [-g2012]
       cocotb_module : gfn_test
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
     filesets : [rtl ,cocotb]  
     toplevel : gfn
+    parameters :
+      - d=4
+      - r=12
+
+parameters :
+  d :
+    datatype : int
+    paramtype : vlogparam
+  r :
+    datatype : int
+    paramtype : vlogparam
 
 filesets:
   cocotb :
