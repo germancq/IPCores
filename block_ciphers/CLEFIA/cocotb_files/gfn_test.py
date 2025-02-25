@@ -81,6 +81,7 @@ async def n_cycles_clock(dut, n):
 @cocotb.test()
 async def test(dut, index=0):
 
+    await Timer(20, units="ns")
     blk_i = np.zeros(dut.d.value, dtype=np.uint32)
     rk = np.zeros(int(dut.d.value / 2) * dut.r.value, dtype=np.uint32)
     setup_block_cipher(dut, blk_i, rk)
