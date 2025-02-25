@@ -12,7 +12,7 @@ targets:
     flow : sim
     flow_options :
       tool : verilator
-      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -UNOPTFLAT -INFINITELOOP]
+      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -Wno-UNOPTFLAT -Wno-INFINITELOOP]
       cocotb_module : gfn_test
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
