@@ -68,19 +68,12 @@ async def n_cycles_clock(dut, n):
 async def test(dut, index=0):
 
     blk_i = np.zeros(dut.d.value, dtype=np.uint32)
-    for i in range(0, dut.d.value):
-        blk_i[i] = random.getrandbits(32)
-
-    rk = np.zeros((dut.d.value / 2) * dut.r.value, dtype=np.uint32)
-    for i in range(0, (dut.d.value * 2) * dut.r.value):
-        rk[i] = random.getrandbits(32)
-
     setup_block_cipher(dut)
     for i in range(0, dut.d.value):
         blk_i[i] = dut.block_i[i].value
 
-    rk = np.zeros((dut.d.value * 2) * dut.r.value, dtype=np.uint32)
-    for i in range(0, (dut.d.value * 2) * dut.r.value):
+    rk = np.zeros((dut.d.value / 2) * dut.r.value, dtype=np.uint32)
+    for i in range(0, (dut.d.value / 2) * dut.r.value):
         rk[i] = dut.round_keys[i].value
 
     await rst_function_test(dut)
