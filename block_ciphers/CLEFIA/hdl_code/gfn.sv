@@ -55,14 +55,14 @@ module gfn #(
     end
   endgenerate
 
-  logic [31:0] f0_rk_input[(d<<2)-1:0];
-  logic [31:0] f0_x_input [(d<<2)-1:0];
-  logic [31:0] f0_y_output[(d<<2)-1:0];
-  logic [31:0] f1_rk_input[(d<<2)-1:0];
-  logic [31:0] f1_x_input [(d<<2)-1:0];
-  logic [31:0] f1_y_output[(d<<2)-1:0];
+  logic [31:0] f0_rk_input[(d>>2)-1:0];
+  logic [31:0] f0_x_input [(d>>2)-1:0];
+  logic [31:0] f0_y_output[(d>>2)-1:0];
+  logic [31:0] f1_rk_input[(d>>2)-1:0];
+  logic [31:0] f1_x_input [(d>>2)-1:0];
+  logic [31:0] f1_y_output[(d>>2)-1:0];
   generate
-    for (i = 0; i < (d << 2); i++) begin
+    for (i = 0; i < (d >> 2); i++) begin
 
       F0 f0_inst_i (
           .rk(f0_rk_input[i]),
@@ -125,15 +125,15 @@ module gfn #(
       end
       STEP_2_1: begin
         next_state = STEP_2_2;
-        for (j = 0; j < (d << 2); j++) begin
-          f0_x_input[j]   = T_dout[(j>>2)];
-          f0_rk_input[j]  = round_keys[dout_rounds_counter>>(d<<1)+(j>>1)];
-          f1_x_input[j]   = T_dout[(j>>2)+2];
-          f1_rk_input[j]  = round_keys[dout_rounds_counter>>(d<<1)+((j>>1)+1)];
-          T_w[(j>>2)+1]   = 1;
-          T_din[(j>>2)+1] = T_dout[(j>>2)+1] ^ f0_y_output[j];
-          T_w[(j>>2)+3]   = 1;
-          T_din[(j>>2)+3] = T_dout[(j>>2)+3] ^ f1_y_output[j];
+        for (j = 0; j < (d >> 2); j++) begin
+          f0_x_input[j]   = T_dout[(j<<2)];
+          f0_rk_input[j]  = round_keys[dout_rounds_counter<<(d>>1)+(j<<1)];
+          f1_x_input[j]   = T_dout[(j<<2)+2];
+          f1_rk_input[j]  = round_keys[dout_rounds_counter<<(d>>1)+((j<<1)+1)];
+          T_w[(j<<2)+1]   = 1;
+          T_din[(j<<2)+1] = T_dout[(j<<2)+1] ^ f0_y_output[j];
+          T_w[(j<<2)+3]   = 1;
+          T_din[(j<<2)+3] = T_dout[(j<<2)+3] ^ f1_y_output[j];
         end
 
       end
