@@ -85,7 +85,7 @@ module gfn #(
   localparam STEP_2_2 = 3;
   localparam STEP_3 = 4;
 
-  logic [$clog2(d)-1:0] j;
+  logic [31:0] j;
   always_comb begin
 
     next_state = current_state;
