@@ -67,11 +67,11 @@ async def test(dut, index=0):
 
     blk_i = np.zeros(dut.d.value, dtype=np.uint32)
     for i in range(0, dut.d.value):
-        dut.blk_i[i].value = random.getrandbits(32)
+        blk_i[i] = random.getrandbits(32)
 
     rk = np.zeros((dut.d.value * 2) * dut.r.value, dtype=np.uint32)
     for i in range(0, (dut.d.value * 2) * dut.r.value):
-        dut.rk[i].value = random.getrandbits(32)
+        rk[i] = random.getrandbits(32)
 
     setup_block_cipher(dut, rk, blk_i)
     await rst_function_test(dut)
