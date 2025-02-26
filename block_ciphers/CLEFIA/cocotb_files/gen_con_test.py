@@ -31,7 +31,7 @@ async def test(dut, index=0):
     expected_result = clefia_sw.generate_constants(iv, l)[1]
     await Timer(10, units="ns")
 
-    for i in range(0, dut.NUMBER_CON):
+    for i in range(0, dut.NUMBER_CON.value):
 
         assert hex(dut.CON[i].value) == hex(
             expected_result[i]
