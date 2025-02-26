@@ -22,7 +22,7 @@ CLK_PERIOD = 20
 
 def setup_block_cipher(dut, blk_i, rk):
     print("setup block cipher")
-    #    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
+    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
     for i in range(0, dut.d.value):
         aux = random.getrandbits(32)
@@ -38,22 +38,16 @@ def setup_block_cipher(dut, blk_i, rk):
 async def rst_function_test(dut):
     print("rst function")
     dut.rst.value = 1
-    await Timer(10, units="ns")
-    print("ciclos_reloj")
-    await Timer(10, units="ns")
     await n_cycles_clock(dut, 1)
-    print("check 1")
     assert (
         dut.current_state.value == dut.STEP_1.value
     ), f"ERROR STATE IN STEP_1, STATE={dut.current_state.value}"
     await n_cycles_clock(dut, 10)
-    print("check 2")
 
     assert (
         dut.current_state.value == dut.STEP_1.value
     ), f"ERROR STATE IN STEP_1, STATE={dut.current_state.value}"
 
-    print("check 3")
     assert (
         dut.dout_rounds_counter.value == 0
     ), f"ERROR STATE IN STEP_1, dout_rounds_counter={dut.current_state.value}, should be 0"
@@ -69,13 +63,8 @@ async def rst_function_test(dut):
 
 async def n_cycles_clock(dut, n):
     for i in range(0, n):
-        print(dut.clk.value)
-        dut.clk.value = 0
-        await Timer(10, units="ns")
-        print(i)
-        dut.clk.value = 1
-        await Timer(10, units="ns")
-        print(i)
+        await RisingEdge(dut.clk)
+        await FallingEdge(dut.clk)
 
 
 @cocotb.test()
