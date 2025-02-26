@@ -92,6 +92,7 @@ async def step2_1_test(dut, clefia_sw, blk_i, rk):
 
     print(hex(dut.f0_x_input[0].value))
     print(hex(expected_f0_x_input_0))
+    print(hex(rk))
     assert hex(dut.f0_x_input[0].value) == hex(
         expected_f0_x_input_0
     ), f"ERROR IN STEP_2_1 f0_x_input expected = {hex(expected_f0_x_input_0)}, calculated = {hex(dut.f0_x_input[0].value)}"
