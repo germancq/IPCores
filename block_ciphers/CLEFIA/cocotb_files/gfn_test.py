@@ -125,6 +125,8 @@ async def step2_1_test(dut, clefia_sw, blk_i, rk, counter_value):
     if dut.d.value == 8:
         pass
 
+    return blk_i
+
 
 async def step2_2_test(dut, clefia_sw, blk_i):
     print("step 2.2")
@@ -141,6 +143,7 @@ async def step2_2_test(dut, clefia_sw, blk_i):
         assert hex(dut.T_din[i].value) == hex(
             blk_i[i]
         ), f"ERROR in STEP 2.2, T values incorrect, expected = {hex(blk_i[i])} calculated = {dut.T_din[i].value}"
+    return blk_i
 
 
 async def step3_test(dut, expected_result):
@@ -179,8 +182,8 @@ async def test(dut, index=0):
     print(blk_i)
     for i in range(0, dut.r.value):
         await step2_test(dut, i)
-        await step2_1_test(dut, clefia_sw, blk_i, rk, i)
-        await step2_2_test(dut, clefia_sw, blk_i)
+        blk_i = await step2_1_test(dut, clefia_sw, blk_i, rk, i)
+        blk_i = await step2_2_test(dut, clefia_sw, blk_i)
 
     await step2_test(dut, dut.r.value)
     await step3_test(dut, expected_result)
