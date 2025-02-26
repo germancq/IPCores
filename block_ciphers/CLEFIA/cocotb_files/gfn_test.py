@@ -173,7 +173,7 @@ async def test(dut, index=0):
     print(blk_i)
     for i in range(0, dut.r.value):
         await step2_test(dut, i)
-        await step2_1_test(dut, clefia_sw, blk_i, rk)
+        await step2_1_test(dut, clefia_sw, blk_i, rk, i)
         await step2_2_test(dut, clefia_sw, blk_i)
 
     await step2_test(dut, dut.r.value)
