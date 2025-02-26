@@ -90,9 +90,11 @@ async def step2_1_test(dut, clefia_sw, blk_i, rk):
     expected_next_T3 = clefia_sw.galois8.add(blk_i[3], expected_f1_output_0)
     blk_i[3] = expected_next_T3
 
-    assert (
-        dut.f0_x_input[0].value == expected_f0_x_input_0
-    ), f"ERROR IN STEP_2_1 f0_x_input expected = {expected_f0_x_input_0}, calculated = {dut.f0_x_input[0].value}"
+    print(hex(dut.f0_x_input[0].value))
+    print(hex(expected_f0_x_input_0))
+    assert hex(dut.f0_x_input[0].value) == hex(
+        expected_f0_x_input_0
+    ), f"ERROR IN STEP_2_1 f0_x_input expected = {hex(expected_f0_x_input_0)}, calculated = {hex(dut.f0_x_input[0].value)}"
     assert (
         dut.f0_rk_input[0].value == expected_f0_rk_input_0
     ), f"ERROR IN STEP_2_1 f0_rk_input expected = {expected_f0_rk_input_0}, calculated = {dut.f0_rk_input[0].value}"
