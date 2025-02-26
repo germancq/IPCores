@@ -74,20 +74,20 @@ async def step2_test(dut, expected_counter_value):
     ), f"ERROR STATE IN STEP_2, expected_value = {expected_counter_value}, counter_value={dut.dout_rounds_counter.value}"
 
 
-async def step2_1_test(dut, clefia_sw, blk_i, rk):
+async def step2_1_test(dut, clefia_sw, blk_i, rk, counter_value):
     print("step 2.1")
     await n_cycles_clock(dut, 1)
     assert (
         dut.current_state.value == dut.STEP_2_1.value
     ), f"ERROR STATE IN STEP_2_1, STATE={dut.current_state.value}"
     expected_f0_x_input_0 = blk_i[0]
-    expected_f0_rk_input_0 = rk[(int(dut.d.value / 2))]
+    expected_f0_rk_input_0 = rk[(int(dut.d.value / 2)) * counter_value]
     expected_f0_output_0 = clefia_sw.F0(expected_f0_rk_input_0, expected_f0_x_input_0)
     expected_next_T1 = clefia_sw.galois8.add(blk_i[1], expected_f0_output_0)
     blk_i[1] = expected_next_T1
 
     expected_f1_x_input_0 = blk_i[2]
-    expected_f1_rk_input_0 = rk[(int(dut.d.value / 2)) + 1]
+    expected_f1_rk_input_0 = rk[((int(dut.d.value / 2)) * counter_value) + 1]
     expected_f1_output_0 = clefia_sw.F1(expected_f1_rk_input_0, expected_f1_x_input_0)
     expected_next_T3 = clefia_sw.galois8.add(blk_i[3], expected_f1_output_0)
     blk_i[3] = expected_next_T3
