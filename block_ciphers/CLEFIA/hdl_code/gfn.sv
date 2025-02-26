@@ -117,11 +117,11 @@ module gfn #(
         next_state = STEP_2;
       end
       STEP_2: begin
+        next_state = STEP_2_1;
         if (dout_rounds_counter == r) begin
 
           next_state = STEP_3;
         end
-        next_state = STEP_2_1;
       end
       STEP_2_1: begin
         next_state = STEP_2_2;
