@@ -127,7 +127,7 @@ module gfn #(
         next_state = STEP_2_2;
         for (j = 0; j < (d >> 2); j++) begin
           f0_x_input[j]   = T_dout[(j<<2)];
-          f0_rk_input[j]  = round_keys[dout_rounds_counter<<(d>>1)+(j<<1)];
+          f0_rk_input[j]  = round_keys[(dout_rounds_counter<<(d>>1))+(j<<1)];
           f1_x_input[j]   = T_dout[(j<<2)+2];
           f1_rk_input[j]  = round_keys[(dout_rounds_counter<<(d>>1))+(j<<1)+1];
           T_w[(j<<2)+1]   = 1;
