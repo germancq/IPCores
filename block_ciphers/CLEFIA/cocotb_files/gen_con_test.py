@@ -22,6 +22,7 @@ async def test(dut, index=0):
     clefia_sw = clefia.CLEFIA()
     iv = 0x428A
     l = 30
+    print(dut.KEY_LEN.value)
     if dut.KEY_LEN.value == 192:
         iv = 0x7137
         l = 42
