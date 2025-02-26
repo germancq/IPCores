@@ -21,10 +21,10 @@ module gfn #(
   //counter for rounds
   logic up_rounds_counter;
   logic rst_rounds_counter;
-  logic [$clog2(r)-1:0] din_rounds_counter;
-  logic [$clog2(r)-1:0] dout_rounds_counter;
+  logic [$clog2(r):0] din_rounds_counter;
+  logic [$clog2(r):0] dout_rounds_counter;
   counter #(
-      .DATA_WIDTH($clog2(r))
+      .DATA_WIDTH($clog2(r) + 1)
   ) rounds_counter (
       .clk (clk),
       .rst (rst_rounds_counter),
