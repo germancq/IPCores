@@ -129,7 +129,7 @@ module gfn #(
           f0_x_input[j]   = T_dout[(j<<2)];
           f0_rk_input[j]  = round_keys[dout_rounds_counter<<(d>>1)+(j<<1)];
           f1_x_input[j]   = T_dout[(j<<2)+2];
-          f1_rk_input[j]  = round_keys[dout_rounds_counter<<(d>>1)+((j<<1)+1)];
+          f1_rk_input[j]  = round_keys[(dout_rounds_counter<<(d>>1))+(j<<1)+1];
           T_w[(j<<2)+1]   = 1;
           T_din[(j<<2)+1] = T_dout[(j<<2)+1] ^ f0_y_output[j];
           T_w[(j<<2)+3]   = 1;
