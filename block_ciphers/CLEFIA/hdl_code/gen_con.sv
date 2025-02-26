@@ -15,16 +15,16 @@ module gen_con #(
   logic [31:0] CON_128[59:0];
   logic [31:0] CON_192[83:0];
   logic [31:0] CON_256[91:0];
-  assign CON_128[0] = 32'hf56b7aeb;
-  assign CON_128[1] = 32'h994a8a42;
-  assign CON_128[2] = 32'h96a4bd75;
-  assign CON_128[3] = 32'hfa854521;
-  assign CON_128[4] = 32'h735b768a;
-  assign CON_128[5] = 32'h1f7abac4;
-  assign CON_128[6] = 32'hd5bc3b45;
-  assign CON_128[7] = 32'hb99d5d62;
-  assign CON_128[8] = 32'h52d73592;
-  assign CON_128[9] = 32'h3ef636e5;
+  assign CON_128[0]  = 32'hf56b7aeb;
+  assign CON_128[1]  = 32'h994a8a42;
+  assign CON_128[2]  = 32'h96a4bd75;
+  assign CON_128[3]  = 32'hfa854521;
+  assign CON_128[4]  = 32'h735b768a;
+  assign CON_128[5]  = 32'h1f7abac4;
+  assign CON_128[6]  = 32'hd5bc3b45;
+  assign CON_128[7]  = 32'hb99d5d62;
+  assign CON_128[8]  = 32'h52d73592;
+  assign CON_128[9]  = 32'h3ef636e5;
   assign CON_128[10] = 32'hc57a1ac9;
   assign CON_128[11] = 32'ha95b9b72;
   assign CON_128[12] = 32'h5ab42554;
@@ -75,16 +75,16 @@ module gen_con #(
   assign CON_128[57] = 32'h3c9757e7;
   assign CON_128[58] = 32'h1052b098;
   assign CON_128[59] = 32'h7c73b3a7;
-  assign CON_192[0] = 32'hc6d61d91;
-  assign CON_192[1] = 32'haaf73771;
-  assign CON_192[2] = 32'h5b6226f8;
-  assign CON_192[3] = 32'h374383ec;
-  assign CON_192[4] = 32'h15b8bb4c;
-  assign CON_192[5] = 32'h799959a2;
-  assign CON_192[6] = 32'h32d5f596;
-  assign CON_192[7] = 32'h5ef43485;
-  assign CON_192[8] = 32'hf57b7acb;
-  assign CON_192[9] = 32'h995a9a42;
+  assign CON_192[0]  = 32'hc6d61d91;
+  assign CON_192[1]  = 32'haaf73771;
+  assign CON_192[2]  = 32'h5b6226f8;
+  assign CON_192[3]  = 32'h374383ec;
+  assign CON_192[4]  = 32'h15b8bb4c;
+  assign CON_192[5]  = 32'h799959a2;
+  assign CON_192[6]  = 32'h32d5f596;
+  assign CON_192[7]  = 32'h5ef43485;
+  assign CON_192[8]  = 32'hf57b7acb;
+  assign CON_192[9]  = 32'h995a9a42;
   assign CON_192[10] = 32'h96acbd65;
   assign CON_192[11] = 32'hfa8d4d21;
   assign CON_192[12] = 32'h735f7682;
@@ -159,16 +159,16 @@ module gen_con #(
   assign CON_192[81] = 32'h609151bb;
   assign CON_192[82] = 32'h3e51ec9e;
   assign CON_192[83] = 32'h5270b089;
-  assign CON_256[0] = 32'h221947e;
-  assign CON_256[1] = 32'h6e00c0b5;
-  assign CON_256[2] = 32'hed014a3f;
-  assign CON_256[3] = 32'h8120e05a;
-  assign CON_256[4] = 32'h9a91a51f;
-  assign CON_256[5] = 32'hf6b0702d;
-  assign CON_256[6] = 32'ha159d28f;
-  assign CON_256[7] = 32'hcd78b816;
-  assign CON_256[8] = 32'hbcbde947;
-  assign CON_256[9] = 32'hd09c5c0b;
+  assign CON_256[0]  = 32'h221947e;
+  assign CON_256[1]  = 32'h6e00c0b5;
+  assign CON_256[2]  = 32'hed014a3f;
+  assign CON_256[3]  = 32'h8120e05a;
+  assign CON_256[4]  = 32'h9a91a51f;
+  assign CON_256[5]  = 32'hf6b0702d;
+  assign CON_256[6]  = 32'ha159d28f;
+  assign CON_256[7]  = 32'hcd78b816;
+  assign CON_256[8]  = 32'hbcbde947;
+  assign CON_256[9]  = 32'hd09c5c0b;
   assign CON_256[10] = 32'hb24ff4a3;
   assign CON_256[11] = 32'hde6eae05;
   assign CON_256[12] = 32'hb536fa51;
@@ -252,7 +252,25 @@ module gen_con #(
   assign CON_256[90] = 32'h4cf99a2;
   assign CON_256[91] = 32'h68ee2eb3;
 
-  assign CON = KEY_LEN == 128 ? CON_128 : (KEY_LEN == 192 ? CON_192 : CON_256);
+
+  generate
+    case (KEY_LEN)
+      128: begin
+        assign CON = CON_128;
+      end
+      192: begin
+        assign CON = CON_192;
+      end
+      256: begin
+        assign CON = CON_256;
+      end
+      default:
+      begin
+        assign CON = CON_256;
+      end
+    endcase
+  endgenerate
+
 
 
 endmodule
