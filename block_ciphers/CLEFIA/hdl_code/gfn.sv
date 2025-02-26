@@ -51,7 +51,7 @@ module gfn #(
           .din(T_din[i]),
           .dout(T_dout[i])
       );
-      assign block_o[i] = T_dout[(i-1)%d];
+      assign block_o[i] = i == 0 ? T_dout[d-1] : T_dout[(i-1)%d];
     end
   endgenerate
 
