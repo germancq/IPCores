@@ -95,27 +95,27 @@ async def step2_1_test(dut, clefia_sw, blk_i, rk):
     assert hex(dut.f0_x_input[0].value) == hex(
         expected_f0_x_input_0
     ), f"ERROR IN STEP_2_1 f0_x_input expected = {hex(expected_f0_x_input_0)}, calculated = {hex(dut.f0_x_input[0].value)}"
-    assert (
-        hex(dut.f0_rk_input[0].value) == hex(expected_f0_rk_input_0)
+    assert hex(dut.f0_rk_input[0].value) == hex(
+        expected_f0_rk_input_0
     ), f"ERROR IN STEP_2_1 f0_rk_input expected = {hex(expected_f0_rk_input_0)}, calculated = {hex(dut.f0_rk_input[0].value)}"
-    assert (
-        hex(dut.f0_y_output[0].value) == hex(expected_f0_output_0)
+    assert hex(dut.f0_y_output[0].value) == hex(
+        expected_f0_output_0
     ), f"ERROR IN STEP_2_1 f0_y_output expected = {hex(expected_f0_output_0)}, calculated = {hex(dut.f0_y_output[0].value)}"
-    assert (
-        hex(dut.T_w[1].value) == hex(expected_next_T1)
+    assert hex(dut.T_w[1].value) == hex(
+        expected_next_T1
     ), f"ERROR IN STEP_2_1 f0_x_input expected = {hex(expected_next_T1)}, calculated = {hex(dut.T_w[1].value)}"
 
-    assert (
-        hex(dut.f1_x_input[0].value) == hex(expected_f1_x_input_0)
+    assert hex(dut.f1_x_input[0].value) == hex(
+        expected_f1_x_input_0
     ), f"ERROR IN STEP_2_1 f1_x_input expected = {hex(expected_f1_x_input_0)}, calculated = {hex(dut.f1_x_input[0].value)}"
-    assert (
-        hex(dut.f1_rk_input[0].value) == hex(expected_f1_rk_input_0)
+    assert hex(dut.f1_rk_input[0].value) == hex(
+        expected_f1_rk_input_0
     ), f"ERROR IN STEP_2_1 f1_rk_input expected = {hex(expected_f1_rk_input_0)}, calculated = {hex(dut.f1_rk_input[0].value)}"
-    assert (
-        hex(dut.f1_y_output[0].value) == hex(expected_f1_output_0)
+    assert hex(dut.f1_y_output[0].value) == hex(
+        expected_f1_output_0
     ), f"ERROR IN STEP_2_1 f1_y_output expected = {hex(expected_f1_output_0)}, calculated = {hex(dut.f1_y_output[0].value)}"
-    assert (
-        hex(dut.T_w[3].value) == hex(expected_next_T3)
+    assert hex(dut.T_w[3].value) == hex(
+        expected_next_T3
     ), f"ERROR IN STEP_2_1 f1_x_input expected = {hex(expected_next_T3)}, calculated = {hex(dut.T_w[3].value)}"
 
     if dut.d.value == 8:
@@ -135,7 +135,7 @@ async def step2_2_test(dut, clefia_sw, blk_i):
         ), f"ERROR in STEP 2.2, T values incorrect"
 
 
-async def step3_test(dut, hex(expected_result)):
+async def step3_test(dut, expected_result):
     print("step 3")
     await n_cycles_clock(dut, 1)
     assert (
