@@ -1,0 +1,57 @@
+CAPI=2:
+
+name : ::clefia_gen_con:0
+description : clefia gen_con function
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : icarus
+      iverilog_options : [-g2012]
+      cocotb_module : gen_con_test
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl ,cocotb]  
+    toplevel : gen_con
+    parameters :
+      - KEY_LEN=128
+      - NUMBER_CON=60
+
+parameters :
+  KEY_LEN :
+    datatype : int
+    paramtype : vlogparam
+  NUMBER_CON :
+    datatype : int
+    paramtype : vlogparam
+
+filesets:
+  cocotb :
+    files :
+      - block_ciphers/CLEFIA/cocotb_files/gen_con_test.py : {file_type : user, copyto : .}
+      - block_ciphers/CLEFIA/python_code/clefia.py : {file_type : user, copyto : .}
+      - block_ciphers/CLEFIA/python_code/galois_arithmetic.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+
+
+  rtl:
+    file_type: systemVerilogSource
+    files: 
+      - block_ciphers/CLEFIA/hdl_code/gen_con.sv      
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+
+
+
