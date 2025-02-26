@@ -105,9 +105,9 @@ async def step2_1_test(dut, clefia_sw, blk_i, rk, counter_value):
     assert hex(dut.f0_y_output[0].value) == hex(
         expected_f0_output_0
     ), f"ERROR IN STEP_2_1 f0_y_output expected = {hex(expected_f0_output_0)}, calculated = {hex(dut.f0_y_output[0].value)}"
-    assert hex(dut.T_w[1].value) == hex(
+    assert hex(dut.T_din[1].value) == hex(
         expected_next_T1
-    ), f"ERROR IN STEP_2_1 f0_x_input expected = {hex(expected_next_T1)}, calculated = {hex(dut.T_w[1].value)}"
+    ), f"ERROR IN STEP_2_1 T1 expected = {hex(expected_next_T1)}, calculated = {hex(dut.T_din[1].value)}"
 
     assert hex(dut.f1_x_input[0].value) == hex(
         expected_f1_x_input_0
@@ -118,9 +118,9 @@ async def step2_1_test(dut, clefia_sw, blk_i, rk, counter_value):
     assert hex(dut.f1_y_output[0].value) == hex(
         expected_f1_output_0
     ), f"ERROR IN STEP_2_1 f1_y_output expected = {hex(expected_f1_output_0)}, calculated = {hex(dut.f1_y_output[0].value)}"
-    assert hex(dut.T_w[3].value) == hex(
+    assert hex(dut.T_din[3].value) == hex(
         expected_next_T3
-    ), f"ERROR IN STEP_2_1 f1_x_input expected = {hex(expected_next_T3)}, calculated = {hex(dut.T_w[3].value)}"
+    ), f"ERROR IN STEP_2_1 T3 expected = {hex(expected_next_T3)}, calculated = {hex(dut.T_din[3].value)}"
 
     if dut.d.value == 8:
         pass
