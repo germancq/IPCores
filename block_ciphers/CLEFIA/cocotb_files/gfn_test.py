@@ -153,6 +153,9 @@ async def step3_test(dut, expected_result):
         dut.current_state.value == dut.STEP_3.value
     ), f"ERROR STATE IN STEP_3 STATE={dut.current_state.value}"
     for i in range(0, dut.d.value):
+        print(dut.T_dout[i].value)
+        print(dut.block_o[i].value)
+    for i in range(0, dut.d.value):
         assert hex(dut.block_o[i].value) == hex(
             expected_result[i]
         ), f"ERROR in STEP 3, T values incorrect"
