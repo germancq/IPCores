@@ -123,7 +123,47 @@ async def step2_1_test(dut, clefia_sw, blk_i, rk, counter_value):
     ), f"ERROR IN STEP_2_1 T3 expected = {hex(expected_next_T3)}, calculated = {hex(dut.T_din[3].value)}"
 
     if dut.d.value == 8:
-        pass
+        expected_f0_x_input_1 = blk_i[4]
+        expected_f0_rk_input_1 = rk[(int(dut.d.value / 2)) * counter_value]
+        expected_f0_output_1 = clefia_sw.F0(
+            expected_f0_rk_input_1, expected_f0_x_input_1
+        )[0]
+        expected_next_T5 = clefia_sw.galois8.add(blk_i[5], expected_f0_output_1)
+        blk_i[5] = expected_next_T5
+
+        expected_f1_x_input_1 = blk_i[6]
+        expected_f1_rk_input_1 = rk[((int(dut.d.value / 2)) * counter_value) + 1]
+        expected_f1_output_1 = clefia_sw.F1(
+            expected_f1_rk_input_1, expected_f1_x_input_1
+        )[0]
+        expected_next_T7 = clefia_sw.galois8.add(blk_i[7], expected_f1_output_1)
+        blk_i[7] = expected_next_T7
+
+        assert hex(dut.f0_x_input[1].value) == hex(
+            expected_f0_x_input_1
+        ), f"ERROR IN STEP_2_1 f0_x_input expected = {hex(expected_f0_x_input_1)}, calculated = {hex(dut.f0_x_input[1].value)}"
+        assert hex(dut.f0_rk_input[1].value) == hex(
+            expected_f0_rk_input_1
+        ), f"ERROR IN STEP_2_1 f0_rk_input expected = {hex(expected_f0_rk_input_1)}, calculated = {hex(dut.f0_rk_input[1].value)}"
+        assert hex(dut.f0_y_output[1].value) == hex(
+            expected_f0_output_1
+        ), f"ERROR IN STEP_2_1 f0_y_output expected = {hex(expected_f0_output_1)}, calculated = {hex(dut.f0_y_output[1].value)}"
+        assert hex(dut.T_din[5].value) == hex(
+            expected_next_T5
+        ), f"ERROR IN STEP_2_1 T5 expected = {hex(expected_next_T5)}, calculated = {hex(dut.T_din[5].value)}"
+
+        assert hex(dut.f1_x_input[1].value) == hex(
+            expected_f1_x_input_1
+        ), f"ERROR IN STEP_2_1 f1_x_input expected = {hex(expected_f1_x_input_1)}, calculated = {hex(dut.f1_x_input[1].value)}"
+        assert hex(dut.f1_rk_input[1].value) == hex(
+            expected_f1_rk_input_1
+        ), f"ERROR IN STEP_2_1 f1_rk_input expected = {hex(expected_f1_rk_input_1)}, calculated = {hex(dut.f1_rk_input[1].value)}"
+        assert hex(dut.f1_y_output[1].value) == hex(
+            expected_f1_output_1
+        ), f"ERROR IN STEP_2_1 f1_y_output expected = {hex(expected_f1_output_1)}, calculated = {hex(dut.f1_y_output[1].value)}"
+        assert hex(dut.T_din[7].value) == hex(
+            expected_next_T7
+        ), f"ERROR IN STEP_2_1 T7 expected = {hex(expected_next_T7)}, calculated = {hex(dut.T_din[7].value)}"
 
     return blk_i
 
