@@ -138,6 +138,7 @@ module gfn #(
 
       end
       STEP_2_2: begin
+        next_state = STEP_2;
         for (j = 0; j < d; j++) begin
           T_w[j]   = 1;
           T_din[j] = T_dout[(j+1)%d];

@@ -61,6 +61,90 @@ async def rst_function_test(dut):
     dut.rst.value = 0
 
 
+async def step2_test(dut, expected_counter_value):
+    print("step 2")
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.STEP_2.value
+    ), f"ERROR STATE IN STEP_2, STATE={dut.current_state.value}"
+    assert (
+        dut.dout_rounds_counter.value == expected_counter_value
+    ), f"ERROR STATE IN STEP_2, expected_value = {expected_counter_value}, counter_value={dut.dout_rounds_counter.value}"
+
+
+async def step2_1_test(dut, clefia_sw, blk_i, rk):
+    print("step 2.1")
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.STEP_2_1.value
+    ), f"ERROR STATE IN STEP_2_1, STATE={dut.current_state.value}"
+    expected_f0_x_input_0 = blk_i[0]
+    expected_f0_rk_input_0 = rk[(int(dut.d.value / 2))]
+    expected_f0_output_0 = clefia_sw.F0(expected_f0_rk_input_0, expected_f0_x_input_0)
+    expected_next_T1 = clefia_sw.galois8.add(blk_i[1], expected_f0_output_0)
+    blk_i[1] = expected_next_T1
+
+    expected_f1_x_input_0 = blk_i[2]
+    expected_f1_rk_input_0 = rk[(int(dut.d.value / 2)) + 1]
+    expected_f1_output_0 = clefia_sw.F1(expected_f1_rk_input_0, expected_f1_x_input_0)
+    expected_next_T3 = clefia_sw.galois8.add(blk_i[3], expected_f1_output_0)
+    blk_i[3] = expected_next_T3
+
+    assert (
+        dut.f0_x_input[0].value == expected_f0_x_input_0
+    ), f"ERROR IN STEP_2_1 f0_x_input expected = {expected_f0_x_input_0}, calculated = {dut.f0_x_input[0].value}"
+    assert (
+        dut.f0_rk_input[0].value == expected_f0_rk_input_0
+    ), f"ERROR IN STEP_2_1 f0_rk_input expected = {expected_f0_rk_input_0}, calculated = {dut.f0_rk_input[0].value}"
+    assert (
+        dut.f0_y_output[0].value == expected_f0_output_0
+    ), f"ERROR IN STEP_2_1 f0_y_output expected = {expected_f0_output_0}, calculated = {dut.f0_y_output[0].value}"
+    assert (
+        dut.T_w[1].value == expected_next_T1
+    ), f"ERROR IN STEP_2_1 f0_x_input expected = {expected_next_T1}, calculated = {dut.T_w[1].value}"
+
+    assert (
+        dut.f1_x_input[0].value == expected_f1_x_input_0
+    ), f"ERROR IN STEP_2_1 f1_x_input expected = {expected_f1_x_input_0}, calculated = {dut.f1_x_input[0].value}"
+    assert (
+        dut.f1_rk_input[0].value == expected_f1_rk_input_0
+    ), f"ERROR IN STEP_2_1 f1_rk_input expected = {expected_f1_rk_input_0}, calculated = {dut.f1_rk_input[0].value}"
+    assert (
+        dut.f1_y_output[0].value == expected_f1_output_0
+    ), f"ERROR IN STEP_2_1 f1_y_output expected = {expected_f1_output_0}, calculated = {dut.f1_y_output[0].value}"
+    assert (
+        dut.T_w[3].value == expected_next_T3
+    ), f"ERROR IN STEP_2_1 f1_x_input expected = {expected_next_T3}, calculated = {dut.T_w[3].value}"
+
+    if dut.d.value == 8:
+        pass
+
+
+async def step2_2_test(dut, clefia_sw, blk_i):
+    print("step 2.2")
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.STEP_2_2.value
+    ), f"ERROR STATE IN STEP_2_2, STATE={dut.current_state.value}"
+    blk_i = np.roll(blk_i, -1)
+    for i in range(0, dut.d.value):
+        assert (
+            dut.T_din[i].value == dut.block_i[i].value
+        ), f"ERROR in STEP 2.2, T values incorrect"
+
+
+async def step3_test(dut, expected_result):
+    print("step 3")
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.STEP_3.value
+    ), f"ERROR STATE IN STEP_3 STATE={dut.current_state.value}"
+    for i in range(0, dut.d.value):
+        assert (
+            dut.block_o[i].value == expected_result[i]
+        ), f"ERROR in STEP 3, T values incorrect"
+
+
 async def n_cycles_clock(dut, n):
     for i in range(0, n):
         await RisingEdge(dut.clk)
@@ -70,14 +154,26 @@ async def n_cycles_clock(dut, n):
 @cocotb.test()
 async def test(dut, index=0):
 
+    clefia_sw = clefia.CLEFIA()
+
     await Timer(20, units="ns")
     blk_i = np.zeros(dut.d.value, dtype=np.uint32)
     rk = np.zeros(int(dut.d.value / 2) * dut.r.value, dtype=np.uint32)
     setup_block_cipher(dut, blk_i, rk)
+    blk_i_cp = np.copy(blk_i)
+    rk_cp = np.copy(rk)
+    expected_result = clefia_sw.GFN(dut.d.value, dut.r.value, blk_i_cp, rk_cp)
 
     await rst_function_test(dut)
     print("final")
     print(blk_i)
+    for i in range(0, dut.r.value):
+        await step2_test(dut, i)
+        await step2_1_test(dut, clefia_sw, blk_i, rk)
+        await step2_2_test(dut, clefia_sw, blk_i)
+
+    await step2_test(dut, dut.r.value)
+    await step3_test(dut, expected_result)
 
 
 n = 10
