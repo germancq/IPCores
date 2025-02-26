@@ -138,8 +138,8 @@ async def step2_2_test(dut, clefia_sw, blk_i):
         print(hex(blk_i[i]))
         print(hex(dut.T_din[i].value))
     for i in range(0, dut.d.value):
-        assert (
-            dut.T_din[i].value == blk_i[i]
+        assert hex(dut.T_din[i].value) == hex(
+            blk_i[i]
         ), f"ERROR in STEP 2.2, T values incorrect, expected = {hex(blk_i[i])} calculated = {dut.T_din[i].value}"
 
 
@@ -150,8 +150,8 @@ async def step3_test(dut, expected_result):
         dut.current_state.value == dut.STEP_3.value
     ), f"ERROR STATE IN STEP_3 STATE={dut.current_state.value}"
     for i in range(0, dut.d.value):
-        assert (
-            dut.block_o[i].value == expected_result[i]
+        assert hex(dut.block_o[i].value) == hex(
+            expected_result[i]
         ), f"ERROR in STEP 3, T values incorrect"
 
 
