@@ -82,20 +82,20 @@ async def step2_1_test(dut, clefia_sw, blk_i, rk, counter_value):
     ), f"ERROR STATE IN STEP_2_1, STATE={dut.current_state.value}"
     expected_f0_x_input_0 = blk_i[0]
     expected_f0_rk_input_0 = rk[(int(dut.d.value / 2)) * counter_value]
-    expected_f0_output_0 = clefia_sw.F0(expected_f0_rk_input_0, expected_f0_x_input_0)
+    expected_f0_output_0 = clefia_sw.F0(expected_f0_rk_input_0, expected_f0_x_input_0)[
+        0
+    ]
     expected_next_T1 = clefia_sw.galois8.add(blk_i[1], expected_f0_output_0)
     blk_i[1] = expected_next_T1
 
     expected_f1_x_input_0 = blk_i[2]
     expected_f1_rk_input_0 = rk[((int(dut.d.value / 2)) * counter_value) + 1]
-    expected_f1_output_0 = clefia_sw.F1(expected_f1_rk_input_0, expected_f1_x_input_0)
+    expected_f1_output_0 = clefia_sw.F1(expected_f1_rk_input_0, expected_f1_x_input_0)[
+        0
+    ]
     expected_next_T3 = clefia_sw.galois8.add(blk_i[3], expected_f1_output_0)
     blk_i[3] = expected_next_T3
 
-    print(hex(dut.f0_x_input[0].value))
-    print(hex(expected_f0_x_input_0))
-    print(expected_f0_output_0)
-    print(hex(expected_f0_output_0[0]))
     assert hex(dut.f0_x_input[0].value) == hex(
         expected_f0_x_input_0
     ), f"ERROR IN STEP_2_1 f0_x_input expected = {hex(expected_f0_x_input_0)}, calculated = {hex(dut.f0_x_input[0].value)}"
