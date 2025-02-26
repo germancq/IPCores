@@ -124,7 +124,7 @@ async def step2_1_test(dut, clefia_sw, blk_i, rk, counter_value):
 
     if dut.d.value == 8:
         expected_f0_x_input_1 = blk_i[4]
-        expected_f0_rk_input_1 = rk[(int(dut.d.value / 2)) * counter_value]
+        expected_f0_rk_input_1 = rk[((int(dut.d.value / 2)) * counter_value) + 2]
         expected_f0_output_1 = clefia_sw.F0(
             expected_f0_rk_input_1, expected_f0_x_input_1
         )[0]
@@ -132,7 +132,7 @@ async def step2_1_test(dut, clefia_sw, blk_i, rk, counter_value):
         blk_i[5] = expected_next_T5
 
         expected_f1_x_input_1 = blk_i[6]
-        expected_f1_rk_input_1 = rk[((int(dut.d.value / 2)) * counter_value) + 1]
+        expected_f1_rk_input_1 = rk[((int(dut.d.value / 2)) * counter_value) + 3]
         expected_f1_output_1 = clefia_sw.F1(
             expected_f1_rk_input_1, expected_f1_x_input_1
         )[0]
