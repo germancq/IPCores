@@ -5,16 +5,13 @@
  * Last Modified Date: 26.02.2025
  * Last Modified By  : German C.Quiveu <germancq@dte.us.es>
  */
-module gen_con #(
-    parameter KEY_LEN = 128,
-    parameter NUMBER_CON = 60
-) (
-    output [31:0] CON[NUMBER_CON-1:0]
+module gen_con (
+    output [31:0] CON_128[59:0],
+    output [31:0] CON_192[83:0],
+    output [31:0] CON_256[91:0]
+
 );
 
-  logic [31:0] CON_128[59:0];
-  logic [31:0] CON_192[83:0];
-  logic [31:0] CON_256[91:0];
   assign CON_128[0]  = 32'hf56b7aeb;
   assign CON_128[1]  = 32'h994a8a42;
   assign CON_128[2]  = 32'h96a4bd75;
@@ -252,24 +249,6 @@ module gen_con #(
   assign CON_256[90] = 32'h4cf99a2;
   assign CON_256[91] = 32'h68ee2eb3;
 
-
-  generate
-    case (KEY_LEN)
-      128: begin
-        assign CON = CON_128;
-      end
-      192: begin
-        assign CON = CON_192;
-      end
-      256: begin
-        assign CON = CON_256;
-      end
-      default:
-      begin
-        assign CON = CON_256;
-      end
-    endcase
-  endgenerate
 
 
 

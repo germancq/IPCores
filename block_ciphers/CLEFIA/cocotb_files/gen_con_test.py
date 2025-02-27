@@ -22,21 +22,32 @@ async def test(dut, index=0):
     clefia_sw = clefia.CLEFIA()
     iv = 0x428A
     l = 30
-    print(dut.KEY_LEN.value)
-    if dut.KEY_LEN.value == 192:
-        iv = 0x7137
-        l = 42
-    if dut.KEY_LEN.value == 256:
-        iv = 0xB5C0
-        l = 46
     expected_result = clefia_sw.generate_constants(iv, l)[1]
-    await Timer(10, units="ns")
+    for i in range(0, 60):
 
-    for i in range(0, dut.NUMBER_CON.value):
-
-        assert hex(dut.CON[i].value) == hex(
+        assert hex(dut.CON_128[i].value) == hex(
             expected_result[i]
-        ), f"ERROR, EXPECTED value should be {hex(expected_result[i])}, however hdl value is {hex(dut.CON[i].value)}"
+        ), f"ERROR, EXPECTED value should be {hex(expected_result[i])}, however hdl value is {hex(dut.CON_128[i].value)}"
+
+    clefia_sw = clefia.CLEFIA()
+    iv = 0x7137
+    l = 42
+    expected_result = clefia_sw.generate_constants(iv, l)[1]
+    for i in range(0, 84):
+
+        assert hex(dut.CON_192[i].value) == hex(
+            expected_result[i]
+        ), f"ERROR, EXPECTED value should be {hex(expected_result[i])}, however hdl value is {hex(dut.CON_192[i].value)}"
+
+    clefia_sw = clefia.CLEFIA()
+    iv = 0xB5C0
+    l = 46
+    expected_result = clefia_sw.generate_constants(iv, l)[1]
+    for i in range(0, 92):
+
+        assert hex(dut.CON_256[i].value) == hex(
+            expected_result[i]
+        ), f"ERROR, EXPECTED value should be {hex(expected_result[i])}, however hdl value is {hex(dut.CON_256[i].value)}"
 
 
 n = 0x1

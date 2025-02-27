@@ -18,17 +18,7 @@ targets:
       vcs_options : [-timescale=1ns/1ns]
     filesets : [rtl ,cocotb]  
     toplevel : gen_con
-    parameters :
-      - KEY_LEN=128
-      - NUMBER_CON=60
 
-parameters :
-  KEY_LEN :
-    datatype : int
-    paramtype : vlogparam
-  NUMBER_CON :
-    datatype : int
-    paramtype : vlogparam
 
 filesets:
   cocotb :
