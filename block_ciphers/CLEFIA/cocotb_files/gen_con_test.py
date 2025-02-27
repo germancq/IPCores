@@ -19,11 +19,14 @@ from cocotb.triggers import FallingEdge, RisingEdge, Timer
 @cocotb.test()
 async def test(dut, index=0):
 
+    await Timer(10, units="ns")
+
     clefia_sw = clefia.CLEFIA()
     iv = 0x428A
     l = 30
     expected_result = clefia_sw.generate_constants(iv, l)[1]
     for i in range(0, 60):
+        print(i)
 
         assert hex(dut.CON_128[i].value) == hex(
             expected_result[i]
@@ -34,6 +37,7 @@ async def test(dut, index=0):
     l = 42
     expected_result = clefia_sw.generate_constants(iv, l)[1]
     for i in range(0, 84):
+        print(i)
 
         assert hex(dut.CON_192[i].value) == hex(
             expected_result[i]
@@ -44,6 +48,7 @@ async def test(dut, index=0):
     l = 46
     expected_result = clefia_sw.generate_constants(iv, l)[1]
     for i in range(0, 92):
+        print(i)
 
         assert hex(dut.CON_256[i].value) == hex(
             expected_result[i]
