@@ -7,12 +7,12 @@
  */
 
 module key_schedule #(
-    parameter KEY_LEN = 128
+    parameter KEY_LEN = 256
 ) (
     input clk,
     input rst,
     input [KEY_LEN-1:0] key,
-    output [KEY_LEN-1:0] wk,
+    output [31:0] wk[3:0],
     output [31:0] round_keys[35-((KEY_LEN-128)>>(3)):0],
     output logic end_signal
 );
@@ -22,6 +22,16 @@ module key_schedule #(
   localparam GFN_d = 4;
   localparam GFN_r = 12;
 
+  logic [31:0] key_l[3:0];
+  assign key_l[0] = key[31:0];
+  assign key_l[1] = key[63:32];
+  assign key_l[2] = key[95:64];
+  assign key_l[3] = key[127:96];
+  logic [31:0] key_r[3:0];
+  assign key_r[0] = KEY_LEN == 128 ? 0 : key[159:128];
+  assign key_r[1] = KEY_LEN == 128 ? 0 : key[191:160];
+  assign key_r[2] = KEY_LEN == 128 ? 0 : (KEY_LEN == 192 ? ~key[31:0] : key[223:192]);
+  assign key_r[3] = KEY_LEN == 128 ? 0 : (KEY_LEN == 192 ? ~key[63:32] : key[255:224]);
 
   function [127:0] doubleSwap(input [127:0] block_i);
     return {block_i[120:64], block_i[127:121], block_i[6:0], block_i[63:7]};
@@ -53,32 +63,383 @@ module key_schedule #(
       .CON_256(CON_256)
   );
 
-  //gfn
-  logic gfn_rst;
-  logic [31:0] gfn_round_keys[((GFN_d>>1)*GFN_r)-1:0];
-  logic [31:0] gfn_block_i[GFN_d - 1:0];
-  logic [31:0] gfn_block_o[GFN_d - 1:0];
-  logic gfn_end_signal;
+  //gfn 4,12
+  logic [31:0] gfn4_block_o[3:0];
+  logic gfn4_end_signal;
 
   gfn #(
-      .d(GFN_d),
-      .r(GFN_r)
+      .d(4),
+      .r(12)
   ) gfn_inst (
       .clk(clk),
-      .rst(gfn_rst),
-      .round_keys(gfn_round_keys),
-      .block_i(gfn_block_i),
-      .block_o(gfn_block_o),
-      .end_signal(gfn_end_signal)
+      .rst(rst),
+      .round_keys(CON_128[23:0]),
+      .block_i(key_l),
+      .block_o(gfn4_block_o),
+      .end_signal(gfn4_end_signal)
+  );
+  //gfn 8,10
+  logic [31:0] gfn8_block_o[7:0];
+  logic gfn8_end_signal;
+  logic [31:0] gfn8_block_i[7:0];
+  logic [31:0] gfn8_round_keys[39:0];
+
+  assign gfn8_round_keys   = KEY_LEN <= 192 ? CON_192[39:0] : CON_256[39:0];
+  assign gfn8_block_i[3:0] = key_l;
+  assign gfn8_block_i[7:4] = key_r;
+  gfn #(
+      .d(8),
+      .r(10)
+  ) gfn_inst_8 (
+      .clk(clk),
+      .rst(rst),
+      .round_keys(gfn8_round_keys),
+      .block_i(gfn8_block_i),
+      .block_o(gfn8_block_o),
+      .end_signal(gfn8_end_signal)
   );
 
+  genvar i;
   //WK
-  //register for T
-  //register for L
-  //register for RK
-  //registers for K,KR,KL
+  logic [31:0] WK_din[3:0];
+  logic [31:0] WK_dout[3:0];
+  logic [0:0] WK_w[3:0];
+  logic [0:0] WK_cl[3:0];
+  generate
+    for (i = 0; i < 4; i++) begin
+      register #(
+          .DATA_WIDTH(32)
+      ) r_WK_i (
+          .clk(clk),
+          .cl(WK_cl[i]),
+          .w(WK_w[i]),
+          .din(WK_din[i]),
+          .dout(WK_dout[i])
+      );
+      assign wk[i] = WK_dout[i];
+    end
+  endgenerate
 
+  //register for T
+  logic [31:0] T_din[3:0];
+  logic [31:0] T_dout[3:0];
+  logic [0:0] T_w[3:0];
+  logic [0:0] T_cl[3:0];
+  generate
+    for (i = 0; i < 4; i++) begin
+      register #(
+          .DATA_WIDTH(32)
+      ) r_T_i (
+          .clk(clk),
+          .cl(T_cl[i]),
+          .w(T_w[i]),
+          .din(T_din[i]),
+          .dout(T_dout[i])
+      );
+    end
+  endgenerate
+  //register for L
+  logic [31:0] LL_din[3:0];
+  logic [31:0] LL_dout[3:0];
+  logic [0:0] LL_w[3:0];
+  logic [0:0] LL_cl[3:0];
+  generate
+    for (i = 0; i < 4; i++) begin
+      register #(
+          .DATA_WIDTH(32)
+      ) r_LL_i (
+          .clk(clk),
+          .cl(LL_cl[i]),
+          .w(LL_w[i]),
+          .din(LL_din[i]),
+          .dout(LL_dout[i])
+      );
+    end
+  endgenerate
+  logic [31:0] LR_din[3:0];
+  logic [31:0] LR_dout[3:0];
+  logic [0:0] LR_w[3:0];
+  logic [0:0] LR_cl[3:0];
+  generate
+    for (i = 0; i < 4; i++) begin
+      register #(
+          .DATA_WIDTH(32)
+      ) r_LR_i (
+          .clk(clk),
+          .cl(LR_cl[i]),
+          .w(LR_w[i]),
+          .din(LR_din[i]),
+          .dout(LR_dout[i])
+      );
+    end
+  endgenerate
+  //register for RK
+  logic [31:0] RK_din[N_RK-1:0];
+  logic [31:0] RK_dout[N_RK-1:0];
+  logic [0:0] RK_w[N_RK-1:0];
+  logic [0:0] RK_cl[N_RK-1:0];
+  generate
+    for (i = 0; i < N_RK; i++) begin
+      register #(
+          .DATA_WIDTH(32)
+      ) r_RK_i (
+          .clk(clk),
+          .cl(RK_cl[i]),
+          .w(RK_w[i]),
+          .din(RK_din[i]),
+          .dout(RK_dout[i])
+      );
+      assign round_keys[i] = RK_dout[i];
+    end
+  endgenerate
+
+  logic [2:0] current_state, next_state;
+
+  localparam IDLE = 0;
+  localparam WAIT_FOR_GFN = 1;
+  localparam CHECK_COUNTER = 2;
+
+  logic [31:0] j;
+
+  always_comb begin
+    //default values
+    next_state = current_state;
+
+    up_rounds_counter = 0;
+    rst_rounds_counter = 0;
+    din_rounds_counter = 0;
+
+
+    for (j = 0; j < 4; j++) begin
+      WK_cl[j] = 0;
+      WK_w[j] = 0;
+      WK_din[j] = KEY_LEN == 128 ? key_l[j] : key_l[j] ^ key_r[j];
+
+      T_cl[j] = 0;
+      T_w[j] = 0;
+      T_din[j] = 0;
+
+      LL_cl[j] = 0;
+      LL_w[j] = 0;
+      LL_din[j] = 0;
+
+      LR_cl[j] = 0;
+      LR_w[j] = 0;
+      LR_din[j] = 0;
+    end
+
+    for (j = 0; j < N_RK; j++) begin
+      RK_cl[j]  = 0;
+      RK_w[j]   = 0;
+      RK_din[j] = 0;
+    end
+    case (current_state)
+      IDLE: begin
+        next_state = WAIT_FOR_GFN;
+
+        rst_rounds_counter = 1;
+
+        for (j = 0; j < 4; j++) begin
+          WK_cl[j] = 1;
+
+          T_cl[j]  = 1;
+
+          LL_cl[j] = 1;
+          LR_cl[j] = 1;
+
+        end
+
+        for (j = 0; j < N_RK; j++) begin
+          RK_cl[j] = 1;
+        end
+
+      end
+      WAIT_FOR_GFN: begin
+        for (j = 0; j < 3; j++) begin
+          WK_w[j] = 1;
+        end
+        if (gfn4_end_signal && gfn8_end_signal) begin
+          next_state = CHECK_COUNTER;
+
+          for (j = 0; j < 4; j++) begin
+
+            LL_din[j] = KEY_LEN == 128 ? gfn4_block_o[j] : gfn8_block_o[j];
+            LR_din[j] = KEY_LEN == 128 ? 0 : gfn8_block_o[4+j];
+
+            LL_w[j]   = 1;
+            LR_w[j]   = 1;
+
+          end
+
+        end
+      end
+
+    endcase
+  end
+
+  always_ff @(posedge clk) begin
+
+    if (rst) begin
+      current_state = IDLE;
+    end else begin
+      current_state = next_state;
+    end
+  end
 endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
