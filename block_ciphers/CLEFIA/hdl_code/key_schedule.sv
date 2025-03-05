@@ -259,7 +259,7 @@ module key_schedule #(
       LR_din[j] = 0;
     end
 
-    for (j = 0; j < 36 - ((KEY_LEN - 128) >> (3)); j++) begin
+    for (j = 0; j < 36; j++) begin
       RK_cl[j]  = 0;
       RK_w[j]   = 0;
       RK_din[j] = 0;
@@ -401,6 +401,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
