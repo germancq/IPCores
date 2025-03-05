@@ -125,79 +125,79 @@ module key_schedule #(
       .end_signal(gfn8_end_signal)
   );
 
-  //WK
-  logic [31:0] WK_din[3:0];
-  logic [31:0] WK_dout[3:0];
-  logic [0:0] WK_w[3:0];
-  logic [0:0] WK_cl[3:0];
-  generate
-    for (i = 0; i < 4; i++) begin
-      register #(
-          .DATA_WIDTH(32)
-      ) r_WK_i (
-          .clk(clk),
-          .cl(WK_cl[i]),
-          .w(WK_w[i]),
-          .din(WK_din[i]),
-          .dout(WK_dout[i])
-      );
-      assign wk[i] = WK_dout[i];
-    end
-  endgenerate
+  // //WK
+  // logic [31:0] WK_din[3:0];
+  // logic [31:0] WK_dout[3:0];
+  // logic [0:0] WK_w[3:0];
+  // logic [0:0] WK_cl[3:0];
+  // generate
+  //   for (i = 0; i < 4; i++) begin
+  //     register #(
+  //         .DATA_WIDTH(32)
+  //     ) r_WK_i (
+  //         .clk(clk),
+  //         .cl(WK_cl[i]),
+  //         .w(WK_w[i]),
+  //         .din(WK_din[i]),
+  //         .dout(WK_dout[i])
+  //     );
+  //     assign wk[i] = WK_dout[i];
+  //   end
+  // endgenerate
 
-  //register for T
-  logic [31:0] T_din[3:0];
-  logic [31:0] T_dout[3:0];
-  logic [0:0] T_w[3:0];
-  logic [0:0] T_cl[3:0];
-  generate
-    for (i = 0; i < 4; i++) begin
-      register #(
-          .DATA_WIDTH(32)
-      ) r_T_i (
-          .clk(clk),
-          .cl(T_cl[i]),
-          .w(T_w[i]),
-          .din(T_din[i]),
-          .dout(T_dout[i])
-      );
-    end
-  endgenerate
-  //register for L
-  logic [31:0] LL_din[3:0];
-  logic [31:0] LL_dout[3:0];
-  logic [0:0] LL_w[3:0];
-  logic [0:0] LL_cl[3:0];
-  generate
-    for (i = 0; i < 4; i++) begin
-      register #(
-          .DATA_WIDTH(32)
-      ) r_LL_i (
-          .clk(clk),
-          .cl(LL_cl[i]),
-          .w(LL_w[i]),
-          .din(LL_din[i]),
-          .dout(LL_dout[i])
-      );
-    end
-  endgenerate
-  logic [31:0] LR_din[3:0];
-  logic [31:0] LR_dout[3:0];
-  logic [0:0] LR_w[3:0];
-  logic [0:0] LR_cl[3:0];
-  generate
-    for (i = 0; i < 4; i++) begin
-      register #(
-          .DATA_WIDTH(32)
-      ) r_LR_i (
-          .clk(clk),
-          .cl(LR_cl[i]),
-          .w(LR_w[i]),
-          .din(LR_din[i]),
-          .dout(LR_dout[i])
-      );
-    end
-  endgenerate
+  // //register for T
+  // logic [31:0] T_din[3:0];
+  // logic [31:0] T_dout[3:0];
+  // logic [0:0] T_w[3:0];
+  // logic [0:0] T_cl[3:0];
+  // generate
+  //   for (i = 0; i < 4; i++) begin
+  //     register #(
+  //         .DATA_WIDTH(32)
+  //     ) r_T_i (
+  //         .clk(clk),
+  //         .cl(T_cl[i]),
+  //         .w(T_w[i]),
+  //         .din(T_din[i]),
+  //         .dout(T_dout[i])
+  //     );
+  //   end
+  // endgenerate
+  // //register for L
+  // logic [31:0] LL_din[3:0];
+  // logic [31:0] LL_dout[3:0];
+  // logic [0:0] LL_w[3:0];
+  // logic [0:0] LL_cl[3:0];
+  // generate
+  //   for (i = 0; i < 4; i++) begin
+  //     register #(
+  //         .DATA_WIDTH(32)
+  //     ) r_LL_i (
+  //         .clk(clk),
+  //         .cl(LL_cl[i]),
+  //         .w(LL_w[i]),
+  //         .din(LL_din[i]),
+  //         .dout(LL_dout[i])
+  //     );
+  //   end
+  // endgenerate
+  // logic [31:0] LR_din[3:0];
+  // logic [31:0] LR_dout[3:0];
+  // logic [0:0] LR_w[3:0];
+  // logic [0:0] LR_cl[3:0];
+  // generate
+  //   for (i = 0; i < 4; i++) begin
+  //     register #(
+  //         .DATA_WIDTH(32)
+  //     ) r_LR_i (
+  //         .clk(clk),
+  //         .cl(LR_cl[i]),
+  //         .w(LR_w[i]),
+  //         .din(LR_din[i]),
+  //         .dout(LR_dout[i])
+  //     );
+  //   end
+  // endgenerate
   // //register for RK
   // logic [31:0] RK_din[N_RK-1:0];
   // logic [31:0] RK_dout[N_RK-1:0];
@@ -401,6 +401,8 @@ module key_schedule #(
   //   end
   // end
 endmodule
+
+
 
 
 
