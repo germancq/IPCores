@@ -377,21 +377,21 @@ module key_schedule #(
           endcase
         end
       end
-      //   //   GEN_RK: begin
-      //   //     next_state = UPDATE_COUNTER;
-      //   //     for (j = 0; j < 4; j++) begin
-      //   //       RK_w[(dout_rounds_counter<<2)+j]   = 1;
-      //   //       RK_din[(dout_rounds_counter<<2)+j] = T_dout[j];
-      //   //     end
+      GEN_RK: begin
+        next_state = UPDATE_COUNTER;
+        for (j = 0; j < 4; j++) begin
+          RK_w[(dout_rounds_counter<<2)+j]   = 1;
+          RK_din[(dout_rounds_counter<<2)+j] = T_dout[j];
+        end
 
-      //   //   end
-      //   //   UPDATE_COUNTER: begin
-      //   //     up_rounds_counter = 1;
-      //   //     next_state = CHECK_COUNTER;
-      //   //   end
-      //   //   END_FSM_STATE: begin
-      //   //     end_signal = 1;
-      //   //   end
+      end
+      UPDATE_COUNTER: begin
+        up_rounds_counter = 1;
+        next_state = CHECK_COUNTER;
+      end
+      END_FSM_STATE: begin
+        end_signal = 1;
+      end
 
 
     endcase
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
