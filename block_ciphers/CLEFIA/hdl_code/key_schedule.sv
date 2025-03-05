@@ -85,7 +85,7 @@ module key_schedule #(
   genvar i;
   generate
     for (i = 0; i < 24; i++) begin
-      assign gfn4_round_keys[i] = 32'h0;
+      assign gfn4_round_keys[i] = CON_128[i];
 
     end
     for (i = 0; i < 4; i++) begin
@@ -98,7 +98,7 @@ module key_schedule #(
   ) gfn_inst (
       .clk(clk),
       .rst(rst),
-      .round_keys(CON_128[23:0]),
+      .round_keys(gfn4_round_keys),
       .block_i(key_l),
       .block_o(),
       .end_signal()
@@ -423,6 +423,8 @@ endmodule
 //
 //
 //
+
+
 
 
 
