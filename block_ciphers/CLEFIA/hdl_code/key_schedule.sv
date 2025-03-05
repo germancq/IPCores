@@ -67,9 +67,9 @@ module key_schedule #(
   );
 
   //CON
-  wire [31:0] CON_128[59:0];
-  wire [31:0] CON_192[83:0];
-  wire [31:0] CON_256[91:0];
+  logic [31:0] CON_128[59:0];
+  logic [31:0] CON_192[83:0];
+  logic [31:0] CON_256[91:0];
   gen_con gen_con_inst (
       .CON_128(CON_128),
       .CON_192(CON_192),
@@ -77,7 +77,7 @@ module key_schedule #(
   );
 
   //gfn 4,12
-  wire [31:0] gfn4_block_o[3:0];
+  logic [31:0] gfn4_block_o[3:0];
   logic gfn4_end_signal;
   logic [31:0] gfn4_round_keys[23:0];
   logic [31:0] gfn4_block_i[3:0];
@@ -419,6 +419,8 @@ endmodule
 //
 //
 //
+
+
 
 
 
