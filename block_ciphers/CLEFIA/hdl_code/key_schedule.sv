@@ -116,8 +116,8 @@ module key_schedule #(
 
     end
   endgenerate
-  //assign gfn8_block_i[3:0] = key_l;
-  //assign gfn8_block_i[7:4] = key_r;
+  assign gfn8_block_i[3:0] = key_l;
+  assign gfn8_block_i[7:4] = key_r;
   gfn #(
       .d(8),
       .r(10)
@@ -130,25 +130,25 @@ module key_schedule #(
       .end_signal(gfn8_end_signal)
   );
 
-  // //WK
-  // logic [31:0] WK_din[3:0];
-  // logic [31:0] WK_dout[3:0];
-  // logic [0:0] WK_w[3:0];
-  // logic [0:0] WK_cl[3:0];
-  // generate
-  //   for (i = 0; i < 4; i++) begin
-  //     register #(
-  //         .DATA_WIDTH(32)
-  //     ) r_WK_i (
-  //         .clk(clk),
-  //         .cl(WK_cl[i]),
-  //         .w(WK_w[i]),
-  //         .din(WK_din[i]),
-  //         .dout(WK_dout[i])
-  //     );
-  //     assign wk[i] = WK_dout[i];
-  //   end
-  // endgenerate
+  //WK
+  logic [31:0] WK_din[3:0];
+  logic [31:0] WK_dout[3:0];
+  logic [0:0] WK_w[3:0];
+  logic [0:0] WK_cl[3:0];
+  generate
+    for (i = 0; i < 4; i++) begin
+      register #(
+          .DATA_WIDTH(32)
+      ) r_WK_i (
+          .clk(clk),
+          .cl(WK_cl[i]),
+          .w(WK_w[i]),
+          .din(WK_din[i]),
+          .dout(WK_dout[i])
+      );
+      assign wk[i] = WK_dout[i];
+    end
+  endgenerate
 
   // //register for T
   // logic [31:0] T_din[3:0];
@@ -406,6 +406,8 @@ module key_schedule #(
   //   end
   // end
 endmodule
+
+
 
 
 
