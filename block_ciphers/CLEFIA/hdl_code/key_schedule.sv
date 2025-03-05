@@ -19,9 +19,6 @@ module key_schedule #(
 
   localparam N_RK = 36 - ((KEY_LEN - 128) >> (3));
 
-  localparam GFN_d = 4;
-  localparam GFN_r = 12;
-
   logic [31:0] key_l[3:0];
   assign key_l[0] = key[31:0];
   assign key_l[1] = key[63:32];
@@ -392,6 +389,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 

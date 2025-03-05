@@ -42,6 +42,7 @@ filesets:
       - block_ciphers/CLEFIA/hdl_code/key_schedule.sv      
     depend:
       - clefia_gfn
+      - clefia_gen_con
       - counter
       - register
 
