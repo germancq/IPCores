@@ -79,15 +79,19 @@ module key_schedule #(
   //gfn 4,12
   wire [31:0] gfn4_block_o[3:0];
   logic gfn4_end_signal;
+  logic [31:0] gfn4_round_keys[59:0];
+  logic [31:0] gfn4_block_i[3:0];
 
+  assign gfn8_round_keys = CON_128;
+  assign gfn8_block_i = CON_128[3:0];
   gfn #(
       .d(4),
       .r(12)
   ) gfn_inst (
       .clk(clk),
       .rst(rst),
-      .round_keys(CON_128[23:0]),
-      .block_i(CON_128[3:0]),
+      .round_keys(gfn4_round_keys),
+      .block_i(gfn4_block_i),
       .block_o(),
       .end_signal()
   );
@@ -411,6 +415,8 @@ endmodule
 //
 //
 //
+
+
 
 
 
