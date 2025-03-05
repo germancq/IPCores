@@ -56,10 +56,13 @@ async def gfn_test(dut, expected_l_value):
 
     while (dut.gfn4_end_signal.value == 0) or (dut.gfn8_end_signal == 0):
         await n_cycles_clock(dut, 1)
-        print("..")
 
-    print(dut.gfn4_end_signal.value)
-    print(dut.gfn8_end_signal.value)
+    print(hex(dut.LL_din[0].value))
+    print(hex(dut.LL_din[1].value))
+    print(hex(dut.LL_din[2].value))
+    print(hex(dut.LL_din[3].value))
+    print(expected_l_value)
+
     for i in range(0, 4):
 
         assert hex(dut.LL_din[i].value) == hex(
