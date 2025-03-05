@@ -62,6 +62,7 @@ async def gfn_test(dut, expected_l_value):
         print(dut.gfn8_end_signal.value)
         print(dut.gfn4_end_signal.value)
         await n_cycles_clock(dut, 1)
+        print("..")
 
     print(dut.gfn4_end_signal.value)
     print(dut.gfn8_end_signal.value)
