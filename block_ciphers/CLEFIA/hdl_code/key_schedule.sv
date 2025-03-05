@@ -87,9 +87,9 @@ module key_schedule #(
       .clk(clk),
       .rst(rst),
       .round_keys(CON_128[23:0]),
-      .block_i(key_l),
-      .block_o(gfn4_block_o),
-      .end_signal(gfn4_end_signal)
+      .block_i(CON_128[3:0]),
+      .block_o(),
+      .end_signal()
   );
   //  //gfn 8,10
   //  wire [31:0] gfn8_block_o[7:0];
@@ -411,5 +411,9 @@ endmodule
 //
 //
 //
+
+
+
+
 
 
