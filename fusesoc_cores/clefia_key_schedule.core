@@ -11,8 +11,8 @@ targets:
   sim : 
     flow : sim
     flow_options :
-      tool : icarus
-      iverilog_options : [-g2012]
+      tool : verilator 
+      verilator_options : [-Wno-WIDTH_EXPAND]
       cocotb_module : key_schedule_test
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
