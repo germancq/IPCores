@@ -116,8 +116,8 @@ module key_schedule #(
 
     end
   endgenerate
-  assign gfn8_block_i[3:0] = key_l;
-  assign gfn8_block_i[7:4] = key_r;
+  //  assign gfn8_block_i[3:0] = key_l;
+  // assign gfn8_block_i[7:4] = key_r;
   gfn #(
       .d(8),
       .r(10)
@@ -406,6 +406,8 @@ module key_schedule #(
   //   end
   // end
 endmodule
+
+
 
 
 
