@@ -98,7 +98,7 @@ module key_schedule #(
   ) gfn_inst (
       .clk(clk),
       .rst(rst),
-      .round_keys(gfn4_round_keys),
+      .round_keys(CON_128[23:0]),
       .block_i(key_l),
       .block_o(),
       .end_signal()
@@ -423,6 +423,8 @@ endmodule
 //
 //
 //
+
+
 
 
 
