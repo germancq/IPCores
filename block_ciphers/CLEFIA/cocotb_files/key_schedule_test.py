@@ -56,16 +56,9 @@ async def gfn_test(dut, expected_l_value):
 
     print(dut.gfn4_end_signal.value)
     print(dut.gfn8_end_signal.value)
-    while dut.gfn4_end_signal.value == 0:
-        print("gfn4")
-        print(dut.gfn4_end_signal.value)
-        print(dut.gfn_inst.current_state.value)
+    while dut.gfn4_end_signal.value == 0 or dut.gfn8_end_signal == 0:
+        print(hex(dut.gfn_inst_8.dout.dout_rounds_counter.value))
         print(hex(dut.gfn_inst.dout_rounds_counter.value))
-        await n_cycles_clock(dut, 1)
-    print("fin gfn4")
-    while dut.gfn8_end_signal.value == 0:
-        print("gfn8")
-        print(dut.gfn8_end_signal.value)
         await n_cycles_clock(dut, 1)
 
     print(dut.gfn4_end_signal.value)
