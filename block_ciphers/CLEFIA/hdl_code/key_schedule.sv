@@ -100,31 +100,31 @@ module key_schedule #(
       .block_o(gfn4_block_o),
       .end_signal(gfn4_end_signal)
   );
-  //gfn 8,10
-  //  wire [31:0] gfn8_block_o[7:0];
-  //  logic gfn8_end_signal;
-  //  logic [31:0] gfn8_block_i[7:0];
-  //  logic [31:0] gfn8_round_keys[39:0];
-  //
-  //  generate
-  //    for (i = 0; i < 40; i++) begin
-  //      assign gfn8_round_keys[i] = KEY_LEN <= 192 ? CON_192[i] : CON_256[i];
-  //    end
-  //  endgenerate
-  //  assign gfn8_block_i[3:0] = key_l;
-  //  assign gfn8_block_i[7:4] = key_r;
-  //  gfn #(
-  //      .d(8),
-  //      .r(10)
-  //  ) gfn_inst_8 (
-  //      .clk(clk),
-  //      .rst(rst),
-  //      .round_keys(gfn8_round_keys),
-  //      .block_i(gfn8_block_i),
-  //      .block_o(gfn8_block_o),
-  //      .end_signal(gfn8_end_signal)
-  //  );
-  //
+  // gfn 8,10
+  wire [31:0] gfn8_block_o[7:0];
+  logic gfn8_end_signal;
+  logic [31:0] gfn8_block_i[7:0];
+  logic [31:0] gfn8_round_keys[39:0];
+
+  generate
+    for (i = 0; i < 40; i++) begin
+      assign gfn8_round_keys[i] = KEY_LEN <= 192 ? CON_192[i] : CON_256[i];
+    end
+  endgenerate
+  assign gfn8_block_i[3:0] = key_l;
+  assign gfn8_block_i[7:4] = key_r;
+  gfn #(
+      .d(8),
+      .r(10)
+  ) gfn_inst_8 (
+      .clk(clk),
+      .rst(rst),
+      .round_keys(gfn8_round_keys),
+      .block_i(gfn8_block_i),
+      .block_o(gfn8_block_o),
+      .end_signal(gfn8_end_signal)
+  );
+
   // //WK
   // logic [31:0] WK_din[3:0];
   // logic [31:0] WK_dout[3:0];
@@ -401,6 +401,8 @@ module key_schedule #(
   //   end
   // end
 endmodule
+
+
 
 
 
