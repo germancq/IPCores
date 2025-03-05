@@ -88,9 +88,6 @@ module key_schedule #(
       assign gfn4_round_keys[i] = CON_128[i];
 
     end
-    for (i = 0; i < 4; i++) begin
-      assign gfn4_block_i[i] = 0;
-    end
   endgenerate
   gfn #(
       .d(4),
@@ -100,8 +97,8 @@ module key_schedule #(
       .rst(rst),
       .round_keys(gfn4_round_keys),
       .block_i(key_l),
-      .block_o(),
-      .end_signal()
+      .block_o(gfn4_block_o),
+      .end_signal(gfn4_end_signal)
   );
   //  //gfn 8,10
   //  wire [31:0] gfn8_block_o[7:0];
@@ -124,7 +121,6 @@ module key_schedule #(
   //      .end_signal(gfn8_end_signal)
   //  );
   //
-  //  genvar i;
   //  //WK
   //  logic [31:0] WK_din[3:0];
   //  logic [31:0] WK_dout[3:0];
@@ -423,6 +419,8 @@ endmodule
 //
 //
 //
+
+
 
 
 
