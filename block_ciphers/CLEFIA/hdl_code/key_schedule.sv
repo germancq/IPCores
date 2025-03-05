@@ -198,209 +198,211 @@ module key_schedule #(
       );
     end
   endgenerate
-  //register for RK
-  logic [31:0] RK_din[N_RK-1:0];
-  logic [31:0] RK_dout[N_RK-1:0];
-  logic [0:0] RK_w[N_RK-1:0];
-  logic [0:0] RK_cl[N_RK-1:0];
-  generate
-    for (i = 0; i < N_RK; i++) begin
-      register #(
-          .DATA_WIDTH(32)
-      ) r_RK_i (
-          .clk(clk),
-          .cl(RK_cl[i]),
-          .w(RK_w[i]),
-          .din(RK_din[i]),
-          .dout(RK_dout[i])
-      );
-      assign round_keys[i] = RK_dout[i];
-    end
-  endgenerate
+  // //register for RK
+  // logic [31:0] RK_din[N_RK-1:0];
+  // logic [31:0] RK_dout[N_RK-1:0];
+  // logic [0:0] RK_w[N_RK-1:0];
+  // logic [0:0] RK_cl[N_RK-1:0];
+  // generate
+  //   for (i = 0; i < N_RK; i++) begin
+  //     register #(
+  //         .DATA_WIDTH(32)
+  //     ) r_RK_i (
+  //         .clk(clk),
+  //         .cl(RK_cl[i]),
+  //         .w(RK_w[i]),
+  //         .din(RK_din[i]),
+  //         .dout(RK_dout[i])
+  //     );
+  //     assign round_keys[i] = RK_dout[i];
+  //   end
+  // endgenerate
 
-  logic [2:0] current_state, next_state;
+  // logic [2:0] current_state, next_state;
 
-  localparam IDLE = 0;
-  localparam WAIT_FOR_GFN = 1;
-  localparam CHECK_COUNTER = 2;
-  localparam GEN_T = 3;
-  localparam CHECK_ODD = 4;
-  localparam GEN_RK = 5;
-  localparam UPDATE_COUNTER = 6;
-  localparam END_FSM_STATE = 7;
+  // localparam IDLE = 0;
+  // localparam WAIT_FOR_GFN = 1;
+  // localparam CHECK_COUNTER = 2;
+  // localparam GEN_T = 3;
+  // localparam CHECK_ODD = 4;
+  // localparam GEN_RK = 5;
+  // localparam UPDATE_COUNTER = 6;
+  // localparam END_FSM_STATE = 7;
 
-  logic [31:0] j;
+  // logic [31:0] j;
 
-  always_comb begin
-    //default values
-    next_state = current_state;
+  // always_comb begin
+  //   //default values
+  //   next_state = current_state;
 
-    up_rounds_counter = 0;
-    rst_rounds_counter = 0;
-    din_rounds_counter = 0;
+  //   up_rounds_counter = 0;
+  //   rst_rounds_counter = 0;
+  //   din_rounds_counter = 0;
 
-    end_signal = 0;
+  //   end_signal = 0;
 
-    for (j = 0; j < 4; j++) begin
-      WK_cl[j] = 0;
-      WK_w[j] = 0;
-      WK_din[j] = KEY_LEN == 128 ? key_l[j] : key_l[j] ^ key_r[j];
+  //   for (j = 0; j < 4; j++) begin
+  //     WK_cl[j] = 0;
+  //     WK_w[j] = 0;
+  //     WK_din[j] = KEY_LEN == 128 ? key_l[j] : key_l[j] ^ key_r[j];
 
-      T_cl[j] = 0;
-      T_w[j] = 0;
-      T_din[j] = 0;
+  //     T_cl[j] = 0;
+  //     T_w[j] = 0;
+  //     T_din[j] = 0;
 
-      LL_cl[j] = 0;
-      LL_w[j] = 0;
-      LL_din[j] = 0;
+  //     LL_cl[j] = 0;
+  //     LL_w[j] = 0;
+  //     LL_din[j] = 0;
 
-      LR_cl[j] = 0;
-      LR_w[j] = 0;
-      LR_din[j] = 0;
-    end
+  //     LR_cl[j] = 0;
+  //     LR_w[j] = 0;
+  //     LR_din[j] = 0;
+  //   end
 
-    for (j = 0; j < 36; j++) begin
-      RK_cl[j]  = 0;
-      RK_w[j]   = 0;
-      RK_din[j] = 0;
-    end
-    // case (current_state)
-    //   IDLE: begin
-    //     next_state = WAIT_FOR_GFN;
+  //   for (j = 0; j < 36; j++) begin
+  //     RK_cl[j]  = 0;
+  //     RK_w[j]   = 0;
+  //     RK_din[j] = 0;
+  //   end
+  //   // case (current_state)
+  //   //   IDLE: begin
+  //   //     next_state = WAIT_FOR_GFN;
 
-    //     rst_rounds_counter = 1;
+  //   //     rst_rounds_counter = 1;
 
-    //     for (j = 0; j < 4; j++) begin
-    //       WK_cl[j] = 1;
+  //   //     for (j = 0; j < 4; j++) begin
+  //   //       WK_cl[j] = 1;
 
-    //       T_cl[j]  = 1;
+  //   //       T_cl[j]  = 1;
 
-    //       LL_cl[j] = 1;
-    //       LR_cl[j] = 1;
+  //   //       LL_cl[j] = 1;
+  //   //       LR_cl[j] = 1;
 
-    //     end
+  //   //     end
 
-    //     for (j = 0; j < 36 - ((KEY_LEN - 128) >> (3)); j++) begin
-    //       RK_cl[j] = 1;
-    //     end
+  //   //     for (j = 0; j < 36 - ((KEY_LEN - 128) >> (3)); j++) begin
+  //   //       RK_cl[j] = 1;
+  //   //     end
 
-    //   end
-    //   WAIT_FOR_GFN: begin
-    //     for (j = 0; j < 3; j++) begin
-    //       WK_w[j] = 1;
-    //     end
-    //     if (gfn4_end_signal && gfn8_end_signal) begin
-    //       next_state = CHECK_COUNTER;
+  //   //   end
+  //   //   WAIT_FOR_GFN: begin
+  //   //     for (j = 0; j < 3; j++) begin
+  //   //       WK_w[j] = 1;
+  //   //     end
+  //   //     if (gfn4_end_signal && gfn8_end_signal) begin
+  //   //       next_state = CHECK_COUNTER;
 
-    //       for (j = 0; j < 4; j++) begin
+  //   //       for (j = 0; j < 4; j++) begin
 
-    //         LL_din[j] = KEY_LEN == 128 ? gfn4_block_o[j] : gfn8_block_o[j];
-    //         LR_din[j] = KEY_LEN == 128 ? 0 : gfn8_block_o[4+j];
+  //   //         LL_din[j] = KEY_LEN == 128 ? gfn4_block_o[j] : gfn8_block_o[j];
+  //   //         LR_din[j] = KEY_LEN == 128 ? 0 : gfn8_block_o[4+j];
 
-    //         LL_w[j]   = 1;
-    //         LR_w[j]   = 1;
+  //   //         LL_w[j]   = 1;
+  //   //         LR_w[j]   = 1;
 
-    //       end
+  //   //       end
 
-    //     end
-    //   end
-    //   CHECK_COUNTER: begin
-    //     next_state = GEN_T;
-    //     if (dout_rounds_counter == number_rounds) begin
-    //       next_state = END_FSM_STATE;
-    //     end
-    //   end
-    //   GEN_T: begin
-    //     next_state = CHECK_ODD;
-    //     for (j = 0; j < 4; j++) begin
-    //       T_w[j] = 1;
-    //       case (KEY_LEN)
-    //         128: begin
-    //           T_din[j] = LL_dout[j] ^ CON_128[24+(dout_rounds_counter<<2)+j];
-    //         end
-    //         192: begin
-    //           if (dout_rounds_counter % 4 < 2) begin
-    //             T_din[j] = LL_dout[j] ^ CON_192[40+(dout_rounds_counter<<2)+j];
-    //           end else begin
-    //             T_din[j] = LR_dout[j] ^ CON_192[40+(dout_rounds_counter<<2)+j];
-    //           end
-    //         end
-    //         default: begin
-    //           if (dout_rounds_counter % 4 < 2) begin
-    //             T_din[j] = LL_dout[j] ^ CON_256[40+(dout_rounds_counter<<2)+j];
-    //           end else begin
-    //             T_din[j] = LR_dout[j] ^ CON_256[40+(dout_rounds_counter<<2)+j];
-    //           end
-    //         end
-    //       endcase
+  //   //     end
+  //   //   end
+  //   //   CHECK_COUNTER: begin
+  //   //     next_state = GEN_T;
+  //   //     if (dout_rounds_counter == number_rounds) begin
+  //   //       next_state = END_FSM_STATE;
+  //   //     end
+  //   //   end
+  //   //   GEN_T: begin
+  //   //     next_state = CHECK_ODD;
+  //   //     for (j = 0; j < 4; j++) begin
+  //   //       T_w[j] = 1;
+  //   //       case (KEY_LEN)
+  //   //         128: begin
+  //   //           T_din[j] = LL_dout[j] ^ CON_128[24+(dout_rounds_counter<<2)+j];
+  //   //         end
+  //   //         192: begin
+  //   //           if (dout_rounds_counter % 4 < 2) begin
+  //   //             T_din[j] = LL_dout[j] ^ CON_192[40+(dout_rounds_counter<<2)+j];
+  //   //           end else begin
+  //   //             T_din[j] = LR_dout[j] ^ CON_192[40+(dout_rounds_counter<<2)+j];
+  //   //           end
+  //   //         end
+  //   //         default: begin
+  //   //           if (dout_rounds_counter % 4 < 2) begin
+  //   //             T_din[j] = LL_dout[j] ^ CON_256[40+(dout_rounds_counter<<2)+j];
+  //   //           end else begin
+  //   //             T_din[j] = LR_dout[j] ^ CON_256[40+(dout_rounds_counter<<2)+j];
+  //   //           end
+  //   //         end
+  //   //       endcase
 
-    //     end
+  //   //     end
 
-    //   end
-    //   CHECK_ODD: begin
-    //     next_state = GEN_RK;
+  //   //   end
+  //   //   CHECK_ODD: begin
+  //   //     next_state = GEN_RK;
 
-    //     for (j = 0; j < 4; j++) begin
-    //       case (KEY_LEN)
-    //         128: begin
-    //           LL_w[j]   = 1;
-    //           LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >> (32 * j);
-    //           if (dout_rounds_counter[0] == 1) begin
-    //             T_w[j]   = 1;
-    //             T_din[j] = T_dout[j] ^ key_l[j];
-    //           end
-    //         end
-    //         default: begin
-    //           if (dout_rounds_counter % 4 < 2) begin
-    //             LL_w[j] = 1;
-    //             LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >>
-    //                 (32 * j);
-    //             if (dout_rounds_counter[0] == 1) begin
-    //               T_w[j]   = 1;
-    //               T_din[j] = T_dout[j] ^ key_r[j];
-    //             end
-    //           end else begin
-    //             LR_w[j] = 1;
-    //             LR_din[j] = doubleSwap({LR_dout[3], LR_dout[2], LR_dout[1], LR_dout[0]}) >>
-    //                 (32 * j);
-    //             if (dout_rounds_counter[0] == 1) begin
-    //               T_w[j]   = 1;
-    //               T_din[j] = T_dout[j] ^ key_l[j];
-    //             end
-    //           end
-    //         end
-    //       endcase
-    //     end
-    //   end
-    //   GEN_RK: begin
-    //     next_state = UPDATE_COUNTER;
-    //     for (j = 0; j < 4; j++) begin
-    //       RK_w[(dout_rounds_counter<<2)+j]   = 1;
-    //       RK_din[(dout_rounds_counter<<2)+j] = T_dout[j];
-    //     end
+  //   //     for (j = 0; j < 4; j++) begin
+  //   //       case (KEY_LEN)
+  //   //         128: begin
+  //   //           LL_w[j]   = 1;
+  //   //           LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >> (32 * j);
+  //   //           if (dout_rounds_counter[0] == 1) begin
+  //   //             T_w[j]   = 1;
+  //   //             T_din[j] = T_dout[j] ^ key_l[j];
+  //   //           end
+  //   //         end
+  //   //         default: begin
+  //   //           if (dout_rounds_counter % 4 < 2) begin
+  //   //             LL_w[j] = 1;
+  //   //             LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >>
+  //   //                 (32 * j);
+  //   //             if (dout_rounds_counter[0] == 1) begin
+  //   //               T_w[j]   = 1;
+  //   //               T_din[j] = T_dout[j] ^ key_r[j];
+  //   //             end
+  //   //           end else begin
+  //   //             LR_w[j] = 1;
+  //   //             LR_din[j] = doubleSwap({LR_dout[3], LR_dout[2], LR_dout[1], LR_dout[0]}) >>
+  //   //                 (32 * j);
+  //   //             if (dout_rounds_counter[0] == 1) begin
+  //   //               T_w[j]   = 1;
+  //   //               T_din[j] = T_dout[j] ^ key_l[j];
+  //   //             end
+  //   //           end
+  //   //         end
+  //   //       endcase
+  //   //     end
+  //   //   end
+  //   //   GEN_RK: begin
+  //   //     next_state = UPDATE_COUNTER;
+  //   //     for (j = 0; j < 4; j++) begin
+  //   //       RK_w[(dout_rounds_counter<<2)+j]   = 1;
+  //   //       RK_din[(dout_rounds_counter<<2)+j] = T_dout[j];
+  //   //     end
 
-    //   end
-    //   UPDATE_COUNTER: begin
-    //     up_rounds_counter = 1;
-    //     next_state = CHECK_COUNTER;
-    //   end
-    //   END_FSM_STATE: begin
-    //     end_signal = 1;
-    //   end
+  //   //   end
+  //   //   UPDATE_COUNTER: begin
+  //   //     up_rounds_counter = 1;
+  //   //     next_state = CHECK_COUNTER;
+  //   //   end
+  //   //   END_FSM_STATE: begin
+  //   //     end_signal = 1;
+  //   //   end
 
 
-    // endcase
-  end
+  //   // endcase
+  // end
 
-  always_ff @(posedge clk) begin
+  // always_ff @(posedge clk) begin
 
-    if (rst) begin
-      current_state = IDLE;
-    end else begin
-      current_state = next_state;
-    end
-  end
+  //   if (rst) begin
+  //     current_state = IDLE;
+  //   end else begin
+  //     current_state = next_state;
+  //   end
+  // end
 endmodule
+
+
 
 
 
