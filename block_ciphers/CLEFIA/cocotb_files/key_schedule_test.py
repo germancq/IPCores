@@ -54,6 +54,8 @@ async def gfn_test(dut, expected_l_value):
         dut.current_state.value == dut.WAIT_FOR_GFN.value
     ), f"ERROR STATE IN WAIT_FOR_GFN, STATE={dut.current_state.value}"
     while dut.gfn4_end_signal.value and dut.gfn8_end_signal.value:
+        print(dut.gfn4_end_signal.value)
+        print(dut.gfn8_end_signal.value)
         await n_cycles_clock(dut, 1)
 
     for i in range(0, 4):
