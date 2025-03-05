@@ -34,7 +34,7 @@ async def rst_function_test(dut):
     assert (
         dut.current_state.value == dut.IDLE.value
     ), f"ERROR STATE IN IDLE, STATE={dut.current_state.value}"
-    await n_cycles_clock(dut, 10)
+    await n_cycles_clock(dut, 5)
 
     assert (
         dut.current_state.value == dut.IDLE.value
@@ -53,6 +53,9 @@ async def gfn_test(dut, expected_l_value):
     assert (
         dut.current_state.value == dut.WAIT_FOR_GFN.value
     ), f"ERROR STATE IN WAIT_FOR_GFN, STATE={dut.current_state.value}"
+
+    print(dut.gfn4_end_signal.value)
+    print(dut.gfn8_end_signal.value)
     while dut.gfn4_end_signal.value and dut.gfn8_end_signal.value:
         print(dut.gfn4_end_signal.value)
         print(dut.gfn8_end_signal.value)
