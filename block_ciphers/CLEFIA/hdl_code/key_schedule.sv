@@ -83,53 +83,53 @@ module key_schedule #(
   logic [31:0] gfn4_block_i[3:0];
 
   genvar i;
-  generate
-    for (i = 0; i < 24; i++) begin
-      assign gfn4_round_keys[i] = CON_128[i];
-
-    end
-  endgenerate
-  gfn #(
-      .d(4),
-      .r(12)
-  ) gfn_inst (
-      .clk(clk),
-      .rst(rst),
-      .round_keys(gfn4_round_keys),
-      .block_i(key_l),
-      .block_o(gfn4_block_o),
-      .end_signal(gfn4_end_signal)
-  );
-  // gfn 8,10
-  logic [31:0] gfn8_block_o[7:0];
-  logic gfn8_end_signal;
-  logic [31:0] gfn8_block_i[7:0];
-  logic [31:0] gfn8_round_keys[39:0];
-
-  generate
-    for (i = 0; i < 40; i++) begin
-      assign gfn8_round_keys[i] = KEY_LEN <= 192 ? CON_192[i] : CON_256[i];
-    end
-    for (i = 0; i < 4; i++) begin
-      assign gfn8_block_i[i]   = key_l[i];
-      assign gfn8_block_i[i+4] = key_r[i];
-
-    end
-  endgenerate
-  assign gfn8_block_i[3:0] = key_l;
-  assign gfn8_block_i[7:4] = key_r;
-  gfn #(
-      .d(8),
-      .r(10)
-  ) gfn_inst_8 (
-      .clk(clk),
-      .rst(rst),
-      .round_keys(gfn8_round_keys),
-      .block_i(gfn8_block_i),
-      .block_o(gfn8_block_o),
-      .end_signal(gfn8_end_signal)
-  );
-
+  //  generate
+  //    for (i = 0; i < 24; i++) begin
+  //      assign gfn4_round_keys[i] = CON_128[i];
+  //
+  //    end
+  //  endgenerate
+  //  gfn #(
+  //      .d(4),
+  //      .r(12)
+  //  ) gfn_inst (
+  //      .clk(clk),
+  //      .rst(rst),
+  //      .round_keys(gfn4_round_keys),
+  //      .block_i(key_l),
+  //      .block_o(gfn4_block_o),
+  //      .end_signal(gfn4_end_signal)
+  //  );
+  //  // gfn 8,10
+  //  logic [31:0] gfn8_block_o[7:0];
+  //  logic gfn8_end_signal;
+  //  logic [31:0] gfn8_block_i[7:0];
+  //  logic [31:0] gfn8_round_keys[39:0];
+  //
+  //  generate
+  //    for (i = 0; i < 40; i++) begin
+  //      assign gfn8_round_keys[i] = KEY_LEN <= 192 ? CON_192[i] : CON_256[i];
+  //    end
+  //    for (i = 0; i < 4; i++) begin
+  //      assign gfn8_block_i[i]   = key_l[i];
+  //      assign gfn8_block_i[i+4] = key_r[i];
+  //
+  //    end
+  //  endgenerate
+  //  assign gfn8_block_i[3:0] = key_l;
+  //  assign gfn8_block_i[7:4] = key_r;
+  //  gfn #(
+  //      .d(8),
+  //      .r(10)
+  //  ) gfn_inst_8 (
+  //      .clk(clk),
+  //      .rst(rst),
+  //      .round_keys(gfn8_round_keys),
+  //      .block_i(gfn8_block_i),
+  //      .block_o(gfn8_block_o),
+  //      .end_signal(gfn8_end_signal)
+  //  );
+  //
   //WK
   logic [31:0] WK_din[3:0];
   logic [31:0] WK_dout[3:0];
@@ -146,82 +146,82 @@ module key_schedule #(
           .din(WK_din[i]),
           .dout(WK_dout[i])
       );
-      //   assign wk[i] = WK_dout[i];
+      assign wk[i] = WK_dout[i];
     end
   endgenerate
 
-  // //register for T
-  // logic [31:0] T_din[3:0];
-  // logic [31:0] T_dout[3:0];
-  // logic [0:0] T_w[3:0];
-  // logic [0:0] T_cl[3:0];
-  // generate
-  //   for (i = 0; i < 4; i++) begin
-  //     register #(
-  //         .DATA_WIDTH(32)
-  //     ) r_T_i (
-  //         .clk(clk),
-  //         .cl(T_cl[i]),
-  //         .w(T_w[i]),
-  //         .din(T_din[i]),
-  //         .dout(T_dout[i])
-  //     );
-  //   end
-  // endgenerate
-  // //register for L
-  // logic [31:0] LL_din[3:0];
-  // logic [31:0] LL_dout[3:0];
-  // logic [0:0] LL_w[3:0];
-  // logic [0:0] LL_cl[3:0];
-  // generate
-  //   for (i = 0; i < 4; i++) begin
-  //     register #(
-  //         .DATA_WIDTH(32)
-  //     ) r_LL_i (
-  //         .clk(clk),
-  //         .cl(LL_cl[i]),
-  //         .w(LL_w[i]),
-  //         .din(LL_din[i]),
-  //         .dout(LL_dout[i])
-  //     );
-  //   end
-  // endgenerate
-  // logic [31:0] LR_din[3:0];
-  // logic [31:0] LR_dout[3:0];
-  // logic [0:0] LR_w[3:0];
-  // logic [0:0] LR_cl[3:0];
-  // generate
-  //   for (i = 0; i < 4; i++) begin
-  //     register #(
-  //         .DATA_WIDTH(32)
-  //     ) r_LR_i (
-  //         .clk(clk),
-  //         .cl(LR_cl[i]),
-  //         .w(LR_w[i]),
-  //         .din(LR_din[i]),
-  //         .dout(LR_dout[i])
-  //     );
-  //   end
-  // endgenerate
-  // //register for RK
-  // logic [31:0] RK_din[N_RK-1:0];
-  // logic [31:0] RK_dout[N_RK-1:0];
-  // logic [0:0] RK_w[N_RK-1:0];
-  // logic [0:0] RK_cl[N_RK-1:0];
-  // generate
-  //   for (i = 0; i < N_RK; i++) begin
-  //     register #(
-  //         .DATA_WIDTH(32)
-  //     ) r_RK_i (
-  //         .clk(clk),
-  //         .cl(RK_cl[i]),
-  //         .w(RK_w[i]),
-  //         .din(RK_din[i]),
-  //         .dout(RK_dout[i])
-  //     );
-  //     assign round_keys[i] = RK_dout[i];
-  //   end
-  // endgenerate
+  //register for T
+  logic [31:0] T_din[3:0];
+  logic [31:0] T_dout[3:0];
+  logic [0:0] T_w[3:0];
+  logic [0:0] T_cl[3:0];
+  generate
+    for (i = 0; i < 4; i++) begin
+      register #(
+          .DATA_WIDTH(32)
+      ) r_T_i (
+          .clk(clk),
+          .cl(T_cl[i]),
+          .w(T_w[i]),
+          .din(T_din[i]),
+          .dout(T_dout[i])
+      );
+    end
+  endgenerate
+  //register for L
+  logic [31:0] LL_din[3:0];
+  logic [31:0] LL_dout[3:0];
+  logic [0:0] LL_w[3:0];
+  logic [0:0] LL_cl[3:0];
+  generate
+    for (i = 0; i < 4; i++) begin
+      register #(
+          .DATA_WIDTH(32)
+      ) r_LL_i (
+          .clk(clk),
+          .cl(LL_cl[i]),
+          .w(LL_w[i]),
+          .din(LL_din[i]),
+          .dout(LL_dout[i])
+      );
+    end
+  endgenerate
+  logic [31:0] LR_din[3:0];
+  logic [31:0] LR_dout[3:0];
+  logic [0:0] LR_w[3:0];
+  logic [0:0] LR_cl[3:0];
+  generate
+    for (i = 0; i < 4; i++) begin
+      register #(
+          .DATA_WIDTH(32)
+      ) r_LR_i (
+          .clk(clk),
+          .cl(LR_cl[i]),
+          .w(LR_w[i]),
+          .din(LR_din[i]),
+          .dout(LR_dout[i])
+      );
+    end
+  endgenerate
+  //register for RK
+  logic [31:0] RK_din[N_RK-1:0];
+  logic [31:0] RK_dout[N_RK-1:0];
+  logic [0:0] RK_w[N_RK-1:0];
+  logic [0:0] RK_cl[N_RK-1:0];
+  generate
+    for (i = 0; i < N_RK; i++) begin
+      register #(
+          .DATA_WIDTH(32)
+      ) r_RK_i (
+          .clk(clk),
+          .cl(RK_cl[i]),
+          .w(RK_w[i]),
+          .din(RK_din[i]),
+          .dout(RK_dout[i])
+      );
+      assign round_keys[i] = RK_dout[i];
+    end
+  endgenerate
 
   // logic [2:0] current_state, next_state;
 
@@ -406,6 +406,8 @@ module key_schedule #(
   //   end
   // end
 endmodule
+
+
 
 
 
