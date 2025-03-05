@@ -264,11 +264,11 @@ module key_schedule #(
       LR_din[j] = 0;
     end
 
-    //   for (j = 0; j < 36; j++) begin
-    //     RK_cl[j]  = 0;
-    //     RK_w[j]   = 0;
-    //     RK_din[j] = 0;
-    //   end
+    for (j = 0; j < N_RK; j++) begin
+      RK_cl[j]  = 0;
+      RK_w[j]   = 0;
+      RK_din[j] = 0;
+    end
     //   // case (current_state)
     //   //   IDLE: begin
     //   //     next_state = WAIT_FOR_GFN;
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
