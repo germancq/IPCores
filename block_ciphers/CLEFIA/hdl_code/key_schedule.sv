@@ -67,9 +67,9 @@ module key_schedule #(
   );
 
   //CON
-  logic [31:0] CON_128[59:0];
-  logic [31:0] CON_192[83:0];
-  logic [31:0] CON_256[91:0];
+  wire [31:0] CON_128[59:0];
+  wire [31:0] CON_192[83:0];
+  wire [31:0] CON_256[91:0];
   gen_con gen_con_inst (
       .CON_128(CON_128),
       .CON_192(CON_192),
@@ -389,6 +389,8 @@ module key_schedule #(
   //    end
   //  end
 endmodule
+
+
 
 
 
