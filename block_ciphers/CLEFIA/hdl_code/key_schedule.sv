@@ -99,7 +99,7 @@ module key_schedule #(
       .clk(clk),
       .rst(rst),
       .round_keys(gfn4_round_keys),
-      .block_i(gfn4_block_i),
+      .block_i(key_l),
       .block_o(),
       .end_signal()
   );
@@ -423,6 +423,8 @@ endmodule
 //
 //
 //
+
+
 
 
 
