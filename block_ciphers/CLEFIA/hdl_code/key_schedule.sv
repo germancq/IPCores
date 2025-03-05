@@ -82,8 +82,16 @@ module key_schedule #(
   logic [31:0] gfn4_round_keys[59:0];
   logic [31:0] gfn4_block_i[3:0];
 
-  assign gfn8_round_keys = CON_128;
-  assign gfn8_block_i = CON_128[3:0];
+  genvar i;
+  generate
+    for (i = 0; i < 60; i++) begin
+      assign gfn4_round_keys[i] = 32'h0;
+
+    end
+    for (i = 0; i < 4; i++) begin
+      assign gfn4_block_i[i] = 0;
+    end
+  endgenerate
   gfn #(
       .d(4),
       .r(12)
@@ -415,6 +423,8 @@ endmodule
 //
 //
 //
+
+
 
 
 
