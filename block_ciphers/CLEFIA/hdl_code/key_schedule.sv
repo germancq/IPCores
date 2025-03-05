@@ -315,33 +315,33 @@ module key_schedule #(
           next_state = END_FSM_STATE;
         end
       end
-      //   //   GEN_T: begin
-      //   //     next_state = CHECK_ODD;
-      //   //     for (j = 0; j < 4; j++) begin
-      //   //       T_w[j] = 1;
-      //   //       case (KEY_LEN)
-      //   //         128: begin
-      //   //           T_din[j] = LL_dout[j] ^ CON_128[24+(dout_rounds_counter<<2)+j];
-      //   //         end
-      //   //         192: begin
-      //   //           if (dout_rounds_counter % 4 < 2) begin
-      //   //             T_din[j] = LL_dout[j] ^ CON_192[40+(dout_rounds_counter<<2)+j];
-      //   //           end else begin
-      //   //             T_din[j] = LR_dout[j] ^ CON_192[40+(dout_rounds_counter<<2)+j];
-      //   //           end
-      //   //         end
-      //   //         default: begin
-      //   //           if (dout_rounds_counter % 4 < 2) begin
-      //   //             T_din[j] = LL_dout[j] ^ CON_256[40+(dout_rounds_counter<<2)+j];
-      //   //           end else begin
-      //   //             T_din[j] = LR_dout[j] ^ CON_256[40+(dout_rounds_counter<<2)+j];
-      //   //           end
-      //   //         end
-      //   //       endcase
+      GEN_T: begin
+        next_state = CHECK_ODD;
+        for (j = 0; j < 4; j++) begin
+          T_w[j] = 1;
+          case (KEY_LEN)
+            128: begin
+              T_din[j] = LL_dout[j] ^ CON_128[24+(dout_rounds_counter<<2)+j];
+            end
+            192: begin
+              if (dout_rounds_counter % 4 < 2) begin
+                T_din[j] = LL_dout[j] ^ CON_192[40+(dout_rounds_counter<<2)+j];
+              end else begin
+                T_din[j] = LR_dout[j] ^ CON_192[40+(dout_rounds_counter<<2)+j];
+              end
+            end
+            default: begin
+              if (dout_rounds_counter % 4 < 2) begin
+                T_din[j] = LL_dout[j] ^ CON_256[40+(dout_rounds_counter<<2)+j];
+              end else begin
+                T_din[j] = LR_dout[j] ^ CON_256[40+(dout_rounds_counter<<2)+j];
+              end
+            end
+          endcase
 
-      //   //     end
+        end
 
-      //   //   end
+      end
       //   //   CHECK_ODD: begin
       //   //     next_state = GEN_RK;
 
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
