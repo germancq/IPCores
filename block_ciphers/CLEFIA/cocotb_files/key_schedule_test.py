@@ -86,7 +86,9 @@ async def gfn_test(
 
         for i in range(0, 24):
             print(i)
-            assert hex(dut.gfn4_round_keys[i].value) == hex(CON[i]), f"ERROR CON"
+            assert hex(dut.gfn4_round_keys[i].value) == hex(
+                expected_CON_values[i]
+            ), f"ERROR CON"
     for i in range(0, 4):
 
         assert hex(dut.LL_din[i].value) == hex(
