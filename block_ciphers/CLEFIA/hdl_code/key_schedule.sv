@@ -223,18 +223,18 @@ module key_schedule #(
     end
   endgenerate
 
-  // logic [2:0] current_state, next_state;
+  logic [2:0] current_state, next_state;
 
-  // localparam IDLE = 0;
-  // localparam WAIT_FOR_GFN = 1;
-  // localparam CHECK_COUNTER = 2;
-  // localparam GEN_T = 3;
-  // localparam CHECK_ODD = 4;
-  // localparam GEN_RK = 5;
-  // localparam UPDATE_COUNTER = 6;
-  // localparam END_FSM_STATE = 7;
+  localparam IDLE = 0;
+  localparam WAIT_FOR_GFN = 1;
+  localparam CHECK_COUNTER = 2;
+  localparam GEN_T = 3;
+  localparam CHECK_ODD = 4;
+  localparam GEN_RK = 5;
+  localparam UPDATE_COUNTER = 6;
+  localparam END_FSM_STATE = 7;
 
-  // logic [31:0] j;
+  logic [31:0] j;
 
   // always_comb begin
   //   //default values
@@ -406,6 +406,8 @@ module key_schedule #(
   //   end
   // end
 endmodule
+
+
 
 
 
