@@ -290,25 +290,25 @@ module key_schedule #(
         end
 
       end
-      //   //   WAIT_FOR_GFN: begin
-      //   //     for (j = 0; j < 3; j++) begin
-      //   //       WK_w[j] = 1;
-      //   //     end
-      //   //     if (gfn4_end_signal && gfn8_end_signal) begin
-      //   //       next_state = CHECK_COUNTER;
+      WAIT_FOR_GFN: begin
+        for (j = 0; j < 3; j++) begin
+          WK_w[j] = 1;
+        end
+        if (gfn4_end_signal && gfn8_end_signal) begin
+          next_state = CHECK_COUNTER;
 
-      //   //       for (j = 0; j < 4; j++) begin
+          for (j = 0; j < 4; j++) begin
 
-      //   //         LL_din[j] = KEY_LEN == 128 ? gfn4_block_o[j] : gfn8_block_o[j];
-      //   //         LR_din[j] = KEY_LEN == 128 ? 0 : gfn8_block_o[4+j];
+            LL_din[j] = KEY_LEN == 128 ? gfn4_block_o[j] : gfn8_block_o[j];
+            LR_din[j] = KEY_LEN == 128 ? 0 : gfn8_block_o[4+j];
 
-      //   //         LL_w[j]   = 1;
-      //   //         LR_w[j]   = 1;
+            LL_w[j]   = 1;
+            LR_w[j]   = 1;
 
-      //   //       end
+          end
 
-      //   //     end
-      //   //   end
+        end
+      end
       //   //   CHECK_COUNTER: begin
       //   //     next_state = GEN_T;
       //   //     if (dout_rounds_counter == number_rounds) begin
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
