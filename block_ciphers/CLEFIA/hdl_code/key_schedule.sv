@@ -146,7 +146,7 @@ module key_schedule #(
           .din(WK_din[i]),
           .dout(WK_dout[i])
       );
-      assign wk[i] = WK_dout[i];
+      //   assign wk[i] = WK_dout[i];
     end
   endgenerate
 
@@ -406,6 +406,8 @@ module key_schedule #(
   //   end
   // end
 endmodule
+
+
 
 
 
