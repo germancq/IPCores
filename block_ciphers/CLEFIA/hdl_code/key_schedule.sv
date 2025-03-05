@@ -65,32 +65,32 @@ module key_schedule #(
       .din (din_rounds_counter),
       .dout(dout_rounds_counter)
   );
-  //
-  //  //CON
-  //  logic [31:0] CON_128[59:0];
-  //  logic [31:0] CON_192[83:0];
-  //  logic [31:0] CON_256[91:0];
-  //  gen_con gen_con_inst (
-  //      .CON_128(CON_128),
-  //      .CON_192(CON_192),
-  //      .CON_256(CON_256)
-  //  );
-  //
-  //  //gfn 4,12
-  //  logic [31:0] gfn4_block_o[3:0];
-  //  logic gfn4_end_signal;
-  //
-  //  gfn #(
-  //      .d(4),
-  //      .r(12)
-  //  ) gfn_inst (
-  //      .clk(clk),
-  //      .rst(rst),
-  //      .round_keys(CON_128[23:0]),
-  //      .block_i(key_l),
-  //      .block_o(gfn4_block_o),
-  //      .end_signal(gfn4_end_signal)
-  //  );
+
+  //CON
+  logic [31:0] CON_128[59:0];
+  logic [31:0] CON_192[83:0];
+  logic [31:0] CON_256[91:0];
+  gen_con gen_con_inst (
+      .CON_128(CON_128),
+      .CON_192(CON_192),
+      .CON_256(CON_256)
+  );
+
+  //gfn 4,12
+  logic [31:0] gfn4_block_o[3:0];
+  logic gfn4_end_signal;
+
+  gfn #(
+      .d(4),
+      .r(12)
+  ) gfn_inst (
+      .clk(clk),
+      .rst(rst),
+      .round_keys(CON_128[23:0]),
+      .block_i(key_l),
+      .block_o(gfn4_block_o),
+      .end_signal(gfn4_end_signal)
+  );
   //gfn 8,10
   //  logic [31:0] gfn8_block_o[7:0];
   //  logic gfn8_end_signal;
@@ -389,6 +389,8 @@ module key_schedule #(
   //    end
   //  end
 endmodule
+
+
 
 
 
