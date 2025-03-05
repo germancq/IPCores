@@ -101,7 +101,7 @@ module key_schedule #(
       .end_signal(gfn4_end_signal)
   );
   // gfn 8,10
-  wire [31:0] gfn8_block_o[7:0];
+  logic [31:0] gfn8_block_o[7:0];
   logic gfn8_end_signal;
   logic [31:0] gfn8_block_i[7:0];
   logic [31:0] gfn8_round_keys[39:0];
@@ -401,6 +401,10 @@ module key_schedule #(
   //   end
   // end
 endmodule
+
+
+
+
 
 
 
