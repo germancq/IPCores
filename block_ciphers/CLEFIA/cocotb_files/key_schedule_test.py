@@ -274,8 +274,7 @@ async def test(dut, index=0):
         T_a, CON = clefia_sw.generate_constants(0x7137, 42)
     if dut.KEY_LEN.value == 256:
         T_a, CON = clefia_sw.generate_constants(0xB5C0, 46)
-    print("KEY")
-    print(key_a)
+    cp_key_a = np.copy(key_a)
     L = clefia_sw.GFN(4, 12, key_a, CON[0:24])
 
     if dut.KEY_LEN.value != 128:
@@ -288,8 +287,7 @@ async def test(dut, index=0):
         WK = np.copy(key_a)
 
     #############TESTBENCH COCOTB####################
-    print(hex(key))
-    await gfn_test(dut, L, CON, key_a, keyL_a, keyR_a)
+    await gfn_test(dut, L, CON, cp_key_a, keyL_a, keyR_a)
 
     #################################################
     # print(hex(L[0]))
