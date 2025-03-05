@@ -274,6 +274,8 @@ async def test(dut, index=0):
         T_a, CON = clefia_sw.generate_constants(0x7137, 42)
     if dut.KEY_LEN.value == 256:
         T_a, CON = clefia_sw.generate_constants(0xB5C0, 46)
+    print("KEY")
+    print(key_a)
     L = clefia_sw.GFN(4, 12, key_a, CON[0:24])
 
     if dut.KEY_LEN.value != 128:
