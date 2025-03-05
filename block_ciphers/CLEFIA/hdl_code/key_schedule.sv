@@ -309,12 +309,12 @@ module key_schedule #(
 
         end
       end
-      //   //   CHECK_COUNTER: begin
-      //   //     next_state = GEN_T;
-      //   //     if (dout_rounds_counter == number_rounds) begin
-      //   //       next_state = END_FSM_STATE;
-      //   //     end
-      //   //   end
+      CHECK_COUNTER: begin
+        next_state = GEN_T;
+        if (dout_rounds_counter == number_rounds) begin
+          next_state = END_FSM_STATE;
+        end
+      end
       //   //   GEN_T: begin
       //   //     next_state = CHECK_ODD;
       //   //     for (j = 0; j < 4; j++) begin
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
