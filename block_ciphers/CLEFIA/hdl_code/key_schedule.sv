@@ -37,13 +37,29 @@ module key_schedule #(
     return {block_i[120:64], block_i[127:121], block_i[6:0], block_i[63:7]};
   endfunction
 
+  logic [31:0] number_rounds;
+  generate
+    case (KEY_LEN)
+      128: begin
+        assign number_rounds = 8;
+      end
+      192: begin
+        assign number_rounds = 10;
+      end
+      default:
+      begin
+        assign number_rounds = 12;
+      end
+    endcase
+  endgenerate
+
   //counter for rounds
   logic up_rounds_counter;
   logic rst_rounds_counter;
-  logic [3:0] din_rounds_counter;
-  logic [3:0] dout_rounds_counter;
+  logic [31:0] din_rounds_counter;
+  logic [31:0] dout_rounds_counter;
   counter #(
-      .DATA_WIDTH(4)
+      .DATA_WIDTH(32)
   ) rounds_counter (
       .clk (clk),
       .rst (rst_rounds_counter),
@@ -198,6 +214,11 @@ module key_schedule #(
   localparam IDLE = 0;
   localparam WAIT_FOR_GFN = 1;
   localparam CHECK_COUNTER = 2;
+  localparam GEN_T = 3;
+  localparam CHECK_ODD = 4;
+  localparam GEN_RK = 5;
+  localparam UPDATE_COUNTER = 6;
+  localparam END_FSM_STATE = 7;
 
   logic [31:0] j;
 
@@ -209,6 +230,7 @@ module key_schedule #(
     rst_rounds_counter = 0;
     din_rounds_counter = 0;
 
+    end_signal = 0;
 
     for (j = 0; j < 4; j++) begin
       WK_cl[j] = 0;
@@ -273,6 +295,90 @@ module key_schedule #(
 
         end
       end
+      CHECK_COUNTER: begin
+        next_state = GEN_T;
+        if (dout_rounds_counter == number_rounds) begin
+          next_state = END_FSM_STATE;
+        end
+      end
+      GEN_T: begin
+        next_state = CHECK_ODD;
+        for (j = 0; j < 4; j++) begin
+          T_w[j] = 1;
+          case (KEY_LEN)
+            128: begin
+              T_din[j] = LL_dout[j] ^ CON_128[24+(dout_rounds_counter<<2)+j];
+            end
+            192: begin
+              if (dout_rounds_counter % 4 < 2) begin
+                T_din[j] = LL_dout[j] ^ CON_192[40+(dout_rounds_counter<<2)+j];
+              end else begin
+                T_din[j] = LR_dout[j] ^ CON_192[40+(dout_rounds_counter<<2)+j];
+              end
+            end
+            default: begin
+              if (dout_rounds_counter % 4 < 2) begin
+                T_din[j] = LL_dout[j] ^ CON_256[40+(dout_rounds_counter<<2)+j];
+              end else begin
+                T_din[j] = LR_dout[j] ^ CON_256[40+(dout_rounds_counter<<2)+j];
+              end
+            end
+          endcase
+
+        end
+
+      end
+      CHECK_ODD: begin
+        next_state = GEN_RK;
+
+        for (j = 0; j < 4; j++) begin
+          case (KEY_LEN)
+            128: begin
+              LL_w[j]   = 1;
+              LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >> (32 * j);
+              if (dout_rounds_counter[0] == 1) begin
+                T_w[j]   = 1;
+                T_din[j] = T_dout[j] ^ key_l[j];
+              end
+            end
+            default: begin
+              if (dout_rounds_counter % 4 < 2) begin
+                LL_w[j] = 1;
+                LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >>
+                    (32 * j);
+                if (dout_rounds_counter[0] == 1) begin
+                  T_w[j]   = 1;
+                  T_din[j] = T_dout[j] ^ key_r[j];
+                end
+              end else begin
+                LR_w[j] = 1;
+                LR_din[j] = doubleSwap({LR_dout[3], LR_dout[2], LR_dout[1], LR_dout[0]}) >>
+                    (32 * j);
+                if (dout_rounds_counter[0] == 1) begin
+                  T_w[j]   = 1;
+                  T_din[j] = T_dout[j] ^ key_l[j];
+                end
+              end
+            end
+          endcase
+        end
+      end
+      GEN_RK: begin
+        next_state = UPDATE_COUNTER;
+        for (j = 0; j < 4; j++) begin
+          RK_w[(dout_rounds_counter<<2)+j]   = 1;
+          RK_din[(dout_rounds_counter<<2)+j] = T_dout[j];
+        end
+
+      end
+      UPDATE_COUNTER: begin
+        up_rounds_counter = 1;
+        next_state = CHECK_COUNTER;
+      end
+      END_FSM_STATE: begin
+        end_signal = 1;
+      end
+
 
     endcase
   end
@@ -286,148 +392,6 @@ module key_schedule #(
     end
   end
 endmodule
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
