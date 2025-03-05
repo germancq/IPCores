@@ -342,41 +342,41 @@ module key_schedule #(
         end
 
       end
-      //   //   CHECK_ODD: begin
-      //   //     next_state = GEN_RK;
+      CHECK_ODD: begin
+        next_state = GEN_RK;
 
-      //   //     for (j = 0; j < 4; j++) begin
-      //   //       case (KEY_LEN)
-      //   //         128: begin
-      //   //           LL_w[j]   = 1;
-      //   //           LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >> (32 * j);
-      //   //           if (dout_rounds_counter[0] == 1) begin
-      //   //             T_w[j]   = 1;
-      //   //             T_din[j] = T_dout[j] ^ key_l[j];
-      //   //           end
-      //   //         end
-      //   //         default: begin
-      //   //           if (dout_rounds_counter % 4 < 2) begin
-      //   //             LL_w[j] = 1;
-      //   //             LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >>
-      //   //                 (32 * j);
-      //   //             if (dout_rounds_counter[0] == 1) begin
-      //   //               T_w[j]   = 1;
-      //   //               T_din[j] = T_dout[j] ^ key_r[j];
-      //   //             end
-      //   //           end else begin
-      //   //             LR_w[j] = 1;
-      //   //             LR_din[j] = doubleSwap({LR_dout[3], LR_dout[2], LR_dout[1], LR_dout[0]}) >>
-      //   //                 (32 * j);
-      //   //             if (dout_rounds_counter[0] == 1) begin
-      //   //               T_w[j]   = 1;
-      //   //               T_din[j] = T_dout[j] ^ key_l[j];
-      //   //             end
-      //   //           end
-      //   //         end
-      //   //       endcase
-      //   //     end
-      //   //   end
+        for (j = 0; j < 4; j++) begin
+          case (KEY_LEN)
+            128: begin
+              LL_w[j]   = 1;
+              LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >> (32 * j);
+              if (dout_rounds_counter[0] == 1) begin
+                T_w[j]   = 1;
+                T_din[j] = T_dout[j] ^ key_l[j];
+              end
+            end
+            default: begin
+              if (dout_rounds_counter % 4 < 2) begin
+                LL_w[j] = 1;
+                LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >>
+                    (32 * j);
+                if (dout_rounds_counter[0] == 1) begin
+                  T_w[j]   = 1;
+                  T_din[j] = T_dout[j] ^ key_r[j];
+                end
+              end else begin
+                LR_w[j] = 1;
+                LR_din[j] = doubleSwap({LR_dout[3], LR_dout[2], LR_dout[1], LR_dout[0]}) >>
+                    (32 * j);
+                if (dout_rounds_counter[0] == 1) begin
+                  T_w[j]   = 1;
+                  T_din[j] = T_dout[j] ^ key_l[j];
+                end
+              end
+            end
+          endcase
+        end
+      end
       //   //   GEN_RK: begin
       //   //     next_state = UPDATE_COUNTER;
       //   //     for (j = 0; j < 4; j++) begin
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 

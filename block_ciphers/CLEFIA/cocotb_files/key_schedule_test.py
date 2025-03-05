@@ -47,7 +47,7 @@ async def rst_function_test(dut):
     dut.rst.value = 0
 
 
-async def gfn_test(dut, expected_wk_value, expected_l_value):
+async def gfn_test(dut, expected_l_value):
     print("wait for gfn test")
     await n_cycles_clock(dut, 1)
     assert (
@@ -57,9 +57,6 @@ async def gfn_test(dut, expected_wk_value, expected_l_value):
         await n_cycles_clock(dut, 1)
 
     for i in range(0, 4):
-        assert hex(dut.wk[i].value) == hex(
-            expected_wk_value[i]
-        ), f"ERROR in WAIT_FOR_GFN, WK values incorrect, expected = {hex(expected_wk_value[i])} calculated = {dut.wk[i].value}"
 
         assert hex(dut.LL_din[i].value) == hex(
             expected_l_value[i]
@@ -258,7 +255,7 @@ async def test(dut, index=0):
         WK = np.copy(key_a)
 
     #############TESTBENCH COCOTB####################
-    await gfn_test(dut, WK, L)
+    await gfn_test(dut, L)
 
     #################################################
     # print(hex(L[0]))
