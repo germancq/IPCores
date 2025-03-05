@@ -95,7 +95,7 @@ module key_schedule #(
       .clk(clk),
       .rst(rst),
       .round_keys(gfn4_round_keys),
-      .block_i(key_l),
+      .block_i(key_r),
       .block_o(gfn4_block_o),
       .end_signal(gfn4_end_signal)
   );
@@ -110,8 +110,8 @@ module key_schedule #(
       assign gfn8_round_keys[i] = KEY_LEN <= 192 ? CON_192[i] : CON_256[i];
     end
     for (i = 0; i < 4; i++) begin
-      assign gfn8_block_i[i]   = key_l[i];
-      assign gfn8_block_i[i+4] = key_r[i];
+      assign gfn8_block_i[i]   = key_r[i];
+      assign gfn8_block_i[i+4] = key_l[i];
 
     end
   endgenerate
@@ -351,7 +351,7 @@ module key_schedule #(
               LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >> (32 * j);
               if (dout_rounds_counter[0] == 1) begin
                 T_w[j]   = 1;
-                T_din[j] = T_dout[j] ^ key_l[j];
+                T_din[j] = T_dout[j] ^ key_r[j];
               end
             end
             default: begin
@@ -361,7 +361,7 @@ module key_schedule #(
                     (32 * j);
                 if (dout_rounds_counter[0] == 1) begin
                   T_w[j]   = 1;
-                  T_din[j] = T_dout[j] ^ key_r[j];
+                  T_din[j] = T_dout[j] ^ key_l[j];
                 end
               end else begin
                 LR_w[j] = 1;
@@ -369,7 +369,7 @@ module key_schedule #(
                     (32 * j);
                 if (dout_rounds_counter[0] == 1) begin
                   T_w[j]   = 1;
-                  T_din[j] = T_dout[j] ^ key_l[j];
+                  T_din[j] = T_dout[j] ^ key_r[j];
                 end
               end
             end
