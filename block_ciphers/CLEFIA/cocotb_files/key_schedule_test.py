@@ -47,7 +47,14 @@ async def rst_function_test(dut):
     dut.rst.value = 0
 
 
-async def gfn_test(dut, expected_l_value):
+async def gfn_test(
+    dut,
+    expected_l_value,
+    expected_CON_values,
+    expected_key128,
+    expected_keyl,
+    expected_keyr,
+):
     print("wait for gfn test")
     await n_cycles_clock(dut, 1)
     assert (
@@ -66,6 +73,12 @@ async def gfn_test(dut, expected_l_value):
     print(hex(dut.gfn4_block_o[2].value))
     print(hex(dut.gfn4_block_o[3].value))
     print(expected_l_value)
+
+    if dut.KEY_LEN.value == 128:
+        for i in range(0, 4):
+            assert hex(dut.gfn4_block_i[i].value) == hex(
+                expected_key128[i]
+            ), f"ERROR gfn4_block_i"
 
     for i in range(0, 4):
 
@@ -266,7 +279,7 @@ async def test(dut, index=0):
         WK = np.copy(key_a)
 
     #############TESTBENCH COCOTB####################
-    await gfn_test(dut, L)
+    await gfn_test(dut, L, CON, key_a, keyL_a, keyR_a)
 
     #################################################
     # print(hex(L[0]))
