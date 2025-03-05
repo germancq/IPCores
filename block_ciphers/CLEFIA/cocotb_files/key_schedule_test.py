@@ -73,6 +73,9 @@ async def gfn_test(
     print(hex(dut.gfn4_block_o[2].value))
     print(hex(dut.gfn4_block_o[3].value))
     print(expected_l_value)
+    print(expected_key128)
+    print(expected_keyl)
+    print(expected_keyr)
 
     if dut.KEY_LEN.value == 128:
         for i in range(0, 4):
