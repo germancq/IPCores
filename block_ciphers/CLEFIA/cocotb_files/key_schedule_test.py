@@ -286,6 +286,7 @@ async def test(dut, index=0):
         WK = np.copy(key_a)
 
     #############TESTBENCH COCOTB####################
+    print(hex(key))
     await gfn_test(dut, L, CON, key_a, keyL_a, keyR_a)
 
     #################################################
