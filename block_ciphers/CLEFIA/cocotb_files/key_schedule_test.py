@@ -59,6 +59,7 @@ async def gfn_test(dut, expected_l_value):
     while dut.gfn4_end_signal.value == 0:
         print("gfn4")
         print(dut.gfn4_end_signal.value)
+        print(dut.gfn_inst.current_state.value)
         await n_cycles_clock(dut, 1)
     print("fin gfn4")
     while dut.gfn8_end_signal.value == 0:
