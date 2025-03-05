@@ -79,12 +79,12 @@ module key_schedule #(
   //gfn 4,12
   wire [31:0] gfn4_block_o[3:0];
   logic gfn4_end_signal;
-  logic [31:0] gfn4_round_keys[59:0];
+  logic [31:0] gfn4_round_keys[23:0];
   logic [31:0] gfn4_block_i[3:0];
 
   genvar i;
   generate
-    for (i = 0; i < 60; i++) begin
+    for (i = 0; i < 24; i++) begin
       assign gfn4_round_keys[i] = 32'h0;
 
     end
@@ -423,6 +423,8 @@ endmodule
 //
 //
 //
+
+
 
 
 
