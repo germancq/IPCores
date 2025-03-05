@@ -280,7 +280,7 @@ module key_schedule #(
 
         end
 
-        for (j = 0; j < N_RK; j++) begin
+        for (j = 0; j < 36 - ((KEY_LEN - 128) >> (3)); j++) begin
           RK_cl[j] = 1;
         end
 
@@ -401,6 +401,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
