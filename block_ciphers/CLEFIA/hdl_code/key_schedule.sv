@@ -20,15 +20,15 @@ module key_schedule #(
   localparam N_RK = 36 - ((KEY_LEN - 128) >> (3));
 
   logic [31:0] key_r[3:0];
-  assign key_r[0] = key[31:0];
-  assign key_r[1] = key[63:32];
-  assign key_r[2] = key[95:64];
-  assign key_r[3] = key[127:96];
+  assign key_r[3] = key[31:0];
+  assign key_r[2] = key[63:32];
+  assign key_r[1] = key[95:64];
+  assign key_r[0] = key[127:96];
   logic [31:0] key_l[3:0];
-  assign key_l[0] = KEY_LEN == 128 ? 0 : key[159:128];
-  assign key_l[1] = KEY_LEN == 128 ? 0 : key[191:160];
-  assign key_l[2] = KEY_LEN == 128 ? 0 : (KEY_LEN == 192 ? ~key[31:0] : key[223:192]);
-  assign key_l[3] = KEY_LEN == 128 ? 0 : (KEY_LEN == 192 ? ~key[63:32] : key[255:224]);
+  assign key_l[3] = KEY_LEN == 128 ? 0 : key[159:128];
+  assign key_l[2] = KEY_LEN == 128 ? 0 : key[191:160];
+  assign key_l[1] = KEY_LEN == 128 ? 0 : (KEY_LEN == 192 ? ~key[31:0] : key[223:192]);
+  assign key_l[0] = KEY_LEN == 128 ? 0 : (KEY_LEN == 192 ? ~key[63:32] : key[255:224]);
 
   function [127:0] doubleSwap(input [127:0] block_i);
     return {block_i[120:64], block_i[127:121], block_i[6:0], block_i[63:7]};
@@ -405,6 +405,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
