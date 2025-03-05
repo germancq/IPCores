@@ -80,7 +80,7 @@ async def gfn_test(
     if dut.KEY_LEN.value == 128:
         for i in range(0, 4):
             print(i)
-            assert hex(dut.key_l[i].value) == hex(
+            assert hex(dut.key_r[i].value) == hex(
                 expected_key128[i]
             ), f"ERROR gfn4_block_i"
 
