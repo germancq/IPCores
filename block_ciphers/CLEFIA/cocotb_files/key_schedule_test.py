@@ -54,6 +54,8 @@ async def gfn_test(
     expected_key128,
     expected_keyl,
     expected_keyr,
+    expected_LL,
+    expected_LR,
 ):
     print("wait for gfn test")
     await n_cycles_clock(dut, 1)
@@ -69,14 +71,23 @@ async def gfn_test(
     print(hex(dut.LL_din[1].value))
     print(hex(dut.LL_din[2].value))
     print(hex(dut.LL_din[3].value))
+    print("-------------------")
     print(hex(dut.gfn4_block_o[0].value))
     print(hex(dut.gfn4_block_o[1].value))
     print(hex(dut.gfn4_block_o[2].value))
     print(hex(dut.gfn4_block_o[3].value))
+    print("-------------------")
+    print(hex(dut.gfn8_block_o[0].value))
+    print(hex(dut.gfn8_block_o[1].value))
+    print(hex(dut.gfn8_block_o[2].value))
+    print(hex(dut.gfn8_block_o[3].value))
+    print("-------------------")
     print(expected_l_value)
     print(expected_key128)
     print(expected_keyl)
     print(expected_keyr)
+    print(expected_LL)
+    print(expected_LR)
 
     if dut.KEY_LEN.value == 128:
         for i in range(0, 4):
@@ -273,7 +284,7 @@ async def test(dut, index=0):
         WK = np.copy(key_a)
 
     #############TESTBENCH COCOTB####################
-    await gfn_test(dut, L, CON, cp_key_a, keyL_a, keyR_a)
+    await gfn_test(dut, L, CON, cp_key_a, keyL_a, keyR_a, L_left, L_right)
 
     #################################################
     # print(hex(L[0]))
