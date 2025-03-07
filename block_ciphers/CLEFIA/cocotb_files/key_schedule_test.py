@@ -248,7 +248,7 @@ async def test(dut, index=0):
     if dut.KEY_LEN.value == 256:
         T_a, CON = clefia_sw.generate_constants(0xB5C0, 46)
     cp_key_a = np.copy(key_a)
-    L = clefia_sw.GFN(4, 12, key_a, CON[0:24])
+    L = clefia_sw.GFN(4, 12, np.copy(key_a), CON[0:24])
 
     if dut.KEY_LEN.value != 128:
         L = clefia_sw.GFN(8, 10, np.concatenate((keyL_a, keyR_a)), CON[0:40])
