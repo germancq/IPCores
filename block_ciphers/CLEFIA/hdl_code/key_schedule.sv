@@ -348,7 +348,7 @@ module key_schedule #(
           case (KEY_LEN)
             128: begin
               LL_w[j]   = 1;
-              LL_din[j] = doubleSwap({LL_dout[3], LL_dout[2], LL_dout[1], LL_dout[0]}) >> (32 * j);
+              LL_din[j] = doubleSwap({LL_dout[0], LL_dout[1], LL_dout[2], LL_dout[3]}) >> (32 * j);
               if (dout_rounds_counter[0] == 1) begin
                 T_w[j]   = 1;
                 T_din[j] = T_dout[j] ^ key_r[j];
@@ -405,6 +405,10 @@ module key_schedule #(
     end
   end
 endmodule
+
+
+
+
 
 
 
