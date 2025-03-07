@@ -62,6 +62,7 @@ async def gfn_test(
     ), f"ERROR STATE IN WAIT_FOR_GFN, STATE={dut.current_state.value}"
 
     while (dut.gfn4_end_signal.value == 0) or (dut.gfn8_end_signal == 0):
+        print(dut.current_state.value)
         await n_cycles_clock(dut, 1)
 
     print(hex(dut.LL_din[0].value))
