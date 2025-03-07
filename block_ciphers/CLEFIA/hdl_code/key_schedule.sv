@@ -13,11 +13,11 @@ module key_schedule #(
     input rst,
     input [KEY_LEN-1:0] key,
     output [31:0] wk[3:0],
-    output [31:0] round_keys[35-((KEY_LEN-128)>>(3)):0],
+    output [31:0] round_keys[35+((KEY_LEN-128)>>(3)):0],
     output logic end_signal
 );
 
-  localparam N_RK = 36 - ((KEY_LEN - 128) >> (3));
+  localparam N_RK = 36 + ((KEY_LEN - 128) >> (3));
 
   logic [31:0] key_r[3:0];
   assign key_r[3] = KEY_LEN == 128 ? key[31:0] : (KEY_LEN == 192 ? ~key[159:128] : key[31:0]);
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
