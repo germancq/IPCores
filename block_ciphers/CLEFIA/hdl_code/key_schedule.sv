@@ -362,7 +362,7 @@ module key_schedule #(
                     (32 * j);
                 if (dout_rounds_counter[0] == 1) begin
                   T_w[j]   = 1;
-                  T_din[j] = T_dout[j] ^ key_l[j];
+                  T_din[j] = T_dout[j] ^ key_r[j];
                 end
               end else begin
                 LR_w[3-j] = 1;
@@ -370,7 +370,7 @@ module key_schedule #(
                     (32 * j);
                 if (dout_rounds_counter[0] == 1) begin
                   T_w[j]   = 1;
-                  T_din[j] = T_dout[j] ^ key_r[j];
+                  T_din[j] = T_dout[j] ^ key_l[j];
                 end
               end
             end
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
