@@ -140,6 +140,7 @@ class CLEFIA:
                 hex(p_a[0]), hex(p_a[1]), hex(p_a[2]), hex(p_a[3])
             )
         )
+        print(WK)
         print("WK[0] = {}, WK[1] = {}".format(hex(WK[0]), hex(WK[1])))
         p_a[1] = p_a[1] ^ WK[0]
         p_a[3] = p_a[3] ^ WK[1]
@@ -189,7 +190,8 @@ class CLEFIA:
             T_a, CON = self.generate_constants(0x7137, 42)
         if key_len == 256:
             T_a, CON = self.generate_constants(0xB5C0, 46)
-        L = self.GFN(4, 12, key_a, CON[0:24])
+    
+        L = self.GFN(4, 12, np.copy(key_a), CON[0:24])
 
         if key_len != 128:
             L = self.GFN(8, 10, np.concatenate((keyL_a, keyR_a)), CON[0:40])
@@ -247,7 +249,8 @@ class CLEFIA:
                 if i % 2 != 0:
                     print(
                         "T[{}] ^ K_aux[{}] = {} ^ {} = {} ".format(
-                            j, j, hex(T[j]), hex(K_aux[j]), hex(T[j] ^ K_aux[j])
+                            j, j, hex(T[j]), hex(
+                                K_aux[j]), hex(T[j] ^ K_aux[j])
                         )
                     )
                     T[j] = T[j] ^ K_aux[j]
@@ -273,7 +276,8 @@ class CLEFIA:
         P = 0xB7E1
         Q = 0x243F
 
-        p = (1 << 16) + (1 << 15) + (1 << 13) + (1 << 11) + (1 << 5) + (1 << 4) + 1
+        p = (1 << 16) + (1 << 15) + (1 << 13) + \
+            (1 << 11) + (1 << 5) + (1 << 4) + 1
         p_a = np.array([1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1])
 
         T[0] = IV
@@ -289,7 +293,8 @@ class CLEFIA:
         for i in range(0, l):
             # print(i)
             T_neg = ~T[i] & 0xFFFF
-            CON[2 * i] = (self.galois16.add(T[i], P) << 16) + self.ROL(T_neg, 1, 16)
+            CON[2 * i] = (self.galois16.add(T[i], P) << 16) + \
+                self.ROL(T_neg, 1, 16)
             # print(hex(CON[2*i]))
             CON[(2 * i) + 1] = (self.galois16.add(T_neg, Q) << 16) + self.ROL(
                 T[i], 8, 16
@@ -361,11 +366,13 @@ class CLEFIA:
                     "T_a[{}] = {} ^ {}".format(
                         j + 1,
                         hex(T_a[j + 1]),
-                        hex(self.F0(rk_a[(int(d / 2) * i) + int(j / 2)], T_a[j])[0]),
+                        hex(self.F0(
+                            rk_a[(int(d / 2) * i) + int(j / 2)], T_a[j])[0]),
                     )
                 )
                 T_a[j + 1] = self.galois8.add(
-                    T_a[j + 1], self.F0(rk_a[(int(d / 2) * i) + int(j / 2)], T_a[j])[0]
+                    T_a[j + 1], self.F0(rk_a[(int(d / 2) * i) +
+                                        int(j / 2)], T_a[j])[0]
                 )
                 print("T_[{}] = {}".format(j + 1, hex(T_a[j + 1])))
                 # print(hex(T_a[j+1]))
@@ -386,7 +393,8 @@ class CLEFIA:
                 )
                 T_a[j + 3] = self.galois8.add(
                     T_a[j + 3],
-                    self.F1(rk_a[(int(d / 2) * i) + (int(j / 2) + 1)], T_a[j + 2])[0],
+                    self.F1(rk_a[(int(d / 2) * i) +
+                            (int(j / 2) + 1)], T_a[j + 2])[0],
                 )
 
                 # print(hex(T_a[j+3]))
@@ -471,7 +479,8 @@ class CLEFIA:
             x_a[7 - i] = (x >> i) & 0x01
 
         f = self.f_S1(x_a, p)
-        f_inverse = self.galois8.inverse_mul(np.reshape(np.transpose(f), 8), p_array)
+        f_inverse = self.galois8.inverse_mul(
+            np.reshape(np.transpose(f), 8), p_array)
         # print(f)
         # print(f_inverse)
         padding = 8 - np.shape(f_inverse)[0]
@@ -547,13 +556,13 @@ if __name__ == "__main__":
     # key = 0x3322110077665544bbaa9988ffeeddcc
     plaintext = 0x000102030405060708090A0B0C0D0E0F
     # plaintext = 0x0c0d0e0f08090a0b0405060700010203
-    WK, RK = cipher.key_schedule(key_256, 256)
+    WK, RK = cipher.key_schedule(key, 128)
     print("/////////////////******************///////////////")
     c = cipher.encrypt(plaintext, WK, RK)
 
-    cipher.gen_S1_values_for_sv()
-    cipher.gen_CON_values_for_sv(128)
-    cipher.gen_CON_values_for_sv(192)
-    cipher.gen_CON_values_for_sv(256)
+   # cipher.gen_S1_values_for_sv()
+   # cipher.gen_CON_values_for_sv(128)
+   # cipher.gen_CON_values_for_sv(192)
+   # cipher.gen_CON_values_for_sv(256)
     # print(hex(cipher.S0(0x10)))
     # print(hex(cipher.S1(0x10)))
