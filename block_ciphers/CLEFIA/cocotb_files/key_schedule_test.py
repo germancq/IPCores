@@ -222,7 +222,6 @@ async def test(dut, index=0):
     clefia_sw = clefia.CLEFIA()
     key = random.getrandbits(dut.KEY_LEN.value)
 
-    key = 0xFFEEDDCCBBAA99887766554433221100
     expected_wk, expected_rk = clefia_sw.key_schedule(key, dut.KEY_LEN.value)
 
     await Timer(20, units="ns")
