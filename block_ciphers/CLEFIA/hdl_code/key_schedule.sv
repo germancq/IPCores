@@ -110,8 +110,8 @@ module key_schedule #(
       assign gfn8_round_keys[i] = KEY_LEN <= 192 ? CON_192[i] : CON_256[i];
     end
     for (i = 0; i < 4; i++) begin
-      assign gfn8_block_i[i]   = key_r[i];
-      assign gfn8_block_i[i+4] = key_l[i];
+      assign gfn8_block_i[i]   = key_l[i];
+      assign gfn8_block_i[i+4] = key_r[i];
 
     end
   endgenerate
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
