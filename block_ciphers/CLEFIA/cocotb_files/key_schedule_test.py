@@ -100,131 +100,29 @@ async def gfn_test(
             ), f"ERROR in WAIT_FOR_GFN, LR values incorrect, expected in LR{i} = {hex(expected_l_value[4+i])}, calculated = {hex(dut.LR_din[i].value)}"
 
 
-async def step2_1_test(dut, clefia_sw, blk_i, rk, counter_value):
-    print("step 2.1")
+async def check_counter_test(dut, expected_counter_value):
+    print("check_counter_test")
     await n_cycles_clock(dut, 1)
     assert (
-        dut.current_state.value == dut.STEP_2_1.value
-    ), f"ERROR STATE IN STEP_2_1, STATE={dut.current_state.value}"
-    expected_f0_x_input_0 = blk_i[0]
-    expected_f0_rk_input_0 = rk[(int(dut.d.value / 2)) * counter_value]
-    expected_f0_output_0 = clefia_sw.F0(expected_f0_rk_input_0, expected_f0_x_input_0)[
-        0
-    ]
-    expected_next_T1 = clefia_sw.galois8.add(blk_i[1], expected_f0_output_0)
-    blk_i[1] = expected_next_T1
+        dut.current_state.value == dut.CHECK_COUNTER.value
+    ), f"ERROR STATE IN CHECK_COUNTER, STATE={dut.current_state.value}"
 
-    expected_f1_x_input_0 = blk_i[2]
-    expected_f1_rk_input_0 = rk[((int(dut.d.value / 2)) * counter_value) + 1]
-    expected_f1_output_0 = clefia_sw.F1(expected_f1_rk_input_0, expected_f1_x_input_0)[
-        0
-    ]
-    expected_next_T3 = clefia_sw.galois8.add(blk_i[3], expected_f1_output_0)
-    blk_i[3] = expected_next_T3
-
-    assert hex(dut.f0_x_input[0].value) == hex(
-        expected_f0_x_input_0
-    ), f"ERROR IN STEP_2_1 f0_x_input expected = {hex(expected_f0_x_input_0)}, calculated = {hex(dut.f0_x_input[0].value)}"
-    assert hex(dut.f0_rk_input[0].value) == hex(
-        expected_f0_rk_input_0
-    ), f"ERROR IN STEP_2_1 f0_rk_input expected = {hex(expected_f0_rk_input_0)}, calculated = {hex(dut.f0_rk_input[0].value)}"
-    assert hex(dut.f0_y_output[0].value) == hex(
-        expected_f0_output_0
-    ), f"ERROR IN STEP_2_1 f0_y_output expected = {hex(expected_f0_output_0)}, calculated = {hex(dut.f0_y_output[0].value)}"
-    assert hex(dut.T_din[1].value) == hex(
-        expected_next_T1
-    ), f"ERROR IN STEP_2_1 T1 expected = {hex(expected_next_T1)}, calculated = {hex(dut.T_din[1].value)}"
-
-    assert hex(dut.f1_x_input[0].value) == hex(
-        expected_f1_x_input_0
-    ), f"ERROR IN STEP_2_1 f1_x_input expected = {hex(expected_f1_x_input_0)}, calculated = {hex(dut.f1_x_input[0].value)}"
-    assert hex(dut.f1_rk_input[0].value) == hex(
-        expected_f1_rk_input_0
-    ), f"ERROR IN STEP_2_1 f1_rk_input expected = {hex(expected_f1_rk_input_0)}, calculated = {hex(dut.f1_rk_input[0].value)}"
-    assert hex(dut.f1_y_output[0].value) == hex(
-        expected_f1_output_0
-    ), f"ERROR IN STEP_2_1 f1_y_output expected = {hex(expected_f1_output_0)}, calculated = {hex(dut.f1_y_output[0].value)}"
-    assert hex(dut.T_din[3].value) == hex(
-        expected_next_T3
-    ), f"ERROR IN STEP_2_1 T3 expected = {hex(expected_next_T3)}, calculated = {hex(dut.T_din[3].value)}"
-
-    if dut.d.value == 8:
-        expected_f0_x_input_1 = blk_i[4]
-        expected_f0_rk_input_1 = rk[((int(dut.d.value / 2)) * counter_value) + 2]
-        expected_f0_output_1 = clefia_sw.F0(
-            expected_f0_rk_input_1, expected_f0_x_input_1
-        )[0]
-        expected_next_T5 = clefia_sw.galois8.add(blk_i[5], expected_f0_output_1)
-        blk_i[5] = expected_next_T5
-
-        expected_f1_x_input_1 = blk_i[6]
-        expected_f1_rk_input_1 = rk[((int(dut.d.value / 2)) * counter_value) + 3]
-        expected_f1_output_1 = clefia_sw.F1(
-            expected_f1_rk_input_1, expected_f1_x_input_1
-        )[0]
-        expected_next_T7 = clefia_sw.galois8.add(blk_i[7], expected_f1_output_1)
-        blk_i[7] = expected_next_T7
-
-        assert hex(dut.f0_x_input[1].value) == hex(
-            expected_f0_x_input_1
-        ), f"ERROR IN STEP_2_1 f0_x_input expected = {hex(expected_f0_x_input_1)}, calculated = {hex(dut.f0_x_input[1].value)}"
-        assert hex(dut.f0_rk_input[1].value) == hex(
-            expected_f0_rk_input_1
-        ), f"ERROR IN STEP_2_1 f0_rk_input expected = {hex(expected_f0_rk_input_1)}, calculated = {hex(dut.f0_rk_input[1].value)}"
-        assert hex(dut.f0_y_output[1].value) == hex(
-            expected_f0_output_1
-        ), f"ERROR IN STEP_2_1 f0_y_output expected = {hex(expected_f0_output_1)}, calculated = {hex(dut.f0_y_output[1].value)}"
-        assert hex(dut.T_din[5].value) == hex(
-            expected_next_T5
-        ), f"ERROR IN STEP_2_1 T5 expected = {hex(expected_next_T5)}, calculated = {hex(dut.T_din[5].value)}"
-
-        assert hex(dut.f1_x_input[1].value) == hex(
-            expected_f1_x_input_1
-        ), f"ERROR IN STEP_2_1 f1_x_input expected = {hex(expected_f1_x_input_1)}, calculated = {hex(dut.f1_x_input[1].value)}"
-        assert hex(dut.f1_rk_input[1].value) == hex(
-            expected_f1_rk_input_1
-        ), f"ERROR IN STEP_2_1 f1_rk_input expected = {hex(expected_f1_rk_input_1)}, calculated = {hex(dut.f1_rk_input[1].value)}"
-        assert hex(dut.f1_y_output[1].value) == hex(
-            expected_f1_output_1
-        ), f"ERROR IN STEP_2_1 f1_y_output expected = {hex(expected_f1_output_1)}, calculated = {hex(dut.f1_y_output[1].value)}"
-        assert hex(dut.T_din[7].value) == hex(
-            expected_next_T7
-        ), f"ERROR IN STEP_2_1 T7 expected = {hex(expected_next_T7)}, calculated = {hex(dut.T_din[7].value)}"
-
-    return blk_i
+    assert hex(dut.dout_rounds_counter.value) == hex(
+        expected_counter_value
+    ), f"ERROR COUNTER value IN CHECK_COUNTER, expected={hex(expected_counter_value)} calculated={hex(dut.dout_rounds_counter.value)}"
 
 
-async def step2_2_test(dut, clefia_sw, blk_i):
-    print("step 2.2")
+async def gen_t_test(dut, expected_T):
+    print("gen_t_test")
     await n_cycles_clock(dut, 1)
     assert (
-        dut.current_state.value == dut.STEP_2_2.value
-    ), f"ERROR STATE IN STEP_2_2, STATE={dut.current_state.value}"
-    blk_i = np.roll(blk_i, -1)
-    for i in range(0, dut.d.value):
-        print(i)
-        print(hex(blk_i[i]))
-        print(hex(dut.T_din[i].value))
-    for i in range(0, dut.d.value):
+        dut.current_state.value == dut.GEN_T.value
+    ), f"ERROR STATE IN GEN_T, STATE={dut.current_state.value}"
+
+    for i in range(0, 4):
         assert hex(dut.T_din[i].value) == hex(
-            blk_i[i]
-        ), f"ERROR in STEP 2.2, T values incorrect, expected = {hex(blk_i[i])} calculated = {dut.T_din[i].value}"
-    return blk_i
-
-
-async def step3_test(dut, expected_result):
-    print("step 3")
-    await n_cycles_clock(dut, 1)
-    assert (
-        dut.current_state.value == dut.STEP_3.value
-    ), f"ERROR STATE IN STEP_3 STATE={dut.current_state.value}"
-    for i in range(0, dut.d.value):
-        print(dut.T_dout[i].value)
-        print(dut.block_o[i].value)
-    for i in range(0, dut.d.value):
-        assert hex(dut.block_o[i].value) == hex(
-            expected_result[i]
-        ), f"ERROR in STEP 3, T values incorrect"
+            expected_T[i]
+        ), f"ERROR in T values, expected={hex(expected_T[i])} calculated={hex(dut.T_din[i].value)}"
 
 
 async def n_cycles_clock(dut, n):
@@ -316,6 +214,10 @@ async def test(dut, index=0):
         cte_index = 40
 
     for i in range(0, index + 1):
+        #############TESTBENCH COCOTB####################
+        await check_counter_test(dut, i)
+
+        #################################################
 
         if dut.KEY_LEN.value == 128:
             L_aux = np.copy(L)
@@ -344,6 +246,10 @@ async def test(dut, index=0):
                 )
                 T[j] = T[j] ^ K_aux[j]
 
+        #############TESTBENCH COCOTB####################
+        await gen_t_test(dut, T)
+
+        #################################################
         # print(L)
         L = clefia_sw.doubleSwap(L)
         if i % 4 < 2:
