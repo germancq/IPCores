@@ -188,6 +188,7 @@ async def check_odd_test(dut, expected_L, expected_T, expected_counter_value):
 
 async def gen_rk_test(dut, expected_RK, expected_counter_value):
     print("gen_rk_test")
+    print(dut.N_RK.value)
     await n_cycles_clock(dut, 1)
     assert (
         dut.current_state.value == dut.GEN_RK.value
