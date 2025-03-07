@@ -197,6 +197,7 @@ async def end_fsm_state(dut, expected_RK, expected_WK):
     print(hex(dut.wk.value[1]))
     print(hex(dut.wk.value[2]))
     print(hex(dut.wk.value[3]))
+    print(expected_RK)
 
     for i in range(0, 4):
         assert hex(dut.wk[i].value) == hex(
