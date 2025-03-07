@@ -366,7 +366,7 @@ module key_schedule #(
                 end
               end else begin
                 LR_w[3-j] = 1;
-                LR_din[3-j] = doubleSwap({LR_dout[0], LR_dout[1], LR_dout[2], LR_dout[3]) >>
+                LR_din[3-j] = doubleSwap({LR_dout[0], LR_dout[1], LR_dout[2], LR_dout[3]}) >>
                     (32 * j);
                 if (dout_rounds_counter[0] == 1) begin
                   T_w[j]   = 1;
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
