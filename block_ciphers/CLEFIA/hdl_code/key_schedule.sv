@@ -20,8 +20,8 @@ module key_schedule #(
   localparam N_RK = 36 - ((KEY_LEN - 128) >> (3));
 
   logic [31:0] key_r[3:0];
-  assign key_r[3] = KEY_LEN == 128 ? key[31:0] : (KEY_LEN == 192 ? ~key[191:160] : key[31:0]);
-  assign key_r[2] = KEY_LEN == 128 ? key[63:32] : (KEY_LEN == 192 ? ~key[159:128] : key[63:32]);
+  assign key_r[3] = KEY_LEN == 128 ? key[31:0] : (KEY_LEN == 192 ? ~key[159:128] : key[31:0]);
+  assign key_r[2] = KEY_LEN == 128 ? key[63:32] : (KEY_LEN == 192 ? ~key[191:160] : key[63:32]);
   assign key_r[1] = KEY_LEN == 128 ? key[95:64] : (KEY_LEN == 192 ? key[31:0] : key[95:64]);
   assign key_r[0] = KEY_LEN == 128 ? key[127:96] : (KEY_LEN == 192 ? key[63:32] : key[127:96]);
   logic [31:0] key_l[3:0];
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
