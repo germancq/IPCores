@@ -248,7 +248,7 @@ module key_schedule #(
     for (j = 0; j < 4; j++) begin
       WK_cl[j] = 0;
       WK_w[j] = 0;
-      WK_din[j] = KEY_LEN == 128 ? key_l[j] : key_l[j] ^ key_r[j];
+      WK_din[j] = KEY_LEN == 128 ? key_r[j] : key_l[j] ^ key_r[j];
 
       T_cl[j] = 0;
       T_w[j] = 0;
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
