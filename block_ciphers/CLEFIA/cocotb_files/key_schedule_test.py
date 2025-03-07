@@ -95,7 +95,17 @@ async def gfn_test(
     print(expected_l_value)
     print(expected_key128)
     print(expected_keyl)
+    print(hex(dut.key_l[0].value))
+    print(hex(dut.key_l[1].value))
+    print(hex(dut.key_l[2].value))
+    print(hex(dut.key_l[3].value))
+
     print(expected_keyr)
+    print(hex(dut.key_r[0].value))
+    print(hex(dut.key_r[1].value))
+    print(hex(dut.key_r[2].value))
+    print(hex(dut.key_r[3].value))
+
     print(expected_LL)
     print(expected_LR)
 
