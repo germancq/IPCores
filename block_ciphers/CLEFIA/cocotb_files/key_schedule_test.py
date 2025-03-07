@@ -133,6 +133,12 @@ async def check_odd_test(dut, expected_L, expected_T, expected_counter_value):
         dut.current_state.value == dut.CHECK_ODD.value
     ), f"ERROR STATE IN CHECK_ODD, STATE={dut.current_state.value}"
 
+    print(hex(dut.LL_din[0].value))
+    print(hex(dut.LL_din[1].value))
+    print(hex(dut.LL_din[2].value))
+    print(hex(dut.LL_din[3].value))
+    print(expected_L)
+
     if dut.KEY_LEN.value == 128:
         for i in range(0, 4):
             assert hex(dut.LL_din[i].value) == hex(
@@ -314,6 +320,7 @@ async def test(dut, index=0):
         #################################################
         # print(L)
         L = clefia_sw.doubleSwap(L)
+        print(L)
         if i % 4 < 2:
             L_left = clefia_sw.doubleSwap(L_left)
         else:
