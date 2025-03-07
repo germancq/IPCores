@@ -347,7 +347,7 @@ async def test(dut, index=0):
         await update_counter_test(dut)
 
         #################################################
-    await check_counter_test(dut, index)
+    await check_counter_test(dut, index + 1)
     await end_fsm_state(dut, expected_rk, WK)
 
 
