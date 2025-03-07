@@ -185,6 +185,19 @@ async def end_fsm_state(dut, expected_RK, expected_WK):
 
     assert dut.end_signal == 1, f"ERROR with end_signal"
 
+    print(hex(dut.WK_din[0]))
+    print(hex(dut.WK_din[1]))
+    print(hex(dut.WK_din[2]))
+    print(hex(dut.WK_din[3]))
+    print(hex(dut.WK_dout[0]))
+    print(hex(dut.WK_dout[1]))
+    print(hex(dut.WK_dout[2]))
+    print(hex(dut.WK_dout[3]))
+    print(hex(dut.wk[0]))
+    print(hex(dut.wk[1]))
+    print(hex(dut.wk[2]))
+    print(hex(dut.wk[3]))
+
     for i in range(0, 4):
         assert hex(dut.wk[i].value) == hex(
             expected_WK[i]
