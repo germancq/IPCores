@@ -38,14 +38,14 @@ module key_schedule #(
   generate
     case (KEY_LEN)
       128: begin
-        assign number_rounds = 8;
+        assign number_rounds = 9;
       end
       192: begin
-        assign number_rounds = 10;
+        assign number_rounds = 11;
       end
       default:
       begin
-        assign number_rounds = 12;
+        assign number_rounds = 13;
       end
     endcase
   endgenerate
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
