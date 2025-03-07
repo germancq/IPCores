@@ -31,7 +31,7 @@ module key_schedule #(
   assign key_l[0] = KEY_LEN == 128 ? 0 : (KEY_LEN == 192 ? ~key[63:32] : key[255:224]);
 
   function [127:0] doubleSwap(input [127:0] block_i);
-    return {block_i[120:64], block_i[127:121], block_i[6:0], block_i[63:7]};
+    return {block_i[120:64], block_i[6:0], block_i[127:121], block_i[63:7]};
   endfunction
 
   logic [31:0] number_rounds;
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
