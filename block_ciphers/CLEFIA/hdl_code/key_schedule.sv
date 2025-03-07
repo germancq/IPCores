@@ -290,7 +290,7 @@ module key_schedule #(
 
       end
       WAIT_FOR_GFN: begin
-        for (j = 0; j < 3; j++) begin
+        for (j = 0; j < 4; j++) begin
           WK_w[j] = 1;
         end
         if (gfn4_end_signal && gfn8_end_signal) begin
@@ -406,6 +406,8 @@ module key_schedule #(
     end
   end
 endmodule
+
+
 
 
 
