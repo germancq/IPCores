@@ -126,6 +126,65 @@ async def gen_t_test(dut, expected_T):
         ), f"ERROR in T values, expected={hex(expected_T[i])} calculated={hex(dut.T_din[i].value)}"
 
 
+async def check_odd_test(dut, expected_L, expected_T, expected_counter_value):
+    print("check_odd_test")
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.CHECK_ODD.value
+    ), f"ERROR STATE IN CHECK_ODD, STATE={dut.current_state.value}"
+
+    if dut.KEY_LEN.value == 128:
+        for i in range(0, 4):
+            assert hex(dut.LL_din[i].value) == hex(
+                expected_L[i]
+            ), f"ERROR in L values, expected={hex(expected_L[i])} calculated={hex(dut.LL_din[i].value)}"
+            if expected_counter_value % 2:
+                assert hex(dut.T_din[i].value) == hex(
+                    expected_T[i]
+                ), f"ERROR in T values, expected={hex(expected_T[i])} calculated={hex(dut.T_din[i].value)}"
+
+
+async def gen_rk_test(dut, expected_RK, expected_counter_value):
+    print("gen_rk_test")
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.GEN_RK.value
+    ), f"ERROR STATE IN GEN_RK, STATE={dut.current_state.value}"
+
+    for i in range(0, 4):
+        assert hex(dut.RK_din[expected_counter_value * 4 + i].value) == hex(
+            expected_RK[expected_counter_value * 4 + i]
+        ), f"ERROR in RK values, expected={hex(expected_RK[expected_counter_value*4 + i])} calculated={hex(dut.RK_din[expected_counter_value*4 + i].value)}"
+
+
+async def update_counter_test(dut):
+    print("update_counter_test")
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.UPDATE_COUNTER.value
+    ), f"ERROR STATE IN UPDATE_COUNTER, STATE={dut.current_state.value}"
+
+
+async def end_fsm_state(dut, expected_RK, expected_WK):
+    print("end_fsm_test")
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.END_FSM_STATE.value
+    ), f"ERROR STATE IN END_FSM_STATE, STATE={dut.current_state.value}"
+
+    assert dut.end_signal == 1, f"ERROR with end_signal"
+
+    for i in range(0, 4):
+        assert hex(dut.wk[i].value) == hex(
+            expected_WK[i]
+        ), f"ERROR in WK values, expected={hex(expected_WK[i])} calculated={hex(dut.wk[i].value)}"
+
+    for i in range(0, dut.N_RK.value):
+        assert hex(dut.round_keys[i].value) == hex(
+            expected_RK[i]
+        ), f"ERROR in RK values, expected={hex(expected_RK[i])} calculated={hex(dut.round_keys[i].value)}"
+
+
 async def n_cycles_clock(dut, n):
     for i in range(0, n):
         await RisingEdge(dut.clk)
@@ -206,6 +265,7 @@ async def test(dut, index=0):
     # print(hex(CON[59]))
 
     T = np.zeros(4, dtype=np.uint32)
+    T_copy = np.zeros(4, dtype=np.uint32)
     L_aux = np.zeros(4, dtype=np.uint32)
     K_aux = np.zeros(4, dtype=np.uint32)
     index = 8
@@ -239,6 +299,7 @@ async def test(dut, index=0):
                 )
             )
             T[j] = c ^ L_aux[j]
+            T_copy[j] = c ^ L_aux[j]
             if i % 2 != 0:
                 print(
                     "T[{}] ^ K_aux[{}] = {} ^ {} = {} ".format(
@@ -248,7 +309,7 @@ async def test(dut, index=0):
                 T[j] = T[j] ^ K_aux[j]
 
         #############TESTBENCH COCOTB####################
-        await gen_t_test(dut, T)
+        await gen_t_test(dut, T_copy)
 
         #################################################
         # print(L)
@@ -258,10 +319,22 @@ async def test(dut, index=0):
         else:
             L_right = clefia_sw.doubleSwap(L_right)
 
+        #############TESTBENCH COCOTB####################
+        await check_odd_test(dut, L, T, i)
+
+        #################################################
         # print(L)
         for j in range(0, 4):
             RK[(4 * i) + j] = T[j]
             print("RK[{}] = {}".format((4 * i) + j, hex(T[j])))
+
+        #############TESTBENCH COCOTB####################
+        await gen_rk_test(dut, RK, i)
+        await update_counter_test(dut)
+
+        #################################################
+    await check_counter_test(dut, index)
+    await end_fsm_state(dut, expected_rk, WK)
 
 
 n = 10
