@@ -223,7 +223,7 @@ async def test(dut, index=0):
     key = random.getrandbits(dut.KEY_LEN.value)
 
     key = 0xFFEEDDCCBBAA99887766554433221100
-    expected_rk = clefia_sw.key_schedule(key, dut.KEY_LEN.value)
+    expected_wk, expected_rk = clefia_sw.key_schedule(key, dut.KEY_LEN.value)
 
     await Timer(20, units="ns")
 
@@ -362,7 +362,7 @@ async def test(dut, index=0):
 
         #################################################
     await check_counter_test(dut, index + 1)
-    await end_fsm_state(dut, expected_rk, WK)
+    await end_fsm_state(dut, expected_rk, expected_wk)
 
 
 n = 10
