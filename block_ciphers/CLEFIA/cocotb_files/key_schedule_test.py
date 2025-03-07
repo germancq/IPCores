@@ -138,6 +138,11 @@ async def check_odd_test(dut, expected_L, expected_T, expected_counter_value):
     print(hex(dut.LL_din[2].value))
     print(hex(dut.LL_din[3].value))
     print(expected_L)
+    print(hex(dut.T_din[0].value))
+    print(hex(dut.T_din[1].value))
+    print(hex(dut.T_din[2].value))
+    print(hex(dut.T_din[3].value))
+    print(expected_T)
 
     if dut.KEY_LEN.value == 128:
         for i in range(0, 4):
