@@ -31,13 +31,14 @@ module encrypt #(
   assign gfn_block_i[1] = block_i[1] ^ wk[0];
   assign gfn_block_i[2] = block_i[2];
   assign gfn_block_i[3] = block_i[3] ^ wk[1];
+  logic rst_gfn;
 
   gfn #(
       .d(4),
       .r(R)
   ) gfn_inst (
       .clk(clk),
-      .rst(rst),
+      .rst(rst_gfn),
       .round_keys(round_keys),
       .block_i(gfn_block_i),
       .block_o(gfn_block_o),
@@ -78,6 +79,7 @@ module encrypt #(
   always_comb begin
     next_state = current_state;
     end_signal = 0;
+    rst_gfn = 0;
     for (j = 0; j < 4; j++) begin
       out_cl[j]  = 0;
       out_w[j]   = 0;
@@ -85,6 +87,7 @@ module encrypt #(
     end
     case (current_state)
       IDLE: begin
+        rst_gfn = 1;
         if (start == 1) begin
           next_state = WAIT_FOR_GFN;
         end
