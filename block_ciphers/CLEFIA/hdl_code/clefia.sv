@@ -42,7 +42,7 @@ module clefia #(
       .clk(clk),
       .cl(rst || rq_data),
       .w(end_signal),
-      .din({result_enc[3], result_enc[2], result_enc[1], result_enc[0]}),
+      .din({result_enc[0], result_enc[1], result_enc[2], result_enc[3]}),
       .dout(block_o)
   );
 
