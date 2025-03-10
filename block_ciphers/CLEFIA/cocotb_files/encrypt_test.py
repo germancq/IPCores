@@ -23,6 +23,7 @@ def setup_dut(dut, blk_i, rk, wk):
     print("setup block cipher")
     cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
+    dut.start.value = 1
     for i in range(0, 4):
         aux = random.getrandbits(32)
         dut.block_i[i].value = int(blk_i[i])
@@ -54,6 +55,7 @@ async def rst_function_test(dut):
 
 async def gfn_test(dut, expected_block_i, expected_rk, expected_output):
     print("wait for gfn test")
+    print(dut.start.value)
     await n_cycles_clock(dut, 1)
     assert (
         dut.current_state.value == dut.WAIT_FOR_GFN.value
