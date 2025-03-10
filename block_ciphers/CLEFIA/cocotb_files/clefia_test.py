@@ -57,6 +57,7 @@ async def test(dut, index=0):
         print("waiting for encrypt")
         await n_cycles_clock(dut, 1)
 
+    await n_cycles_clock(dut, 1)
     assert hex(dut.block_o.value) == hex(
         expected_result
     ), f"ERROR IN RESULT expected={hex(expected_result)} calculated={hex(dut.block_o.value)}"
