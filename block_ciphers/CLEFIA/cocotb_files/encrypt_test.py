@@ -63,7 +63,7 @@ async def gfn_test(dut, expected_block_i, expected_rk, expected_output):
         print(dut.current_state.value)
         await n_cycles_clock(dut, 1)
 
-    for i in range(0, dut.N_RK):
+    for i in range(0, dut.N_RK.value):
         print(i)
         assert hex(dut.gfn_inst.round_keys[i].value) == hex(
             expected_rk[i]
