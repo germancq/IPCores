@@ -129,7 +129,7 @@ async def test(dut, index=0):
     p_a[2] = plaintext >> 32 & 0xFFFFFFFF
     p_a[3] = plaintext & 0xFFFFFFFF
 
-    setup_dut(dut, p_a, expected_wk, expected_rk)
+    setup_dut(dut, p_a, expected_rk, expected_wk)
     await rst_function_test(dut)
 
     print(
