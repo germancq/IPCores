@@ -32,7 +32,7 @@ module clefia #(
   logic [31:0] enc_block_i[3:0];
   genvar i;
   for (i = 0; i < 4; i++) begin
-    assign enc_block_i[3-i] = block_i[31+(i<<5):i<<5];
+    assign enc_block_i[i] = block_i[31+(i<<5):i<<5];
 
   end
 
