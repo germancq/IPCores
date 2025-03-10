@@ -101,9 +101,9 @@ module encrypt #(
           out_w[j] = 1;
         end
         out_din[0] = gfn_block_o[0];
-        out_din[1] = gfn_block_o[1] ^ wk[2];
+        out_din[1] = gfn_block_o[1] ^ wk[1];
         out_din[2] = gfn_block_o[2];
-        out_din[3] = gfn_block_o[3] ^ wk[3];
+        out_din[3] = gfn_block_o[3] ^ wk[0];
 
         next_state = END_STATE;
 
