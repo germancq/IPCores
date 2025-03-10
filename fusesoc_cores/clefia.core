@@ -41,6 +41,7 @@ filesets:
     files: 
       - block_ciphers/CLEFIA/hdl_code/clefia.sv      
     depend:
+      - clefia_encrypt
       - clefia_key_schedule
       - clefia_gfn
       - register
