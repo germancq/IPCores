@@ -61,6 +61,19 @@ async def test(dut, index=0):
         await n_cycles_clock(dut, 1)
 
     await n_cycles_clock(dut, 1)
+
+    for i in range(0, 36):
+        print(i)
+        assert hex(dut.round_keys[i].value) == hex(
+            expected_rk[i]
+        ), f"ERROR in WAIT_FOR_GFN, RK values incorrect, expected in RK{i} = {hex(expected_rk[i])}, calculated = {hex(dut.gfn_inst.round_keys[i].value)}"
+
+    for i in range(0, 4):
+
+        assert hex(dut.wk[i].value) == hex(
+            expected_wk[i]
+        ), f"ERROR in WAIT_FOR_GFN, wk values incorrect, expected in wk{i} = {hex(expected_wk[i])}, calculated = {hex(dut.wk[i].value)}"
+
     print(hex(dut.enc_block_i[0].value))
     print(hex(dut.enc_block_i[1].value))
     print(hex(dut.enc_block_i[2].value))
