@@ -73,7 +73,7 @@ async def gfn_test(dut, expected_block_i, expected_rk, expected_output):
     print(hex(expected_block_i[2]))
     print(hex(expected_block_i[3]))
 
-    for i in range(0, dut.N_RK.value)):
+    for i in range(0, dut.N_RK.value):
         print(i)
         assert hex(dut.gfn_inst.round_keys[i].value)) == hex(
             expected_rk[i]
