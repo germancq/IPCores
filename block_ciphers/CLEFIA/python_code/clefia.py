@@ -152,7 +152,7 @@ class CLEFIA:
         t[1] = t[1] ^ WK[2]
         t[3] = t[3] ^ WK[3]
         print(t)
-        return int((t[0] << 96)) + int((t[1] << 64)) + int((t[2] << 32)) + int(t[3])
+        return (int(t[0]) << 96) + (int(t[1]) << 64) + (int(t[2]) << 32) + int(t[3])
 
     def key_schedule(self, key, key_len):
         key_a = np.zeros(int(key_len / 32), dtype=np.uint32)
