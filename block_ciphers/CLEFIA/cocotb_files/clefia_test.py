@@ -98,6 +98,7 @@ async def test(dut, index=0):
     print(hex(dut.result_enc[1].value))
     print(hex(dut.result_enc[2].value))
     print(hex(dut.result_enc[3].value))
+    print(expected_result)
     assert hex(dut.block_o.value) == hex(
         expected_result
     ), f"ERROR IN RESULT expected={hex(expected_result)} calculated={hex(dut.block_o.value)}"
