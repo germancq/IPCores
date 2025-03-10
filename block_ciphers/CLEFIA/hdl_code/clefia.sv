@@ -26,7 +26,7 @@ module clefia #(
   logic [31:0] round_keys[N_RK-1:0];
 
   logic start_enc;
-  logic [127:0] result_enc;
+  logic [31:0] result_enc[3:0];
   logic end_enc;
 
   logic [31:0] enc_block_i[3:0];
@@ -42,7 +42,7 @@ module clefia #(
       .clk(clk),
       .cl(rst || rq_data),
       .w(end_enc),
-      .din(result_enc),
+      .din({result_enc[3], result_enc[2], result_enc[1], result_enc[0]}),
       .dout(block_o)
   );
 
