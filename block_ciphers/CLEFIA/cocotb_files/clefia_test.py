@@ -41,9 +41,6 @@ async def test(dut, index=0):
     key = random.getrandbits(dut.KEY_LEN.value)
     plaintext = random.getrandbits(128)
 
-    key = 0xFFEEDDCCBBAA99887766554433221100
-    plaintext = 0x000102030405060708090A0B0C0D0E0F
-
     setup_dut(dut, key, plaintext)
 
     expected_wk, expected_rk = clefia_sw.key_schedule(key, dut.KEY_LEN.value)
