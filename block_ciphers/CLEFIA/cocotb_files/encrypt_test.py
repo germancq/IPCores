@@ -120,7 +120,7 @@ async def test(dut, index=0):
     clefia_sw = clefia.CLEFIA()
     key = random.getrandbits(dut.KEY_LEN.value)
     plaintext = random.getrandbits(128)
-    expected_wk, expected_rk = clefia_sw.key_schedule(key, dut.KEY_LEN)
+    expected_wk, expected_rk = clefia_sw.key_schedule(key, dut.KEY_LEN.value)
     expected_result = clefia_sw.encrypt(plaintext, expected_wk, expected_rk)
 
     p_a = np.zeros(4, dtype=np.uint32)
