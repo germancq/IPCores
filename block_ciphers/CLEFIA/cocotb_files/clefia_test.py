@@ -56,6 +56,7 @@ async def test(dut, index=0):
     p_a[3] = plaintext & 0xFFFFFFFF
     while dut.end_key_generation.value == 0:
         print("waiting for key_schedule")
+        print(dut.encrypt_inst.current_state.value)
         await n_cycles_clock(dut, 1)
 
     await n_cycles_clock(dut, 1)
@@ -63,12 +64,12 @@ async def test(dut, index=0):
 
     while dut.end_signal.value == 0:
         print("waiting for encrypt")
+        print(dut.encrypt_inst.current_state.value)
         await n_cycles_clock(dut, 1)
 
     await n_cycles_clock(dut, 1)
 
     for i in range(0, 36):
-        print(i)
         assert hex(dut.round_keys[i].value) == hex(
             expected_rk[i]
         ), f"ERROR in WAIT_FOR_GFN, RK values incorrect, expected in RK{i} = {hex(expected_rk[i])}, calculated = {hex(dut.gfn_inst.round_keys[i].value)}"
