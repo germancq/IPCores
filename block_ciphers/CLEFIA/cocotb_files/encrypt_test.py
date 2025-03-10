@@ -63,21 +63,31 @@ async def gfn_test(dut, expected_block_i, expected_rk, expected_output):
         print(dut.current_state.value)
         await n_cycles_clock(dut, 1)
 
-    for i in range(0, dut.N_RK.value):
+    print(hex(dut.gfn_block_i[0].value))
+    print(hex(dut.gfn_block_i[1].value))
+    print(hex(dut.gfn_block_i[2].value))
+    print(hex(dut.gfn_block_i[3].value))
+
+    print(hex(expected_block_i[0]))
+    print(hex(expected_block_i[1]))
+    print(hex(expected_block_i[2]))
+    print(hex(expected_block_i[3]))
+
+    for i in range(0, dut.N_RK.value)):
         print(i)
-        assert hex(dut.gfn_inst.round_keys[i].value) == hex(
+        assert hex(dut.gfn_inst.round_keys[i].value)) == hex(
             expected_rk[i]
-        ), f"ERROR in WAIT_FOR_GFN, RK values incorrect, expected in RK{i} = {hex(expected_rk[i])}, calculated = {hex(dut.gfn_inst.round_keys[i].value)}"
+        ), f"ERROR in WAIT_FOR_GFN, RK values incorrect, expected in RK{i} = {hex(expected_rk[i])}, calculated = {hex(dut.gfn_inst.round_keys[i].value))}"
 
     for i in range(0, 4):
 
         assert hex(dut.gfn_block_i[i].value) == hex(
             expected_block_i[i]
-        ), f"ERROR in WAIT_FOR_GFN, LL values incorrect, expected in LL{i} = {hex(expected_block_i[i])}, calculated = {hex(dut.gfn_block_i[i].value)}"
+        ), f"ERROR in WAIT_FOR_GFN, block_i values incorrect, expected in LL{i} = {hex(expected_block_i[i])}, calculated = {hex(dut.gfn_block_i[i].value)}"
 
         assert hex(dut.gfn_block_o[i].value) == hex(
             expected_output[i]
-        ), f"ERROR in WAIT_FOR_GFN, LR values incorrect, expected in LR{i} = {hex(expected_output[i])}, calculated = {hex(dut.gfn_block_o[i].value)}"
+        ), f"ERROR in WAIT_FOR_GFN, block_o values incorrect, expected in LR{i} = {hex(expected_output[i])}, calculated = {hex(dut.gfn_block_o[i].value)}"
 
 
 async def write_output_test(dut, expected_result):
