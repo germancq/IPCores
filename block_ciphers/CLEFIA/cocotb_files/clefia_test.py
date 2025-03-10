@@ -98,7 +98,6 @@ async def test(dut, index=0):
     print(hex(dut.result_enc[1].value))
     print(hex(dut.result_enc[2].value))
     print(hex(dut.result_enc[3].value))
-    print(hex(expected_result[0].value))
     expected_result = (
         (expected_result[0] << 96)
         + (expected_result[1] << 64)
