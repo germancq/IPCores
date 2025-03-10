@@ -119,7 +119,6 @@ module gfn #(
       STEP_2: begin
         next_state = STEP_2_1;
         if (dout_rounds_counter == r) begin
-
           next_state = STEP_3;
         end
       end
@@ -155,9 +154,9 @@ module gfn #(
   always_ff @(posedge clk) begin
 
     if (rst) begin
-      current_state = STEP_1;
+      current_state <= STEP_1;
     end else begin
-      current_state = next_state;
+      current_state <= next_state;
     end
   end
 

@@ -400,9 +400,9 @@ module key_schedule #(
   always_ff @(posedge clk) begin
 
     if (rst) begin
-      current_state = IDLE;
+      current_state <= IDLE;
     end else begin
-      current_state = next_state;
+      current_state <= next_state;
     end
   end
 endmodule
