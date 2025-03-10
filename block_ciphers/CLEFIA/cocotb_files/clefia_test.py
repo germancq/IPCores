@@ -49,6 +49,11 @@ async def test(dut, index=0):
     expected_wk, expected_rk = clefia_sw.key_schedule(key, dut.KEY_LEN.value)
     expected_result = clefia_sw.encrypt(plaintext, expected_wk, expected_rk)
 
+    p_a = np.zeros(4, dtype=np.uint32)
+    p_a[0] = plaintext >> 96 & 0xFFFFFFFF
+    p_a[1] = plaintext >> 64 & 0xFFFFFFFF
+    p_a[2] = plaintext >> 32 & 0xFFFFFFFF
+    p_a[3] = plaintext & 0xFFFFFFFF
     while dut.end_key_generation.value == 0:
         print("waiting for key_schedule")
         await n_cycles_clock(dut, 1)
@@ -69,6 +74,10 @@ async def test(dut, index=0):
         ), f"ERROR in WAIT_FOR_GFN, RK values incorrect, expected in RK{i} = {hex(expected_rk[i])}, calculated = {hex(dut.gfn_inst.round_keys[i].value)}"
 
     for i in range(0, 4):
+
+        assert hex(dut.enc_block_i[i].value) == hex(
+            p_a[i]
+        ), f"ERROR in WAIT_FOR_GFN, plaintext values incorrect, expected in p{i} = {hex(p_a[i])}, calculated = {hex(dut.enc_block_i[i].value)}"
 
         assert hex(dut.wk[i].value) == hex(
             expected_wk[i]
