@@ -27,9 +27,9 @@ module encrypt #(
   logic gfn_end_signal;
   logic [31:0] gfn_block_i[3:0];
   assign gfn_block_i[0] = block_i[0];
-  assign gfn_block_i[1] = block_i[1] ^ wk[3];
+  assign gfn_block_i[1] = block_i[1] ^ wk[0];
   assign gfn_block_i[2] = block_i[2];
-  assign gfn_block_i[3] = block_i[3] ^ wk[2];
+  assign gfn_block_i[3] = block_i[3] ^ wk[1];
 
   gfn #(
       .d(4),
@@ -101,9 +101,9 @@ module encrypt #(
           out_w[j] = 1;
         end
         out_din[0] = gfn_block_o[0];
-        out_din[1] = gfn_block_o[1] ^ wk[1];
+        out_din[1] = gfn_block_o[1] ^ wk[2];
         out_din[2] = gfn_block_o[2];
-        out_din[3] = gfn_block_o[3] ^ wk[0];
+        out_din[3] = gfn_block_o[3] ^ wk[3];
 
         next_state = END_STATE;
 
