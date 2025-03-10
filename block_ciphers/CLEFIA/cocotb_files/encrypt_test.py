@@ -161,10 +161,11 @@ async def test(dut, index=0):
     p_a[3] = p_a[3] ^ expected_wk[1]
     print("p1 = p1 ^ {} = {}".format(hex(expected_wk[0]), hex(p_a[1])))
     print("p3 = p3 ^ {} = {}".format(hex(expected_wk[1]), hex(p_a[3])))
+    cp_p = np.copy(p_a)
 
     t = clefia_sw.GFN(4, int(np.shape(expected_rk)[0] / 2), p_a, expected_rk)
 
-    await gfn_test(dut, p_a, expected_rk, t)
+    await gfn_test(dut, cp_p, expected_rk, t)
 
     t[1] = t[1] ^ expected_wk[2]
     t[3] = t[3] ^ expected_wk[3]
