@@ -31,7 +31,7 @@ def setup_dut(dut, blk_i, rk, wk):
         aux = random.getrandbits(32)
         dut.wk[i].value = int(wk[i])
 
-    for i in range(0, 36 + int((dut.KEY_LEN - 128) / 8)):
+    for i in range(0, dut.N_RK.value):
         aux = random.getrandbits(32)
         dut.round_keys[i].value = int(rk[i])
 
