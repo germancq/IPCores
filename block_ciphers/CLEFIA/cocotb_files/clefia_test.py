@@ -90,10 +90,6 @@ async def test(dut, index=0):
             expected_wk[i]
         ), f"ERROR in WAIT_FOR_GFN, wk values incorrect, expected in wk{i} = {hex(expected_wk[i])}, calculated = {hex(dut.wk[i].value)}"
 
-    print(hex(dut.enc_block_i[0].value))
-    print(hex(dut.enc_block_i[1].value))
-    print(hex(dut.enc_block_i[2].value))
-    print(hex(dut.enc_block_i[3].value))
     print(hex(dut.result_enc[0].value))
     print(hex(dut.result_enc[1].value))
     print(hex(dut.result_enc[2].value))
@@ -102,6 +98,14 @@ async def test(dut, index=0):
     print(hex(expected_result[1]))
     print(hex(expected_result[2]))
     print(hex(expected_result[3]))
+    print(
+        hex(
+            (expected_result[0] << 96)
+            + (expected_result[1] << 64)
+            + (expected_result[2] << 32)
+            + expected_result[3]
+        )
+    )
     expected_result = (
         (expected_result[0] << 96)
         + (expected_result[1] << 64)
