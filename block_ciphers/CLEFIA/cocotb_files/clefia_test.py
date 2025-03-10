@@ -25,6 +25,7 @@ def setup_dut(dut, key, plaintext):
     dut.rst.value = 0
     dut.key.value = key
     dut.block_i.value = plaintext
+    dut.rq_data = 1
 
 
 async def n_cycles_clock(dut, n):
@@ -48,8 +49,12 @@ async def test(dut, index=0):
     expected_wk, expected_rk = clefia_sw.key_schedule(key, dut.KEY_LEN.value)
     expected_result = clefia_sw.encrypt(plaintext, expected_wk, expected_rk)
 
+    while dut.end_key_generation.value == 0:
+        print("waiting for key_schedule")
+        await n_cycles_clock(dut, 1)
+
     while dut.end_signal.value == 0:
-        print("waiting")
+        print("waiting for encrypt")
         await n_cycles_clock(dut, 1)
 
     assert hex(dut.block_o.value) == hex(
