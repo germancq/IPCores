@@ -75,9 +75,9 @@ async def gfn_test(dut, expected_block_i, expected_rk, expected_output):
 
     for i in range(0, dut.N_RK.value):
         print(i)
-        assert hex(dut.gfn_inst.round_keys[i].value)) == hex(
+        assert hex(dut.gfn_inst.round_keys[i].value) == hex(
             expected_rk[i]
-        ), f"ERROR in WAIT_FOR_GFN, RK values incorrect, expected in RK{i} = {hex(expected_rk[i])}, calculated = {hex(dut.gfn_inst.round_keys[i].value))}"
+        ), f"ERROR in WAIT_FOR_GFN, RK values incorrect, expected in RK{i} = {hex(expected_rk[i])}, calculated = {hex(dut.gfn_inst.round_keys[i].value)}"
 
     for i in range(0, 4):
 
