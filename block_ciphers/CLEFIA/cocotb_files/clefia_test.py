@@ -49,6 +49,7 @@ async def test(dut, index=0):
     expected_result = clefia_sw.encrypt(plaintext, expected_wk, expected_rk)
 
     while dut.end_signal.value == 0:
+        print("waiting")
         await n_cycles_clock(dut, 1)
 
     assert hex(dut.block_o.value) == hex(
