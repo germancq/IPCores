@@ -53,11 +53,22 @@ async def test(dut, index=0):
         print("waiting for key_schedule")
         await n_cycles_clock(dut, 1)
 
+    await n_cycles_clock(dut, 1)
+    dut.rq_data.value = 0
+
     while dut.end_signal.value == 0:
         print("waiting for encrypt")
         await n_cycles_clock(dut, 1)
 
     await n_cycles_clock(dut, 1)
+    print(hex(dut.enc_block_i[0].value))
+    print(hex(dut.enc_block_i[1].value))
+    print(hex(dut.enc_block_i[2].value))
+    print(hex(dut.enc_block_i[3].value))
+    print(hex(dut.result_enc[0].value))
+    print(hex(dut.result_enc[1].value))
+    print(hex(dut.result_enc[2].value))
+    print(hex(dut.result_enc[3].value))
     assert hex(dut.block_o.value) == hex(
         expected_result
     ), f"ERROR IN RESULT expected={hex(expected_result)} calculated={hex(dut.block_o.value)}"
