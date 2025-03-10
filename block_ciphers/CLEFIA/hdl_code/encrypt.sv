@@ -11,6 +11,7 @@ module encrypt #(
 ) (
     input clk,
     input rst,
+    input start,
     input [31:0] wk[3:0],
     input [31:0] round_keys[35+((KEY_LEN-128)>>(3)):0],
     input [31:0] block_i[3:0],
@@ -84,7 +85,9 @@ module encrypt #(
     end
     case (current_state)
       IDLE: begin
-        next_state = WAIT_FOR_GFN;
+        if (start == 1) begin
+          next_state = WAIT_FOR_GFN;
+        end
         for (j = 0; j < 4; j++) begin
           out_cl[j] = 1;
         end

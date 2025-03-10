@@ -61,7 +61,8 @@ module clefia #(
       .KEY_LEN(KEY_LEN)
   ) encrypt_inst (
       .clk(clk),
-      .rst(rst || ~(rq_data && end_key_generation)),
+      .rst(rst),
+      .start(rq_data && end_key_generation),
       .wk(wk),
       .round_keys(round_keys),
       .block_i(enc_block_i),
