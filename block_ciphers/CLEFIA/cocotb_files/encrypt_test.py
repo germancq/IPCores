@@ -107,8 +107,8 @@ async def end_fsm_state(dut, expected_result):
     print("end_fsm_test")
     await n_cycles_clock(dut, 1)
     assert (
-        dut.current_state.value == dut.END_FSM_STATE.value
-    ), f"ERROR STATE IN END_FSM_STATE, STATE={dut.current_state.value}"
+        dut.current_state.value == dut.END_STATE.value
+    ), f"ERROR STATE IN END_STATE, STATE={dut.current_state.value}"
 
     assert dut.end_signal == 1, f"ERROR with end_signal"
 
