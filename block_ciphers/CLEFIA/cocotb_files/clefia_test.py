@@ -55,6 +55,11 @@ async def test(dut, index=0):
     p_a[2] = plaintext >> 32 & 0xFFFFFFFF
     p_a[3] = plaintext & 0xFFFFFFFF
     print("--------------------------------------------")
+    dut.rst.value = 1
+    await n_cycles_clock(dut, 10)
+    dut.rst.value = 0
+    print("key_schedule")
+    print(dut.end_key_generation.value)
     while dut.end_key_generation.value == 0:
         print("waiting for key_schedule")
         print(dut.encrypt_inst.current_state.value)
