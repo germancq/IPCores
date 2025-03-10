@@ -25,15 +25,15 @@ def setup_dut(dut, blk_i, rk, wk):
     dut.rst.value = 0
     for i in range(0, 4):
         aux = random.getrandbits(32)
-        dut.block_i[i].value = blk_i[i]
+        dut.block_i[i].value = int(blk_i[i])
 
     for i in range(0, 4):
         aux = random.getrandbits(32)
-        dut.wk[i].value = wk[i]
+        dut.wk[i].value = int(wk[i])
 
     for i in range(0, 36 + int((dut.KEY_LEN - 128) / 8)):
         aux = random.getrandbits(32)
-        dut.round_keys[i].value = rk[i]
+        dut.round_keys[i].value = int(rk[i])
 
 
 async def rst_function_test(dut):
