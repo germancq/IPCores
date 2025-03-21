@@ -8,7 +8,10 @@
 
 import math
 
+import galois_arithmetic
 import numpy as np
+
+np.set_printoptions(formatter={"int": hex})
 
 RC = [1, 3, 7, 14, 13, 11, 6, 12, 9, 2, 5, 10]
 IC_100 = [0, 1, 3, 6, 4]
@@ -17,6 +20,31 @@ IC_196 = [0, 1, 2, 5, 3, 6, 4]
 IC_256 = [0, 1, 3, 7, 15, 14, 12, 8]
 IC_288 = [0, 1, 3, 7, 6, 4]
 IC = {100: IC_100, 144: IC_144, 196: IC_196, 256: IC_256, 288: IC_288}
+
+MDS_100 = [
+    [1, 2, 9, 9, 2],
+    [2, 5, 3, 8, 13],
+    [13, 11, 10, 12, 1],
+    [1, 15, 2, 3, 14],
+    [14, 14, 8, 5, 12],
+]
+MDS_144 = [
+    [1, 2, 8, 5, 8, 2],
+    [2, 5, 1, 2, 6, 12],
+    [12, 9, 15, 8, 8, 13],
+    [13, 5, 11, 3, 10, 1],
+    [1, 5, 13, 14, 11, 8],
+    [8, 2, 3, 3, 2, 8],
+]
+MDS_196 = [1, 4, 6, 1, 1, 6, 4]
+MDS_256 = [2, 4, 2, 11, 2, 8, 5, 6]
+MDS_288 = [2, 3, 1, 2, 1, 4]
+MDS_COEFF = {100: MDS_100, 144: MDS_144,
+             196: MDS_196, 256: MDS_256, 288: MDS_288}
+
+POL_PRESENT = (1 << 4) + (1 << 1) + 1
+POL_AES = (1 << 8) + (1 << 4) + (1 << 3) + (1 << 1) + 1
+
 
 dimension_matrix = {100: 5, 144: 6, 196: 7, 256: 8, 288: 6}
 
@@ -299,7 +327,7 @@ S_box_aes = [
 ]
 
 
-class Photon:
+class PHOTON:
 
     def __init__(self, n, r_in, r_out):
         self.n = n
@@ -307,10 +335,41 @@ class Photon:
         self.r_out = r_out
         self.t = n + r_in
 
-        iv = (int(self.n / 4) << 16) + (self.r_in << 8) + (self.r_out)
-        self.state = iv
+        bit_cell = 4
+        if n == 288:
+            bit_cell = 8
+
+        self.bit_cell = bit_cell
+
+        self.gf = galois_arithmetic.GaloisField(bit_cell)
+
+        dim = int(math.sqrt(int(self.t / bit_cell)))
+        print(n)
+        print(bit_cell)
+        print(dim)
+
+        self.dim = dim
+        state = np.zeros((dim, dim), dtype=np.uint8)
+
+        if self.t == 288:
+            state[self.dim - 1, self.dim - 1] = self.r_out
+            state[self.dim - 1, self.dim - 2] = self.r_in
+            state[self.dim - 1, self.dim - 3] = self.n
+        else:
+            state[self.dim - 1, self.dim - 1 - 0] = self.r_out & 0xF
+            state[self.dim - 1, self.dim - 1 - 1] = self.r_out >> 4
+            state[self.dim - 1, self.dim - 1 - 2] = self.r_in & 0xF
+            state[self.dim - 1, self.dim - 1 - 3] = self.r_in >> 4
+            state[self.dim - 1, self.dim - 1 - 4] = int(self.n / 4) & 0xF
+            if self.t == 100:
+                state[self.dim - 2, self.dim - 1 - 0] = int(self.n / 4) >> 4
+            else:
+                state[self.dim - 1, self.dim - 1 - 5] = int(self.n / 4) >> 4
+
+        self.state = state
 
     def padding_input(self, message, len_msg=0):
+        print(hex(message))
         # padding message with 1
         message = message << 1
         message = message | 0x1
@@ -321,6 +380,7 @@ class Photon:
 
         n = bit_len_msg % self.r_in
         padding_message = message << (self.r_in - n)
+        print(hex(padding_message))
         return padding_message
 
     def get_message_blocks(self, padding_message):
@@ -338,6 +398,9 @@ class Photon:
             message_part = message_part & mask
             m.insert(i, message_part)
 
+        m = np.array(m)
+
+        print(m)
         return m
 
     def initialization_phase(self, message, len_msg=0):
@@ -348,11 +411,24 @@ class Photon:
     def absorbing_phase(self):
 
         self.absorbing_values = []
+        aux_array = np.zeros((self.dim, self.dim), dtype=np.uint8)
+
+        mask = 0
+        for i in range(0, self.bit_cell):
+            mask = mask << 1
+            mask = mask | 0x1
 
         for i in range(0, len(self.message_blocks)):
             block_i = self.message_blocks[i]
 
-            self.state = (self.state) ^ (block_i << self.n)
+            lim = int(self.r_in / self.bit_cell)
+            for j in range(0, lim):
+                value = (block_i >> ((lim - j - 1) * self.bit_cell)) & mask
+                aux_array[self.dim - math.floor(j / self.dim) - 1][
+                    self.dim - (j % self.dim) - 1
+                ] = value
+
+            self.state = self.state ^ aux_array
 
             self.state = self.permutation(self.state)
 
@@ -365,7 +441,15 @@ class Photon:
 
         num_iterations = math.ceil(self.n / self.r_out)
 
+        lim = int(self.r_out / self.bit_cell)
+        value = 0
+
         for i in range(0, num_iterations):
+            for j in range(0, lim):
+                value = (value << self.bit_cell) | self.state[
+                    self.dim - 1 - math.floor(j / self.dim)
+                ][self.dim - (j % self.dim) - 1]
+
             value = self.state >> (self.t - self.r_out)
 
             self.squezzing_values.insert(i, value)
@@ -378,45 +462,32 @@ class Photon:
             ]
 
     def permutation(self, value):
-        matrix_state = self.get_matrix_state(value)
-        for i in (0, 12):
+        matrix_state = value
+        for i in range(0, 12):
+            print(i)
             matrix_state = self.add_constant(i, matrix_state)
-
-    def get_matrix_state(self, state):
-        # dimension except for 288
-        # math.sqrt(int(self.n / 4))
-        dim = dimension_matrix.get(self.n, 0)
-        matrix_state = np.zeros((dim, dim), dtype=np.uint8)
-
-        bit_cells = 4
-        mask = 0xF
-        if self.n == 288:
-            bit_cells = 8
-            mask = 0xFF
-
-        value = state
-        for i in range(0, dim):
-            value = value >> (bit_cells * dim * i)
-            for j in range(0, dim):
-                value = value >> (bit_cells * j)
-                value = value & mask
-                matrix_state[i, j] = value
-
-        return matrix_state
+            matrix_state = self.sub_cells(matrix_state)
+            matrix_state = self.shift_rows(matrix_state)
+            matrix_state = self.mix_columns_serial(matrix_state)
 
     def add_constant(self, round_value, matrix_state):
+        print("add_constant")
+        print(matrix_state)
         result = np.copy(matrix_state)
         rc_value = RC[round_value]
-        dim = dimension_matrix.get(self.n, 0)
+        ic_array = IC.get(self.t)
 
-        for i in range(0, dim):
-            ic_value = IC.get(self.n, i)
+        for i in range(0, self.dim):
+            ic_value = ic_array[i]
             value = result[i, 0]
             result[i, 0] = value ^ rc_value ^ ic_value
 
+        print(result)
         return result
 
     def sub_cells(self, matrix_state):
+        print("sub_cells")
+        print(matrix_state)
         result = np.copy(matrix_state)
 
         for i in range(0, result.shape[0]):
@@ -426,7 +497,41 @@ class Photon:
                 else:
                     result[i, j] = S_box_present[result[i, j]]
 
+        print(result)
         return result
 
     def shift_rows(self, matrix_state):
+        print("shift_rows")
         result = np.copy(matrix_state)
+        for i in range(1, self.dim):
+            result[i] = np.roll(result[i], -i)
+        print(result)
+        return result
+
+    def mix_columns_serial(self, matrix_state):
+        print("mix_columns_serial")
+        result = np.copy(matrix_state)
+        result = np.transpose(result)
+        mds = np.array(MDS_COEFF.get(self.t))
+        p_a = POL_PRESENT
+        if self.t == 288:
+            p_a = POL_AES
+
+        print(result)
+        for i in range(0, self.dim):
+            column = np.atleast_2d(result[i]).T
+            a = self.gf.matrix_multiplication(mds, column, p_a)
+            result[i] = np.transpose(a)
+        result = np.transpose(result)
+        print(result)
+        return result
+
+
+if __name__ == "__main__":
+    hash_sw = PHOTON(80, 20, 16)
+
+    message = 0x0
+    hash_sw.initialization_phase(message)
+    print(hash_sw.state)
+    print(hash_sw.message_blocks)
+    hash_sw.permutation(hash_sw.state)
