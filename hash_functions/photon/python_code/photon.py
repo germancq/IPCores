@@ -36,9 +36,33 @@ MDS_144 = [
     [1, 5, 13, 14, 11, 8],
     [8, 2, 3, 3, 2, 8],
 ]
-MDS_196 = [1, 4, 6, 1, 1, 6, 4]
-MDS_256 = [2, 4, 2, 11, 2, 8, 5, 6]
-MDS_288 = [2, 3, 1, 2, 1, 4]
+MDS_196 = [
+    [1, 4, 6, 1, 1, 6, 4],
+    [4, 2, 15, 2, 5, 10, 5],
+    [5, 3, 15, 10, 7, 8, 13],
+    [13, 4, 11, 2, 7, 15, 9],
+    [9, 15, 7, 2, 11, 4, 13],
+    [13, 8, 7, 10, 15, 3, 5],
+    [5, 10, 5, 2, 15, 2, 4],
+]
+MDS_256 = [
+    [2, 4, 2, 11, 2, 8, 5, 6],
+    [12, 9, 8, 13, 7, 7, 5, 2],
+    [4, 4, 13, 13, 9, 4, 13, 9],
+    [1, 6, 5, 1, 12, 13, 15, 14],
+    [15, 12, 9, 13, 14, 5, 14, 13],
+    [9, 14, 5, 15, 4, 12, 9, 6],
+    [12, 2, 2, 10, 3, 1, 1, 14],
+    [15, 1, 13, 10, 5, 10, 2, 3],
+]
+MDS_288 = [
+    [2, 3, 1, 2, 1, 4],
+    [8, 14, 7, 9, 6, 17],
+    [34, 59, 31, 37, 24, 66],
+    [132, 228, 121, 155, 103, 11],
+    [22, 153, 239, 111, 144, 75],
+    [150, 203, 210, 121, 36, 167],
+]
 MDS_COEFF = {100: MDS_100, 144: MDS_144,
              196: MDS_196, 256: MDS_256, 288: MDS_288}
 
@@ -373,30 +397,36 @@ class PHOTON:
         # padding message with 1
         message = message << 1
         message = message | 0x1
+        print(hex(message))
         # fill with zeros until r multiple
         bit_len_msg = len_msg + 1
-        if len_msg == 0:
-            bit_len_msg = math.floor(math.log2(message)) + 1
 
+        print(bit_len_msg)
         n = bit_len_msg % self.r_in
+        print(n)
+        print(self.r_in - n)
         padding_message = message << (self.r_in - n)
         print(hex(padding_message))
         return padding_message
 
-    def get_message_blocks(self, padding_message):
+    def get_message_blocks(self, padding_message, len_msg=0):
         # obtain l message blocks m 0...m l-1
-        bit_len = math.floor(math.log2(padding_message)) + 1
+        bit_len = len_msg + 1 + (self.r_in - ((len_msg + 1) % self.r_in))
         num_blocks = int(bit_len / self.r_in)
+        print(num_blocks)
         mask = 0
         for i in range(0, self.r_in):
             mask = mask << 1
             mask = mask | 0x1
 
         m = []
+        print(hex(padding_message))
         for i in range(0, num_blocks):
+            print(i)
             message_part = padding_message >> (i * self.r_in)
+            print(hex(message_part))
             message_part = message_part & mask
-            m.insert(i, message_part)
+            m.insert(num_blocks - i - 1, message_part)
 
         m = np.array(m)
 
@@ -405,11 +435,12 @@ class PHOTON:
 
     def initialization_phase(self, message, len_msg=0):
         padding_message = self.padding_input(message, len_msg)
-        message_blocks = self.get_message_blocks(padding_message)
+        message_blocks = self.get_message_blocks(padding_message, len_msg)
         self.message_blocks = message_blocks
 
     def absorbing_phase(self):
 
+        print("absorbing_phase")
         self.absorbing_values = []
         aux_array = np.zeros((self.dim, self.dim), dtype=np.uint8)
 
@@ -423,43 +454,51 @@ class PHOTON:
 
             lim = int(self.r_in / self.bit_cell)
             for j in range(0, lim):
-                value = (block_i >> ((lim - j - 1) * self.bit_cell)) & mask
-                aux_array[self.dim - math.floor(j / self.dim) - 1][
+                # value = (block_i >> ((lim - j - 1) * self.bit_cell)) & mask
+                value = block_i >> (j * self.bit_cell) & mask
+                aux_array[math.floor(j / self.dim)][
                     self.dim - (j % self.dim) - 1
                 ] = value
+                print(value)
 
+            print(aux_array)
             self.state = self.state ^ aux_array
 
             self.state = self.permutation(self.state)
+            print(self.state)
 
             self.absorbing_values.insert(i, self.state)
 
     def squezzing_phase(self):
+        print("squezzing_phase")
+        print(self.state)
         result = 0
 
         self.squezzing_values = []
 
         num_iterations = math.ceil(self.n / self.r_out)
+        print(num_iterations)
 
         lim = int(self.r_out / self.bit_cell)
-        value = 0
 
         for i in range(0, num_iterations):
-            for j in range(0, lim):
-                value = (value << self.bit_cell) | self.state[
-                    self.dim - 1 - math.floor(j / self.dim)
-                ][self.dim - (j % self.dim) - 1]
+            self.squezzing_values.insert(i, self.state)
 
-            value = self.state >> (self.t - self.r_out)
+            self.state = self.permutation(self.state)
 
-            self.squezzing_values.insert(i, value)
-
-            self.state = self.permutation(value)
+        print(self.squezzing_values)
 
         for i in range(0, len(self.squezzing_values)):
-            result = (result << self.r_out) | self.squezzing_values[
-                len(self.squezzing_values) - i - 1
-            ]
+            value = self.squezzing_values[i]
+            print(value)
+            print(hex(result))
+            for j in range(0, lim):
+                print(hex(value[0][j]))
+                result = int((int(result) << self.bit_cell) | int(value[0][j]))
+                print(hex(result))
+
+        print(hex(result))
+        return result
 
     def permutation(self, value):
         matrix_state = value
@@ -469,6 +508,7 @@ class PHOTON:
             matrix_state = self.sub_cells(matrix_state)
             matrix_state = self.shift_rows(matrix_state)
             matrix_state = self.mix_columns_serial(matrix_state)
+        return matrix_state
 
     def add_constant(self, round_value, matrix_state):
         print("add_constant")
@@ -530,8 +570,9 @@ class PHOTON:
 if __name__ == "__main__":
     hash_sw = PHOTON(80, 20, 16)
 
-    message = 0x0
-    hash_sw.initialization_phase(message)
-    print(hash_sw.state)
+    message = 0x121212
+    len_msg = 24
+    hash_sw.initialization_phase(message, len_msg)
     print(hash_sw.message_blocks)
-    hash_sw.permutation(hash_sw.state)
+    hash_sw.absorbing_phase()
+    hash_sw.squezzing_phase()
