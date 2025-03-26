@@ -33,7 +33,7 @@ MDS_144 = [
     [2, 5, 1, 2, 6, 12],
     [12, 9, 15, 8, 8, 13],
     [13, 5, 11, 3, 10, 1],
-    [1, 5, 13, 14, 11, 8],
+    [1, 15, 13, 14, 11, 8],
     [8, 2, 3, 3, 2, 8],
 ]
 MDS_196 = [
@@ -360,7 +360,7 @@ class PHOTON:
         self.t = n + r_in
 
         bit_cell = 4
-        if n == 288:
+        if self.t == 288:
             bit_cell = 8
 
         self.bit_cell = bit_cell
@@ -378,7 +378,7 @@ class PHOTON:
         if self.t == 288:
             state[self.dim - 1, self.dim - 1] = self.r_out
             state[self.dim - 1, self.dim - 2] = self.r_in
-            state[self.dim - 1, self.dim - 3] = self.n
+            state[self.dim - 1, self.dim - 3] = int(self.n / 4)
         else:
             state[self.dim - 1, self.dim - 1 - 0] = self.r_out & 0xF
             state[self.dim - 1, self.dim - 1 - 1] = self.r_out >> 4
@@ -454,11 +454,9 @@ class PHOTON:
 
             lim = int(self.r_in / self.bit_cell)
             for j in range(0, lim):
-                # value = (block_i >> ((lim - j - 1) * self.bit_cell)) & mask
-                value = block_i >> (j * self.bit_cell) & mask
-                aux_array[math.floor(j / self.dim)][
-                    self.dim - (j % self.dim) - 1
-                ] = value
+                value = (block_i >> ((lim - j - 1) * self.bit_cell)) & mask
+                # value = block_i >> (j * self.bit_cell) & mask
+                aux_array[math.floor(j / self.dim)][j % self.dim] = value
                 print(value)
 
             print(aux_array)
@@ -481,6 +479,8 @@ class PHOTON:
 
         lim = int(self.r_out / self.bit_cell)
 
+        sum = 0
+
         for i in range(0, num_iterations):
             self.squezzing_values.insert(i, self.state)
 
@@ -493,8 +493,14 @@ class PHOTON:
             print(value)
             print(hex(result))
             for j in range(0, lim):
-                print(hex(value[0][j]))
-                result = int((int(result) << self.bit_cell) | int(value[0][j]))
+                if sum == int(self.n / self.bit_cell):
+                    break
+                sum = sum + 1
+                print(hex(value[math.floor(j / self.dim)][j % self.dim]))
+                result = int(
+                    (int(result) << self.bit_cell)
+                    | int(value[math.floor(j / self.dim)][j % self.dim])
+                )
                 print(hex(result))
 
         print(hex(result))
@@ -532,7 +538,7 @@ class PHOTON:
 
         for i in range(0, result.shape[0]):
             for j in range(0, result.shape[1]):
-                if self.n == 288:
+                if self.t == 288:
                     result[i, j] = S_box_aes[result[i, j]]
                 else:
                     result[i, j] = S_box_present[result[i, j]]
