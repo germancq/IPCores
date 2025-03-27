@@ -8,8 +8,9 @@
 
 import math
 
-import galois_arithmetic
 import numpy as np
+
+import galois_arithmetic
 
 np.set_printoptions(formatter={"int": hex})
 
@@ -392,6 +393,65 @@ class PHOTON:
 
         self.state = state
 
+    def gen_MDS_values_for_sv(self):
+        value = 0
+
+        mds = np.array(MDS_100)
+        rows, columns = mds.shape
+
+        for i in range(0, rows):
+            for j in range(0, columns):
+                value = mds[i][j]
+                print(f"assign mds_100[{j+(i*rows)}] = 4'h{hex(value)};")
+
+        mds = np.array(MDS_144)
+        rows, columns = mds.shape
+
+        for i in range(0, rows):
+            for j in range(0, columns):
+                value = mds[i][j]
+                print(f"assign mds_144[{j+(i*rows)}] = 4'h{hex(value)};")
+
+        mds = np.array(MDS_196)
+        rows, columns = mds.shape
+
+        for i in range(0, rows):
+            for j in range(0, columns):
+                value = mds[i][j]
+                print(f"assign mds_196[{j+(i*rows)}] = 4'h{hex(value)};")
+
+        mds = np.array(MDS_256)
+        rows, columns = mds.shape
+
+        for i in range(0, rows):
+            for j in range(0, columns):
+                value = mds[i][j]
+                print(f"assign mds_256[{j+(i*rows)}] = 4'h{hex(value)};")
+
+        mds = np.array(MDS_288)
+        rows, columns = mds.shape
+
+        for i in range(0, rows):
+            for j in range(0, columns):
+                value = mds[i][j]
+                print(f"assign mds_288[{j+(i*rows)}] = 8'h{hex(value)};")
+
+    def gen_sbox_values_sv(self):
+
+        sbox = np.array(S_box_present)
+        rows = sbox.shape[0]
+
+        for i in range(0, rows):
+            value = sbox[i]
+            print(f"assign sbox_present[{i}] = 4'h{hex(value)};")
+
+        sbox = np.array(S_box_aes)
+        rows = sbox.shape[0]
+
+        for i in range(0, rows):
+            value = sbox[i]
+            print(f"assign sbox_aes[{i}] = 8'h{hex(value)};")
+
     def padding_input(self, message, len_msg=0):
         print(hex(message))
         # padding message with 1
@@ -582,3 +642,6 @@ if __name__ == "__main__":
     print(hash_sw.message_blocks)
     hash_sw.absorbing_phase()
     hash_sw.squezzing_phase()
+
+    hash_sw.gen_MDS_values_for_sv()
+    hash_sw.gen_sbox_values_sv()
