@@ -23,7 +23,7 @@ def setup(dut, in_state, round_value):
     cont = 0
     for i in range(0, rows):
         for j in range(0, colums):
-            dut.in_state[cont] = in_state[i][j]
+            dut.in_state[cont].value = in_state[i][j]
             cont = cont + 1
     dut.round_value.value = round_value
 
