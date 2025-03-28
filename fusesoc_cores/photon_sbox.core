@@ -1,0 +1,50 @@
+CAPI=2:
+
+name : ::photon_sbox:0
+description : photon sbox function
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : verilator 
+      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -Wno-SELRANGE]
+      cocotb_module : SBOX_test
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl ,cocotb]  
+    toplevel :	SBOX 
+
+filesets:
+  cocotb :
+    files :
+      - hash_functions/photon/cocotb_files/SBOX_test.py : {file_type : user, copyto : .}
+      - hash_functions/photon/python_code/photon.py : {file_type : user, copyto : .}
+      - hash_functions/photon/python_code/galois_arithmetic.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+
+
+  rtl:
+    file_type: systemVerilogSousboxe
+    files: 
+      - hash_functions/photon/hdl_code/SBOX.sv      
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+
+
+
+
+
+
+
