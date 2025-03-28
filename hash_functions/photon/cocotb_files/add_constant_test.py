@@ -19,7 +19,7 @@ import photon
 
 
 def setup(dut, in_state, round_value):
-    rows, colums = in_state
+    rows, colums = in_state.shape
     cont = 0
     for i in range(0, rows):
         for j in range(0, colums):
