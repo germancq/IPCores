@@ -28,10 +28,12 @@ module add_constant #(
   RC rc_inst (.rc(rc));
 
   genvar i;
+  genvar j;
   generate
+
     for (i = 0; i < (DIM * DIM); i++) begin
       if (i % DIM == 0) begin
-        assign out_state[i] = in_state[i] ^ rc[round_value] ^ ic[i%DIM];
+        assign out_state[i] = in_state[i] ^ rc[round_value] ^ ic[i/DIM];
 
       end else begin
         assign out_state[i] = in_state[i];
