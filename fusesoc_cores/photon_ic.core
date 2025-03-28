@@ -1,0 +1,60 @@
+CAPI=2:
+
+name : ::photon_ic:0
+description : photon ic function
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : verilator 
+      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -Wno-SELRANGE]
+      cocotb_module : IC_test
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl ,cocotb]  
+    toplevel : IC 
+    parameters :
+      - T_SIZE=100
+      - DIM=5
+
+parameters :
+  T_SIZE :
+    datatype : int
+    paramtype : vlogparam
+  DIM :
+    datatype : int
+    paramtype : vlogparam
+
+filesets:
+  cocotb :
+    files :
+      - hash_functions/photon/cocotb_files/IC_test.py : {file_type : user, copyto : .}
+      - hash_functions/photon/python_code/photon.py : {file_type : user, copyto : .}
+      - hash_functions/photon/python_code/galois_arithmetic.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+
+
+  rtl:
+    file_type: systemVerilogSource
+    files: 
+      - hash_functions/photon/hdl_code/IC.sv      
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+
+
+
+
+
+
