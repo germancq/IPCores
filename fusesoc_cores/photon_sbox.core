@@ -17,7 +17,7 @@ targets:
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
     filesets : [rtl ,cocotb]  
-    toplevel :	SBOX 
+    toplevel : SBOX 
 
 filesets:
   cocotb :
@@ -30,7 +30,7 @@ filesets:
 
 
   rtl:
-    file_type: systemVerilogSousboxe
+    file_type: systemVerilogSource
     files: 
       - hash_functions/photon/hdl_code/SBOX.sv      
 
