@@ -33,7 +33,7 @@ module block_cipher_wb_bridge #(
     input                                  cipher_end_key_generation,
     output       [            BLK_LEN-1:0] cipher_blk_i,
     input        [            BLK_LEN-1:0] cipher_blk_o,
-    output logic                           cipher_end_dec,
+    output logic                           cipher_enc_dec,
     output logic                           cipher_rq_data,
     input                                  cipher_end_signal
 );
@@ -126,7 +126,7 @@ module block_cipher_wb_bridge #(
     wb_data = cipher_blk_o;
 
     cipher_rst = 0;
-    cipher_end_dec = 0;
+    cipher_enc_dec = 0;
     cipher_rq_data = 0;
 
     case (current_state)
