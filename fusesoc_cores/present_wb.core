@@ -30,7 +30,7 @@ filesets:
       - block_ciphers/present_cipher/hdl_code/present_wb.sv      
       - block_ciphers/block_cipher_wb_bridge/hdl_code/block_cipher_wb_bridge.sv
     depend:
-      - present
+      - present_cipher
 
 provider:
     name: github
