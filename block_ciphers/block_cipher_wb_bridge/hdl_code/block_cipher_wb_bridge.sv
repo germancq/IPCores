@@ -163,8 +163,37 @@ module block_cipher_wb_bridge #(
         end
       end
       GET_BLOCK_OP_0: begin
-        wb_data = cipher_blk_o[(WB_DATA_WIDTH)+(wb_dat_i*WB_DATA_WIDTH)-1:(wb_dat_i*WB_DATA_WIDTH)];
-        r_data_w = 1;
+        case (wb_dat_i)
+          0: begin
+            wb_data = cipher_blk_o[WB_DATA_WIDTH-1:0];
+          end
+          1: begin
+            if (BLK_LEN > WB_DATA_WIDTH) begin
+              wb_data = cipher_blk_o[(2*WB_DATA_WIDTH)-1:WB_DATA_WIDTH];
+            end else begin
+              wb_data = cipher_blk_o[WB_DATA_WIDTH-1:0];
+            end
+          end
+          2: begin
+            if (BLK_LEN > 2 * WB_DATA_WIDTH) begin
+              wb_data = cipher_blk_o[(3*WB_DATA_WIDTH)-1:(2*WB_DATA_WIDTH)];
+            end else begin
+              wb_data = cipher_blk_o[WB_DATA_WIDTH-1:0];
+            end
+
+          end
+          3: begin
+            if (BLK_LEN > 3 * WB_DATA_WIDTH) begin
+              wb_data = cipher_blk_o[(4*WB_DATA_WIDTH)-1:(3*WB_DATA_WIDTH)];
+            end else begin
+              wb_data = cipher_blk_o[WB_DATA_WIDTH-1:0];
+            end
+
+          end
+
+          default: wb_data = cipher_blk_o[WB_DATA_WIDTH-1:0];
+        endcase
+        r_data_w   = 1;
         next_state = END_OP;
       end
       END_OP: begin
