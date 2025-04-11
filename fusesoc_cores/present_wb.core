@@ -1,0 +1,47 @@
+CAPI=2:
+
+name : ::present_wb:0
+description : present for with wishbone bridge as slave 
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+parameters :
+  KEY_LEN :
+    datatype : int
+    paramtype : vlogparam
+  BLK_LEN :
+    datatype : int
+    paramtype : vlogparam
+  WB_DATA_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+  WB_ADDR_DIR :
+    datatype : int
+    paramtype : vlogparam
+
+filesets:
+
+  rtl:
+    file_type: systemVerilogSource
+    files: 
+      - block_ciphers/present_cipher/hdl_code/present_wb.sv      
+      - block_ciphers/block_cipher_wb_bridge/hdl_code/block_cipher_wb_bridge.sv
+    depend:
+      - present
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+
+
+
+
+
+
