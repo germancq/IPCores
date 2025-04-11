@@ -9,7 +9,7 @@
 module block_cipher_wb_bridge #(
     parameter KEY_LEN = 128,
     parameter BLK_LEN = 128,
-    parameter WB_ADDR_DIR = 16,
+    parameter WB_ADDR_DIR = 32,
     parameter WB_DATA_WIDTH = 32
 ) (
     input                                  wb_clk,
@@ -33,7 +33,7 @@ module block_cipher_wb_bridge #(
     input                                  cipher_end_key_generation,
     output       [            BLK_LEN-1:0] cipher_blk_i,
     input        [            BLK_LEN-1:0] cipher_blk_o,
-    output logic                           cipher_enc_dec,
+    output logic                           cipher_end_dec,
     output logic                           cipher_rq_data,
     input                                  cipher_end_signal
 );
@@ -55,7 +55,7 @@ module block_cipher_wb_bridge #(
   localparam SET_BLOCK_I_3 = 11;
 
 
-  localparam GET_BLOCK = 12;  // pasar como parametro la palabra a leer del block cipher
+  localparam GET_BLOCK_O = 12;
 
   localparam RST_CIPHER = 13;
 
@@ -106,7 +106,7 @@ module block_cipher_wb_bridge #(
       .dout(wb_dat_o)
   );
 
-  logic [2:0] current_state, next_state;
+  logic [3:0] current_state, next_state;
 
   localparam START_STATE = 0;
   localparam IDLE = 1;
@@ -126,7 +126,7 @@ module block_cipher_wb_bridge #(
     wb_data = cipher_blk_o;
 
     cipher_rst = 0;
-    cipher_enc_dec = 0;
+    cipher_end_dec = 0;
     cipher_rq_data = 0;
 
     case (current_state)
@@ -139,38 +139,38 @@ module block_cipher_wb_bridge #(
           case (wb_adr_i)
             RST_CIPHER: next_state = RST_OP_0;
             START_ENC: next_state = START_OP_0;
-            GET_BLOCK: next_state = GET_BLOCK_OP_0;
+            GET_BLOCK_O: next_state = GET_BLOCK_OP_0;
             default: next_state = END_OP;
           endcase
         end
-        RST_OP_0 : begin
-          cipher_rst = 1;
-          next_state = RST_OP_1;
-        end
-        RST_OP_1 : begin
-          if (cipher_end_key_generation == 1) begin
-            next_state = END_OP;
-          end
-        end
-        START_OP_0 : begin
-          cipher_rq_data = 1;
-          next_state = START_OP_1;
-        end
-        START_OP_1 : begin
-          if (cipher_end_signal == 1) begin
-            next_state = END_OP;
-          end
-        end
-        GET_BLOCK_OP_0 : begin
-          wb_data = cipher_blk_o[(WB_DATA_WIDTH) + (wb_dat_i*WB_DATA_WIDTH) - 1:(wb_dat_i*WB_DATA_WIDTH)];
-          r_data_w = 1;
+      end
+      RST_OP_0: begin
+        cipher_rst = 1;
+        next_state = RST_OP_1;
+      end
+      RST_OP_1: begin
+        if (cipher_end_key_generation == 1) begin
           next_state = END_OP;
         end
-        END_OP : begin
-          wb_ack_o = 1;
-          if (wb_stb_i == 0) begin
-            next_state = IDLE;
-          end
+      end
+      START_OP_0: begin
+        cipher_rq_data = 1;
+        next_state = START_OP_1;
+      end
+      START_OP_1: begin
+        if (cipher_end_signal == 1) begin
+          next_state = END_OP;
+        end
+      end
+      GET_BLOCK_OP_0: begin
+        wb_data = cipher_blk_o[(WB_DATA_WIDTH)+(wb_dat_i*WB_DATA_WIDTH)-1:(wb_dat_i*WB_DATA_WIDTH)];
+        r_data_w = 1;
+        next_state = END_OP;
+      end
+      END_OP: begin
+        wb_ack_o = 1;
+        if (wb_stb_i == 0) begin
+          next_state = IDLE;
         end
       end
     endcase
