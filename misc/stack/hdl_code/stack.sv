@@ -124,7 +124,7 @@ module stack #(
       end
     end else if (pop) begin
       if (empty == 0) begin
-        if (FIFO_LIFO == 0) begin
+        if (FIFO_LIFO == 1) begin
           sp <= sp - 1;
           data_o <= stack[sp-1];
         end else begin
