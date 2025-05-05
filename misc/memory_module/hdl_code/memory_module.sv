@@ -6,12 +6,10 @@
  * @ Description:
  */
 
-module memory_module
-#(
+module memory_module #(
     parameter ADDR = 5,
     parameter DATA_WIDTH = 64
-)
-(
+) (
     input clk,
     input r_w,
     input [ADDR-1:0] addr,
@@ -19,24 +17,58 @@ module memory_module
     output logic [DATA_WIDTH-1:0] dout
 );
 
-logic [DATA_WIDTH-1:0]  memory_ [2**ADDR-1:0];
+  logic [DATA_WIDTH-1:0] memory_[2**ADDR-1:0];
 
-/*
+  /*
 parameter FILE_MEM = "absolute_path/example.mem";
 initial begin
     $readmemh(FILE_MEM,memory_);
 end
 */
 
-always_ff @(posedge clk) begin
+  always_ff @(posedge clk) begin
     if (r_w == 1) begin
-        memory_[addr] <= din;
-    end
-    else begin
-        dout <= memory_[addr];
+      memory_[addr] <= din;
+    end else begin
+      dout <= memory_[addr];
     end
 
-end
+  end
 
 
 endmodule : memory_module
+
+module memory_module_init #(
+    parameter ADDR = 5,
+    parameter DATA_WIDTH = 64,
+    parameter FILE_MEM = "memory.mem"
+) (
+    input clk,
+    input r_w,
+    input [ADDR-1:0] addr,
+    input [DATA_WIDTH-1:0] din,
+    output logic [DATA_WIDTH-1:0] dout,
+    input reset_values
+);
+
+  logic [DATA_WIDTH-1:0] memory_[2**ADDR-1:0];
+
+
+  initial begin
+    $readmemh(FILE_MEM, memory_);
+  end
+
+  always_ff @(posedge clk) begin
+    if (reset_values == 1) begin
+      $readmemh(FILE_MEM, memory_);
+    end
+    if (r_w == 1) begin
+      memory_[addr] <= din;
+    end else begin
+      dout <= memory_[addr];
+    end
+
+  end
+
+
+endmodule : memory_module_init
