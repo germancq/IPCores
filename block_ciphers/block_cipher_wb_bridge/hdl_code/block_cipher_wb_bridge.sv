@@ -10,7 +10,8 @@ module block_cipher_wb_bridge #(
     parameter KEY_LEN = 128,
     parameter BLK_LEN = 128,
     parameter WB_ADDR_DIR = 32,
-    parameter WB_DATA_WIDTH = 32
+    parameter WB_DATA_WIDTH = 32,
+    parameter OFFSET_ADDR = 1
 ) (
     input                                  wb_clk,
     input                                  wb_rst,
@@ -40,26 +41,26 @@ module block_cipher_wb_bridge #(
 
   //we use 256 bit pass at max and 128 bit block at max
   //
-  localparam SET_KEY_0 = 0;
-  localparam SET_KEY_1 = 1;
-  localparam SET_KEY_2 = 2;
-  localparam SET_KEY_3 = 3;
-  localparam SET_KEY_4 = 4;
-  localparam SET_KEY_5 = 5;
-  localparam SET_KEY_6 = 6;
-  localparam SET_KEY_7 = 7;
+  localparam SET_KEY_0 = 0 * OFFSET_ADDR;
+  localparam SET_KEY_1 = 1 * OFFSET_ADDR;
+  localparam SET_KEY_2 = 2 * OFFSET_ADDR;
+  localparam SET_KEY_3 = 3 * OFFSET_ADDR;
+  localparam SET_KEY_4 = 4 * OFFSET_ADDR;
+  localparam SET_KEY_5 = 5 * OFFSET_ADDR;
+  localparam SET_KEY_6 = 6 * OFFSET_ADDR;
+  localparam SET_KEY_7 = 7 * OFFSET_ADDR;
 
-  localparam SET_BLOCK_I_0 = 8;
-  localparam SET_BLOCK_I_1 = 9;
-  localparam SET_BLOCK_I_2 = 10;
-  localparam SET_BLOCK_I_3 = 11;
+  localparam SET_BLOCK_I_0 = 8 * OFFSET_ADDR;
+  localparam SET_BLOCK_I_1 = 9 * OFFSET_ADDR;
+  localparam SET_BLOCK_I_2 = 10 * OFFSET_ADDR;
+  localparam SET_BLOCK_I_3 = 11 * OFFSET_ADDR;
 
 
-  localparam GET_BLOCK_O = 12;
+  localparam GET_BLOCK_O = 12 * OFFSET_ADDR;
 
-  localparam RST_CIPHER = 13;
+  localparam RST_CIPHER = 13 * OFFSET_ADDR;
 
-  localparam START_ENC = 14;
+  localparam START_ENC = 14 * OFFSET_ADDR;
   genvar i;
 
 
