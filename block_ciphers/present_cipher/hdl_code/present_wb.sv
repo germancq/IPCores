@@ -10,7 +10,8 @@ module present_wb #(
     parameter KEY_LEN = 128,
     parameter BLK_LEN = 64,
     parameter WB_DATA_WIDTH = 32,
-    parameter WB_ADDR_DIR = 16
+    parameter WB_ADDR_DIR = 16,
+    parameter OFFSET_ADDR = 1
 ) (
     input                                  wb_clk,
     input                                  wb_rst,
@@ -37,7 +38,8 @@ module present_wb #(
       .KEY_LEN(KEY_LEN),
       .BLK_LEN(BLK_LEN),
       .WB_ADDR_DIR(WB_ADDR_DIR),
-      .WB_DATA_WIDTH(WB_DATA_WIDTH)
+      .WB_DATA_WIDTH(WB_DATA_WIDTH),
+      .OFFSET_ADDR(OFFSET_ADDR)
   ) bridge_inst (
       .wb_clk(wb_clk),
       .wb_rst(wb_rst),
