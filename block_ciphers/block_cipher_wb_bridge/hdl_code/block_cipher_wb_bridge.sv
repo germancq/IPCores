@@ -56,11 +56,14 @@ module block_cipher_wb_bridge #(
   localparam SET_BLOCK_I_3 = 11 * OFFSET_ADDR;
 
 
-  localparam GET_BLOCK_O = 12 * OFFSET_ADDR;
+  localparam GET_BLOCK_O_0 = 12 * OFFSET_ADDR;
+  localparam GET_BLOCK_O_1 = 13 * OFFSET_ADDR;
+  localparam GET_BLOCK_O_2 = 14 * OFFSET_ADDR;
+  localparam GET_BLOCK_O_3 = 15 * OFFSET_ADDR;
 
-  localparam RST_CIPHER = 13 * OFFSET_ADDR;
+  localparam RST_CIPHER = 16 * OFFSET_ADDR;
 
-  localparam START_ENC = 14 * OFFSET_ADDR;
+  localparam START_ENC = 17 * OFFSET_ADDR;
   genvar i;
 
 
@@ -116,7 +119,7 @@ module block_cipher_wb_bridge #(
   localparam RST_OP_1 = 4;
   localparam START_OP_0 = 5;
   localparam START_OP_1 = 6;
-  localparam GET_BLOCK_OP_0 = 7;
+  localparam GET_BLOCK_OP = 7;
 
   always_comb begin
     next_state = current_state;
@@ -140,7 +143,10 @@ module block_cipher_wb_bridge #(
           case (wb_adr_i)
             RST_CIPHER: next_state = RST_OP_0;
             START_ENC: next_state = START_OP_0;
-            GET_BLOCK_O: next_state = GET_BLOCK_OP_0;
+            GET_BLOCK_O_0: next_state = GET_BLOCK_OP;
+            GET_BLOCK_O_1: next_state = GET_BLOCK_OP;
+            GET_BLOCK_O_2: next_state = GET_BLOCK_OP;
+            GET_BLOCK_O_3: next_state = GET_BLOCK_OP;
             default: next_state = END_OP;
           endcase
         end
@@ -163,19 +169,19 @@ module block_cipher_wb_bridge #(
           next_state = END_OP;
         end
       end
-      GET_BLOCK_OP_0: begin
-        case (wb_dat_i)
-          0: begin
+      GET_BLOCK_OP: begin
+        case (wb_adr_i)
+          GET_BLOCK_O_0: begin
             wb_data = cipher_blk_o[WB_DATA_WIDTH-1:0];
           end
-          1: begin
+          GET_BLOCK_O_1: begin
             if (BLK_LEN > WB_DATA_WIDTH) begin
               wb_data = cipher_blk_o[(2*WB_DATA_WIDTH)-1:WB_DATA_WIDTH];
             end else begin
               wb_data = cipher_blk_o[WB_DATA_WIDTH-1:0];
             end
           end
-          2: begin
+          GET_BLOCK_O_2: begin
             if (BLK_LEN > 2 * WB_DATA_WIDTH) begin
               wb_data = cipher_blk_o[(3*WB_DATA_WIDTH)-1:(2*WB_DATA_WIDTH)];
             end else begin
@@ -183,7 +189,7 @@ module block_cipher_wb_bridge #(
             end
 
           end
-          3: begin
+          GET_BLOCK_O_3: begin
             if (BLK_LEN > 3 * WB_DATA_WIDTH) begin
               wb_data = cipher_blk_o[(4*WB_DATA_WIDTH)-1:(3*WB_DATA_WIDTH)];
             end else begin
