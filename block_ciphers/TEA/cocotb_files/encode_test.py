@@ -125,7 +125,7 @@ async def test(dut, index=0):
     plaintext = random.getrandbits(64)
     tea_sw = tea.TEA(key)
 
-    expected_result = tea.encode(plaintext)
+    expected_result = tea_sw.encode(plaintext)
 
     setup_dut(dut, key, plaintext)
     await rst_function_test(dut)
