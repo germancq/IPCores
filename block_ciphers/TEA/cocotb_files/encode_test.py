@@ -127,7 +127,7 @@ async def test(dut, index=0):
 
     expected_result = tea_sw.encode(plaintext)
 
-    setup_dut(dut, key, plaintext)
+    setup_dut(dut, plaintext, key)
     await rst_function_test(dut)
     block_i_1 = (plaintext) & 0xFFFFFFFF
     block_i_0 = (plaintext >> 32) & 0xFFFFFFFF
