@@ -132,7 +132,7 @@ module encode (
         rounds_counter_up = 1;
         sum_reg_din = sum_reg_dout + DELTA;
         y_reg_din = y_reg_dout + (((z_reg_dout << 4) + key[127:96]) ^ (z_reg_dout + sum_reg_dout + DELTA) ^ ((z_reg_dout>>5) + key[95:64]));
-        z_reg_din = z_reg_dout + (((y_reg_dout << 4) + key[63:32]) ^ (y_reg_dout + sum_reg_dout + DELTA) ^ ((y_reg_dout>>5) + key[31:0]));
+        z_reg_din = z_reg_dout + (((y_reg_din << 4) + key[63:32]) ^ (y_reg_din + sum_reg_dout + DELTA) ^ ((y_reg_din>>5) + key[31:0]));
 
         sum_reg_w = 1;
         y_reg_w = 1;
