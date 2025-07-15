@@ -77,31 +77,32 @@ async def reg_input_test(dut, expected_y, expected_z, expected_sum):
 
 async def round_enc_test(dut, rnd, expected_y, expected_z, expected_sum):
     print("round_enc_test")
+    print("rnd")
     await n_cycles_clock(dut, 1)
     assert (
         dut.current_state.value == dut.ROUND_ENC.value
     ), f"ERROR STATE IN ROUND_ENC, STATE={dut.current_state.value}"
     assert (
         dut.sum_reg_din.value == expected_sum
-    ), f"ERROR STATE IN REG_INPUTS, sum_reg_din={dut.sum_reg_din.value}"
+    ), f"ERROR STATE IN ROUND_ENC, sum_reg_din={hex(dut.sum_reg_din.value)}, expected = {hex(expected_sum)}"
     assert (
         dut.y_reg_din.value == expected_y
-    ), f"ERROR STATE IN REG_INPUTS, y_reg_din={dut.y_reg_din.value}"
+    ), f"ERROR STATE IN ROUND_ENC, y_reg_din={hex(dut.y_reg_din.value)}, expected = {hex(expected_y)}"
     assert (
         dut.z_reg_din.value == expected_z
-    ), f"ERROR STATE IN REG_INPUTS, z_reg_din={dut.z_reg_din.value}"
+    ), f"ERROR STATE IN ROUND_ENC, z_reg_din={hex(dut.z_reg_din.value)}, expected = {hex(expected_z)}"
     assert (
         dut.y_reg_w.value == 1
-    ), f"ERROR STATE IN REG_INPUTS, y_reg_w={dut.y_reg_w.value}"
+    ), f"ERROR STATE IN ROUND_ENC, y_reg_w={dut.y_reg_w.value}"
     assert (
         dut.z_reg_w.value == 1
-    ), f"ERROR STATE IN REG_INPUTS, z_reg_w={dut.z_reg_w.value}"
+    ), f"ERROR STATE IN ROUND_ENC, z_reg_w={dut.z_reg_w.value}"
     assert (
         dut.sum_reg_w.value == 1
-    ), f"ERROR STATE IN REG_INPUTS, sum_reg_w={dut.sum_reg_w.value}"
+    ), f"ERROR STATE IN ROUND_ENC, sum_reg_w={dut.sum_reg_w.value}"
     assert (
         dut.rounds_counter_dout.value == rnd
-    ), f"ERROR STATE IN REG_INPUTS, rounds_counter_dout={dut.rounds_counter_dout.value}"
+    ), f"ERROR STATE IN ROUND_ENC, rounds_counter_dout={dut.rounds_counter_dout.value}"
 
 
 async def end_enc_test(dut, expected_result):
