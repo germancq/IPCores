@@ -20,4 +20,14 @@ module TEA (
 
   assign end_key_generation = 1;
 
+  encode tea_encode (
+      .clk(clk),
+      .rst(rst),
+      .start(rq_data),
+      .block_i(block_i),
+      .block_o(block_o),
+      .key(key),
+      .end_signal(end_signal)
+  );
+
 endmodule
