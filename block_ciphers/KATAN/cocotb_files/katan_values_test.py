@@ -23,6 +23,8 @@ async def test(dut, index=0):
     N = dut.N.value
     expected_values = katan.KATAN_VALUES[N]
 
+    print(N)
+
     await Timer(10, units="ns")
 
     assert (
