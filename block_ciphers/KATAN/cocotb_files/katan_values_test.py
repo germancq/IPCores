@@ -23,6 +23,8 @@ async def test(dut, index=0):
     N = dut.N.value
     expected_values = katan.KATAN_VALUES[N]
 
+    await Timer(10, units="ns")
+
     assert (
         dut.L1.value == expected_values["L1"]
     ), f'ERROR with L1, with N = {N}, expected_value = {expected_values["L1"]} and calculated = {dut.L1.value}'
