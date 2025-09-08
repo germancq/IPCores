@@ -9,11 +9,11 @@
 module non_linear_function_a #(
     parameter L1_LEN = 13
 ) (
-    input [$floor($clog2(L1_LEN)):0] x1,
-    input [$floor($clog2(L1_LEN)):0] x2,
-    input [$floor($clog2(L1_LEN)):0] x3,
-    input [$floor($clog2(L1_LEN)):0] x4,
-    input [$floor($clog2(L1_LEN)):0] x5,
+    input [($clog2(L1_LEN)-1):0] x1,
+    input [($clog2(L1_LEN)-1):0] x2,
+    input [($clog2(L1_LEN)-1):0] x3,
+    input [($clog2(L1_LEN)-1):0] x4,
+    input [($clog2(L1_LEN)-1):0] x5,
     input rk,
     input ir,  //IR = counter_state[7]
     input [L1_LEN-1:0] L1_reg,
