@@ -59,6 +59,9 @@ async def test(dut, index=0):
 
     expected_result = katan_cipher_sw.non_linear_function_a(rk)
 
+    print("cocotb values")
+    print(hex(dut.L1_reg.value))
+
     assert (
         dut.result.value == expected_result
     ), f"ERROR with result, with N = {N}, expected_value = {expected_result} and calculated = {dut.result.value}"

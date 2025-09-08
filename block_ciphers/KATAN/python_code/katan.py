@@ -130,6 +130,7 @@ class KATAN:
         L1_x3 = (self.L1_reg >> (self.x3)) & 1
         L1_x4 = (self.L1_reg >> (self.x4)) & 1
         L1_x5 = (self.L1_reg >> (self.x5)) & 1
+        print("self L1 reg = {}".format(hex(self.L1_reg)))
         print(
             "x1 = {}, x2 = {}, x3 = {}, x4 = {}, x5 = {}".format(
                 L1_x1, L1_x2, L1_x3, L1_x4, L1_x5
