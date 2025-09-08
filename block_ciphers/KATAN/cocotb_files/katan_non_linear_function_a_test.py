@@ -23,7 +23,7 @@ def setup_dut(dut, katan_values, counter_state, rk):
     dut.x3.value = katan_values["x3"]
     dut.x4.value = katan_values["x4"]
     dut.x5.value = katan_values["x5"]
-    dut.L1.value = katan_values["L1"]
+    dut.L1_reg.value = katan_values["L1"]
     dut.ir.value = (counter_state >> 7) & 1
     dut.rk.value = rk
 
