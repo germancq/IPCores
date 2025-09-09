@@ -47,11 +47,6 @@ async def test(dut, index=0):
 
     counter_state = katan_cipher_sw.counter.get_state()
 
-    await Timer(10, units="ns")
-
-    expected_result = katan_cipher_sw.non_linear_function_a(rk)
-
-    print("cocotb values")
     dut.x1.value = 12
     dut.x2.value = katan_values["x2"]
     dut.x3.value = katan_values["x3"]
@@ -60,12 +55,20 @@ async def test(dut, index=0):
     dut.L1_reg.value = katan_values["L1"]
     dut.rk.value = rk
     dut.ir.value = (counter_state >> 7) & 1
+
+    await Timer(10, units="ns")
+
+    expected_result = katan_cipher_sw.non_linear_function_a(rk)
+
+    print("cocotb values")
     print(hex(dut.L1_reg.value))
     print(hex(dut.x1.value))
     print(hex(dut.x2.value))
     print(hex(dut.x3.value))
     print(hex(dut.x4.value))
     print(hex(dut.x5.value))
+    print(dut.rk.value)
+    print(dut.ir.value)
 
     assert (
         dut.result.value == expected_result

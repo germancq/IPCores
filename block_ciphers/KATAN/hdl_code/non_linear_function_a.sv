@@ -5,7 +5,7 @@
  * Last Modified Date: 08.09.2025
  * Last Modified By  : German C.Quiveu <germancq@dte.us.es>
  */
-
+//IR = counter_state[7]
 module non_linear_function_a #(
     parameter L1_LEN = 13
 ) (
@@ -15,7 +15,7 @@ module non_linear_function_a #(
     input [($clog2(L1_LEN)-1):0] x4,
     input [($clog2(L1_LEN)-1):0] x5,
     input rk,
-    input ir,  //IR = counter_state[7]
+    input ir,
     input [L1_LEN-1:0] L1_reg,
     output result
 );
