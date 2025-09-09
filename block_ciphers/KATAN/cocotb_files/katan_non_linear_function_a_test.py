@@ -18,6 +18,8 @@ from cocotb.triggers import FallingEdge, RisingEdge, Timer
 
 
 def setup_dut(dut, katan_values, counter_state, rk):
+    print("setup")
+    print(katan_values)
     dut.x1.value = katan_values["x1"]
     dut.x2.value = katan_values["x2"]
     dut.x3.value = katan_values["x3"]
