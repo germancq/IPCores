@@ -17,21 +17,6 @@ from cocotb.regression import TestFactory
 from cocotb.triggers import FallingEdge, RisingEdge, Timer
 
 
-def setup_dut(dut, katan_values, counter_state, rk):
-    print("setup")
-    print(katan_values)
-    print(katan_values["x1"])
-    dut.x1.value = 12
-    print(dut.x1.value)
-    dut.x2.value = katan_values["x2"]
-    dut.x3.value = katan_values["x3"]
-    dut.x4.value = katan_values["x4"]
-    dut.x5.value = katan_values["x5"]
-    dut.L1_reg.value = katan_values["L1"]
-    dut.ir.value = (counter_state >> 7) & 1
-    dut.rk.value = rk
-
-
 @cocotb.test()
 async def test(dut, index=0):
 
@@ -64,11 +49,17 @@ async def test(dut, index=0):
 
     await Timer(10, units="ns")
 
-    setup_dut(dut, katan_values, counter_state, rk)
-
     expected_result = katan_cipher_sw.non_linear_function_a(rk)
 
     print("cocotb values")
+    dut.x1.value = 12
+    dut.x2.value = katan_values["x2"]
+    dut.x3.value = katan_values["x3"]
+    dut.x4.value = katan_values["x4"]
+    dut.x5.value = katan_values["x5"]
+    dut.L1_reg.value = katan_values["L1"]
+    dut.rk.value = rk
+    dut.ir.value = (counter_state >> 7) & 1
     print(hex(dut.L1_reg.value))
     print(hex(dut.x1.value))
     print(hex(dut.x2.value))
