@@ -31,6 +31,8 @@ def setup_dut(dut, katan_values, counter_state, rk):
 @cocotb.test()
 async def test(dut, index=0):
 
+    N = 32
+
     if dut.L1_LEN.value == 13:
         N = 32
     elif dut.L1_LEN.value == 19:
@@ -43,10 +45,13 @@ async def test(dut, index=0):
     rk = random.getrandbits(1)
 
     print(N)
+    print(katan_values)
 
     katan_values["L1"] = random.getrandbits(dut.L1_LEN.value)
 
-    katan_cipher_sw.L1 = katan_values["L1"]
+    print(katan_values)
+
+    katan_cipher_sw.L1_reg = katan_values["L1"]
 
     for i in (0, random.randint(10, 50)):
         katan_cipher_sw.counter.step()
