@@ -66,6 +66,11 @@ async def test(dut, index=0):
 
     print("cocotb values")
     print(hex(dut.L1_reg.value))
+    print(hex(dut.x1.value))
+    print(hex(dut.x2.value))
+    print(hex(dut.x3.value))
+    print(hex(dut.x4.value))
+    print(hex(dut.x5.value))
 
     assert (
         dut.result.value == expected_result
