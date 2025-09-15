@@ -53,7 +53,7 @@ async def test(dut, index=0):
 
     await Timer(10, units="ns")
 
-    expected_result = katan_cipher_sw.non_linear_function_a(rk)
+    expected_result = katan_cipher_sw.non_linear_function_b(rk)
 
     print("cocotb values")
     print(hex(dut.L2_reg.value))
