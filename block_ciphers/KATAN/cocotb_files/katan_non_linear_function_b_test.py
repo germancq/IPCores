@@ -36,39 +36,34 @@ async def test(dut, index=0):
     print(N)
     print(katan_values)
 
-    katan_values["L1"] = random.getrandbits(dut.L1_LEN.value)
+    katan_values["L2"] = random.getrandbits(dut.L2_LEN.value)
 
     print(katan_values)
 
-    katan_cipher_sw.L1_reg = katan_values["L1"]
+    katan_cipher_sw.L2_reg = katan_values["L2"]
 
-    for i in (0, random.randint(10, 50)):
-        katan_cipher_sw.counter.step()
-
-    counter_state = katan_cipher_sw.counter.get_state()
-
-    dut.x1.value = katan_values["x1"]
-    dut.x2.value = katan_values["x2"]
-    dut.x3.value = katan_values["x3"]
-    dut.x4.value = katan_values["x4"]
-    dut.x5.value = katan_values["x5"]
-    dut.L1_reg.value = katan_values["L1"]
+    dut.y1.value = katan_values["y1"]
+    dut.y2.value = katan_values["y2"]
+    dut.y3.value = katan_values["y3"]
+    dut.y4.value = katan_values["y4"]
+    dut.y5.value = katan_values["y5"]
+    dut.y6.value = katan_values["y6"]
+    dut.L2_reg.value = katan_values["L2"]
     dut.rk.value = rk
-    dut.ir.value = (counter_state >> 7) & 1
 
     await Timer(10, units="ns")
 
     expected_result = katan_cipher_sw.non_linear_function_a(rk)
 
     print("cocotb values")
-    print(hex(dut.L1_reg.value))
-    print(hex(dut.x1.value))
-    print(hex(dut.x2.value))
-    print(hex(dut.x3.value))
-    print(hex(dut.x4.value))
-    print(hex(dut.x5.value))
+    print(hex(dut.L2_reg.value))
+    print(hex(dut.y1.value))
+    print(hex(dut.y2.value))
+    print(hex(dut.y3.value))
+    print(hex(dut.y4.value))
+    print(hex(dut.y5.value))
+    print(hex(dut.y6.value))
     print(dut.rk.value)
-    print(dut.ir.value)
 
     assert (
         dut.result.value == expected_result
