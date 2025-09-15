@@ -22,9 +22,9 @@ async def test(dut, index=0):
 
     N = 32
 
-    if dut.L1_LEN.value == 13:
+    if dut.L2_LEN.value == 19:
         N = 32
-    elif dut.L1_LEN.value == 19:
+    elif dut.L2_LEN.value == 29:
         N = 48
     else:
         N = 64
