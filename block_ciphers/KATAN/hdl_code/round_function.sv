@@ -34,8 +34,8 @@ module round_function #(
 
 );
 
-  assign L1_reg_result = {L1_reg[L1_LEN-2:1], f_reg_dout[0]};
-  assign L2_reg_result = {L2_reg[L2_LEN-2:1], f_reg_dout[1]};
+  assign L1_reg_result = {L1_reg[L1_LEN-2:0], f_reg_dout[1]};
+  assign L2_reg_result = {L2_reg[L2_LEN-2:0], f_reg_dout[0]};
 
   logic [0:0] f_reg_cl[1:0];
   logic [0:0] f_reg_w[1:0];
