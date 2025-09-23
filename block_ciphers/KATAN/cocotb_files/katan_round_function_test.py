@@ -26,13 +26,13 @@ async def n_cycles_clock(dut, n):
         await FallingEdge(dut.clk)
 
 
-def setup_dut(dut, key_reg_state, ir, katan_values):
+def setup_dut(dut, key_reg_state, ir, katan_values, L1_reg, L2_reg):
     cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
     dut.start.value = 0
     dut.key_reg_state.value = key_reg_state
-    dut.L1_reg.value = katan_values["L1_reg"]
-    dut.L2_reg.value = katan_values["L2_reg"]
+    dut.L1_reg.value = L1_reg
+    dut.L2_reg.value = L2_reg
     dut.ir.value = ir
     dut.x1.value = katan_values["x1"]
     dut.x2.value = katan_values["x2"]
@@ -110,8 +110,8 @@ async def test(dut, index=0):
     katan_values = katan.KATAN_VALUES[N]
     key = random.getrandbits(80)
     katan_cipher_sw = katan.KATAN(N, key)
-    katan_values["L1"] = random.getrandbits(dut.L1_LEN.value)
-    katan_values["L2"] = random.getrandbits(dut.L2_LEN.value)
+    katan_cipher_sw.L1_reg = random.getrandbits(dut.L1_LEN.value)
+    katan_cipher_sw.L2_reg = random.getrandbits(dut.L2_LEN.value)
 
     for i in (0, random.randint(10, 50)):
         katan_cipher_sw.counter.step()
@@ -126,7 +126,14 @@ async def test(dut, index=0):
     fa = katan_cipher_sw.non_linear_function_a(rka)
     fb = katan_cipher_sw.non_linear_function_b(rkb)
 
-    setup_dut(dut, key_reg_state, ir, katan_values)
+    setup_dut(
+        dut,
+        key_reg_state,
+        ir,
+        katan_values,
+        katan_cipher_sw.L1_reg,
+        katan_cipher_sw.L2_reg,
+    )
 
     katan_cipher_sw.round_function()
 
