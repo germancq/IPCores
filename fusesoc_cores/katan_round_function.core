@@ -44,6 +44,10 @@ filesets:
     file_type: systemVerilogSource
     files: 
       - block_ciphers/KATAN/hdl_code/round_function.sv
+    depend:
+      - register
+      - katan_non_linear_function_a
+      - katan_non_linear_function_b
 
 provider:
     name: github
