@@ -91,7 +91,7 @@ module round_function #(
 
   localparam IDLE = 0;
   localparam CALCULATE_F = 1;
-  localparam END_STATE = 3;
+  localparam END_STATE = 2;
 
   logic [31:0] j;
 
@@ -121,6 +121,7 @@ module round_function #(
         for (j = 0; j < 2; j++) begin
           f_reg_w[j] = 1;
         end
+        next_state = END_STATE;
 
       end
 
