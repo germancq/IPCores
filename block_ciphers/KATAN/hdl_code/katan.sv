@@ -67,7 +67,7 @@ module katan #(
       .clk(clk),
       .rst(key_lfsr_rst),
       .shift(key_lfsr_shift),
-      .feedback_coeff((1 << 80) + (1 << 61) + (1 << 50) + (1 << 13) + 1),
+      .feedback_coeff((1 << (80 - 80)) + (1 << (80 - 61)) + (1 << (80 - 50)) + (1 << (80 - 13))),
       .initial_state(key),
       .state(key_lfsr_state)
   );
