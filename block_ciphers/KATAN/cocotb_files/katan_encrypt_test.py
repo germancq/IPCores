@@ -97,6 +97,12 @@ async def load_plaintext_test(dut, katan_sw):
     katan_sw.L1_reg = L1_val
 
     print("plaintext is {}".format(hex(dut.block_i.value)))
+    print("L1_output is {}".format(hex(dut.encrypt_impl.L1_reg_dout.value)))
+    print("L2_output is {}".format(hex(dut.encrypt_impl.L2_reg_dout.value)))
+    assert dut.encrypt_impl.L1_reg_w.value == 0, f"ERROR L1_w"
+    assert dut.encrypt_impl.L2_reg_w.value == 0, f"ERROR L2_w"
+    assert dut.encrypt_impl.L1_reg_cl.value == 0, f"ERROR L1_cl"
+    assert dut.encrypt_impl.L2_reg_cl.value == 0, f"ERROR L2_cl"
 
     assert (
         dut.encrypt_impl.L2_reg_dout.value == katan_sw.L2_reg
