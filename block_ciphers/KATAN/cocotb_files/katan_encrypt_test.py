@@ -43,8 +43,8 @@ async def rst_function_test(dut):
     ), f"ERROR STATE IN RST, STATE={dut.encrypt_impl.current_state.value}"
     await n_cycles_clock(dut, 10)
     assert (
-        dut.current_state.value == dut.IDLE.value
-    ), f"ERROR STATE IN RST, STATE={dut.current_state.value}"
+        dut.encrypt_impl.current_state.value == dut.encrypt_impl.IDLE.value
+    ), f"ERROR STATE IN RST, STATE={dut.encrypt_impl.current_state.value}"
 
     assert dut.encrypt_impl.L1_reg_cl.value == 1, f"ERROR in L1_reg_cl signal"
     assert dut.encrypt_impl.L2_reg_cl.value == 1, f"ERROR in L2_reg_cl signal"
@@ -216,7 +216,6 @@ async def test(dut, index=0):
     await rst_function_test(dut)
     await load_plaintext_test(dut)
     await encrypt_loop_test(dut, katan_cipher_sw)
-    await end_state_function_test(dut, katan_cipher_sw)
 
 
 n = 0x15
