@@ -67,7 +67,7 @@ async def rst_function_test(dut):
     ), f"ERROR state in round_f"
 
 
-async def load_plaintext_test(dut):
+async def load_plaintext_test(dut, katan_sw):
     dut.rst.value = 0
     await n_cycles_clock(dut, 1)
     assert (
@@ -79,8 +79,10 @@ async def load_plaintext_test(dut):
         dut.encrypt_impl.current_state.value == dut.encrypt_impl.LOAD_PLAINTEXT.value
     ), f"ERROR STATE IN LOAD_PLAINTEXT, STATE={dut.encrypt_impl.current_state.value}"
 
+    print("L1_input is {}".format(hex(dut.encrypt_impl.L1_reg_din.value)))
+    print("L2_input is {}".format(hex(dut.encrypt_impl.L2_reg_din.value)))
+    print("plaintext is {}".format(hex(dut.block_i.value)))
 
-async def encrypt_loop_test(dut, katan_sw):
     await n_cycles_clock(dut, 1)
 
     # load L1_reg and L2_reg
@@ -99,6 +101,8 @@ async def encrypt_loop_test(dut, katan_sw):
         dut.encrypt_impl.L2_reg_dout.value == katan_sw.L2_reg
     ), f"ERROR loading plaintext, expected={hex(katan_sw.L2_reg)}, calculated={hex(dut.encrypt_impl.L2_reg_dout.value)}"
 
+
+async def encrypt_loop_test(dut, katan_sw):
     while True:
 
         assert (
@@ -216,8 +220,9 @@ async def test(dut, index=0):
     setup_dut(dut, key, plaintext)
 
     await rst_function_test(dut)
-    await load_plaintext_test(dut)
+    await load_plaintext_test(dut, katan_cipher_sw)
     await encrypt_loop_test(dut, katan_cipher_sw)
+    await end_state_function_test(dut, katan_cipher_sw)
 
 
 n = 0x15
