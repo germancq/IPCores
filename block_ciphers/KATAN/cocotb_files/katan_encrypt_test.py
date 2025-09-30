@@ -95,33 +95,7 @@ async def load_plaintext_test(dut, katan_sw):
     assert dut.encrypt_impl.L1_reg.cl.value == 0, f"ERROR L1_cl"
     assert dut.encrypt_impl.L2_reg.cl.value == 0, f"ERROR L2_cl"
 
-    # assert dut.encrypt_impl.L1_reg.clk.value == 0, f"ERROR clk reg"
-    # assert dut.encrypt_impl.L2_reg.clk.value == 0, f"ERROR clk reg"
-
-    await RisingEdge(dut.clk)
-
-    print("L1_input is {}".format(hex(dut.encrypt_impl.L1_reg_din.value)))
-    print("L2_input is {}".format(hex(dut.encrypt_impl.L2_reg_din.value)))
-    print("L1_input is {}".format(hex(dut.encrypt_impl.L1_reg.din.value)))
-    print("L2_input is {}".format(hex(dut.encrypt_impl.L2_reg.din.value)))
-    print("L1_output is {}".format(hex(dut.encrypt_impl.L1_reg.dout.value)))
-    print("L2_output is {}".format(hex(dut.encrypt_impl.L2_reg.dout.value)))
-    print("plaintext is {}".format(hex(dut.block_i.value)))
-
-    assert dut.encrypt_impl.L1_reg_w.value == 1, f"ERROR L1_w"
-    assert dut.encrypt_impl.L2_reg_w.value == 1, f"ERROR L2_w"
-    assert dut.encrypt_impl.L1_reg_cl.value == 0, f"ERROR L1_cl"
-    assert dut.encrypt_impl.L2_reg_cl.value == 0, f"ERROR L2_cl"
-
-    assert dut.encrypt_impl.L1_reg.w.value == 1, f"ERROR L1_w"
-    assert dut.encrypt_impl.L2_reg.w.value == 1, f"ERROR L2_w"
-    assert dut.encrypt_impl.L1_reg.cl.value == 0, f"ERROR L1_cl"
-    assert dut.encrypt_impl.L2_reg.cl.value == 0, f"ERROR L2_cl"
-
-    assert dut.encrypt_impl.L1_reg.clk.value == 1, f"ERROR clk reg"
-    assert dut.encrypt_impl.L2_reg.clk.value == 1, f"ERROR clk reg"
-
-    await FallingEdge(dut.clk)
+    await n_cycles_clock(dut, 1)
 
     # load L1_reg and L2_reg
     L2_val = dut.block_i.value & ((2**katan_sw.L2) - 1)
@@ -274,8 +248,8 @@ async def test(dut, index=0):
     await end_state_function_test(dut, katan_cipher_sw)
 
 
-n = 0x15
+num = 0x15
 factory = TestFactory(test)
 
-factory.add_option("index", range(0, n))
+factory.add_option("index", range(0, num))
 factory.generate_tests()
