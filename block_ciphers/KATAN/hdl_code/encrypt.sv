@@ -170,6 +170,7 @@ module encrypt #(
           next_state = LOAD_PLAINTEXT;
           L1_reg_w   = 1;
           L2_reg_w   = 1;
+          L2_reg_din = blk_i[L2_LEN-1:0];
         end
       end
       LOAD_PLAINTEXT: begin
@@ -184,6 +185,9 @@ module encrypt #(
       end
       INCR_COUNTER: begin
 
+        L1_reg_w = 1;
+        L1_reg_din = blk_i[N-1:L2_LEN];
+        L2_reg_w = 1;
         lfsr_counter_step = 1;
         next_state = CHECK_END;
 
