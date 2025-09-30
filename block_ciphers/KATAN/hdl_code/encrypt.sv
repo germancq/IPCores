@@ -182,6 +182,9 @@ module encrypt #(
       end
       INCR_COUNTER: begin
 
+        L1_reg_din = blk_i[N-1:L2_LEN];
+        L2_reg_din = blk_i[L2_LEN-1:0];
+
         lfsr_counter_step = 1;
         next_state = CHECK_END;
 
