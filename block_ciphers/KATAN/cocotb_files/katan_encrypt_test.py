@@ -126,7 +126,10 @@ async def load_plaintext_test(dut, katan_sw):
 
 
 async def encrypt_loop_test(dut, katan_sw):
+    i = 0
     while True:
+
+        print("ciclo {}".format(i))
 
         assert (
             dut.encrypt_impl.current_state.value == dut.encrypt_impl.INCR_COUNTER.value
