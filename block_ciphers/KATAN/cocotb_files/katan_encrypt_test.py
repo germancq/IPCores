@@ -132,6 +132,8 @@ async def encrypt_loop_test(dut, katan_sw):
 
         print("ciclo {}".format(i))
 
+        i = i + 1
+
         assert (
             dut.encrypt_impl.current_state.value == dut.encrypt_impl.INCR_COUNTER.value
         ), f"ERROR STATE IN INCR_COUNTER, STATE={dut.encrypt_impl.current_state.value}"
@@ -148,7 +150,7 @@ async def encrypt_loop_test(dut, katan_sw):
             dut.encrypt_impl.lfsr_counter_state.value == katan_sw.counter.get_state()
         ), f"ERROR in counter state, expected={hex(katan_sw.counter.get_state())}, calculated = {hex(dut.encrypt_impl.lfsr_counter_state.value)}"
 
-        if dut.encrypt_impl.current_state.value == dut.encrypt_impl.END_STATE.value:
+        if dut.encrypt_impl.lfsr_counter_state.value == 0xFF:
             return
 
         n = 3
