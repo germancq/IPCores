@@ -89,7 +89,7 @@ async def encrypt_loop_test(dut, katan_sw):
     L1_val = (dut.block_i.value >> (katan_sw.L2)) & ((2**katan_sw.L1) - 1)
     katan_sw.L1_reg = L1_val
 
-    print("plaintext is {hex(dut.block_i.value)}")
+    print("plaintext is {}".format(hex(dut.block_i.value)))
 
     assert (
         dut.encrypt_impl.L1_reg_dout.value == katan_sw.L1_reg
