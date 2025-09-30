@@ -189,7 +189,6 @@ module encrypt #(
       CHECK_END: begin
 
         next_state = START_ROUND_F;
-        counter_rf_up = 1;
 
         if (lfsr_counter_state == 8'hFF) begin
           next_state = END_STATE;
