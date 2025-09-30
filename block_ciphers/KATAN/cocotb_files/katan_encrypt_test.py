@@ -88,7 +88,7 @@ async def load_plaintext_test(dut, katan_sw):
     assert dut.encrypt_impl.L1_reg_cl.value == 0, f"ERROR L1_cl"
     assert dut.encrypt_impl.L2_reg_cl.value == 0, f"ERROR L2_cl"
 
-    await n_cycles_clock(dut, 1)
+    await n_cycles_clock(dut, 2)
 
     # load L1_reg and L2_reg
     L2_val = dut.block_i.value & ((2**katan_sw.L2) - 1)
