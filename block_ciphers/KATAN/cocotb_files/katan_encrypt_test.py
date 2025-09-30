@@ -213,7 +213,7 @@ async def encrypt_loop_test(dut, katan_sw):
 
         assert (
             dut.encrypt_impl.lfsr_key_state.value == katan_sw.key_reg.get_state()
-        ), f"ERROR in key state, expected={hex(katan_sw.key.get_state())}, calculated = {hex(dut.encrypt_impl.lfsr_key_state.value)}"
+        ), f"ERROR in key state, expected={hex(katan_sw.key_reg.get_state())}, calculated = {hex(dut.encrypt_impl.lfsr_key_state.value)}"
 
         assert (
             dut.encrypt_impl.current_state.value == dut.encrypt_impl.SHIFT_KEY_1.value
@@ -225,7 +225,7 @@ async def encrypt_loop_test(dut, katan_sw):
 
         assert (
             dut.encrypt_impl.lfsr_key_state.value == katan_sw.key_reg.get_state()
-        ), f"ERROR in key state, expected={hex(katan_sw.key.get_state())}, calculated = {hex(dut.encrypt_impl.lfsr_key_state.value)}"
+        ), f"ERROR in key state, expected={hex(katan_sw.key_reg.get_state())}, calculated = {hex(dut.encrypt_impl.lfsr_key_state.value)}"
 
 
 async def end_state_function_test(dut, katan_sw):
