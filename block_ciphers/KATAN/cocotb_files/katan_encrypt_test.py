@@ -84,9 +84,9 @@ async def encrypt_loop_test(dut, katan_sw):
     await n_cycles_clock(dut, 1)
 
     # load L1_reg and L2_reg
-    L2_val = dut.plaintext.value & ((2**katan_sw.L2) - 1)
+    L2_val = dut.block_i.value & ((2**katan_sw.L2) - 1)
     katan_sw.L2_reg = L2_val
-    L1_val = (dut.plaintext.value >> (katan_sw.L2)) & ((2**katan_sw.L1) - 1)
+    L1_val = (dut.block_i.value >> (katan_sw.L2)) & ((2**katan_sw.L1) - 1)
     katan_sw.L1_reg = L1_val
 
     assert (
