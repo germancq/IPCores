@@ -64,7 +64,7 @@ module encrypt #(
   ) L2_reg (
       .clk(clk),
       .cl(L2_reg_cl),
-      .w(L2_reg_w),
+      .w(1),
       .din(L2_reg_din),
       .dout(L2_reg_dout)
   );
@@ -152,7 +152,7 @@ module encrypt #(
 
     L2_reg_cl = 0;
     L2_reg_w = 0;
-    L2_reg_din = L2_reg_round_f;
+    L2_reg_din = 1;
 
     counter_rf_rst = 0;
     counter_rf_up = 0;
