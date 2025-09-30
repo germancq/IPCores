@@ -184,6 +184,12 @@ async def encrypt_loop_test(dut, katan_sw):
 
             katan_sw.round_function()
 
+            print(
+                "counter_rf_dout == {}".format(
+                    hex(dut.encrypt_impl.counter_rf_dout.value)
+                )
+            )
+
             assert (
                 dut.encrypt_impl.L1_reg_dout.value == katan_sw.L1_reg
             ), f"ERROR loading plaintext, expected={hex(katan_sw.L1_reg)}, calculated={hex(dut.encrypt_impl.L1_reg_dout.value)}"
