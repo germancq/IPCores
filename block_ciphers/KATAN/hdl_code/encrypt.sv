@@ -168,6 +168,7 @@ module encrypt #(
         counter_rf_rst = 1;
         if (start == 1) begin
           next_state = LOAD_PLAINTEXT;
+          L1_reg_w   = 1;
         end
       end
       LOAD_PLAINTEXT: begin
@@ -182,6 +183,7 @@ module encrypt #(
       end
       INCR_COUNTER: begin
 
+        L1_reg_w = 1;
         lfsr_counter_step = 1;
         next_state = CHECK_END;
 
