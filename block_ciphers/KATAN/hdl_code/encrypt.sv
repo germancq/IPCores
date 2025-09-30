@@ -182,13 +182,6 @@ module encrypt #(
       end
       INCR_COUNTER: begin
 
-        //for cocotb(sim) - it doesnt matter in the code
-        L1_reg_w = 1;
-        L1_reg_din = blk_i[N-1:L2_LEN];
-        L2_reg_w = 1;
-        L2_reg_din = blk_i[L2_LEN-1:0];
-        ////////////////////////////////////////////////
-
         lfsr_counter_step = 1;
         next_state = CHECK_END;
 
@@ -252,7 +245,7 @@ module encrypt #(
 
   end
 
-  always_ff @(clk) begin
+  always_ff @(posedge clk) begin
     if (rst == 1) begin
       current_state <= IDLE;
     end else begin
