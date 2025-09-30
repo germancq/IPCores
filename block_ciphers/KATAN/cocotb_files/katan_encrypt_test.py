@@ -233,7 +233,7 @@ async def encrypt_loop_test(dut, katan_sw):
 async def end_state_function_test(dut, katan_sw):
     await n_cycles_clock(dut, 1)
     assert (
-        dut.encrypt_impl.current_state.value == dut.END_STATE.value
+        dut.encrypt_impl.current_state.value == dut.encrypt_impl.END_STATE.value
     ), f"ERROR STATE IN END, STATE={dut.encrypt_impl.current_state.value}"
     assert dut.end_signal.value == 1, f"ERROR in end_round signal"
 
