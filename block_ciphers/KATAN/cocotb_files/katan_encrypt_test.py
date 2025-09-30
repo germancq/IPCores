@@ -85,6 +85,8 @@ async def load_plaintext_test(dut, katan_sw):
 
     assert dut.encrypt_impl.L1_reg_w.value == 1, f"ERROR L1_w"
     assert dut.encrypt_impl.L2_reg_w.value == 1, f"ERROR L2_w"
+    assert dut.encrypt_impl.L1_reg_cl.value == 0, f"ERROR L1_cl"
+    assert dut.encrypt_impl.L2_reg_cl.value == 0, f"ERROR L2_cl"
 
     await n_cycles_clock(dut, 1)
 
