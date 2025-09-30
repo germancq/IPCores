@@ -73,8 +73,10 @@ async def load_plaintext_test(dut, katan_sw):
     assert (
         dut.encrypt_impl.current_state.value == dut.encrypt_impl.IDLE.value
     ), f"ERROR STATE IN RST, STATE={dut.encrypt_impl.current_state.value}"
+
     dut.rq_data.value = 1
     await n_cycles_clock(dut, 1)
+
     assert (
         dut.encrypt_impl.current_state.value == dut.encrypt_impl.LOAD_PLAINTEXT.value
     ), f"ERROR STATE IN LOAD_PLAINTEXT, STATE={dut.encrypt_impl.current_state.value}"
@@ -96,6 +98,10 @@ async def load_plaintext_test(dut, katan_sw):
     assert dut.encrypt_impl.L2_reg.cl.value == 0, f"ERROR L2_cl"
 
     await n_cycles_clock(dut, 1)
+
+    assert (
+        dut.encrypt_impl.current_state.value == dut.encrypt_impl.INCR_COUNTER.value
+    ), f"ERROR STATE IN INCR_COUNTER, STATE={dut.encrypt_impl.current_state.value}"
 
     # load L1_reg and L2_reg
     L2_val = dut.block_i.value & ((2**katan_sw.L2) - 1)
