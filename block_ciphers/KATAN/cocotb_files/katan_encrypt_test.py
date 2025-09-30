@@ -27,7 +27,7 @@ async def n_cycles_clock(dut, n):
 
 
 def setup_dut(dut, key, plaintext):
-    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
+    cocotb.start_soon(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
     dut.key.value = key
     dut.block_i.value = plaintext
