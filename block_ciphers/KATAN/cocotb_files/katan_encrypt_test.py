@@ -20,14 +20,8 @@ from cocotb.triggers import FallingEdge, RisingEdge, Timer
 CLK_PERIOD = 20
 
 
-async def n_cycles_clock(dut, n):
-    for i in range(0, n):
-        await RisingEdge(dut.clk)
-        await FallingEdge(dut.clk)
-
-
 def setup_dut(dut, key, plaintext):
-    cocotb.start_soon(Clock(dut.clk, CLK_PERIOD).start())
+    cocotb.fork(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
     dut.key.value = key
     dut.block_i.value = plaintext
@@ -132,6 +126,7 @@ async def load_plaintext_test(dut, katan_sw):
 
 
 async def encrypt_loop_test(dut, katan_sw):
+
     i = 0
     while True:
 
@@ -239,6 +234,12 @@ async def end_state_function_test(dut, katan_sw):
     assert (
         dut.block_o.value == expected_result
     ), f"ERROR in result, expected = {hex(expected_result)}, calculated = {dut.block_o.value}"
+
+
+async def n_cycles_clock(dut, n):
+    for i in range(0, n):
+        await RisingEdge(dut.clk)
+        await FallingEdge(dut.clk)
 
 
 @cocotb.test()
