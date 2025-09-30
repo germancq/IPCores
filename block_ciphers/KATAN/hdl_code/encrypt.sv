@@ -148,11 +148,11 @@ module encrypt #(
 
     L1_reg_cl = 0;
     L1_reg_w = 0;
-    L1_reg_din = L1_reg_round_f;
+    L1_reg_din = blk_i[N-1:L2_LEN];  //L1_reg_round_f;
 
     L2_reg_cl = 0;
     L2_reg_w = 0;
-    L2_reg_din = L2_reg_round_f;
+    L2_reg_din = blk_i[L2_LEN-1:0];  //L2_reg_round_f;
 
     counter_rf_rst = 0;
     counter_rf_up = 0;
