@@ -83,6 +83,9 @@ async def load_plaintext_test(dut, katan_sw):
     print("L2_input is {}".format(hex(dut.encrypt_impl.L2_reg_din.value)))
     print("plaintext is {}".format(hex(dut.block_i.value)))
 
+    assert dut.encrypt_impl.L1_reg_w.value == 1, f"ERROR L1_w"
+    assert dut.encrypt_impl.L2_reg_w.value == 1, f"ERROR L2_w"
+
     await n_cycles_clock(dut, 1)
 
     # load L1_reg and L2_reg
