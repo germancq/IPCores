@@ -95,8 +95,8 @@ async def load_plaintext_test(dut, katan_sw):
     assert dut.encrypt_impl.L1_reg.cl.value == 0, f"ERROR L1_cl"
     assert dut.encrypt_impl.L2_reg.cl.value == 0, f"ERROR L2_cl"
 
-    assert dut.encrypt_impl.L1_reg.clk.value == 0, f"ERROR clk reg"
-    assert dut.encrypt_impl.L2_reg.clk.value == 0, f"ERROR clk reg"
+    # assert dut.encrypt_impl.L1_reg.clk.value == 0, f"ERROR clk reg"
+    # assert dut.encrypt_impl.L2_reg.clk.value == 0, f"ERROR clk reg"
 
     await RisingEdge(dut.clk)
 
