@@ -148,11 +148,11 @@ module encrypt #(
 
     L1_reg_cl = 0;
     L1_reg_w = 0;
-    L1_reg_din = L1_reg_round_f;
+    L1_reg_din = 2;
 
     L2_reg_cl = 0;
     L2_reg_w = 0;
-    L2_reg_din = L2_reg_round_f;
+    L2_reg_din = 3;
 
     counter_rf_rst = 0;
     counter_rf_up = 0;
@@ -181,9 +181,6 @@ module encrypt #(
 
       end
       INCR_COUNTER: begin
-
-        L1_reg_din = blk_i[N-1:L2_LEN];
-        L2_reg_din = blk_i[L2_LEN-1:0];
 
         lfsr_counter_step = 1;
         next_state = CHECK_END;
