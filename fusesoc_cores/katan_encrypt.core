@@ -1,0 +1,62 @@
+CAPI=2:
+
+name : ::katan_encrypt:0
+description : katan encrypt function 
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : verilator 
+      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -Wno-SELRANGE]
+      cocotb_module : katan_encrypt_test 
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl ,cocotb]  
+    toplevel : katan 
+    parameters :
+      - N=32
+
+parameters :
+  N :
+    datatype : int
+    paramtype : vlogparam
+
+filesets:
+  cocotb :
+    files :
+      - block_ciphers/KATAN/cocotb_files/katan_encrypt_test.py : {file_type : user, copyto : .}
+      - block_ciphers/KATAN/python_code/katan.py : {file_type : user, copyto : .}
+      - block_ciphers/KATAN/python_code/LFSR.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+
+
+  rtl:
+    file_type: systemVerilogSource
+    files: 
+      - block_ciphers/KATAN/hdl_code/katan.sv
+      - block_ciphers/KATAN/hdl_code/encrypt.sv
+    depend:
+      - register
+      - katan_round_function
+      - katan_values
+      - counter
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+
+
+
+
+
+
