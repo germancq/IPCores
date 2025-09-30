@@ -99,12 +99,12 @@ async def load_plaintext_test(dut, katan_sw):
     print("plaintext is {}".format(hex(dut.block_i.value)))
 
     assert (
-        dut.encrypt_impl.L1_reg_dout.value == katan_sw.L1_reg
-    ), f"ERROR loading plaintext, expected={hex(katan_sw.L1_reg)}, calculated={hex(dut.encrypt_impl.L1_reg_dout.value)}"
-
-    assert (
         dut.encrypt_impl.L2_reg_dout.value == katan_sw.L2_reg
     ), f"ERROR loading plaintext, expected={hex(katan_sw.L2_reg)}, calculated={hex(dut.encrypt_impl.L2_reg_dout.value)}"
+
+    assert (
+        dut.encrypt_impl.L1_reg_dout.value == katan_sw.L1_reg
+    ), f"ERROR loading plaintext, expected={hex(katan_sw.L1_reg)}, calculated={hex(dut.encrypt_impl.L1_reg_dout.value)}"
 
 
 async def encrypt_loop_test(dut, katan_sw):
