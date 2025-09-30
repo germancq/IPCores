@@ -152,7 +152,7 @@ module encrypt #(
 
     L2_reg_cl = 0;
     L2_reg_w = 0;
-    L2_reg_din = 1;
+    L2_reg_din = L2_reg_round_f;
 
     counter_rf_rst = 0;
     counter_rf_up = 0;
