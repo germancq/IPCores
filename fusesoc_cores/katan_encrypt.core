@@ -17,7 +17,7 @@ targets:
       timescale : 1ns/1ns
       vcs_options : [-timescale=1ns/1ns]
     filesets : [rtl ,cocotb]  
-    toplevel : encrypt 
+    toplevel : katan 
     parameters :
       - N=32
 
@@ -39,6 +39,7 @@ filesets:
   rtl:
     file_type: systemVerilogSource
     files: 
+      - block_ciphers/KATAN/hdl_code/katan.sv
       - block_ciphers/KATAN/hdl_code/encrypt.sv
     depend:
       - register

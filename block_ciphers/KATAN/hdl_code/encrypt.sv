@@ -14,7 +14,23 @@ module encrypt #(
     input rst,
     input start,
     input [N-1:0] blk_i,
-    input [79:0] key,
+    input [5:0] x1,
+    input [5:0] x2,
+    input [5:0] x3,
+    input [5:0] x4,
+    input [5:0] x5,
+    input [5:0] y1,
+    input [5:0] y2,
+    input [5:0] y3,
+    input [5:0] y4,
+    input [5:0] y5,
+    input [5:0] y6,
+    input [7:0] lfsr_counter_state,
+    output logic lfsr_counter_step,
+    output logic lfsr_counter_rst,
+    input [79:0] lfsr_key_state,
+    output logic lfsr_key_step,
+    output logic lfsr_key_rst,
     output [N-1:0] result,
     output logic end_encrypt
 );
@@ -23,70 +39,6 @@ module encrypt #(
 
   localparam L1_LEN = N == 32 ? 13 : (N == 48 ? 19 : 25);
   localparam L2_LEN = N == 32 ? 19 : (N == 48 ? 29 : 39);
-
-  logic [5:0] L1;
-  logic [5:0] L2;
-  logic [5:0] x1;
-  logic [5:0] x2;
-  logic [5:0] x3;
-  logic [5:0] x4;
-  logic [5:0] x5;
-  logic [5:0] y1;
-  logic [5:0] y2;
-  logic [5:0] y3;
-  logic [5:0] y4;
-  logic [5:0] y5;
-  logic [5:0] y6;
-
-  katan_values #(
-      .N(N)
-  ) katan_values_impl (
-      .L1(L1),
-      .L2(L2),
-      .x1(x1),
-      .x2(x2),
-      .x3(x3),
-      .x4(x4),
-      .x5(x5),
-      .y1(y1),
-      .y2(y2),
-      .y3(y3),
-      .y4(y4),
-      .y5(y5),
-      .y6(y6)
-  );
-
-
-  logic lfsr_key_step;
-  logic lfsr_key_rst;
-  logic [79:0] lfsr_key_state;
-
-  LFSR #(
-      .DATA_WIDTH(80),
-      .LSB(1)
-  ) key_lfsr (
-      .clk(clk),
-      .rst(lfsr_key_rst),
-      .shift(lfsr_key_step),
-      .feedback_coeff((1 << 80) + (1 << 61) + (1 << 50) + (1 << 13) + 1),
-      .initial_state(key),
-      .state(lfsr_key_state)
-  );
-
-  logic lfsr_counter_rst;
-  logic lfsr_counter_step;
-  logic [7:0] lfsr_counter_state;
-  LFSR #(
-      .DATA_WIDTH(8),
-      .LSB(0)
-  ) counter_lfsr (
-      .clk(clk),
-      .rst(lfsr_counter_rst),
-      .shift(lfsr_counter_step),
-      .feedback_coeff(9'h1A9),
-      .initial_state(8'hFF),
-      .state(lfsr_counter_state)
-  );
   //create L1 and L2 registers
   logic L1_reg_cl;
   logic L1_reg_w;
@@ -216,6 +168,8 @@ module encrypt #(
         counter_rf_rst = 1;
         if (start == 1) begin
           next_state = LOAD_PLAINTEXT;
+          L1_reg_w   = 1;
+          L2_reg_w   = 1;
         end
       end
       LOAD_PLAINTEXT: begin
