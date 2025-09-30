@@ -30,7 +30,7 @@ def setup_dut(dut, key, plaintext):
     cocotb.start_soon(Clock(dut.clk, CLK_PERIOD).start())
     dut.rst.value = 0
     dut.key.value = key
-    dut.block_i.value = plaintext
+    dut.blk_i.value = plaintext
     dut.start.value = 0
 
 
@@ -75,7 +75,7 @@ async def load_plaintext_test(dut, katan_sw):
     print("L2_input is {}".format(hex(dut.L2_reg_din.value)))
     print("L1_input is {}".format(hex(dut.L1_reg.din.value)))
     print("L2_input is {}".format(hex(dut.L2_reg.din.value)))
-    print("plaintext is {}".format(hex(dut.block_i.value)))
+    print("plaintext is {}".format(hex(dut.blk_i.value)))
 
     assert dut.L1_reg_w.value == 1, f"ERROR L1_w"
     assert dut.L2_reg_w.value == 1, f"ERROR L2_w"
@@ -90,12 +90,12 @@ async def load_plaintext_test(dut, katan_sw):
     await n_cycles_clock(dut, 1)
 
     # load L1_reg and L2_reg
-    L2_val = dut.block_i.value & ((2**katan_sw.L2) - 1)
+    L2_val = dut.blk_i.value & ((2**katan_sw.L2) - 1)
     katan_sw.L2_reg = L2_val
-    L1_val = (dut.block_i.value >> (katan_sw.L2)) & ((2**katan_sw.L1) - 1)
+    L1_val = (dut.blk_i.value >> (katan_sw.L2)) & ((2**katan_sw.L1) - 1)
     katan_sw.L1_reg = L1_val
 
-    print("plaintext is {}".format(hex(dut.block_i.value)))
+    print("plaintext is {}".format(hex(dut.blk_i.value)))
     print("L1_output is {}".format(hex(dut.L1_reg.dout.value)))
     print("L2_output is {}".format(hex(dut.L2_reg.dout.value)))
     assert dut.L1_reg_w.value == 0, f"ERROR L1_w"
