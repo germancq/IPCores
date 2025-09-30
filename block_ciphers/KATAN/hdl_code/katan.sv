@@ -62,7 +62,7 @@ module katan #(
 
   LFSR #(
       .DATA_WIDTH(80),
-      .LSB(1)
+      .LSB(0)
   ) key_lfsr (
       .clk(clk),
       .rst(key_lfsr_rst),
@@ -77,7 +77,7 @@ module katan #(
   logic [7:0] counter_lfsr_state;
   LFSR #(
       .DATA_WIDTH(8),
-      .LSB(0)
+      .LSB(1)
   ) counter_lfsr (
       .clk(clk),
       .rst(counter_lfsr_rst),
