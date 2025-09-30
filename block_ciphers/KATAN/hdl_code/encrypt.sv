@@ -168,9 +168,6 @@ module encrypt #(
         counter_rf_rst = 1;
         if (start == 1) begin
           next_state = LOAD_PLAINTEXT;
-          L1_reg_w   = 1;
-          L2_reg_w   = 1;
-          L2_reg_din = blk_i[L2_LEN-1:0];
         end
       end
       LOAD_PLAINTEXT: begin
@@ -185,9 +182,13 @@ module encrypt #(
       end
       INCR_COUNTER: begin
 
+        //for cocotb(sim) - it doesnt matter in the code
         L1_reg_w = 1;
         L1_reg_din = blk_i[N-1:L2_LEN];
         L2_reg_w = 1;
+        L2_reg_din = blk_i[L2_LEN-1:0];
+        ////////////////////////////////////////////////
+
         lfsr_counter_step = 1;
         next_state = CHECK_END;
 
@@ -222,10 +223,11 @@ module encrypt #(
 
       end
       CHECK_N: begin
-        rst_round = 1;
         if (counter_rf_dout == N[6:4]) begin
+          rst_round  = 1;
           next_state = SHIFT_KEY_1;
         end else begin
+          rst_round  = 1;
           next_state = START_ROUND_F;
         end
 
