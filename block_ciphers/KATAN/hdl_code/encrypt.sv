@@ -14,6 +14,7 @@ module encrypt #(
     input rst,
     input start,
     input [N-1:0] blk_i,
+    input [79:0] key,
     output [N-1:0] result,
     output logic end_encrypt
 );
