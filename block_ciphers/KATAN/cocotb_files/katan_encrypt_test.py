@@ -81,6 +81,8 @@ async def load_plaintext_test(dut, katan_sw):
 
     print("L1_input is {}".format(hex(dut.encrypt_impl.L1_reg_din.value)))
     print("L2_input is {}".format(hex(dut.encrypt_impl.L2_reg_din.value)))
+    print("L1_input is {}".format(hex(dut.encrypt_impl.L1_reg.din.value)))
+    print("L2_input is {}".format(hex(dut.encrypt_impl.L2_reg.din.value)))
     print("plaintext is {}".format(hex(dut.block_i.value)))
 
     assert dut.encrypt_impl.L1_reg_w.value == 1, f"ERROR L1_w"
@@ -88,7 +90,12 @@ async def load_plaintext_test(dut, katan_sw):
     assert dut.encrypt_impl.L1_reg_cl.value == 0, f"ERROR L1_cl"
     assert dut.encrypt_impl.L2_reg_cl.value == 0, f"ERROR L2_cl"
 
-    await n_cycles_clock(dut, 2)
+    assert dut.encrypt_impl.L1_reg.w.value == 1, f"ERROR L1_w"
+    assert dut.encrypt_impl.L2_reg.w.value == 1, f"ERROR L2_w"
+    assert dut.encrypt_impl.L1_reg.cl.value == 0, f"ERROR L1_cl"
+    assert dut.encrypt_impl.L2_reg.cl.value == 0, f"ERROR L2_cl"
+
+    await n_cycles_clock(dut, 1)
 
     # load L1_reg and L2_reg
     L2_val = dut.block_i.value & ((2**katan_sw.L2) - 1)
@@ -97,12 +104,17 @@ async def load_plaintext_test(dut, katan_sw):
     katan_sw.L1_reg = L1_val
 
     print("plaintext is {}".format(hex(dut.block_i.value)))
-    print("L1_output is {}".format(hex(dut.encrypt_impl.L1_reg_dout.value)))
-    print("L2_output is {}".format(hex(dut.encrypt_impl.L2_reg_dout.value)))
+    print("L1_output is {}".format(hex(dut.encrypt_impl.L1_reg.dout.value)))
+    print("L2_output is {}".format(hex(dut.encrypt_impl.L2_reg.dout.value)))
     assert dut.encrypt_impl.L1_reg_w.value == 0, f"ERROR L1_w"
     assert dut.encrypt_impl.L2_reg_w.value == 0, f"ERROR L2_w"
     assert dut.encrypt_impl.L1_reg_cl.value == 0, f"ERROR L1_cl"
     assert dut.encrypt_impl.L2_reg_cl.value == 0, f"ERROR L2_cl"
+
+    assert dut.encrypt_impl.L1_reg.w.value == 0, f"ERROR L1_w"
+    assert dut.encrypt_impl.L2_reg.w.value == 0, f"ERROR L2_w"
+    assert dut.encrypt_impl.L1_reg.cl.value == 0, f"ERROR L1_cl"
+    assert dut.encrypt_impl.L2_reg.cl.value == 0, f"ERROR L2_cl"
 
     assert (
         dut.encrypt_impl.L2_reg_dout.value == katan_sw.L2_reg
