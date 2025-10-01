@@ -26,7 +26,7 @@ async def test(dut, index=0):
     if N == 16:
         M = 4
 
-    simon_cipher_sw = simon.SIMON(N, M)
+    simon_cipher_sw = simon.SIMON(2 * N, M * N)
     x_generated = random.getrandbits(N)
     y_generated = random.getrandbits(N)
     k_generated = random.getrandbits(N)
