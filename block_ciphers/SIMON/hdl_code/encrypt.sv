@@ -59,8 +59,8 @@ module encrypt #(
       .x(x_reg_dout),
       .y(y_reg_dout),
       .k(round_keys[rk_counter_dout]),
-      .x_new(x_reg_din),
-      .y_new(y_reg_din)
+      .x_new(rf_impl_x_new),
+      .y_new(rf_impl_y_new)
   );
 
   logic rk_counter_rst;
