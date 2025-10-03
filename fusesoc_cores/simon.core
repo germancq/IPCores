@@ -46,7 +46,7 @@ filesets:
     depend:
       - counter
       - register
-      - simon_round_function
+      - simon_key_schedule
       - simon_encrypt
 
 provider:
