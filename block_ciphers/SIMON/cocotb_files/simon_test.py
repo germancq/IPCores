@@ -25,7 +25,7 @@ def setup_dut(dut, plaintext, key):
     dut.rst.value = 0
     dut.rq_data.value = 0
     dut.block_i.value = plaintext
-    dut.block_o.value = key
+    dut.key.value = key
     dut.enc_dec.value = 0
 
 
