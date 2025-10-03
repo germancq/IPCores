@@ -25,13 +25,11 @@ module simon #(
   logic [2:0] Z_sel;
   logic [61:0] Z[4:0];
 
-  logic [7:0] T_16, T_24, T_32, T_48, T_64;
-
-  assign T_16 = 32;
-  assign T_24 = 36;
-  assign T_32 = M == 3 ? 42 : 44;
-  assign T_48 = M == 2 ? 52 : 54;
-  assign T_64 = M == 2 ? 68 : (M == 3 ? 69 : 72);
+  parameter T_16 = 32;
+  parameter T_24 = 36;
+  parameter T_32 = M == 3 ? 42 : 44;
+  parameter T_48 = M == 2 ? 52 : 54;
+  parameter T_64 = M == 2 ? 68 : (M == 3 ? 69 : 72);
 
   parameter T = N == 16 ? T_16 : (N == 24 ? T_24 : (N == 32 ? T_32 : (N == 48 ? T_48 : T_64)));
 
