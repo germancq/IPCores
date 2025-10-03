@@ -113,9 +113,9 @@ module encrypt #(
         end
       end
       LOAD_PLAINTEXT: begin
-        x_reg_din = blk_i[N-1:0];
+        y_reg_din = blk_i[N-1:0];
         x_reg_w = 1;
-        y_reg_din = blk_i[(N<<1)-1:N];
+        x_reg_din = blk_i[(N<<1)-1:N];
         y_reg_w = 1;
         next_state = ROUND_FUNCTION;
       end
