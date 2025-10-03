@@ -47,6 +47,9 @@ filesets:
     file_type: systemVerilogSource
     files: 
       - block_ciphers/SIMON/hdl_code/key_schedule.sv      
+    depend:
+      - counter
+      - register
 
 provider:
     name: github
