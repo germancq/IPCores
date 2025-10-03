@@ -55,9 +55,9 @@ module key_schedule #(
       .DATA_WIDTH(N)
   ) reg_aux (
       .clk(clk),
-      .cl(reg_rk_cl),
-      .w(reg_rk_w),
-      .din(reg_rk_din),
+      .cl(reg_aux_cl),
+      .w(reg_aux_w),
+      .din(reg_aux_din),
       .dout(reg_aux_dout)
   );
 
