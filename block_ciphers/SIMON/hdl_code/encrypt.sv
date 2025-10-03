@@ -52,6 +52,7 @@ module encrypt #(
       .dout(y_reg_dout)
   );
 
+  logic [N-1:0] rf_impl_x_new, rf_impl_y_new;
   round_function #(
       .N(N)
   ) rf_impl (
@@ -121,6 +122,8 @@ module encrypt #(
       ROUND_FUNCTION: begin
         x_reg_w = 1;
         y_reg_w = 1;
+        x_reg_din = rf_impl_x_new;
+        y_reg_din = rf_impl_y_new;
         next_state = ICR_COUNTER;
       end
       ICR_COUNTER: begin
