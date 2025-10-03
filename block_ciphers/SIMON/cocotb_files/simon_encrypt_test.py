@@ -84,7 +84,8 @@ async def encrypt_loop_test(dut, plaintext, simon_sw):
 
     while True:
 
-        x_sw, y_sw = simon_sw.round_function(x_sw, y_sw, simon_sw.round_keys[i])
+        x_sw, y_sw = simon_sw.round_function(
+            x_sw, y_sw, simon_sw.round_keys[i])
 
         print("ciclo {}".format(i))
 
@@ -114,7 +115,7 @@ async def encrypt_loop_test(dut, plaintext, simon_sw):
 
         i = i + 1
 
-        if i == dut.T.value
+        if i == dut.T.value:
             return
 
         await n_cycles_clock(dut, 1)
@@ -129,7 +130,9 @@ async def end_state_function_test(dut, expected_result):
 
     assert dut.end_signal.value == 1, f"ERROR in end_round signal"
 
-    assert dut.blk_o.value == expected_result, f"ERROR result, expected={hex(expected_result)}, calculated = {hex(dut.blk_o.value)}"
+    assert (
+        dut.blk_o.value == expected_result
+    ), f"ERROR result, expected={hex(expected_result)}, calculated = {hex(dut.blk_o.value)}"
 
 
 async def n_cycles_clock(dut, n):
