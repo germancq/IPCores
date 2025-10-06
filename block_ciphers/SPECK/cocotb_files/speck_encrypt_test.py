@@ -26,7 +26,7 @@ def setup_dut(dut, plaintext, speck_cipher_sw):
     dut.start.value = 0
     dut.blk_i.value = plaintext
     for i in range(0, speck_cipher_sw.T):
-        dut.round_keys[i].value = speck_cipher_sw.round_keys[i]
+        dut.round_keys[i].value = speck_cipher_sw.roundkeys[i]
 
 
 async def rst_function_test(dut):
