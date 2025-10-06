@@ -124,8 +124,8 @@ async def key_schedule_loop_test(dut, speck_sw):
         ), f"ERROR IN RK, expected = {hex(k_aux)}, calculated = {hex(dut.round_keys[i+1])}"
 
         assert (
-            dut.current_state.value == dut.CHECK_COUNTER.value
-        ), f"ERROR STATE IN CHECK_COUNTER, STATE={dut.current_state.value}"
+            dut.current_state.value == dut.UPDATE_COUNTER.value
+        ), f"ERROR STATE IN UPDATE_COUNTER, STATE={dut.current_state.value}"
 
         if i == dut.T.value - 2:
             return
