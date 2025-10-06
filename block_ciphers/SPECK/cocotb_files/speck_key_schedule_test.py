@@ -111,7 +111,7 @@ async def key_schedule_loop_test(dut, speck_sw):
 
         assert (
             dut.l_keys_dout[i + dut.M.value - 1].value == l_aux
-        ), f"ERROR IN L_AUX, expected = {hex(l_aux)}, calculated = {hex(dut.l_keys_dout[i + dut.M.value - 1])}"
+        ), f"ERROR IN L_AUX, expected = {hex(l_aux)}, calculated = {hex(dut.l_keys_dout[i + dut.M.value - 1].value)}"
 
         assert (
             dut.current_state.value == dut.CALC_RK.value
@@ -121,7 +121,7 @@ async def key_schedule_loop_test(dut, speck_sw):
 
         assert (
             dut.round_keys[i + 1].value == k_aux
-        ), f"ERROR IN RK, expected = {hex(k_aux)}, calculated = {hex(dut.round_keys[i+1])}"
+        ), f"ERROR IN RK, expected = {hex(k_aux)}, calculated = {hex(dut.round_keys[i+1].value)}"
 
         assert (
             dut.current_state.value == dut.UPDATE_COUNTER.value
