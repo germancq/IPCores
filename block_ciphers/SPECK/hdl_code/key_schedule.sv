@@ -144,7 +144,7 @@ module key_schedule #(
       end
 
       CALC_AUX: begin
-        l_keys_din[rk_counter_dout+M-1] = (round_keys[rk_counter_dout] + {l_keys_dout[rk_counter_dout][alfa-1:0],l_keys_dout[rk_counter_dout][N-1:alfa]});
+        l_keys_din[rk_counter_dout+M-1] = rk_counter_dout ^ (round_keys[rk_counter_dout] + {l_keys_dout[rk_counter_dout][alfa-1:0],l_keys_dout[rk_counter_dout][N-1:alfa]});
         l_keys_w[rk_counter_dout+M-1] = 1;
 
         next_state = CALC_RK;
