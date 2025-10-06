@@ -41,8 +41,13 @@ async def test(dut, index=0):
         x_generated, y_generated, rk_generated
     )
 
-    expected_x2, expected_y2 = speck_cipher_sw.feistel_sub1(
-        expected_y1, expected_x1)
+    expected_x2, expected_y2 = speck_cipher_sw.feistel_sub1(expected_y1, expected_x1)
+
+    print(
+        "rk = {}, x={} , y={}".format(
+            hex(rk_generated), hex(x_generated), hex(y_generated)
+        )
+    )
 
     assert (
         dut.x1.value == expected_x1
