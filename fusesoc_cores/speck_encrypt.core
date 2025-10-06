@@ -48,6 +48,7 @@ filesets:
     files: 
       - block_ciphers/SPECK/hdl_code/encrypt.sv      
     depend:
+      - speck_round_function
       - counter
       - register
 
