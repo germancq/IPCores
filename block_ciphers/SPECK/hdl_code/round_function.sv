@@ -19,8 +19,8 @@ module round_function #(
 );
 
   logic [N-1:0] x1, y1;
-  assign x1 = y;
-  assign y1 = rk ^ (y + {x[alfa-1:0], x[N-1:alfa]});
+  assign y1 = y;
+  assign x1 = rk ^ (y + {x[alfa-1:0], x[N-1:alfa]});
 
   assign x_new = x1;
   assign y_new = x1 ^ {y1[N-beta-1:0], y1[N-1:N-beta]};
