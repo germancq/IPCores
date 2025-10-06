@@ -132,10 +132,12 @@ module key_schedule #(
         if (start) begin
           next_state = CALC_AUX;
 
+          rk_cl[0] = 0;
           rk_w[0] = 1;
 
           for (j = 0; j < (M - 1); j++) begin
-            l_keys_w[j] = 1;
+            l_keys_cl[j] = 0;
+            l_keys_w[j]  = 1;
           end
 
         end
