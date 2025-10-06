@@ -25,8 +25,8 @@ def setup_dut(dut, plaintext, speck_cipher_sw):
     dut.rst.value = 0
     dut.start.value = 0
     dut.blk_i.value = plaintext
-    for i in range(0, simon_cipher_sw.T):
-        dut.round_keys[i].value = simon_cipher_sw.round_keys[i]
+    for i in range(0, speck_cipher_sw.T):
+        dut.round_keys[i].value = speck_cipher_sw.round_keys[i]
 
 
 async def rst_function_test(dut):
@@ -84,7 +84,8 @@ async def encrypt_loop_test(dut, plaintext, speck_sw):
 
     while True:
 
-        x_sw, y_sw = speck_sw.round_function(x_sw, y_sw, speck_sw.round_keys[i])
+        x_sw, y_sw = speck_sw.round_function(
+            x_sw, y_sw, speck_sw.round_keys[i])
 
         print("ciclo {}".format(i))
 
