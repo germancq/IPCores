@@ -84,8 +84,7 @@ async def encrypt_loop_test(dut, plaintext, speck_sw):
 
     while True:
 
-        x_sw, y_sw = speck_sw.round_function(
-            x_sw, y_sw, speck_sw.round_keys[i])
+        x_sw, y_sw = speck_sw.round_function(x_sw, y_sw, speck_sw.roundkeys[i])
 
         print("ciclo {}".format(i))
 
