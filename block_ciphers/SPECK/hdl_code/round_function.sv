@@ -7,7 +7,9 @@
  */
 
 module round_function #(
-    parameter N = 16
+    parameter N = 16,
+    parameter alfa = 7,
+    parameter beta = 2
 ) (
     input  [N-1:0] x,
     input  [N-1:0] y,
@@ -15,10 +17,6 @@ module round_function #(
     output [N-1:0] x_new,
     output [N-1:0] y_new
 );
-
-  logic [3:0] alfa, beta;
-  assign alfa = N == 16 ? 7 : 8;
-  assign beta = N == 16 ? 2 : 3;
 
   logic [N-1:0] x1, y1;
   assign x1 = y;

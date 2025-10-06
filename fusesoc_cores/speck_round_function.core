@@ -20,9 +20,17 @@ targets:
     toplevel : round_function
     parameters :
       - N=16
+      - alfa=7
+      - beta=2
 
 parameters :
   N :
+    datatype : int
+    paramtype : vlogparam
+  alfa :
+    datatype : int
+    paramtype : vlogparam
+  beta :
     datatype : int
     paramtype : vlogparam
 
