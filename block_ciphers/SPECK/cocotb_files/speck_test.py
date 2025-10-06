@@ -42,7 +42,7 @@ async def test(dut, index=0):
 
     key = random.getrandbits(M * N)
     plaintext = random.getrandbits(2 * N)
-    speck_cipher_sw = speck.speck(2 * N, M * N)
+    speck_cipher_sw = speck.SPECK(2 * N, M * N)
     speck_cipher_sw.key_schedule(key)
 
     setup_dut(dut, plaintext, key)
