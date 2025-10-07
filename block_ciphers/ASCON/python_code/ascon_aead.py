@@ -207,8 +207,11 @@ class ASCON_AEAD:
         bytes_key_1 = self.parse(self.key_1, 8)
         self.key_0 = 0
         self.key_1 = 0
-        for i in range(0, 8):
+
+        for i in range(0, len(bytes_key_0)):
             self.key_0 = (bytes_key_0[i] << (8 * i)) + self.key_0
+
+        for i in range(0, len(bytes_key_1)):
             self.key_1 = (bytes_key_1[i] << (8 * i)) + self.key_1
 
         nonce_0 = (self.nonce) & ((2**64) - 1)
@@ -217,8 +220,10 @@ class ASCON_AEAD:
         bytes_nonce_1 = self.parse(nonce_1, 8)
         nonce_0 = 0
         nonce_1 = 0
-        for i in range(0, 8):
+
+        for i in range(0, len(bytes_nonce_0)):
             nonce_0 = (bytes_nonce_0[i] << (8 * i)) + nonce_0
+        for i in range(0, len(bytes_nonce_1)):
             nonce_1 = (bytes_nonce_1[i] << (8 * i)) + nonce_1
 
         initial_state = (
