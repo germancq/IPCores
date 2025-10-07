@@ -123,7 +123,8 @@ class ASCON_AEAD:
 
         associated_data = self.parse(a_data_reord, 128)
         len_a_data = len(associated_data)
-        associated_data[len_a_data - 1] = self.pad(associated_data[len_a_data - 1], 128)
+        associated_data[len_a_data -
+                        1] = self.pad(associated_data[len_a_data - 1], 128)
         for a in associated_data:
             self.state_array[0] = self.state_array[0] ^ a
 
@@ -147,7 +148,8 @@ class ASCON_AEAD:
         plaintext_data = self.parse(plaintext_reord, 128)
         len_plaintext_data = len(plaintext_data)
         print("len plaintext data = {}".format(len_plaintext_data))
-        bits_for_last_block = int(len_plaintext_bits - (128 * (len_plaintext_data - 1)))
+        bits_for_last_block = int(
+            len_plaintext_bits - (128 * (len_plaintext_data - 1)))
         # bits_for_last_block = int(
         #    math.ceil(math.log2(plaintext_data[len_plaintext_data - 1]))
         # )
@@ -324,6 +326,10 @@ class ASCON_AEAD:
         for i in range(0, 12):
             print(f"assign constanst[{i}] = 8'h{hex(Const[i])};")
 
+    def print_sbox(self):
+        for i in range(0, 32):
+            print(f"assign sbox[{i}] = 8'h{hex(Sbox[i])};")
+
 
 if __name__ == "__main__":
     plaintext = 0x6173636F6E
@@ -337,3 +343,4 @@ if __name__ == "__main__":
     print(hex(tag[0]))
     print(hex(tag[1]))
     ascon.print_constants()
+    ascon.print_sbox()
