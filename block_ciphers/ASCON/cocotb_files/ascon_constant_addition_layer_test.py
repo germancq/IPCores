@@ -25,7 +25,7 @@ async def test(dut, index=0):
     nonce = random.getrandbits(128)
 
     ascon_sw = ascon_aead.ASCON_AEAD(key, nonce)
-    ascon_sw.get_intial_state()
+    ascon_sw.get_initial_state()
 
     total_rounds = 12
 
