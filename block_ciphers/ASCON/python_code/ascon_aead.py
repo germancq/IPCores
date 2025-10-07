@@ -11,10 +11,6 @@ import math
 IV = 0x00001000808C0001
 
 Const = [
-    0x3C,
-    0x2D,
-    0x1E,
-    0x0F,
     0xF0,
     0xE1,
     0xD2,
@@ -110,7 +106,7 @@ class ASCON_AEAD:
         print("S3 = {}".format(hex(self.state_array[3])))
         print("S4 = {}".format(hex(self.state_array[4])))
 
-    def encrypt(self, plaintext, a_data):
+    def encrypt(self, plaintext, a_data, len_plaintext_bits):
         self.get_initial_state()
         self.ascon_permutation(12)
         print("xor key with state")
@@ -127,8 +123,7 @@ class ASCON_AEAD:
 
         associated_data = self.parse(a_data_reord, 128)
         len_a_data = len(associated_data)
-        associated_data[len_a_data -
-                        1] = self.pad(associated_data[len_a_data - 1], 128)
+        associated_data[len_a_data - 1] = self.pad(associated_data[len_a_data - 1], 128)
         for a in associated_data:
             self.state_array[0] = self.state_array[0] ^ a
 
@@ -145,14 +140,17 @@ class ASCON_AEAD:
         plaintext_reord = 0
         i = 0
         for p_d in plaintext_endian:
+            print(hex(p_d))
             plaintext_reord = (p_d << (8 * i)) + plaintext_reord
             i = i + 1
 
         plaintext_data = self.parse(plaintext_reord, 128)
         len_plaintext_data = len(plaintext_data)
-        bits_for_last_block = int(
-            math.ceil(math.log2(plaintext_data[len_plaintext_data - 1]))
-        )
+        print("len plaintext data = {}".format(len_plaintext_data))
+        bits_for_last_block = int(len_plaintext_bits - (128 * (len_plaintext_data - 1)))
+        # bits_for_last_block = int(
+        #    math.ceil(math.log2(plaintext_data[len_plaintext_data - 1]))
+        # )
         plaintext_data[len_plaintext_data - 1] = self.pad(
             plaintext_data[len_plaintext_data - 1], 128
         )
@@ -160,13 +158,19 @@ class ASCON_AEAD:
         ciphertext_arr = []
         for i in range(0, len_plaintext_data):
             if i < len_plaintext_data - 1:
+                print("plaintext{} is = {}".format(i, hex(plaintext_data[i])))
+                print("state_0 is = {}".format(hex(self.state_array[0])))
                 self.state_array[0] = self.state_array[0] ^ plaintext_data[i]
                 ciphertext_arr.insert(i, self.state_array[0])
                 self.ascon_permutation(8)
                 self.print_state()
             else:
+                print("plaintext{} is = {}".format(i, hex(plaintext_data[i])))
+                print("state_0 is = {}".format(hex(self.state_array[0])))
                 self.state_array[0] = self.state_array[0] ^ plaintext_data[i]
+                print("xor is {}".format(hex(self.state_array[0])))
                 c_aux = self.state_array[0] & ((2**bits_for_last_block) - 1)
+                print("c_aux is {}".format(hex(c_aux)))
                 ciphertext_arr.insert(i, c_aux)
 
         self.print_state()
@@ -235,7 +239,7 @@ class ASCON_AEAD:
 
     def constant_addition_layer(self, rnd, i):
         print("constant_addition_layer")
-        c = Const[16 - rnd + i]
+        c = Const[12 - rnd + i]
         S2 = self.state_array[2]
         S2 = S2 ^ c
         self.state_array[2] = S2
@@ -311,6 +315,10 @@ class ASCON_AEAD:
 
         self.print_state()
 
+    def print_constants(self):
+        for i in range(0, 12):
+            print(f"assign constanst[{i}] = 8'h{hex(Const[i])};")
+
 
 if __name__ == "__main__":
     plaintext = 0x6173636F6E
@@ -318,4 +326,9 @@ if __name__ == "__main__":
     nonce = 0xC7B7C0CECF7DE4C7A11453474216B1A3
     add_data = 0x4153434F4E
     ascon = ASCON_AEAD(key, nonce)
-    ascon.encrypt(plaintext, add_data)
+    len_plaintext_bits = 40
+    ciphertext, tag = ascon.encrypt(plaintext, add_data, len_plaintext_bits)
+    print(hex(ciphertext[0]))
+    print(hex(tag[0]))
+    print(hex(tag[1]))
+    ascon.print_constants()

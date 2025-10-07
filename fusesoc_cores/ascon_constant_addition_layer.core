@@ -1,0 +1,47 @@
+CAPI=2:
+
+name : ::ascon_constant_addition_layer:0
+description : ascon_constant_addition_layer
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : verilator 
+      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -Wno-SELRANGE]
+      cocotb_module : ascon_constant_addition_layer_test
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl ,cocotb]  
+    toplevel : constant_addition_layer
+
+
+filesets:
+  cocotb :
+    files :
+      - block_ciphers/ASCON/cocotb_files/ascon_constant_addition_layer_test.py : {file_type : user, copyto : .}
+      - block_ciphers/ASCON/python_code/ascon_aead.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+
+
+  rtl:
+    file_type: systemVerilogSource
+    files: 
+      - block_ciphers/ASCON/hdl_code/constant_addition_layer.sv      
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+
+
+
+
