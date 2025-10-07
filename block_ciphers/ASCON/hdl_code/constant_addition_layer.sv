@@ -15,18 +15,18 @@ module constant_addition_layer (
 );
 
   logic [7:0] constants[11:0];
-  assign constanst[0] = 8'hf0;
-  assign constanst[1] = 8'he1;
-  assign constanst[2] = 8'hd2;
-  assign constanst[3] = 8'hc3;
-  assign constanst[4] = 8'hb4;
-  assign constanst[5] = 8'ha5;
-  assign constanst[6] = 8'h96;
-  assign constanst[7] = 8'h87;
-  assign constanst[8] = 8'h78;
-  assign constanst[9] = 8'h69;
-  assign constanst[10] = 8'h5a;
-  assign constanst[11] = 8'h4b;
+  assign constants[0] = 8'hf0;
+  assign constants[1] = 8'he1;
+  assign constants[2] = 8'hd2;
+  assign constants[3] = 8'hc3;
+  assign constants[4] = 8'hb4;
+  assign constants[5] = 8'ha5;
+  assign constants[6] = 8'h96;
+  assign constants[7] = 8'h87;
+  assign constants[8] = 8'h78;
+  assign constants[9] = 8'h69;
+  assign constants[10] = 8'h5a;
+  assign constants[11] = 8'h4b;
 
   assign state_2_din = state_2_dout ^ {56'b0, constants[12-total_rounds+current_round]};
   assign state_2_w = 1;
