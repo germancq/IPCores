@@ -29,6 +29,13 @@ async def test(dut, index=0):
 
     dut.state_ascon_dout.value = ascon_sw.state_array
 
+    await Timer(10, units="ns")
+
+    for i in range(0, 5):
+        assert (
+            dut.state_ascon_dout[i].value == ascon_sw.state_array[i]
+        ), f"ERROR DOUT en state{i}, expected = {hex(ascon_sw.state_array[i])}, calculated = {hex(dut.state_ascon_dout[i].value)}"
+
     ascon_sw.substitution_layer()
 
     await Timer(10, units="ns")
