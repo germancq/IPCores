@@ -27,7 +27,8 @@ async def test(dut, index=0):
     ascon_sw = ascon_aead.ASCON_AEAD(key, nonce)
     ascon_sw.get_initial_state()
 
-    dut.state_ascon_dout.value = ascon_sw.state_array
+    for i in range(0, 5):
+        dut.state_ascon_dout[i].value = ascon_sw.state_array[i]
 
     await Timer(10, units="ns")
 
