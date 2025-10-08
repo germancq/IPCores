@@ -74,6 +74,10 @@ async def permutation_loop_test(dut, ascon_sw):
 
         calculated_state[2] = dut.state_ascon_din[2].value
 
+        assert (
+            dut.state_ascon_din[2].value == ascon_sw.state_array[2]
+        ), f"ERROR in CTE_LAYER, expected {hex(ascon_sw.state_array[2])}, calculated = {hex(dut.state_ascon_din[2])}"
+
         await n_cycles_clock(dut, 1)
 
         assert (
@@ -83,7 +87,12 @@ async def permutation_loop_test(dut, ascon_sw):
         for j in range(0, 5):
             assert (
                 dut.state_ascon_w.value[j] == 1
-            ), f"ERROR in DIFF_LAYER Write signal {j}"
+            ), f"ERROR in SUBS_LAYER Write signal {j}"
+
+        for j in range(0, 5):
+            assert (
+                dut.state_ascon_din[j].value == ascon_sw.state_array[j]
+            ), f"ERROR in SUBS_LAYER, expected {hex(ascon_sw.state_array[j])}, calculated = {hex(dut.state_ascon_din[j])}"
 
         for j in range(0, 5):
             calculated_state[j] = dut.state_ascon_din[j].value
@@ -98,6 +107,11 @@ async def permutation_loop_test(dut, ascon_sw):
             assert (
                 dut.state_ascon_w.value[j] == 1
             ), f"ERROR in DIFF_LAYER Write signal {j}"
+
+        for j in range(0, 5):
+            assert (
+                dut.state_ascon_din[j].value == ascon_sw.state_array[j]
+            ), f"ERROR in DIFF_LAYER, expected {hex(ascon_sw.state_array[j])}, calculated = {hex(dut.state_ascon_din[j])}"
 
         for j in range(0, 5):
             calculated_state[j] = dut.state_ascon_din[j].value
@@ -117,7 +131,7 @@ async def end_state_test(dut, calculated_state, expected_state):
     for i in range(0, 5):
         assert (
             calculated_state[i] == expected_state[i]
-        ), f"ERROR in state {i}, expected={expected_state[i]}, calculated = {calculated_state[i]}"
+        ), f"ERROR in state {i}, expected={hex(expected_state[i])}, calculated = {hex(calculated_state[i])}"
 
     await n_cycles_clock(dut, 10)
     assert (
