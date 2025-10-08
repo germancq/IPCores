@@ -80,6 +80,8 @@ async def permutation_loop_test(dut, ascon_sw):
 
         await n_cycles_clock(dut, 1)
 
+        ascon_sw.substitution_layer()
+
         assert (
             dut.current_state.value == dut.SUBS_LAYER.value
         ), f"ERROR STATE IN SUBS_LAYER, STATE={dut.current_state.value}"
@@ -98,6 +100,8 @@ async def permutation_loop_test(dut, ascon_sw):
             calculated_state[j] = dut.state_ascon_din[j].value
 
         await n_cycles_clock(dut, 1)
+
+        ascon_sw.linear_diffusion_layer()
 
         assert (
             dut.current_state.value == dut.DIFF_LAYER.value
