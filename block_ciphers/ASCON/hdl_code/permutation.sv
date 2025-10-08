@@ -100,7 +100,7 @@ module permutation (
           state_ascon_w[j]   = 1;
         end
         next_state = CTE_LAYER;
-        if (counter_rounds_dout == total_rounds - 1) begin
+        if (counter_rounds_dout == total_rounds) begin
           next_state = END_STATE;
         end
       end
