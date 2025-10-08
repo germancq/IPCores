@@ -168,6 +168,7 @@ async def test(dut, index=0):
     total_rounds = [6, 8, 12]
     random_number = random.randint(0, 2)
     t_rnds = total_rounds[random_number]
+    print(t_rnds)
 
     ascon_sw = ascon_aead.ASCON_AEAD(key, nonce)
     ascon_sw.get_initial_state()
