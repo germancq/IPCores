@@ -47,7 +47,7 @@ async def test(dut, index=0):
         ), f"ERROR en state{i}, expected = {hex(ascon_sw.state_array[i])}, calculated = {hex(dut.state_ascon_din[i].value)}"
 
 
-n = 0x5
+n = 0x25
 factory = TestFactory(test)
 
 factory.add_option("index", range(0, n))
