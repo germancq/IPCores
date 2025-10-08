@@ -78,6 +78,9 @@ async def permutation_loop_test(dut, ascon_sw):
             dut.state_ascon_din[2].value == ascon_sw.state_array[2]
         ), f"ERROR in CTE_LAYER, expected {hex(ascon_sw.state_array[2])}, calculated = {hex(dut.state_ascon_din[2].value)}"
 
+        for j in range(0, 5):
+            dut.state_ascon_dout[j].value = ascon_sw.state_array[j]
+
         await n_cycles_clock(dut, 1)
 
         ascon_sw.substitution_layer()
@@ -99,6 +102,9 @@ async def permutation_loop_test(dut, ascon_sw):
         for j in range(0, 5):
             calculated_state[j] = dut.state_ascon_din[j].value
 
+        for j in range(0, 5):
+            dut.state_ascon_dout[j].value = ascon_sw.state_array[j]
+
         await n_cycles_clock(dut, 1)
 
         ascon_sw.linear_diffusion_layer()
@@ -119,6 +125,9 @@ async def permutation_loop_test(dut, ascon_sw):
 
         for j in range(0, 5):
             calculated_state[j] = dut.state_ascon_din[j].value
+
+        for j in range(0, 5):
+            dut.state_ascon_dout[j].value = ascon_sw.state_array[j]
 
         if dut.counter_rounds_dout.value == dut.total_rounds.value - 1:
             return calculated_state
