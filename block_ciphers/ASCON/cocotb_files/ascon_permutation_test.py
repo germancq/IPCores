@@ -169,6 +169,8 @@ async def test(dut, index=0):
     random_number = random.randint(0, 2)
     t_rnds = total_rounds[random_number]
     print(t_rnds)
+    print(hex(key))
+    print(hex(nonce))
 
     ascon_sw = ascon_aead.ASCON_AEAD(key, nonce)
     ascon_sw.get_initial_state()
