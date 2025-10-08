@@ -102,7 +102,7 @@ async def permutation_loop_test(dut, ascon_sw):
         for j in range(0, 5):
             calculated_state[j] = dut.state_ascon_din[j].value
 
-        if dut.counter_rounds_dout.value == dut.total_rounds - 1:
+        if dut.counter_rounds_dout.value == dut.total_rounds.value - 1:
             return calculated_state
 
 
