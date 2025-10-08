@@ -65,7 +65,7 @@ async def permutation_loop_test(dut, ascon_sw):
             dut.current_state.value == dut.CTE_LAYER.value
         ), f"ERROR STATE IN CTE_LAYER, STATE={dut.current_state.value}"
 
-        assert dut.state_ascon_w == 0x4, f"ERROR in CTE_LAYER Write signal"
+        assert dut.state_ascon_w.value == 0x4, f"ERROR in CTE_LAYER Write signal"
 
         calculated_state[2] = dut.state_ascon_din[2].value
 
@@ -75,7 +75,7 @@ async def permutation_loop_test(dut, ascon_sw):
             dut.current_state.value == dut.SUBS_LAYER.value
         ), f"ERROR STATE IN SUBS_LAYER, STATE={dut.current_state.value}"
 
-        assert dut.state_ascon_w == 0x1F, f"ERROR in SUBS_LAYER Write signal"
+        assert dut.state_ascon_w.value == 0x1F, f"ERROR in SUBS_LAYER Write signal"
 
         for j in range(0, 5):
             calculated_state[j] = dut.state_ascon_din[j].value
@@ -86,7 +86,7 @@ async def permutation_loop_test(dut, ascon_sw):
             dut.current_state.value == dut.DIFF_LAYER.value
         ), f"ERROR STATE IN DIFF_LAYER, STATE={dut.current_state.value}"
 
-        assert dut.state_ascon_w == 0x1F, f"ERROR in DIFF_LAYER Write signal"
+        assert dut.state_ascon_w.value == 0x1F, f"ERROR in DIFF_LAYER Write signal"
 
         for j in range(0, 5):
             calculated_state[j] = dut.state_ascon_din[j].value
