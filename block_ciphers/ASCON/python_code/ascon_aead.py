@@ -202,7 +202,11 @@ class ASCON_AEAD:
         return ciphertext_arr, self.tag
 
     def get_initial_state(self):
-        print("initial_state")
+        print(
+            "initial_state with key = {} and nonce = {}".format(
+                hex(self.key), hex(self.nonce)
+            )
+        )
         self.key_0 = (self.key) & ((2**64) - 1)
         self.key_1 = self.key >> 64
         bytes_key_0 = self.parse(self.key_0, 8)
