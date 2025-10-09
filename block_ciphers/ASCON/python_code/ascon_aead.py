@@ -81,10 +81,12 @@ class ASCON_AEAD:
             return self.ror(size, out, i - 1)
 
     def parse(self, x, r):
+        print("parse x = {} with r = {}".format(hex(x), r))
         arr = []
         i = 1
         x_aux = (x) & ((2**r) - 1)
         while x_aux != 0:
+            print(hex(x_aux))
             arr.insert(i - 1, x_aux)
             x_aux = (x >> (r * i)) & ((2**r) - 1)
             i = i + 1
@@ -123,8 +125,7 @@ class ASCON_AEAD:
 
         associated_data = self.parse(a_data_reord, 128)
         len_a_data = len(associated_data)
-        associated_data[len_a_data -
-                        1] = self.pad(associated_data[len_a_data - 1], 128)
+        associated_data[len_a_data - 1] = self.pad(associated_data[len_a_data - 1], 128)
         for a in associated_data:
             self.state_array[0] = self.state_array[0] ^ a
 
@@ -148,8 +149,7 @@ class ASCON_AEAD:
         plaintext_data = self.parse(plaintext_reord, 128)
         len_plaintext_data = len(plaintext_data)
         print("len plaintext data = {}".format(len_plaintext_data))
-        bits_for_last_block = int(
-            len_plaintext_bits - (128 * (len_plaintext_data - 1)))
+        bits_for_last_block = int(len_plaintext_bits - (128 * (len_plaintext_data - 1)))
         # bits_for_last_block = int(
         #    math.ceil(math.log2(plaintext_data[len_plaintext_data - 1]))
         # )
@@ -209,6 +209,7 @@ class ASCON_AEAD:
         )
         self.key_0 = (self.key) & ((2**64) - 1)
         self.key_1 = self.key >> 64
+        print("key_0 = {}, key_1 = {}".format(hex(self.key_0), hex(self.key_1)))
         bytes_key_0 = self.parse(self.key_0, 8)
         bytes_key_1 = self.parse(self.key_1, 8)
         self.key_0 = 0
