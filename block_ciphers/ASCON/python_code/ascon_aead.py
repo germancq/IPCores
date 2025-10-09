@@ -87,8 +87,8 @@ class ASCON_AEAD:
         x_aux = (x) & ((2**r) - 1)
         while x_aux != 0:
             print(hex(x_aux))
-            arr.insert(i - 1, x_aux)
-            x_aux = (x >> (r * i)) & ((2**r) - 1)
+            arr.insert(i - 1, x_aux & ((2**r) - 1))
+            x_aux = x >> (r * i)
             i = i + 1
 
         arr_result = []
