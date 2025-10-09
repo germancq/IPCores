@@ -18,6 +18,29 @@ targets:
       vcs_options : [-timescale=1ns/1ns]
     filesets : [rtl ,cocotb]  
     toplevel : initial_state
+    parameters :
+      - rate=16
+      - a=12
+      - b=8
+      - k=128
+      - version=1
+
+parameters :
+  rate :
+    datatype : int
+    paramtype : vlogparam
+  a :
+    datatype : int
+    paramtype : vlogparam
+  b :
+    datatype : int
+    paramtype : vlogparam
+  k :
+    datatype : int
+    paramtype : vlogparam
+  version :
+    datatype : int
+    paramtype : vlogparam
 
 
 filesets:

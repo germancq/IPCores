@@ -6,13 +6,27 @@
  * Last Modified By  : German C.Quiveu <germancq@dte.us.es>
  */
 
-module initial_state (
+module initial_state #(
+    parameter rate = 16,  //rate in bytes
+    parameter a = 12,
+    parameter b = 8,
+    parameter k = 128,
+    parameter version = 1
+) (
     input  [127:0] key,
     input  [127:0] nonce,
     output [ 63:0] state_ascon_din[4:0]
 );
 
-  assign state_ascon_din[0] = 64'h00001000808C0001;
+  assign state_ascon_din[0][7:0] = version;  //64'h00001000808C0001;
+  assign state_ascon_din[0][15:8] = 0;
+  assign state_ascon_din[0][19:16] = a;  //64'h00001000808C0001;
+  assign state_ascon_din[0][23:20] = b;  //64'h00001000808C0001;
+  assign state_ascon_din[0][31:24] = k;  //64'h00001000808C0001;
+  assign state_ascon_din[0][39:32] = 0;  //64'h00001000808C0001;
+  assign state_ascon_din[0][47:40] = rate;  //64'h00001000808C0001;
+  assign state_ascon_din[0][63:48] = 0;  //64'h00001000808C0001;
+
   assign state_ascon_din[1] = {
     key[71:64],
     key[79:72],
