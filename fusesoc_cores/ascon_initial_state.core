@@ -1,0 +1,49 @@
+CAPI=2:
+
+name : ::ascon_initial_state:0
+description : ascon_initial_state
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : verilator 
+      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -Wno-SELRANGE]
+      cocotb_module : ascon_initial_state_test
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl ,cocotb]  
+    toplevel : initial_state
+
+
+filesets:
+  cocotb :
+    files :
+      - block_ciphers/ASCON/cocotb_files/ascon_initial_state_test.py : {file_type : user, copyto : .}
+      - block_ciphers/ASCON/python_code/ascon_aead.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+
+
+  rtl:
+    file_type: systemVerilogSource
+    files: 
+      - block_ciphers/ASCON/hdl_code/initial_state.sv      
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+
+
+
+
+
+
