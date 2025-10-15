@@ -218,11 +218,20 @@ class ASCON_AEAD:
         self.key_0 = 0
         self.key_1 = 0
 
-        for i in range(0, len(bytes_key_0)):
-            self.key_0 = (bytes_key_0[i] << (8 * i)) + self.key_0
+        # for i in range(0, len(bytes_key_0)):
+        for i in range(0, 8):
+            if i < len(bytes_key_0):
+                self.key_0 = (bytes_key_0[i] << (8 * i)) + self.key_0
+            else:
+                self.key_0 = (0 << (8 * i)) + self.key_0
 
-        for i in range(0, len(bytes_key_1)):
-            self.key_1 = (bytes_key_1[i] << (8 * i)) + self.key_1
+        for i in range(0, 8):
+            if i < len(bytes_key_1):
+                self.key_1 = (bytes_key_1[i] << (8 * i)) + self.key_1
+            else:
+                self.key_1 = (0 << (8 * i)) + self.key_1
+        # for i in range(0, len(bytes_key_1)):
+        #    self.key_1 = (bytes_key_1[i] << (8 * i)) + self.key_1
 
         nonce_0 = (self.nonce) & ((2**64) - 1)
         nonce_1 = self.nonce >> 64
@@ -231,10 +240,20 @@ class ASCON_AEAD:
         nonce_0 = 0
         nonce_1 = 0
 
-        for i in range(0, len(bytes_nonce_0)):
-            nonce_0 = (bytes_nonce_0[i] << (8 * i)) + nonce_0
-        for i in range(0, len(bytes_nonce_1)):
-            nonce_1 = (bytes_nonce_1[i] << (8 * i)) + nonce_1
+        # for i in range(0, len(bytes_nonce_0)):
+        #    nonce_0 = (bytes_nonce_0[i] << (8 * i)) + nonce_0
+        for i in range(0, 8):
+            if i < len(bytes_nonce_0):
+                nonce_0 = (bytes_nonce_0[i] << (8 * i)) + nonce_0
+            else:
+                nonce_0 = (0 << (8 * i)) + nonce_0
+        # for i in range(0, len(bytes_nonce_1)):
+        #     nonce_1 = (bytes_nonce_1[i] << (8 * i)) + nonce_1
+        for i in range(0, 8):
+            if i < len(bytes_nonce_1):
+                nonce_1 = (bytes_nonce_1[i] << (8 * i)) + nonce_1
+            else:
+                nonce_1 = (0 << (8 * i)) + nonce_1
 
         initial_state = (
             (IV << 256)
