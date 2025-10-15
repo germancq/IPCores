@@ -14,7 +14,8 @@ virtual class ascon_utils #(
     logic [LEN-1:0] result;
 
     for (int i = 0; i < (LEN >> 3); i++) begin
-      result[7+(i*8):(i*8)] = i_data[(LEN-1)-(i*8):(LEN)-((i+1)*8)];
+      //result[7+(i*8):(i*8)] = i_data[(LEN-1)-(i*8):(LEN)-((i+1)*8)];
+      result[(i*8)+:8] = i_data[(LEN-1)-(i*8)-:8];
     end
     return result;
 
