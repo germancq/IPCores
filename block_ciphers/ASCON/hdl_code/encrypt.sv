@@ -26,7 +26,42 @@ module encrypt #(
     output end_signal
 );
 
-  logic sel_i_state_or_p_impl;
+  logic [1:0] sel_i_state;
+
+  logic [63:0] key_0, key_1;
+
+  //assign key_0 = {
+  //  key[7:0], key[15:8], key[23:16], key[31:24], key[39:32], key[47:40], key[55:48], key[63:56]
+  //};
+  assign key_0 = ascon_utils#(.LEN(64))::order(key[63:0]);
+
+  assign key_1 = {
+    key[71:64],
+    key[79:72],
+    key[87:80],
+    key[95:88],
+    key[103:96],
+    key[111:104],
+    key[119:112],
+    key[127:120]
+  };
+
+  localparam SEL_CUSTOM = 0;
+  localparam SEL_INIT_STATE = 2;
+  localparam SEL_PERMUTATION_STATE = 3;
+
+  logic reg_ciphertext_cl;
+  logic reg_ciphertext_w;
+  logic [(rate<<3)-1:0] reg_ciphertext_din;
+  register #(
+      .DATA_WIDTH(rate << 3)
+  ) reg_ciphertext (
+      .clk(clk),
+      .cl(reg_ciphertext_cl),
+      .w(reg_ciphertext_w),
+      .din(reg_ciphertext_din),
+      .dout(ciphertext)
+  );
 
 
   genvar i;
@@ -34,6 +69,9 @@ module encrypt #(
   logic [0:0] state_ascon_w[4:0];
   logic [63:0] state_ascon_din[4:0];
   logic [63:0] state_ascon_dout[4:0];
+
+  logic [63:0] custom_state_ascon_din[4:0];
+  logic [0:0] custom_state_ascon_w[4:0];
   generate
     for (i = 0; i < 5; i++) begin
       register #(
@@ -46,12 +84,31 @@ module encrypt #(
           .dout(state_ascon_dout[i])
       );
 
-      assign state_ascon_din[i] = sel_i_state_or_p_impl == 0 ? i_state_impl_state_ascon_din[i]:p_impl_state_ascon_din[i];
+      mux_4 #(
+          .DATA_WIDTH(64)
+      ) mux_state_din (
+          .a  (custom_state_ascon_din[i]),
+          .b  (custom_state_ascon_din[i]),
+          .c  (i_state_impl_state_ascon_din[i]),
+          .d  (p_impl_state_ascon_din[i]),
+          .e  (state_ascon_din[i]),
+          .sel(sel_i_state)
+      );
 
-      assign state_ascon_w[i] = sel_i_state_or_p_impl == 0 ? 1 : p_impl_state_ascon_w[i];
+      mux_4 #(
+          .DATA_WIDTH(1)
+      ) mux_state_w (
+          .a  (custom_state_ascon_w[i]),
+          .b  (custom_state_ascon_w[i]),
+          .c  (1),
+          .d  (p_impl_state_ascon_w[i]),
+          .e  (state_ascon_w[i]),
+          .sel(sel_i_state)
+      );
 
     end
   endgenerate
+
 
   logic [63:0] i_state_impl_state_ascon_din[4:0];
   initial_state #(
@@ -83,13 +140,107 @@ module encrypt #(
       .end_signal(p_impl_end_signal)
   );
 
+  logic [3:0] current_state, next_state, jmp_state;
+  logic r_jmp_state_cl;
+  logic r_jmp_state_w;
+  logic [3:0] r_jmp_state_din;
+
+  register #(
+      .DATA_WIDTH(4)
+  ) r_jmp_state (
+      .clk(clk),
+      .cl(r_jmp_state_cl),
+      .w(r_jmp_state_w),
+      .din(r_jmp_state_din),
+      .dout(jmp_state)
+  );
+
+  localparam IDLE = 0;
+  localparam INITIAL_STATE = 1;
+  localparam XOR_KEY = 2;
+  localparam ASCON_PERMUTATION_A_0 = 3;
+  localparam ASCON_PERMUTATION_A_1 = 4;
+  localparam ASCON_PERMUTATION_A_2 = 5;
+
   logic [31:0] j;
   always_comb begin
     next_state = current_state;
 
+    r_jmp_state_cl = 0;
+    r_jmp_state_w = 0;
+    r_jmp_state_din = current_state;
+
+    p_impl_rst = 0;
+    p_impl_start = 0;
+    p_impl_total_rounds = a;
+
+    sel_i_state = SEL_CUSTOM;
+
+
+
+    for (j = 0; j < 5; j++) begin
+      state_ascon_cl[j] = 0;
+      custom_state_ascon_w[j] = 0;
+      custom_state_ascon_din[j] = 0;
+    end
+
+    reg_ciphertext_cl = 0;
+    reg_ciphertext_w = 0;
+    reg_ciphertext_din = 0;
+
+    end_signal = 0;
+
     case (current_state)
       IDLE: begin
+        r_jmp_state_cl = 1;
+        reg_ciphertext_cl = 1;
+        for (j = 0; j < 5; j++) begin
+          state_ascon_cl[j] = 1;
+        end
+        p_impl_rst = 1;
 
+        if (start) begin
+          next_state = INITIAL_STATE;
+        end
+      end
+      INITIAL_STATE: begin
+        sel_i_state = SEL_INIT_STATE;
+        next_state = ASCON_PERMUTATION_A_0;
+        r_jmp_state_din = XOR_KEY;
+        r_jmp_state_w = 1;
+      end
+      XOR_KEY: begin
+
+        custom_state_ascon_din[4] = state_ascon_dout[4] ^ key_0;
+
+        custom_state_ascon_din[3] = state_ascon_dout[3] ^ key_1;
+
+        custom_state_ascon_w[4] = 1;
+        custom_state_ascon_w[3] = 1;
+
+        next_state = ASSOCIATED_DATA;
+
+      end
+
+
+      ASCON_PERMUTATION_A_0: begin
+        sel_i_state = SEL_PERMUTATION_STATE;
+        p_impl_total_rounds = a;
+        p_impl_start = 1;
+        next_state = ASCON_PERMUTATION_A_1;
+      end
+      ASCON_PERMUTATION_A_1: begin
+        sel_i_state = SEL_PERMUTATION_STATE;
+        p_impl_total_rounds = a;
+        if (p_impl_end_signal == 1) begin
+          next_state = ASCON_PERMUTATION_A_2;
+        end
+      end
+      ASCON_PERMUTATION_A_2: begin
+        sel_i_state = SEL_PERMUTATION_STATE;
+        p_impl_total_rounds = a;
+        p_impl_rst = 1;
+        next_state = jmp_state;
       end
 
     endcase

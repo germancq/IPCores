@@ -37,9 +37,10 @@ module initial_state #(
     key[119:112],
     key[127:120]
   };
-  assign state_ascon_din[2] = {
-    key[7:0], key[15:8], key[23:16], key[31:24], key[39:32], key[47:40], key[55:48], key[63:56]
-  };
+  //assign state_ascon_din[2] = {
+  //  key[7:0], key[15:8], key[23:16], key[31:24], key[39:32], key[47:40], key[55:48], key[63:56]
+  //};
+  assign state_ascon_din[2] = ascon_utils#(.LEN(64))::order(key[63:0]);
 
   assign state_ascon_din[3] = {
     nonce[71:64],
