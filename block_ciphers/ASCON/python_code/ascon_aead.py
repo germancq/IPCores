@@ -84,7 +84,7 @@ class ASCON_AEAD:
         print("parse x = {} with r = {}".format(hex(x), r))
         arr = []
         i = 1
-        x_aux = (x) & ((2**r) - 1)
+        x_aux = x  # & ((2**r) - 1)
         while x_aux != 0:
             print(hex(x_aux))
             arr.insert(i - 1, x_aux & ((2**r) - 1))
