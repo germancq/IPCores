@@ -60,6 +60,7 @@ filesets:
     file_type: systemVerilogSource
     files: 
       - block_ciphers/ASCON/hdl_code/encrypt.sv      
+      - block_ciphers/ASCON/hdl_code/ascon_utils.sv
     depend:
       - ascon_permutation
       - register
