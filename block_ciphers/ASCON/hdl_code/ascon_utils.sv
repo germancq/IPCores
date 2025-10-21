@@ -7,7 +7,8 @@
  */
 
 virtual class ascon_utils #(
-    parameter LEN = 64
+    parameter LEN  = 64,
+    parameter RATE = 64
 );
 
   static function logic [LEN-1:0] order(input logic [LEN-1:0] i_data);
@@ -33,6 +34,16 @@ virtual class ascon_utils #(
     result = order(i_data);
     result = pad(result);
     return result;
+  endfunction
+
+  static function logic [RATE-1:0] xor_data(input logic [LEN-1:0] i_data);
+    logic [RATE-1:0] result;
+    result = 0;
+    for (int i = 0; i < $floor(LEN / RATE); i++) begin
+      result = result ^ i_data[(i*(RATE))+:RATE];
+    end
+    return result;
+
   endfunction
 
 

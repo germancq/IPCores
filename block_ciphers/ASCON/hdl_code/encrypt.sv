@@ -23,7 +23,7 @@ module encrypt #(
     input [a_len-1:0] a_data,
     output [(rate<<3)-1:0] ciphertext,
     output [127:0] tag,
-    output end_signal
+    output logic end_signal
 );
 
   logic [1:0] sel_i_state;
@@ -172,7 +172,6 @@ module encrypt #(
   localparam ASSOCIATED_DATA = 9;
   localparam UPDATE_STATE = 10;
 
-  logic [(rate<<3)-1:0] aux_var;
 
   logic [31:0] j;
   always_comb begin
@@ -234,11 +233,17 @@ module encrypt #(
       end
       ASSOCIATED_DATA: begin
 
-        for (j = 0; j < ($floor(a_len / (rate << 3))); j++) begin
-          aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
-        end
+        //for (j = 0; j < ($floor(a_len / (rate << 3))); j++) begin
+        //  aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
+        //end
 
-        custom_state_ascon_din[0] = state_ascon_dout[0] ^ aux_var;
+        custom_state_ascon_din[0] = state_ascon_dout[0] ^ ascon_utils#(
+            .LEN (a_len),
+            .RATE(rate << 3)
+        )::xor_data(
+          a_data_reord
+        );  //aux_var;
+
         custom_state_ascon_w[0] = 1;
 
         next_state = ASCON_PERMUTATION_B_0;
