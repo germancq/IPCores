@@ -66,6 +66,7 @@ filesets:
       - register
       - counter
       - mux
+      - ascon_initial_state
 
 provider:
     name: github

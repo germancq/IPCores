@@ -235,7 +235,7 @@ module encrypt #(
       ASSOCIATED_DATA: begin
 
         for (j = 0; j < ($floor(a_len / (rate << 3))); j++) begin
-          aux_var = aux_var ^ a_data_reord[((rate<<3)-1)+(j*(rate<<3)):(j*(rate<<3))];
+          aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
         end
 
         custom_state_ascon_din[0] = state_ascon_dout[0] ^ aux_var;
