@@ -23,6 +23,7 @@ CLK_PERIOD = 20
 def setup_dut(dut):
     cocotb.fork(Clock(dut.clk, CLK_PERIOD, "ns").start())
     dut.rst.value = 0
+    print(dut.version.value)
 
 
 async def rst_function_test(dut):
