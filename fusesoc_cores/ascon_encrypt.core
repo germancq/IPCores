@@ -59,7 +59,6 @@ filesets:
   rtl:
     file_type: systemVerilogSource
     files: 
-      - block_ciphers/ASCON/hdl_code/ascon_utils.sv
       - block_ciphers/ASCON/hdl_code/encrypt.sv      
     depend:
       - ascon_permutation
