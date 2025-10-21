@@ -30,6 +30,8 @@ module encrypt #(
 
   logic [63:0] key_0, key_1;
 
+  logic [a_len-1:0] a_data_reord;
+
   //assign key_0 = {
   //  key[7:0], key[15:8], key[23:16], key[31:24], key[39:32], key[47:40], key[55:48], key[63:56]
   //};
@@ -46,6 +48,8 @@ module encrypt #(
   //   key[127:120]
   // };
   assign key_1 = ascon_utils#(.LEN(64))::order(key[127:64]);
+
+  assign a_data_reord = ascon_utils#(.LEN(a_len))::order_and_pad(a_data);
 
   localparam SEL_CUSTOM = 0;
   localparam SEL_INIT_STATE = 2;
@@ -162,6 +166,13 @@ module encrypt #(
   localparam ASCON_PERMUTATION_A_0 = 3;
   localparam ASCON_PERMUTATION_A_1 = 4;
   localparam ASCON_PERMUTATION_A_2 = 5;
+  localparam ASCON_PERMUTATION_B_0 = 6;
+  localparam ASCON_PERMUTATION_B_1 = 7;
+  localparam ASCON_PERMUTATION_B_2 = 8;
+  localparam ASSOCIATED_DATA = 9;
+  localparam UPDATE_STATE = 10;
+
+  logic [(rate<<3)-1:0] aux_var;
 
   logic [31:0] j;
   always_comb begin
@@ -220,7 +231,19 @@ module encrypt #(
         custom_state_ascon_w[3] = 1;
 
         next_state = ASSOCIATED_DATA;
+      end
+      ASSOCIATED_DATA: begin
 
+        for (j = 0; j < ($floor(a_len / (rate << 3))); j++) begin
+          aux_var = aux_var ^ a_data_reord[((rate<<3)-1)+(j*(rate<<3)):(j*(rate<<3))];
+        end
+
+        custom_state_ascon_din[0] = state_ascon_dout[0] ^ aux_var;
+        custom_state_ascon_w[0] = 1;
+
+        next_state = ASCON_PERMUTATION_B_0;
+        r_jmp_state_din = UPDATE_STATE;
+        r_jmp_state_w = 1;
       end
 
 
@@ -240,6 +263,25 @@ module encrypt #(
       ASCON_PERMUTATION_A_2: begin
         sel_i_state = SEL_PERMUTATION_STATE;
         p_impl_total_rounds = a;
+        p_impl_rst = 1;
+        next_state = jmp_state;
+      end
+      ASCON_PERMUTATION_B_0: begin
+        sel_i_state = SEL_PERMUTATION_STATE;
+        p_impl_total_rounds = b;
+        p_impl_start = 1;
+        next_state = ASCON_PERMUTATION_B_1;
+      end
+      ASCON_PERMUTATION_B_1: begin
+        sel_i_state = SEL_PERMUTATION_STATE;
+        p_impl_total_rounds = b;
+        if (p_impl_end_signal == 1) begin
+          next_state = ASCON_PERMUTATION_B_2;
+        end
+      end
+      ASCON_PERMUTATION_B_2: begin
+        sel_i_state = SEL_PERMUTATION_STATE;
+        p_impl_total_rounds = b;
         p_impl_rst = 1;
         next_state = jmp_state;
       end

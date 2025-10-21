@@ -1,0 +1,83 @@
+CAPI=2:
+
+name : ::ascon_encrypt:0
+description : ascon_encrypt
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+  sim : 
+    flow : sim
+    flow_options :
+      tool : verilator 
+      verilator_options : [-Wno-WIDTHEXPAND -Wno-WIDTHTRUNC -Wno-SELRANGE]
+      cocotb_module : ascon_encrypt_test
+      timescale : 1ns/1ns
+      vcs_options : [-timescale=1ns/1ns]
+    filesets : [rtl ,cocotb]  
+    toplevel : encrypt
+    parameters :
+      - rate=16
+      - a=12
+      - b=8
+      - k=128
+      - version=1
+      - a_len = 64
+
+parameters :
+  rate :
+    datatype : int
+    paramtype : vlogparam
+  a :
+    datatype : int
+    paramtype : vlogparam
+  b :
+    datatype : int
+    paramtype : vlogparam
+  k :
+    datatype : int
+    paramtype : vlogparam
+  version :
+    datatype : int
+    paramtype : vlogparam
+  a_len :
+    datatype : int
+    paramtype : vlogparam
+
+
+filesets:
+  cocotb :
+    files :
+      - block_ciphers/ASCON/cocotb_files/ascon_encrypt_test.py : {file_type : user, copyto : .}
+      - block_ciphers/ASCON/python_code/ascon_aead.py : {file_type : user, copyto : .}
+    depend :
+      - vlog_tb_utils
+
+
+  rtl:
+    file_type: systemVerilogSource
+    files: 
+      - block_ciphers/ASCON/hdl_code/ascon_utils.sv
+      - block_ciphers/ASCON/hdl_code/encrypt.sv      
+    depend:
+      - ascon_permutation
+      - register
+      - counter
+      - mux
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+
+
+
+
+
+
+
