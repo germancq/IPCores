@@ -30,8 +30,6 @@ async def test(dut, index=0):
     dut.key.value = key
     dut.nonce.value = nonce
 
-    print(dut.version.value)
-
     await Timer(10, units="ns")
 
     for i in range(0, 5):

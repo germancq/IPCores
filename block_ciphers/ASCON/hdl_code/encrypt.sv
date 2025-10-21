@@ -232,17 +232,19 @@ module encrypt #(
         next_state = ASSOCIATED_DATA;
       end
       ASSOCIATED_DATA: begin
+        aux_var = 0;
 
-        //for (j = 0; j < ($floor(a_len / (rate << 3))); j++) begin
-        //  aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
-        //end
+        for (j = 0; j < ($floor(a_len / (rate << 3))); j++) begin
+          aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
+        end
 
-        custom_state_ascon_din[0] = state_ascon_dout[0] ^ ascon_utils#(
-            .LEN (a_len),
-            .RATE(rate << 3)
-        )::xor_data(
-          a_data_reord
-        );  //aux_var;
+        //custom_state_ascon_din[0] = state_ascon_dout[0] ^ ascon_utils#(
+        //    .LEN (a_len),
+        //    .RATE(rate << 3)
+        //)::xor_data(
+        //  a_data_reord
+        //);  //aux_var;
+        custom_state_ascon_din[0] = state_ascon_dout[0] ^ aux_var;
 
         custom_state_ascon_w[0] = 1;
 
