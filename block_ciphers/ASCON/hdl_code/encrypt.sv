@@ -35,16 +35,17 @@ module encrypt #(
   //};
   assign key_0 = ascon_utils#(.LEN(64))::order(key[63:0]);
 
-  assign key_1 = {
-    key[71:64],
-    key[79:72],
-    key[87:80],
-    key[95:88],
-    key[103:96],
-    key[111:104],
-    key[119:112],
-    key[127:120]
-  };
+  // assign key_1 = {
+  //   key[71:64],
+  //   key[79:72],
+  //   key[87:80],
+  //   key[95:88],
+  //   key[103:96],
+  //   key[111:104],
+  //   key[119:112],
+  //   key[127:120]
+  // };
+  assign key_1 = ascon_utils#(.LEN(64))::order(key[127:64]);
 
   localparam SEL_CUSTOM = 0;
   localparam SEL_INIT_STATE = 2;
