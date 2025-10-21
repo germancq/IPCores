@@ -7,8 +7,7 @@
  */
 
 virtual class ascon_utils #(
-    parameter LEN = 64,
-    parameter R   = 64
+    parameter LEN = 64
 );
 
   static function logic [LEN-1:0] order(input logic [LEN-1:0] i_data);
@@ -22,12 +21,19 @@ virtual class ascon_utils #(
 
   endfunction
 
-  static function logic [$floor(LEN/R):0][R-1:0] parse(input logic [LEN-1:0] i_data);
-    logic [R-1:0] result[$floor(LEN/R)];
-    for (int i = 0; i < $floor(LEN / R); i++) begin
-      result[i] = i_data[((R-1)-(i*R))-:R];
-    end
+  static function logic [LEN-1:0] pad(input logic [LEN-1:0] i_data);
+    logic [LEN-1:0] result;
+    result = i_data ^ (1 << ($clog2(i_data) + 1));
+    return result;
+
+  endfunction
+
+  static function logic [LEN-1:0] order_and_pad(input logic [LEN-1:0] i_data);
+    logic [LEN-1:0] result;
+    result = order(i_data);
+    result = pad(result);
     return result;
   endfunction
+
 
 endclass
