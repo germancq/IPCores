@@ -173,6 +173,7 @@ module encrypt #(
   localparam UPDATE_STATE = 10;
 
 
+  logic [(rate<<3)-1:0] aux_var;
   logic [31:0] j;
   always_comb begin
     next_state = current_state;
