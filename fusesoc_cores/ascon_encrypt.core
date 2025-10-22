@@ -66,6 +66,7 @@ filesets:
       - counter
       - mux
       - ascon_initial_state
+      - ascon_utils_modules
 
 provider:
     name: github

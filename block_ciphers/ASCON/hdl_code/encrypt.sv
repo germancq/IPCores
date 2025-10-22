@@ -32,10 +32,17 @@ module encrypt #(
 
   logic [a_len-1:0] a_data_reord;
 
-  //assign key_0 = {
-  //  key[7:0], key[15:8], key[23:16], key[31:24], key[39:32], key[47:40], key[55:48], key[63:56]
-  //};
-  assign key_0 = ascon_utils#(.LEN(64))::order(key[63:0]);
+  // assign key_0 = {
+  //   key[7:0], key[15:8], key[23:16], key[31:24], key[39:32], key[47:40], key[55:48], key[63:56]
+  // };
+  //assign key_0 = ascon_utils#(.LEN(64))::order(key[63:0]);
+
+  reorder #(
+      .LEN(64)
+  ) reorder_k0 (
+      .i_data(key[63:0]),
+      .o_data(key_0)
+  );
 
   // assign key_1 = {
   //   key[71:64],
@@ -47,9 +54,22 @@ module encrypt #(
   //   key[119:112],
   //   key[127:120]
   // };
-  assign key_1 = ascon_utils#(.LEN(64))::order(key[127:64]);
+  //assign key_1 = ascon_utils#(.LEN(64))::order(key[127:64]);
 
-  assign a_data_reord = ascon_utils#(.LEN(a_len))::order_and_pad(a_data);
+  reorder #(
+      .LEN(64)
+  ) reorder_k1 (
+      .i_data(key[127:64]),
+      .o_data(key_1)
+  );
+
+  order_and_pad #(
+      .LEN(a_len)
+  ) ord_pad_impl (
+      .i_data(a_data),
+      .o_data(a_data_reord)
+  );
+  //assign a_data_reord = ascon_utils#(.LEN(a_len))::order_and_pad(a_data);
 
   localparam SEL_CUSTOM = 0;
   localparam SEL_INIT_STATE = 2;
