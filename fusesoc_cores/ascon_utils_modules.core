@@ -8,6 +8,7 @@ targets:
     filesets: 
       - rtl
 
+filesets:
   rtl:
     file_type: systemVerilogSource
     files: 
