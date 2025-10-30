@@ -31,6 +31,9 @@ module encrypt #(
   logic [63:0] key_0, key_1;
 
   logic [a_len-1:0] a_data_reord;
+  logic [(rate<<3)-1:0] plaintext_reord;
+
+  assign tag = {state_ascon_dout[3], state_ascon_dout[4]};
 
   // assign key_0 = {
   //   key[7:0], key[15:8], key[23:16], key[31:24], key[39:32], key[47:40], key[55:48], key[63:56]
@@ -70,6 +73,12 @@ module encrypt #(
       .o_data(a_data_reord)
   );
   //assign a_data_reord = ascon_utils#(.LEN(a_len))::order_and_pad(a_data);
+  order_and_pad #(
+      .LEN((rate << 3))
+  ) ord_pad_impl_plaintext (
+      .i_data(plaintext),
+      .o_data(plaintext_reord)
+  );
 
   localparam SEL_CUSTOM = 0;
   localparam SEL_INIT_STATE = 2;
@@ -191,6 +200,11 @@ module encrypt #(
   localparam ASCON_PERMUTATION_B_2 = 8;
   localparam ASSOCIATED_DATA = 9;
   localparam UPDATE_STATE = 10;
+  localparam PLAINTEXT_LAST_BLOCK = 11;
+  localparam PLAINTEXT_BLOCK = 12;
+  localparam TAG_DATA_0 = 13;
+  localparam TAG_DATA_1 = 14;
+  localparam END_STATE = 15;
 
 
   logic [(rate<<3)-1:0] aux_var;
@@ -273,8 +287,50 @@ module encrypt #(
         r_jmp_state_din = UPDATE_STATE;
         r_jmp_state_w = 1;
       end
-
-
+      UPDATE_STATE: begin
+        custom_state_ascon_din[4] = state_ascon_dout[4] ^ (1 << 63);
+        custom_state_ascon_w[4] = 1;
+        next_state = PLAINTEXT_BLOCK;
+        if (rate == 16) begin
+          next_state = PLAINTEXT_LAST_BLOCK;
+        end
+      end
+      PLAINTEXT_LAST_BLOCK: begin
+        //by specification there is two rates 64 or 128 bits
+        custom_state_ascon_din[0] = state_ascon_dout[0] ^ plaintext_reord[63:0];
+        custom_state_ascon_w[0] = 1;
+        reg_ciphertext_w = 1;
+        reg_ciphertext_din[63:0] = state_ascon_dout[0] ^ plaintext_reord[63:0];
+        next_state = TAG_DATA_0;
+      end
+      PLAINTEXT_BLOCK: begin
+        custom_state_ascon_din[0] = state_ascon_dout[0] ^ plaintext_reord[127:64];
+        custom_state_ascon_w[0] = 1;
+        reg_ciphertext_w = 1;
+        reg_ciphertext_din[127:64] = state_ascon_dout[0] ^ plaintext_reord[127:64];
+        next_state = ASCON_PERMUTATION_B_0;
+        r_jmp_state_din = PLAINTEXT_LAST_BLOCK;
+        r_jmp_state_w = 1;
+      end
+      TAG_DATA_0: begin
+        custom_state_ascon_din[2] = state_ascon_dout[2] ^ key_1;
+        custom_state_ascon_din[3] = state_ascon_dout[3] ^ key_1;
+        custom_state_ascon_w[2] = 1;
+        custom_state_ascon_w[3] = 1;
+        next_state = ASCON_PERMUTATION_A_0;
+        r_jmp_state_din = TAG_DATA_1;
+        r_jmp_state_w = 1;
+      end
+      TAG_DATA_1: begin
+        custom_state_ascon_din[3] = state_ascon_dout[2] ^ key_1;
+        custom_state_ascon_din[4] = state_ascon_dout[3] ^ key_1;
+        custom_state_ascon_w[3] = 1;
+        custom_state_ascon_w[4] = 1;
+        next_state = END_STATE;
+      end
+      END_STATE: begin
+        end_signal = 1;
+      end
       ASCON_PERMUTATION_A_0: begin
         sel_i_state = SEL_PERMUTATION_STATE;
         p_impl_total_rounds = a;
