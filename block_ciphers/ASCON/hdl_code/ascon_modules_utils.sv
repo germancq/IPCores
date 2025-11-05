@@ -8,7 +8,8 @@
 
 
 module reorder #(
-    parameter LEN = 64
+    parameter LEN = 64,
+    parameter BYTE_LEN = 64
 ) (
     input  [LEN-1:0] i_data,
     output [LEN-1:0] o_data
@@ -16,7 +17,7 @@ module reorder #(
 
   genvar i;
   generate
-    for (i = 0; i < (LEN >> 3); i++) begin
+    for (i = 0; i < (BYTE_LEN >> 3); i++) begin
       assign o_data[(i*8)+:8] = i_data[(LEN-1)-(i*8)-:8];
     end
   endgenerate
@@ -35,7 +36,8 @@ module pad #(
 endmodule : pad
 
 module order_and_pad #(
-    parameter LEN = 64
+    parameter LEN = 64,
+    parameter BYTE_LEN = 64
 ) (
     input  [LEN-1:0] i_data,
     output [LEN-1:0] o_data
@@ -44,7 +46,8 @@ module order_and_pad #(
   logic [LEN-1:0] aux;
 
   reorder #(
-      .LEN(LEN)
+      .LEN(LEN),
+      .BYTE_LEN(LEN)
   ) reorder_impl (
       .i_data(i_data),
       .o_data(aux)
