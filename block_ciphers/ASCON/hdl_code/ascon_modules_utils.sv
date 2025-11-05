@@ -50,7 +50,7 @@ module order_and_pad #(
 
   reorder #(
       .LEN(LEN),
-      .BYTE_LEN(LEN)
+      .BYTE_LEN(BYTE_LEN)
   ) reorder_impl (
       .i_data(i_data),
       .o_data(aux)
