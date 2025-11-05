@@ -14,15 +14,13 @@ module reorder #(
     output [LEN-1:0] o_data
 );
 
-  logic [LEN-1:0] aux;
   genvar i;
   generate
     for (i = 0; i < (LEN >> 3); i++) begin
-      assign aux[(i*8)+:8] = i_data[(LEN-1)-(i*8)-:8];
+      assign o_data[(i*8)+:8] = i_data[(LEN-1)-(i*8)-:8];
     end
   endgenerate
 
-  assign o_data = aux >> (LEN - $clog2(i_data));
 
 
 endmodule : reorder

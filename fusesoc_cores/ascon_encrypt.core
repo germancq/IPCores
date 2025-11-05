@@ -24,7 +24,7 @@ targets:
       - b=8
       - k=128
       - version=1
-      - a_len=64
+      - a_len=40
 
 parameters :
   rate :

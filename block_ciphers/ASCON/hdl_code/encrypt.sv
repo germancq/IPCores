@@ -12,7 +12,7 @@ module encrypt #(
     parameter rate = 16,
     parameter k = 128,
     parameter version = 1,
-    parameter a_len = 64
+    parameter a_len = 40
 ) (
     input clk,
     input rst,
