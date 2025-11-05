@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # File              : ascon_encrypt_test.py
 # Author            : German C.Quiveu <germancq@dte.us.es>
-# Date              : 21.10.2025
+# Date      ,       : 21.10.2025
 # Last Modified Date: 21.10.2025
 # Last Modified By  : German C.Quiveu <germancq@dte.us.es>
 
@@ -70,6 +70,8 @@ async def xor_key_state_test(dut, ascon_sw):
         dut.current_state.value == dut.XOR_KEY.value
     ), f"ERROR STATE IN XOR_KEY, STATE={dut.current_state.value}"
 
+    print(hex(ascon_sw.key_0))
+    print(hex(dut.key_0.value))
     ascon_sw.state_array[4] = ascon_sw.state_array[4] ^ ascon_sw.key_0
     ascon_sw.state_array[3] = ascon_sw.state_array[3] ^ ascon_sw.key_1
 
@@ -97,8 +99,7 @@ async def associated_data_test(dut, ascon_sw):
 
     associated_data = ascon_sw.parse(a_data_reord, 128)
     len_a_data = len(associated_data)
-    associated_data[len_a_data -
-                    1] = ascon_sw.pad(associated_data[len_a_data - 1], 128)
+    associated_data[len_a_data - 1] = ascon_sw.pad(associated_data[len_a_data - 1], 128)
     for a in associated_data:
         ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ a
 
