@@ -47,8 +47,7 @@ module order_and_pad #(
   logic [LEN-1:0] aux;
 
   reorder #(
-      .LEN(LEN),
-      .BYTE_LEN(BYTE_LEN)
+      .LEN(LEN)
   ) reorder_impl (
       .i_data(i_data),
       .o_data(aux)
