@@ -43,6 +43,7 @@ async def rst_function_test(dut):
 
 
 async def initial_state_test(dut, ascon_sw):
+    print("initial_state_test")
     dut.rst.value = 0
     await n_cycles_clock(dut, 5)
     assert (
@@ -59,15 +60,71 @@ async def initial_state_test(dut, ascon_sw):
     ascon_sw.get_initial_state()
     ascon_sw.ascon_permutation(dut.a.value)
 
-    for i in range(0, 5):
-        assert (
-            dut.state_ascon_dout[i].value == ascon_sw.state_array[i]
-        ), f"ERROR in state {i} on initial_state_test, expected = {hex(ascon_sw.state_array[i])}, calculated = {hex(dut.state_ascon_dout[i].value)}"
+    check_state(dut, ascon_sw)
+
+
+async def xor_key_state_test(dut, ascon_sw):
+    print("xor_key_state_test")
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.XOR_KEY.value
+    ), f"ERROR STATE IN XOR_KEY, STATE={dut.current_state.value}"
+
+    ascon_sw.state_array[4] = ascon_sw.state_array[4] ^ ascon_sw.key_0
+    ascon_sw.state_array[3] = ascon_sw.state_array[3] ^ ascon_sw.key_1
+
+    check_state(dut, ascon_sw)
+
+
+async def associated_data_test(dut, ascon_sw):
+    print("associated_data_test")
+    await n_cycles_clock(dut, 1)
+    assert (
+        dut.current_state.value == dut.ASSOCIATED_DATA.value
+    ), f"ERROR STATE IN ASSOCIATED_DATA, STATE={dut.current_state.value}"
+
+    a_data_endian = ascon_sw.parse(dut.a_data.value, 8)
+    a_data_reord = 0
+    i = 0
+    for a_d in a_data_endian:
+        a_data_reord = (a_d << (8 * i)) + a_data_reord
+        i = i + 1
+
+    assert (
+        dut.a_data_reord.value == a_data_reord
+    ), f"ERROR reording a_data, expected={hex(a_data_reord)} calculated = {hex(dut.a_data_reord.value)}"
+
+    associated_data = ascon_sw.parse(a_data_reord, 128)
+    len_a_data = len(associated_data)
+    associated_data[len_a_data -
+                    1] = ascon_sw.pad(associated_data[len_a_data - 1], 128)
+    for a in associated_data:
+        ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ a
+
+    await n_cycles_clock(dut, 1)
+    check_state(dut, ascon_sw)
+
+    ascon_sw.ascon_permutation(dut.b.value)
+    await permutation_b_test(dut)
+
+    check_state(dut, ascon_sw)
 
 
 async def permutation_a_test(dut):
     while dut.current_state.value != dut.ASCON_PERMUTATION_A_2:
         await n_cycles_clock(dut, 1)
+
+
+async def permutation_b_test(dut):
+    while dut.current_state.value != dut.ASCON_PERMUTATION_B_2:
+        await n_cycles_clock(dut, 1)
+
+
+def check_state(dut, ascon_sw):
+    for i in range(0, 5):
+        assert (
+            dut.state_ascon_dout[i].value == ascon_sw.state_array[i]
+        ), f"ERROR in state {i} on initial_state_test, expected = {hex(ascon_sw.state_array[i])}, calculated = {hex(dut.state_ascon_dout[i].value)}"
 
 
 async def n_cycles_clock(dut, n):
@@ -93,6 +150,8 @@ async def test(dut, index=0):
     setup_dut(dut, key, nonce, plaintext, a_data)
     await rst_function_test(dut)
     await initial_state_test(dut, ascon_sw)
+    await xor_key_state_test(dut, ascon_sw)
+    await associated_data_test(dut, ascon_sw)
 
 
 n = 0x4
