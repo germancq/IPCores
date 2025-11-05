@@ -41,8 +41,7 @@ module encrypt #(
   //assign key_0 = ascon_utils#(.LEN(64))::order(key[63:0]);
 
   reorder #(
-      .LEN(64),
-      .BYTE_LEN($clog2(i_data) << 3)
+      .LEN(64)
   ) reorder_k0 (
       .i_data(key[63:0]),
       .o_data(key_0)
@@ -61,16 +60,14 @@ module encrypt #(
   //assign key_1 = ascon_utils#(.LEN(64))::order(key[127:64]);
 
   reorder #(
-      .LEN(64),
-      .BYTE_LEN($clog2(i_data) << 3)
+      .LEN(64)
   ) reorder_k1 (
       .i_data(key[127:64]),
       .o_data(key_1)
   );
 
   order_and_pad #(
-      .LEN(a_len),
-      .BYTE_LEN($clog2(i_data) << 3)
+      .LEN(a_len)
   ) ord_pad_impl (
       .i_data(a_data),
       .o_data(a_data_reord)

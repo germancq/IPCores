@@ -8,8 +8,7 @@
 
 
 module reorder #(
-    parameter LEN = 64,
-    parameter BYTE_LEN = 64
+    parameter LEN = 64
 ) (
     input  [LEN-1:0] i_data,
     output [LEN-1:0] o_data
@@ -23,7 +22,7 @@ module reorder #(
     end
   endgenerate
 
-  assign o_data = aux >> (LEN - BYTE_LEN);
+  assign o_data = aux >> (LEN - $clog2(i_data));
 
 
 endmodule : reorder
@@ -39,8 +38,7 @@ module pad #(
 endmodule : pad
 
 module order_and_pad #(
-    parameter LEN = 64,
-    parameter BYTE_LEN = 64
+    parameter LEN = 64
 ) (
     input  [LEN-1:0] i_data,
     output [LEN-1:0] o_data
