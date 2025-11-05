@@ -72,6 +72,8 @@ async def xor_key_state_test(dut, ascon_sw):
 
     print(hex(ascon_sw.key_0))
     print(hex(dut.key_0.value))
+    print(hex(ascon_sw.key_1))
+    print(hex(dut.key_1.value))
     ascon_sw.state_array[4] = ascon_sw.state_array[4] ^ ascon_sw.key_0
     ascon_sw.state_array[3] = ascon_sw.state_array[3] ^ ascon_sw.key_1
 
@@ -126,7 +128,7 @@ def check_state(dut, ascon_sw):
     for i in range(0, 5):
         assert (
             dut.state_ascon_dout[i].value == ascon_sw.state_array[i]
-        ), f"ERROR in state {i} on initial_state_test, expected = {hex(ascon_sw.state_array[i])}, calculated = {hex(dut.state_ascon_dout[i].value)}"
+        ), f"ERROR in state {i} on state_test, expected = {hex(ascon_sw.state_array[i])}, calculated = {hex(dut.state_ascon_dout[i].value)}"
 
 
 async def n_cycles_clock(dut, n):
