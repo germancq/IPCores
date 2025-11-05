@@ -73,12 +73,13 @@ async def xor_key_state_test(dut, ascon_sw):
     ascon_sw.state_array[4] = ascon_sw.state_array[4] ^ ascon_sw.key_0
     ascon_sw.state_array[3] = ascon_sw.state_array[3] ^ ascon_sw.key_1
 
+    await n_cycles_clock(dut, 1)
+
     check_state(dut, ascon_sw)
 
 
 async def associated_data_test(dut, ascon_sw):
     print("associated_data_test")
-    await n_cycles_clock(dut, 1)
     assert (
         dut.current_state.value == dut.ASSOCIATED_DATA.value
     ), f"ERROR STATE IN ASSOCIATED_DATA, STATE={dut.current_state.value}"
