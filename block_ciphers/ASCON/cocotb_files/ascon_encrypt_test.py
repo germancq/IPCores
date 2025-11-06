@@ -104,8 +104,11 @@ async def associated_data_test(dut, ascon_sw):
     associated_data[len_a_data - 1] = ascon_sw.pad(associated_data[len_a_data - 1], 128)
     for a in associated_data:
         ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ a
+        print(hex(a))
+        print(hex(ascon_sw.state_array[0]))
 
     print(hex(dut.aux_var.value))
+    print(hex(dut.state_ascon_dout[0].value))
 
     await n_cycles_clock(dut, 1)
     check_state(dut, ascon_sw)
