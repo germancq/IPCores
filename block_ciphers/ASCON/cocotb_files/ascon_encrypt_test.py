@@ -229,10 +229,35 @@ async def tag_state_test(dut, ascon_sw):
         dut.current_state.value == dut.TAG_DATA_1.value
     ), f"ERROR STATE IN TAG_DATA_1, STATE={dut.current_state.value}"
 
+    await n_cycles_clock(dut, 1)
+
     ascon_sw.print_state()
+
+    check_state(dut, ascon_sw)
 
     ascon_sw.tag.insert(0, ascon_sw.state_array[3])
     ascon_sw.tag.insert(1, ascon_sw.state_array[4])
+
+
+async def end_state_test(dut, expected_ciphertext, expected_tag):
+    assert (
+        dut.current_state.value == dut.END_STATE.value
+    ), f"ERROR STATE IN END_STATE, STATE={dut.current_state.value}"
+
+    assert dut.end_signal.value == 1, f"ERROR end_signal"
+
+    print(hex(expected_ciphertext))
+    print(hex(dut.ciphertext.value))
+    print(hex(expected_tag))
+    print(hex(dut.tag.value))
+
+    assert (
+        dut.ciphertext.value == expected_ciphertext
+    ), f"ERROR in ciphertext, expected = {hex(expected_ciphertext)} calculated = {hex(dut.ciphertext.value)}"
+
+    assert (
+        dut.tag.value == expected_tag
+    ), f"ERROR in tag, expected = {hex(expected_tag)} calculated = {hex(dut.tag.value)}"
 
 
 async def permutation_a_test(dut):
@@ -280,6 +305,12 @@ async def test(dut, index=0):
     await update_state_test(dut, ascon_sw)
     await plaintext_state_test(dut, ascon_sw)
     await tag_state_test(dut, ascon_sw)
+
+    ascon_sw2 = ascon_aead.ASCON_AEAD(key, nonce)
+    expected_ciphertext, expected_tag = ascon_sw2.encrypt(
+        plaintext, a_data, dut.plaintext_len.value
+    )
+    await end_state_test(dut, expected_ciphertext, expected_tag)
 
 
 n = 0x4
