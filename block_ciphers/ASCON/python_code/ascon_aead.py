@@ -125,8 +125,7 @@ class ASCON_AEAD:
 
         associated_data = self.parse(a_data_reord, 128)
         len_a_data = len(associated_data)
-        associated_data[len_a_data -
-                        1] = self.pad(associated_data[len_a_data - 1], 128)
+        associated_data[len_a_data - 1] = self.pad(associated_data[len_a_data - 1], 128)
         for a in associated_data:
             self.state_array[0] = self.state_array[0] ^ a
 
@@ -150,8 +149,7 @@ class ASCON_AEAD:
         plaintext_data = self.parse(plaintext_reord, 128)
         len_plaintext_data = len(plaintext_data)
         print("len plaintext data = {}".format(len_plaintext_data))
-        bits_for_last_block = int(
-            len_plaintext_bits - (128 * (len_plaintext_data - 1)))
+        bits_for_last_block = int(len_plaintext_bits - (128 * (len_plaintext_data - 1)))
         # bits_for_last_block = int(
         #    math.ceil(math.log2(plaintext_data[len_plaintext_data - 1]))
         # )
@@ -201,7 +199,13 @@ class ASCON_AEAD:
         self.tag.insert(0, self.state_array[3])
         self.tag.insert(1, self.state_array[4])
 
-        return ciphertext_arr, self.tag
+        ciphertext_res = 0
+        for i in range(0, len(ciphertext_arr)):
+            ciphertext_res = ciphertext_res + ciphertext_arr[i] << (128 * i)
+
+            pass
+
+        return ciphertext_res, (self.tag[0] << 64 + self.tag[1])
 
     def get_initial_state(self):
         print(
@@ -211,8 +215,7 @@ class ASCON_AEAD:
         )
         self.key_0 = (self.key) & ((2**64) - 1)
         self.key_1 = self.key >> 64
-        print("key_0 = {}, key_1 = {}".format(
-            hex(self.key_0), hex(self.key_1)))
+        print("key_0 = {}, key_1 = {}".format(hex(self.key_0), hex(self.key_1)))
         bytes_key_0 = self.parse(self.key_0, 8)
         bytes_key_1 = self.parse(self.key_1, 8)
         self.key_0 = 0
@@ -366,8 +369,8 @@ if __name__ == "__main__":
     ascon = ASCON_AEAD(key, nonce)
     len_plaintext_bits = 40
     ciphertext, tag = ascon.encrypt(plaintext, add_data, len_plaintext_bits)
-    print(hex(ciphertext[0]))
-    print(hex(tag[0]))
-    print(hex(tag[1]))
-    ascon.print_constants()
-    ascon.print_sbox()
+    # print(hex(ciphertext[0]))
+    # print(hex(tag[0]))
+    # print(hex(tag[1]))
+    # ascon.print_constants()
+    # ascon.print_sbox()
