@@ -30,8 +30,8 @@ module encrypt #(
 
   logic [63:0] key_0, key_1;
 
-  logic [a_len:0] a_data_reord;
-  logic [(rate<<3):0] plaintext_reord;
+  logic [a_len-1:0] a_data_reord;
+  logic [(rate<<3)-1:0] plaintext_reord;
 
   assign tag = {state_ascon_dout[3], state_ascon_dout[4]};
 
@@ -66,14 +66,14 @@ module encrypt #(
       .o_data(key_1)
   );
 
-  order_and_pad #(
+  reorder #(
       .LEN(a_len)
   ) ord_pad_impl (
       .i_data(a_data),
       .o_data(a_data_reord)
   );
   //assign a_data_reord = ascon_utils#(.LEN(a_len))::order_and_pad(a_data);
-  order_and_pad #(
+  reorder #(
       .LEN((rate << 3))
   ) ord_pad_impl_plaintext (
       .i_data(plaintext),
@@ -270,7 +270,12 @@ module encrypt #(
         aux_var = 0;
 
         for (j = 0; j < ((a_len - 1) / (rate << 3)) + 1; j++) begin
-          aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
+          if (j == ((a_len - 1) / (rate << 3))) begin
+            //pad last block
+            aux_var = aux_var ^ {1'b1, a_data_reord[(j*(rate<<3))+:(rate<<3)]};
+          end else begin
+            aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
+          end
         end
 
         //custom_state_ascon_din[0] = state_ascon_dout[0] ^ ascon_utils#(
