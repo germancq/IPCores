@@ -270,13 +270,11 @@ module encrypt #(
         aux_var = 0;
 
         for (j = 0; j < ((a_len - 1) / (rate << 3)) + 1; j++) begin
-          if (j == ((a_len - 1) / (rate << 3))) begin
-            //pad last block
-            aux_var = aux_var ^ {1'b1, a_data_reord[(j*(rate<<3))+:(rate<<3)]};
-          end else begin
-            aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
-          end
+          aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
         end
+        //padding
+        aux_var = aux_var ^ (1 << a_len - ((a_len / (rate << 3)) * (rate << 3)));
+
 
         //custom_state_ascon_din[0] = state_ascon_dout[0] ^ ascon_utils#(
         //    .LEN (a_len),
