@@ -200,6 +200,41 @@ async def plaintext_state_test(dut, ascon_sw):
     check_state(dut, ascon_sw)
 
 
+async def tag_state_test(dut, ascon_sw):
+    assert (
+        dut.current_state.value == dut.TAG_DATA_0.value
+    ), f"ERROR STATE IN TAG_DATA_0, STATE={dut.current_state.value}"
+
+    ascon_sw.state_array[2] = ascon_sw.state_array[2] ^ ascon_sw.key_1
+    ascon_sw.state_array[3] = ascon_sw.state_array[3] ^ ascon_sw.key_0
+
+    ascon_sw.print_state()
+
+    await n_cycles_clock(dut, 1)
+    check_state(dut, ascon_sw)
+
+    ascon_sw.ascon_permutation(dut.a.value)
+
+    ascon_sw.print_state()
+
+    await permutation_a_test(dut)
+    check_state(dut, ascon_sw)
+
+    await n_cycles_clock(dut, 1)
+
+    ascon_sw.state_array[3] = ascon_sw.state_array[3] ^ ascon_sw.key_1
+    ascon_sw.state_array[4] = ascon_sw.state_array[4] ^ ascon_sw.key_0
+
+    assert (
+        dut.current_state.value == dut.TAG_DATA_1.value
+    ), f"ERROR STATE IN TAG_DATA_1, STATE={dut.current_state.value}"
+
+    ascon_sw.print_state()
+
+    ascon_sw.tag.insert(0, ascon_sw.state_array[3])
+    ascon_sw.tag.insert(1, ascon_sw.state_array[4])
+
+
 async def permutation_a_test(dut):
     while dut.current_state.value != dut.ASCON_PERMUTATION_A_2:
         await n_cycles_clock(dut, 1)
@@ -244,6 +279,7 @@ async def test(dut, index=0):
     await associated_data_test(dut, ascon_sw)
     await update_state_test(dut, ascon_sw)
     await plaintext_state_test(dut, ascon_sw)
+    await tag_state_test(dut, ascon_sw)
 
 
 n = 0x4
