@@ -30,8 +30,8 @@ module encrypt #(
 
   logic [63:0] key_0, key_1;
 
-  logic [a_len-1:0] a_data_reord;
-  logic [(rate<<3)-1:0] plaintext_reord;
+  logic [a_len:0] a_data_reord;
+  logic [(rate<<3):0] plaintext_reord;
 
   assign tag = {state_ascon_dout[3], state_ascon_dout[4]};
 

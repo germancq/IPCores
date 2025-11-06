@@ -29,9 +29,10 @@ module pad #(
     parameter LEN = 64
 ) (
     input  [LEN-1:0] i_data,
-    output [LEN-1:0] o_data
+    output [  LEN:0] o_data
 );
-  assign o_data = i_data ^ (1 << ($clog2(i_data) + 1));
+  //assign o_data = i_data ^ (1 << ($clog2(i_data) + 1));
+  assign o_data = {1'b1, i_data};
 
 endmodule : pad
 
@@ -39,7 +40,7 @@ module order_and_pad #(
     parameter LEN = 64
 ) (
     input  [LEN-1:0] i_data,
-    output [LEN-1:0] o_data
+    output [  LEN:0] o_data
 );
 
   logic [LEN-1:0] aux;
