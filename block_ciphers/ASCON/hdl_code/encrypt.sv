@@ -267,9 +267,9 @@ module encrypt #(
         next_state = ASSOCIATED_DATA;
       end
       ASSOCIATED_DATA: begin
-        aux_var = 20;
+        aux_var = 0;
 
-        for (j = 0; j < ($floor(a_len / (rate << 3))); j++) begin
+        for (j = 0; j < ($ceil(a_len / (rate << 3))); j++) begin
           aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
         end
 
