@@ -205,7 +205,7 @@ class ASCON_AEAD:
 
             pass
 
-        return ciphertext_res, (self.tag[0] << 64 + self.tag[1])
+        return ciphertext_res, ((self.tag[0] << 64) + self.tag[1])
 
     def get_initial_state(self):
         print(
