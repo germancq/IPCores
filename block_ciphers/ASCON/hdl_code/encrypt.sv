@@ -318,7 +318,7 @@ module encrypt #(
       end
       TAG_DATA_0: begin
         custom_state_ascon_din[2] = state_ascon_dout[2] ^ key_1;
-        custom_state_ascon_din[3] = state_ascon_dout[3] ^ key_1;
+        custom_state_ascon_din[3] = state_ascon_dout[3] ^ key_0;
         custom_state_ascon_w[2] = 1;
         custom_state_ascon_w[3] = 1;
         next_state = ASCON_PERMUTATION_A_0;
@@ -326,8 +326,8 @@ module encrypt #(
         r_jmp_state_w = 1;
       end
       TAG_DATA_1: begin
-        custom_state_ascon_din[3] = state_ascon_dout[2] ^ key_1;
-        custom_state_ascon_din[4] = state_ascon_dout[3] ^ key_1;
+        custom_state_ascon_din[3] = state_ascon_dout[3] ^ key_1;
+        custom_state_ascon_din[4] = state_ascon_dout[4] ^ key_0;
         custom_state_ascon_w[3] = 1;
         custom_state_ascon_w[4] = 1;
         next_state = END_STATE;
