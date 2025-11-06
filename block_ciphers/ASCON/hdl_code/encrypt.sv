@@ -12,7 +12,8 @@ module encrypt #(
     parameter rate = 16,
     parameter k = 128,
     parameter version = 1,
-    parameter a_len = 40
+    parameter a_len = 40,
+    parameter plaintext_len = 40
 ) (
     input clk,
     input rst,
@@ -74,7 +75,7 @@ module encrypt #(
   );
   //assign a_data_reord = ascon_utils#(.LEN(a_len))::order_and_pad(a_data);
   reorder #(
-      .LEN((rate << 3))
+      .LEN(plaintext_len)
   ) ord_pad_impl_plaintext (
       .i_data(plaintext),
       .o_data(plaintext_reord)

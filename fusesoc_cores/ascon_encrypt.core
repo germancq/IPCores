@@ -25,6 +25,7 @@ targets:
       - k=128
       - version=1
       - a_len=40
+      - plaintext_len=40
 
 parameters :
   rate :
@@ -43,6 +44,9 @@ parameters :
     datatype : int
     paramtype : vlogparam
   a_len :
+    datatype : int
+    paramtype : vlogparam
+  plaintext_len :
     datatype : int
     paramtype : vlogparam
 
