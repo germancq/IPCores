@@ -153,7 +153,7 @@ async def plaintext_state_test(dut, ascon_sw):
     plaintext_data[len_plaintext_data - 1] = ascon_sw.pad(
         plaintext_data[len_plaintext_data - 1], 128
     )
-    print(bits_for_last_block)
+    # print(bits_for_last_block)
     ciphertext_arr = []
     for i in range(0, len_plaintext_data):
         if i < len_plaintext_data - 1:
