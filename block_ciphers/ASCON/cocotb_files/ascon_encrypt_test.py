@@ -286,7 +286,7 @@ async def n_cycles_clock(dut, n):
 @cocotb.test()
 async def test(dut, index=0):
 
-    plaintext = random.getrandbits(dut.rate.value * 8)
+    plaintext = random.getrandbits(dut.len_plaintext_bits.value)
     key = random.getrandbits(dut.k.value)
     nonce = random.getrandbits(128)
     a_data = random.getrandbits(dut.a_len.value)
