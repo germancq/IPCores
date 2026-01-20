@@ -94,7 +94,7 @@ module encrypt #(
       .clk(clk),
       .cl(reg_ciphertext_cl),
       .w(reg_ciphertext_w),
-      .din(reg_ciphertext_din),
+      .din(reg_ciphertext_din & ((2 << plaintext_len) - 1)),
       .dout(ciphertext)
   );
 

@@ -111,5 +111,6 @@ cocotb_files/sim_build/
 
 .HEX
 
+*.txt
 
 .nvim/
