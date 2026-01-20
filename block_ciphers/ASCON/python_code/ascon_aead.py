@@ -220,6 +220,8 @@ class ASCON_AEAD:
                         plaintext_data[i] >> 64
                     )
                     print("xor is {}".format(hex(self.state_array[0])))
+                    print("bits_for_last_block is {}".format(bits_for_last_block))
+                    
                     c_aux = ((self.state_array[1] << 64) + (self.state_array[0])) & (
                         (2**bits_for_last_block) - 1
                     )

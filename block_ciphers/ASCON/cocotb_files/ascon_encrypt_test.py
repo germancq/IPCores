@@ -286,14 +286,14 @@ async def n_cycles_clock(dut, n):
 @cocotb.test()
 async def test(dut, index=0):
 
-    # plaintext = random.getrandbits(dut.rate.value * 8)
-    # key = random.getrandbits(dut.k.value)
-    # nonce = random.getrandbits(128)
-    # a_data = random.getrandbits(dut.a_len.value)
-    plaintext = 0x6173636F6E
-    key = 0x54B6A187FB0A1C64925C66F205FBA5BF
-    nonce = 0xC7B7C0CECF7DE4C7A11453474216B1A3
-    a_data = 0x4153434F4E
+    plaintext = random.getrandbits(dut.rate.value * 8)
+    key = random.getrandbits(dut.k.value)
+    nonce = random.getrandbits(128)
+    a_data = random.getrandbits(dut.a_len.value)
+    #plaintext = 0x6173636F6E
+    #key = 0x54B6A187FB0A1C64925C66F205FBA5BF
+    #nonce = 0xC7B7C0CECF7DE4C7A11453474216B1A3
+    #a_data = 0x4153434F4E
 
     ascon_sw = ascon_aead.ASCON_AEAD(key, nonce)
 
