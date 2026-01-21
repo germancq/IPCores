@@ -322,7 +322,7 @@ async def n_cycles_clock(dut, n):
 @cocotb.test()
 async def test(dut, index=0):
 
-    random.seed(497)
+    random.seed(index)
 
     plaintext = random.getrandbits(dut.plaintext_len.value)
     key = random.getrandbits(dut.k.value)
@@ -351,7 +351,7 @@ async def test(dut, index=0):
     await end_state_test(dut, expected_ciphertext, expected_tag)
 
 
-n = 5
+n = 50
 factory = TestFactory(test)
 
 factory.add_option("index", range(0, n))
