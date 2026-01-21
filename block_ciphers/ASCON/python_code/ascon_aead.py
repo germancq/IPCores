@@ -250,7 +250,9 @@ class ASCON_AEAD:
 
         print("tag")
         self.state_array[2] = self.state_array[2] ^ self.key_1
+        self.state_array[2] = self.state_array[2] & ((2**64)-1)
         self.state_array[3] = self.state_array[3] ^ self.key_0
+        self.state_array[3] = self.state_array[3] & ((2**64)-1)
 
         self.print_state()
 
@@ -259,7 +261,9 @@ class ASCON_AEAD:
         self.print_state()
 
         self.state_array[3] = self.state_array[3] ^ self.key_1
+        self.state_array[3] = self.state_array[3] & ((2**64)-1)
         self.state_array[4] = self.state_array[4] ^ self.key_0
+        self.state_array[4] = self.state_array[4] & ((2**64)-1)
 
         self.print_state()
 

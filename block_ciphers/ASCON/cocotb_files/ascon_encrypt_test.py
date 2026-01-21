@@ -273,7 +273,7 @@ async def permutation_b_test(dut):
 def check_state(dut, ascon_sw):
     for i in range(0, 5):
         assert (
-            dut.state_ascon_dout[i].value == ascon_sw.state_array[i]
+            dut.state_ascon_dout[i].value == (ascon_sw.state_array[i] & ((2**64)-1))
         ), f"ERROR in state {i} on state_test, expected = {hex(ascon_sw.state_array[i])}, calculated = {hex(dut.state_ascon_dout[i].value)}"
 
 
