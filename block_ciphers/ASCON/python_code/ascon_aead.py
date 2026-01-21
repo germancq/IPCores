@@ -124,8 +124,8 @@ class ASCON_AEAD:
         self.get_initial_state()
         self.ascon_permutation(self.a)
         print("xor key with state")
-        self.state_array[4] = self.state_array[4] ^ self.key_0
-        self.state_array[3] = self.state_array[3] ^ self.key_1
+        self.state_array[4] = (self.state_array[4] ^ self.key_0) & ((2**64)-1)
+        self.state_array[3] = (self.state_array[3] ^ self.key_1) & ((2**64)-1) 
         self.print_state()
         print("associated data")
         a_data_endian = self.parse(a_data, 8)
@@ -151,13 +151,16 @@ class ASCON_AEAD:
             a = associated_data[len_a_data - i - 1]
             print("a_data = {0}".format(hex(a)))
             self.state_array[0] = self.state_array[0] ^ (a & ((2**64) - 1))
+            self.state_array[0] = self.state_array[0] & ((2**64)-1)
             if self.rate == 128:
                 self.state_array[1] = self.state_array[1] ^ (a >> 64)
+                self.state_array[1] = self.state_array[1] & ((2**64)-1)
             self.print_state()
             self.ascon_permutation(self.b)
 
         print("update state")
         self.state_array[4] = self.state_array[4] ^ (1 << 63)
+        self.state_array[4] = self.state_array[4] & ((2**64)-1)
         self.print_state()
 
         print("plaintext")
@@ -197,10 +200,12 @@ class ASCON_AEAD:
                 self.state_array[0] = self.state_array[0] ^ (
                     plaintext_data[i] & ((2**64) - 1)
                 )
+                self.state_array[0] = self.state_array[0] & ((2**64)-1)
                 if self.rate == 128:
                     self.state_array[1] = self.state_array[1] ^ (
                         plaintext_data[i] >> 64
                     )
+                    self.state_array[1] = self.state_array[1] & ((2**64)-1)
                     ciphertext_arr.insert(
                         i, ((self.state_array[1] << 64) + self.state_array[0])
                     )
@@ -215,10 +220,13 @@ class ASCON_AEAD:
                 self.state_array[0] = self.state_array[0] ^ (
                     plaintext_data[i] & ((2**64) - 1)
                 )
+                self.state_array[0] = self.state_array[0] & ((2**64)-1)
+
                 if self.rate == 128:
                     self.state_array[1] = self.state_array[1] ^ (
                         plaintext_data[i] >> 64
                     )
+                    self.state_array[1] = self.state_array[1] & ((2**64)-1)
                     print("xor is {}".format(hex(self.state_array[0])))
                     print("bits_for_last_block is {}".format(bits_for_last_block))
                     
