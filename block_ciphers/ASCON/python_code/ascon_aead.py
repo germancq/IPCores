@@ -101,17 +101,17 @@ class ASCON_AEAD:
 
         return arr_result
 
-    def pad(self, x, r):
-        bits_used = int(math.ceil((math.log2(x))))
-        print(bits_used)
-        print(r)
-        bytes_used = int(math.ceil(bits_used / 8))
+    def pad(self, x, r, len_bits):
+        #bits_used = int(math.ceil((math.log2(x))))
+        #print(bits_used)
+        #print(r)
+        #bytes_used = int(math.ceil(bits_used / 8))
 
         # if bytes_used < r / 8:
         #    return (1 << (bytes_used * 8)) + x
         # else:
         #    return x
-        return (1 << (bytes_used * 8)) + x
+        return (1 << (len_bits)) + x
 
     def print_state(self):
         print("S0 = {}".format(hex(self.state_array[0])))
@@ -136,7 +136,9 @@ class ASCON_AEAD:
             i = i + 1
 
         print("non-padded a_data = {0}".format(hex(a_data_reord)))
-        associated_data = self.pad(a_data_reord, self.rate)
+
+
+        associated_data = self.pad(a_data_reord, self.rate,len_plaintext_bits)
         print("padded a_data = {0}".format(hex(associated_data)))
         associated_data = self.parse(associated_data, self.rate)
         len_a_data = len(associated_data)
@@ -185,7 +187,7 @@ class ASCON_AEAD:
             print("plaintext_data_{0} = {1}".format(i, hex(plaintext_data[i])))
 
         plaintext_data[len_plaintext_data - 1] = self.pad(
-            plaintext_data[len_plaintext_data - 1], self.rate
+            plaintext_data[len_plaintext_data - 1], self.rate, len_plaintext_bits
         )
 
         for i in range(0, len(plaintext_data)):
@@ -285,15 +287,21 @@ class ASCON_AEAD:
         tag0_endian = self.parse(self.tag[0], 8)
         i = 0
         for c_d in tag0_endian:
+            print(hex(c_d))
             tag0_reord = (c_d << (8 * i)) + tag0_reord
             i = i + 1
+        if i<8:
+            tag0_reord=tag0_reord << ((8-i)*8)
 
         tag1_reord = 0
         tag1_endian = self.parse(self.tag[1], 8)
         i = 0
         for c_d in tag1_endian:
+            print(hex(c_d))
             tag1_reord = (c_d << (8 * i)) + tag1_reord
             i = i + 1
+        if i<8:
+            tag1_reord=tag1_reord << ((8-i)*8)
 
         return ciphertext_reord, ((tag0_reord << 64) + tag1_reord)
 
