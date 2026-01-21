@@ -351,7 +351,7 @@ async def test(dut, index=0):
     await end_state_test(dut, expected_ciphertext, expected_tag)
 
 
-n = 50
+n = 500
 factory = TestFactory(test)
 
 factory.add_option("index", range(0, n))
