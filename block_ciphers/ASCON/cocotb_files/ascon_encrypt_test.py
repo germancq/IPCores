@@ -43,7 +43,7 @@ async def rst_function_test(dut):
 
 
 async def initial_state_test(dut, ascon_sw):
-    print("initial_state_test")
+    dut._log.info("initial_state_test")
     dut.rst.value = 0
     await n_cycles_clock(dut, 5)
     assert (
@@ -64,16 +64,16 @@ async def initial_state_test(dut, ascon_sw):
 
 
 async def xor_key_state_test(dut, ascon_sw):
-    print("xor_key_state_test")
+    dut._log.info("xor_key_state_test")
     await n_cycles_clock(dut, 1)
     assert (
         dut.current_state.value == dut.XOR_KEY.value
     ), f"ERROR STATE IN XOR_KEY, STATE={dut.current_state.value}"
 
-    print(hex(ascon_sw.key_0))
-    print(hex(dut.key_0.value))
-    print(hex(ascon_sw.key_1))
-    print(hex(dut.key_1.value))
+    dut._log.info(hex(ascon_sw.key_0))
+    dut._log.info(hex(dut.key_0.value))
+    dut._log.info(hex(ascon_sw.key_1))
+    dut._log.info(hex(dut.key_1.value))
     ascon_sw.state_array[4] = ascon_sw.state_array[4] ^ ascon_sw.key_0
     ascon_sw.state_array[3] = ascon_sw.state_array[3] ^ ascon_sw.key_1
 
@@ -83,7 +83,7 @@ async def xor_key_state_test(dut, ascon_sw):
 
 
 async def associated_data_test(dut, ascon_sw):
-    print("associated_data_test")
+    dut._log.info("associated_data_test")
     assert (
         dut.current_state.value == dut.ASSOCIATED_DATA.value
     ), f"ERROR STATE IN ASSOCIATED_DATA, STATE={dut.current_state.value}"
@@ -104,11 +104,11 @@ async def associated_data_test(dut, ascon_sw):
     associated_data[len_a_data - 1] = ascon_sw.pad(associated_data[len_a_data - 1], 128)
     for a in associated_data:
         ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ a
-        print(hex(a))
-        print(hex(ascon_sw.state_array[0]))
+        dut._log.info(hex(a))
+        dut._log.info(hex(ascon_sw.state_array[0]))
 
-    print(hex(dut.aux_var.value))
-    print(hex(dut.state_ascon_dout[0].value))
+    dut._log.info(hex(dut.aux_var.value))
+    dut._log.info(hex(dut.state_ascon_dout[0].value))
 
     await n_cycles_clock(dut, 1)
     check_state(dut, ascon_sw)
@@ -120,7 +120,7 @@ async def associated_data_test(dut, ascon_sw):
 
 
 async def update_state_test(dut, ascon_sw):
-    print("update state")
+    dut._log.info("update state")
     await n_cycles_clock(dut, 1)
     assert (
         dut.current_state.value == dut.UPDATE_STATE.value
@@ -134,18 +134,18 @@ async def update_state_test(dut, ascon_sw):
 
 
 async def plaintext_state_test(dut, ascon_sw):
-    print("plaintext state")
+    dut._log.info("plaintext state")
     plaintext_endian = ascon_sw.parse(dut.plaintext.value, 8)
     plaintext_reord = 0
     i = 0
     for p_d in plaintext_endian:
-        print(hex(p_d))
+        dut._log.info(hex(p_d))
         plaintext_reord = (p_d << (8 * i)) + plaintext_reord
         i = i + 1
 
     plaintext_data = ascon_sw.parse(plaintext_reord, 128)
     len_plaintext_data = len(plaintext_data)
-    print("len plaintext data = {}".format(len_plaintext_data))
+    dut._log.info("len plaintext data = {}".format(len_plaintext_data))
     # bits_for_last_block = int(len_plaintext_bits - (128 * (len_plaintext_data - 1)))
     # bits_for_last_block = int(
     #    math.ceil(math.log2(plaintext_data[len_plaintext_data - 1]))
@@ -153,29 +153,29 @@ async def plaintext_state_test(dut, ascon_sw):
     plaintext_data[len_plaintext_data - 1] = ascon_sw.pad(
         plaintext_data[len_plaintext_data - 1], 128
     )
-    # print(bits_for_last_block)
+    # dut._log.info(bits_for_last_block)
     ciphertext_arr = []
     for i in range(0, len_plaintext_data):
         if i < len_plaintext_data - 1:
-            print("plaintext{} is = {}".format(i, hex(plaintext_data[i])))
-            print("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
+            dut._log.info("plaintext{} is = {}".format(i, hex(plaintext_data[i])))
+            dut._log.info("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
             ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ plaintext_data[i]
             ciphertext_arr.insert(i, ascon_sw.state_array[0])
             ascon_sw.ascon_permutation(8)
             ascon_sw.print_state()
         else:
-            print("plaintext{} is = {}".format(i, hex(plaintext_data[i])))
-            print("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
+            dut._log.info("plaintext{} is = {}".format(i, hex(plaintext_data[i])))
+            dut._log.info("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
             ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ plaintext_data[i]
-            print("xor is {}".format(hex(ascon_sw.state_array[0])))
+            dut._log.info("xor is {}".format(hex(ascon_sw.state_array[0])))
             c_aux = ascon_sw.state_array[0]  # & ((2**bits_for_last_block) - 1)
-            print("c_aux is {}".format(hex(c_aux)))
+            dut._log.info("c_aux is {}".format(hex(c_aux)))
             ciphertext_arr.insert(i, c_aux)
 
     ascon_sw.print_state()
     i = 0
     for c_i in ciphertext_arr:
-        print("ciphertext_arr c_{} = {}".format(i, hex(c_i)))
+        dut._log.info("ciphertext_arr c_{} = {}".format(i, hex(c_i)))
         i = i + 1
 
     assert (
@@ -246,10 +246,10 @@ async def end_state_test(dut, expected_ciphertext, expected_tag):
 
     assert dut.end_signal.value == 1, f"ERROR end_signal"
 
-    print(hex(expected_ciphertext))
-    print(hex(dut.ciphertext.value))
-    print(hex(expected_tag))
-    print(hex(dut.tag.value))
+    dut._log.info(hex(expected_ciphertext))
+    dut._log.info(hex(dut.ciphertext.value))
+    dut._log.info(hex(expected_tag))
+    dut._log.info(hex(dut.tag.value))
 
     assert (
         dut.ciphertext.value == expected_ciphertext
