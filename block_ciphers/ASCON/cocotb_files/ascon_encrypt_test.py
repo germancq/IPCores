@@ -94,6 +94,9 @@ async def associated_data_test(dut, ascon_sw):
     for a_d in a_data_endian:
         a_data_reord = (a_d << (8 * i)) + a_data_reord
         i = i + 1
+    if(i<(dut.a_len.value/8)):
+        shift = int(dut.a_len.value/8)
+        a_data_reord = a_data_reord << ((shift - i)*8)
 
     assert (
         dut.a_data_reord.value == a_data_reord
@@ -142,6 +145,9 @@ async def plaintext_state_test(dut, ascon_sw):
         dut._log.info(hex(p_d))
         plaintext_reord = (p_d << (8 * i)) + plaintext_reord
         i = i + 1
+    if(i<(dut.plaintext_len.value/8)):
+        shift = int(dut.plaintext_len.value/8)
+        plaintext_reord = plaintext_reord << ((shift - i)*8)
 
     plaintext_data = ascon_sw.parse(plaintext_reord, 128)
     len_plaintext_data = len(plaintext_data)
