@@ -34,7 +34,9 @@ module encrypt #(
   logic [a_len-1:0] a_data_reord;
   logic [(rate<<3)-1:0] plaintext_reord;
 
-  assign tag = {state_ascon_dout[3], state_ascon_dout[4]};
+  logic [63:0] tag_0, tag_1;
+
+  assign tag = {tag_0, tag_1};
 
   // assign key_0 = {
   //   key[7:0], key[15:8], key[23:16], key[31:24], key[39:32], key[47:40], key[55:48], key[63:56]
@@ -48,6 +50,18 @@ module encrypt #(
       .o_data(key_0)
   );
 
+  reorder #(
+      .LEN(64)
+  ) reorder_t0 (
+      .i_data(state_ascon_dout[3]),
+      .o_data(tag_0)
+  );
+  reorder #(
+      .LEN(64)
+  ) reorder_t1 (
+      .i_data(state_ascon_dout[4]),
+      .o_data(tag_1)
+  );
   // assign key_1 = {
   //   key[71:64],
   //   key[79:72],
