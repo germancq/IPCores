@@ -134,6 +134,9 @@ class ASCON_AEAD:
         for a_d in a_data_endian:
             a_data_reord = (a_d << (8 * i)) + a_data_reord
             i = i + 1
+        if(i<(len_plaintext_bits/8)):
+            shift = int(len_plaintext_bits/8)
+            a_data_reord = a_data_reord << ((shift - i)*8)
 
         print("non-padded a_data = {0}".format(hex(a_data_reord)))
 
@@ -173,6 +176,10 @@ class ASCON_AEAD:
             print(hex(p_d))
             plaintext_reord = (p_d << (8 * i)) + plaintext_reord
             i = i + 1
+
+        if(i<(len_plaintext_bits/8)):
+            shift = int(len_plaintext_bits/8)
+            plaintext_reord = plaintext_reord << ((shift - i)*8)
 
         plaintext_data = self.parse(plaintext_reord, self.rate)
         len_plaintext_data = len(plaintext_data)
