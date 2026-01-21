@@ -147,7 +147,7 @@ async def plaintext_state_test(dut, ascon_sw):
     len_plaintext_data = len(plaintext_data)
     dut._log.info("len plaintext data = {}".format(len_plaintext_data))
     bits_for_last_block = int(
-        dut.plaintext_len - (dut.rate.value * (len_plaintext_data - 1))
+        dut.plaintext_len.value - (dut.rate.value * (len_plaintext_data - 1))
     )
     # bits_for_last_block = int(len_plaintext_bits - (128 * (len_plaintext_data - 1)))
     # bits_for_last_block = int(
