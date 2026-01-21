@@ -101,7 +101,7 @@ async def associated_data_test(dut, ascon_sw):
 
     associated_data = ascon_sw.parse(a_data_reord, 128)
     len_a_data = len(associated_data)
-    associated_data[len_a_data - 1] = ascon_sw.pad(associated_data[len_a_data - 1], 128)
+    associated_data[len_a_data - 1] = ascon_sw.pad(associated_data[len_a_data - 1], 128, dut.a_len.value)
     for a in associated_data:
         ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ a
         dut._log.info(hex(a))
@@ -154,7 +154,7 @@ async def plaintext_state_test(dut, ascon_sw):
     #    math.ceil(math.log2(plaintext_data[len_plaintext_data - 1]))
     # )
     plaintext_data[len_plaintext_data - 1] = ascon_sw.pad(
-        plaintext_data[len_plaintext_data - 1], 128
+        plaintext_data[len_plaintext_data - 1], 128, dut.plaintext_len.value
     )
     # dut._log.info(bits_for_last_block)
     ciphertext_arr = []
