@@ -328,17 +328,23 @@ module encrypt #(
       end
       PLAINTEXT_LAST_BLOCK: begin
         //by specification there is two rates 64 or 128 bits
-        custom_state_ascon_din[0] = state_ascon_dout[0] ^ plaintext_reord[63:0] ^ (1<<(plaintext_len - ((plaintext_len/64)*64)));
+        if (plaintext_len < 64) begin
+          custom_state_ascon_din[0] = state_ascon_dout[0] ^ plaintext_reord[63:0] ^ (1<<(plaintext_len - ((plaintext_len/64)*64)));
+          reg_ciphertext_din[63:0] = state_ascon_dout[0] ^ plaintext_reord[63:0] ^ (1<<(plaintext_len - ((plaintext_len/64)*64)));
+        end else begin
+          custom_state_ascon_din[0] = state_ascon_dout[0] ^ plaintext_reord[63:0];
+          reg_ciphertext_din[63:0]  = state_ascon_dout[0] ^ plaintext_reord[63:0];
+        end
+
         custom_state_ascon_w[0] = 1;
         reg_ciphertext_w = 1;
-        reg_ciphertext_din[63:0] = state_ascon_dout[0] ^ plaintext_reord[63:0] ^ (1<<(plaintext_len - ((plaintext_len/64)*64)));
         next_state = TAG_DATA_0;
       end
       PLAINTEXT_BLOCK: begin
-        custom_state_ascon_din[1] = state_ascon_dout[1] ^ plaintext_reord[127:64];
+        custom_state_ascon_din[1] = state_ascon_dout[1] ^ plaintext_reord[127:64] ^ (1<<(plaintext_len - ((plaintext_len/64)*64)));
         custom_state_ascon_w[1] = 1;
         reg_ciphertext_w = 1;
-        reg_ciphertext_din[127:64] = state_ascon_dout[1] ^ plaintext_reord[127:64];
+        reg_ciphertext_din[127:64] = state_ascon_dout[1] ^ plaintext_reord[127:64] ^ (1<<(plaintext_len - ((plaintext_len/64)*64)));
         next_state = PLAINTEXT_LAST_BLOCK;
         //next_state = ASCON_PERMUTATION_B_0;
         //r_jmp_state_din = PLAINTEXT_LAST_BLOCK;
