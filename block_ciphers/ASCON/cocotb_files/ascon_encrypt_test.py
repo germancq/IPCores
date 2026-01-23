@@ -231,7 +231,7 @@ async def plaintext_state_test(dut, ascon_sw):
         dut.plaintext_reord.value == plaintext_reord
     ), f"ERROR reording plaintext_reord, expected={hex(plaintext_reord)} calculated = {hex(dut.plaintext_reord.value)}"
 
-    if dut.rate.value == 16:
+    if dut.plaintext_len.value < 64:
         assert (
             dut.current_state.value == dut.PLAINTEXT_LAST_BLOCK.value
         ), f"ERROR STATE IN PLAINTEXT_LAST_BLOCK, STATE={dut.current_state.value}"

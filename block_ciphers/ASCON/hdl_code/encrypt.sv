@@ -322,7 +322,7 @@ module encrypt #(
         custom_state_ascon_din[4] = state_ascon_dout[4] ^ (1 << 63);
         custom_state_ascon_w[4] = 1;
         next_state = PLAINTEXT_BLOCK;
-        if (rate == 8) begin
+        if (plaintext_len < 64) begin
           next_state = PLAINTEXT_LAST_BLOCK;
         end
       end
