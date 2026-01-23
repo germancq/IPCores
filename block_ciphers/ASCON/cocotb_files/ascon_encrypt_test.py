@@ -102,7 +102,9 @@ async def associated_data_test(dut, ascon_sw):
         dut.a_data_reord.value == a_data_reord
     ), f"ERROR reording a_data, expected={hex(a_data_reord)} calculated = {hex(dut.a_data_reord.value)}"
 
-    associated_data = ascon_sw.parse(a_data_reord, dut.rate.value * 8)
+
+    associated_data = ascon_sw.pad(a_data_reord, ascon_sw.rate,dut.a_len.value)
+    associated_data = ascon_sw.parse(associated_data, dut.rate.value * 8)
     len_a_data = len(associated_data)
 
     dut._log.info(len_a_data)
