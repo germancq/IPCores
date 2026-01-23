@@ -309,6 +309,11 @@ module encrypt #(
 
         custom_state_ascon_w[0] = 1;
 
+        if (rate == 16) begin
+          custom_state_ascon_din[1] = state_ascon_dout[1] ^ (aux_var >> 64);
+          custom_state_ascon_w[1]   = 1;
+        end
+
         next_state = ASCON_PERMUTATION_B_0;
         r_jmp_state_din = UPDATE_STATE;
         r_jmp_state_w = 1;
