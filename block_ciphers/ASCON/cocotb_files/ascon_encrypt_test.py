@@ -194,7 +194,7 @@ async def plaintext_state_test(dut, ascon_sw):
             ascon_sw.ascon_permutation(ascon_sw.b)
             ascon_sw.print_state()
         else:
-            dut._log.info("plaintext{} is = {}".format(i, hex(plaintext_data[i])))
+            dut._log.info("plaintext_v{} is = {}".format(i, hex(plaintext_data[i])))
             dut._log.info("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
             ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ (
                 plaintext_data[i] & ((2**64) - 1)
