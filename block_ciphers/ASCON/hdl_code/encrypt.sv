@@ -339,9 +339,10 @@ module encrypt #(
         custom_state_ascon_w[1] = 1;
         reg_ciphertext_w = 1;
         reg_ciphertext_din[127:64] = state_ascon_dout[1] ^ plaintext_reord[127:64];
-        next_state = ASCON_PERMUTATION_B_0;
-        r_jmp_state_din = PLAINTEXT_LAST_BLOCK;
-        r_jmp_state_w = 1;
+        next_state = PLAINTEXT_LAST_BLOCK;
+        //next_state = ASCON_PERMUTATION_B_0;
+        //r_jmp_state_din = PLAINTEXT_LAST_BLOCK;
+        //r_jmp_state_w = 1;
       end
       TAG_DATA_0: begin
         custom_state_ascon_din[2] = state_ascon_dout[2] ^ key_1;
