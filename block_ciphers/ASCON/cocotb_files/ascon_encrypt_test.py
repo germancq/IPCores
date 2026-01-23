@@ -102,16 +102,27 @@ async def associated_data_test(dut, ascon_sw):
         dut.a_data_reord.value == a_data_reord
     ), f"ERROR reording a_data, expected={hex(a_data_reord)} calculated = {hex(dut.a_data_reord.value)}"
 
-    associated_data = ascon_sw.parse(a_data_reord, 128)
+    associated_data = ascon_sw.parse(a_data_reord, dut.rate.value * 8)
     len_a_data = len(associated_data)
-    associated_data[len_a_data - 1] = ascon_sw.pad(associated_data[len_a_data - 1], 128, dut.a_len.value)
-    for a in associated_data:
-        ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ a
-        dut._log.info(hex(a))
-        dut._log.info(hex(ascon_sw.state_array[0]))
 
-    dut._log.info(hex(dut.aux_var.value))
-    dut._log.info(hex(dut.state_ascon_dout[0].value))
+    dut._log.info(len_a_data)
+
+    # associated_data[len_a_data - 1] = ascon_sw.pad(
+    #    associated_data[len_a_data - 1], ascon_sw.rate
+    # )
+
+    for i in range(0, len_a_data):
+        a = associated_data[len_a_data - i - 1]
+        dut._log.info("a_data = {0}".format(hex(a)))
+        ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ (a & ((2**64) - 1))
+        ascon_sw.state_array[0] = ascon_sw.state_array[0] & ((2**64)-1)
+        if ascon_sw.rate == 128:
+            ascon_sw.state_array[1] = ascon_sw.state_array[1] ^ (a >> 64)
+            ascon_sw.state_array[1] = ascon_sw.state_array[1] & ((2**64)-1)
+        ascon_sw.print_state()
+        ascon_sw.ascon_permutation(ascon_sw.b)
+
+
 
     await n_cycles_clock(dut, 1)
     check_state(dut, ascon_sw)
@@ -130,6 +141,7 @@ async def update_state_test(dut, ascon_sw):
     ), f"ERROR STATE IN UPDATE_STATE, STATE={dut.current_state.value}"
 
     ascon_sw.state_array[4] = ascon_sw.state_array[4] ^ (1 << 63)
+    ascon_sw.state_array[4] = ascon_sw.state_array[4] & ((2**64)-1)
     ascon_sw.print_state()
 
     await n_cycles_clock(dut, 1)
