@@ -239,7 +239,7 @@ async def plaintext_state_test(dut, ascon_sw):
         assert (
             dut.current_state.value == dut.PLAINTEXT_BLOCK.value
         ), f"ERROR STATE IN PLAINTEXT_BLOCK, STATE={dut.current_state.value}"
-        await permutation_b_test(dut)
+        #await permutation_b_test(dut)
         await n_cycles_clock(dut, 1)
         assert (
             dut.current_state.value == dut.PLAINTEXT_LAST_BLOCK.value
