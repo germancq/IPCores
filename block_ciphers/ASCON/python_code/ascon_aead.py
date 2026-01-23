@@ -365,7 +365,7 @@ class ASCON_AEAD:
                 i = i + 1
 
         if i<8:
-            self.nonce_0=self.nonce_0 << ((8-i)*8)
+            nonce_0=nonce_0 << ((8-i)*8)
         # for i in range(0, len(bytes_nonce_1)):
         #     nonce_1 = (bytes_nonce_1[i] << (8 * i)) + nonce_1
         i=0
@@ -375,7 +375,7 @@ class ASCON_AEAD:
                 i = i + 1
 
         if i<8:
-            self.nonce_1=self.nonce_1 << ((8-i)*8)
+            nonce_1=nonce_1 << ((8-i)*8)
 
         initial_state = (
             (IV << 256)
