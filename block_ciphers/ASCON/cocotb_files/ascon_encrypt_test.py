@@ -121,18 +121,12 @@ async def associated_data_test(dut, ascon_sw):
         if ascon_sw.rate == 128:
             ascon_sw.state_array[1] = ascon_sw.state_array[1] ^ (a >> 64)
             ascon_sw.state_array[1] = ascon_sw.state_array[1] & ((2**64)-1)
+        await n_cycles_clock(dut, 1)
+        check_state(dut, ascon_sw)
         ascon_sw.print_state()
-        ascon_sw.ascon_permutation(ascon_sw.b)
-
-
-
-    await n_cycles_clock(dut, 1)
-    check_state(dut, ascon_sw)
-
-    ascon_sw.ascon_permutation(dut.b.value)
-    await permutation_b_test(dut)
-
-    check_state(dut, ascon_sw)
+        ascon_sw.ascon_permutation(dut.b.value)
+        await permutation_b_test(dut)
+        check_state(dut, ascon_sw)
 
 
 async def update_state_test(dut, ascon_sw):
