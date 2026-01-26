@@ -88,7 +88,7 @@ module encrypt #(
       .o_data(a_data_reord)
   );
   //assign a_data_reord = ascon_utils#(.LEN(a_len))::order_and_pad(a_data);
-  reorder #(
+  order_and_pad #(
       .LEN(plaintext_len)
   ) ord_pad_impl_plaintext (
       .i_data(plaintext),
