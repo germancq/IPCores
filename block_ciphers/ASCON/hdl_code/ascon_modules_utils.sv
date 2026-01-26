@@ -7,6 +7,7 @@
  */
 
 
+//change endianness be to le and viceversa
 module reorder #(
     parameter LEN = 64
 ) (
@@ -60,3 +61,4 @@ module order_and_pad #(
   );
 
 endmodule : order_and_pad
+

@@ -212,6 +212,19 @@ module encrypt #(
       .dout(jmp_state)
   );
 
+  logic [7:0] generic_counter_o;
+  logic generic_counter_up, generic_counter_rst;
+  counter #(
+      .DATA_WIDTH(8)
+  ) generic_counter (
+      .clk (clk),
+      .rst (generic_counter_rst),
+      .up  (generic_counter_up),
+      .down(1'b0),
+      .din (0),
+      .dout(generic_counter_o)
+  );
+
   localparam IDLE = 0;
   localparam INITIAL_STATE = 1;
   localparam XOR_KEY = 2;
@@ -245,6 +258,9 @@ module encrypt #(
 
     sel_i_state = SEL_CUSTOM;
 
+    generic_counter_rst = 0;
+    generic_counter_up = 0;
+
 
 
     for (j = 0; j < 5; j++) begin
@@ -267,6 +283,7 @@ module encrypt #(
           state_ascon_cl[j] = 1;
         end
         p_impl_rst = 1;
+        generic_counter_rst = 1;
 
         if (start) begin
           next_state = INITIAL_STATE;
@@ -290,33 +307,26 @@ module encrypt #(
         next_state = ASSOCIATED_DATA;
       end
       ASSOCIATED_DATA: begin
-        aux_var = 0;
-
-        for (j = 0; j < ((a_len - 1) / (rate << 3)) + 1; j++) begin
-          aux_var = aux_var ^ a_data_reord[(j*(rate<<3))+:(rate<<3)];
-        end
-        //padding
-        aux_var = aux_var ^ (1 << a_len - ((a_len / (rate << 3)) * (rate << 3)));
-
-
-        //custom_state_ascon_din[0] = state_ascon_dout[0] ^ ascon_utils#(
-        //    .LEN (a_len),
-        //    .RATE(rate << 3)
-        //)::xor_data(
-        //  a_data_reord
-        //);  //aux_var;
-        custom_state_ascon_din[0] = state_ascon_dout[0] ^ aux_var;
-
-        custom_state_ascon_w[0] = 1;
+        custom_state_ascon_din[0] = state_ascon_dout[0] ^ a_data_reord[(generic_counter_o<<6)+63 +: 64];
 
         if (rate == 16) begin
-          custom_state_ascon_din[1] = state_ascon_dout[1] ^ (aux_var >> 64);
-          custom_state_ascon_w[1]   = 1;
+          custom_state_ascon_din[0] = state_ascon_dout[0] ^ a_data_reord[(generic_counter_o<<7)+63 +: 64];
+          custom_state_ascon_din[1] = state_ascon_dout[1] ^ a_data_reord[(generic_counter_o<<7)+127 +: 64];
+
         end
 
+        generic_counter_up = 1;
+
         next_state = ASCON_PERMUTATION_B_0;
-        r_jmp_state_din = UPDATE_STATE;
         r_jmp_state_w = 1;
+        r_jmp_state_din = UPDATE_STATE;
+
+        if (((generic_counter_o + 1) * (rate << 3)) < (a_len + 1)) begin
+          r_jmp_state_din = ASSOCIATED_DATA;
+        end
+
+
+
       end
       UPDATE_STATE: begin
         custom_state_ascon_din[4] = state_ascon_dout[4] ^ (1 << 63);
