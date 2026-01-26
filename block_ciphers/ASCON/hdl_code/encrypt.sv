@@ -95,12 +95,6 @@ module encrypt #(
       .o_data(plaintext_reord)
   );
 
-  reorder #(
-      .LEN(plaintext_len)
-  ) ord_pad_impl_ciphertext (
-      .i_data(ciphertext_non_ord),
-      .o_data(ciphertext)
-  );
 
   localparam SEL_CUSTOM = 0;
   localparam SEL_INIT_STATE = 2;
@@ -126,6 +120,13 @@ module encrypt #(
           .w(reg_ciphertext_w[i]),
           .din(reg_ciphertext_din[i]),  //& ((2 << plaintext_len) - 1)),
           .dout(ciphertext_non_ord[i])
+      );
+
+      reorder #(
+          .LEN(rate << 3)
+      ) ord_pad_impl_ciphertext (
+          .i_data(ciphertext_non_ord[i]),
+          .o_data(ciphertext[(i*(rate<<3))+:(rate<<3)])
       );
     end
   endgenerate
