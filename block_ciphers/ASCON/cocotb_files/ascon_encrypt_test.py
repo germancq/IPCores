@@ -100,9 +100,6 @@ async def associated_data_test(dut, ascon_sw):
 
     dut._log.info("aux_var in dut = {0}".format(hex(dut.aux_var.value)))
 
-    assert (
-        dut.a_data_reord.value == a_data_reord
-    ), f"ERROR reording a_data, expected={hex(a_data_reord)} calculated = {hex(dut.a_data_reord.value)}"
 
 
     associated_data = ascon_sw.pad(a_data_reord, ascon_sw.rate,dut.a_len.value)
@@ -110,6 +107,11 @@ async def associated_data_test(dut, ascon_sw):
     len_a_data = len(associated_data)
 
     dut._log.info(len_a_data)
+
+    assert (
+        dut.a_data_reord.value == a_data_reord
+    ), f"ERROR reording and padding a_data, expected={hex(associated_data)} calculated = {hex(dut.a_data_reord.value)}"
+
 
     # associated_data[len_a_data - 1] = ascon_sw.pad(
     #    associated_data[len_a_data - 1], ascon_sw.rate
