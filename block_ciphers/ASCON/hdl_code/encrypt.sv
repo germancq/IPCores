@@ -110,6 +110,7 @@ module encrypt #(
   logic [0:0] reg_ciphertext_w[N_BLOCKS-1:0];
   logic [(rate<<3)-1:0] reg_ciphertext_din[N_BLOCKS-1:0];
   logic [(rate<<3)-1:0] ciphertext_non_ord[N_BLOCKS-1:0];
+  logic [plaintext_len-1:0] ciphertext_ord;
   generate
     for (i = 0; i < N_BLOCKS; i++) begin
       register #(
@@ -126,10 +127,11 @@ module encrypt #(
           .LEN(rate << 3)
       ) ord_pad_impl_ciphertext (
           .i_data(ciphertext_non_ord[i]),
-          .o_data(ciphertext[(i*(rate<<3))+:(rate<<3)])
+          .o_data(ciphertext_ord[(i*(rate<<3))+:(rate<<3)])
       );
     end
   endgenerate
+  assign ciphertext = ciphertext_ord & ((2 << plaintext_len) - 1);
 
 
 
