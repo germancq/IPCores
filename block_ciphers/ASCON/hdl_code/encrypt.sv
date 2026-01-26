@@ -307,11 +307,11 @@ module encrypt #(
         next_state = ASSOCIATED_DATA;
       end
       ASSOCIATED_DATA: begin
-        custom_state_ascon_din[0] = state_ascon_dout[0] ^ a_data_reord[(generic_counter_o<<6)+63 +: 64];
+        custom_state_ascon_din[0] = state_ascon_dout[0] ^ a_data_reord[(generic_counter_o<<6)+:64];
 
         if (rate == 16) begin
-          custom_state_ascon_din[0] = state_ascon_dout[0] ^ a_data_reord[(generic_counter_o<<7)+63 +: 64];
-          custom_state_ascon_din[1] = state_ascon_dout[1] ^ a_data_reord[(generic_counter_o<<7)+127 +: 64];
+          custom_state_ascon_din[0] = state_ascon_dout[0] ^ a_data_reord[(generic_counter_o<<7) +: 64];
+          custom_state_ascon_din[1] = state_ascon_dout[1] ^ a_data_reord[(generic_counter_o<<7)+64 +: 64];
 
         end
 
