@@ -31,7 +31,7 @@ module encrypt #(
 
   logic [63:0] key_0, key_1;
 
-  logic [a_len-1:0] a_data_reord;
+  logic [a_len:0] a_data_reord;
   logic [(rate<<3)-1:0] plaintext_reord;
 
   logic [63:0] tag_0, tag_1;
@@ -81,7 +81,7 @@ module encrypt #(
       .o_data(key_1)
   );
 
-  reorder #(
+  order_and_pad #(
       .LEN(a_len)
   ) ord_pad_impl (
       .i_data(a_data),
