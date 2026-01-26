@@ -98,6 +98,8 @@ async def associated_data_test(dut, ascon_sw):
         shift = int(dut.a_len.value/8)
         a_data_reord = a_data_reord << ((shift - i)*8)
 
+    dut._log.info("aux_var in dut = {0}".format(hex(dut.aux_var.value)))
+
     assert (
         dut.a_data_reord.value == a_data_reord
     ), f"ERROR reording a_data, expected={hex(a_data_reord)} calculated = {hex(dut.a_data_reord.value)}"
