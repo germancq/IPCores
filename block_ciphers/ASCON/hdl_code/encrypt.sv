@@ -313,7 +313,11 @@ module encrypt #(
           custom_state_ascon_din[0] = state_ascon_dout[0] ^ a_data_reord[(generic_counter_o<<7) +: 64];
           custom_state_ascon_din[1] = state_ascon_dout[1] ^ a_data_reord[(generic_counter_o<<7)+64 +: 64];
 
+          custom_state_ascon_w[1] = 1;
+
         end
+
+        custom_state_ascon_w[0] = 1;
 
         generic_counter_up = 1;
 
