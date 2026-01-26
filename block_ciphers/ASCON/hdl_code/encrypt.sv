@@ -132,7 +132,7 @@ module encrypt #(
       );
     end
   endgenerate
-  assign ciphertext = ciphertext_ord & ((2 << plaintext_len) - 1);
+  assign ciphertext = ciphertext_ord;  //& ((2 << plaintext_len) - 1);
 
 
 
@@ -369,9 +369,9 @@ module encrypt #(
           aux_var = plaintext_reord << ((generic_counter_o) << 7);
 
           custom_state_ascon_din[0] = state_ascon_dout[0] ^ aux_var[63:0];
-          reg_ciphertext_din[generic_counter_o][127:64] = state_ascon_dout[0] ^ aux_var[63:0];
+          reg_ciphertext_din[generic_counter_o][63:0] = state_ascon_dout[0] ^ aux_var[63:0];
           custom_state_ascon_din[1] = state_ascon_dout[1] ^ aux_var[127:64];
-          reg_ciphertext_din[generic_counter_o][63:0] = state_ascon_dout[1] ^ aux_var[127:64];
+          reg_ciphertext_din[generic_counter_o][127:64] = state_ascon_dout[1] ^ aux_var[127:64];
 
           custom_state_ascon_w[1] = 1;
 
