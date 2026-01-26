@@ -310,10 +310,12 @@ module encrypt #(
         custom_state_ascon_din[0] = state_ascon_dout[0] ^ a_data_reord[(generic_counter_o<<6)+:64];
 
         if (rate == 16) begin
-          aux_var = a_data_reord[(generic_counter_o<<7)+64+:64];
+          aux_var = a_data_reord << ((generic_counter_o) << 7);
 
-          custom_state_ascon_din[0] = state_ascon_dout[0] ^ a_data_reord[(generic_counter_o<<7) +: 64];
-          custom_state_ascon_din[1] = state_ascon_dout[1] ^ a_data_reord[(generic_counter_o<<7)+64 +: 64];
+          //custom_state_ascon_din[0] = state_ascon_dout[0] ^ a_data_reord[(generic_counter_o<<7) +: 64];
+          //custom_state_ascon_din[1] = state_ascon_dout[1] ^ a_data_reord[(generic_counter_o<<7)+64 +: 64];
+          custom_state_ascon_din[0] = state_ascon_dout[0] ^ aux_var[63:0];
+          custom_state_ascon_din[1] = state_ascon_dout[1] ^ aux_var[127:64];
 
           custom_state_ascon_w[1] = 1;
 
