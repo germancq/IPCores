@@ -132,7 +132,7 @@ module encrypt #(
       );
     end
   endgenerate
-  assign ciphertext = ciphertext_ord;  //& ((2 << plaintext_len) - 1);
+  assign ciphertext = ciphertext_ord >> ((N_BLOCKS*(rate<<3))-plaintext_len);  //& ((2 << plaintext_len) - 1);
 
 
 
