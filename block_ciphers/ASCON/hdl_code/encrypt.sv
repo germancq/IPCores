@@ -106,22 +106,32 @@ module encrypt #(
   localparam SEL_INIT_STATE = 2;
   localparam SEL_PERMUTATION_STATE = 3;
 
-  logic reg_ciphertext_cl;
-  logic reg_ciphertext_w;
-  logic [(rate<<3)-1:0] reg_ciphertext_din;
-  logic [(rate<<3)-1:0] ciphertext_non_ord;
-  register #(
-      .DATA_WIDTH(rate << 3)
-  ) reg_ciphertext (
-      .clk(clk),
-      .cl(reg_ciphertext_cl),
-      .w(reg_ciphertext_w),
-      .din(reg_ciphertext_din & ((2 << plaintext_len) - 1)),
-      .dout(ciphertext_non_ord)
-  );
 
 
+  localparam N_BLOCKS = (plaintext_len / (rate << 3)) + 1;
   genvar i;
+
+
+  logic [0:0] reg_ciphertext_cl[N_BLOCKS-1:0];
+  logic [0:0] reg_ciphertext_w[N_BLOCKS-1:0];
+  logic [(rate<<3)-1:0] reg_ciphertext_din[N_BLOCKS-1:0];
+  logic [(rate<<3)-1:0] ciphertext_non_ord[N_BLOCKS-1:0];
+  generate
+    for (i = 0; i < N_BLOCKS; i++) begin
+      register #(
+          .DATA_WIDTH(rate << 3)
+      ) reg_ciphertext_i (
+          .clk(clk),
+          .cl(reg_ciphertext_cl[i]),
+          .w(reg_ciphertext_w[i]),
+          .din(reg_ciphertext_din[i]),  //& ((2 << plaintext_len) - 1)),
+          .dout(ciphertext_non_ord[i])
+      );
+    end
+  endgenerate
+
+
+
   logic [0:0] state_ascon_cl[4:0];
   logic [0:0] state_ascon_w[4:0];
   logic [63:0] state_ascon_din[4:0];
@@ -269,16 +279,21 @@ module encrypt #(
       custom_state_ascon_din[j] = 0;
     end
 
-    reg_ciphertext_cl = 0;
-    reg_ciphertext_w = 0;
-    reg_ciphertext_din = 0;
+    for (j = 0; j < N_BLOCKS; j++) begin
+      reg_ciphertext_cl[j]  = 0;
+      reg_ciphertext_w[j]   = 0;
+      reg_ciphertext_din[j] = 0;
+    end
+
 
     end_signal = 0;
 
     case (current_state)
       IDLE: begin
         r_jmp_state_cl = 1;
-        reg_ciphertext_cl = 1;
+        for (j = 0; j < N_BLOCKS; j++) begin
+          reg_ciphertext_cl[j] = 1;
+        end
         for (j = 0; j < 5; j++) begin
           state_ascon_cl[j] = 1;
         end
@@ -337,13 +352,43 @@ module encrypt #(
 
       end
       UPDATE_STATE: begin
+        generic_counter_rst = 1;
         custom_state_ascon_din[4] = state_ascon_dout[4] ^ (1 << 63);
         custom_state_ascon_w[4] = 1;
         next_state = PLAINTEXT_BLOCK;
-        if (plaintext_len < 64) begin
-          next_state = PLAINTEXT_LAST_BLOCK;
-        end
       end
+      PLAINTEXT_BLOCK: begin
+        custom_state_ascon_din[0] = state_ascon_dout[0] ^ plaintext_reord[(generic_counter_o<<6)+:64];
+        reg_ciphertext_din[generic_counter_o][63:0] = state_ascon_dout[0] ^ plaintext_reord[(generic_counter_o<<6)+:64];
+
+        if (rate == 16) begin
+          aux_var = plaintext_reord << ((generic_counter_o) << 7);
+
+          custom_state_ascon_din[0] = state_ascon_dout[0] ^ aux_var[63:0];
+          reg_ciphertext_din[generic_counter_o][63:0] = state_ascon_dout[0] ^ aux_var[63:0];
+          custom_state_ascon_din[1] = state_ascon_dout[1] ^ aux_var[127:64];
+          reg_ciphertext_din[generic_counter_o][127:64] = state_ascon_dout[1] ^ aux_var[127:64];
+
+          custom_state_ascon_w[1] = 1;
+
+        end
+
+        custom_state_ascon_w[0] = 1;
+        reg_ciphertext_w[generic_counter_o] = 1;
+
+        generic_counter_up = 1;
+
+        next_state = TAG_DATA_0;
+
+
+        if (((generic_counter_o + 1) * (rate << 3)) < (plaintext_len + 1)) begin
+          next_state = ASCON_PERMUTATION_B_0;
+          r_jmp_state_w = 1;
+          r_jmp_state_din = PLAINTEXT_BLOCK;
+        end
+
+      end
+      /*
       PLAINTEXT_LAST_BLOCK: begin
         //by specification there is two rates 64 or 128 bits
         if (plaintext_len < 64) begin
@@ -368,6 +413,7 @@ module encrypt #(
         //r_jmp_state_din = PLAINTEXT_LAST_BLOCK;
         //r_jmp_state_w = 1;
       end
+      */
       TAG_DATA_0: begin
         custom_state_ascon_din[2] = state_ascon_dout[2] ^ key_1;
         custom_state_ascon_din[3] = state_ascon_dout[3] ^ key_0;
