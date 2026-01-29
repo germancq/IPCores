@@ -119,6 +119,8 @@ async def associated_data_test(dut, ascon_sw):
             dut.current_state.value == dut.ASSOCIATED_DATA.value
         ), f"ERROR STATE IN ASSOCIATED_DATA, STATE={dut.current_state.value}"
         dut._log.info("aux_var in dut = {0}".format(hex(dut.aux_var.value)))
+        dut._log.info("a_data_reord in dut = {0}".format(hex(dut.a_data_reord.value)))
+        dut._log.info("generic counter in dut = {0}".format(hex(dut.generic_counter_o.value)))
         a = associated_data[len_a_data - i - 1]
         dut._log.info("a_data = {0}".format(hex(a)))
         ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ (a & ((2**64) - 1))
