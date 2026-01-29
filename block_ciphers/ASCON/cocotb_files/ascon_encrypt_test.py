@@ -132,12 +132,13 @@ async def associated_data_test(dut, ascon_sw):
         ascon_sw.ascon_permutation(dut.b.value)
         await permutation_b_test(dut)
         check_state(dut, ascon_sw)
+        await n_cycles_clock(dut,1)
 
 
 
 async def update_state_test(dut, ascon_sw):
     dut._log.info("update state")
-    await n_cycles_clock(dut, 1)
+    #await n_cycles_clock(dut, 1)
     assert (
         dut.current_state.value == dut.UPDATE_STATE.value
     ), f"ERROR STATE IN UPDATE_STATE, STATE={dut.current_state.value}"
