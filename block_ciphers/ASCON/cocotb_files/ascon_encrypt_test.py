@@ -115,6 +115,10 @@ async def associated_data_test(dut, ascon_sw):
     # )
 
     for i in range(0, len_a_data):
+        assert (
+            dut.current_state.value == dut.ASSOCIATED_DATA.value
+        ), f"ERROR STATE IN ASSOCIATED_DATA, STATE={dut.current_state.value}"
+        dut._log.info("aux_var in dut = {0}".format(hex(dut.aux_var.value)))
         a = associated_data[len_a_data - i - 1]
         dut._log.info("a_data = {0}".format(hex(a)))
         ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ (a & ((2**64) - 1))
@@ -128,6 +132,7 @@ async def associated_data_test(dut, ascon_sw):
         ascon_sw.ascon_permutation(dut.b.value)
         await permutation_b_test(dut)
         check_state(dut, ascon_sw)
+
 
 
 async def update_state_test(dut, ascon_sw):
