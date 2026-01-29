@@ -287,8 +287,11 @@ class ASCON_AEAD:
         ciphertext_endian = self.parse(ciphertext_res, 8)
         i = 0
         for c_d in ciphertext_endian:
+            print(hex(c_d))
             ciphertext_reord = (c_d << (8 * i)) + ciphertext_reord
             i = i + 1
+        if i<(len_plaintext_bits/8):
+            ciphertext_reord=ciphertext_reord << ((int(len_plaintext_bits/8)-i)*8)
 
         tag0_reord = 0
         tag0_endian = self.parse(self.tag[0], 8)
