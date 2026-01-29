@@ -90,7 +90,7 @@ class ASCON_AEAD:
         i = 1
         x_aux = x  # & ((2**r) - 1)
         while x_aux != 0:
-            print(hex(x_aux))
+            #print(hex(x_aux))
             arr.insert(i - 1, x_aux & ((2**r) - 1))
             x_aux = x >> (r * i)
             i = i + 1
@@ -114,11 +114,13 @@ class ASCON_AEAD:
         return (1 << (len_bits)) + x
 
     def print_state(self):
+        print("/////////////")
         print("S0 = {}".format(hex(self.state_array[0])))
         print("S1 = {}".format(hex(self.state_array[1])))
         print("S2 = {}".format(hex(self.state_array[2])))
         print("S3 = {}".format(hex(self.state_array[3])))
         print("S4 = {}".format(hex(self.state_array[4])))
+        print("/////////////")
 
     def encrypt(self, plaintext, a_data, len_plaintext_bits):
         self.get_initial_state()
@@ -181,8 +183,22 @@ class ASCON_AEAD:
             shift = int(len_plaintext_bits/8)
             plaintext_reord = plaintext_reord << ((shift - i)*8)
 
+        plaintext_reord = self.pad(
+            plaintext_reord, self.rate, len_plaintext_bits
+        )
+        print("plaintext padded and reord data = {}".format(hex(plaintext_reord)))
+
         plaintext_data = self.parse(plaintext_reord, self.rate)
+        plaintext_data_parse=[]
         len_plaintext_data = len(plaintext_data)
+
+        for i in range(0,len_plaintext_data):
+            plaintext_data_parse.append(0)
+
+        for i in range(0,len_plaintext_data):
+            plaintext_data_parse[i] = plaintext_data[len_plaintext_data - i-1]
+
+        len_plaintext_data_parse = len(plaintext_data_parse)
         print("len plaintext data = {}".format(len_plaintext_data))
         bits_for_last_block = int(
             len_plaintext_bits - (self.rate * (len_plaintext_data - 1))
@@ -190,29 +206,26 @@ class ASCON_AEAD:
         # bits_for_last_block = int(
         #    math.ceil(math.log2(plaintext_data[len_plaintext_data - 1]))
         # )
-        for i in range(0, len(plaintext_data)):
-            print("plaintext_data_{0} = {1}".format(i, hex(plaintext_data[i])))
+        for i in range(0, len(plaintext_data_parse)):
+            print("plaintext_data_parse_{0} = {1}".format(i, hex(plaintext_data_parse[i])))
 
-        plaintext_data[len_plaintext_data - 1] = self.pad(
-            plaintext_data[len_plaintext_data - 1], self.rate, len_plaintext_bits
-        )
 
-        for i in range(0, len(plaintext_data)):
-            print("plaintext_data_{0} = {1}".format(i, hex(plaintext_data[i])))
+        for i in range(0, len(plaintext_data_parse)):
+            print("plaintext_data_parse_{0} = {1}".format(i, hex(plaintext_data_parse[i])))
 
         print(bits_for_last_block)
         ciphertext_arr = []
-        for i in range(0, len_plaintext_data):
-            if i < len_plaintext_data - 1:
-                print("plaintext{} is = {}".format(i, hex(plaintext_data[i])))
+        for i in range(0, len_plaintext_data_parse):
+            if i < len_plaintext_data_parse - 1:
+                print("final block plaintext{} is = {}".format(i, hex(plaintext_data_parse[i])))
                 print("state_0 is = {}".format(hex(self.state_array[0])))
                 self.state_array[0] = self.state_array[0] ^ (
-                    plaintext_data[i] & ((2**64) - 1)
+                    plaintext_data_parse[i] & ((2**64) - 1)
                 )
                 self.state_array[0] = self.state_array[0] & ((2**64)-1)
                 if self.rate == 128:
                     self.state_array[1] = self.state_array[1] ^ (
-                        plaintext_data[i] >> 64
+                        plaintext_data_parse[i] >> 64
                     )
                     self.state_array[1] = self.state_array[1] & ((2**64)-1)
                     ciphertext_arr.insert(
@@ -224,16 +237,16 @@ class ASCON_AEAD:
                 self.ascon_permutation(self.b)
                 self.print_state()
             else:
-                print("plaintext{} is = {}".format(i, hex(plaintext_data[i])))
+                print("plaintext{} is = {}".format(i, hex(plaintext_data_parse[i])))
                 print("state_0 is = {}".format(hex(self.state_array[0])))
                 self.state_array[0] = self.state_array[0] ^ (
-                    plaintext_data[i] & ((2**64) - 1)
+                    plaintext_data_parse[i] & ((2**64) - 1)
                 )
                 self.state_array[0] = self.state_array[0] & ((2**64)-1)
 
                 if self.rate == 128:
                     self.state_array[1] = self.state_array[1] ^ (
-                        plaintext_data[i] >> 64
+                        plaintext_data_parse[i] >> 64
                     )
                     self.state_array[1] = self.state_array[1] & ((2**64)-1)
                     print("xor is {}".format(hex(self.state_array[0])))
@@ -287,7 +300,6 @@ class ASCON_AEAD:
         ciphertext_endian = self.parse(ciphertext_res, 8)
         i = 0
         for c_d in ciphertext_endian:
-            print(hex(c_d))
             ciphertext_reord = (c_d << (8 * i)) + ciphertext_reord
             i = i + 1
         if i<(len_plaintext_bits/8):
@@ -297,7 +309,7 @@ class ASCON_AEAD:
         tag0_endian = self.parse(self.tag[0], 8)
         i = 0
         for c_d in tag0_endian:
-            print(hex(c_d))
+            #print(hex(c_d))
             tag0_reord = (c_d << (8 * i)) + tag0_reord
             i = i + 1
         if i<8:
@@ -307,7 +319,7 @@ class ASCON_AEAD:
         tag1_endian = self.parse(self.tag[1], 8)
         i = 0
         for c_d in tag1_endian:
-            print(hex(c_d))
+            #print(hex(c_d))
             tag1_reord = (c_d << (8 * i)) + tag1_reord
             i = i + 1
         if i<8:

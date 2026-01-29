@@ -159,12 +159,13 @@ async def plaintext_state_test(dut, ascon_sw):
     plaintext_reord = 0
     i = 0
     for p_d in plaintext_endian:
-        dut._log.info(hex(p_d))
         plaintext_reord = (p_d << (8 * i)) + plaintext_reord
         i = i + 1
     if(i<(dut.plaintext_len.value/8)):
         shift = int(dut.plaintext_len.value/8)
         plaintext_reord = plaintext_reord << ((shift - i)*8)
+
+    dut._log.info("plaintext_reord is = {}".format(hex(plaintext_reord)))
 
     plaintext_data = ascon_sw.parse(plaintext_reord, 128)
     len_plaintext_data = len(plaintext_data)
