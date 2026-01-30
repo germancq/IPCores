@@ -159,40 +159,57 @@ async def plaintext_state_test(dut, ascon_sw):
     plaintext_reord = 0
     i = 0
     for p_d in plaintext_endian:
+        print(hex(p_d))
         plaintext_reord = (p_d << (8 * i)) + plaintext_reord
         i = i + 1
+
     if(i<(dut.plaintext_len.value/8)):
         shift = int(dut.plaintext_len.value/8)
         plaintext_reord = plaintext_reord << ((shift - i)*8)
 
-    dut._log.info("plaintext_reord is = {}".format(hex(plaintext_reord)))
-
-    plaintext_data = ascon_sw.parse(plaintext_reord, 128)
-    len_plaintext_data = len(plaintext_data)
-    dut._log.info("len plaintext data = {}".format(len_plaintext_data))
-    bits_for_last_block = int(
-        dut.plaintext_len.value - (dut.rate.value * (len_plaintext_data - 1))
+    plaintext_reord = ascon_sw.pad(
+        plaintext_reord, ascon_sw.rate, dut.plaintext_len.value
     )
-    # bits_for_last_block = int(len_plaintext_bits - (128 * (len_plaintext_data - 1)))
+    print("plaintext padded and reord data = {}".format(hex(plaintext_reord)))
+
+    plaintext_data = ascon_sw.parse(plaintext_reord, ascon_sw.rate)
+    plaintext_data_parse=[]
+    len_plaintext_data = len(plaintext_data)
+
+    for i in range(0,len_plaintext_data):
+        plaintext_data_parse.append(0)
+
+    for i in range(0,len_plaintext_data):
+        plaintext_data_parse[i] = plaintext_data[len_plaintext_data - i-1]
+
+    len_plaintext_data_parse = len(plaintext_data_parse)
+    print("len plaintext data = {}".format(len_plaintext_data))
+    bits_for_last_block = int(
+        dut.plaintext_len.value - (ascon_sw.rate * (len_plaintext_data - 1))
+    )
     # bits_for_last_block = int(
     #    math.ceil(math.log2(plaintext_data[len_plaintext_data - 1]))
     # )
-    plaintext_data[len_plaintext_data - 1] = ascon_sw.pad(
-        plaintext_data[len_plaintext_data - 1], 128, dut.plaintext_len.value
-    )
-    # dut._log.info(bits_for_last_block)
+    for i in range(0, len(plaintext_data_parse)):
+        print("plaintext_data_parse_{0} = {1}".format(i, hex(plaintext_data_parse[i])))
+
+
+    for i in range(0, len(plaintext_data_parse)):
+        print("plaintext_data_parse_{0} = {1}".format(i, hex(plaintext_data_parse[i])))
+
+    print(bits_for_last_block)
     ciphertext_arr = []
-    for i in range(0, len_plaintext_data):
-        if i < len_plaintext_data - 1:
-            dut._log.info("plaintext{} is = {}".format(i, hex(plaintext_data[i])))
-            dut._log.info("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
+    for i in range(0, len_plaintext_data_parse):
+        if i < len_plaintext_data_parse - 1:
+            print("final block plaintext{} is = {}".format(i, hex(plaintext_data_parse[i])))
+            print("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
             ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ (
-                plaintext_data[i] & ((2**64) - 1)
+                plaintext_data_parse[i] & ((2**64) - 1)
             )
             ascon_sw.state_array[0] = ascon_sw.state_array[0] & ((2**64)-1)
             if ascon_sw.rate == 128:
                 ascon_sw.state_array[1] = ascon_sw.state_array[1] ^ (
-                    plaintext_data[i] >> 64
+                    plaintext_data_parse[i] >> 64
                 )
                 ascon_sw.state_array[1] = ascon_sw.state_array[1] & ((2**64)-1)
                 ciphertext_arr.insert(
@@ -204,32 +221,33 @@ async def plaintext_state_test(dut, ascon_sw):
             ascon_sw.ascon_permutation(ascon_sw.b)
             ascon_sw.print_state()
         else:
-            dut._log.info("plaintext_v{} is = {}".format(i, hex(plaintext_data[i])))
-            dut._log.info("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
+            print("plaintext{} is = {}".format(i, hex(plaintext_data_parse[i])))
+            print("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
             ascon_sw.state_array[0] = ascon_sw.state_array[0] ^ (
-                plaintext_data[i] & ((2**64) - 1)
+                plaintext_data_parse[i] & ((2**64) - 1)
             )
             ascon_sw.state_array[0] = ascon_sw.state_array[0] & ((2**64)-1)
 
             if ascon_sw.rate == 128:
                 ascon_sw.state_array[1] = ascon_sw.state_array[1] ^ (
-                    plaintext_data[i] >> 64
+                    plaintext_data_parse[i] >> 64
                 )
                 ascon_sw.state_array[1] = ascon_sw.state_array[1] & ((2**64)-1)
-                dut._log.info("xor is {}".format(hex(ascon_sw.state_array[0])))
-                dut._log.info("bits_for_last_block is {}".format(bits_for_last_block))
+                print("xor is {}".format(hex(ascon_sw.state_array[0])))
+                print("bits_for_last_block is {}".format(bits_for_last_block))
                 
                 c_aux = ((ascon_sw.state_array[1] << 64) + (ascon_sw.state_array[0])) & (
                     (2**bits_for_last_block) - 1
                 )
-                dut._log.info("c_aux is {}".format(hex(c_aux)))
+                print("c_aux is {}".format(hex(c_aux)))
                 ciphertext_arr.insert(i, c_aux)
             else:
-                dut._log.info("xor is {}".format(hex(ascon_sw.state_array[0])))
+                print("xor is {}".format(hex(ascon_sw.state_array[0])))
                 c_aux = ascon_sw.state_array[0] & (
                     (2**bits_for_last_block) - 1)
-                dut._log.info("c_aux is {}".format(hex(c_aux)))
+                print("c_aux is {}".format(hex(c_aux)))
                 ciphertext_arr.insert(i, c_aux)
+
 
     ascon_sw.print_state()
     i = 0
