@@ -366,7 +366,7 @@ module encrypt #(
         reg_ciphertext_din[generic_counter_o][63:0] = state_ascon_dout[0] ^ plaintext_reord[(generic_counter_o<<6)+:64];
 
         if (rate == 16) begin
-          aux_var = plaintext_reord << ((generic_counter_o) << 7);
+          aux_var = plaintext_reord >> ((generic_counter_o) << 7);
 
           custom_state_ascon_din[0] = state_ascon_dout[0] ^ aux_var[63:0];
           reg_ciphertext_din[generic_counter_o][63:0] = state_ascon_dout[0] ^ aux_var[63:0];
