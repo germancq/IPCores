@@ -200,6 +200,9 @@ async def plaintext_state_test(dut, ascon_sw):
     print(bits_for_last_block)
     ciphertext_arr = []
     for i in range(0, len_plaintext_data_parse):
+        dut._log.info("aux_var is {}".format(hex(dut.aux_var.value)))
+        dut._log.info("state_0 is {}".format(hex(dut.state_ascon_dout[0].value)))
+        dut._log.info("counter is {}".format(hex(dut.generic_counter_o.value)))
         if i < len_plaintext_data_parse - 1:
             print("final block plaintext{} is = {}".format(i, hex(plaintext_data_parse[i])))
             print("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
