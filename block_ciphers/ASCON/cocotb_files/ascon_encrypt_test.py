@@ -223,6 +223,9 @@ async def plaintext_state_test(dut, ascon_sw):
 
             ascon_sw.ascon_permutation(ascon_sw.b)
             ascon_sw.print_state()
+            await permutation_b_test(dut)
+            check_state(dut, ascon_sw)
+            await n_cycles_clock(dut,1)
         else:
             print("plaintext{} is = {}".format(i, hex(plaintext_data_parse[i])))
             print("state_0 is = {}".format(hex(ascon_sw.state_array[0])))
