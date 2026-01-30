@@ -32,7 +32,7 @@ module encrypt #(
   logic [63:0] key_0, key_1;
 
   logic [a_len:0] a_data_reord;
-  logic [(rate<<3)-1:0] plaintext_reord;
+  logic [(rate<<3):0] plaintext_reord;
 
   logic [63:0] tag_0, tag_1;
 
