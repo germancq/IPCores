@@ -33,14 +33,17 @@ module trail_0s_bytes #(
     output [LEN-1:0] o_data
 );
 
-  genvar i;
-  generate
-    for (i = 0; i < (LEN >> 3) + 1; i++) begin
-      if (i_data[LEN-1:0] == (i_data >> (LEN - (i * 8)))) begin
-        assign o_data = i_data >> (LEN - (i * 8));
+  assign o_data = o_dat;
+
+  logic [31:0] j;
+  logic [LEN-1:0] o_dat;
+  always_comb begin
+    for (j = 0; j < (LEN >> 3) + 1; j++) begin
+      if (i_data == i_data >> (LEN - (j * 8))) begin
+        o_dat = i_data >> (LEN - (j * 8));
       end
     end
-  endgenerate
+  end
 
 endmodule : trail_0s_bytes
 
