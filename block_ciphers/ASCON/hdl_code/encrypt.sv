@@ -106,7 +106,7 @@ module encrypt #(
   genvar i;
 
 
-  logic [(plaintext_len)-1:0] ciphertext_ord;
+  logic [(N_BLOCKS*(rate<<3))-1:0] ciphertext_ord;
   logic [0:0] reg_ciphertext_cl[N_BLOCKS-1:0];
   logic [0:0] reg_ciphertext_w[N_BLOCKS-1:0];
   logic [(rate<<3)-1:0] reg_ciphertext_din[N_BLOCKS-1:0];
@@ -125,7 +125,7 @@ module encrypt #(
       );
 
       reorder #(
-          .LEN(plaintext_len)
+          .LEN(rate << 3)
       ) ord_pad_impl_ciphertext (
           .i_data(ciphertext_non_ord[i]),
           .o_data(ciphertext_ord[(i*(rate<<3))+:(rate<<3)])
