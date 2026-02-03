@@ -325,7 +325,7 @@ async def end_state_test(dut, expected_ciphertext, expected_tag):
     dut._log.info(hex(dut.tag.value))
     dut._log.info(dut.N_BLOCKS.value)
     for i in range(0,dut.N_BLOCKS.value):
-        dut._log.info(hex(dut.ciphertext_non_ord[i]))
+        dut._log.info(hex(dut.ciphertext_non_ord[i].value))
 
     
 
