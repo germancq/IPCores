@@ -26,6 +26,24 @@ module reorder #(
 
 endmodule : reorder
 
+module trail_0s_bytes #(
+    parameter LEN = 64
+) (
+    input  [LEN_1:0] i_data,
+    output [LEN_1:0] o_data
+);
+
+  genvar i;
+  generate
+    for (i = 0; i < (LEN >> 3) + 1; i++) begin
+      if (i_data == (i_data >> (LEN - (i * 8)))) begin
+        assign o_data = i_data >> (LEN - (i * 8));
+      end
+    end
+  endgenerate
+
+endmodule : trail_0s_bytes
+
 module pad #(
     parameter LEN = 64
 ) (
