@@ -294,7 +294,9 @@ class ASCON_AEAD:
 
         ciphertext_res = 0
         for i in range(0, len(ciphertext_arr)):
-            ciphertext_res = ciphertext_res + ciphertext_arr[i] << (128 * i)
+            print("ciphertext_arr c_{} = {}".format(i, hex(ciphertext_arr[i])))
+            ciphertext_res = ciphertext_res + (ciphertext_arr[i] << (128 * i))
+            print("ciphertext_res = {}".format(hex(ciphertext_res)))
 
         ciphertext_reord = 0
         ciphertext_endian = self.parse(ciphertext_res, 8)
