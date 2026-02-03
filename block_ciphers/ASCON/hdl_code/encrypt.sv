@@ -127,7 +127,7 @@ module encrypt #(
       reorder #(
           .LEN(rate << 3)
       ) ord_pad_impl_ciphertext (
-          .i_data(ciphertext_non_ord[i]),
+          .i_data(ciphertext_non_ord[N_BLOCKS-i-1]),
           .o_data(ciphertext_ord[(i*(rate<<3))+:(rate<<3)])
       );
     end
