@@ -36,7 +36,7 @@ module trail_0s_bytes #(
   genvar i;
   generate
     for (i = 0; i < (LEN >> 3) + 1; i++) begin
-      if ((i_data ^ (i_data >> (LEN - (i * 8)))) == 0) begin
+      if (i_data[LEN-1:0] == (i_data >> (LEN - (i * 8)))) begin
         assign o_data = i_data >> (LEN - (i * 8));
       end
     end
