@@ -20,9 +20,9 @@ module encrypt #(
     input start,
     input [k-1:0] key,
     input [127:0] nonce,
-    input [(rate<<3)-1:0] plaintext,
+    input [plaintext_len-1:0] plaintext,
     input [a_len-1:0] a_data,
-    output [(rate<<3)-1:0] ciphertext,
+    output [plaintext_len-1:0] ciphertext,
     output [127:0] tag,
     output logic end_signal
 );
@@ -32,7 +32,7 @@ module encrypt #(
   logic [63:0] key_0, key_1;
 
   logic [a_len:0] a_data_reord;
-  logic [(rate<<3):0] plaintext_reord;
+  logic [plaintext_len:0] plaintext_reord;
 
   logic [63:0] tag_0, tag_1;
 
@@ -106,7 +106,7 @@ module encrypt #(
   genvar i;
 
 
-  logic [(rate<<3)-1:0] ciphertext_ord;
+  logic [plaintext_len-1:0] ciphertext_ord;
   logic [0:0] reg_ciphertext_cl[N_BLOCKS-1:0];
   logic [0:0] reg_ciphertext_w[N_BLOCKS-1:0];
   logic [(rate<<3)-1:0] reg_ciphertext_din[N_BLOCKS-1:0];
@@ -125,7 +125,7 @@ module encrypt #(
       );
 
       reorder #(
-          .LEN(rate << 3)
+          .LEN(plaintext_len)
       ) ord_pad_impl_ciphertext (
           .i_data(ciphertext_non_ord[i]),
           .o_data(ciphertext_ord[(i*(rate<<3))+:(rate<<3)])
