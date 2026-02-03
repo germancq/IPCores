@@ -233,6 +233,7 @@ module encrypt #(
       .dout(jmp_state)
   );
 
+  //
   logic [15:0] generic_counter_o;
   logic generic_counter_up, generic_counter_rst;
   counter #(
