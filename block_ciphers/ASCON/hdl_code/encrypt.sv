@@ -106,7 +106,7 @@ module encrypt #(
   genvar i;
 
 
-  logic [(rate<<3)-1:0] ciphertext_ord;
+  logic [(plaintext_len)-1:0] ciphertext_ord;
   logic [0:0] reg_ciphertext_cl[N_BLOCKS-1:0];
   logic [0:0] reg_ciphertext_w[N_BLOCKS-1:0];
   logic [(rate<<3)-1:0] reg_ciphertext_din[N_BLOCKS-1:0];
