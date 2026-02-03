@@ -29,8 +29,8 @@ endmodule : reorder
 module trail_0s_bytes #(
     parameter LEN = 64
 ) (
-    input  [LEN_1:0] i_data,
-    output [LEN_1:0] o_data
+    input  [LEN-1:0] i_data,
+    output [LEN-1:0] o_data
 );
 
   genvar i;
