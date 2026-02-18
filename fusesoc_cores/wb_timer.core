@@ -1,0 +1,30 @@
+CAPI=2:
+
+name : ::wb_timer:1
+description : wb_timer 
+
+
+targets:
+  default:
+    filesets:
+      - rtl
+
+
+filesets:
+
+  rtl:
+    file_type: verilogSource
+    files:
+      - wb_timer/hdl_code/wb_timer.sv
+    depend:
+      - counter
+      - register
+
+
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
+
+

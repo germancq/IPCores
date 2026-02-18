@@ -1,0 +1,28 @@
+CAPI=2:
+
+name : ::sdspi_wb:1
+description : sdspi_wb 
+
+
+targets:
+  default:
+    filesets:
+      - rtl
+
+filesets:
+
+  rtl:
+    file_type: verilogSource
+    files:
+      - sdspi/hdl/sdspi_wb.sv
+      - sdspi/hdl/sdspi_wb_bridge.sv
+    depend:
+      - sdspi 
+
+
+
+provider :
+  name : github
+  user : germancq
+  repo : IPCores
+  version : master
