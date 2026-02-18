@@ -14,8 +14,8 @@ filesets:
   rtl:
     file_type: verilogSource
     files:
-      - sdspi/hdl/sdspi_wb.sv
-      - sdspi/hdl/sdspi_wb_bridge.sv
+      - sdspi/hdl_code/sdspi_wb.sv
+      - sdspi/hdl_code/sdspi_wb_bridge.sv
     depend:
       - sdspi 
 
