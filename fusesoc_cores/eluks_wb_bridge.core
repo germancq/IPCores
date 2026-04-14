@@ -1,4 +1,4 @@
-CAPI=2
+CAPI=2:
 
 name : ::eluks_wb_bridge:0
 description : eluks wishbone bridge
