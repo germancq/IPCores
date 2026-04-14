@@ -1,0 +1,37 @@
+CAPI=2
+
+name : ::eluks_wb_bridge:0
+description : eluks wishbone bridge
+
+
+targets:
+    default:
+        filesets: 
+            - rtl
+
+parameters:
+  WB_DATA_WIDTH:
+    datatype: int
+    paramtype: vlogparam
+  WB_ADDR_DIR:
+    datatype: int
+    paramtype: vlogparam
+  PSW_WIDTH:
+    datatype: int
+    paramtype: vlogparam
+
+filesets:
+    rtl:
+      file_type: systemVerilogSource
+      files:
+        - ELUKS/hdl/eluks_wb_bridge.sv
+      depend:
+        - register
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+

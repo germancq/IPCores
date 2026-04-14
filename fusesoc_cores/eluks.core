@@ -1,0 +1,86 @@
+CAPI=2:
+
+name : ::eluks:1
+description : eluks
+
+targets:
+   default: &default
+     filesets:
+       - rtl
+
+parameters:
+   PSW_WIDTH:
+     datatype: int
+     paramtype: vlogparam
+   SALT_WIDTH:
+     datatype: int
+     paramtype: vlogparam
+   COUNT_WIDTH:
+     datatype: int
+     paramtype: vlogparam
+   BLOCK_SIZE:
+     datatype: int
+     paramtype: vlogparam
+   KEY_SIZE:
+     datatype: int
+     paramtype: vlogparam
+   N:
+     datatype: int
+     paramtype: vlogparam
+   c:
+     datatype: int
+     paramtype: vlogparam
+   r:
+     datatype: int
+     paramtype: vlogparam
+   R:
+     datatype: int
+     paramtype: vlogparam
+   lCounter_initial_state:
+     datatype: int
+     paramtype: vlogparam
+   lCounter_feedback_coeff:
+     datatype: int
+     paramtype: vlogparam
+   N_kdf:
+     datatype: int
+     paramtype: vlogparam
+   c_kdf:
+     datatype: int
+     paramtype: vlogparam
+   r_kdf:
+     datatype: int
+     paramtype: vlogparam
+   R_kdf:
+     datatype: int
+     paramtype: vlogparam
+   lCounter_initial_state_kdf:
+     datatype: int
+     paramtype: vlogparam
+   lCounter_feedback_coeff_kdf:
+     datatype: int
+     paramtype: vlogparam
+
+filesets:
+  rtl:
+    file_type: systemVerilogSource
+    files:
+      - ELUKS/hdl/eluks.sv
+    depend:
+      - counter
+      - register
+      - mux
+      - present_ctr_cipher
+      - hirose_present
+      - KDF_spongent
+      - spongent_iter_hash
+      - hmac_spongent_iter
+
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
