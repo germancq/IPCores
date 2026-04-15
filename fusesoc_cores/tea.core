@@ -1,0 +1,36 @@
+CAPI=2:
+
+name : ::tea:0
+description : tea block cipher 
+
+targets:
+  default:
+    filesets: 
+      - rtl
+
+
+
+filesets:
+
+
+  rtl:
+    file_type: systemVerilogSource
+    files: 
+      - block_ciphers/TEA/hdl_code/tea.sv      
+    depend:
+      - tea_encode 
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+
+
+
+
+
+
+

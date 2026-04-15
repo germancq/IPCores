@@ -1,0 +1,65 @@
+CAPI=2:
+
+name : ::ascon_wb:0
+description : ascon block cipher with wishbone interface
+
+targets:
+   default: &default
+     filesets:
+       - rtl
+
+
+parameters :
+  BLK_LEN :
+    datatype : int
+    paramtype : vlogparam
+  KEY_LEN :
+    datatype : int
+    paramtype : vlogparam
+  WB_DATA_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+  WB_ADDR_DIR :
+    datatype : int
+    paramtype : vlogparam
+  OFFSET_ADDR :
+    datatype : int
+    paramtype : vlogparam
+  a :
+    datatype : int
+    paramtype : vlogparam
+  b :
+    datatype : int
+    paramtype : vlogparam
+  rate :
+    datatype : int
+    paramtype : vlogparam
+  version :
+    datatype : int
+    paramtype : vlogparam
+  a_len :
+    datatype : int
+    paramtype : vlogparam
+  plaintext_len :
+    datatype : int
+    paramtype : vlogparam
+
+filesets:
+
+   rtl:
+     file_type: systemVerilogSource
+     files:
+       - block_ciphers/ASCON/hdl_code/ascon_wb.sv
+     depend:
+       - block_cipher_wb_bridge
+       - ascon
+
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+
+

@@ -1,0 +1,46 @@
+CAPI=2:
+
+name : ::simon_wb:0
+description : simon block cipher with wishbone interface
+
+targets:
+   default: &default
+     filesets:
+       - rtl
+
+
+parameters :
+  M :
+    datatype : int
+    paramtype : vlogparam
+  N :
+    datatype : int
+    paramtype : vlogparam
+  WB_DATA_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+  WB_ADDR_DIR :
+    datatype : int
+    paramtype : vlogparam
+  OFFSET_ADDR :
+    datatype : int
+    paramtype : vlogparam
+
+filesets:
+
+   rtl:
+     file_type: systemVerilogSource
+     files:
+       - block_ciphers/SIMON/hdl_code/simon_wb.sv
+     depend:
+       - block_cipher_wb_bridge
+       - simon
+
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+

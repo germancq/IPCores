@@ -1,12 +1,13 @@
 CAPI=2:
 
-name : ::present_wb:0
-description : present for with wishbone bridge as slave 
+name : ::tea_wb:0
+description : TEA block cipher with wishbone interface
 
 targets:
-  default:
-    filesets: 
-      - rtl
+   default: &default
+     filesets:
+       - rtl
+
 
 parameters :
   KEY_LEN :
@@ -21,27 +22,23 @@ parameters :
   WB_ADDR_DIR :
     datatype : int
     paramtype : vlogparam
+  OFFSET_ADDR :
+    datatype : int
+    paramtype : vlogparam
 
 filesets:
 
-  rtl:
-    file_type: systemVerilogSource
-    files: 
-      - block_ciphers/present_cipher/hdl_code/present_wb.sv      
-    depend:
-      - present_cipher
-      - block_cipher_wb_bridge
+   rtl:
+     file_type: systemVerilogSource
+     files:
+       - block_ciphers/TEA/hdl_code/tea_wb.sv
+     depend:
+       - tea
+       - block_cipher_wb_bridge
+
 
 provider:
     name: github
     user: germancq
     repo: IPCores
     version: master
-
-
-
-
-
-
-
-

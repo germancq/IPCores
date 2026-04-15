@@ -1,0 +1,46 @@
+CAPI=2:
+
+name : ::LEA_wb:0
+description : LEA block cipher with wishbone interface
+
+targets:
+   default: &default
+     filesets:
+       - rtl
+
+
+parameters :
+  BLK_LEN :
+    datatype : int
+    paramtype : vlogparam
+  KEY_LEN :
+    datatype : int
+    paramtype : vlogparam
+  WB_DATA_WIDTH :
+    datatype : int
+    paramtype : vlogparam
+  WB_ADDR_DIR :
+    datatype : int
+    paramtype : vlogparam
+  OFFSET_ADDR :
+    datatype : int
+    paramtype : vlogparam
+
+filesets:
+
+   rtl:
+     file_type: systemVerilogSource
+     files:
+       - block_ciphers/LEA/hdl_code/LEA_wb.sv
+     depend:
+       - block_cipher_wb_bridge
+       - LEA
+
+
+provider:
+    name: github
+    user: germancq
+    repo: IPCores
+    version: master
+
+

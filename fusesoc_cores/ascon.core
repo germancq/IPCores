@@ -1,7 +1,7 @@
 CAPI=2:
 
-name : ::present_wb:0
-description : present for with wishbone bridge as slave 
+name : ::ascon:0
+description : ascon
 
 targets:
   default:
@@ -9,34 +9,47 @@ targets:
       - rtl
 
 parameters :
-  KEY_LEN :
-    datatype : int
-    paramtype : vlogparam
   BLK_LEN :
     datatype : int
     paramtype : vlogparam
-  WB_DATA_WIDTH :
+  KEY_LEN :
     datatype : int
     paramtype : vlogparam
-  WB_ADDR_DIR :
+  rate :
     datatype : int
     paramtype : vlogparam
+  a :
+    datatype : int
+    paramtype : vlogparam
+  b :
+    datatype : int
+    paramtype : vlogparam
+  version :
+    datatype : int
+    paramtype : vlogparam
+  a_len :
+    datatype : int
+    paramtype : vlogparam
+  plaintext_len :
+    datatype : int
+    paramtype : vlogparam
+
 
 filesets:
-
   rtl:
     file_type: systemVerilogSource
     files: 
-      - block_ciphers/present_cipher/hdl_code/present_wb.sv      
+      - block_ciphers/ASCON/hdl_code/encrypt.sv      
     depend:
-      - present_cipher
-      - block_cipher_wb_bridge
+      - ascon_encrypt
 
 provider:
     name: github
     user: germancq
     repo: IPCores
     version: master
+
+
 
 
 
